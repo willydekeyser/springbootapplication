@@ -114,6 +114,7 @@ public class KasboekController {
  *
  * 
  */
+	
 	@GetMapping("/restcontroller/kasboekTotalen/{jaar}/{rubriekId}")
 	public @ResponseBody String restConrollerkaboektotalen(@PathVariable Integer jaar, @PathVariable Integer rubriekId) {
 		String rubriek = "";
