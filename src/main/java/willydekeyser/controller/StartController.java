@@ -31,7 +31,7 @@ public class StartController {
 	
 	/**
 	 * 
-	 * Start scherm /
+	 * Start scherm 
 	 * 
 	 */
 	@GetMapping(value = "/")
