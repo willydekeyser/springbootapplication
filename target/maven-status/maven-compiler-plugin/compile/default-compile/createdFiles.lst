@@ -2,6 +2,7 @@ willydekeyser\dao\rowmapper\LedenSoortenLedenRowMapper.class
 willydekeyser\controller\NamenLijst.class
 willydekeyser\filters\TestFilter_1.class
 willydekeyser\dao\resultsetextractor\KasboekByIdJaarRubriekExtractor.class
+willydekeyser\security\MyAuthenticationSuccessHandler.class
 willydekeyser\controller\SoortenledenController.class
 willydekeyser\dao\resultsetextractor\KasboekJaarRubriekExtractor.class
 willydekeyser\service\IKasboekService.class
@@ -23,18 +24,21 @@ willydekeyser\controller\RubriekController.class
 willydekeyser\model\Leden.class
 willydekeyser\dao\impl\KasboekDAO.class
 willydekeyser\dao\resultsetextractor\RubriekByIdKasboekExtractor.class
+willydekeyser\aspect\LoggingAspect.class
 willydekeyser\dao\rowmapper\LidgeldRowMapper.class
 willydekeyser\dao\impl\RubriekDAO.class
 willydekeyser\sendmail\model\Mail.class
 willydekeyser\dao\impl\LidgeldDAO.class
 willydekeyser\dao\rowmapper\SoortenLedenRowMapper.class
 willydekeyser\dao\impl\KasboekDAO$1.class
+willydekeyser\component\MyApplicationListener.class
 willydekeyser\service\impl\LidgeldService.class
 willydekeyser\service\IRubriekService.class
 willydekeyser\dao\rowmapper\RubriekRowMapper.class
 willydekeyser\dao\rowmapper\LidgeldLedenRowMapper.class
 willydekeyser\sendmail\configuration\ThymeleafConfig.class
 willydekeyser\dao\impl\LidgeldDAO$1.class
+willydekeyser\component\LoginListeners.class
 willydekeyser\controller\LedenController.class
 willydekeyser\dao\resultsetextractor\LedenByIdLidgeldExtractor.class
 willydekeyser\sendmail\service\MailSenderService.class
@@ -59,6 +63,7 @@ willydekeyser\component\LogoutListener.class
 willydekeyser\dao\IRubriekDAO.class
 willydekeyser\dao\resultsetextractor\LedenLidgeldExtractor.class
 willydekeyser\dao\ISoortenLedenDAO.class
+willydekeyser\configuration\ApplicationConfig.class
 willydekeyser\filters\TestInterseptorAppConfig.class
 willydekeyser\dao\rowmapper\KasboekRowMapper.class
 willydekeyser\controller\SendMailController.class
