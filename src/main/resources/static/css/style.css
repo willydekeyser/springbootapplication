@@ -120,40 +120,40 @@ body{
 }
 
 .menu_header {
-	border: 1px solid black;
+	border: 0px solid black;
 	flex: 0 0 0rem;
 	/*min-height: 3rem;*/
 	padding: 5px;
 }
 
 .menu_main {
-	border: 1px solid black;
+	border: 0px solid black;
 	flex: 1 1 auto;
 	/*flex-grow: 1;*/
 	overflow: auto;
 }
 
 .main_section_A {
-	border: 1px solid black;
+	border: 0px solid black;
 	flex: 1 1 40%;
 	padding: 10px;
 	overflow: auto;
 }
 
 .main_section_B {
-	border: 1px solid black;
+	border: 0px solid black;
 	padding: 10px;
 	flex: 1 1 60%;
 	overflow: auto;
 }
 
 .footer_section_A {
-	border: 0.2px solid #ccc;
+	border: 0.1px solid #ccc;
 	flex: 1 1 15%;
 }
 
 .footer_section_B {
-	border: 0.2px solid #ccc;
+	border: 0.1px solid #ccc;
 	flex: 1 1 85%;
 }
 
