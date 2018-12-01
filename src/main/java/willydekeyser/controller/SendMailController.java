@@ -32,7 +32,7 @@ public class SendMailController {
 	@GetMapping("/index")
 	public String index(Model model) {
 		model.addAttribute("title", "Computerclub Format C");
-		model.addAttribute("message", "Crunchify Spring MVC with Ajax and JQuery Demo..");
+		model.addAttribute("message", "Computerclub FORMAT C..");
 		try {
 			senderService.sendHTMLMail(new Mail(to, htmlSubject, htmlContent));
 			senderService.sendSimpleMail(new Mail(to, subject,content));
