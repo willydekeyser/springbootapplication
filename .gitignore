@@ -23,6 +23,5 @@
 hs_err_pid*
 
 application.properties
-*.properties
 
 /target/
