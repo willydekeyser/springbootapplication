@@ -30,7 +30,7 @@ async function Refrech_HTML(url, div) {
 	console.log('Refrech HTML: ' + url);
 	let response = await fetch(url, {
 		headers: {
-			"X-Requested-With" : "XMLHttpRequest"
+			"Test_Header" : "Test1"
 		}
 	});
 	if (!response.ok || !response.status == 200 || response.redirected) {
@@ -46,7 +46,11 @@ async function Refrech_HTML(url, div) {
 };
 
 async function existRecord(url) {
-	let response = await fetch(url);
+	let response = await fetch(url, {
+		headers: {
+			"Test_Header" : "Test2"
+		}
+	});
 	if (!response.ok || !response.status == 200 || response.redirected) {
 		console.log('error: ' + response.status + ' - ' + 'Redirected: ' + response.redirected);
 		window.open('/', '_self');
@@ -57,7 +61,11 @@ async function existRecord(url) {
 
 async function load_HTML(url) {
 	console.log('Load HTML: ' + url);
-	let response = await fetch(url);
+	let response = await fetch(url, {
+		headers: {
+			"Test_Header" : "Test3"
+		}
+	});
 	if (!response.ok || !response.status == 200 || response.redirected) {
 		console.log('error: ' + response.status + ' - ' + 'Redirected: ' + response.redirected);
 		window.open('/', '_self');
@@ -69,7 +77,11 @@ async function load_HTML(url) {
 
 async function Load_JSON(url, div) {
 	console.log('Load JSON: ' + url);
-	let response = await fetch(url);
+	let response = await fetch(url, {
+		headers: {
+			"Test_Header" : "Test4"
+		}
+	});
 	if (!response.ok || !response.status == 200 || response.redirected) {
 		console.log('error: ' + response.status + ' - ' + 'Redirected: ' + response.redirected);
 		window.open('/', '_self');
@@ -84,7 +96,11 @@ async function Load_JSON(url, div) {
 };
 
 async function fetch_JSON(url) {
-	let response = await fetch(url);
+	let response = await fetch(url, {
+		headers: {
+			"Test_Header" : "Test4"
+		}
+	});
 	if (!response.ok || !response.status == 200 || response.redirected) {
 		console.log('error: ' + response.status + ' - ' + 'Redirected: ' + response.redirected);
 		window.open('/', '_self');

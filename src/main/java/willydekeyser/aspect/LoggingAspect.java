@@ -1,5 +1,7 @@
 package willydekeyser.aspect;
 
+import java.util.Enumeration;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.aspectj.lang.JoinPoint;
@@ -46,11 +48,25 @@ public class LoggingAspect {
 		//System.out.println("Aspect run MODEL: " + joitPoint.getSignature().getDeclaringTypeName() + " - " + joitPoint.getSignature().getName());
 	}
 	
-	@Before("execution(* willydekeyser.controller.KasboekController.*(..))")
+	@Before("execution(* willydekeyser.controller.LedenController.*(..))")
 	public void AdviceAll(JoinPoint joitPoint) {
 		HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
 		//System.err.println("Aspect run ALL: " + joitPoint.getSignature().getDeclaringTypeName() + " - " + joitPoint.getSignature().getName());
 		System.err.println("REQUEST: " + request.getUserPrincipal().getName() + " - " + request.getLocalName());
+		Enumeration<String> headerNames = request.getHeaderNames();
+		System.err.println("HEADERS: ---------------------------------------- ");
+		while (headerNames.hasMoreElements()) {
+			String headerName = headerNames.nextElement();
+			System.err.print("Header: " + headerName);
+			System.err.print(" ");
+			Enumeration<String> headers = request.getHeaders(headerName);
+			while (headers.hasMoreElements()) {
+				String headerValue = headers.nextElement();
+				System.err.print(" " + headerValue);
+				System.err.println(" ");
+			}
+		}
+			 
 	}
 	
 	@Around("execution(* willydekeyser.controller.*.*(..)) && target(service)")
