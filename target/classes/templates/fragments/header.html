@@ -66,10 +66,10 @@
 		<a id="kasboek_tabel" class="navigation_link" href="/">Kasboek tabel</a>
 	</li>
 	<li class="navigation_item" th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">
-		<a id="soortenleden_tabel" class="navigation_link" href="/">Soorten leden</a>
+		<a id="soortenleden" class="navigation_link" href="/">Soorten leden</a>
 	</li>
 	<li class="navigation_item" th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">
-		<a id="rubriek_tabel" class="navigation_link" href="/">Rubriek</a>
+		<a id="rubriek" class="navigation_link" href="/">Rubriek</a>
 	</li>
 	<li class="navigation_item" th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">
 		<a id="agenda" class="navigation_link" href="/">Agenda</a>

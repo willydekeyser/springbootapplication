@@ -101,7 +101,7 @@ function start_menu() {
 			console.log('Soortenleden geladen');
 		})
 		.catch((error) => {
-			console.error('Error in soortenleden_tabel laden: ' + error);
+			console.error('Error in soortenleden laden: ' + error);
 		});
 		return false;
 	});
@@ -121,7 +121,7 @@ function start_menu() {
 			console.log('Restcontroller geladen');
 		})
 		.catch((error) => {
-			console.error('Error in leden_tabel laden: ' + error);
+			console.error('Error in restcontroller laden: ' + error);
 		});
 		return false;
 	});

@@ -1,4 +1,4 @@
-let var = 0;
+let temp = 0;
 /**
  *  Soorten leden aanpassen.
  */
