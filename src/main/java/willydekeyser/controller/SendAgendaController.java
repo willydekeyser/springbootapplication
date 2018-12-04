@@ -16,7 +16,6 @@ public class SendAgendaController {
 
 	@GetMapping("/agenda")
 	public String agenda(Model model) {
-		model.addAttribute("title", "Computerclub Format C");
 		model.addAttribute("tekst", tekst);
 		return "/agenda/agenda :: agenda_form";
 	}
