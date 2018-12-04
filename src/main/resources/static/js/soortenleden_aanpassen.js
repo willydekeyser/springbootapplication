@@ -1,3 +1,4 @@
+let var = 0;
 /**
  *  Soorten leden aanpassen.
  */

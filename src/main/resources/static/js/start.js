@@ -71,7 +71,7 @@ function start_menu() {
 			console.log('Kasboek geladen');
 		})
 		.catch((error) => {
-			console.error('Error in leden_tabel laden: ' + error);
+			console.error('Error in kasboek laden: ' + error);
 		});
 		return false;
 	});
@@ -81,7 +81,7 @@ function start_menu() {
 			console.log('Kasboek_tabel geladen');
 		})
 		.catch((error) => {
-			console.error('Error in leden_tabel laden: ' + error);
+			console.error('Error in kasboek_tabel laden: ' + error);
 		});
 		return false;
 	});
@@ -91,27 +91,27 @@ function start_menu() {
 			console.log('agenda geladen');
 		})
 		.catch((error) => {
-			console.error('Error in leden_tabel laden: ' + error);
+			console.error('Error in agenda laden: ' + error);
 		});
 		return false;
 	});
-	$('#header #soortenleden_tabel').on('click', () => {
-		soortenleden_tabel_start()
+	$('#header #soortenleden').on('click', () => {
+		soortenleden_start()
 		.then(() => {
-			console.log('Soortenleden_tabel geladen');
+			console.log('Soortenleden geladen');
 		})
 		.catch((error) => {
-			console.error('Error in leden_tabel laden: ' + error);
+			console.error('Error in soortenleden_tabel laden: ' + error);
 		});
 		return false;
 	});
-	$('#header #rubriek_tabel').on('click', () => {
-		rubriek_tabel_start()
+	$('#header #rubriek').on('click', () => {
+		rubriek_start()
 		.then(() => {
 			console.log('Rubriek_tabel geladen');
 		})
 		.catch((error) => {
-			console.error('Error in leden_tabel laden: ' + error);
+			console.error('Error in rubriek laden: ' + error);
 		});
 		return false;
 	});

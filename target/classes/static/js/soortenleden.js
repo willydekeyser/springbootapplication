@@ -3,7 +3,14 @@ let SoortenLeden_gegevens = {
 		soortleden: ""
 };
 
-async function soortenleden_tabel_start() {
+/**
+ *  Soorten leden.
+ *  
+ *  
+ */
+
+
+async function soortenleden_start() {
 	reset_grid();
 	await Refrech_HTML('/soortenleden/', '.main_section_A');
 };

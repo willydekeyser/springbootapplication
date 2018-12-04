@@ -3,7 +3,7 @@ var Rubriek_gegevens = {
 		rubriek : ''
 };
 
-async function rubriek_tabel_start() {
+async function rubriek_start() {
 	reset_grid();
 	await Refrech_HTML('/rubriek/', '.main_section_A');
 };
