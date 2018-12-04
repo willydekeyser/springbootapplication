@@ -16,6 +16,7 @@ public class SendAgendaController {
 
 	@GetMapping("/agenda")
 	public String agenda(Model model) {
+		System.out.println("AGENDA/AGENDA/ ------------------------------");
 		model.addAttribute("tekst", tekst);
 		return "/agenda/agenda :: agenda_form";
 	}
