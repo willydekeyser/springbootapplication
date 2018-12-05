@@ -4,40 +4,32 @@
 <body>
 <div  th:fragment="agenda_form">
 	<h2>Agenda</h2>
-	<div style="width: 90%; margin: 2%; padding: 2%;">
-		<p>Freaks:</p>
-		<input size="70" id="freak" type="text" name="freak" oninput="myFunction()"/>
-		<input size="70" id="freaklesgever" type="text" name="freak" oninput="myFunction()"/><br/><br/>
-		<p>Freaks to Be</p>
-		<input size="70"  id="freaktobe" type="text" name="freaktobe" oninput="myFunction()"/>
-		<input size="70"  id="freaktobelesgever" type="text" name="freaktobe" oninput="myFunction()"/><br/><br/>
-		<p>Info:</p>
-		<textarea  rows="8" id="tekstblok" cols="140" name="comment" oninput="myFunction()"></textarea>
-		<p>Voorbeeld:</p>
-		<div style="overflow:auto; width: 96%; min-height: 50px; max-height: 300px; border-style: solid; border-width: 1px; margin: 20px; padding: 0px;" id="tekst"> </div>
+	<div style="width: 50%; margin: 2%; padding: 2%;">
+		<form method="post" th:object="${Leden}" id="agendaVersturenForm">
+		<div class="form-group">
+			<p>Freaks to Be</p>
+			<input size="50"  id="freaktobe" type="text" name="freaktobe" oninput="mail_form()"/>
+			<input size="50"  id="freaktobelesgever" type="text" name="freaktobe" oninput="mail_form()"/>
+		</div>
+		<div class="form-group">
+			<p>Freaks:</p>
+			<input size="50" id="freak" type="text" name="freak" oninput="mail_form()"/>
+			<input size="50" id="freaklesgever" type="text" name="freak" oninput="mail_form()"/>
+		</div>
+		<div class="form-group">
+			<p>Info:</p>
+			<textarea  rows="5" id="tekstblok" cols="140" name="comment" oninput="mail_form()"></textarea>
+		</div>
+		<div class="modal-footer">
+			<button type="submit" class="btn btn-primary">Versturen</button>
+			<button type="button" class="btn btn-default" data-dismiss="modal">Sluiten</button>
+		</div>
+		</form>
 	</div>
-	<script>
-		function myFunction() {
-			let textfreak = document.getElementById("freak").value;
-			let textfreaklesgever = document.getElementById("freaklesgever").value;
-			let textfreaktobe = document.getElementById("freaktobe").value;
-			let textfreaktobelesgever = document.getElementById("freaktobelesgever").value;
-			let textinfo = document.getElementById("tekstblok").value;
-		    document.getElementById("tekst").innerHTML = "Beste lid,<br><br><br><h3>Planning voor woensdag, 05 - december - 2018</h3>" + "<b>Freaks: </b><br>" + 
-		    textfreak + " - " + textfreaklesgever + "<br><br><br>" + "<b>Freaks to be: </b><br>" + 
-		    textfreaktobe + " - " + textfreaktobelesgever + "<br><br><br>" + "<b>Info: </b><br>" + 
-		    textinfo + "<br><br><br><p align='right'>Computerclub Format C<br>Kring Kristus Koning<br>Rerum Novarumplein<br>Gent</p><p>&nbsp;</p>" +
-		    "<p>Afmelden voor deze agenda? Klik dan op de volgende link&nbsp;&nbsp;" +
-		    "<a href='mailto:cfc.schatbewaarder@cformatc.be?subject=Computerclub FORMAT C afmelden agenda'>Afmelden</a>" +
-		    "<br>maandag - 03/december/2018 - 19:49:15</font></p>";
-		}
-	
-	
-	
-	
-	
-	</script>
+	<div style="width: 80%; margin: 2%; padding: 2%;">
+		<p>Voorbeeld:</p>
+		<div style="overflow:auto; width: 100%; min-height: 50px; max-height: 200px; border-style: solid; border-width: 1px; margin: 20px; padding: 0px;" id="tekst"> </div>
+	</div>
 </div>
-
 </body>
 </html>

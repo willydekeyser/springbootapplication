@@ -16,7 +16,7 @@
 	<script type="text/javascript" th:src="@{/js/start.js}"></script>
 	<script type="text/javascript" th:src="@{/js/script.js}"></script>
     <script th:if="${#authorization.expression('hasRole(''ROLE_USER'')')}" type="text/javascript" th:src="@{/js/leden.js}"></script>
-    <script th:if="${#authorization.expression('hasRole(''ROLE_ADIMN'')')}" type="text/javascript" th:src="@{/js/leden_aanpassen.js}"></script>
+    <script th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}" type="text/javascript" th:src="@{/js/leden_aanpassen.js}"></script>
     <script th:if="${#authorization.expression('hasRole(''ROLE_USER'')')}" type="text/javascript" th:src="@{/js/lidgeld.js}"></script>
     <script th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}" type="text/javascript" th:src="@{/js/lidgeld_aanpassen.js}"></script>
     <script th:if="${#authorization.expression('hasRole(''ROLE_USER'')')}" type="text/javascript" th:src="@{/js/kasboek.js}"></script>
