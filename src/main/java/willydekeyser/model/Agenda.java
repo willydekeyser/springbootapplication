@@ -17,7 +17,6 @@ public class Agenda {
 	}
 
 	public Agenda(String freak, String freaktobe, String freaklesgever, String freaktobelesgever, String info) {
-		super();
 		this.freak = freak;
 		this.freaktobe = freaktobe;
 		this.freaklesgever = freaklesgever;

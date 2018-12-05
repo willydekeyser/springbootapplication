@@ -9,8 +9,6 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
-import org.springframework.stereotype.Component;
-
 /**
  * Servlet Filter implementation class TestFilter_2
  */
