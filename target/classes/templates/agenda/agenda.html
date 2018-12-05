@@ -6,23 +6,27 @@
 	<h2>Agenda</h2>
 	<div style="width: 90%; margin: 2%; padding: 2%;">
 		<p>Freaks:</p>
-		<input size="150" id="username" type="text" name="freak" oninput="myFunction()"/><br/>
+		<input size="70" id="freak" type="text" name="freak" oninput="myFunction()"/>
+		<input size="70" id="freaklesgever" type="text" name="freak" oninput="myFunction()"/><br/><br/>
 		<p>Freaks to Be</p>
-		<input size="150"  id="name" type="text" name="freaktobe" oninput="myFunction()"/><br/>
+		<input size="70"  id="freaktobe" type="text" name="freaktobe" oninput="myFunction()"/>
+		<input size="70"  id="freaktobelesgever" type="text" name="freaktobe" oninput="myFunction()"/><br/><br/>
 		<p>Info:</p>
-		<textarea  rows="10" id="tekstblok" cols="145" name="comment" oninput="myFunction()"></textarea>
+		<textarea  rows="8" id="tekstblok" cols="140" name="comment" oninput="myFunction()"></textarea>
 		<p>Voorbeeld:</p>
-		<div style="overflow:auto; width: 96%; min-height: 50px; max-height: 300px; border-style: solid; border-width: 1px; margin: 20px; padding: 0px;" id="tekst" th:text="${tekst}"> </div>
+		<div style="overflow:auto; width: 96%; min-height: 50px; max-height: 300px; border-style: solid; border-width: 1px; margin: 20px; padding: 0px;" id="tekst"> </div>
 	</div>
 	<script>
 		function myFunction() {
-			let text1 = document.getElementById("username").value;
-			let text2 = document.getElementById("name").value;
-			let text3 = document.getElementById("tekstblok").value;
+			let textfreak = document.getElementById("freak").value;
+			let textfreaklesgever = document.getElementById("freaklesgever").value;
+			let textfreaktobe = document.getElementById("freaktobe").value;
+			let textfreaktobelesgever = document.getElementById("freaktobelesgever").value;
+			let textinfo = document.getElementById("tekstblok").value;
 		    document.getElementById("tekst").innerHTML = "Beste lid,<br><br><br><h3>Planning voor woensdag, 05 - december - 2018</h3>" + "<b>Freaks: </b><br>" + 
-		    text1 + "<br><br><br>" + "<b>Freaks to be: </b><br>" + 
-		    text2 + "<br><br><br>" + "<b>Info: </b><br>" + 
-		    text3 + "<br><br><br><p align='right'>Computerclub Format C<br>Kring Kristus Koning<br>Rerum Novarumplein<br>Gent</p><p>&nbsp;</p>" +
+		    textfreak + " - " + textfreaklesgever + "<br><br><br>" + "<b>Freaks to be: </b><br>" + 
+		    textfreaktobe + " - " + textfreaktobelesgever + "<br><br><br>" + "<b>Info: </b><br>" + 
+		    textinfo + "<br><br><br><p align='right'>Computerclub Format C<br>Kring Kristus Koning<br>Rerum Novarumplein<br>Gent</p><p>&nbsp;</p>" +
 		    "<p>Afmelden voor deze agenda? Klik dan op de volgende link&nbsp;&nbsp;" +
 		    "<a href='mailto:cfc.schatbewaarder@cformatc.be?subject=Computerclub FORMAT C afmelden agenda'>Afmelden</a>" +
 		    "<br>maandag - 03/december/2018 - 19:49:15</font></p>";
