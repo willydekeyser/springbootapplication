@@ -27,6 +27,10 @@ function mail_form() {
     document.getElementById("tekst").innerHTML = emailtext;
 };
 
+function maaktext() {
+	
+};
+
 function verzenddatum() {
 	let date = new Date();
 	return dagvandeweek(date.getDay()) + ", " + ((date.getDate() < 10) ? "0" + date.getDate() : date.getDate()) + "/" + maandvanhetjaar(date.getMonth()) +
