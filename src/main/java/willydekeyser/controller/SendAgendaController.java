@@ -1,5 +1,6 @@
 package willydekeyser.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,22 +9,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import willydekeyser.model.Agenda;
+
 @Controller
 @RequestMapping("agenda")
 public class SendAgendaController {
 	
-	private String tekst = "";
+	@Autowired
+	private Agenda agenda = new Agenda();
 
 	@GetMapping("/agenda")
 	public String agenda(Model model) {
-		model.addAttribute("tekst", tekst);
+		model.addAttribute("agenda", agenda);
 		return "agenda/agenda :: agenda_form";
 	}
 	
 	@RequestMapping(value="/post", method=RequestMethod.POST)
 	public @ResponseBody String post(@RequestBody String tekst) {
-		System.out.println("Tekst: " + tekst);
-		this.tekst = tekst;
 		return "OK";
 	}
 	
