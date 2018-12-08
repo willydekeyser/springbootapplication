@@ -3,35 +3,48 @@
 <head></head>
 <body>
 <div  th:fragment="agenda_form">
-	<h2>Agenda</h2>
-	<div style="width: 50%; margin: 2%; padding: 2%;">
-		<form method="post" th:object="${agenda}" id="agendaVersturenForm">
-		<div class="form-group">
-			<p>Freaks to Be</p>
-			<input size="50"  id="freaktobe" type="text" name="freaktobe" oninput="mail_form()"/>
-			<input size="50"  id="freaktobelesgever" type="text" name="freaktobe" oninput="mail_form()"/>
+	<h2>Agenda versturen:</h2>
+	<div style="height: 95%; width: 100%; margin: 0px; padding: 15px; display: flex; flex-wrap: nowrap;border: 0px solid #666;">
+		<div id="agenda_hulp_venster" style="flex-grow: 1;  display: block;"></div>
+		<div style="flex-grow: 2;border: 0px solid #666;">
+			<form name="Agenda" method="post" th:object="${Agenda}" id="agendaVersturenForm">
+				<div>
+					<p>Freaks to Be:</p>
+					<input size="50"  id="freaktobe" type="text" name="freaktobe" oninput="mail_form()" required style="border: 1px solid #666; margin: 10px;"/>
+					<input size="50"  id="freaktobelesgever" type="text" name="freaktobelesgever" oninput="mail_form()" required style="border: 1px solid #666; margin: 10px;"/>
+				</div>
+				<div>
+					<p>Freaks:</p>
+					<input size="50" id="freak" type="text" name="freak" oninput="mail_form()" style="border: 1px solid #666; margin: 10px;"/>
+					<input size="50" id="freaklesgever" type="text" name="freaklesgever" oninput="mail_form()" style="border: 1px solid #666; margin: 10px;"/>
+				</div>
+				<div>
+					<p>Info:</p>
+					<textarea  rows="10" id="info" cols="105" name="info" oninput="mail_form()" style="border: 1px solid #666; margin: 10px;"></textarea>
+				</div>
+				<div>
+					<button type="submit" id="verzenden" class="btn btn-primary">Versturen</button>
+					<button type="button" id="agenda_voorbeeld_button" class="btn btn-primary">Open Voorbeeld</button>
+					<input id="datum_vergadering" name="datum_vergadering" type="hidden" value=""/>
+					<input id="datum_verzenden" name="datum_verzenden" type="hidden" value=""/>
+				</div>
+			</form>
+			<div id="agenda_progress_bar" style="display: none; margin: 30px; padding: 20px;">
+				<progress id="agenda_progress_bar_progressbar" max="100" value="0" style="width: 500px;height:25px"></progress>
+				<p id="agenda_progress_bar_text">Geen e-mail berichten verzonden.</p>
+			</div>
 		</div>
-		<div class="form-group">
-			<p>Freaks:</p>
-			<input size="50" id="freak" type="text" name="freak" oninput="mail_form()"/>
-			<input size="50" id="freaklesgever" type="text" name="freak" oninput="mail_form()"/>
+		<div id="agenda_voorbeeld_venster" style="margin: 2px; padding: 2px;border: 0px solid #666; flex-grow: 3; display: none;">
+			<h3>Voorbeeld:</h3>
+			<div style="overflow:auto; width: 100%; min-height: 500px; max-height: 700px; border: 1px solid #222; margin: 0px; padding: 10px;" id="tekst"> </div>
 		</div>
-		<div class="form-group">
-			<p>Info:</p>
-			<textarea  rows="5" id="tekstblok" cols="140" name="comment" oninput="mail_form()"></textarea>
-		</div>
-		<div class="modal-footer">
-			<button type="submit" class="btn btn-primary">Versturen</button>
-			<button type="button" class="btn btn-default" data-dismiss="modal">Sluiten</button>
-		</div>
-		</form>
-	</div>
-	<div style="width: 80%; margin: 2%; padding: 2%;">
-		<p>Voorbeeld:</p>
-		<div style="overflow:auto; width: 100%; min-height: 50px; max-height: 200px; border-style: solid; border-width: 1px; margin: 20px; padding: 0px;" id="tekst"> </div>
 	</div>
 	<script>
-		mail_form();
+		$(document).ready(function () {
+			maaktext();
+			$('#agendaVersturenForm').one('submit', listener_agenda_submit);
+			document.getElementById('agenda_voorbeeld_button').addEventListener('click', agenda_voorbeeld_onclick);
+		});	
 	</script>
 </div>
 </body>

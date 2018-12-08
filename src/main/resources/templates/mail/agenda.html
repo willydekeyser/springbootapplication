@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-<head th:replace="fragments/header :: header-css"></head>
+<head></head>
 <body>
 	<table style="border: 0px;">
 		<tr>
@@ -12,9 +12,66 @@
 			<td>&nbsp;</td>
 		</tr>
 	</table>
-	
-	<h1 th:text="'Test agenda!'"> </h1>
 	<p th:text="'Beste ' + ${naam} + ','"> </p>
-	<p th:text="${teller}"> </p>
+	<blockquote><h3 th:text="${titel}"></h3>
+	<table style="border: 0;">
+		<tr th:if="${freaks != ''}">
+			<td><b>Freaks:</b></td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr th:if="${freaks != ''}">
+			<td>&nbsp;</td>
+			<td><p th:utext="${freaks}"></p></td>
+			<td><p th:utext="${freakslesgever}"></p></td>
+		</tr>
+		<tr th:if="${freaks != ''}">
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td><b><span th:text="${freaks == '' ? 'Freaks & Freaks to be:' : 'Freaks to be:'}"></span></b></td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td><p th:utext="${freakstobe}"></p></td>
+			<td><p th:utext="${freakstobelesgever}"></p></td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr th:if="${info != ''}">
+			<td><b>Info:</b></td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr th:if="${info != ''}">
+			<td>&nbsp;</td>
+			<td colspan='2'>
+				<p th:utext="${info}"></p>
+			</td>
+		</tr>
+	</table>
+	
+	</blockquote>
+		
+	<p>&nbsp;</p>
+	<font size='2'>
+	<p align='right'>Computerclub Format C<br>
+		Kring Kristus Koning<br>
+		Rerum Novarumplein<br>
+		Gent</p>
+	<p>&nbsp;</p>
+	
+	<p>Afmelden voor deze agenda? Klik dan op de volgende link&nbsp;&nbsp;<a href='mailto:cfc.schatbewaarder@cformatc.be?subject=Computerclub FORMAT C afmelden agenda'>Afmelden</a><br>
+		<span th:text="${datum_verzenden}"></span></p>
+	</font>
+	
+	
 </body>
 </html>

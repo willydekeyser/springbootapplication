@@ -241,6 +241,7 @@ public class LedenController {
 	
 	@PostMapping("/save_newLid")
 	public @ResponseBody Leden save_newLid(@Validated  Leden lid) {
+		System.out.println("New lid: " + lid);
 		this.lid = ledenservice.addLeden(lid);
 		return this.lid;
 	}

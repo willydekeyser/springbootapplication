@@ -21,6 +21,10 @@ function menu_height(height) {
 	document.getElementsByClassName('menu_main')[0].style.flexBasis = 100 - height + 'rem';
 }
 
+function menu_main_width(width) {
+	document.getElementsByClassName('grid_container')[0].style.gridTemplateColumns = width + 'px auto';
+}
+
 /*
  * Fetch functions.
  *
@@ -108,6 +112,22 @@ async function fetch_JSON(url) {
 	};
 	let data = await response.json();
 	console.log('Fetch JSON data');
+	return data;
+};
+
+async function fetch_TEXT(url) {
+	let response = await fetch(url, {
+		headers: {
+			"Test_Header" : "Test4"
+		}
+	});
+	if (!response.ok || !response.status == 200 || response.redirected) {
+		console.log('error: ' + response.status + ' - ' + 'Redirected: ' + response.redirected);
+		window.open('/', '_self');
+		throw Error(response.status);
+	};
+	let data = await response.text();
+	console.log('Fetch TEXT data');
 	return data;
 }
 

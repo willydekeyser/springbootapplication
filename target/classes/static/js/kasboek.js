@@ -25,6 +25,7 @@ async function kasboek_start() {
 	console.log('Menu kasboek onclick');
 	reset_grid();
 	menu_height(3);
+	menu_main_width(300);
 	await Refrech_HTML('/kasboek/', '.menu_main');
 	kasboek_main_laden();
 	kasboek_menu_listener();

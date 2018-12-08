@@ -14,6 +14,7 @@ function start_main() {
 		event.preventDefault();
 	});
 	section_height(80);
+	menu_main_width(300);
 	let promises = [Refrech_HTML('/start_menu_logo', '.header_logo'), 
 						Refrech_HTML('/start_menu_menu', '.header_menu'), 
 						Refrech_HTML('/start_main', '.main_section_A')];

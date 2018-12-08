@@ -19,6 +19,7 @@ async function leden_start() {
 	console.log('Menu leden onclick');
 	reset_grid();
 	menu_height(3);
+	menu_main_width(300);
 	selectedSoortId = 1;
 	selectedLidId = 0;
 	await Promise.all([
