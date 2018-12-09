@@ -37,7 +37,6 @@ function mail_form() {
 };
 
 function listener_agenda_submit(event) {
-	//event.preventDefault();
 	document.getElementById('verzenden').style.display = 'none';
 	document.getElementById('agenda_voorbeeld_venster').style.display = 'none';
 	document.getElementById('agenda_voorbeeld_button').style.display = 'none';
@@ -53,7 +52,6 @@ function listener_agenda_submit(event) {
 	.catch((error) => {
 		console.log('FOUT: ' + error);
 	});
-	//let response_agenda = fetch_TEXT('mail/index');
 	agenda_progress_bar_teller_id = setInterval(agenda_progress_bar,1000);
 	return false;
 };

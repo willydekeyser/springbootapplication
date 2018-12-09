@@ -34,7 +34,7 @@ async function Refrech_HTML(url, div) {
 	console.log('Refrech HTML: ' + url);
 	let response = await fetch(url, {
 		headers: {
-			"Test_Header" : "Test1"
+			"Header" : "Test"
 		}
 	});
 	if (!response.ok || !response.status == 200 || response.redirected) {
@@ -52,7 +52,7 @@ async function Refrech_HTML(url, div) {
 async function existRecord(url) {
 	let response = await fetch(url, {
 		headers: {
-			"Test_Header" : "Test2"
+			"Header" : "Test"
 		}
 	});
 	if (!response.ok || !response.status == 200 || response.redirected) {
@@ -67,7 +67,7 @@ async function load_HTML(url) {
 	console.log('Load HTML: ' + url);
 	let response = await fetch(url, {
 		headers: {
-			"Test_Header" : "Test3"
+			"Header" : "Test"
 		}
 	});
 	if (!response.ok || !response.status == 200 || response.redirected) {
@@ -83,7 +83,7 @@ async function Load_JSON(url, div) {
 	console.log('Load JSON: ' + url);
 	let response = await fetch(url, {
 		headers: {
-			"Test_Header" : "Test4"
+			"Header" : "Test"
 		}
 	});
 	if (!response.ok || !response.status == 200 || response.redirected) {
@@ -102,7 +102,7 @@ async function Load_JSON(url, div) {
 async function fetch_JSON(url) {
 	let response = await fetch(url, {
 		headers: {
-			"Test_Header" : "Test4"
+			"Header" : "Test"
 		}
 	});
 	if (!response.ok || !response.status == 200 || response.redirected) {
@@ -118,7 +118,7 @@ async function fetch_JSON(url) {
 async function fetch_TEXT(url) {
 	let response = await fetch(url, {
 		headers: {
-			"Test_Header" : "Test4"
+			"Header" : "Test"
 		}
 	});
 	if (!response.ok || !response.status == 200 || response.redirected) {
@@ -138,6 +138,7 @@ async function post_Form(url, form) {
 		body: form.serialize(),
 		headers: {
 	        "Content-Type": "application/x-www-form-urlencoded",
+	        "Header" : "Test"
 	    },
 	});
 	if (!response.ok || response.error) {

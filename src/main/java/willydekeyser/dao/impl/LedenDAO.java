@@ -27,23 +27,23 @@ import willydekeyser.model.Leden;
 public class LedenDAO implements ILedenDAO {
 
 	private final String sql_getAllLeden = "SELECT ledenlijst.* FROM ledenlijst ORDER BY ledenlijst.Id" ;
-	private final String sql_getAllIedereenlijst = "SELECT ledenlijst.Id, ledenlijst.Voornaam, ledenlijst.Familienaam "
+	private final String sql_getAllIedereenlijst = "SELECT ledenlijst.Id, ledenlijst.Voornaam, ledenlijst.Familienaam, ledenlijst.Emailadres "
 			+ "FROM ledenlijst "
 			+ "WHERE ledenlijst.SoortlidId = 1 OR ledenlijst.SoortlidId = 2 OR ledenlijst.SoortlidId = 3 OR ledenlijst.SoortlidId = 4 "
 			+ "ORDER BY ledenlijst.Familienaam" ;
-	private final String sql_getAllLedenlijst = "SELECT ledenlijst.Id, ledenlijst.Voornaam, ledenlijst.Familienaam "
+	private final String sql_getAllLedenlijst = "SELECT ledenlijst.Id, ledenlijst.Voornaam, ledenlijst.Familienaam, ledenlijst.Emailadres "
 			+ "FROM ledenlijst "
 			+ "WHERE ledenlijst.SoortlidId = 1 OR ledenlijst.SoortlidId = 2 OR ledenlijst.SoortlidId = 3 "
 			+ "ORDER BY ledenlijst.Familienaam, ledenlijst.Voornaam" ;
-	private final String sql_getAllBestuursledenlijst = "SELECT ledenlijst.Id, ledenlijst.Voornaam, ledenlijst.Familienaam "
+	private final String sql_getAllBestuursledenlijst = "SELECT ledenlijst.Id, ledenlijst.Voornaam, ledenlijst.Familienaam, ledenlijst.Emailadres "
 			+ "FROM ledenlijst "
 			+ "WHERE ledenlijst.SoortlidId = 3 "
 			+ "ORDER BY ledenlijst.Familienaam" ;
-	private final String sql_getAllWerkendeledenlijst = "SELECT ledenlijst.Id, ledenlijst.Voornaam, ledenlijst.Familienaam "
+	private final String sql_getAllWerkendeledenlijst = "SELECT ledenlijst.Id, ledenlijst.Voornaam, ledenlijst.Familienaam, ledenlijst.Emailadres "
 			+ "FROM ledenlijst "
 			+ "WHERE ledenlijst.SoortlidId = 2 "
 			+ "ORDER BY ledenlijst.Familienaam" ;
-	private final String sql_getAllGeenledenlijst = "SELECT ledenlijst.Id, ledenlijst.Voornaam, ledenlijst.Familienaam "
+	private final String sql_getAllGeenledenlijst = "SELECT ledenlijst.Id, ledenlijst.Voornaam, ledenlijst.Familienaam, ledenlijst.Emailadres "
 			+ "FROM ledenlijst "
 			+ "WHERE ledenlijst.SoortlidId = 4 "
 			+ "ORDER BY ledenlijst.Familienaam" ;

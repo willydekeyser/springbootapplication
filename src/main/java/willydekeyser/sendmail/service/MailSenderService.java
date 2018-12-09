@@ -75,16 +75,10 @@ public class MailSenderService {
         maxMailTeller = ledenlijst.size();
         
         Context context = new Context();
-        Integer i = 0;
+        Integer index = 0;
         for(Leden leden : ledenlijst ) {
-        	i = i + 1;
-    		System.out.println("Sleeping now... " + Thread.currentThread().getName());
-    		
-    		for(int j=1; j<10; j++) {
-    			Thread.sleep(1000);
-    		} 
-    		
-            System.out.println("Sending email... " + leden.getVoornaam() + " " + leden.getFamilienaam());
+        	
+            System.out.println("Zend email... " + leden.getVoornaam() + " " + leden.getFamilienaam() + " " + leden.getEmailadres());
         	
         	context.setVariable("naam", leden.getVoornaam());
         	context.setVariable("titel", "Planning: " + mail.getDatum_vergadering());
@@ -95,13 +89,18 @@ public class MailSenderService {
         	context.setVariable("info", mail.getInfo());
         	context.setVariable("datum_verzenden", mail.getDatum_verzenden());
             String html = templateEngine.process("mail/agenda", context);
-        	setMailTeller(i);
+        	setMailTeller(index++);
 	        helper.setTo(mail.getTo());
-	        helper.setSubject(mail.getSubject() + " " + i);
+	        helper.setSubject(mail.getSubject());
 	        helper.setText(html, true);
 	        mailSender.send(message);
-	        System.out.println("Send E-mail: " + i);
+	        System.out.println("E-mail verzonden: " + index);
 	        
+	        System.out.println("Sleeping now... " + Thread.currentThread().getName());
+    		for(int j=1; j<30; j++) {
+    			Thread.sleep(1000);
+    		} 
+
         }
         setMailTeller(10000);
         

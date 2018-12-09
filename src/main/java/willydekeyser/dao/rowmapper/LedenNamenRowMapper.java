@@ -16,6 +16,7 @@ public class LedenNamenRowMapper implements RowMapper<Leden>{
 		leden.setId(rs.getInt("Id"));
 		leden.setVoornaam(rs.getString("Voornaam"));
 		leden.setFamilienaam(rs.getString("Familienaam"));
+		leden.setEmailadres(rs.getString("Emailadres"));
 		return leden;
 	}
 
