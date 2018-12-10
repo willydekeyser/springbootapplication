@@ -53,6 +53,12 @@ public class LoggingAspect {
 		//System.err.println("Aspect run ALL: " + joitPoint.getSignature().getDeclaringTypeName() + " - " + joitPoint.getSignature().getName());
 		System.err.println("REQUEST: " + request.getUserPrincipal().getName() + " - " + request.getLocalName());
 		Enumeration<String> headerNames = request.getHeaderNames();
+		//String test_header = request.getHeader("header");
+		//System.out.println("HEADER voor: " + test_header);
+		//if (test_header.isEmpty() || test_header == null) {
+		//	System.out.println("HEADER: " + test_header);
+		//	throw new IllegalAccessError("Header ERROR");
+		//}
 		System.err.println("HEADERS: ---------------------------------------- ");
 		while (headerNames.hasMoreElements()) {
 			String headerName = headerNames.nextElement();

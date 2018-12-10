@@ -46,7 +46,7 @@ public class SecurityConfig {
 				.antMatchers("/restcontroller/**").hasRole(ROLE_ADMIN)
 				.antMatchers("/actuator/**").hasRole(ROLE_GOLD)
 				.and()
-				.formLogin().loginPage("/login").permitAll()
+				.formLogin().loginPage("/login").defaultSuccessUrl("/").permitAll()
 				//.successHandler(myAuthenticationSuccessHandler())
 				.and()
 				.logout().permitAll()

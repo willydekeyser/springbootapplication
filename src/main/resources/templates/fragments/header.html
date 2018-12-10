@@ -48,37 +48,37 @@
 		<a class="navigation_link" th:href="@{/}">Home</a>
 	</li>
 	<li class="navigation_item" th:if="${#authorization.expression('hasRole(''ROLE_USER'')')}">
-		<a id="leden" class="navigation_link" href="/">Leden</a>
+		<a id="header_leden" class="navigation_link" href="/">Leden</a>
 	</li>
 	<li class="navigation_item" th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">
-		<a id="leden_tabel" class="navigation_link" href="/">Leden tabel</a>
+		<a id="header_leden_tabel" class="navigation_link" href="/">Leden tabel</a>
 	</li>
 	<li class="navigation_item" th:if="${#authorization.expression('hasRole(''ROLE_USER'')')}">
-		<a id="lidgeld" class="navigation_link" href="/">Lidgeld</a>
+		<a id="header_lidgeld" class="navigation_link" href="/">Lidgeld</a>
 	</li>
 	<li class="navigation_item" th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">
-		<a id="lidgeld_tabel" class="navigation_link" href="/">Lidgeld tabel</a>
+		<a id="header_lidgeld_tabel" class="navigation_link" href="/">Lidgeld tabel</a>
 	</li>
 	<li class="navigation_item" th:if="${#authorization.expression('hasRole(''ROLE_USER'')')}">
-		<a id="kasboek" class="navigation_link" href="/">Kasboek</a>
+		<a id="header_kasboek" class="navigation_link" href="/">Kasboek</a>
 	</li>
 	<li class="navigation_item" th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">
-		<a id="kasboek_tabel" class="navigation_link" href="/">Kasboek tabel</a>
+		<a id="header_kasboek_tabel" class="navigation_link" href="/">Kasboek tabel</a>
 	</li>
 	<li class="navigation_item" th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">
-		<a id="soortenleden" class="navigation_link" href="/">Soorten leden</a>
+		<a id="header_soortenleden" class="navigation_link" href="/">Soorten leden</a>
 	</li>
 	<li class="navigation_item" th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">
-		<a id="rubriek" class="navigation_link" href="/">Rubriek</a>
+		<a id="header_rubriek" class="navigation_link" href="/">Rubriek</a>
 	</li>
 	<li class="navigation_item" th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">
-		<a id="agenda" class="navigation_link" href="/">Agenda</a>
+		<a id="header_agenda" class="navigation_link" href="/">Agenda</a>
 	</li>
 	<li class="navigation_item" th:if="${#authorization.expression('hasRole(''ROLE_GOLD'')')}">
-		<a id="restcontroller" class="navigation_link" href="/">Rest Controller</a>
+		<a id="header_restcontroller" class="navigation_link" href="/">Rest Controller</a>
 	</li>
-	<li class="navigation_item" th:if="${#authorization.expression('!isAuthenticated()')}"><a
-		class="navigation_link" onclick="return start_login()" href="/">Login</a>
+	<li class="navigation_item" th:if="${#authorization.expression('!isAuthenticated()')}">
+		<a class="navigation_link" onclick="return start_login()" href="/">Login</a>
 	</li>
 	<li class="navigation_item" th:if="${#authorization.expression('hasRole(''ROLE_USER'')')}">
 		<a class="navigation_link" onclick="return start_logout()" href="/">Log out</a>

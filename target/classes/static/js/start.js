@@ -8,7 +8,7 @@
 function start_main() {
 	console.log("Start main");
 	//initSessionMonitor();
-	$('#div_script').empty();
+	document.getElementById('div_script').innerHTML = '';
 	$(document).on('contextmenu', (event) => {
 		console.log("Context menu is uitgeschakeld");
 		event.preventDefault();
@@ -26,7 +26,8 @@ function start_main() {
 };
 
 function start_menu() {
-	$('#header #leden').on('click', () => {
+	document.getElementById('header_leden').addEventListener('click', (event) => {
+		event.preventDefault();
 		leden_start()
 		.then(() => {
 			console.log('Leden geladen');
@@ -34,9 +35,9 @@ function start_menu() {
 		.catch((error) => {
 			console.error('Error in leden laden: ' + error);
 		});
-		return false;
 	});
-	$('#header #leden_tabel').on('click', () => {
+	document.getElementById('header_leden_tabel').addEventListener('click', (event) => {
+		event.preventDefault();
 		leden_tabel_start()
 		.then(() => {
 			console.log('Leden_tabel geladen');
@@ -44,9 +45,9 @@ function start_menu() {
 		.catch((error) => {
 			console.error('Error in leden_tabel laden: ' + error);
 		});
-		return false;
 	});
-	$('#header #lidgeld').on('click', () => {
+	document.getElementById('header_lidgeld').addEventListener('click', (event) => {
+		event.preventDefault();
 		max_lidgeld_start()
 		.then(() => {
 			console.log('Max_Lidgeld geladen');
@@ -54,9 +55,9 @@ function start_menu() {
 		.catch((error) => {
 			console.error('Error in leden_tabel laden: ' + error);
 		});
-		return false;
 	});
-	$('#header #lidgeld_tabel').on('click', () => {
+	document.getElementById('header_lidgeld_tabel').addEventListener('click', (event) => {
+		event.preventDefault();
 		max_lidgeld_start()
 		.then(() => {
 			console.log('Lidgeld_tabel geladen');
@@ -64,9 +65,9 @@ function start_menu() {
 		.catch((error) => {
 			console.error('Error in leden_tabel laden: ' + error);
 		});
-		return false;
 	});
-	$('#header #kasboek').on('click', () => {
+	document.getElementById('header_kasboek').addEventListener('click', (event) => {
+		event.preventDefault();
 		kasboek_start()
 		.then(() => {
 			console.log('Kasboek geladen');
@@ -74,9 +75,9 @@ function start_menu() {
 		.catch((error) => {
 			console.error('Error in kasboek laden: ' + error);
 		});
-		return false;
 	});
-	$('#header #kasboek_tabel').on('click', () => {
+	document.getElementById('header_kasboek_tabel').addEventListener('click', (event) => {
+		event.preventDefault();
 		max_lidgeld_start()
 		.then(() => {
 			console.log('Kasboek_tabel geladen');
@@ -84,9 +85,9 @@ function start_menu() {
 		.catch((error) => {
 			console.error('Error in kasboek_tabel laden: ' + error);
 		});
-		return false;
 	});
-	$('#header #agenda').on('click', () => {
+	document.getElementById('header_agenda').addEventListener('click', (event) => {
+		event.preventDefault();
 		agenda_start()
 		.then(() => {
 			console.log('agenda geladen');
@@ -94,9 +95,9 @@ function start_menu() {
 		.catch((error) => {
 			console.error('Error in agenda laden: ' + error);
 		});
-		return false;
 	});
-	$('#header #soortenleden').on('click', () => {
+	document.getElementById('header_soortenleden').addEventListener('click', (event) => {
+		event.preventDefault();
 		soortenleden_start()
 		.then(() => {
 			console.log('Soortenleden geladen');
@@ -104,9 +105,9 @@ function start_menu() {
 		.catch((error) => {
 			console.error('Error in soortenleden laden: ' + error);
 		});
-		return false;
 	});
-	$('#header #rubriek').on('click', () => {
+	document.getElementById('header_rubriek').addEventListener('click', (event) => {
+		event.preventDefault();
 		rubriek_start()
 		.then(() => {
 			console.log('Rubriek_tabel geladen');
@@ -114,9 +115,9 @@ function start_menu() {
 		.catch((error) => {
 			console.error('Error in rubriek laden: ' + error);
 		});
-		return false;
 	});
-	$('#header #restcontroller').on('click', () => {
+	document.getElementById('header_restcontroller').addEventListener('click', (event) => {
+		event.preventDefault();
 		restcontroller_start()
 		.then(() => {
 			console.log('Restcontroller geladen');
@@ -124,7 +125,6 @@ function start_menu() {
 		.catch((error) => {
 			console.error('Error in restcontroller laden: ' + error);
 		});
-		return false;
 	});
 	console.log('Menu header onclick geladen');
 };
