@@ -45,6 +45,7 @@ public class SecurityConfig {
 				.antMatchers("/soortenleden/**").hasRole(ROLE_USER)
 				.antMatchers("/restcontroller/**").hasRole(ROLE_ADMIN)
 				.antMatchers("/actuator/**").hasRole(ROLE_GOLD)
+				.antMatchers("/agenda/**").hasRole(ROLE_GOLD)
 				.and()
 				.formLogin().loginPage("/login").defaultSuccessUrl("/").permitAll()
 				//.successHandler(myAuthenticationSuccessHandler())

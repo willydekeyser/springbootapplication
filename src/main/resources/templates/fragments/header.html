@@ -78,10 +78,10 @@
 		<a id="header_restcontroller" class="navigation_link" href="/">Rest Controller</a>
 	</li>
 	<li class="navigation_item" th:if="${#authorization.expression('!isAuthenticated()')}">
-		<a class="navigation_link" onclick="return start_login()" href="/">Login</a>
+		<a id="header_login" class="navigation_link" onclick="return start_login()" href="/">Login</a>
 	</li>
 	<li class="navigation_item" th:if="${#authorization.expression('hasRole(''ROLE_USER'')')}">
-		<a class="navigation_link" onclick="return start_logout()" href="/">Log out</a>
+		<a id = "header_logout" class="navigation_link" onclick="return start_logout()" href="/">Log out</a>
 	</li>
 </ul>
 

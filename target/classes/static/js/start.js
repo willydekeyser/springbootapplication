@@ -131,6 +131,9 @@ function start_menu() {
 
 function start_login() {
 	console.log("Login laden");
+	reset_grid();
+	menu_height(3);
+	menu_main_width(300);
 	Refrech_HTML('/login_main','.main_section_A');
 	return false;
 	
@@ -138,6 +141,9 @@ function start_login() {
 
 function start_logout() {
 	console.log("Logout laden");
+	reset_grid();
+	menu_height(3);
+	menu_main_width(300);
 	Refrech_HTML('/login_main?logout','.main_section_A');
 	return false;
 	
