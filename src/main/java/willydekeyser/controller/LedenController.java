@@ -10,9 +10,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
@@ -184,7 +186,7 @@ public class LedenController {
 	 * 
 	 */
 	
-    @GetMapping("/editLidgeld")
+    @GetMapping(path="/editLidgeld")
     public String editlidgeld() {
         return "lidgeld/fragmenten/lidgeldmodal :: editLidgeldModal";  
     }
@@ -196,7 +198,7 @@ public class LedenController {
  *
  * 
  */
-	@GetMapping("/restcontroller/ledennamenlijstbyid/{soort}")
+	@GetMapping(path="/restcontroller/ledennamenlijstbyid/{soort}")
 	public @ResponseBody String restConrollerledenNamenlijstById(@PathVariable Integer soort) {
 		leden = ledenservice.getAllLedenNamenlijst(soort);
 		String items = "";
@@ -208,18 +210,18 @@ public class LedenController {
 		return response;
 	}
 	
-	@GetMapping("/restcontroller/ledenbyid/{id}")
+	@GetMapping(path="/restcontroller/ledenbyid/{id}")
 	public @ResponseBody Leden restConrollerledenById(@PathVariable Integer id) {
 		lid = ledenservice.getLedenById(id);
 		return lid;
 	}
 	
-	@GetMapping("/restcontroller/leden")
+	@GetMapping(path="/restcontroller/leden")
 	public @ResponseBody List<Leden> restConrollerLeden() {	
 		return ledenservice.getAllLeden();
 	}
 	
-	@GetMapping("/restcontroller/ledenlijst")
+	@GetMapping(path="/restcontroller/ledenlijst")
 	public @ResponseBody String restConrollerledenlijst() {	
 		List<Leden> lijst = ledenservice.getAllLeden();
 		String link = "<h1>Ledenlijst</h1>";
@@ -229,31 +231,31 @@ public class LedenController {
 		return link;
 	}
 	
-	@GetMapping("/restcontroller/soortenleden")
+	@GetMapping(path="/restcontroller/soortenleden")
 	public @ResponseBody List<Leden> ledenSoortenleden() {	
 		return ledenservice.getAllLedenSoortenleden(1);
 	}
 	
-	@GetMapping("/restcontroller/lidgeld")
+	@GetMapping(path="/restcontroller/lidgeld")
 	public @ResponseBody List<Leden> ledenLidgeld() {	
 		return ledenservice.getAllLedenLidgeld();
 	}
 	
-	@PostMapping("/save_newLid")
+	@PostMapping(path="/save_newLid")
 	public @ResponseBody Leden save_newLid(@Validated  Leden lid) {
 		System.out.println("New lid: " + lid);
 		this.lid = ledenservice.addLeden(lid);
 		return this.lid;
 	}
 	
-	@PostMapping("/save_updateLid")
+	@PutMapping(path="/save_updateLid")
 	public @ResponseBody Leden save_updateLid(@Validated  Leden lid, Boolean soort, Boolean naam) {
 		ledenservice.updateLeden(lid);
 		this.lid = ledenservice.getLedenById(lid.getId());
 		return this.lid;
 	}
 	
-	@PostMapping("/save_deleteLid")
+	@DeleteMapping(path="/save_deleteLid")
 	public @ResponseBody Integer save_deleteLid(@Validated  Integer id) {
 		return ledenservice.deleteLeden(id);
 	}

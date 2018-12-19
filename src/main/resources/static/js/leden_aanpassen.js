@@ -129,7 +129,7 @@ function listener_change_soortlid() {
 
 function listener_updateLid_submit() {
 	let form = $(this);
-	let data = post_Form('/leden/save_updateLid', form, change_soort, change_naam)
+	let data = put_Form('/leden/save_updateLid', form, change_soort, change_naam)
 	.then((data) => {
 		selectedLidId = data.id;
 		selectedSoortId = data.soortenleden.id;
@@ -204,7 +204,7 @@ function listener_deleteLid_focus() {
 
 function listener_deleteLid_submit() {
 	var form = $(this);
-	let data = post_Form('/leden/save_deleteLid', form)
+	let data = delete_Form('/leden/save_deleteLid', form)
 	.then((data) => {
 		selectedLidId = data;
 		$("#deleteLidModal").modal('toggle');

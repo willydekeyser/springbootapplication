@@ -3,6 +3,11 @@
  *
 */
 
+/*
+ * Setup GRID.
+ *
+*/
+
 function reset_grid() {
 	section_height(85);
 	document.getElementsByClassName('main_section_A')[0].innerHTML = ""; 
@@ -34,7 +39,7 @@ async function Refrech_HTML(url, div) {
 	console.log('Refrech HTML: ' + url);
 	let response = await fetch(url, {
 		headers: {
-			"Header" : "Test"
+			"Header" : "Willy De Keyser"
 		}
 	});
 	if (!response.ok || !response.status == 200 || response.redirected) {
@@ -52,7 +57,7 @@ async function Refrech_HTML(url, div) {
 async function existRecord(url) {
 	let response = await fetch(url, {
 		headers: {
-			"Header" : "Test"
+			"Header" : "Willy De Keyser"
 		}
 	});
 	if (!response.ok || !response.status == 200 || response.redirected) {
@@ -67,7 +72,7 @@ async function load_HTML(url) {
 	console.log('Load HTML: ' + url);
 	let response = await fetch(url, {
 		headers: {
-			"Header" : "Test"
+			"Header" : "Willy De Keyser"
 		}
 	});
 	if (!response.ok || !response.status == 200 || response.redirected) {
@@ -83,7 +88,7 @@ async function Load_JSON(url, div) {
 	console.log('Load JSON: ' + url);
 	let response = await fetch(url, {
 		headers: {
-			"Header" : "Test"
+			"Header" : "Willy De Keyser"
 		}
 	});
 	if (!response.ok || !response.status == 200 || response.redirected) {
@@ -102,7 +107,7 @@ async function Load_JSON(url, div) {
 async function fetch_JSON(url) {
 	let response = await fetch(url, {
 		headers: {
-			"Header" : "Test"
+			"Header" : "Willy De Keyser"
 		}
 	});
 	if (!response.ok || !response.status == 200 || response.redirected) {
@@ -118,7 +123,7 @@ async function fetch_JSON(url) {
 async function fetch_TEXT(url) {
 	let response = await fetch(url, {
 		headers: {
-			"Header" : "Test"
+			"Header" : "Willy De Keyser"
 		}
 	});
 	if (!response.ok || !response.status == 200 || response.redirected) {
@@ -138,7 +143,7 @@ async function post_Form(url, form) {
 		body: form.serialize(),
 		headers: {
 	        "Content-Type": "application/x-www-form-urlencoded",
-	        "Header" : "Test"
+	        "Header" : "Willy De Keyser"
 	    },
 	});
 	if (!response.ok || response.error) {
@@ -147,6 +152,45 @@ async function post_Form(url, form) {
 	}
 	return await response.json();
 };
+
+async function put_Form(url, form) {
+	console.log('Put Form: ' + url + ' - ' + form);
+	let response = await fetch(url, {
+		method: "PUT",
+		body: form.serialize(),
+		headers: {
+	        "Content-Type": "application/x-www-form-urlencoded",
+	        "Header" : "Willy De Keyser"
+	    },
+	});
+	if (!response.ok || response.error) {
+		window.open('/', '_self');
+		throw Error(response.status);
+	}
+	return await response.json();
+};
+
+async function delete_Form(url, form) {
+	console.log('Delete Form: ' + url + ' - ' + form);
+	let response = await fetch(url, {
+		method: "DELETE",
+		body: form.serialize(),
+		headers: {
+	        "Content-Type": "application/x-www-form-urlencoded",
+	        "Header" : "Willy De Keyser"
+	    },
+	});
+	if (!response.ok || response.error) {
+		window.open('/', '_self');
+		throw Error(response.status);
+	}
+	return await response.json();
+};
+
+/*
+ * Help functions.
+ *
+*/
 
 function delay(time) {
 	return new Promise(resolve => {
