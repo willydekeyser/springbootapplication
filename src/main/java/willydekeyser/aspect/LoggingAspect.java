@@ -47,7 +47,7 @@ public class LoggingAspect {
 		//System.out.println("Aspect run MODEL: " + joitPoint.getSignature().getDeclaringTypeName() + " - " + joitPoint.getSignature().getName());
 	}
 	
-	@Before("execution(* willydekeyser.controller.LedenController.*(..))")
+	//@Before("execution(* willydekeyser.controller.LedenController.*(..))")
 	public void AdviceAll(JoinPoint joitPoint) {
 		HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
 		//System.err.println("Aspect run ALL: " + joitPoint.getSignature().getDeclaringTypeName() + " - " + joitPoint.getSignature().getName());

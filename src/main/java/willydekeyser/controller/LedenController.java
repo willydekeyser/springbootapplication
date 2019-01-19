@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -17,6 +19,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import willydekeyser.model.Leden;
@@ -200,6 +204,11 @@ public class LedenController {
  */
 	@GetMapping(path="/restcontroller/ledennamenlijstbyid/{soort}")
 	public @ResponseBody String restConrollerledenNamenlijstById(@PathVariable Integer soort) {
+		HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
+		System.out.println("HEADER 5: " + request.getHeader("header"));
+		if(!"Willy De Keyser".equals(request.getHeader("header"))){
+            return null;
+        }
 		leden = ledenservice.getAllLedenNamenlijst(soort);
 		String items = "";
 		for(Leden lid : leden) {
@@ -210,19 +219,36 @@ public class LedenController {
 		return response;
 	}
 	
+	@Secured("ROLE_GOLD")
 	@GetMapping(path="/restcontroller/ledenbyid/{id}")
 	public @ResponseBody Leden restConrollerledenById(@PathVariable Integer id) {
+		HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
+		System.out.println("HEADER 4: " + request.getHeader("header"));
+		if(!"Willy De Keyser".equals(request.getHeader("header"))){
+			System.out.println("HEADER FOUT: " + request.getHeader("header"));
+            return null;
+        }
 		lid = ledenservice.getLedenById(id);
 		return lid;
 	}
 	
 	@GetMapping(path="/restcontroller/leden")
 	public @ResponseBody List<Leden> restConrollerLeden() {	
+		HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
+		System.out.println("HEADER 3: " + request.getHeader("header"));
+		if(!"Willy De Keyser".equals(request.getHeader("header"))){
+            return null;
+        }
 		return ledenservice.getAllLeden();
 	}
 	
 	@GetMapping(path="/restcontroller/ledenlijst")
 	public @ResponseBody String restConrollerledenlijst() {	
+		HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
+		System.out.println("HEADER 2: " + request.getHeader("header"));
+		if(!"Willy De Keyser".equals(request.getHeader("header"))){
+            return null;
+        }
 		List<Leden> lijst = ledenservice.getAllLeden();
 		String link = "<h1>Ledenlijst</h1>";
 		for (Leden leden : lijst) {
@@ -233,6 +259,11 @@ public class LedenController {
 	
 	@GetMapping(path="/restcontroller/soortenleden")
 	public @ResponseBody List<Leden> ledenSoortenleden() {	
+		HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
+		System.out.println("HEADER 1: " + request.getHeader("header"));
+		if(!"Willy De Keyser".equals(request.getHeader("header"))){
+            return null;
+        }
 		return ledenservice.getAllLedenSoortenleden(1);
 	}
 	
