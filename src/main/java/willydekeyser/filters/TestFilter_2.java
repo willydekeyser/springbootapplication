@@ -8,25 +8,30 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.annotation.WebFilter;
+
+import org.springframework.core.annotation.Order;
+import org.springframework.stereotype.Component;
 
 /**
  * Servlet Filter implementation class TestFilter_2
  */
-//@Component
-//@WebFilter("/leden/*")
-//@Order(1)
+@Component
+@WebFilter("/leden/*")
+@Order(1)
 public class TestFilter_2 implements Filter {
 
     /**
      * Default constructor. 
      */
     public TestFilter_2() {
-    	
+    	System.out.println("Filter 2 - TestFilter_2()");
     }
 
 	/**
 	 * @see Filter#destroy()
 	 */
+    @Override
 	public void destroy() {
 		
 	}
@@ -34,8 +39,9 @@ public class TestFilter_2 implements Filter {
 	/**
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
 	 */
+    @Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		
+		System.out.println("Filter 2 - do filter ");
 		chain.doFilter(request, response);
 		
 	}
@@ -43,8 +49,9 @@ public class TestFilter_2 implements Filter {
 	/**
 	 * @see Filter#init(FilterConfig)
 	 */
+	@Override
 	public void init(FilterConfig fConfig) throws ServletException {
-		//System.out.println("Filter 2 - init");
+		System.out.println("Filter 2 - init");
 	}
 
 }

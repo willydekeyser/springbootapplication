@@ -107,5 +107,5 @@ function dagvandeweek(dagindex) {
 };
 
 function maandvanhetjaar(maandindex) {
-	return ["januari","ferbuari","maart","april","mei","juni","juli", "augustus","september","oktober","november","december"][maandindex];
+	return ["januari","februari","maart","april","mei","juni","juli", "augustus","september","oktober","november","december"][maandindex];
 }
