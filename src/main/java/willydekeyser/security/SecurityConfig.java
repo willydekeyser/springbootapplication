@@ -58,6 +58,8 @@ public class SecurityConfig {
 				.and()
 				.exceptionHandling().accessDeniedPage("/");
 
+			//httpSecurity.sessionManagement().invalidSessionUrl("/testen");
+			
 		}
 	}
 

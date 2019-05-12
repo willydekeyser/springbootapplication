@@ -39,6 +39,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Override
 	protected void configure(HttpSecurity httpSecurity) throws Exception {
+		System.out.println("Config: " + httpSecurity.toString());
 		httpSecurity.csrf().disable();
 		httpSecurity.authorizeRequests()
 			.antMatchers("/").permitAll()
@@ -49,7 +50,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.antMatchers("/soortenleden/**").hasRole(ROLE_USER)
 			.antMatchers("/restcontroller/**").hasRole(ROLE_GOLD)
 			.and()
-			.formLogin().loginPage("/login").defaultSuccessUrl("/testen", true).permitAll()
+			.formLogin().loginPage("/login").defaultSuccessUrl("/", true).permitAll()
 			.and()
 			.logout().permitAll()
 			.and()
@@ -59,9 +60,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.and()
 			.exceptionHandling().accessDeniedPage("/");
 
+		//httpSecurity.sessionManagement().invalidSessionUrl("/");
 	}
 	
-
 	@Bean
 	public BCryptPasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
