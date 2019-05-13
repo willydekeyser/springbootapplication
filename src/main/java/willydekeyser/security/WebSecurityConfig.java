@@ -50,7 +50,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.antMatchers("/soortenleden/**").hasRole(ROLE_USER)
 			.antMatchers("/restcontroller/**").hasRole(ROLE_GOLD)
 			.and()
-			.formLogin().loginPage("/login").defaultSuccessUrl("/", true).permitAll()
+			.formLogin().loginPage("/login").defaultSuccessUrl("/", false).permitAll()
 			.and()
 			.logout().permitAll()
 			.and()
