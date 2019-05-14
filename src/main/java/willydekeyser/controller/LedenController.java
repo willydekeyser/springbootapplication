@@ -219,7 +219,7 @@ public class LedenController {
 		return response;
 	}
 	
-	@Secured("ROLE_GOLD")
+	@Secured({ "ROLE_GOLD", "ROLE_ADMIN", "ROLE_USER" })
 	@GetMapping(path="/restcontroller/ledenbyid/{id}")
 	public @ResponseBody Leden restConrollerledenById(@PathVariable Integer id) {
 		HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();

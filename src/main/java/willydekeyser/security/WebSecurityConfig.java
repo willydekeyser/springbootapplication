@@ -39,7 +39,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Override
 	protected void configure(HttpSecurity httpSecurity) throws Exception {
-		System.out.println("Config: " + httpSecurity.toString());
+		System.out.println("Config: WebSecurityConfig" + httpSecurity.toString());
 		httpSecurity.csrf().disable();
 		httpSecurity.authorizeRequests()
 			.antMatchers("/").permitAll()
@@ -50,7 +50,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.antMatchers("/soortenleden/**").hasRole(ROLE_USER)
 			.antMatchers("/restcontroller/**").hasRole(ROLE_GOLD)
 			.and()
-			.formLogin().loginPage("/login").defaultSuccessUrl("/", false).permitAll()
+			.formLogin().loginPage("/login").defaultSuccessUrl("/", true).permitAll()
 			.and()
 			.logout().permitAll()
 			.and()

@@ -35,6 +35,7 @@ public class SecurityConfig {
 		
 		@Override
 		protected void configure(HttpSecurity httpSecurity) throws Exception {
+			System.out.println("Config: SecurityConfig " + httpSecurity.toString());
 			httpSecurity.csrf().disable();
 			httpSecurity.authorizeRequests()
 				.antMatchers("/").permitAll()
@@ -45,9 +46,9 @@ public class SecurityConfig {
 				.antMatchers("/soortenleden/**").hasRole(ROLE_USER)
 				.antMatchers("/restcontroller/**").hasRole(ROLE_ADMIN)
 				.antMatchers("/actuator/**").hasRole(ROLE_GOLD)
-				.antMatchers("/agenda/**").hasRole(ROLE_GOLD)
+				.antMatchers("/agenda/**").hasAnyRole(ROLE_GOLD, ROLE_ADMIN)
 				.and()
-				.formLogin().loginPage("/login").defaultSuccessUrl("/", false).permitAll()
+				.formLogin().loginPage("/login").defaultSuccessUrl("/", true).permitAll()
 				//.successHandler(myAuthenticationSuccessHandler())
 				.and()
 				.logout().permitAll()
