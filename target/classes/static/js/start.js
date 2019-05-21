@@ -25,7 +25,47 @@ function start_main() {
 	console.log("END main");
 };
 
+function time_out() {
+	var sessionExpiry = Math.abs(getCookie('sessionExpiry'));
+    var timeOffset = Math.abs(getCookie('serverTime'));
+    var localTime = (new Date()).getTime();
+    
+    var timeOut = (sessionExpiry - localTime) < 0 ? 0 : sessionExpiry - localTime;
+    
+    //console.log("Local time " + msToTime(localTime));
+    //console.log("Offset time " + msToTime(timeOffset));
+    //console.log("Session time " + msToTime(sessionExpiry));
+    //console.log("Time out: " + msToTime(timeOut));
+    document.getElementsByClassName('footer_section_A')[0].innerHTML = "Time out: " + msToTime(timeOut);
+}
+
+function getCookie(name)
+{
+    var name = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++)
+    {
+        var c = ca[i].trim();
+        if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+    }
+    return "";
+}
+
+function msToTime(duration) {
+    var milliseconds = parseInt((duration%1000))
+        , seconds = parseInt((duration/1000)%60)
+        , minutes = parseInt((duration/(1000*60))%60)
+        , hours = parseInt((duration/(1000*60*60))%24);
+
+    hours = (hours < 10) ? "0" + hours : hours;
+    minutes = (minutes < 10) ? "0" + minutes : minutes;
+    seconds = (seconds < 10) ? "0" + seconds : seconds;
+
+    return hours + ":" + minutes + ":" + seconds;
+}
+
 function start_menu() {
+	setInterval('time_out()', 1000);
 	document.getElementById('header_leden').addEventListener('click', (event) => {
 		event.preventDefault();
 		leden_start()
