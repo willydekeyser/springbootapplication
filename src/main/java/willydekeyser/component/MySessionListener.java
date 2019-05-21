@@ -7,17 +7,15 @@ import javax.servlet.http.HttpSession;
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
 
-import org.springframework.stereotype.Component;
-
-@Component
+//@Component
 public class MySessionListener implements HttpSessionListener {
 
 	@Override
 	public void sessionCreated(HttpSessionEvent event) {
 		System.out.println("==== Session is created ==== " + event.getSession().getId() + " - " + 
-	event.getSession().getMaxInactiveInterval() + " - " + 
+				event.getSession().getMaxInactiveInterval() + " - " + 
 				new Date(event.getSession().getCreationTime()) + " - " + 
-	new Time(event.getSession().getCreationTime()));
+				new Time(event.getSession().getCreationTime()));
 		
 		HttpSession session = event.getSession();
 	    System.out.println("session id: " + session.getId());
