@@ -5,6 +5,9 @@
  * 
  */
 
+var timeOutTimer;
+var timeOut = 0;
+
 function start_main() {
 	console.log("Start main");
 	//initSessionMonitor();
@@ -29,15 +32,51 @@ function time_out() {
 	var sessionExpiry = Math.abs(getCookie('sessionExpiry'));
     var timeOffset = Math.abs(getCookie('serverTime'));
     var localTime = (new Date()).getTime();
+    timeOut = 0;
     
-    var timeOut = (sessionExpiry - localTime) < 0 ? 0 : sessionExpiry - localTime;
+    if((sessionExpiry - localTime) <= 0){
+    	clearInterval(timeOutTimer);
+    } else {
+    	timeOut = sessionExpiry - localTime;
+    }  
     
-    //console.log("Local time " + msToTime(localTime));
-    //console.log("Offset time " + msToTime(timeOffset));
-    //console.log("Session time " + msToTime(sessionExpiry));
-    //console.log("Time out: " + msToTime(timeOut));
     document.getElementsByClassName('footer_section_A')[0].innerHTML = "Time out: " + msToTime(timeOut);
+    document.getElementById('timeOutTeller').innerHTML = msToTime(timeOut);
+    
+    if(timeOut < 30000 && timeOut > 29000 ) {
+    	setup_timeOutModal();
+    }
+    
+    if(timeOut < 1000 && timeOut > 10 ) {
+    	window.open("http://localhost:5000/logout", "_self");
+   	}
+    //console.log("Time out: " + timeOut);
 }
+
+function setup_timeOutModal() {
+	$('#timeOutModal').one('hidden.bs.modal', listener_timeOut_hidden);
+	$('#timeOutModal').modal('show');
+	$('#timeOutModalForm').one('submit', listener_timeOut_submit);
+};
+
+function listener_timeOut_hidden() {
+	if(timeOut < 5000){
+		window.open("http://localhost:5000/logout", "_self");
+	}
+};
+
+
+function listener_timeOut_submit() {
+	$("#timeOutModal").modal('toggle');
+	let data = fetch_TEXT('/timeout')
+	.then((data) => {
+		console.log('Time out: ' + data);
+	})
+	.catch((error) => {
+		console.log('FOUT: ' + error);
+	});
+	return false;
+};
 
 function getCookie(name)
 {
@@ -61,11 +100,12 @@ function msToTime(duration) {
     minutes = (minutes < 10) ? "0" + minutes : minutes;
     seconds = (seconds < 10) ? "0" + seconds : seconds;
 
-    return hours + ":" + minutes + ":" + seconds;
+    return minutes + ":" + seconds;
+    //return hours + ":" + minutes + ":" + seconds;
 }
 
 function start_menu() {
-	setInterval('time_out()', 1000);
+	tiemOutTimer = setInterval('time_out()', 1000);
 	document.getElementById('header_leden').addEventListener('click', (event) => {
 		event.preventDefault();
 		leden_start()
@@ -184,7 +224,14 @@ function start_logout() {
 	reset_grid();
 	menu_height(3);
 	menu_main_width(300);
-	Refrech_HTML('/login_main?logout','.main_section_A');
+	let data = fetch_TEXT('/logout')
+	.then((data) => {
+		console.log('Logout: ' + data);
+	})
+	.catch((error) => {
+		console.log('FOUT: ' + error);
+	});
+	//Refrech_HTML('/login_main?logout','.main_section_A');
 	return false;
 	
 };

@@ -53,7 +53,7 @@ public class SecurityConfig {
 				.and()
 				.logout().permitAll()
 				.and()
-				.logout().deleteCookies("JSESSIONID")
+				.logout().deleteCookies("JSESSIONID").logoutSuccessUrl("/")
 				.and()
 				.rememberMe().key("willydekeyser").tokenValiditySeconds(3600)
 				.and()

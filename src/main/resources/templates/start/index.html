@@ -20,6 +20,34 @@
 		<div class="footer_section_B">Computerclub FORMAT C:</div>
 	</footer>
 </div>
+
+<div id="timeOutModalHolder">
+	<div class="timeOutForm">
+		<Form method="post" id="timeOutModalForm">
+			<div class="modal fade" id="timeOutModal" role="dialog">
+				<div class="modal-dialog modal-lg">
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="modal-title" id="modal-titel">Computerclub Format C</h4>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
+						<div class="modal-body">
+							<div>
+								<h3>Uw sessie zal verlopen binnen:</h3>
+								<p><span id="timeOutTeller">2:00</span><span> seconden</span></p>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-primary">Verder werken!</button>
+							<button type="button" class="btn btn-default" data-dismiss="modal">Sessie sluiten</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</Form>
+	</div>
+</div>
 <div id="div_script">
 	<script>
 		$(document).ready(start_main());

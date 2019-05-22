@@ -54,7 +54,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.and()
 			.logout().permitAll()
 			.and()
-			.logout().deleteCookies("JSESSIONID")
+			.logout().deleteCookies("JSESSIONID").logoutSuccessUrl("/")
 			.and()
 			.rememberMe().key("willydekeyser").tokenValiditySeconds(60)
 			.and()

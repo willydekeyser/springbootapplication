@@ -48,6 +48,11 @@ public class StartController {
 		return "ERROR!";	
 	}
 	
+	@GetMapping("/timeout")
+	public @ResponseBody String timeOut() {
+		return "TIMEOUT!";	
+	}
+	
 	@GetMapping(value = "/start_main")
 	public ModelAndView stat_main() {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
