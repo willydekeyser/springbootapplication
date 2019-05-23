@@ -32,6 +32,12 @@ function time_out() {
 	var sessionExpiry = Math.abs(getCookie('sessionExpiry'));
     var timeOffset = Math.abs(getCookie('serverTime'));
     var localTime = (new Date()).getTime();
+    
+    //console.log("SessionExpiry: " + msToTime(sessionExpiry));
+    //console.log("TimeOffset: " + msToTime(timeOffset));
+    //console.log("LocalTime: " + msToTime(localTime));
+    //console.log("Time out: " + msToTime(timeOut));
+       
     timeOut = 0;
     
     if((sessionExpiry - localTime) <= 0){
@@ -47,7 +53,7 @@ function time_out() {
     	setup_timeOutModal();
     }
     
-    if(timeOut < 1000 && timeOut > 10 ) {
+    if(timeOut < 2000 && timeOut > 10 ) {
     	window.open("http://localhost:5000/logout", "_self");
    	}
     //console.log("Time out: " + timeOut);
@@ -60,7 +66,7 @@ function setup_timeOutModal() {
 };
 
 function listener_timeOut_hidden() {
-	if(timeOut < 5000){
+	if(timeOut < 28000){
 		window.open("http://localhost:5000/logout", "_self");
 	}
 };
@@ -105,7 +111,7 @@ function msToTime(duration) {
 }
 
 function start_menu() {
-	tiemOutTimer = setInterval('time_out()', 1000);
+	timeOutTimer = setInterval('time_out()', 1000);
 	document.getElementById('header_leden').addEventListener('click', (event) => {
 		event.preventDefault();
 		leden_start()
