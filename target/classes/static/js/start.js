@@ -66,13 +66,14 @@ function setup_timeOutModal() {
 };
 
 function listener_timeOut_hidden() {
-	if(timeOut < 28000){
+	if(timeOut < 30000){
 		window.open("http://localhost:5000/logout", "_self");
 	}
 };
 
 
 function listener_timeOut_submit() {
+	timeOut = 30000;
 	$("#timeOutModal").modal('toggle');
 	let data = fetch_TEXT('/timeout')
 	.then((data) => {
