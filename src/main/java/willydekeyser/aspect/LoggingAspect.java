@@ -5,7 +5,6 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
@@ -80,7 +79,7 @@ public class LoggingAspect {
 		}
 	}
 	
-	@Around("execution(* willydekeyser.controller.*.*(..)) && target(service)")
+	//@Around("execution(* willydekeyser.controller.*.*(..)) && target(service)")
 	public Object logServiceAccess(ProceedingJoinPoint joinPoint, Object service) throws Throwable {
         long startTime = System.currentTimeMillis();
         Object result = joinPoint.proceed();

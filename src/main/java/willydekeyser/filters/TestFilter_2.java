@@ -26,7 +26,7 @@ public class TestFilter_2 implements Filter {
      * Default constructor. 
      */
     public TestFilter_2() {
-    	System.out.println("Filter 2 - TestFilter_2");
+    	//System.out.println("Filter 2 - TestFilter_2");
     }
 
 	/**
@@ -34,7 +34,7 @@ public class TestFilter_2 implements Filter {
 	 */
     @Override
 	public void destroy() {
-    	System.out.println("Filter 2 - destroy");
+    	//System.out.println("Filter 2 - destroy");
 	}
 
 	/**
@@ -46,7 +46,7 @@ public class TestFilter_2 implements Filter {
 		HttpServletResponse httpResp = (HttpServletResponse) response;
         HttpServletRequest httpReq = (HttpServletRequest) request;
         
-        System.out.println("Filter 2 - dofilter IN: " + httpReq.getRequestURI());
+        //System.out.println("Filter 2 - dofilter IN: " + httpReq.getRequestURI());
         
         long currTime = System.currentTimeMillis();
         long expiryTime = currTime + httpReq.getSession().getMaxInactiveInterval() * 1000;
@@ -61,11 +61,11 @@ public class TestFilter_2 implements Filter {
         cookie.setPath("/");
         httpResp.addCookie(cookie);
         
-        System.out.println("TIME OUT: " + expiryTime + " - " + currTime);
+        //System.out.println("TIME OUT: " + expiryTime + " - " + currTime);
         
 		chain.doFilter(request, response);
 		
-		System.out.println("Filter 2 - dofilter UIT " + httpResp.getContentType());
+		//System.out.println("Filter 2 - dofilter UIT " + httpResp.getContentType());
 	}
 
 	/**
@@ -73,7 +73,7 @@ public class TestFilter_2 implements Filter {
 	 */
 	@Override
 	public void init(FilterConfig fConfig) throws ServletException {
-		System.out.println("Filter 2 - init");
+		//System.out.println("Filter 2 - init");
 	}
 
 }
