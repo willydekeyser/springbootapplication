@@ -17,6 +17,7 @@ import javax.annotation.PostConstruct;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
@@ -65,13 +66,8 @@ public class StartController {
 	}
 	
 	@GetMapping(value = "/start_menu_logo")
-	public ModelAndView stat_menu_logo() {
-		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		ModelAndView modelandview = new ModelAndView();
-		modelandview.addObject(USER, auth.getName());
-		modelandview.addObject(ROLES, auth.getAuthorities());
-		modelandview.setViewName("fragments/header :: header_logo");
-		return modelandview;	
+	public String stat_menu_logo(Model model) {
+		return "fragments/header :: header_logo";	
 	}
 	
 	@GetMapping(value = "/start_menu_menu")

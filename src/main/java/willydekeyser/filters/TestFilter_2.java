@@ -14,13 +14,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.core.annotation.Order;
-import org.springframework.stereotype.Component;
 
 /**
  * Servlet Filter implementation class TestFilter_2
  */
-@Component
-@WebFilter("/leden/*")
+@WebFilter(urlPatterns = "/*")
 @Order(1)
 public class TestFilter_2 implements Filter {
 
@@ -28,7 +26,7 @@ public class TestFilter_2 implements Filter {
      * Default constructor. 
      */
     public TestFilter_2() {
-    	System.out.println("Filter 2 - TestFilter_2()");
+    	System.out.println("Filter 2 - TestFilter_2");
     }
 
 	/**
@@ -36,7 +34,7 @@ public class TestFilter_2 implements Filter {
 	 */
     @Override
 	public void destroy() {
-		
+    	System.out.println("Filter 2 - destroy");
 	}
 
 	/**
@@ -45,10 +43,11 @@ public class TestFilter_2 implements Filter {
     @Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		
-    	//System.out.println("Filter 2 - do filter ");
-		
 		HttpServletResponse httpResp = (HttpServletResponse) response;
         HttpServletRequest httpReq = (HttpServletRequest) request;
+        
+        System.out.println("Filter 2 - dofilter IN: " + httpReq.getRequestURI());
+        
         long currTime = System.currentTimeMillis();
         long expiryTime = currTime + httpReq.getSession().getMaxInactiveInterval() * 1000;
         Cookie cookie = new Cookie("serverTime", "" + currTime);
@@ -62,10 +61,11 @@ public class TestFilter_2 implements Filter {
         cookie.setPath("/");
         httpResp.addCookie(cookie);
         
-        //System.out.println("TIME OUT: " + expiryTime + " - " + currTime);
+        System.out.println("TIME OUT: " + expiryTime + " - " + currTime);
         
 		chain.doFilter(request, response);
 		
+		System.out.println("Filter 2 - dofilter UIT " + httpResp.getContentType());
 	}
 
 	/**
