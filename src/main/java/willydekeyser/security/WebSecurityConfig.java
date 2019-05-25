@@ -34,7 +34,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.passwordEncoder(paswoordencoder)
 			.usersByUsernameQuery("select username,password, enabled from users where username=?")
 			.authoritiesByUsernameQuery("select username, role from user_roles where username=?");
-		
 	}
 	
 	@Override
@@ -59,8 +58,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.rememberMe().key("willydekeyser").tokenValiditySeconds(60)
 			.and()
 			.exceptionHandling().accessDeniedPage("/");
-
-		//httpSecurity.sessionManagement().invalidSessionUrl("/");
 	}
 	
 	@Bean

@@ -16,7 +16,6 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 
 public class SecurityConfig {
@@ -27,11 +26,6 @@ public class SecurityConfig {
 	@Configuration
 	@Order(1)
 	public static class UserSecurityConfig extends WebSecurityConfigurerAdapter {
-
-		@Bean
-	    public AuthenticationSuccessHandler myAuthenticationSuccessHandler(){
-	        return new MyAuthenticationSuccessHandler();
-	    }
 		
 		@Override
 		protected void configure(HttpSecurity httpSecurity) throws Exception {
@@ -49,7 +43,6 @@ public class SecurityConfig {
 				.antMatchers("/agenda/**").hasAnyRole(ROLE_GOLD, ROLE_ADMIN)
 				.and()
 				.formLogin().loginPage("/login").defaultSuccessUrl("/", true).permitAll()
-				//.successHandler(myAuthenticationSuccessHandler())
 				.and()
 				.logout().permitAll()
 				.and()
@@ -58,9 +51,6 @@ public class SecurityConfig {
 				.rememberMe().key("willydekeyser").tokenValiditySeconds(3600)
 				.and()
 				.exceptionHandling().accessDeniedPage("/");
-
-			//httpSecurity.sessionManagement().invalidSessionUrl("/testen");
-			
 		}
 	}
 
@@ -84,8 +74,6 @@ public class SecurityConfig {
 			.dataSource(dataSource)
 			.usersByUsernameQuery("SELECT username, password, enabled FROM users WHERE username = ?")
 			.authoritiesByUsernameQuery("SELECT username, authority FROM authorities WHERE username = ?");
-			
-		
 	}
 
 	@Bean
