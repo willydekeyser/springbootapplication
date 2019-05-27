@@ -5,8 +5,10 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -15,14 +17,17 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 @Aspect
 public class LoggingAspect {
 	
-	//@Pointcut("execution(* willydekeyser.model.*.*(..))")
-	//private void generalPointcut() {
-	//	System.out.println("Aspect generalPointCut");
-	//}
+	@Pointcut("execution(* willydekeyser.*.*.*(..))")
+	private void generalPointcut() {}
 	
-	//@Before("generalPointcut()")
+	@Before("generalPointcut()")
 	public void logAll(JoinPoint joitPoint) {
-		System.out.println("log All: " + joitPoint.getSignature().getDeclaringTypeName() + " - " + joitPoint.getSignature().getName());
+		System.out.println("log All Before: " + joitPoint.getSignature().getDeclaringTypeName() + " - " + joitPoint.getSignature().getName());
+	}
+	
+	@After("generalPointcut()")
+	public void logAllAfter(JoinPoint joitPoint) {
+		System.out.println("log All After: " + joitPoint.getSignature().getDeclaringTypeName() + " - " + joitPoint.getSignature().getName());
 	}
 
 	//@Before("execution(* willydekeyser.dao.impl.*.*(..)) ")
