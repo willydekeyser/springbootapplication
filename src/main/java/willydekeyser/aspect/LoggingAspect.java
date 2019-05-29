@@ -22,12 +22,12 @@ public class LoggingAspect {
 	
 	@Before("generalPointcut()")
 	public void logAll(JoinPoint joitPoint) {
-		System.out.println("log All Before: " + joitPoint.getSignature().getDeclaringTypeName() + " - " + joitPoint.getSignature().getName());
+		//System.out.println("log All Before: " + joitPoint.getSignature().getDeclaringTypeName() + " - " + joitPoint.getSignature().getName());
 	}
 	
 	@After("generalPointcut()")
 	public void logAllAfter(JoinPoint joitPoint) {
-		System.out.println("log All After: " + joitPoint.getSignature().getDeclaringTypeName() + " - " + joitPoint.getSignature().getName());
+		//System.out.println("log All After: " + joitPoint.getSignature().getDeclaringTypeName() + " - " + joitPoint.getSignature().getName());
 	}
 
 	//@Before("execution(* willydekeyser.dao.impl.*.*(..)) ")

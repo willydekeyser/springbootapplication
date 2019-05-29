@@ -31,15 +31,15 @@ public class SendMailController {
 	@Autowired
     private LedenService ledenService;
 	
-	private String to = "wdkeyser@gmail.com";
+	private String to = "willy.de.keyser@skynet.be";
 	private String subject = "";
 	private List<Leden> ledenlijst = new ArrayList<Leden>();
 	
 	
 	@PostMapping("/post")
 	public @ResponseBody String index(@Validated Agenda agenda, Model model) {
-		model.addAttribute("title", "Computerclub Format C");
-		model.addAttribute("message", "Computerclub FORMAT C..");
+		//model.addAttribute("title", "Computerclub Format C");
+		//model.addAttribute("message", "Computerclub FORMAT C..");
 		ledenlijst = ledenService.getAllLedenNamenlijst(3);
 		subject = "Agenda voor " + agenda.getDatum_vergadering() + ".";
 		try {

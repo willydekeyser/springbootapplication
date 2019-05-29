@@ -57,10 +57,9 @@ public class MailSenderService {
         SimpleMailMessage message = new SimpleMailMessage();
 
         message.setTo(mail.getTo());
-        message.setFrom("wdkeyser@gmail.com");
+        message.setFrom("cfc.schatbewaarder@cformatc.be");
         message.setSubject(mail.getSubject());
         //message.setText(mail.getContent());
-
         //mailSender.send(message);
     }
 
@@ -78,7 +77,7 @@ public class MailSenderService {
         Integer index = 0;
         for(Leden leden : ledenlijst ) {
         	
-            System.out.println("Zend email... " + leden.getVoornaam() + " " + leden.getFamilienaam() + " " + leden.getEmailadres());
+            System.out.println("Zend email... " + leden.getVoornaam() + " " + leden.getFamilienaam() + " " + leden.getEmailadres() + " - " + mail.getTo());
         	
         	context.setVariable("naam", leden.getVoornaam());
         	context.setVariable("titel", "Planning: " + mail.getDatum_vergadering());
@@ -91,13 +90,16 @@ public class MailSenderService {
             String html = templateEngine.process("mail/agenda", context);
         	setMailTeller(index++);
 	        helper.setTo(mail.getTo());
+	        //helper.setCc("cfc.schatbewaarder@cformatc.be");
+	        //helper.setBcc("wdkeyser@gmail.com");
+	        helper.setFrom("cfc.schatbewaarder@cformatc.be");
 	        helper.setSubject(mail.getSubject());
 	        helper.setText(html, true);
 	        mailSender.send(message);
 	        System.out.println("E-mail verzonden: " + index);
 	        
 	        System.out.println("Sleeping now... " + Thread.currentThread().getName());
-    		for(int j=1; j<30; j++) {
+    		for(int j=1; j<5; j++) {
     			Thread.sleep(1000);
     		} 
 
