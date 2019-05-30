@@ -9,6 +9,7 @@
 <div th:fragment="editSoortenledenModal">
 	<div class="editSoortenledenForm">
 		<Form method="post" th:object="${Soortenleden}" id="editSoortenledenModalForm">
+			<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
 			<div class="modal fade" id="editSoortenledenModal" role="dialog">
 				<div class="modal-dialog modal-lg" >
 					<!-- Modal content-->

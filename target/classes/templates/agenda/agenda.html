@@ -8,6 +8,7 @@
 		<div id="agenda_hulp_venster" style="flex-grow: 1;  display: block;"></div>
 		<div style="flex-grow: 2;border: 0px solid #666;">
 			<form name="Agenda" method="post" th:object="${Agenda}" id="agendaVersturenForm">
+				<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
 				<div>
 					<p>Freaks to Be:</p>
 					<input size="50"  id="freaktobe" type="text" name="freaktobe" oninput="mail_form()" required style="border: 1px solid #666; margin: 10px;"/>

@@ -9,6 +9,7 @@
 <div th:fragment="editLidModal">
 	<div class="editLidForm">
 		<Form method="post" th:object="${Leden}" id="editLidModalForm">
+			<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
 			<div class="modal fade" id="editLidModal" role="dialog">
 				<div class="modal-dialog modal-lg">
 					<!-- Modal content-->
@@ -80,6 +81,7 @@
 <div th:fragment="deleteLidModal">
 	<div class="verwijderenlidForm">
 		<Form method="post" th:object="${Leden}" id="deleteLidModalForm">
+			<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
 			<div class="modal fade" id="deleteLidModal" role="dialog">
 				<div class="modal-dialog">
 					<!-- Modal content-->

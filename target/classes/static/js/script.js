@@ -121,9 +121,16 @@ async function fetch_JSON(url) {
 };
 
 async function fetch_TEXT(url) {
+	var token = $("meta[name='_csrf']").attr("content");
+	var header = $("meta[name='_csrf_header']").attr("content");
+	console.log("fetch: " + token + " - " + header);
 	let response = await fetch(url, {
+		method: "POST",
+		credentials: 'same-origin',
 		headers: {
-			"Header" : "Willy De Keyser"
+			'Header' : 'Willy De Keyser',
+			'X-Requested-With': 'XMLHttpRequest',
+			'X-CSRF-Token' : token
 		}
 	});
 	if (!response.ok || !response.status == 200 || response.redirected) {
