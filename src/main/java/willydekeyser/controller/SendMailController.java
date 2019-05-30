@@ -37,9 +37,7 @@ public class SendMailController {
 	
 	
 	@PostMapping("/post")
-	public @ResponseBody String index(@Validated Agenda agenda, Model model) {
-		//model.addAttribute("title", "Computerclub Format C");
-		//model.addAttribute("message", "Computerclub FORMAT C..");
+	public @ResponseBody String index(@Validated Agenda agenda) {
 		ledenlijst = ledenService.getAllLedenNamenlijst(3);
 		subject = "Agenda voor " + agenda.getDatum_vergadering() + ".";
 		try {
