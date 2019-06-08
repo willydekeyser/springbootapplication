@@ -39,8 +39,8 @@ function time_out() {
     //console.log("Time out: " + msToTime(timeOut));
        
     timeOut = 0;
-    
-    if((sessionExpiry - localTime) <= 0){
+    if((sessionExpiry - timeOffset) <= 0){
+    //if((sessionExpiry - localTime) <= 0){
     	clearInterval(timeOutTimer);
     } else {
     	timeOut = sessionExpiry - localTime;
