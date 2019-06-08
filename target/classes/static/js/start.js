@@ -46,7 +46,7 @@ function time_out() {
     	timeOut = sessionExpiry - localTime;
     }  
     
-    document.getElementsByClassName('footer_section_A')[0].innerHTML = "Time out: " + msToTime(timeOut);
+    document.getElementsByClassName('footer_section_A')[0].innerHTML = "Time out: " + msToTime(timeOut) + " - " + msToTime(timeOffset) + " - " + msToTime(sessionExpiry) + " - " + msToTime(localTime);
     document.getElementById('timeOutTeller').innerHTML = msToTime(timeOut);
     
     if(timeOut < 30000 && timeOut > 29000 ) {
@@ -107,8 +107,8 @@ function msToTime(duration) {
     minutes = (minutes < 10) ? "0" + minutes : minutes;
     seconds = (seconds < 10) ? "0" + seconds : seconds;
 
-    return minutes + ":" + seconds;
-    //return hours + ":" + minutes + ":" + seconds;
+    //return minutes + ":" + seconds;
+    return hours + ":" + minutes + ":" + seconds;
 }
 
 function start_menu() {
