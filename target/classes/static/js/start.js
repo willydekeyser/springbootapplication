@@ -54,7 +54,7 @@ function time_out() {
     }
     
     if(timeOut < 2000 && timeOut > 10 ) {
-    	window.open("http://localhost:5000/logout", "_self");
+    	window.open("/logout", "_self");
    	}
     //console.log("Time out: " + timeOut);
 }
@@ -67,7 +67,7 @@ function setup_timeOutModal() {
 
 function listener_timeOut_hidden() {
 	if(timeOut < 30000){
-		window.open("http://localhost:5000/logout", "_self");
+		window.open("/logout", "_self");
 	}
 };
 
