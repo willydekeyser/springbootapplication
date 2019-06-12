@@ -16,7 +16,7 @@
 		<div class="main_section_B"></div>
 	</div>
 	<footer class="footer">
-		<div class="footer_section_A">11/05/2019 16:10</div>
+		<div class="footer_section_A">12/06/2019 16:10</div>
 		<div class="footer_section_B">Computerclub FORMAT C:</div>
 	</footer>
 </div>
@@ -50,7 +50,10 @@
 </div>
 <div id="div_script">
 	<script>
-		$(document).ready(start_main());
+		document.addEventListener('DOMContentLoaded', (event) => { 
+			console.log('Index.html geladen! ' + event.type)
+			start_main();
+		});
 	</script>
 </div>
 </body>

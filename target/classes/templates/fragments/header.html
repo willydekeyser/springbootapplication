@@ -1,20 +1,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head th:fragment="header-css">
-	<!-- this is header-css -->
+	<!-- this is header-css  -->
 	
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"></link>
-    <!--   <link rel="stylesheet" href="https://getbootstrap.com/docs/4.1/assets/css/docs.min.css"></link> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"></link>
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"></link>
     <link th:if="${#authorization.expression('hasRole(''ROLE_USER'')')}" rel="stylesheet" type="text/css" th:href="@{/css/contextmenu.css}"></link>
     
     <!-- this is header-js -->
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-	<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script async type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script async type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	
 	
-	<script type="text/javascript" th:src="@{/js/start.js}"></script>
-	<script type="text/javascript" th:src="@{/js/script.js}"></script>
+	<script async type="text/javascript" th:src="@{/js/start.js}"></script>
+	<script async type="text/javascript" th:src="@{/js/script.js}"></script>
     <script th:if="${#authorization.expression('hasRole(''ROLE_USER'')')}" type="text/javascript" th:src="@{/js/leden.js}"></script>
     <script th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}" type="text/javascript" th:src="@{/js/leden_aanpassen.js}"></script>
     <script th:if="${#authorization.expression('hasRole(''ROLE_USER'')')}" type="text/javascript" th:src="@{/js/lidgeld.js}"></script>
