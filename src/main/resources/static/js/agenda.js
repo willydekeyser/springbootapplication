@@ -4,7 +4,7 @@ async function agenda_start() {
 	reset_grid();
 	section_height(100);
 	menu_main_width(0);
-	await Refrech_HTML('/agenda/agenda', '.main_section_A');
+	await Refrech_HTML('/agenda/agenda', 'main_section_A');
 };
 
 function maaktext() {
@@ -37,6 +37,7 @@ function mail_form() {
 };
 
 function listener_agenda_submit(event) {
+	event.preventDefault();
 	document.getElementById('verzenden').style.display = 'none';
 	document.getElementById('agenda_voorbeeld_venster').style.display = 'none';
 	document.getElementById('agenda_voorbeeld_button').style.display = 'none';

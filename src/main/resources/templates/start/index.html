@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security5">
 <head th:replace="fragments/header :: header-css"></head>
 <body>
-<div class="grid_container">
-	<header class="header">
-		<div class="header_logo"></div>
-		<div class="header_menu"></div>
+<div class="grid_container" id="grid_container">
+	<header class="header" id="header">
+		<div class="header_logo" id="header_logo"></div>
+		<div class="header_menu" id="header_menu"></div>
 	</header>
-	<div class="menu">
-		<div class="menu_header"></div>
-		<div class="menu_main"></div>
+	<div class="menu" id="menu">
+		<div class="menu_header" id="menu_header"></div>
+		<div class="menu_main" id="menu_main"></div>
 	</div>
-	<div class="main">
-		<div class="main_section_A"><p class="website_laden">WEBSITE LOADING......</p></div>
-		<div class="main_section_B"></div>
+	<div class="main" id="main">
+		<div class="main_section_A" id="main_section_A"><p class="website_laden">WEBSITE LOADING......</p></div>
+		<div class="main_section_B" id="main_section_B"></div>
 	</div>
-	<footer class="footer">
-		<div class="footer_section_A">12/06/2019 16:10</div>
-		<div class="footer_section_B">Computerclub FORMAT C:</div>
+	<footer class="footer" id="footer">
+		<div class="footer_section_A" id="footer_section_A">12/06/2019 16:10</div>
+		<div class="footer_section_B" id="footer_section_B">Computerclub FORMAT C:</div>
 	</footer>
 </div>
 

@@ -26,7 +26,7 @@ async function kasboek_start() {
 	reset_grid();
 	menu_height(3);
 	menu_main_width(300);
-	await Refrech_HTML('/kasboek/', '.menu_main');
+	await Refrech_HTML('/kasboek/', 'menu_main');
 	kasboek_main_laden();
 	kasboek_menu_listener();
 }
@@ -51,7 +51,7 @@ function kasboek_menu_listener() {
 		}
 		selectedJaar = $(this).attr("jaar");
 		selectedRubriek = $(this).attr("rubriek");
-		Refrech_HTML('/kasboek/kasboekJaarRubriek/' + selectedJaar + '/' + selectedRubriek, '.main_section_A');
+		Refrech_HTML('/kasboek/kasboekJaarRubriek/' + selectedJaar + '/' + selectedRubriek, 'main_section_A');
 		kasboek_totalen_laden();
 		return false;
 	});
@@ -61,7 +61,7 @@ function kasboek_menu_listener() {
 		$(this).addClass('active');
 		selectedJaar = $(this).attr("jaar");
 		selectedRubriek = $(this).attr("rubriek");
-		Refrech_HTML('/kasboek/kasboekJaarRubriek/' + selectedJaar + '/' + selectedRubriek, '.main_section_A');
+		Refrech_HTML('/kasboek/kasboekJaarRubriek/' + selectedJaar + '/' + selectedRubriek, 'main_section_A');
 		kasboek_totalen_laden();
 		return false;
 	});
@@ -70,7 +70,7 @@ function kasboek_menu_listener() {
 function kasboek_main_laden() {
 	console.log('Start main laden');
 	$('#namenlijst_click #kasboek').addClass('active');
-	Refrech_HTML('/kasboek/kasboekJaarRubriek/0/0', '.main_section_A')
+	Refrech_HTML('/kasboek/kasboekJaarRubriek/0/0', 'main_section_A')
 	console.log('End main laden');
 	kasboek_totalen_laden();
 };

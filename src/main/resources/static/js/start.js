@@ -18,9 +18,9 @@ function start_main() {
 	};
 	section_height(80);
 	menu_main_width(300);
-	let promises = [Refrech_HTML('/start_menu_logo', '.header_logo'), 
-						Refrech_HTML('/start_menu_menu', '.header_menu'), 
-						Refrech_HTML('/start_main', '.main_section_A')];
+	let promises = [Refrech_HTML('/start_menu_logo', 'header_logo'), 
+						Refrech_HTML('/start_menu_menu', 'header_menu'), 
+						Refrech_HTML('/start_main', 'main_section_A')];
 	Promise.all(promises)
 	.then(() => {
 		start_menu();
@@ -215,7 +215,10 @@ function start_menu() {
 			event.preventDefault();
 			agenda_start()
 			.then(() => {
-				console.log('agenda geladen');
+				console.log("Agenda geladen! ")
+				maaktext();
+				document.getElementById('agendaVersturenForm').addEventListener('submit', listener_agenda_submit);
+				document.getElementById('agenda_voorbeeld_button').addEventListener('click', agenda_voorbeeld_onclick);
 			})
 			.catch((error) => {
 				console.error('Error in agenda laden: ' + error);
@@ -273,7 +276,7 @@ function start_login() {
 	reset_grid();
 	menu_height(3);
 	menu_main_width(300);
-	Refrech_HTML('/login_main','.main_section_A');
+	Refrech_HTML('/login_main','main_section_A');
 	return false;
 	
 };
@@ -290,7 +293,7 @@ function start_logout() {
 	.catch((error) => {
 		console.log('FOUT: ' + error);
 	});
-	//Refrech_HTML('/login_main?logout','.main_section_A');
+	//Refrech_HTML('/login_main?logout','main_section_A');
 	return false;
 	
 };

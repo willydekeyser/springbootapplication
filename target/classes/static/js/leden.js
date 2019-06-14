@@ -23,8 +23,8 @@ async function leden_start() {
 	selectedSoortId = 1;
 	selectedLidId = 0;
 	await Promise.all([
-		Refrech_HTML('/leden/leden_menu/1', '.menu_header'),
-		Refrech_HTML('/leden/namenlijst/1/0', '.menu_main')
+		Refrech_HTML('/leden/leden_menu/1', 'menu_header'),
+		Refrech_HTML('/leden/namenlijst/1/0', 'menu_main')
 	]);
 	leden_change_soort();
 	leden_namenlijst_geladen();
@@ -32,7 +32,7 @@ async function leden_start() {
 		$('#lid_main').html('<h1>Geen leden gevonden!</h1>');
 	} else {
 		leden_namenlijst_onclick()
-		await Refrech_HTML('/leden/leden_main/' + selectedLidId, '.main_section_A');
+		await Refrech_HTML('/leden/leden_main/' + selectedLidId, 'main_section_A');
 		leden_gegevens_refrech();
 	};	
 	console.log("END Leden onclick - Soort ID = " + selectedSoortId + " - ID = " + selectedLidId);
@@ -49,7 +49,7 @@ function leden_menu_geladen(soortId, lidid) {
 async function leden_namenlijst(soortId, lidId) {
 	selectedSoortId = soortId;
 	selectedLidId = lidId;
-	await Refrech_HTML('/leden/namenlijst/' + soortId + '/' + lidId , '.menu_main');
+	await Refrech_HTML('/leden/namenlijst/' + soortId + '/' + lidId , 'menu_main');
 	//await leden_namenlijst_refrech();
 	leden_namenlijst_geladen();
 	if (aantal_leden == 0){
@@ -181,9 +181,9 @@ function leden_change_soort() {
 async function leden_tabel_start() {
 	reset_grid();
 	section_height(30);
-	await Refrech_HTML('/leden/leden_tabel', '.main_section_B');
-	await Refrech_HTML('/leden/leden_tabel_ledenlijst/1', '.main_section_A');
-	await Refrech_HTML('/leden/leden_tabel_ById/4', '.main_section_B');
+	await Refrech_HTML('/leden/leden_tabel', 'main_section_B');
+	await Refrech_HTML('/leden/leden_tabel_ledenlijst/1', 'main_section_A');
+	await Refrech_HTML('/leden/leden_tabel_ById/4', 'main_section_B');
 };
 
 function leden_tabel_change_soort() {
@@ -239,7 +239,7 @@ function leden_tabel_ledenlijst_geladen() {
 
 function ledenbyid(id) {
 	console.log("Leden detail: " + id);
-	Refrech_HTML('/leden/leden_tabel_ById/' + id, '.main_section_B');
+	Refrech_HTML('/leden/leden_tabel_ById/' + id, 'main_section_B');
 };
 
 /**

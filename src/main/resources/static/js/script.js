@@ -10,24 +10,24 @@
 
 function reset_grid() {
 	section_height(85);
-	document.getElementsByClassName('main_section_A')[0].innerHTML = ""; 
-	document.getElementsByClassName('main_section_B')[0].innerHTML = "";
-	document.getElementsByClassName('menu_header')[0].innerHTML = ""; 
-	document.getElementsByClassName('menu_main')[0].innerHTML = "";
+	document.getElementById('main_section_A').innerHTML = ""; 
+	document.getElementById('main_section_B').innerHTML = "";
+	document.getElementById('menu_header').innerHTML = ""; 
+	document.getElementById('menu_main').innerHTML = "";
 };
 
 function section_height(height) {
-	document.getElementsByClassName('main_section_A')[0].style.flexBasis = height + '%';
-	document.getElementsByClassName('main_section_B')[0].style.flexBasis = 100 - height + '%';
+	document.getElementById('main_section_A').style.flexBasis = height + '%';
+	document.getElementById('main_section_B').style.flexBasis = 100 - height + '%';
 }
 
 function menu_height(height) {
-	document.getElementsByClassName('menu_header')[0].style.flexBasis = height + 'rem';
-	document.getElementsByClassName('menu_main')[0].style.flexBasis = 100 - height + 'rem';
+	document.getElementById('menu_header').style.flexBasis = height + 'rem';
+	document.getElementById('menu_main').style.flexBasis = 100 - height + 'rem';
 }
 
 function menu_main_width(width) {
-	document.getElementsByClassName('grid_container')[0].style.gridTemplateColumns = width + 'px auto';
+	document.getElementById('grid_container').style.gridTemplateColumns = width + 'px auto';
 }
 
 /*
@@ -48,7 +48,7 @@ async function Refrech_HTML(url, div) {
 		throw Error(response.status);
 	}
 	let tekst = await response.text();
-	$(div).html(tekst);
+	document.getElementById(div).innerHTML = tekst;
 	console.log('ok: ' + response.status + ' - ' + 'Redirected: ' + response.redirected);
 	console.log(div + ' geladen - ' + url);
 	return 'OK';
@@ -151,7 +151,7 @@ async function post_Form(url, form) {
 		headers: {
 	        "Content-Type": "application/x-www-form-urlencoded",
 	        "Header" : "Willy De Keyser"
-	    },
+	    }
 	});
 	if (!response.ok || response.error) {
 		window.open('/', '_self');

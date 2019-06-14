@@ -49,6 +49,7 @@ public class SendMailController {
 			System.out.println("Fout: " + e.getMessage());
 			return "{\"return\" : \"FOUT\"}";
 		}
+		System.out.println("Send E-mail: ");
 		return "{\"return\" : \"OK\"}";
 	}
 	

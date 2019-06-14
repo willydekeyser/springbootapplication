@@ -7,8 +7,6 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.After;
-import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -23,12 +21,12 @@ public class LoggingAspect {
 	@Pointcut("execution(* willydekeyser.*.*.*(..))")
 	private void generalPointcut() {}
 	
-	@Before("generalPointcut()")
+	//@Before("generalPointcut()")
 	public void logAll(JoinPoint joitPoint) {
 		//System.out.println("log All Before: " + joitPoint.getSignature().getDeclaringTypeName() + " - " + joitPoint.getSignature().getName());
 	}
 	
-	@After("generalPointcut()")
+	//@After("generalPointcut()")
 	public void logAllAfter(JoinPoint joitPoint) {
 		//System.out.println("log All After: " + joitPoint.getSignature().getDeclaringTypeName() + " - " + joitPoint.getSignature().getName());
 	}
@@ -53,7 +51,7 @@ public class LoggingAspect {
 		System.out.println("Aspect run MODEL: " + joitPoint.getSignature().getDeclaringTypeName() + " - " + joitPoint.getSignature().getName());
 	}
 	
-	//@Before("execution(* willydekeyser.controller.LedenController.*(..))")
+	@Before("execution(* willydekeyser.controller.LedenController.*(..))")
 	public void AdviceAll(JoinPoint joitPoint) throws AuthException {
 		HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
 		System.err.println("Aspect run ALL: " + joitPoint.getSignature().getDeclaringTypeName() + " - " + joitPoint.getSignature().getName());
@@ -77,17 +75,17 @@ public class LoggingAspect {
 				System.err.println(" ");
 			}
 		}
-//		String xAuth = request.getHeader("header");
-//		if (xAuth == null) {
-//			throw new AuthException("Exception message from AOP on unauthorized access NULL");
-//		} {
-//			if (!xAuth.equals("Willy De Keyser")) {
-//				throw new AuthException("Exception message from AOP on unauthorized access");
-//			}
-//		}
+		String xAuth = request.getHeader("header");
+		if (xAuth == null) {
+			throw new AuthException("Exception message from AOP on unauthorized access NULL");
+		} {
+			if (!xAuth.equals("Willy De Keyser")) {
+				throw new AuthException("Exception message from AOP on unauthorized access");
+			}
+		}
 	}
 	
-	@Around("execution(* willydekeyser.controller.*.*(..)) && target(service)")
+	//@Around("execution(* willydekeyser.controller.*.*(..)) && target(service)")
 	public Object logServiceAccess(ProceedingJoinPoint joinPoint, Object service) throws Throwable {
         long startTime = System.currentTimeMillis();
         Object result = joinPoint.proceed();
