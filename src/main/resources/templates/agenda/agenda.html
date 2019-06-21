@@ -10,18 +10,26 @@
 			<form name="Agenda" method="post" th:object="${Agenda}" id="agendaVersturenForm">
 				<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
 				<div>
+					<label for="soortenleden">Select: </label>
+					<select id="soortenLeden" name="soortenLeden" style="border: 1px solid #999; margin: 10px; width: 200px">
+						<option th:each="soort : ${soorten}" th:id="${soort.id}"
+							th:value="${soort.id}" th:text="${soort.soortenleden}"
+							th:selected="${soort.actief}"></option>
+					</select>
+				</div>
+				<div>
 					<p>Freaks to Be:</p>
-					<input size="50"  id="freaktobe" type="text" name="freaktobe" oninput="mail_form()" required style="border: 1px solid #666; margin: 10px;"/>
-					<input size="50"  id="freaktobelesgever" type="text" name="freaktobelesgever" oninput="mail_form()" required style="border: 1px solid #666; margin: 10px;"/>
+					<input size="50"  id="freaktobe" type="text" name="freaktobe" oninput="mail_form()" placeholder="Les freaks to be:" required style="border: 1px solid #666; margin: 10px;"/>
+					<input size="50"  id="freaktobelesgever" type="text" name="freaktobelesgever" oninput="mail_form()" placeholder="Lesgever freaks to be:" required style="border: 1px solid #666; margin: 10px;"/>
 				</div>
 				<div>
 					<p>Freaks:</p>
-					<input size="50" id="freak" type="text" name="freak" oninput="mail_form()" style="border: 1px solid #666; margin: 10px;"/>
-					<input size="50" id="freaklesgever" type="text" name="freaklesgever" oninput="mail_form()" style="border: 1px solid #666; margin: 10px;"/>
+					<input size="50" id="freak" type="text" name="freak" oninput="mail_form()" placeholder="Les freaks:" style="border: 1px solid #666; margin: 10px;"/>
+					<input size="50" id="freaklesgever" type="text" name="freaklesgever" oninput="mail_form()" placeholder="Lesgever freaks:" style="border: 1px solid #666; margin: 10px;"/>
 				</div>
 				<div>
 					<p>Info:</p>
-					<textarea  rows="10" id="info" cols="105" name="info" oninput="mail_form()" style="border: 1px solid #666; margin: 10px;"></textarea>
+					<textarea  rows="10" id="info" cols="105" name="info" oninput="mail_form()" placeholder="Info:" style="border: 1px solid #666; margin: 10px;"></textarea>
 				</div>
 				<div>
 					<button type="submit" id="verzenden" class="btn btn-primary">Versturen</button>

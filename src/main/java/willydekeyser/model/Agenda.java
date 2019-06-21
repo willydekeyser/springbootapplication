@@ -13,12 +13,13 @@ public class Agenda {
 	private String info;
 	private String datum_vergadering;
 	private String datum_verzenden;
+	private Integer soortenLeden;
 	
 	public Agenda() {
 		
 	}
 
-	public Agenda(String freak, String freaktobe, String freaklesgever, String freaktobelesgever, String info, String datum_vergadering, String datum_verzenden) {
+	public Agenda(String freak, String freaktobe, String freaklesgever, String freaktobelesgever, String info, String datum_vergadering, String datum_verzenden, Integer soortenLeden) {
 		this.freak = freak;
 		this.freaktobe = freaktobe;
 		this.freaklesgever = freaklesgever;
@@ -26,6 +27,7 @@ public class Agenda {
 		this.info = info;
 		this.datum_vergadering = datum_vergadering;
 		this.datum_verzenden = datum_verzenden;
+		this.soortenLeden = soortenLeden;
 	}
 
 	public String getFreak() {
@@ -84,11 +86,19 @@ public class Agenda {
 		this.datum_verzenden = datum_verzenden;
 	}
 
+	public Integer getSoortenLeden() {
+		return soortenLeden;
+	}
+
+	public void setSoortenLeden(Integer soortenLeden) {
+		this.soortenLeden = soortenLeden;
+	}
+
 	@Override
 	public String toString() {
 		return "Agenda [freak=" + freak + ", freaktobe=" + freaktobe + ", freaklesgever=" + freaklesgever
 				+ ", freaktobelesgever=" + freaktobelesgever + ", info=" + info + ", datum_vergadering="
-				+ datum_vergadering + ", datum_verzenden=" + datum_verzenden + "]";
+				+ datum_vergadering + ", datum_verzenden=" + datum_verzenden + ", soortenLeden=" + soortenLeden + "]";
 	}
 
 }

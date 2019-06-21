@@ -38,13 +38,14 @@ public class SendMailController {
 	
 	@PostMapping("/post")
 	public @ResponseBody String index(@Validated Agenda agenda) {
-		ledenlijst = ledenService.getAllLedenNamenlijst(3);
+		System.out.println("AGENDA: " + agenda.toString());
+		ledenlijst = ledenService.getAllLedenNamenlijst(agenda.getSoortenLeden());
 		subject = "Agenda voor " + agenda.getDatum_vergadering() + ".";
 		try {
 			senderService.setMailTeller(0);
 			senderService.sendHTMLMail(new Mail(to, subject, agenda.getFreak(), agenda.getFreaktobe(), 
 					agenda.getFreaklesgever(), agenda.getFreaktobelesgever(), 
-					agenda.getInfo(), agenda.getDatum_vergadering(), agenda.getDatum_verzenden()), ledenlijst);
+					agenda.getInfo(), agenda.getDatum_vergadering(), agenda.getDatum_verzenden()), ledenlijst, 5);
 		} catch (MessagingException | InterruptedException e) {
 			System.out.println("Fout: " + e.getMessage());
 			return "{\"return\" : \"FOUT\"}";

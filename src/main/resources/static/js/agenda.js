@@ -60,17 +60,21 @@ function listener_agenda_submit(event) {
 async function agenda_progress_bar() {
 	let teller = 0;
 	let max_teller = 0;
+	let nog_teller = 0;
 	let response = await fetch_JSON('mail/test');
 	teller = response.return_progress;
 	max_teller = response.return_max;
+	nog_teller = max_teller - teller;
 	console.log('RESPONSE: ' + teller);
-	if (teller == 10000) {
+	if (teller < 0) {
 		clearTimeout(agenda_progress_bar_teller_id);
 		document.getElementById('agenda_progress_bar_text').innerHTML = "Alle e-mail berichten verzonden.";
 		document.getElementById('agenda_progress_bar_progressbar').value = 100;
 	} else {
 		document.getElementById('agenda_progress_bar_progressbar').value = (teller / max_teller) * 100;
-		document.getElementById('agenda_progress_bar_text').innerHTML = teller == 1 ? teller + " e-mail bericht verzonden." : teller + " e-mail berichten verzonden.";
+		document.getElementById('agenda_progress_bar_text').innerHTML = teller == 1 ? teller 
+				+ " e-mail bericht verzonden. - " + nog_teller + " nog te verzenden." : teller + " e-mail berichten verzonden. - " 
+				+ nog_teller + " nog te verzenden."  ;
 	}
 	
 };
