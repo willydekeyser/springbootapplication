@@ -151,7 +151,8 @@ public class StartController {
 				+ "<a href='/rubriek/restcontroller/rubriek' target='_blank'>Rubriek</a> - "
 				+ "<a href='/rubriek/restcontroller/rubriek/kasboek' target='_blank'>Rubriek/Kasboek</a> - "
 				+ "<a href='/rubriek/restcontroller/rubriek/kasboek/response' target='_blank'>Rubriek - Response</a> - "
-				+ "<a href='/mail/index' target='_blank'>Send E-mail</a></center>";
+				+ "<a href='/mail/index' target='_blank'>Send E-mail</a><br/>"
+				+ "<a href='/restcontroller/customproperties' target='_blank'>Custom properties</a></center>";
 		return index;
 		
 	}	

@@ -20,7 +20,7 @@ import org.thymeleaf.context.Context;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 
 import willydekeyser.customproperties.CustomProperties;
-import willydekeyser.customproperties.ReadCustomProperties;
+import willydekeyser.customproperties.CustomPropertiesService;
 import willydekeyser.model.Leden;
 import willydekeyser.sendmail.model.Mail;
 
@@ -35,7 +35,7 @@ public class MailSenderService {
     private SpringTemplateEngine templateEngine;
 	
 	@Autowired
-	private ReadCustomProperties readCustomProperties;
+	private CustomPropertiesService CustomPropertiesService;
 	
 	@Autowired
 	private CustomProperties customProperties;
@@ -89,8 +89,8 @@ public class MailSenderService {
         for(Leden leden : ledenlijst ) {
         	
             System.out.println("Zend email... " + leden.getVoornaam() + " " + leden.getFamilienaam() + " " + leden.getEmailadres() + " - " + mail.getTo());
-            customProperties = readCustomProperties.readCustomProperties();
-        	System.out.println("PAUZE: " + customProperties.getEen() + " - " + customProperties.getTest());
+            customProperties = CustomPropertiesService.readCustomProperties();
+        	System.out.println("PAUZE: " + customProperties.getPauzeAgenda() + " - " + customProperties.getTest());
         	context.setVariable("naam", leden.getVoornaam());
         	context.setVariable("titel", "Planning: " + mail.getDatum_vergadering());
         	context.setVariable("freaks", mail.getFreak());
@@ -115,7 +115,7 @@ public class MailSenderService {
 	        //mailSender.send(message);
 	        
 	        System.out.println("Sleeping now... " + Thread.currentThread().getName());
-    		Thread.sleep(customProperties.getEen() * 1000);
+    		Thread.sleep(customProperties.getPauzeAgenda() * 1000);
 
     		System.out.println("E-mail verzonden: " + index);
     		
