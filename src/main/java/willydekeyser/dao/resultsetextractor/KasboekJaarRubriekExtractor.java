@@ -17,12 +17,12 @@ public class KasboekJaarRubriekExtractor implements ResultSetExtractor<List<Kasb
 
 	@Override
 	public List<KasboekJaartal> extractData(ResultSet rs) throws SQLException, DataAccessException {
-		
+				
 		Map<Integer, KasboekJaartal> map = new LinkedHashMap<Integer, KasboekJaartal>();
 		List<Rubriek> rubrieklijst = new ArrayList<>();
 		Integer jaartalTeller = 1;
 		while (rs.next()) {
-			int kasboekjaartal = rs.getInt("kasboek.Jaartal");
+			int kasboekjaartal = rs.getInt("jaartal");
 			KasboekJaartal kasboekJaartal = map.get(kasboekjaartal);
 			if(kasboekJaartal == null) {
 				kasboekJaartal = new KasboekJaartal();
@@ -32,11 +32,11 @@ public class KasboekJaarRubriekExtractor implements ResultSetExtractor<List<Kasb
 				map.put(kasboekjaartal, kasboekJaartal);
 				jaartalTeller++;
 			}
-			int rubriekId = rs.getInt("rubriek.Id");
+			int rubriekId = rs.getInt("id");
 			if (rubriekId > 0) {
 				Rubriek rubriek = new Rubriek();
 				rubriek.setId(rubriekId);
-				rubriek.setRubriek(rs.getString("rubriek.Rubriek"));
+				rubriek.setRubriek(rs.getString("rubriek"));
 				rubrieklijst.add(rubriek);
 				kasboekJaartal.setRubriek(rubrieklijst);
 			}

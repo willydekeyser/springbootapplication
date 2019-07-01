@@ -23,18 +23,18 @@ public class RubriekByIdKasboekExtractor implements ResultSetExtractor<Rubriek>{
 			if(first) {
 				rubriek = new Rubriek();
 				kasboeklijst = new ArrayList<>();
-				rubriek.setId(rs.getInt("rubriek.Id"));
-				rubriek.setRubriek(rs.getString("rubriek.Rubriek"));
+				rubriek.setId(rs.getInt("Id"));
+				rubriek.setRubriek(rs.getString("Rubriek"));
 				first = false;
 			}
-			int kasboekId = rs.getInt("kasboek.Id");	
+			int kasboekId = rs.getInt("Id");	
 			if (kasboekId > 0) {
 				Kasboek kasboek = new Kasboek();
 				kasboek.setId(kasboekId);
-				kasboek.setRubriek(new Rubriek(rs.getInt("rubriekId"), rs.getString("rubriek.Rubriek")));
-				kasboek.setJaartal(rs.getInt("kasboek.Jaartal"));
-				kasboek.setRubriekId(rs.getInt("kasboek.RubriekId"));
-				kasboek.setOmschrijving(rs.getString("kasboek.Omschrijving"));
+				kasboek.setRubriek(new Rubriek(rs.getInt("rubriekId"), rs.getString("Rubriek")));
+				kasboek.setJaartal(rs.getInt("Jaartal"));
+				kasboek.setRubriekId(rs.getInt("RubriekId"));
+				kasboek.setOmschrijving(rs.getString("Omschrijving"));
 				kasboek.setDatum(rs.getDate("Datum").toLocalDate());
 				kasboek.setUitgaven(rs.getBigDecimal("Uitgaven"));
 				kasboek.setInkomsten(rs.getBigDecimal("Inkomsten"));

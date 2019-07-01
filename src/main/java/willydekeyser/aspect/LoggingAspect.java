@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -61,7 +60,7 @@ public class LoggingAspect {
 		System.err.println("User naam: " + pricipal.getName());
 	}
 	
-	@AfterReturning(pointcut="servicePointcut()", returning = "retVal")
+	//@AfterReturning(pointcut="servicePointcut()", returning = "retVal")
 	public void logAllAfter(JoinPoint joitPoint, Object retVal) {
 		System.out.println("log All AfterReturning: " + joitPoint.getSignature().getDeclaringTypeName() + " - " + joitPoint.getSignature().getName() + " - " + retVal.toString());
 	}
@@ -86,7 +85,7 @@ public class LoggingAspect {
 		System.out.println("Aspect run MODEL: " + joitPoint.getSignature().getDeclaringTypeName() + " - " + joitPoint.getSignature().getName());
 	}
 	
-	@Before("execution(* willydekeyser.controller.LedenController.*(..))")
+	//@Before("execution(* willydekeyser.controller.LedenController.*(..))")
 	public void AdviceAll(JoinPoint joitPoint) throws AuthException {
 		HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
 		System.err.println("Aspect run ALL: " + joitPoint.getSignature().getDeclaringTypeName() + " - " + joitPoint.getSignature().getName());

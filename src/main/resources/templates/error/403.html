@@ -2,13 +2,13 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/header :: header-css"></head>
 <body>
-
 <div class="">
     <h1>403 - Access is denied</h1>
     <div th:inline="text">Hello '[[${#httpServletRequest.remoteUser}]]', you do not have permission to access this page.</div>
+    <form action="/logout" method="post">
+          <input type="submit" value="Sign in as different user" /> 
+          <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+	</form>   
 </div>
-
-
-
 </body>
 </html>

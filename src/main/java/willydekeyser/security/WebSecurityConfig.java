@@ -48,7 +48,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.and()
 			.rememberMe().key("willydekeyser").tokenValiditySeconds(3600)
 			.and()
-			.exceptionHandling().accessDeniedPage("/");
+			.exceptionHandling().accessDeniedPage("/error/403");
 	}
 	
 	@Autowired

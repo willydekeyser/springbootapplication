@@ -14,10 +14,29 @@ import willydekeyser.customproperties.CustomPropertiesService;
 public class CustomPropertiesController {
 	
 	@Autowired
-	CustomPropertiesService CustomPropertiesService;
+	CustomProperties customProperties;
+	
+	@Autowired
+	CustomPropertiesService customPropertiesService;
+	
+	@GetMapping(path="/custompropertieswrite")
+	public @ResponseBody CustomProperties writeCustomProperties() {
+		
+		customProperties = customPropertiesService.readCustomProperties();
+		customProperties.setEen(500);
+		customPropertiesService.writeCustomProperties(customProperties);
+		return customProperties;
+	}
+	
+	@GetMapping(path="/custompropertiesread")
+	public @ResponseBody CustomProperties readCustomProperties() {
+				
+		return customPropertiesService.readCustomProperties();
+	}
 	
 	@GetMapping(path="/customproperties")
 	public @ResponseBody CustomProperties customProperties() {
-		return CustomPropertiesService.readCustomProperties();
+				
+		return customProperties;
 	}
 }
