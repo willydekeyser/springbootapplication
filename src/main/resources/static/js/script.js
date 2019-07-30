@@ -9,21 +9,24 @@
 */
 
 function reset_grid() {
-	section_height(85);
-	document.getElementById('main_section_A').innerHTML = ""; 
-	document.getElementById('main_section_B').innerHTML = "";
+	section_height(10, 100, 20);
+	menu_main_width(300);
+	document.getElementById('main_section_header').innerHTML = ""; 
+	document.getElementById('main_section_main').innerHTML = "";
+	document.getElementById('main_section_footer').innerHTML = "";
 	document.getElementById('menu_header').innerHTML = ""; 
 	document.getElementById('menu_main').innerHTML = "";
 };
 
-function section_height(height) {
-	document.getElementById('main_section_A').style.flexBasis = height + '%';
-	document.getElementById('main_section_B').style.flexBasis = 100 - height + '%';
+function section_height(height_header, height_main, height_footer) {
+	document.getElementById('main_section_header').style.flexBasis = height_header + 'rem';
+	document.getElementById('main_section_main').style.flexBasis = height_main + 'rem';
+	document.getElementById('main_section_footer').style.flexBasis = height_footer + 'rem';
 }
 
-function menu_height(height) {
-	document.getElementById('menu_header').style.flexBasis = height + 'rem';
-	document.getElementById('menu_main').style.flexBasis = 100 - height + 'rem';
+function menu_height(height_header, height_main) {
+	document.getElementById('menu_header').style.flexBasis = height_header + 'rem';
+	document.getElementById('menu_main').style.flexBasis = height_main + 'rem';
 }
 
 function menu_main_width(width) {

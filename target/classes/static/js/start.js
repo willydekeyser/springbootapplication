@@ -16,11 +16,11 @@ function start_main() {
 		console.log("Context menu is uitgeschakeld");
 		event.preventDefault();
 	};
-	section_height(80);
+	section_height(5, 100, 20);
 	menu_main_width(300);
 	let promises = [Refrech_HTML('/start_menu_logo', 'header_logo'), 
 						Refrech_HTML('/start_menu_menu', 'header_menu'), 
-						Refrech_HTML('/start_main', 'main_section_A')];
+						Refrech_HTML('/start_main', 'main_section_main')];
 	Promise.all(promises)
 	.then(() => {
 		start_menu();
@@ -40,7 +40,6 @@ function time_out() {
        
     timeOut = 0;
     if((sessionExpiry - serverTime) <= 0){
-    //if((sessionExpiry - localTime) <= 0){
     	clearInterval(timeOutTimer);
     } else {
     	timeOut = sessionExpiry - localTime;
@@ -276,7 +275,7 @@ function start_login() {
 	reset_grid();
 	menu_height(3);
 	menu_main_width(300);
-	Refrech_HTML('/login_main','main_section_A');
+	Refrech_HTML('/login_main','main_section_main');
 	return false;
 	
 };
@@ -284,7 +283,7 @@ function start_login() {
 function start_logout() {
 	console.log("Logout laden");
 	reset_grid();
-	menu_height(3);
+	menu_height(10, 100);
 	menu_main_width(300);
 	let data = fetch_TEXT('/logout')
 	.then((data) => {

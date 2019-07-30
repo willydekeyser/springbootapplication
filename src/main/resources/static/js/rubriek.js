@@ -5,7 +5,7 @@ var Rubriek_gegevens = {
 
 async function rubriek_start() {
 	reset_grid();
-	await Refrech_HTML('/rubriek/', 'main_section_A');
+	await Refrech_HTML('/rubriek/', 'main_section_main');
 };
 
 function rubriekSelect(row) {

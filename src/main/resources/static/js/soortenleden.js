@@ -12,7 +12,7 @@ let SoortenLeden_gegevens = {
 
 async function soortenleden_start() {
 	reset_grid();
-	await Refrech_HTML('/soortenleden/', 'main_section_A');
+	await Refrech_HTML('/soortenleden/', 'main_section_main');
 };
 
 function soortenledenSelect(row) {

@@ -33,6 +33,21 @@ public class KasboekService implements IKasboekService {
 	}
 	
 	@Override
+	public List<Kasboek> getAllKasboekbyPage(Integer limit, Integer offset) {
+		return kasboekDAO.getAllKasboekbyPage(limit, offset);
+	}
+	
+	@Override
+	public List<Kasboek> getAllKasboekRubriekbyPage(Integer limit, Integer offset) {
+		return kasboekDAO.getAllKasboekRubriekbyPage(limit, offset);
+	}
+	
+	@Override
+	public List<Kasboek> getAllKasboekRubriekJaarRubriekbyPage(Integer jaartal, Integer rubriekId, Integer limit, Integer offset) {
+		return kasboekDAO.getAllKasboekRubriekJaarRubriekbyPage(jaartal, rubriekId, limit, offset);
+	}
+	
+	@Override
 	public BigDecimal[] getSom(Integer jaar, Integer rubriekId) {
 		return kasboekDAO.getSom(jaar, rubriekId);
 	}

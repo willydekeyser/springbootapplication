@@ -55,6 +55,11 @@ public class KasboekController {
 		return "kasboek/kasboek";
 	}
 	
+	@GetMapping("/kasboekHeader")
+	public String kasboekHeader(Model model) {	
+		return "kasboek/kasboeklijst :: kasboekheader";
+	}
+	
     @GetMapping("/kasboekById")
     public String kasboekById(@RequestParam(name="id", required=true, defaultValue="1") Integer id, @RequestParam(name="cell", required=true, defaultValue="0") Integer cell, Model model) {
     	Kasboek kasboekById = kasboekservice.getKasboekById(id);
@@ -65,12 +70,23 @@ public class KasboekController {
     
     @GetMapping("/kasboekJaarRubriek/{jaar}/{rubriek}")
     public String kasboekJaarRubriek(@PathVariable Integer jaar, @PathVariable Integer rubriek, Model model) {
-    	kasboekLijst = kasboekservice.getAllKasboekRubriekJaarRubriek(jaar, rubriek);
+    	kasboekLijst = kasboekservice.getAllKasboekRubriekJaarRubriekbyPage(jaar, rubriek, 25, 0);
     	model.addAttribute(KASBOEK, kasboekLijst);
         return "kasboek/kasboeklijst :: kasboektabel";
     }
     
-    //@Secured("ROLE_GOLD")
+    @GetMapping("/kasboekJaarRubriek/{jaar}/{rubriek}/{limit}/{offset}")
+    public String kasboekJaarRubriekbyPage(@PathVariable Integer jaar, @PathVariable Integer rubriek, @PathVariable Integer limit, @PathVariable Integer offset, Model model) {
+    	if(limit == 0) {
+    		kasboekLijst = kasboekservice.getAllKasboekRubriekJaarRubriek(jaar, rubriek);
+    	} else {
+    		kasboekLijst = kasboekservice.getAllKasboekRubriekJaarRubriekbyPage(jaar, rubriek, limit, offset);
+    	}
+    	model.addAttribute(KASBOEK, kasboekLijst);
+        return "kasboek/kasboeklijst :: kasboektabel";
+    }
+    
+    @Secured("ROLE_GOLD")
 	@GetMapping(value="/editKasboek")
 	public String editKasboek(ModelMap model) {
 		rubrieken = rubriekservice.getAllRubriek();
@@ -78,7 +94,7 @@ public class KasboekController {
 		return "kasboek/fragmenten/kasboekmodal :: editKasboekModal";
 	}
 	
-	//@Secured("ROLE_GOLD")
+	@Secured("ROLE_GOLD")
 	@PostMapping("/save_newKasboek/{selected_jaar}/{selected_rubriek}")
 	public @ResponseBody List<Kasboek> save_NewKasboek(@Validated Kasboek kasboek, @PathVariable Integer selected_jaar, @PathVariable Integer selected_rubriek) {
 		kasboekservice.addKasboek(kasboek);
@@ -86,7 +102,7 @@ public class KasboekController {
 		return kasboekLijst;
 	}
 	
-	//@Secured("ROLE_GOLD")
+	@Secured("ROLE_GOLD")
 	@PostMapping("/save_updateKasboek/{selected_jaar}/{selected_rubriek}/{change_jaar}/{jaar_menu}")
 	public @ResponseBody List<Kasboek> save_updateKasboek(@Validated Kasboek kasboek, @PathVariable Integer selected_jaar, @PathVariable Integer selected_rubriek, 
 			@PathVariable Boolean change_jaar, @PathVariable Integer jaar_menu) {

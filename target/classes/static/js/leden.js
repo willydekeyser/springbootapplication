@@ -32,7 +32,7 @@ async function leden_start() {
 		$('#lid_main').html('<h1>Geen leden gevonden!</h1>');
 	} else {
 		leden_namenlijst_onclick()
-		await Refrech_HTML('/leden/leden_main/' + selectedLidId, 'main_section_A');
+		await Refrech_HTML('/leden/leden_main/' + selectedLidId, 'main_section_main');
 		leden_gegevens_refrech();
 	};	
 	console.log("END Leden onclick - Soort ID = " + selectedSoortId + " - ID = " + selectedLidId);

@@ -26,6 +26,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	BCryptPasswordEncoder paswoordencoder;
 	
+	@Autowired
+	private ComputerclubAuthenticationSuccessHandler successHandler;
+	
 	@Override
 	protected void configure(HttpSecurity httpSecurity) throws Exception {
 		System.out.println("Config: WebSecurityConfig " + httpSecurity.toString());
@@ -40,7 +43,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.antMatchers("/actuator/**").hasRole(ROLE_GOLD)
 			.antMatchers("/agenda/**").hasAnyRole(ROLE_GOLD, ROLE_ADMIN)
 			.and()
-			.formLogin().loginPage("/login").defaultSuccessUrl("/", true).permitAll()
+			.formLogin().loginPage("/login").successHandler(successHandler).permitAll()
 			.and()
 			.logout().permitAll()
 			.and()

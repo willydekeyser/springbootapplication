@@ -24,7 +24,7 @@ async function kasboek_start() {
 	console.log('------------------------------------------------------------');
 	console.log('Menu kasboek onclick');
 	reset_grid();
-	menu_height(3);
+	menu_height(3, 100);
 	menu_main_width(300);
 	await Refrech_HTML('/kasboek/', 'menu_main');
 	kasboek_main_laden();
@@ -51,7 +51,8 @@ function kasboek_menu_listener() {
 		}
 		selectedJaar = $(this).attr("jaar");
 		selectedRubriek = $(this).attr("rubriek");
-		Refrech_HTML('/kasboek/kasboekJaarRubriek/' + selectedJaar + '/' + selectedRubriek, 'main_section_A');
+		let aantal = Math.floor(document.getElementById('main_section_main').offsetHeight / 20) - 1;
+		Refrech_HTML('/kasboek/kasboekJaarRubriek/' + selectedJaar + '/' + selectedRubriek + '/' + aantal + '/' + 0, 'main_section_main');
 		kasboek_totalen_laden();
 		return false;
 	});
@@ -61,7 +62,8 @@ function kasboek_menu_listener() {
 		$(this).addClass('active');
 		selectedJaar = $(this).attr("jaar");
 		selectedRubriek = $(this).attr("rubriek");
-		Refrech_HTML('/kasboek/kasboekJaarRubriek/' + selectedJaar + '/' + selectedRubriek, 'main_section_A');
+		let aantal = Math.floor(document.getElementById('main_section_main').offsetHeight / 20) - 1;
+		Refrech_HTML('/kasboek/kasboekJaarRubriek/' + selectedJaar + '/' + selectedRubriek + '/' + aantal + '/' + 0, 'main_section_main');
 		kasboek_totalen_laden();
 		return false;
 	});
@@ -70,7 +72,9 @@ function kasboek_menu_listener() {
 function kasboek_main_laden() {
 	console.log('Start main laden');
 	$('#namenlijst_click #kasboek').addClass('active');
-	Refrech_HTML('/kasboek/kasboekJaarRubriek/0/0', 'main_section_A')
+	let aantal = Math.floor(document.getElementById('main_section_main').offsetHeight / 20) - 1;
+	Refrech_HTML('/kasboek/kasboekHeader', 'main_section_header')
+	Refrech_HTML('/kasboek/kasboekJaarRubriek/0/0/' + aantal + '/0', 'main_section_main')
 	console.log('End main laden');
 	kasboek_totalen_laden();
 };
@@ -81,7 +85,7 @@ async function kasboek_totalen_laden() {
 	let data = await fetch_JSON('/kasboek/restcontroller/kasboekTotalen/' + selectedJaar + '/' + selectedRubriek);
 	let html = ``;
 	console.log('Totalen: ' + data.Jaar);
-	$('.main_section_B').html(`<p>Jaar: ${data.Jaar} Rubriek: ${data.Rubriek}</p> 
+	$('.main_section_footer').html(`<p>Jaar: ${data.Jaar} Rubriek: ${data.Rubriek}</p> 
 	Inkomsten: ${getFormattedEuro(data.Totalen[0].Inkomsten)} Uitgaven: ${getFormattedEuro(data.Totalen[0].Uitgaven)} Totaal: ${getFormattedEuro(data.Totalen[0].Totaal)}</br>
 	Inkomsten: ${getFormattedEuro(data.Totalen[1].Inkomsten)} Uitgaven: ${getFormattedEuro(data.Totalen[1].Uitgaven)} Totaal: ${getFormattedEuro(data.Totalen[1].Totaal)}`);
 	console.log('End totalen laden');

@@ -29,39 +29,58 @@ import willydekeyser.model.KasboekJaartal;
 public class KasboekDAO implements IKasboekDAO {
 
 	private final String sql_getAllKasboek = "SELECT kasboek.* FROM kasboek ORDER BY kasboek.Id";
-	private final String sql_getKasboekById = "SELECT kasboek.*, rubriek.* FROM kasboek, rubriek AS rubriek WHERE kasboek.RubriekId = rubriek.Id AND kasboek.Id = ?";
+	private final String sql_getAllKasboekbyPage = "SELECT kasboek.* FROM kasboek ORDER BY kasboek.Id";
+	private final String sql_getKasboekById = "SELECT kasboek.*, rubriek.* "
+			+ "FROM kasboek, rubriek AS rubriek "
+			+ "WHERE kasboek.RubriekId = rubriek.Id AND kasboek.Id = ?";
 	private final String sql_getAllKasboekRubriek = "SELECT kasboek.*, rubriek.* "
 			+ "FROM kasboek, rubriek AS rubriek "
-			+ "WHERE kasboek.RubriekId = rubriek.Id ORDER BY kasboek.Id";
+			+ "WHERE kasboek.RubriekId = rubriek.Id "
+			+ "ORDER BY kasboek.Id";
+	private final String sql_getAllKasboekRubriekbyPage = "SELECT kasboek.*, rubriek.* "
+			+ "FROM kasboek, rubriek AS rubriek "
+			+ "WHERE kasboek.RubriekId = rubriek.Id "
+			+ "ORDER BY kasboek.Id "
+			+ "LIMIT ? "
+			+ "OFFSET ?";
 	private final String sql_getAllKasboekRubriekJaar = "SELECT kasboek.*, rubriek.* "
 			+ "FROM kasboek, rubriek AS rubriek "
 			+ "WHERE kasboek.RubriekId = rubriek.Id AND kasboek.Jaartal = ? "
 			+ "ORDER BY kasboek.Id";
+	private final String sql_getAllKasboekRubriekJaarbyPage = "SELECT kasboek.*, rubriek.* "
+			+ "FROM kasboek, rubriek AS rubriek "
+			+ "WHERE kasboek.RubriekId = rubriek.Id AND kasboek.Jaartal = ? "
+			+ "ORDER BY kasboek.Id "
+			+ "LIMIT ? "
+			+ "OFFSET ?";
 	private final String sql_getAllKasboekRubriekJaarRubriek = "SELECT kasboek.*, rubriek.* "
 			+ "FROM kasboek, rubriek AS rubriek "
 			+ "WHERE kasboek.RubriekId = rubriek.Id AND kasboek.Jaartal = ? AND rubriek.Id = ? "
 			+ "ORDER BY kasboek.Id";
+	private final String sql_getAllKasboekRubriekJaarRubriekbyPage = "SELECT kasboek.*, rubriek.* "
+			+ "FROM kasboek, rubriek AS rubriek "
+			+ "WHERE kasboek.RubriekId = rubriek.Id AND kasboek.Jaartal = ? AND rubriek.Id = ? "
+			+ "ORDER BY kasboek.Id "
+			+ "LIMIT ? "
+			+ "OFFSET ?";
 	private final String sql_getSom = "SELECT SUM(uitgaven) AS uitgaven, SUM(inkomsten) AS inkomsten FROM kasboek";
 	private final String sql_getSomJaartal = "SELECT SUM(uitgaven) AS uitgaven, SUM(inkomsten) AS inkomsten FROM kasboek WHERE Jaartal = ?";
 	private final String sql_getSomRubriek = "SELECT SUM(uitgaven) AS uitgaven, SUM(inkomsten) AS inkomsten FROM kasboek WHERE Rubriek = ?";
 	private final String sql_getSomJaartalRubriek = "SELECT SUM(uitgaven) AS uitgaven, SUM(inkomsten) AS inkomsten "
 			+ "FROM kasboek WHERE Jaartal = ? AND RubriekId = ?";
 	
-	//private final String sql_getKasboekJaarRubriek = "SELECT kasboek.Id, kasboek.Jaartal, rubriek.Id, rubriek.Rubriek "
-	//		+ "FROM kasboek, rubriek WHERE kasboek.RubriekId = rubriek.Id "
-	//		+ "GROUP BY kasboek.Jaartal, kasboek.RubriekId "
-	//		+ "ORDER BY kasboek.Jaartal, rubriek.Rubriek";
-	
 	private final String sql_getKasboekJaarRubriek = "SELECT DISTINCT kasboek.Jaartal, rubriek.Id, Rubriek.Rubriek "
 			+ "FROM kasboek AS kasboek, rubriek AS rubriek WHERE kasboek.RubriekId = rubriek.Id " 
 			+ "ORDER BY kasboek.Jaartal, rubriek.Id";
 	private final String sql_getKasboekJaartal = "SELECT DISTINCT Jaartal AS jaartal FROM kasboek";
 	
-	private final String sql_addKasboek = "INSERT INTO kasboek (Jaartal, RubriekId, Omschrijving, Datum, Uitgaven, Inkomsten) VALUES (?, ?, ?, ?, ?, ?)";
+	private final String sql_addKasboek = "INSERT INTO kasboek (Jaartal, RubriekId, Omschrijving, Datum, Uitgaven, Inkomsten) "
+			+ "VALUES (?, ?, ?, ?, ?, ?)";
 	private final String sql_updateKasboek = "UPDATE kasboek SET Jaartal = ?, RubriekId = ?, Omschrijving = ?, Datum = ?, Uitgaven = ?, Inkomsten = ? "
 			+ "WHERE Id = ?";
 	private final String sql_deleteKasboek = "DELETE FROM kasboek WHERE Id = ?";
 	private final String sql_kasboekExists = "SELECT EXISTS(SELECT * FROM kasboek WHERE Id = ?)";
+	//private final String sql_countKasboek = "SELECT COUNT(*) FROM kasboek";
 	
 	@Autowired
     private JdbcTemplate jdbcTemplate;
@@ -85,6 +104,29 @@ public class KasboekDAO implements IKasboekDAO {
 				return jdbcTemplate.query(sql_getAllKasboekRubriekJaar, new KasboekRubriekRowMapper(), jaartal);
 			} else {
 				return jdbcTemplate.query(sql_getAllKasboekRubriekJaarRubriek, new KasboekRubriekRowMapper(), jaartal, rubriekId);
+			}
+		}
+	}
+	
+	@Override
+	public List<Kasboek> getAllKasboekbyPage(Integer limit, Integer offset) {
+		return jdbcTemplate.query(sql_getAllKasboekbyPage, new KasboekRowMapper(),limit, offset);
+	}
+	
+	@Override
+	public List<Kasboek> getAllKasboekRubriekbyPage(Integer limit, Integer offset) {
+		return jdbcTemplate.query(sql_getAllKasboekRubriekbyPage, new KasboekRubriekRowMapper(), limit, offset);
+	}
+	
+	@Override
+	public List<Kasboek> getAllKasboekRubriekJaarRubriekbyPage(Integer jaartal, Integer rubriekId, Integer limit, Integer offset) {
+		if(jaartal == 0) {
+			return jdbcTemplate.query(sql_getAllKasboekRubriekbyPage, new KasboekRubriekRowMapper(), limit, offset);
+		} else {
+			if(rubriekId == 0) {
+				return jdbcTemplate.query(sql_getAllKasboekRubriekJaarbyPage, new KasboekRubriekRowMapper(), jaartal, limit, offset);
+			} else {
+				return jdbcTemplate.query(sql_getAllKasboekRubriekJaarRubriekbyPage, new KasboekRubriekRowMapper(), jaartal, rubriekId, limit, offset);
 			}
 		}
 		

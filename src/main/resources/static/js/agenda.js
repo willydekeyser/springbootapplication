@@ -2,9 +2,9 @@ let agenda_progress_bar_teller_id;
 
 async function agenda_start() {
 	reset_grid();
-	section_height(100);
+	section_height(0, 100, 0);
 	menu_main_width(0);
-	await Refrech_HTML('/agenda/agenda', 'main_section_A');
+	await Refrech_HTML('/agenda/agenda', 'main_section_main');
 };
 
 function maaktext() {
