@@ -13,8 +13,8 @@ public class RubriekRowMapper implements RowMapper<Rubriek>{
 	public Rubriek mapRow(ResultSet rs, int rowNum) throws SQLException {
 
 		Rubriek rubriek = new Rubriek();
-		rubriek.setId(rs.getInt("Id"));
-		rubriek.setRubriek(rs.getString("Rubriek"));
+		rubriek.setId(rs.getInt("rubriek_id"));
+		rubriek.setRubriek(rs.getString("rubriek"));
 		return rubriek;
 		
 	}

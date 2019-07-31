@@ -23,29 +23,29 @@ public class SoortenLedenByIdLedenExtractor implements ResultSetExtractor<Soorte
 			if(first) {
 				soortenLeden = new SoortenLeden();
 				ledenlijst = new ArrayList<>();
-				soortenLeden.setId(rs.getInt("soortenleden.Id"));
-				soortenLeden.setSoortenleden(rs.getString("soortenleden.SoortenLeden"));
+				soortenLeden.setId(rs.getInt("soortenleden_id"));
+				soortenLeden.setSoortenleden(rs.getString("soortenLeden"));
 				first = false;	
 			}
-			int ledenId = rs.getInt("ledenlijst.Id");
+			int ledenId = rs.getInt("ledenlijst_id");
 			if (ledenId > 0) {
 				Leden leden = new Leden();
 				leden.setId(ledenId);
-				leden.setVoornaam(rs.getString("ledenlijst.Voornaam"));
-				leden.setFamilienaam(rs.getString("ledenlijst.Familienaam"));
-				leden.setStraat(rs.getString("ledenlijst.Straat"));
-				leden.setNr(rs.getString("ledenlijst.Nr"));
-				leden.setPostnr(rs.getString("ledenlijst.Postnr"));
-				leden.setGemeente(rs.getString("ledenlijst.Gemeente"));
-				leden.setTelefoonnummer(rs.getString("ledenlijst.Telefoonnummer"));
-				leden.setGsmnummer(rs.getString("ledenlijst.Gsmnummer"));
-				leden.setEmailadres(rs.getString("ledenlijst.Emailadres"));
-				leden.setWebadres(rs.getString("ledenlijst.Webadres"));
-				leden.setDatumlidgeld(rs.getDate("ledenlijst.Datumlidgeld").toLocalDate());
-				leden.setSoortenledenId(rs.getInt("ledenlijst.SoortlidId"));
-				leden.setSoortenleden(new SoortenLeden(rs.getInt("soortenleden.Id"), rs.getString("soortenleden.Soortenleden")));
-				leden.setOntvangMail(rs.getBoolean("ledenlijst.OntvangMail"));
-				leden.setMailVlag(rs.getBoolean("ledenlijst.MailVlag"));
+				leden.setVoornaam(rs.getString("voornaam"));
+				leden.setFamilienaam(rs.getString("familienaam"));
+				leden.setStraat(rs.getString("straat"));
+				leden.setNr(rs.getString("nr"));
+				leden.setPostnr(rs.getString("postnr"));
+				leden.setGemeente(rs.getString("gemeente"));
+				leden.setTelefoonnummer(rs.getString("telefoonnummer"));
+				leden.setGsmnummer(rs.getString("gsmnummer"));
+				leden.setEmailadres(rs.getString("emailadres"));
+				leden.setWebadres(rs.getString("webadres"));
+				leden.setDatumlidgeld(rs.getDate("datumlidgeld").toLocalDate());
+				leden.setSoortenledenId(rs.getInt("soortenleden_id"));
+				leden.setSoortenleden(new SoortenLeden(rs.getInt("soortenleden_id"), rs.getString("soortenleden")));
+				leden.setOntvangMail(rs.getBoolean("ontvangmail"));
+				leden.setMailVlag(rs.getBoolean("mailvlag"));
 				ledenlijst.add(leden);
 				soortenLeden.setLedenlijsten(ledenlijst);
 			}

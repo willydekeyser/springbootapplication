@@ -19,14 +19,14 @@ public class KasboekRubriekRowMapper implements RowMapper<Kasboek>{
 		//}
 		
 		Kasboek kasboek = new Kasboek();
-		kasboek.setId(rs.getInt("Id"));
-		kasboek.setJaartal(rs.getInt("Jaartal"));
-		kasboek.setRubriekId(rs.getInt("RubriekId"));
-		kasboek.setRubriek(new Rubriek(rs.getInt("id"), rs.getString("rubriek")));
-		kasboek.setOmschrijving(rs.getString("Omschrijving"));
-		kasboek.setDatum(rs.getDate("Datum").toLocalDate());
-		kasboek.setUitgaven(rs.getBigDecimal("Uitgaven"));
-		kasboek.setInkomsten(rs.getBigDecimal("Inkomsten"));
+		kasboek.setId(rs.getInt("kasboek_id"));
+		kasboek.setJaartal(rs.getInt("jaartal"));
+		kasboek.setRubriekId(rs.getInt("rubriekid"));
+		kasboek.setRubriek(new Rubriek(rs.getInt("rubriek_id"), rs.getString("rubriek")));
+		kasboek.setOmschrijving(rs.getString("omschrijving"));
+		kasboek.setDatum(rs.getDate("datum").toLocalDate());
+		kasboek.setUitgaven(rs.getBigDecimal("uitgaven"));
+		kasboek.setInkomsten(rs.getBigDecimal("inkomsten"));
 		return kasboek;
 	}
 

@@ -13,10 +13,10 @@ public class LidgeldRowMapper implements RowMapper<Lidgeld>{
 	public Lidgeld mapRow(ResultSet rs, int rowNum) throws SQLException {
 		
 		Lidgeld lidgeld = new Lidgeld();
-		lidgeld.setId(rs.getInt("Id"));
-		lidgeld.setLedenId(rs.getInt("Lidnr"));
-		lidgeld.setDatum(rs.getDate("Datum").toLocalDate());
-		lidgeld.setBedrag(rs.getBigDecimal("Bedrag"));
+		lidgeld.setId(rs.getInt("lidgeld_id"));
+		lidgeld.setLedenId(rs.getInt("ledenlijstid"));
+		lidgeld.setDatum(rs.getDate("datum").toLocalDate());
+		lidgeld.setBedrag(rs.getBigDecimal("bedrag"));
 		return lidgeld;
 	}
 

@@ -26,69 +26,69 @@ import willydekeyser.model.Leden;
 @Repository
 public class LedenDAO implements ILedenDAO {
 
-	private final String sql_getAllLeden = "SELECT ledenlijst.* FROM ledenlijst ORDER BY ledenlijst.Id" ;
-	private final String sql_getAllIedereenlijst = "SELECT ledenlijst.Id, ledenlijst.Voornaam, ledenlijst.Familienaam, ledenlijst.Emailadres "
+	private final String sql_getAllLeden = "SELECT * FROM ledenlijst ORDER BY ledenlijst_id" ;
+	private final String sql_getAllIedereenlijst = "SELECT ledenlijst_id, voornaam, familienaam, emailadres "
 			+ "FROM ledenlijst "
-			+ "WHERE ledenlijst.SoortlidId = 1 OR ledenlijst.SoortlidId = 2 OR ledenlijst.SoortlidId = 3 OR ledenlijst.SoortlidId = 4 "
-			+ "ORDER BY ledenlijst.Familienaam" ;
-	private final String sql_getAllLedenlijst = "SELECT ledenlijst.Id, ledenlijst.Voornaam, ledenlijst.Familienaam, ledenlijst.Emailadres "
+			+ "WHERE soortenledenid = 1 OR soortenledenid = 2 OR soortenledenid = 3 OR soortenledenid = 4 "
+			+ "ORDER BY familienaam, voornaam" ;
+	private final String sql_getAllLedenlijst = "SELECT ledenlijst_id, voornaam, familienaam, emailadres "
 			+ "FROM ledenlijst "
-			+ "WHERE ledenlijst.SoortlidId = 1 OR ledenlijst.SoortlidId = 2 OR ledenlijst.SoortlidId = 3 "
-			+ "ORDER BY ledenlijst.Familienaam, ledenlijst.Voornaam" ;
-	private final String sql_getAllBestuursledenlijst = "SELECT ledenlijst.Id, ledenlijst.Voornaam, ledenlijst.Familienaam, ledenlijst.Emailadres "
+			+ "WHERE soortenledenid = 1 OR soortenledenid = 2 OR soortenledenid = 3 "
+			+ "ORDER BY familienaam, voornaam" ;
+	private final String sql_getAllBestuursledenlijst = "SELECT ledenlijst_id, voornaam, familienaam, emailadres "
 			+ "FROM ledenlijst "
-			+ "WHERE ledenlijst.SoortlidId = 3 "
-			+ "ORDER BY ledenlijst.Familienaam" ;
-	private final String sql_getAllWerkendeledenlijst = "SELECT ledenlijst.Id, ledenlijst.Voornaam, ledenlijst.Familienaam, ledenlijst.Emailadres "
+			+ "WHERE soortenledenid = 3 "
+			+ "ORDER BY familienaam, voornaam" ;
+	private final String sql_getAllWerkendeledenlijst = "SELECT ledenlijst_id, voornaam, familienaam, emailadres "
 			+ "FROM ledenlijst "
-			+ "WHERE ledenlijst.SoortlidId = 2 "
-			+ "ORDER BY ledenlijst.Familienaam" ;
-	private final String sql_getAllGeenledenlijst = "SELECT ledenlijst.Id, ledenlijst.Voornaam, ledenlijst.Familienaam, ledenlijst.Emailadres "
+			+ "WHERE soortenledenid = 2 "
+			+ "ORDER BY familienaam, voornaam" ;
+	private final String sql_getAllGeenledenlijst = "SELECT ledenlijst_id, voornaam, familienaam, emailadres "
 			+ "FROM ledenlijst "
-			+ "WHERE ledenlijst.SoortlidId = 4 "
-			+ "ORDER BY ledenlijst.Familienaam" ;
+			+ "WHERE soortenledenid = 4 "
+			+ "ORDER BY familienaam, voornaam" ;
 	private final String sql_getAllLedenSoortenleden = "SELECT ledenlijst.*, soortenleden.* "
 			+ "FROM ledenlijst, soortenleden "
-			+ "WHERE ledenlijst.SoortlidId = soortenleden.Id "
-			+ "AND (ledenlijst.SoortlidId = 1 OR ledenlijst.SoortlidId = 2 OR ledenlijst.SoortlidId = 3) "
-			+ "ORDER BY ledenlijst.Familienaam" ;
+			+ "WHERE soortenledenid = soortenleden_id "
+			+ "AND (soortenledenid = 1 OR soortenledenid = 2 OR soortenledenid = 3) "
+			+ "ORDER BY familienaam, voornaam" ;
 	private final String sql_getAllWerkendeLedenSoortenleden = "SELECT ledenlijst.*, soortenleden.* "
 			+ "FROM ledenlijst, soortenleden "
-			+ "WHERE ledenlijst.SoortlidId = soortenleden.Id "
-			+ "AND (ledenlijst.SoortlidId = 2) "
-			+ "ORDER BY ledenlijst.Familienaam" ;
+			+ "WHERE soortenledenid = soortenleden_id "
+			+ "AND (soortenledenid = 2) "
+			+ "ORDER BY familienaam, voornaam" ;
 	private final String sql_getAllBestuursLedenSoortenleden = "SELECT ledenlijst.*, soortenleden.* "
 			+ "FROM ledenlijst, soortenleden "
-			+ "WHERE ledenlijst.SoortlidId = soortenleden.Id "
-			+ "AND (ledenlijst.SoortlidId = 3) "
-			+ "ORDER BY ledenlijst.Familienaam" ;
+			+ "WHERE soortenledenid = soortenleden_id "
+			+ "AND (soortenledenid = 3) "
+			+ "ORDER BY familienaam, voornaam" ;
 	private final String sql_getAllGeenLedenSoortenleden = "SELECT ledenlijst.*, soortenleden.* "
 			+ "FROM ledenlijst, soortenleden "
-			+ "WHERE ledenlijst.SoortlidId = soortenleden.Id "
-			+ "AND (ledenlijst.SoortlidId = 4) "
-			+ "ORDER BY ledenlijst.Familienaam" ;
+			+ "WHERE soortenledenid = soortenleden_id "
+			+ "AND (soortenledenid = 4) "
+			+ "ORDER BY familienaam, voornaam" ;
 	private final String sql_getAllIedereenSoortenleden = "SELECT ledenlijst.*, soortenleden.* "
 			+ "FROM ledenlijst, soortenleden "
-			+ "WHERE ledenlijst.SoortlidId = soortenleden.Id "
-			+ "AND (ledenlijst.SoortlidId = 1 OR ledenlijst.SoortlidId = 2 OR ledenlijst.SoortlidId = 3 OR ledenlijst.SoortlidId = 4) "
+			+ "WHERE soortenledenid = soortenleden_id "
+			+ "AND (soortenledenid = 1 OR soortenledenid = 2 OR soortenledenid = 3 OR soortenledenid = 4) "
 			+ "ORDER BY ledenlijst.Familienaam" ;
 	private final String sql_getAllLedenLidgeld = "SELECT ledenlijst.*, lidgeld.* "
 			+ "FROM ledenlijst "
-			+ "LEFT JOIN lidgeld ON ledenlijst.Id = lidgeld.Lidnr";
+			+ "LEFT JOIN lidgeld ON ledenlijst_id = ledenlijstid";
 	private final String sql_getLedenById = "SELECT ledenlijst.*, lidgeld.*, soortenleden.* FROM ledenlijst "
-			+ "LEFT JOIN lidgeld ON ledenlijst.Id = lidgeld.Lidnr "
-			+ "LEFT JOIN soortenleden ON ledenlijst.SoortlidId = soortenleden.Id "
-			+ "WHERE ledenlijst.Id = ? "
-			+ "ORDER BY ledenlijst.Id";
+			+ "LEFT JOIN lidgeld ON ledenlijst_id = ledenlijstid "
+			+ "LEFT JOIN soortenleden ON soortenledenid = soortenleden_id "
+			+ "WHERE ledenlijst_id = ? "
+			+ "ORDER BY ledenlijst_id";
 	
-	private final String sql_addLeden = "INSERT INTO ledenlijst (Voornaam, Familienaam, Straat, Nr, Postnr, "
-			+ "Gemeente, Telefoonnummer, Gsmnummer, Emailadres, Webadres, Datumlidgeld, SoortlidId, "
-			+ "OntvangMail, MailVlag) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-	private final String sql_updateLeden = "UPDATE ledenlijst SET Voornaam = ?, Familienaam = ?, Straat = ?, Nr = ?, Postnr = ?, "
-			+ "Gemeente = ?, Telefoonnummer = ?, Gsmnummer = ?, Emailadres = ?, Webadres = ?, Datumlidgeld = ?, SoortlidId = ?, "
-			+ "OntvangMail = ?, MailVlag = ? WHERE id = ?";
-	private final String sql_deleteLeden = "DELETE FROM ledenlijst WHERE id = ?";
-	private final String sql_ledenExists = "SELECT count(*) FROM ledenlijst WHERE id = ?";
+	private final String sql_addLeden = "INSERT INTO ledenlijst (voornaam, familienaam, straat, nr, postnr, "
+			+ "gemeente, telefoonnummer, gsmnummer, emailadres, webadres, datumlidgeld, soortenledenid, "
+			+ "ontvangmail, mailvlag) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+	private final String sql_updateLeden = "UPDATE ledenlijst SET voornaam = ?, familienaam = ?, straat = ?, nr = ?, postnr = ?, "
+			+ "gemeente = ?, telefoonnummer = ?, gsmnummer = ?, emailadres = ?, webadres = ?, datumlidgeld = ?, soortenledenid = ?, "
+			+ "ontvangmail = ?, mailvlag = ? WHERE ledenlijst_id = ?";
+	private final String sql_deleteLeden = "DELETE FROM ledenlijst WHERE ledenlijst_id = ?";
+	private final String sql_ledenExists = "SELECT EXSIST(SELECT * FROM ledenlijst WHERE ledenlijst_id = ?)";
 	
 	@Autowired
     private JdbcTemplate jdbcTemplate;

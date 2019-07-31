@@ -13,8 +13,8 @@ public class SoortenLedenRowMapper implements RowMapper<SoortenLeden>{
 	public SoortenLeden mapRow(ResultSet rs, int rowNum) throws SQLException {
 
 		SoortenLeden soortenLeden = new SoortenLeden();
-		soortenLeden.setId(rs.getInt("Id"));
-		soortenLeden.setSoortenleden(rs.getString("Soortenleden"));
+		soortenLeden.setId(rs.getInt("soortenleden_id"));
+		soortenLeden.setSoortenleden(rs.getString("soortenleden"));
 		return soortenLeden;
 	}
 

@@ -13,13 +13,13 @@ public class KasboekRowMapper implements RowMapper<Kasboek>{
 	public Kasboek mapRow(ResultSet rs, int rowNum) throws SQLException {
 		
 		Kasboek kasboek = new Kasboek();
-		kasboek.setId(rs.getInt("Id"));
-		kasboek.setJaartal(rs.getInt("Jaartal"));
-		kasboek.setRubriekId(rs.getInt("RubriekId"));
-		kasboek.setOmschrijving(rs.getString("Omschrijving"));
-		kasboek.setDatum(rs.getDate("Datum").toLocalDate());
-		kasboek.setUitgaven(rs.getBigDecimal("Uitgaven"));
-		kasboek.setInkomsten(rs.getBigDecimal("Inkomsten"));
+		kasboek.setId(rs.getInt("kasboek_id"));
+		kasboek.setJaartal(rs.getInt("jaartal"));
+		kasboek.setRubriekId(rs.getInt("rubriekid"));
+		kasboek.setOmschrijving(rs.getString("omschrijving"));
+		kasboek.setDatum(rs.getDate("datum").toLocalDate());
+		kasboek.setUitgaven(rs.getBigDecimal("uitgaven"));
+		kasboek.setInkomsten(rs.getBigDecimal("inkomsten"));
 		return kasboek;
 	}
 

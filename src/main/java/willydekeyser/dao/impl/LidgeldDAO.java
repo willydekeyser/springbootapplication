@@ -23,19 +23,19 @@ import willydekeyser.model.Lidgeld;
 @Repository
 public class LidgeldDAO implements ILidgeldDAO {
 
-	private final String sql_AllLidgeld = "SELECT * FROM lidgeld ORDER BY lidgeld.Id";
-	private final String sql_AllLidgeldLeden = "SELECT * FROM lidgeld, ledenlijst WHERE lidgeld.Lidnr = ledenlijst.Id ORDER BY lidgeld.Id";
-	private final String sql_AllLidgeldByLid = "SELECT * FROM lidgeld WHERE lidgeld.Lidnr = ? ORDER BY lidgeld.Id";
+	private final String sql_AllLidgeld = "SELECT * FROM lidgeld ORDER BY lidgeld_id";
+	private final String sql_AllLidgeldLeden = "SELECT * FROM lidgeld, ledenlijst WHERE ledenlijstid = ledenlijst_id ORDER BY lidgeld_id";
+	private final String sql_AllLidgeldByLid = "SELECT * FROM lidgeld WHERE ledenlijstid = ? ORDER BY lidgeld_id";
 	private final String sql_MAXLidgeldLeden = "SELECT lidgeld.*, ledenlijst.* FROM lidgeld, ledenlijst "
-			+ "WHERE (ledenlijst.Id=lidgeld.Lidnr) AND  (ledenlijst.SoortlidId = 1 OR ledenlijst.SoortlidId = 2 OR ledenlijst.SoortlidId = 3) "
-			+ "AND (lidgeld.Datum = (SELECT MAX(Datum) FROM lidgeld AS lidgeld_sub WHERE lidgeld.Lidnr = lidgeld_sub.Lidnr)) "
-			+ "ORDER BY lidgeld.Datum ASC, lidgeld.Id ASC";
-	private final String sql_getLidgeldById = "SELECT lidgeld.*, ledenlijst.*  FROM lidgeld, ledenlijst WHERE lidgeld.Id = ? AND lidgeld.Lidnr = ledenlijst.Id";
+			+ "WHERE (ledenlijst_id = ledenlijstid) AND  (soortenledenid = 1 OR soortenledenid = 2 OR soortenledenid = 3) "
+			+ "AND (datum = (SELECT MAX(datum) FROM lidgeld AS lidgeld_sub WHERE ledenlijst_id = lidgeld_sub.ledenlijstid)) "
+			+ "ORDER BY datum ASC, lidgeld_id ASC";
+	private final String sql_getLidgeldById = "SELECT lidgeld.*, ledenlijst.*  FROM lidgeld, ledenlijst WHERE lidgeld_id = ? AND ledenlijstid = ledenlijst_id";
 	
-	private final String sql_newLidgeld = "INSERT INTO lidgeld (Lidnr, Datum, Bedrag) value (?, ?, ?)";
-	private final String sql_updateLidgeld = "UPDATE lidgeld SET Lidnr = ?, Datum = ?, Bedrag = ? WHERE id = ?";
-	private final String sql_deleteLidgeld = "DELETE FROM lidgeld WHERE id = ?";
-	private final String sql_lidgeldExists = "SELECT count(*) FROM lidgeld WHERE id = ?";
+	private final String sql_newLidgeld = "INSERT INTO lidgeld (ledenlijstid, datum, bedrag) value (?, ?, ?)";
+	private final String sql_updateLidgeld = "UPDATE lidgeld SET ledenlijstid = ?, datum = ?, bedrag = ? WHERE lidgeld_id = ?";
+	private final String sql_deleteLidgeld = "DELETE FROM lidgeld WHERE lidgeld_id = ?";
+	private final String sql_lidgeldExists = "SELECT EXIST(SELECT * FROM lidgeld WHERE lidgeld_id = ?)";
 	
 	@Autowired
     private JdbcTemplate jdbcTemplate;

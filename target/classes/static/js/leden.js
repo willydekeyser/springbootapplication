@@ -181,9 +181,9 @@ function leden_change_soort() {
 async function leden_tabel_start() {
 	reset_grid();
 	section_height(30);
-	await Refrech_HTML('/leden/leden_tabel', 'main_section_B');
-	await Refrech_HTML('/leden/leden_tabel_ledenlijst/1', 'main_section_A');
-	await Refrech_HTML('/leden/leden_tabel_ById/4', 'main_section_B');
+	await Refrech_HTML('/leden/leden_tabel', 'main_section_main');
+	await Refrech_HTML('/leden/leden_tabel_ledenlijst/1', 'main_section_header');
+	await Refrech_HTML('/leden/leden_tabel_ById/4', 'main_section_main');
 };
 
 function leden_tabel_change_soort() {
@@ -239,7 +239,7 @@ function leden_tabel_ledenlijst_geladen() {
 
 function ledenbyid(id) {
 	console.log("Leden detail: " + id);
-	Refrech_HTML('/leden/leden_tabel_ById/' + id, 'main_section_B');
+	Refrech_HTML('/leden/leden_tabel_ById/' + id, 'main_section_main');
 };
 
 /**

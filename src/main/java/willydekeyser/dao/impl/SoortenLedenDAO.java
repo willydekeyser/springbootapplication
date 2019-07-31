@@ -24,16 +24,16 @@ import willydekeyser.model.SoortenLeden;
 @Repository
 public class SoortenLedenDAO implements ISoortenLedenDAO {
 
-	private final String sql_getAllSoortenleden = "SELECT soortenleden.* FROM soortenleden";
+	private final String sql_getAllSoortenleden = "SELECT soortenleden.* FROM soortenleden ORDER BY soortenleden_id";
 	private final String sql_getSoortenledenById = "SELECT soortenleden.*, ledenlijst.* "
-			+ "FROM soortenleden LEFT JOIN ledenlijst ON soortenleden.Id = ledenlijst.SoortlidId WHERE soortenleden.Id = ?";
+			+ "FROM soortenleden LEFT JOIN ledenlijst ON soortenleden_id = ledenlijst.soortenleden_id WHERE soortenleden_id = ?";
 	private final String sql_getAllSoortenLedenLeden = "SELECT soortenleden.*, ledenlijst.* "
-			+ "FROM soortenleden LEFT JOIN ledenlijst ON soortenleden.Id = ledenlijst.SoortlidId";
-	private final String sql_addSoortenleden = "INSERT INTO soortenleden (Soortenleden) VALUES (?)";
-	private final String sql_updateSoortenleden = "UPDATE soortenleden SET Soortenleden = ? WHERE Id = ?";
-	private final String sql_deleteSoortenleden = "DELETE FROM soortenleden WHERE Id = ?";
-	private final String sql_soortenledenExists = "SELECT count(*) FROM soortenleden WHERE Id = ?";
-	private final String sql_ledenExistsBySoortenledenId = "SELECT EXISTS(SELECT * FROM ledenlijst WHERE SoortlidId = ?)";
+			+ "FROM soortenleden LEFT JOIN ledenlijst ON soortenleden_id = soortenledenid";
+	private final String sql_addSoortenleden = "INSERT INTO soortenleden (soortenleden) VALUES (?)";
+	private final String sql_updateSoortenleden = "UPDATE soortenleden SET Soortenleden = ? WHERE soortenleden_id = ?";
+	private final String sql_deleteSoortenleden = "DELETE FROM soortenleden WHERE soortenleden_id = ?";
+	private final String sql_soortenledenExists = "SELECT count(*) FROM soortenleden WHERE soortenleden_id = ?";
+	private final String sql_ledenExistsBySoortenledenId = "SELECT EXISTS(SELECT * FROM ledenlijst WHERE soortenledenid = ?)";
 	
 	@Autowired
     private JdbcTemplate jdbcTemplate;
@@ -66,7 +66,13 @@ public class SoortenLedenDAO implements ISoortenLedenDAO {
 			}
 			
 		}, key);
-	    soortenLeden.setId(key.getKey().intValue());
+		
+		if (key.getKeys().size() > 1) {
+			soortenLeden.setId(((Number) key.getKeys().get("soortenleden_id")).intValue());
+	    } else {
+	    	soortenLeden.setId(key.getKey().intValue());
+	    }
+	    
 	    return soortenLeden;
 	}
 
@@ -84,21 +90,11 @@ public class SoortenLedenDAO implements ISoortenLedenDAO {
 
 	@Override
 	public Boolean soortenLedenExists(int id) {
-		Integer count = jdbcTemplate.queryForObject(sql_soortenledenExists, Integer.class, id);
-		if(count == 0) {
-			return false;
-		} else {
-			return true;
-		}
+		return jdbcTemplate.queryForObject(sql_soortenledenExists, Boolean.class, id);
 	}
 	
 	@Override
 	public Boolean ledenExistsBySoortenledenId(int id) {
-		Integer count = jdbcTemplate.queryForObject(sql_ledenExistsBySoortenledenId, Integer.class, id);
-		if (count == 0) {
-			return false;
-		} else {
-			return true;
-		}
+		return jdbcTemplate.queryForObject(sql_ledenExistsBySoortenledenId, Boolean.class, id);
 	}
 }

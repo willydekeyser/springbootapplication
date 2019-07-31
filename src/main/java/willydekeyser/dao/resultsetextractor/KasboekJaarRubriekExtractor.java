@@ -32,7 +32,7 @@ public class KasboekJaarRubriekExtractor implements ResultSetExtractor<List<Kasb
 				map.put(kasboekjaartal, kasboekJaartal);
 				jaartalTeller++;
 			}
-			int rubriekId = rs.getInt("id");
+			int rubriekId = rs.getInt("rubriek_id");
 			if (rubriekId > 0) {
 				Rubriek rubriek = new Rubriek();
 				rubriek.setId(rubriekId);

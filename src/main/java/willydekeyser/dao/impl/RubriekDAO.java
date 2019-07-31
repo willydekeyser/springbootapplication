@@ -24,16 +24,16 @@ import willydekeyser.model.Rubriek;
 @Repository
 public class RubriekDAO implements IRubriekDAO {
 
-	private final String sql_getAllRubriek = "SELECT rubriek.* FROM rubriek";
+	private final String sql_getAllRubriek = "SELECT * FROM rubriek ORDER BY rubriek_id";
 	private final String sql_getAllRubriekKasboek = "SELECT rubriek.*, kasboek.* "
-			+ "FROM rubriek LEFT JOIN kasboek ON rubriek.Id = kasboek.RubriekId";
+			+ "FROM rubriek LEFT JOIN kasboek ON rubriek_id = rubriekid";
 	private final String sql_getRubriekById = "SELECT rubriek.*, kasboek.* "
-			+ "FROM rubriek LEFT JOIN kasboek ON rubriek.Id = kasboek.RubriekId WHERE rubriek.Id = ?";
+			+ "FROM rubriek LEFT JOIN kasboek ON rubriek_id = rubriekid WHERE rubriek_id = ?";
 	private final String sql_addRubriek = "INSERT INTO rubriek (rubriek) VALUES (?)";
-	private final String sql_updateRubriek = "UPDATE rubriek SET rubriek = ? WHERE Id = ?";
-	private final String sql_deleteRubriek = "DELETE FROM rubriek WHERE Id = ?";
-	private final String sql_rubriekExists = "SELECT count(*) FROM rubriek WHERE id = ?";
-	private final String sql_kasboekExistsByRuriekId = "SELECT EXISTS(SELECT * FROM kasboek WHERE RubriekId = ?)";
+	private final String sql_updateRubriek = "UPDATE rubriek SET rubriek = ? WHERE rubriek_id = ?";
+	private final String sql_deleteRubriek = "DELETE FROM rubriek WHERE rubriek_id = ?";
+	private final String sql_rubriekExists = "SELECT EXIST(SELECT * FROM rubriek WHERE rubriek_id = ?)";
+	private final String sql_kasboekExistsByRuriekId = "SELECT EXISTS(SELECT * FROM kasboek WHERE rubriekid = ?)";
 	
 	@Autowired
     private JdbcTemplate jdbcTemplate;
@@ -64,9 +64,13 @@ public class RubriekDAO implements IRubriekDAO {
 			    ps.setString(1, rubriek.getRubriek());
 			    return ps;
 			}
-			
 		}, key);
-	    rubriek.setId(key.getKey().intValue());
+		
+	    if (key.getKeys().size() > 1) {
+	    	rubriek.setId(((Number) key.getKeys().get("rubriek_id")).intValue());
+	    } else {
+	    	rubriek.setId(key.getKey().intValue());
+	    }
 	    return rubriek;
 	}
 
@@ -84,22 +88,12 @@ public class RubriekDAO implements IRubriekDAO {
 
 	@Override
 	public Boolean rubriekExists(int id) {
-		Integer count = jdbcTemplate.queryForObject(sql_rubriekExists, Integer.class, id);
-		if(count == 0) {
-			return false;
-		} else {
-			return true;
-		}
+		return jdbcTemplate.queryForObject(sql_rubriekExists, Boolean.class, id);
 	}
 	
 	@Override
 	public Boolean kasboekExistsByRubriekId(int id) {
-		Integer count = jdbcTemplate.queryForObject(sql_kasboekExistsByRuriekId, Integer.class, id);
-		if(count == 0) {
-			return false;
-		} else {
-			return true;
-		}
+		return jdbcTemplate.queryForObject(sql_kasboekExistsByRuriekId, Boolean.class, id);
 	}
 	
 }

@@ -14,22 +14,22 @@ public class LedenSoortenLedenRowMapper implements RowMapper<Leden>{
 	public Leden mapRow(ResultSet rs, int rownum) throws SQLException {
 		
 		Leden leden = new Leden();
-		leden.setId(rs.getInt("Id"));
-		leden.setVoornaam(rs.getString("Voornaam"));
-		leden.setFamilienaam(rs.getString("Familienaam"));
-		leden.setStraat(rs.getString("Straat"));
-		leden.setNr(rs.getString("Nr"));
-		leden.setPostnr(rs.getString("Postnr"));
-		leden.setGemeente(rs.getString("Gemeente"));
-		leden.setTelefoonnummer(rs.getString("Telefoonnummer"));
-		leden.setGsmnummer(rs.getString("Gsmnummer"));
-		leden.setEmailadres(rs.getString("Emailadres"));
-		leden.setWebadres(rs.getString("Webadres"));
-		leden.setDatumlidgeld(rs.getDate("Datumlidgeld").toLocalDate());
-		leden.setSoortenledenId(rs.getInt("SoortlidId"));
-		leden.setSoortenleden(new SoortenLeden(rs.getInt("soortenleden.Id"), rs.getString("soortenleden.Soortenleden")));
-		leden.setOntvangMail(rs.getBoolean("OntvangMail"));
-		leden.setMailVlag(rs.getBoolean("MailVlag"));
+		leden.setId(rs.getInt("ledenlijst_id"));
+		leden.setVoornaam(rs.getString("voornaam"));
+		leden.setFamilienaam(rs.getString("familienaam"));
+		leden.setStraat(rs.getString("straat"));
+		leden.setNr(rs.getString("nr"));
+		leden.setPostnr(rs.getString("postnr"));
+		leden.setGemeente(rs.getString("gemeente"));
+		leden.setTelefoonnummer(rs.getString("telefoonnummer"));
+		leden.setGsmnummer(rs.getString("gsmnummer"));
+		leden.setEmailadres(rs.getString("emailadres"));
+		leden.setWebadres(rs.getString("webadres"));
+		leden.setDatumlidgeld(rs.getDate("datumlidgeld").toLocalDate());
+		leden.setSoortenledenId(rs.getInt("soortenledenid"));
+		leden.setSoortenleden(new SoortenLeden(rs.getInt("soortenleden_id"), rs.getString("soortenleden")));
+		leden.setOntvangMail(rs.getBoolean("ontvangmail"));
+		leden.setMailVlag(rs.getBoolean("mailvlag"));
 		return leden;
 	}
 
