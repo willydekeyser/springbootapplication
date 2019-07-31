@@ -20,6 +20,7 @@ async function leden_start() {
 	reset_grid();
 	menu_height(3);
 	menu_main_width(300);
+	section_height(0, 100, 0);
 	selectedSoortId = 1;
 	selectedLidId = 0;
 	await Promise.all([
@@ -180,10 +181,13 @@ function leden_change_soort() {
 
 async function leden_tabel_start() {
 	reset_grid();
-	section_height(80, 100, 0);
-	await Refrech_HTML('/leden/leden_tabel', 'main_section_main');
-	await Refrech_HTML('/leden/leden_tabel_ledenlijst/1', 'main_section_header');
-	await Refrech_HTML('/leden/leden_tabel_ById/4', 'main_section_main');
+	section_height(10, 80, 100);
+	menu_main_width(10);
+	await Refrech_HTML('/leden/leden_menu/1', 'main_section_header'),
+	await Refrech_HTML('/leden/leden_tabel', 'main_section_footer');
+	await Refrech_HTML('/leden/leden_tabel_ledenlijst/1', 'main_section_main');
+	await Refrech_HTML('/leden/leden_tabel_ById/4', 'main_section_footer');
+	leden_tabel_change_soort();
 };
 
 function leden_tabel_change_soort() {
@@ -225,6 +229,7 @@ function leden_tabel_ledenlijst(soortId, lidId) {
 		url : "/leden/leden_tabel_ledenlijst/" + selectedSoortId,
 		success : function(data) {
 			$("#leden_tabel_ledenlijst").html(data);
+			console.log('DATA: ' + data)
 		}
 	})
 };

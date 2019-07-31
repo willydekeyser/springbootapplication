@@ -83,6 +83,7 @@ public class KasboekController {
     		kasboekLijst = kasboekservice.getAllKasboekRubriekJaarRubriekbyPage(jaar, rubriek, limit, offset);
     	}
     	model.addAttribute(KASBOEK, kasboekLijst);
+    	model.addAttribute("Offset", offset);
         return "kasboek/kasboeklijst :: kasboektabel";
     }
     

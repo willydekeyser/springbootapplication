@@ -11,6 +11,10 @@
 	<button type="button" class="btn btn-success" th:onclick="newKasboek();" >&nbsp;&nbsp;&nbsp;&nbsp;Nieuw&nbsp;&nbsp;&nbsp;&nbsp;</button>
 	<button type="button" class="btn btn-success" th:onclick="updateKasboek();" >&nbsp;Aanpassen&nbsp;</button>
 	<button type="button" class="btn btn-danger" th:onclick="deleteKasboek();" >Verwijderen</button>
+	<button type="button" class="btn btn-danger" th:onclick="eersteKasboek();" >Eerste</button>
+	<button type="button" class="btn btn-danger" th:onclick="vorigeKasboek();" >Vorige</button>
+	<button type="button" class="btn btn-danger" th:onclick="volgendeKasboek();" >Volgende</button>
+	<button type="button" class="btn btn-danger" th:onclick="laatsteKasboek();" >Laatste</button>
 </div>
 </div>
 <div th:fragment="kasboektabel">
@@ -33,7 +37,7 @@
 	<tbody id="kasboek_tabel_body">
 	<tr class="test" onclick="kasboekSelect(this)" th:each="kasboek : ${kasboek}" th:id="${kasboek.id}">
 		<td style="width: 15px" class="test" > </td>
-		<td style="width: 50px" class="test" th:text="${kasboekStat.count}"></td>
+		<td style="width: 50px" class="test" th:text="${Offset + kasboekStat.count}"></td>
 		<td style="width: 50px" class="test" th:text="${kasboek.id}"></td>
 		<td style="width: 50px" class="test" th:text="${kasboek.jaartal}"></td>
 		<td style="width: 200px" class="test" th:text="${kasboek.rubriek.rubriek}"></td>
