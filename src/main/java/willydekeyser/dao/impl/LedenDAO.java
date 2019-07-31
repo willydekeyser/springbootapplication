@@ -79,7 +79,7 @@ public class LedenDAO implements ILedenDAO {
 			+ "LEFT JOIN lidgeld ON ledenlijst_id = ledenlijstid "
 			+ "LEFT JOIN soortenleden ON soortenledenid = soortenleden_id "
 			+ "WHERE ledenlijst_id = ? "
-			+ "ORDER BY ledenlijst_id";
+			+ "ORDER BY ledenlijst_id, lidgeld_id";
 	
 	private final String sql_addLeden = "INSERT INTO ledenlijst (voornaam, familienaam, straat, nr, postnr, "
 			+ "gemeente, telefoonnummer, gsmnummer, emailadres, webadres, datumlidgeld, soortenledenid, "
@@ -143,7 +143,13 @@ public class LedenDAO implements ILedenDAO {
 				return ps;
 			}
 		}, key);
-		leden.setId(key.getKey().intValue());
+		
+		if (key.getKeys().size() > 1) {
+			leden.setId(((Number) key.getKeys().get("ledenlijst_id")).intValue());
+	    } else {
+	    	leden.setId(key.getKey().intValue());
+	    }
+		
 		return leden;
 	}
 

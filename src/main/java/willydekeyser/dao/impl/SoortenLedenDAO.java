@@ -28,7 +28,7 @@ public class SoortenLedenDAO implements ISoortenLedenDAO {
 	private final String sql_getSoortenledenById = "SELECT soortenleden.*, ledenlijst.* "
 			+ "FROM soortenleden LEFT JOIN ledenlijst ON soortenleden_id = ledenlijst.soortenleden_id WHERE soortenleden_id = ?";
 	private final String sql_getAllSoortenLedenLeden = "SELECT soortenleden.*, ledenlijst.* "
-			+ "FROM soortenleden LEFT JOIN ledenlijst ON soortenleden_id = soortenledenid";
+			+ "FROM soortenleden LEFT JOIN ledenlijst ON soortenleden_id = soortenledenid ORDER BY soortenleden_id";
 	private final String sql_addSoortenleden = "INSERT INTO soortenleden (soortenleden) VALUES (?)";
 	private final String sql_updateSoortenleden = "UPDATE soortenleden SET Soortenleden = ? WHERE soortenleden_id = ?";
 	private final String sql_deleteSoortenleden = "DELETE FROM soortenleden WHERE soortenleden_id = ?";

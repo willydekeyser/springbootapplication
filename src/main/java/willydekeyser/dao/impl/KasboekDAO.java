@@ -32,7 +32,7 @@ public class KasboekDAO implements IKasboekDAO {
 	private final String sql_getAllKasboekbyPage = "SELECT kasboek.* FROM kasboek ORDER BY kasboek_id";
 	private final String sql_getKasboekById = "SELECT kasboek.*, rubriek.* "
 			+ "FROM kasboek, rubriek "
-			+ "WHERE tubriekid = rubriek_id AND kasboek_id = ?";
+			+ "WHERE rubriekid = rubriek_id AND kasboek_id = ?";
 	private final String sql_getAllKasboekRubriek = "SELECT kasboek.*, rubriek.* "
 			+ "FROM kasboek, rubriek "
 			+ "WHERE rubriekid = rubriek_id "
@@ -56,7 +56,7 @@ public class KasboekDAO implements IKasboekDAO {
 	private final String sql_getAllKasboekRubriekJaarRubriek = "SELECT kasboek.*, rubriek.* "
 			+ "FROM kasboek, rubriek "
 			+ "WHERE rubriekid = rubriek_id AND jaartal = ? AND rubriek_id = ? "
-			+ "ORDER BY kasboek.Id";
+			+ "ORDER BY kasboek_id";
 	private final String sql_getAllKasboekRubriekJaarRubriekbyPage = "SELECT kasboek.*, rubriek.* "
 			+ "FROM kasboek, rubriek "
 			+ "WHERE rubriekid = rubriek_id AND jaartal = ? AND rubriek_id = ? "
@@ -78,7 +78,7 @@ public class KasboekDAO implements IKasboekDAO {
 	private final String sql_addKasboek = "INSERT INTO kasboek (jaartal, rubriekid, omschrijving, datum, uitgaven, inkomsten) "
 			+ "VALUES (?, ?, ?, ?, ?, ?)";
 	private final String sql_updateKasboek = "UPDATE kasboek SET jaartal = ?, rubriekid = ?, omschrijving = ?, datum = ?, uitgaven = ?, inkomsten = ? "
-			+ "WHERE Id = ?";
+			+ "WHERE kasboek_id = ?";
 	private final String sql_deleteKasboek = "DELETE FROM kasboek WHERE kasboek_id = ?";
 	private final String sql_kasboekExists = "SELECT EXISTS(SELECT * FROM kasboek WHERE kasboek_id = ?)";
 	//private final String sql_countKasboek = "SELECT COUNT(*) FROM kasboek";
@@ -179,7 +179,13 @@ public class KasboekDAO implements IKasboekDAO {
 			    return ps;
 			}	
 		}, key);
-	    kasboek.setId(key.getKey().intValue());
+		
+		if (key.getKeys().size() > 1) {
+			kasboek.setId(((Number) key.getKeys().get("kasboek_id")).intValue());
+	    } else {
+	    	kasboek.setId(key.getKey().intValue());
+	    }
+	    
 	    return kasboek;
 	}
 

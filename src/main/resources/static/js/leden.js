@@ -180,7 +180,7 @@ function leden_change_soort() {
 
 async function leden_tabel_start() {
 	reset_grid();
-	section_height(30);
+	section_height(80, 100, 0);
 	await Refrech_HTML('/leden/leden_tabel', 'main_section_main');
 	await Refrech_HTML('/leden/leden_tabel_ledenlijst/1', 'main_section_header');
 	await Refrech_HTML('/leden/leden_tabel_ById/4', 'main_section_main');

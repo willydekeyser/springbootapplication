@@ -24,7 +24,7 @@ public class SoortLeden {
 		soort.add(new SoortLeden(1,"Leden",true));
 		soort.add(new SoortLeden(2,"Werkende leden",false));
 		soort.add(new SoortLeden(3,"Bestuursleden",false));
-		soort.add(new SoortLeden(4,"Geen leden",false));
+		soort.add(new SoortLeden(4,"Oud leden",false));
 		soort.add(new SoortLeden(5,"Iedereen",false));
 		return soort;
 	}
@@ -38,7 +38,7 @@ public class SoortLeden {
 		case 3:
 			return setBestuursLeden(true);
 		case 4:
-			return setGeenLeden(true);
+			return setOudLeden(true);
 		case 5:
 			return setIedereen(true);
 		default:
@@ -50,7 +50,7 @@ public class SoortLeden {
 		soort.set(0, new SoortLeden(1,"Leden", actief));
 		soort.set(1, new SoortLeden(2,"Werkende leden",false));
 		soort.set(2, new SoortLeden(3,"Bestuursleden",false));
-		soort.set(3, new SoortLeden(4,"Geen leden",false));
+		soort.set(3, new SoortLeden(4,"Oud leden",false));
 		soort.set(4, new SoortLeden(5,"Iedereen",false));
 		return soort;
 	}
@@ -59,7 +59,7 @@ public class SoortLeden {
 		soort.set(0, new SoortLeden(1,"Leden", false));
 		soort.set(1, new SoortLeden(2,"Werkende leden",actief));
 		soort.set(2, new SoortLeden(3,"Bestuursleden",false));
-		soort.set(3, new SoortLeden(4,"Geen leden",false));
+		soort.set(3, new SoortLeden(4,"Oud leden",false));
 		soort.set(4, new SoortLeden(5,"Iedereen",false));
 		return soort;
 	}
@@ -68,16 +68,16 @@ public class SoortLeden {
 		soort.set(0, new SoortLeden(1,"Leden", false));
 		soort.set(1, new SoortLeden(2,"Werkende leden",false));
 		soort.set(2, new SoortLeden(3,"Bestuursleden",actief));
-		soort.set(3, new SoortLeden(4,"Geen leden",false));
+		soort.set(3, new SoortLeden(4,"Oud leden",false));
 		soort.set(4, new SoortLeden(5,"Iedereen",false));
 		return soort;
 	}
 	
-	public List<SoortLeden> setGeenLeden(Boolean actief) {
+	public List<SoortLeden> setOudLeden(Boolean actief) {
 		soort.set(0, new SoortLeden(1,"Leden", false));
 		soort.set(1, new SoortLeden(2,"Werkende leden",false));
 		soort.set(2, new SoortLeden(3,"Bestuursleden",false));
-		soort.set(3, new SoortLeden(4,"Geen leden",actief));
+		soort.set(3, new SoortLeden(4,"Oud leden",actief));
 		soort.set(4, new SoortLeden(5,"Iedereen",false));
 		return soort;
 	}
@@ -86,7 +86,7 @@ public class SoortLeden {
 		soort.set(0, new SoortLeden(1,"Leden", false));
 		soort.set(1, new SoortLeden(2,"Werkende leden",false));
 		soort.set(2, new SoortLeden(3,"Bestuursleden",false));
-		soort.set(3, new SoortLeden(4,"Geen leden",false));
+		soort.set(3, new SoortLeden(4,"Oud leden",false));
 		soort.set(4, new SoortLeden(5,"Iedereen",actief));
 		return soort;
 	}

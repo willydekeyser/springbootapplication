@@ -116,7 +116,7 @@ async function kasboek_menu_refrech() {
 	});
 	html += `</ol</div>`;
 	$('.menu_main').html(html);
-	kasboeklijst();
+	kasboek_menu_listener();
 };
 
 function kasboek_tabel_refrech(data) {
@@ -126,14 +126,16 @@ function kasboek_tabel_refrech(data) {
 	
 	data.forEach((kasboek, index) => {
 		html += `<tr id="${kasboek.id}" class="test" onclick="kasboekSelect(this)">
+			<td class="test" style="width: 15px"> </td>
 			<td class="test" style="width: 50px">${index + 1}</td>
 			<td class="test" style="width: 50px">${kasboek.id}</td>
 			<td class="test" style="width: 50px">${kasboek.jaartal}</td>
 			<td class="test" style="width: 200px">${kasboek.rubriek.rubriek}</td>
 			<td class="test">${kasboek.omschrijving}</id>
-			<td class="test" style="width: 80px">${getFormattedDate(kasboek.datum)}</td>
-			<td class="test" style="width: 80px">${getFormattedEuro(kasboek.uitgaven)}</td>
-			<td class="test" style="width: 80px">${getFormattedEuro(kasboek.inkomsten)}</td>`;
+			<td class="test right" style="width: 80px">${getFormattedDate(kasboek.datum)}</td>
+			<td class="test right" style="width: 80px">${getFormattedEuro(kasboek.uitgaven)}</td>
+			<td class="test right" style="width: 80px">${getFormattedEuro(kasboek.inkomsten)}</td>
+			<td class="test" style="width: 15px"> </td>`;
 	});
 	$('#kasboek_tabel_body').html(html);
 	kasboek_totalen_laden();

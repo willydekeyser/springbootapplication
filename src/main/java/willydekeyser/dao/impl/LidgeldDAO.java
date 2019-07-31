@@ -32,7 +32,7 @@ public class LidgeldDAO implements ILidgeldDAO {
 			+ "ORDER BY datum ASC, lidgeld_id ASC";
 	private final String sql_getLidgeldById = "SELECT lidgeld.*, ledenlijst.*  FROM lidgeld, ledenlijst WHERE lidgeld_id = ? AND ledenlijstid = ledenlijst_id";
 	
-	private final String sql_newLidgeld = "INSERT INTO lidgeld (ledenlijstid, datum, bedrag) value (?, ?, ?)";
+	private final String sql_newLidgeld = "INSERT INTO lidgeld (ledenlijstid, datum, bedrag) values (?, ?, ?)";
 	private final String sql_updateLidgeld = "UPDATE lidgeld SET ledenlijstid = ?, datum = ?, bedrag = ? WHERE lidgeld_id = ?";
 	private final String sql_deleteLidgeld = "DELETE FROM lidgeld WHERE lidgeld_id = ?";
 	private final String sql_lidgeldExists = "SELECT EXIST(SELECT * FROM lidgeld WHERE lidgeld_id = ?)";
@@ -79,7 +79,13 @@ public class LidgeldDAO implements ILidgeldDAO {
 				return ps;
 			}
 		}, key);
-		lidgeld.setId(key.getKey().intValue());
+		
+		if (key.getKeys().size() > 1) {
+			lidgeld.setId(((Number) key.getKeys().get("lidgeld_id")).intValue());
+	    } else {
+	    	lidgeld.setId(key.getKey().intValue());
+	    }
+		
 		return lidgeld;
 	}
 
