@@ -11,14 +11,16 @@
 	<button type="button" class="btn btn-success" th:onclick="newKasboek();" >&nbsp;&nbsp;&nbsp;&nbsp;Nieuw&nbsp;&nbsp;&nbsp;&nbsp;</button>
 	<button type="button" class="btn btn-success" th:onclick="updateKasboek();" >&nbsp;Aanpassen&nbsp;</button>
 	<button type="button" class="btn btn-danger" th:onclick="deleteKasboek();" >Verwijderen</button>
-	<button type="button" class="btn btn-danger" th:onclick="eersteKasboek();" >Eerste</button>
-	<button type="button" class="btn btn-danger" th:onclick="vorigeKasboek();" >Vorige</button>
-	<button type="button" class="btn btn-danger" th:onclick="volgendeKasboek();" >Volgende</button>
-	<button type="button" class="btn btn-danger" th:onclick="laatsteKasboek();" >Laatste</button>
+	<button id="eersteKasboek" type="button" class="btn btn-primary" th:onclick="eersteKasboek();" >Eerste</button>
+	<button id="vorigeKasboek" type="button" class="btn btn-primary" th:onclick="vorigeKasboek();" >Vorige</button>
+	<button id="pagina_info" type="button" class="btn btn-white" th:text="' '"></button>
+	<button id="volgendeKasboek" type="button" class="btn btn-primary" th:onclick="volgendeKasboek();" >Volgende</button>
+	<button id="laatsteKasboek" type="button" class="btn btn-primary" th:onclick="laatsteKasboek();" >Laatste</button>
 </div>
 </div>
 <div th:fragment="kasboektabel">
 <div class="scrolldiv">
+<span id="aantalrijen" th:value="${AantalRijen}"></span>
 <table class="test">
 	<thead>
 	<tr class="kop">

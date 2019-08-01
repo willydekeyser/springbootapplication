@@ -87,4 +87,9 @@ public class KasboekService implements IKasboekService {
 		return kasboekDAO.kasboekExists(id);
 	}
 	
+	@Override
+	public Integer countKasboek(Integer jaartal, Integer rubriekId) {
+		return kasboekDAO.countKasboek(jaartal, rubriekId);
+	}
+	
 }

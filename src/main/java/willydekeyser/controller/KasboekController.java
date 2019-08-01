@@ -84,6 +84,7 @@ public class KasboekController {
     	}
     	model.addAttribute(KASBOEK, kasboekLijst);
     	model.addAttribute("Offset", offset);
+    	model.addAttribute("AantalRijen", kasboekservice.countKasboek(jaar, rubriek));
         return "kasboek/kasboeklijst :: kasboektabel";
     }
     

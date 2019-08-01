@@ -22,5 +22,6 @@ public interface IKasboekService {
 	Kasboek updateKasboek(Kasboek kasboek);
     void deleteKasboek(int id);
     Boolean kasboekExists(int id);
+    Integer countKasboek(Integer jaartal, Integer rubriekId);
         
 }

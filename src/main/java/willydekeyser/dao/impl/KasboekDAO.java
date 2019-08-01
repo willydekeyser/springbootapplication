@@ -16,6 +16,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import willydekeyser.dao.IKasboekDAO;
+import willydekeyser.dao.resultsetextractor.KasboekCounterExtractor;
 import willydekeyser.dao.resultsetextractor.KasboekJaarRubriekExtractor;
 import willydekeyser.dao.resultsetextractor.KasboekTotaalExtractor;
 import willydekeyser.dao.rowmapper.KasboekJaartalRowMapper;
@@ -29,7 +30,7 @@ import willydekeyser.model.KasboekJaartal;
 public class KasboekDAO implements IKasboekDAO {
 
 	private final String sql_getAllKasboek = "SELECT kasboek.* FROM kasboek ORDER BY kasboek_id";
-	private final String sql_getAllKasboekbyPage = "SELECT kasboek.* FROM kasboek ORDER BY kasboek_id";
+	private final String sql_getAllKasboekbyPage = "SELECT kasboek.* FROM kasboek ORDER BY kasboek_id LIMIT ? OFFSET ?";
 	private final String sql_getKasboekById = "SELECT kasboek.*, rubriek.* "
 			+ "FROM kasboek, rubriek "
 			+ "WHERE rubriekid = rubriek_id AND kasboek_id = ?";
@@ -68,6 +69,11 @@ public class KasboekDAO implements IKasboekDAO {
 	private final String sql_getSomRubriek = "SELECT SUM(uitgaven) AS uitgaven, SUM(inkomsten) AS inkomsten FROM kasboek WHERE Rubriek = ?";
 	private final String sql_getSomJaartalRubriek = "SELECT SUM(uitgaven) AS uitgaven, SUM(inkomsten) AS inkomsten "
 			+ "FROM kasboek WHERE jaartal = ? AND rubriekid = ?";
+	
+	private final String sql_countKasboek = "SELECT COUNT(kasboek_id) FROM kasboek";
+	private final String sql_countKasboekJaar = "SELECT COUNT(kasboek_id) FROM kasboek WHERE jaartal = ?";
+	private final String sql_countKasboekJaarRubriek = "SELECT COUNT(kasboek_id) FROM kasboek WHERE jaartal = ? AND rubriekid = ?";
+	
 	
 	private final String sql_getKasboekJaarRubriek = "SELECT DISTINCT jaartal, rubriek_id, rubriek "
 			+ "FROM kasboek, rubriek "
@@ -212,4 +218,25 @@ public class KasboekDAO implements IKasboekDAO {
 		}
 	}
 	
+	@Override
+	public Integer countKasboek(Integer jaartal, Integer rubriekId) {
+		if(jaartal == 0) {
+			return jdbcTemplate.query(sql_countKasboek, new KasboekCounterExtractor());
+		} else {
+			if(rubriekId == 0) {
+				return jdbcTemplate.query(sql_countKasboekJaar, new KasboekCounterExtractor(), jaartal);
+			} else {
+				return jdbcTemplate.query(sql_countKasboekJaarRubriek, new KasboekCounterExtractor(), jaartal, rubriekId);
+			}
+		}
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+
 }
