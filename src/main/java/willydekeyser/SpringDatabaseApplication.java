@@ -19,6 +19,7 @@ import willydekeyser.customproperties.CustomPropertiesService;
 @ServletComponentScan
 @SpringBootApplication
 @EnableAsync
+//@EnableSwagger2
 public class SpringDatabaseApplication {
 
 	public static void main(String[] args) {

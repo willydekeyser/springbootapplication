@@ -244,7 +244,7 @@ function leden_tabel_ledenlijst_geladen() {
 
 function ledenbyid(id) {
 	console.log("Leden detail: " + id);
-	Refrech_HTML('/leden/leden_tabel_ById/' + id, 'main_section_main');
+	Refrech_HTML('/leden/leden_tabel_ById/' + id, 'main_section_footer');
 };
 
 /**

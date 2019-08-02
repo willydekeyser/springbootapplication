@@ -3,14 +3,12 @@
 <head th:replace="fragments/header :: header-css"></head>
 <body>
 	<div th:fragment="leden_menu" class="menu_select_soortleden">
-	<div style="width: 300px; border: 1px solid black;">
 		<label for="select_leden">Select: </label>
 		<select id="select_leden">
 			<option th:each="soort : ${soorten}" th:id="${soort.id}"
 				th:value="${soort.id}" th:text="${soort.soortenleden}"
 				th:selected="${soort.actief}"></option>
 		</select>
-	</div>
 	</div>
 </body>
 </html>

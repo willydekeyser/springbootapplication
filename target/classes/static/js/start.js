@@ -198,7 +198,7 @@ function start_menu() {
 	if(header_kasboek_tabel != null) {
 		header_kasboek_tabel.addEventListener('click', (event) => {
 			event.preventDefault();
-			max_lidgeld_start()
+			kasboek_start()
 			.then(() => {
 				console.log('Kasboek_tabel geladen');
 			})
