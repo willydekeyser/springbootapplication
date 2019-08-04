@@ -14,6 +14,7 @@ import java.time.LocalDateTime;
 
 import javax.annotation.PostConstruct;
 
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -131,7 +132,7 @@ public class StartController {
  *
  * 
  */	
-
+	@Secured("ROLE_GOLD")
 	@GetMapping("/restcontroller")
 	public @ResponseBody String index() {	
 		String index = "<p><br/></p>"
