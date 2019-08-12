@@ -57,7 +57,6 @@ public class LidgeldController {
     @GetMapping("/maxlidgeld")
 	public String MAXlidgeld(@RequestParam(name = "lidgeld", required = false) String name, Model model) {
 		lidgeld = lidgeldservice.getMAXLidgeldLeden();
-		model.addAttribute("title", "Computerclub Format C");
 		model.addAttribute("lidgeld", lidgeld);
 		model.addAttribute("aantal", lidgeld.size());
 		model.addAttribute("datum", LocalDate.now().minusYears(1));

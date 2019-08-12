@@ -30,7 +30,7 @@ async function leden_start() {
 	leden_change_soort();
 	leden_namenlijst_geladen();
 	if (aantal_leden == 0){
-		$('#lid_main').html('<h1>Geen leden gevonden!</h1>');
+		document.getElementById('lid_main').html('<h1>Geen leden gevonden!</h1>');
 	} else {
 		leden_namenlijst_onclick()
 		await Refrech_HTML('/leden/leden_main/' + selectedLidId, 'main_section_main');
@@ -186,7 +186,9 @@ async function leden_tabel_start() {
 	await Refrech_HTML('/leden/leden_menu/1', 'main_section_header'),
 	await Refrech_HTML('/leden/leden_tabel', 'main_section_footer');
 	await Refrech_HTML('/leden/leden_tabel_ledenlijst/1', 'main_section_main');
-	await Refrech_HTML('/leden/leden_tabel_ById/4', 'main_section_footer');
+	let ledenId = 4;
+	$('#ledenTabel' + ledenId).addClass('active');
+	await Refrech_HTML('/leden/leden_tabel_ById/' + ledenId, 'main_section_footer');
 	leden_tabel_change_soort();
 };
 
@@ -244,6 +246,8 @@ function leden_tabel_ledenlijst_geladen() {
 
 function ledenbyid(id) {
 	console.log("Leden detail: " + id);
+	$('tr.active').removeClass('active');
+	$('#ledenTabel' + id).addClass('active');
 	Refrech_HTML('/leden/leden_tabel_ById/' + id, 'main_section_footer');
 };
 

@@ -49,8 +49,8 @@ function listener_newRubriek_hidden() {
 };
 
 function listener_newRubriek_submit() {
-	let form = $(this);
-	let data = post_Form('/rubriek/save_newRubriek', form)
+	let formData = new FormData(document.getElementById('editRubriekModalForm'));
+	let data = post_Form('/rubriek/save_newRubriek', formData)
 	.then((data) => {
 		$("#editRubriekModal").modal('toggle');
 		rubriek_tabel_laden(data);
@@ -119,8 +119,8 @@ function listener_updateRubriek_hidden() {
 };
 
 function listener_updateRubriek_submit() {
-	let form = $(this);
-	let data = post_Form('/rubriek/save_updateRubriek', form)
+	let formData = new FormData(document.getElementById('editRubriekModalForm'));
+	let data = post_Form('/rubriek/save_updateRubriek', formData)
 	.then((data) => {
 		$("#editRubriekModal").modal('toggle');
 		rubriek_tabel_laden(data);
@@ -196,8 +196,8 @@ function listener_deleteRubriek_hidden() {
 };
 
 function listener_deleteRubriek_submit() {
-	let form = $(this);
-	let data = post_Form('/rubriek/save_deleteRubriek', form)
+	let formData = new FormData(document.getElementById('editRubriekModalForm'));
+	let data = post_Form('/rubriek/save_deleteRubriek', formData)
 	.then((data) => {
 		$("#editRubriekModal").modal('toggle');
 		rubriek_tabel_laden(data);

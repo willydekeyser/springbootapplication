@@ -16,7 +16,7 @@
 			<th class="kop right">Bedrag</th>
 			<th class="kop">Lid</th>
 		</tr>
-		<tr class="test" th:each="lidgeld : ${lidgeld}">
+		<tr class="test" th:id="maxlidgeld + ${lidgeld.id}" th:each="lidgeld : ${lidgeld}">
 			<td class="test" th:onclick="'lidgeldbyid(' + ${lidgeld.Id} +')'" th:text="${lidgeld.id}"></td>
 			<td class="test right" th:onclick="'lidgeldbyid(' + ${lidgeld.Id} +')'" th:style="${lidgeld.datum} < ${datum} ? 'color: red;' : 'color: black;'" th:text="${#temporals.format(lidgeld.datum, 'dd-MM-yyyy')}"></td>
 			<td class="test right" th:onclick="'lidgeldbyid(' + ${lidgeld.Id} +')'" th:text="'€' + ${#numbers.formatDecimal(lidgeld.bedrag, 1, 'DEFAULT', 2, 'DEFAULT')}"></td>

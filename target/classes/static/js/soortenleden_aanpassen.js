@@ -50,8 +50,8 @@ function listener_newSoortenleden_hidden() {
 };
 
 function listener_newSoortenleden_submit() {
-	let form = $(this);
-	let data = post_Form('/soortenleden/save_newSoortenleden', form)
+	let formData = new FormData(document.getElementById('editSoortenledenModalForm'));
+	let data = post_Form('/soortenleden/save_newSoortenleden', formData)
 	.then((data) => {
 		$("#editSoortenledenModal").modal('toggle');
 		soortenleden_tabel_laden(data);
@@ -121,8 +121,8 @@ function listener_updateSoortenleden_hidden() {
 };
 
 function listener_updateSoortenleden_submit() {
-	let form = $(this);
-	let data = post_Form('/soortenleden/save_updateSoortenleden', form)
+	let formData = new FormData(document.getElementById('editSoortenledenModalForm'));
+	let data = post_Form('/soortenleden/save_updateSoortenleden', formData)
 	.then((data) => {
 		$("#editSoortenledenModal").modal('toggle');
 		soortenleden_tabel_laden(data);
@@ -198,8 +198,8 @@ function listener_deleteSoortenleden_hidden() {
 };
 
 function listener_deleteSoortenleden_submit() {
-	let form = $(this);
-	let data = post_Form('/soortenleden/save_deleteSoortenleden', form)
+	let formData = new FormData(document.getElementById('editSoortenledenModalForm'));
+	let data = post_Form('/soortenleden/save_deleteSoortenleden', formData)
 	.then((data) => {
 		$("#editSoortenledenModal").modal('toggle');
 		soortenleden_tabel_laden(data);

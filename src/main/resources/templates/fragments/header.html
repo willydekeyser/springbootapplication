@@ -1,8 +1,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security5">
 <head th:fragment="header-css">
-	<!-- this is header-css  -->
+	<!-- this is header-css -->
 	
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"></link>
+    
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"></link>
     <link th:if="${#authorization.expression('hasRole(''ROLE_USER'')')}" rel="stylesheet" type="text/css" th:href="@{/css/contextmenu.css}"></link>
     

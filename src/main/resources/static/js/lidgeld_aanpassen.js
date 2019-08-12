@@ -49,8 +49,8 @@ function listener_newLidgeld_hidden() {
 };
 
 function listener_newLidgeld_submit() {
-	let form =$(this);
-	let data = post_Form('/lidgeld/save_newLidgeld', form)
+	let formData = new FormData(document.getElementById('editLidgeldModalForm'));
+	let data = post_Form('/lidgeld/save_newLidgeld', formData)
 	.then((data) => {
 		$("#editLidgeldModal").modal('toggle');
 		leden_lidgeld_laden(data)
@@ -127,8 +127,8 @@ function listener_updateLidgeld_hidden() {
 };
 
 function listener_updateLidgeld_submit() {
-	let form =$(this);
-	let data = put_Form('/lidgeld/save_updateLidgeld', form)
+	let formData = new FormData(document.getElementById('editLidgeldModalForm'));
+	let data = put_Form('/lidgeld/save_updateLidgeld', formData)
 	.then((data) => {
 		$("#editLidgeldModal").modal('toggle');
 		leden_lidgeld_laden(data);
@@ -204,8 +204,8 @@ function listener_deleteLidgeld_hidden() {
 };
 
 function listener_deleteLidgeld_submit() {
-	let form =$(this);
-	let data = delete_Form('/lidgeld/save_deleteLidgeld', form)
+	let formData = new FormData(document.getElementById('editLidgeldModalForm'));
+	let data = delete_Form('/lidgeld/save_deleteLidgeld', formData)
 	.then((data) => {
 		$("#editLidgeldModal").modal('toggle');
 		leden_lidgeld_laden(data);

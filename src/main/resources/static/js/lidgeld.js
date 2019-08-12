@@ -18,3 +18,8 @@ function lidgeldselect(id) {
 	$('#lidgeld_tabel_body #' + id).addClass('active');
 };
 
+function lidgeldbyid(id) {
+	console.log('Lidgeld: ' + id);
+	$('tr.active').removeClass('active');
+	document.getElementById('maxlidgeld' + id).classList.add('active');
+}

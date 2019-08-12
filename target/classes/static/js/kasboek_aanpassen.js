@@ -65,8 +65,8 @@ function listener_newkasboek_hidden() {
 };
 
 function listener_newKasboek_submit() {
-	let form = $(this);
-	let data = post_Form('/kasboek/save_newKasboek/' + selectedJaar + '/' + selectedRubriek, form)
+	let formData = new FormData(document.getElementById('editKasboekModalForm'));
+	let data = post_Form('/kasboek/save_newKasboek/' + selectedJaar + '/' + selectedRubriek, formData)
 	.then((data) => {
 		$("#editKasboekModal").modal('toggle');
 		kasboek_tabel_refrech(data)
@@ -154,10 +154,10 @@ function listener_updatekasboek_hidden() {
 };
 
 function listener_updateKasboek_submit() {
-	let form = $(this);
+	let formData = new FormData(document.getElementById('editKasboekModalForm'));
 	jaar = $('#editKasboekModalForm #jaartal').val();
 	rubriek = $('#editKasboekModalForm #rubriek').val();
-	let data = post_Form('/kasboek/save_updateKasboek/' + selectedJaar + '/' + selectedRubriek + '/' + change_jaar + '/' + jaar, form)
+	let data = post_Form('/kasboek/save_updateKasboek/' + selectedJaar + '/' + selectedRubriek + '/' + change_jaar + '/' + jaar, formData)
 	.then((data) => {
 		$("#editKasboekModal").modal('toggle');
 		kasboek_tabel_refrech(data)
@@ -230,8 +230,8 @@ function listener_deletekasboek_hidden() {
 };
 
 function listener_deleteKasboek_submit() {
-	let form = $(this);
-	let data = post_Form('/kasboek/save_deleteKasboek/' + selectedJaar + '/' + selectedRubriek, form)
+	let formData = new FormData(document.getElementById('editKasboekModalForm'));
+	let data = post_Form('/kasboek/save_deleteKasboek/' + selectedJaar + '/' + selectedRubriek, formData)
 	.then((data) => {
 		$("#editKasboekModal").modal('toggle');
 		kasboek_tabel_refrech(data)

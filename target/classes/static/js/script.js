@@ -126,8 +126,8 @@ async function fetch_JSON(url) {
 };
 
 async function fetch_TEXT(url) {
-	var token = $("meta[name='_csrf']").attr("content");
-	var header = $("meta[name='_csrf_header']").attr("content");
+	var token = document.querySelector('meta[name="_csrf"]').getAttribute("content");
+	var header = document.querySelector('meta[name="_csrf_header"]').getAttribute("content");
 	console.log("fetch: " + token + " - " + header);
 	let response = await fetch(url, {
 		method: "POST",
@@ -152,9 +152,8 @@ async function post_Form(url, form) {
 	console.log('Post Form: ' + url + ' - ' + form);
 	let response = await fetch(url, {
 		method: "POST",
-		body: form.serialize(),
+		body: form,
 		headers: {
-	        "Content-Type": "application/x-www-form-urlencoded",
 	        "Header" : "Willy De Keyser"
 	    }
 	});
@@ -169,9 +168,8 @@ async function put_Form(url, form) {
 	console.log('Put Form: ' + url + ' - ' + form);
 	let response = await fetch(url, {
 		method: "PUT",
-		body: form.serialize(),
+		body: form,
 		headers: {
-	        "Content-Type": "application/x-www-form-urlencoded",
 	        "Header" : "Willy De Keyser"
 	    },
 	});
@@ -186,9 +184,8 @@ async function delete_Form(url, form) {
 	console.log('Delete Form: ' + url + ' - ' + form);
 	let response = await fetch(url, {
 		method: "DELETE",
-		body: form.serialize(),
+		body: form,
 		headers: {
-	        "Content-Type": "application/x-www-form-urlencoded",
 	        "Header" : "Willy De Keyser"
 	    },
 	});

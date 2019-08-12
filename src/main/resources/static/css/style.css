@@ -440,11 +440,11 @@ tr.kop {color: #0000FF}
 th.kop:hover {color: #0000FF}
 tr.kop:first-child {background: #FFFF00}
 table.test {width: 100%}
-table.lidgeld {width: 85%}
+table.lidgeld {width: 30%}
 
 tr.test:nth-child(even) {background: #DDDDDD}
 tr.test:nth-child(odd) {background: #FFFFFF}
-tr.test:hover {cursor: pointer; background: #000000; color: #FFFFFF}
+tr.test:hover {cursor: pointer; background: #888888; color: #FFFFFF}
 
 li.namenlijst:hover{ cursor: pointer; font-weight: bold; color: #FF0000; }
 span.namenlijst:hover{ cursor: pointer; font-weight: bold; color: #FF0000; }

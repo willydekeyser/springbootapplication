@@ -13,7 +13,7 @@
 			<th class="kop">Inschrijving</th>
 			<th class="kop">Soort</th>
 		</tr>
-		<tr class="test" th:each="leden : ${leden}">
+		<tr th:id="'ledenTabel' + ${leden.id}" class="test" th:each="leden : ${leden}">
 			<td id="leden_tabel_ledenlijst" th:id="${leden.id}" class="test" th:onclick="'ledenbyid(' + ${leden.Id} +')'" th:text="${leden.id}"></td>
 			<td class="test" th:onclick="'ledenbyid(' + ${leden.Id} +')'" th:text="${leden.voornaam} + ' ' + ${leden.familienaam}"></td>
 			<td class="test" th:onclick="'ledenbyid(' + ${leden.Id} +')'" th:text="${leden.straat} + ' ' + ${leden.nr} + ' - ' + ${leden.postnr} + ' ' + ${leden.gemeente}"></td>

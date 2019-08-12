@@ -55,7 +55,7 @@ function time_out() {
     if(timeOut < 2000 && timeOut > 10 ) {
     	window.open("/logout", "_self");
    	}
-    //console.log("Time out: " + timeOut);
+
 }
 
 function setup_timeOutModal() {
@@ -292,17 +292,19 @@ function start_logout() {
 	.catch((error) => {
 		console.log('FOUT: ' + error);
 	});
-	//Refrech_HTML('/login_main?logout','main_section_A');
 	return false;
 	
 };
 
 function initSessionMonitor() {
-    $(document).bind('keypress.session', function (ed, e) {
-        //console.log('Key press!');
+	window.addEventListener('keypress', function (ed, e) {
+        console.log('Key press! ' + ed + ' - ' + e);
     });
-    $(document).bind('mousedown keydown', function (ed, e) {
-    	//console.log('Mouse move!');
+	window.addEventListener('mousedown', function (ed, e) {
+    	console.log('Mouse move! ' + ed + ' - ' + e);
+    });
+	window.addEventListener('keydown', function (ed, e) {
+    	console.log('Key down! ' + ed + ' - ' + e);
     });
     
 }
