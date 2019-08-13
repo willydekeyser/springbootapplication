@@ -34,7 +34,16 @@ async function kasboek_start() {
 	await Refrech_HTML('/kasboek/', 'menu_main');
 	kasboek_main_laden();
 	kasboek_menu_listener();
-}
+};
+
+async function kasboek_tabel_start() {
+	console.log('------------------------------------------------------------');
+	console.log('Menu kasboek tabem onclick');
+	reset_grid();
+	menu_height(3, 100);
+	menu_main_width(300);
+	
+};
 
 async function kasboekSelect(id) {
 	kasboekId = $(id).attr('id');

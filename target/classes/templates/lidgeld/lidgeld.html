@@ -2,7 +2,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/header :: header-css"></head>
 <body>
-<div th:replace="fragments/header :: header"></div>
 <div th:fragment="max_lidgeld_tabel_start">
 <div class="container-fluid">
 <div class="row">
@@ -17,10 +16,10 @@
 			<th class="kop">Lid</th>
 		</tr>
 		<tr class="test" th:id="maxlidgeld + ${lidgeld.id}" th:each="lidgeld : ${lidgeld}">
-			<td class="test" th:onclick="'lidgeldbyid(' + ${lidgeld.Id} +')'" th:text="${lidgeld.id}"></td>
-			<td class="test right" th:onclick="'lidgeldbyid(' + ${lidgeld.Id} +')'" th:style="${lidgeld.datum} < ${datum} ? 'color: red;' : 'color: black;'" th:text="${#temporals.format(lidgeld.datum, 'dd-MM-yyyy')}"></td>
-			<td class="test right" th:onclick="'lidgeldbyid(' + ${lidgeld.Id} +')'" th:text="'€' + ${#numbers.formatDecimal(lidgeld.bedrag, 1, 'DEFAULT', 2, 'DEFAULT')}"></td>
-			<td class="test" th:onclick="'lidgeldbyid(' + ${lidgeld.Id} +')'" th:text="${lidgeld.leden.voornaam + ' ' + lidgeld.leden.familienaam}"></td>
+			<td style="width: 10%" class="test" th:onclick="'lidgeldbyid(' + ${lidgeld.Id} +')'" th:text="${lidgeld.id}"></td>
+			<td style="width: 15%" class="test right" th:onclick="'lidgeldbyid(' + ${lidgeld.Id} +')'" th:style="${lidgeld.datum} < ${datum} ? 'color: red;' : 'color: black;'" th:text="${#temporals.format(lidgeld.datum, 'dd-MM-yyyy')}"></td>
+			<td style="width: 15%" class="test right" th:onclick="'lidgeldbyid(' + ${lidgeld.Id} +')'" th:text="'€' + ${#numbers.formatDecimal(lidgeld.bedrag, 1, 'DEFAULT', 2, 'DEFAULT')}"></td>
+			<td style="width: 60%" class="test" th:onclick="'lidgeldbyid(' + ${lidgeld.Id} +')'" th:text="${lidgeld.leden.voornaam + ' ' + lidgeld.leden.familienaam}"></td>
 		</tr>
 	</table>
 </div>

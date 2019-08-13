@@ -170,7 +170,7 @@ function start_menu() {
 	if(header_lidgeld_tabel != null) {
 		header_lidgeld_tabel.addEventListener('click', (event) => {
 			event.preventDefault();
-			max_lidgeld_start()
+			lidgeld_start()
 			.then(() => {
 				console.log('Lidgeld_tabel geladen');
 			})
@@ -198,7 +198,7 @@ function start_menu() {
 	if(header_kasboek_tabel != null) {
 		header_kasboek_tabel.addEventListener('click', (event) => {
 			event.preventDefault();
-			kasboek_start()
+			kasboek_tabel_start()
 			.then(() => {
 				console.log('Kasboek_tabel geladen');
 			})

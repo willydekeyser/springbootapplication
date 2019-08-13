@@ -39,17 +39,15 @@ public class LidgeldController {
 	@GetMapping("/")
 	public String lidgeld(Model model) {	
 		lidgeld = lidgeldservice.getAllLidgeldLeden();
-		model.addAttribute("title", "Computerclub Format C");
 		model.addAttribute("lidgeld", lidgeld);
 		model.addAttribute("aantal", lidgeld.size());
 		model.addAttribute("datum", LocalDate.now().minusYears(1));
-		return "lidgeld/lidgeld";
+		return "lidgeld/lidgeld :: max_lidgeld_tabel_start";
 	}
 	
     @GetMapping("/lidgeldById")
     public String lidgeldById(@RequestParam(name="id", required=true, defaultValue="1") Integer id, Model model) {
     	Lidgeld lidgeld = lidgeldservice.getLidgeldById(id);
-    	model.addAttribute("title", "Computerclub Format C");
     	model.addAttribute("lidgeld", lidgeld);
         return "lidgeld/lidgeldbyId";
     }

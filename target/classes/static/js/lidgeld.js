@@ -6,6 +6,12 @@ async function max_lidgeld_start() {
 	await Refrech_HTML('/lidgeld/maxlidgeld', 'main_section_main');
 };
 
+async function lidgeld_start() {
+	reset_grid();
+	section_height(0, 100, 0);
+	await Refrech_HTML('/lidgeld/', 'main_section_main');
+};
+
 async function lidgeld_tabel_start() {
 	reset_grid();
 	section_height(0, 100, 0);

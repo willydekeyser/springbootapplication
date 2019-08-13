@@ -442,7 +442,7 @@ tr.kop:first-child {background: #FFFF00}
 table.test {
 	width: 100%;
 	}
-table.lidgeld {width: 30%}
+table.lidgeld {width: 50%}
 
 tr.test:nth-child(even) {background: #DDDDDD}
 tr.test:nth-child(odd) {background: #FFFFFF}
