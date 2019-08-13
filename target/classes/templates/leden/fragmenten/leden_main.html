@@ -7,7 +7,7 @@
 <body>
 
 <div id="leden_main">
-	<h1 id="geen_leden_gevonden" style="display: none;">Geen leden gevonden!</h1>
+	<h1 id="geen_leden_gevonden" style="display: none;">Geen <span id="geen_leden_gevonden_span" >leden</span> gevonden!</h1>
 	<div id="leden_gevonden" style="display: block;">
 	<h2 id="main_id" th:text="${id != 0}? 'Lid: ' + ${id} : 'Lid: '"></h2>
 	<div class="btn-group btn-group-sm" th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">

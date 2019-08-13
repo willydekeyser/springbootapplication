@@ -20,16 +20,16 @@
   	</div>
   	<div class="leden_tabel_lidgeld">
   	<h2>Lidgeld:</h2>
-  	<table class="lidgeld">
+  	<table id="ledenTabelLidgeld" class="lidgeld">
 		<tr class="kop">
 			<th class="kop">Id</th>
 			<th class="kop">Datum</th>
 			<th class="kop">Bedrag</th>
 		</tr>
-		<tr class="test" th:each="lidgeld : ${leden.lidgelden}">
-			<td class="lidgeld" onclick="myFunction(this)" th:text="${lidgeld.Id}"></td>
-			<td class="lidgeld right" onclick="myFunction(this)" th:text="${#temporals.format(lidgeld.datum, 'dd-MM-yyyy')}"></td>
-			<td class="lidgeld right" onclick="myFunction(this)" th:text="'€' + ${#numbers.formatDecimal(lidgeld.bedrag, 1, 'DEFAULT', 2, 'DEFAULT')}"></td>
+		<tr th:id="'ledenTabelLidgeld' + ${lidgeld.id}" class="test" th:each="lidgeld : ${leden.lidgelden}">
+			<td class="lidgeld" th:onclick="'ledenTabelLidgeldbyid(' + ${lidgeld.Id} +')'" th:text="${lidgeld.Id}"></td>
+			<td class="lidgeld right" th:onclick="'ledenTabelLidgeldbyid(' + ${lidgeld.Id} +')'" th:text="${#temporals.format(lidgeld.datum, 'dd-MM-yyyy')}"></td>
+			<td class="lidgeld right" th:onclick="'ledenTabelLidgeldbyid(' + ${lidgeld.Id} +')'" th:text="'€' + ${#numbers.formatDecimal(lidgeld.bedrag, 1, 'DEFAULT', 2, 'DEFAULT')}"></td>
 		</tr>
 	</table>
 	</div>

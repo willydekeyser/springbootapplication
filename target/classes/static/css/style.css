@@ -439,7 +439,9 @@ p {color: #000000}
 tr.kop {color: #0000FF}
 th.kop:hover {color: #0000FF}
 tr.kop:first-child {background: #FFFF00}
-table.test {width: 100%}
+table.test {
+	width: 100%;
+	}
 table.lidgeld {width: 30%}
 
 tr.test:nth-child(even) {background: #DDDDDD}
@@ -450,6 +452,12 @@ li.namenlijst:hover{ cursor: pointer; font-weight: bold; color: #FF0000; }
 span.namenlijst:hover{ cursor: pointer; font-weight: bold; color: #FF0000; }
 a.kasboeklijst:hover{ cursor: pointer; font-weight: bold; color: #FF0000; }
 a.kasboeklijst{ color: #000000; }
+td {
+	padding: 0 10px;
+}
+th {
+	padding: 0 10px;
+}
 td.lidgeld:hover{ cursor: auto; }
 
 tr.active {background: #000000; color: #FF0000; font-weight: bold;}

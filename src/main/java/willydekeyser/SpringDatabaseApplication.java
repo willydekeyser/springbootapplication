@@ -14,7 +14,10 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import willydekeyser.customproperties.CustomPropertiesService;
 
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(securedEnabled = true)
+@EnableGlobalMethodSecurity(
+		securedEnabled = true,
+		jsr250Enabled = true
+		)
 @ComponentScan
 @ServletComponentScan
 @SpringBootApplication

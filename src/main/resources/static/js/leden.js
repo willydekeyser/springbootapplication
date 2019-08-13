@@ -54,11 +54,14 @@ async function leden_namenlijst(soortId, lidId) {
 	//await leden_namenlijst_refrech();
 	leden_namenlijst_geladen();
 	if (aantal_leden == 0){
-		$('#leden_main #geen_leden_gevonden').css("display", "block");
-		$('#leden_main #leden_gevonden').css("display", "none");
+		document.getElementById('geen_leden_gevonden').style.display = "block";
+		let option = document.getElementById('select_leden');
+		let text = option.options[option.selectedIndex].text;
+		document.getElementById('geen_leden_gevonden_span').innerHTML = text;
+		document.getElementById('leden_gevonden').style.display = "none";
 	} else {
-		$('#leden_main #geen_leden_gevonden').css("display", "none");
-		$('#leden_main #leden_gevonden').css("display", "block");
+		document.getElementById('geen_leden_gevonden').style.display = "none";
+		document.getElementById('leden_gevonden').style.display = "block";
 		leden_namenlijst_onclick();
 		await leden_gegevens_refrech();
 	};
@@ -92,29 +95,29 @@ function leden_namenlijst_laden(data) {
 	data.forEach((namenlijst, index) => {
 		html += `<li id="${namenlijst.id}" class="list-group-item namenlijst ${namenlijst.id == selectedLidId ? `active` : ``}">${index + 1} - ${namenlijst.naam}</li>`;
 	});
-	$('#namenlijst_click').html(html);
+	document.getElementById('namenlijst_click').innerHTML = html;
 };
 
 function leden_gegevens_laden(data) {
-	$('#main_id').text('Lid: ' + data.id);
-	$('#id').text(data.id);
-	$('#naam').text(data.voornaam + ' ' + data.familienaam);
-	$('#adres').text(data.straat + ' ' + data.nr);
-	$('#gemeente').text(data.postnr + ' ' + data.gemeente);
-	$('#telefoon').text(data.telefoonnummer);
-	$('#gsm').text(data.gsmnummer);
-	$('#email').html('<a href="mailto:' + data.emailadres + '">' + data.emailadres + '</a>');
-	$('#website').html('<a href="' + data.webadres + '" target="_blank">' + data.webadres + '</a>');
-	$('#inschrijving').text(getFormattedDate(data.datumlidgeld));
-	$('#soort').text(data.soortenleden.soortenleden);
-	$('#ontvangmail').attr('checked', data.ontvangMail);
-	$('#mailvlag').attr('checked', data.mailVlag);
-	$('#leden_newlid').attr('onclick', 'newLid();');
-	$('#leden_updatelid').attr('onclick', 'updateLid(' + data.id + ');');
-	$('#leden_deletelid').attr('onclick', 'deleteLid(' + data.id + ');');
-	$('#lidgeld_newlidgeld').attr('onclick', 'newLidgeld(' + data.id + ');');
-	$('#lidgeld_updatelidgeld').attr('onclick', 'updateLidgeld(' + data.id + ');');
-	$('#lidgeld_deletelidgeld').attr('onclick', 'deleteLidgeld(' + data.id + ');');
+	document.getElementById('main_id').innerhtml = 'Lid: ' + data.id;
+	document.getElementById('id').innerHTML = data.id;
+	document.getElementById('naam').innerHTML = data.voornaam + ' ' + data.familienaam;
+	document.getElementById('adres').innerHTML = data.straat + ' ' + data.nr;
+	document.getElementById('gemeente').innerHTML = data.postnr + ' ' + data.gemeente;
+	document.getElementById('telefoon').innerHTML = data.telefoonnummer;
+	document.getElementById('gsm').innerHTML = data.gsmnummer;
+	document.getElementById('email').innerHTML = '<a href="mailto:' + data.emailadres + '">' + data.emailadres + '</a>';
+	document.getElementById('website').innerHTML ='<a href="' + data.webadres + '" target="_blank">' + data.webadres + '</a>';
+	document.getElementById('inschrijving').innerHTML = getFormattedDate(data.datumlidgeld);
+	document.getElementById('soort').innerHTML = data.soortenleden.soortenleden;
+	document.getElementById('ontvangmail').setAttribute('checked', data.ontvangMail);
+	document.getElementById('mailvlag').setAttribute('checked', data.mailVlag);
+	document.getElementById('leden_newlid').setAttribute('onclick', 'newLid();');
+	document.getElementById('leden_updatelid').setAttribute('onclick', 'updateLid(' + data.id + ');');
+	document.getElementById('leden_deletelid').setAttribute('onclick', 'deleteLid(' + data.id + ');');
+	document.getElementById('lidgeld_newlidgeld').setAttribute('onclick', 'newLidgeld(' + data.id + ');');
+	document.getElementById('lidgeld_updatelidgeld').setAttribute('onclick', 'updateLidgeld(' + data.id + ');');
+	document.getElementById('lidgeld_deletelidgeld').setAttribute('onclick', 'deleteLidgeld(' + data.id + ');');
 };
 
 function leden_lidgeld_laden(data) {
@@ -127,7 +130,7 @@ function leden_lidgeld_laden(data) {
 			<td class="right">${getFormattedEuro(lidgeld.bedrag)}</td>
 			</tr>`;
 	});
-	$('#lidgeld_tabel_body').html(html);
+	document.getElementById('lidgeld_tabel_body').innerHTML = html;
 };
 
 function leden_namenlijst_geladen() {
@@ -202,12 +205,8 @@ function leden_tabel_change_soort() {
 
 function leden_tabel_menu(soortid) {
 	console.log("Leden tabel menu laden: " + soortid);
-	$.ajax({
-		url : "/leden/leden_tabel_menu/" + soortid,
-		success : function(data) {
-			$("#menu").html(data);
-		}
-	})
+	let data = laod_html("/leden/leden_tabel_menu/" + soortid);
+	document.getElementById('menu').innerHTML = data;
 	$(document).contextmenu(function(event){
 		event.preventDefault();
 	});
@@ -215,25 +214,16 @@ function leden_tabel_menu(soortid) {
 
 function leden_tabel_menu_geladen(id) {
 	console.log("Leden tabel lijst laden: " + id);
-	$.ajax({
-		url : "/leden/leden_tabel_ledenlijst/" + id,
-		success : function(data) {
-			$("#leden_tabel_ledenlijst").html(data);
-		}
-	})
+	let data = laod_html("/leden/leden_tabel_ledenlijst/" + id);
+	document.getElementById('main_section_main').innerHTML = data;
 };
 
 function leden_tabel_ledenlijst(soortId, lidId) {
 	selectedSoortId = soortId;
 	selectedLidId = lidId;
 	console.log("Leden ledenlijst laden: " + selectedSoortId + " - " + selectedLidId);
-	$.ajax({
-		url : "/leden/leden_tabel_ledenlijst/" + selectedSoortId,
-		success : function(data) {
-			$("#leden_tabel_ledenlijst").html(data);
-			console.log('DATA: ' + data)
-		}
-	})
+	let data = laod_html("/leden/leden_tabel_ledenlijst/" + selectedSoortId);
+	document.getElementById('main_section_main').innerHTML = data;
 };
 
 function leden_tabel_ledenlijst_geladen() {
@@ -242,13 +232,19 @@ function leden_tabel_ledenlijst_geladen() {
 	var id = $("#leden_tabel_ledenlijst").find("td:first").attr('id')
 	ledenbyid(id);
 	console.log("Leden menu & ledenlijst geladen: " + id);
-}
+};
 
 function ledenbyid(id) {
 	console.log("Leden detail: " + id);
-	$('tr.active').removeClass('active');
+	$('#ledenTabel tr.active').removeClass('active');
 	$('#ledenTabel' + id).addClass('active');
 	Refrech_HTML('/leden/leden_tabel_ById/' + id, 'main_section_footer');
+};
+
+function ledenTabelLidgeldbyid(id) {
+	console.log('Leden Tabel lidgeld ' + id);
+	$('#ledenTabelLidgeld tr.active').removeClass('active');
+	$('#ledenTabelLidgeld' + id).addClass('active');
 };
 
 /**

@@ -3,22 +3,26 @@
 <head th:replace="fragments/header :: header-css"></head>
 <body>
 <div th:replace="fragments/header :: header"></div>
-	<div th:fragment="leden_tabel_ledenlijst">
+	<div th:fragment="leden_tabel_ledenlijst"> 
     <p th:text="'Aantal: ' + ${aantal}" />
-	<table class="test">
+	<table id="ledenTabel" class="test">
 		<tr class="kop">
+			<th class="kop"> </th>
 			<th class="kop">Id</th>
 			<th class="kop">Naam</th>
 			<th class="kop">Adres</th>
-			<th class="kop">Inschrijving</th>
+			<th class="kop right">Inschrijving</th>
 			<th class="kop">Soort</th>
+			<th class="kop"> </th>
 		</tr>
 		<tr th:id="'ledenTabel' + ${leden.id}" class="test" th:each="leden : ${leden}">
-			<td id="leden_tabel_ledenlijst" th:id="${leden.id}" class="test" th:onclick="'ledenbyid(' + ${leden.Id} +')'" th:text="${leden.id}"></td>
+			<td style="width: 15px" class="test"> </td>
+			<td style="width: 50px" id="leden_tabel_ledenlijst" th:id="${leden.id}" class="test" th:onclick="'ledenbyid(' + ${leden.Id} +')'" th:text="${leden.id}"></td>
 			<td class="test" th:onclick="'ledenbyid(' + ${leden.Id} +')'" th:text="${leden.voornaam} + ' ' + ${leden.familienaam}"></td>
 			<td class="test" th:onclick="'ledenbyid(' + ${leden.Id} +')'" th:text="${leden.straat} + ' ' + ${leden.nr} + ' - ' + ${leden.postnr} + ' ' + ${leden.gemeente}"></td>
-			<td class="test right" th:onclick="'ledenbyid(' + ${leden.Id} +')'" th:text="${#temporals.format(leden.datumlidgeld, 'dd-MM-yyyy')}"></td>
-			<td class="test" th:onclick="'ledenbyid(' + ${leden.Id} +')'" th:text="${leden.soortenleden.soortenleden}"></td>
+			<td style="width: 100px" class="test right" th:onclick="'ledenbyid(' + ${leden.Id} +')'" th:text="${#temporals.format(leden.datumlidgeld, 'dd-MM-yyyy')}"></td>
+			<td style="width: 100px" class="test" th:onclick="'ledenbyid(' + ${leden.Id} +')'" th:text="${leden.soortenleden.soortenleden}"></td>
+			<td style="width: 25px" class="test"> </td>
 		</tr>
 	</table>
 </div> 
