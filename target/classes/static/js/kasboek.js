@@ -42,61 +42,76 @@ async function kasboek_tabel_start() {
 	reset_grid();
 	menu_height(3, 100);
 	menu_main_width(300);
-	
+	//Refrech_HTML('/kasboek/kasboekHeader', 'main_section_header')
+	kasboek_totalen_laden();
 };
 
 async function kasboekSelect(id) {
-	kasboekId = $(id).attr('id');
-	$('tr.active').removeClass('active');
-	$(id).closest('tr').addClass('active');
+	kasboekId = id.getAttribute('id');
+	let selection = document.querySelector('tr.active')
+	if(selection) {
+		selection.classList.remove('active');
+	};
+	id.classList.add('active');
 	Kasboek_gegevens = await fetch_JSON('/kasboek/restcontroller/kasboekbyid/' + kasboekId);
 };
 
 function kasboek_menu_listener() {
-	$('.kasboeklijst_click').on('click', function() {
-		$('.menuopen').css("display", "none");
-		$('.menuopen').removeClass('menuopen');
-		$('ol li.active').removeClass('active');
-		$(this).addClass('active');
+	let menuLink = document.querySelectorAll('.kasboeklijst_click');
+	menuLink.forEach(link => link.addEventListener('click', function() { 
+		let menuOpenSelection = document.querySelector('.menuopen')
+		if(menuOpenSelection) {
+			menuOpenSelection.style.display = 'none';
+			menuOpenSelection.classList.remove('menuopen');
+		};
+		let selection = document.querySelector('ol li.active')
+		if(selection) {
+			selection.classList.remove('active');
+		};
+		this.classList.add('active');
 		let select = document.getElementById("jaartal" + this.id);
 		if (select) {
 			select.style.display = "block";
-			$(select).addClass('menuopen');
+			select.classList.add('menuopen');
 		}
-		selectedJaar = $(this).attr("jaar");
-		selectedRubriek = $(this).attr("rubriek");
+		selectedJaar = this.getAttribute("jaar");
+		selectedRubriek = this.getAttribute("rubriek");
 		aantalPerPagina = Math.floor(document.getElementById('main_section_main').offsetHeight / 20) - 1;
 		startAantal = 0;
 		pagina = 1;
 		Refrech_HTML('/kasboek/kasboekJaarRubriek/' + selectedJaar + '/' + selectedRubriek + '/' + aantalPerPagina + '/' + startAantal, 'main_section_main');
 		kasboek_totalen_laden();
 		return false;
-	});
+	}));
 	
-	$('.sub_kasboeklijst_click').on('click', function() {
-		$('ol li.active').removeClass('active');
-		$(this).addClass('active');
-		selectedJaar = $(this).attr("jaar");
-		selectedRubriek = $(this).attr("rubriek");
+	let subMenuLink = document.querySelectorAll('.sub_kasboeklijst_click');
+	subMenuLink.forEach(link => link.addEventListener('click', function(event) {
+		event.stopImmediatePropagation()
+		let selection = document.querySelector('ol li.active')
+		if(selection) {
+			selection.classList.remove('active');
+		};
+		this.classList.add('active');
+		selectedJaar = this.getAttribute("jaar");
+		selectedRubriek = this.getAttribute("rubriek");
 		aantalPerPagina = Math.floor(document.getElementById('main_section_main').offsetHeight / 20) - 1;
 		startAantal = 0;
 		pagina = 1;
 		
 		kasboek_totalen_laden();
 		return false;
-	});
+	}));
 };
 
 function kasboek_main_laden() {
 	console.log('Start main laden');
-	$('#namenlijst_click #kasboek').addClass('active');
+	document.querySelector('#namenlijst_click #kasboek').classList.add('active');
 	aantalPerPagina = Math.floor(document.getElementById('main_section_main').offsetHeight / 20) - 1;
 	startAantal = 0;
 	pagina = 1;
 	selectedJaar = 0;
 	selectedRubriek = 0;
 	Refrech_HTML('/kasboek/kasboekHeader', 'main_section_header')
-	//Refrech_HTML('/kasboek/kasboekJaarRubriek/' + selectedJaar + '/' + selectedRubriek + '/' + aantalPerPagina + '/' + startAantal, 'main_section_main')
 	console.log('End main laden');
 	kasboek_totalen_laden();
 };
@@ -108,9 +123,9 @@ async function kasboek_totalen_laden() {
 	let data = await fetch_JSON('/kasboek/restcontroller/kasboekTotalen/' + selectedJaar + '/' + selectedRubriek);
 	let html = ``;
 	console.log('Totalen: ' + data.Jaar);
-	$('.main_section_footer').html(`<p>Jaar: ${data.Jaar} Rubriek: ${data.Rubriek}</p> 
+	document.getElementById('main_section_footer').innerHTML = `<p>Jaar: ${data.Jaar} Rubriek: ${data.Rubriek}</p> 
 	Inkomsten: ${getFormattedEuro(data.Totalen[0].Inkomsten)} Uitgaven: ${getFormattedEuro(data.Totalen[0].Uitgaven)} Totaal: ${getFormattedEuro(data.Totalen[0].Totaal)}</br>
-	Inkomsten: ${getFormattedEuro(data.Totalen[1].Inkomsten)} Uitgaven: ${getFormattedEuro(data.Totalen[1].Uitgaven)} Totaal: ${getFormattedEuro(data.Totalen[1].Totaal)}`);
+	Inkomsten: ${getFormattedEuro(data.Totalen[1].Inkomsten)} Uitgaven: ${getFormattedEuro(data.Totalen[1].Uitgaven)} Totaal: ${getFormattedEuro(data.Totalen[1].Totaal)}`;
 	console.log('End totalen laden');
 	aantalrijen = document.getElementById('aantalrijen').getAttribute('value');
 	aantalPaginas = Math.ceil(aantalrijen / aantalPerPagina);
@@ -141,13 +156,13 @@ async function kasboek_menu_refrech() {
 		html += `</ol></li>`;
 	});
 	html += `</ol</div>`;
-	$('.menu_main').html(html);
+	document.ElementById('menu_main').innerHTML = html;
 	kasboek_menu_listener();
 };
 
 function kasboek_tabel_refrech(data) {
 	let html = ``;
-	$('#kasboek_tabel_body').empty();
+	document.getElementById('kasboek_tabel_body').innerHTML = '';
 	kasboek_data = data;
 	
 	data.forEach((kasboek, index) => {
@@ -163,7 +178,7 @@ function kasboek_tabel_refrech(data) {
 			<td class="test right" style="width: 80px">${getFormattedEuro(kasboek.inkomsten)}</td>
 			<td class="test" style="width: 15px"> </td>`;
 	});
-	$('#kasboek_tabel_body').html(html);
+	document.getElementById('kasboek_tabel_body').innerHTML =html;
 	kasboek_totalen_laden();
 	if (change_jaar || change_rubriek) {
 		kasboek_menu_refrech();

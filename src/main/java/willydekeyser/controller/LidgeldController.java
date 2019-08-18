@@ -36,7 +36,7 @@ public class LidgeldController {
 
 	}
 
-	@GetMapping("/")
+	@GetMapping("/lidgeldTabel")
 	public String lidgeld(Model model) {	
 		lidgeld = lidgeldservice.getAllLidgeldLeden();
 		model.addAttribute("lidgeld", lidgeld);

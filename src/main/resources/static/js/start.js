@@ -170,7 +170,7 @@ function start_menu() {
 	if(header_lidgeld_tabel != null) {
 		header_lidgeld_tabel.addEventListener('click', (event) => {
 			event.preventDefault();
-			lidgeld_start()
+			lidgeld_tabel_start()
 			.then(() => {
 				console.log('Lidgeld_tabel geladen');
 			})

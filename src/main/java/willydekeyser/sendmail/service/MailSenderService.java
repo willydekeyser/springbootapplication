@@ -106,7 +106,7 @@ public class MailSenderService {
 			}
 	        messageHelper.setSubject(mail.getSubject());
 	        messageHelper.setText(html, true);
-	        //mailSender.send(message);
+	        mailSender.send(message);
 	        
 	        System.out.println("Sleeping now... " + customProperties.getPauzeAgenda() + " - " + Thread.currentThread().getName());
     		Thread.sleep(customProperties.getPauzeAgenda() * 1000);

@@ -43,10 +43,16 @@ function listener_agenda_submit(event) {
 	document.getElementById('agenda_voorbeeld_button').style.display = 'none';
 	document.getElementById('agenda_hulp_venster').style.display = 'block';
 	document.getElementById('agenda_progress_bar').style.display = 'block';
-	let form = $(this);
-	console.log('AGENDA: ' + form);
+	let formData = new FormData(document.getElementById('agendaVersturenForm'));
+		
+		
+		
+		
+		
+		//this;
+	console.log('AGENDA: ' + formData);
 	
-	let data = post_Form('mail/post', form)
+	let data = post_Form('mail/post', formData)
 	.then((data) => {
 		console.log('AGENDA: ' + data)
 	})

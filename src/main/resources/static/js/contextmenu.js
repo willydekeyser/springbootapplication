@@ -5,8 +5,8 @@ var menu;
 
 function showMenu(x, y){
 	
-	var hoogte = $(document).height();
-	var breedte = $(document).width();
+	var hoogte = document.body.clientHeight();
+	var breedte = document.body.clientWidth();
 	var verschily = hoogte - y;
 	var verschilx = breedte - x;
 	console.log("Document: " + x + " - " + y);
@@ -35,24 +35,3 @@ function onClick(e){
     document.removeEventListener('click', onClick);
 }
 
-
-/**
- * 
-$(document).ready(function() {
-	
-	$(document).contextmenu(function(e) {
-		onContextMenu(e);
-	});
-
-	$(document).contextmenu(function(e) {
-		e.preventDefault();
-	});
-	
-	menu = document.querySelector('#leden-menu');
-	console.log("Contextmenu: " + menu);
-	
-});
-
- * 
- * 
- */
