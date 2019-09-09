@@ -12,10 +12,11 @@
 
 function newRubriek() {
 	console.log("New rubriek");
-	if($("#editRubriekModal").length == 0){
+	let modal = document.querySelector('#editRubriekModal');
+	if(modal == null){
 		let data = load_HTML('/rubriek/editRubriek')
 		.then((data) => {
-			$("#editRubriekModalHolder").html(data);
+			document.getElementById("editRubriekModalHolder").innerHTML = data;
 			setup_newRubriekModal();
 		})
 		.catch((error) => {
@@ -27,7 +28,7 @@ function newRubriek() {
 };
 
 function setup_newRubriekModal() {
-	$('#modal-titel').html('New rubriek!');
+	document.getElementById('modal-titel').innerHTML = 'New rubriek!';
 	$('#editRubriekModal #modal-titel').removeClass('text-danger');
 	$('#editRubriek_save').show();
 	$('#form_body_error').hide();
@@ -71,10 +72,11 @@ function listener_newRubriek_submit() {
 
 function updateRubriek() {
 	console.log("Update rubriek");
-	if($("#editRubriekModal").length == 0){
+	let modal = document.querySelector('#editRubriekModal');
+	if(modal == null){
 		let data = load_HTML('/rubriek/editRubriek')
 		.then((data) => {
-			$("#editRubriekModalHolder").html(data);
+			document.getElementById("editRubriekModalHolder").innerHTML = data;
 			setup_updateRubriekModal();
 		})
 		.catch((error) => {
@@ -141,10 +143,11 @@ function listener_updateRubriek_submit() {
 
 function deleteRubriek() {
 	console.log("Delete rubriek");
-	if($("#editRubriekModal").length == 0){
+	let modal = document.querySelector('#editRubriekModal');
+	if(modal == null){
 		let data = load_HTML('/rubriek/editRubriek')
 		.then((data) => {
-			$("#editRubriekModalHolder").html(data);
+			document.getElementById("editRubriekModalHolder").innerHTML = data;
 			setup_deleteRubriekModal();
 		})
 		.catch((error) => {

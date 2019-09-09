@@ -58,22 +58,42 @@ function time_out() {
 
 }
 
+let timeOutModal = null;
+
 function setup_timeOutModal() {
-	$('#timeOutModal').one('hidden.bs.modal', listener_timeOut_hidden);
-	$('#timeOutModal').modal('show');
-	$('#timeOutModalForm').one('submit', listener_timeOut_submit);
+	timeOutModal = document.getElementById('timeOutModalHolder');
+	timeOutModal.style.display = 'block';
+	window.addEventListener('click', clickOutside);
+	let timeOutForm = document.getElementById('timeOutModalForm');
+	timeOutForm.addEventListener('submit', listener_timeOut_submit);
+	let timeOutCloseBtn = document.getElementById('timeOutCloseBtn');
+	timeOutCloseBtn.addEventListener('click', listener_timeOut_close);
+	let timeOutCloseX = document.getElementById('timeOutCloseX');
+	timeOutCloseX.addEventListener('click', listener_timeOut_close);
 };
 
-function listener_timeOut_hidden() {
+function clickOutside(event) {
+	console.log(event.target.id + ' - ' + timeOutModal.id);
+	if(event.target == timeOutModal) {
+		document.getElementById('timeOutModalHolder').style.display = 'none';
+		if(timeOut < 30000){
+			window.open("/logout", "_self");
+		}
+	}
+}
+
+
+function listener_timeOut_close() {
+	document.getElementById('timeOutModalHolder').style.display = 'none';
 	if(timeOut < 30000){
 		window.open("/logout", "_self");
 	}
 };
 
-
-function listener_timeOut_submit() {
+function listener_timeOut_submit(event) {
+	event.preventDefault();
 	timeOut = 30000;
-	$("#timeOutModal").modal('toggle');
+	document.getElementById('timeOutModalHolder').style.display = 'none';
 	let data = fetch_TEXT('/timeout')
 	.then((data) => {
 		console.log('Time out: ' + data);

@@ -1,56 +1,19 @@
 @charset "ISO-8859-1";
 html{
 	background-color:	#FFFFFF; 
-	margin:		0px; 
-	padding:	0px; 
-	font-size:	12px;
-	  
+	font-size:	12px;  
 }
 
-@media screen and (max-width: 800px) {
-	html {
-		font-size: 8px;
-	}
-	
-	h1 {
-		font-size: 12px;
-	}
-}
-
-@media screen and (min-width: 800px) and (max-width: 1200px) {
-    html {
-		font-size: 10px;
-	}
-	
-	h1 {
-		font-size: 16px;
-	}
-}
-
-@media screen and (min-width: 1200px) and (max-width: 1600px) {
-    html {
-		font-size: 11px;
-	}
-	
-	h1 {
-		font-size: 16px;
-	}
+*, ::after, ::before {
+    box-sizing: border-box;
+    margin:		0px; 
+	padding:	0px;
 }
 	
 body{
 	font-family: "Segoe UI", sans-serif ;
 	background:	#FFFFFF; 
-	margin:		0px; 
-	padding:	0px;
 	line-height: 1.5;
-}
-
-* {
-	box-sizing: border-box;
-}
-
-*, ::after, ::before {
-    box-sizing: border-box;
 }
 
 /* ---------------- START MAIN GRID ---------------- */
@@ -428,11 +391,12 @@ body{
 }
 
 
-
 /* ---------------- END TABEL ------------------ */
 
 
-
+*, *::befor, *::after {
+	box-sizing: border-box;
+}
 
 h1 {color: green}
 p {color: #000000}
@@ -462,9 +426,38 @@ td.lidgeld:hover{ cursor: auto; }
 
 tr.active {background: #000000; color: #FF0000; font-weight: bold;}
 
-
 .center { text-align: center; }
 .left { text-align: left; }
 .right { text-align: right;	}
 
+/* -- Media Querys -- */
 
+@media screen and (max-width: 800px) {
+	html {
+		font-size: 8px;
+	}
+	
+	h1 {
+		font-size: 12px;
+	}
+}
+
+@media screen and (min-width: 800px) and (max-width: 1200px) {
+    html {
+		font-size: 10px;
+	}
+	
+	h1 {
+		font-size: 16px;
+	}
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1600px) {
+    html {
+		font-size: 11px;
+	}
+	
+	h1 {
+		font-size: 16px;
+	}
+}
