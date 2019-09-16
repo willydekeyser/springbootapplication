@@ -4,7 +4,7 @@
  * 
  * 
  */
-var testen;
+"use strict";
 
 var timeOutTimer;
 var timeOut = 0;
@@ -47,8 +47,12 @@ function time_out() {
     }  
     
     document.getElementsByClassName('footer_section_A')[0].innerHTML = "Time out: " + msToTime(timeOut) + " - " + msToTime(serverTime) + " - " + msToTime(sessionExpiry) + " - " + msToTime(localTime);
-    document.getElementById('timeOutTeller').innerHTML = msToTime(timeOut);
     
+    let timeOutTeller = document.getElementById('timeOutTeller');
+	if(timeOutTeller){
+		timeOutTeller.innerHTML = msToTime(timeOut);
+	};
+	
     if(timeOut < 30000 && timeOut > 29000 ) {
     	setup_timeOutModal();
     }
@@ -59,33 +63,32 @@ function time_out() {
 
 }
 
-let timeOutModal = null;
+let timeOutModal;
+let timeOutModalAchtergrond;
 
 function setup_timeOutModal() {
-	timeOutModal = document.getElementById('timeOutModalHolder');
-	timeOutModal.style.display = 'block';
-	window.addEventListener('click', clickOutside);
+	timeOutModalAchtergrond = document.querySelector('.timeOutModalAchtergrond');
+	timeOutModal = document.querySelector('.timeOutModal');
 	let timeOutForm = document.getElementById('timeOutModalForm');
 	timeOutForm.addEventListener('submit', listener_timeOut_submit);
 	let timeOutCloseBtn = document.getElementById('timeOutCloseBtn');
 	timeOutCloseBtn.addEventListener('click', listener_timeOut_close);
-	let timeOutCloseX = document.getElementById('timeOutCloseX');
+	let timeOutCloseX = document.getElementById('timeOutCloseBtnX');
 	timeOutCloseX.addEventListener('click', listener_timeOut_close);
+	timeOutModalAchtergrond.addEventListener('click', clickAchtergrond);
+	showTimeOutModal(true);
 };
 
-function clickOutside(event) {
-	console.log(event.target.id + ' - ' + timeOutModal.id);
-	if(event.target == timeOutModal) {
-		document.getElementById('timeOutModalHolder').style.display = 'none';
-		if(timeOut < 30000){
-			window.open("/logout", "_self");
-		}
+function clickAchtergrond(event) {
+	showTimeOutModal(false);
+	if(timeOut < 30000){
+		window.open("/logout", "_self");
 	}
-}
+};
 
 
 function listener_timeOut_close() {
-	document.getElementById('timeOutModalHolder').style.display = 'none';
+	showTimeOutModal(false);
 	if(timeOut < 30000){
 		window.open("/logout", "_self");
 	}
@@ -94,7 +97,7 @@ function listener_timeOut_close() {
 function listener_timeOut_submit(event) {
 	event.preventDefault();
 	timeOut = 30000;
-	document.getElementById('timeOutModalHolder').style.display = 'none';
+	showTimeOutModal(false);
 	let data = fetch_TEXT('/timeout')
 	.then((data) => {
 		console.log('Time out: ' + data);
@@ -103,6 +106,20 @@ function listener_timeOut_submit(event) {
 		console.log('FOUT: ' + error);
 	});
 	return false;
+};
+
+function showTimeOutModal(show) {
+	if(show) {
+		timeOutModalAchtergrond.classList.remove('hide');
+		timeOutModal.classList.remove('hide');
+		timeOutModalAchtergrond.classList.add('show');
+		timeOutModal.classList.add('show');
+	} else {
+		timeOutModalAchtergrond.classList.remove('show');
+		timeOutModal.classList.remove('show');
+		timeOutModalAchtergrond.classList.add('hide');
+		timeOutModal.classList.add('hide');
+	}
 };
 
 function getCookie(name)
