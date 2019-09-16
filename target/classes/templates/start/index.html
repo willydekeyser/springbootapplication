@@ -22,24 +22,22 @@
 	</footer>
 </div>
 
-<div th:if="${#authorization.expression('hasRole(''ROLE_USER'')')}" id="timeOutModalHolder" class="timeOut_modal_container">
-	<div class="timeOutForm">
-		<Form method="post" id="timeOutModalForm">
-			<!-- Modal content-->
-			<div class="modal-content timeOut-modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title" id="modal-titel">Computerclub Format C</h4>
-					<button type="button" id="timeOutCloseX" class="closeBtnX">&times;</button>
+<div th:if="${#authorization.expression('hasRole(''ROLE_USER'')')}" id="timeOutModalHolder">
+	<div class="timeOutModalAchtergrond hide">&nbsp;</div>
+	<div class="timeOutModal hide">
+		<Form id="timeOutModalForm">
+			<div class="timeOutModalContent">
+				<div class="timeOutModalHeader">
+					<h4 class="timeOutModalTitel" id="timeOutModalTitel">Computerclub Format C</h4>
+					<button type="button" id="timeOutCloseBtnX" class="timeOutCloseBtnX">&times;</button>
 				</div>
-				<div class="modal-body">
-					<div>
+				<div class="timeOutModalBody">
 						<h3>Uw sessie zal verlopen binnen:</h3>
-						<p><span id="timeOutTeller">2:00</span><span> seconden</span></p>
-					</div>
+						<p><span id="timeOutTeller">&nbsp;</span><span> seconden</span></p>
 				</div>
-				<div class="modal-footer">
-					<button type="submit" class="submitBtn btn-primary">Verder werken!</button>
-					<button type="button" id="timeOutCloseBtn" class="closeBtn btn-default">Sessie sluiten</button>
+				<div class="timeOutModalFooter">
+					<button type="submit" class="timeOutSubmitBtn Btn btn-primary">Verder werken!</button>
+					<button type="button" id="timeOutCloseBtn" class="timeOutCloseBtn Btn btn-default">Sessie sluiten</button>
 				</div>
 			</div>
 		</Form>
