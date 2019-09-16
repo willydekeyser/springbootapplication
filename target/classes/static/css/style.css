@@ -394,8 +394,35 @@ body{
 /* ---------------- END TABEL ------------------ */
 
 
-*, *::befor, *::after {
-	box-sizing: border-box;
+.btn {
+	padding: 10px 20px;
+	margin: 1px 10px 1px 0px;
+	border-radius: 5px;
+	color: #222222;
+}
+
+.btn:hover, .btn:focus {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.btn-primary {
+	background-color: #007bff;
+	border: 0.1rem solid #007bff;
+}
+
+.btn-default {
+	background-color: #28a745;
+	border: 0.1rem solid #28a745;
+}
+
+.btn-success {
+	background-color: #28a745;
+	border: 0.1rem solid #28a745;
+}
+
+.form-control, .form-label {
+	margin: 10px 0px 10px 0px;	
 }
 
 h1 {color: green}

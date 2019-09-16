@@ -10,11 +10,11 @@
 	<form th:action="@{login}" method="post">
 		<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>	
 		<div class="form-group">
-			<label for="username"><span class=""></span>Username:</label>
+			<label class="form-label" for="username">Username:</label>
 			<input class="form-control" id="username" type="text" name="username" placeholder="Login:" />
 		</div>
 		<div class="form-group">
-			<label class="password">Password:</label>
+			<label class="form-label" for="password">Password:</label>
 			<input class="form-control" id="password" type="password" name="password" placeholder="Paswoord:" />
 		</div>
 		<div class="form-check">

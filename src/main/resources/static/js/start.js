@@ -76,6 +76,13 @@ function setup_timeOutModal() {
 	let timeOutCloseX = document.getElementById('timeOutCloseBtnX');
 	timeOutCloseX.addEventListener('click', listener_timeOut_close);
 	timeOutModalAchtergrond.addEventListener('click', clickAchtergrond);
+	window.onkeyup = function (event) {
+		if(event.keyCode == 27) {
+			listener_timeOut_close();
+		} else if (event.keyCode == 13) {
+			listener_timeOut_submit(event);
+		}
+	};
 	showTimeOutModal(true);
 };
 
@@ -85,7 +92,6 @@ function clickAchtergrond(event) {
 		window.open("/logout", "_self");
 	}
 };
-
 
 function listener_timeOut_close() {
 	showTimeOutModal(false);
@@ -111,14 +117,14 @@ function listener_timeOut_submit(event) {
 function showTimeOutModal(show) {
 	if(show) {
 		timeOutModalAchtergrond.classList.remove('hide');
-		timeOutModal.classList.remove('hide');
+		timeOutModal.classList.remove('off');
 		timeOutModalAchtergrond.classList.add('show');
-		timeOutModal.classList.add('show');
+		timeOutModal.classList.add('on');
 	} else {
 		timeOutModalAchtergrond.classList.remove('show');
-		timeOutModal.classList.remove('show');
+		timeOutModal.classList.remove('on');
 		timeOutModalAchtergrond.classList.add('hide');
-		timeOutModal.classList.add('hide');
+		timeOutModal.classList.add('off');
 	}
 };
 

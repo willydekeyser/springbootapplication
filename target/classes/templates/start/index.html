@@ -24,7 +24,7 @@
 
 <div th:if="${#authorization.expression('hasRole(''ROLE_USER'')')}" id="timeOutModalHolder">
 	<div class="timeOutModalAchtergrond hide">&nbsp;</div>
-	<div class="timeOutModal hide">
+	<div class="timeOutModal off">
 		<Form id="timeOutModalForm">
 			<div class="timeOutModalContent">
 				<div class="timeOutModalHeader">
@@ -36,8 +36,8 @@
 						<p><span id="timeOutTeller">&nbsp;</span><span> seconden</span></p>
 				</div>
 				<div class="timeOutModalFooter">
-					<button type="submit" class="timeOutSubmitBtn Btn btn-primary">Verder werken!</button>
-					<button type="button" id="timeOutCloseBtn" class="timeOutCloseBtn Btn btn-default">Sessie sluiten</button>
+					<button type="submit" class="timeOutSubmitBtn btn btn-primary">Verder werken!</button>
+					<button type="button" id="timeOutCloseBtn" class="timeOutCloseBtn btn btn-default">Sessie sluiten</button>
 				</div>
 			</div>
 		</Form>
