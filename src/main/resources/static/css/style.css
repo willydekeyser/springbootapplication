@@ -259,7 +259,7 @@ body{
 
 .form-alert {
 	padding: 0.75rem 1.25rem;
-	margin-bottom: 1rem;
+	margin: 1rem 0rem 1rem 0rem;
 	border: 1px solid transparant;
 	border-radius: 0.25rem;
 }
@@ -393,6 +393,7 @@ body{
 
 /* ---------------- END TABEL ------------------ */
 
+/* ---------------- START FORM & BUTTON ---------------- */
 
 .btn {
 	padding: 10px 20px;
@@ -411,9 +412,17 @@ body{
 	border: 0.1rem solid #007bff;
 }
 
+.btn-primary:hover {
+	background-color: #009bff;
+	border: 0.1rem solid #009bff;
+}
+
 .btn-default {
-	background-color: #28a745;
-	border: 0.1rem solid #28a745;
+	
+}
+
+.btn-default:hover {
+	
 }
 
 .btn-success {
@@ -421,9 +430,17 @@ body{
 	border: 0.1rem solid #28a745;
 }
 
+.btn-success:hover {
+	background-color: #38b755;
+	border: 0.1rem solid #38b755;
+}
+
 .form-control, .form-label {
 	margin: 10px 0px 10px 0px;	
 }
+
+/* ---------------- END TABEL ------------------ */
+
 
 h1 {color: green}
 p {color: #000000}
