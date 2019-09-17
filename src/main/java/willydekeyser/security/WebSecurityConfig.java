@@ -32,12 +32,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity httpSecurity) throws Exception {
 		System.out.println("Config: WebSecurityConfig " + httpSecurity.toString());
+		//httpSecurity.csrf().disable();
 		httpSecurity.authorizeRequests()
 			.antMatchers("/").permitAll()
 			.antMatchers("/kasboek/**").hasRole(ROLE_USER)
 			.antMatchers("/lidgeld/**").hasRole(ROLE_USER)
 			.antMatchers("/leden/**").hasRole(ROLE_USER)
-			.antMatchers("/rubriek/**").hasRole(ROLE_USER)
+			.antMatchers("/rubriek/**").permitAll()
+			//hasRole(ROLE_USER)
 			.antMatchers("/soortenleden/**").hasRole(ROLE_USER)
 			.antMatchers("/restcontroller/**").hasRole(ROLE_ADMIN)
 			.antMatchers("/actuator/**").hasRole(ROLE_GOLD)
@@ -51,9 +53,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.and()
 			.rememberMe().key("willydekeyser").tokenValiditySeconds(3600)
 			.and()
-			.exceptionHandling().accessDeniedPage("/error/403")
-			.and()
-			.csrf();
+			.exceptionHandling().accessDeniedPage("/error/403");
+			//.and()
+			//.csrf();
 	}
 	
 	@Autowired

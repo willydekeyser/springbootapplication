@@ -23,19 +23,19 @@
 </div>
 
 <div th:if="${#authorization.expression('hasRole(''ROLE_USER'')')}" id="timeOutModalHolder">
-	<div class="timeOutModalAchtergrond hide">&nbsp;</div>
-	<div class="timeOutModal off">
+	<div class="modalAchtergrond hide" id="timeOutModalAchtergrond">&nbsp;</div>
+	<div class="modal off" id="timeOutModal">
 		<Form id="timeOutModalForm">
-			<div class="timeOutModalContent">
-				<div class="timeOutModalHeader">
-					<h4 class="timeOutModalTitel" id="timeOutModalTitel">Computerclub Format C</h4>
-					<button type="button" id="timeOutCloseBtnX" class="timeOutCloseBtnX">&times;</button>
+			<div class="modalContent">
+				<div class="modalHeader">
+					<h4 class="modalTitel" id="timeOutModalTitel">Computerclub Format C</h4>
+					<button type="button" id="timeOutCloseBtnX" class="closeBtnX">&times;</button>
 				</div>
-				<div class="timeOutModalBody">
+				<div class="modalBody">
 						<h3>Uw sessie zal verlopen binnen:</h3>
 						<p><span id="timeOutTeller">&nbsp;</span><span> seconden</span></p>
 				</div>
-				<div class="timeOutModalFooter">
+				<div class="modalFooter">
 					<button type="submit" class="timeOutSubmitBtn btn btn-primary">Verder werken!</button>
 					<button type="button" id="timeOutCloseBtn" class="timeOutCloseBtn btn btn-success">Sessie sluiten</button>
 				</div>

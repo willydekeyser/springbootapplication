@@ -27,39 +27,67 @@ function newRubriek() {
 	};
 };
 
+let rubriekModal;
+let rubriekModalAchtergrond;
+let rubriekModalForm;
+
 function setup_newRubriekModal() {
-	document.getElementById('modal-titel').innerHTML = 'New rubriek!';
-	$('#editRubriekModal #modal-titel').removeClass('text-danger');
-	$('#editRubriek_save').show();
-	$('#form_body_error').hide();
-	$('#form_body').show();
-	$('#editRubriekModal').one('shown.bs.modal', listener_newRubriek_focus);
-	$('#editRubriekModal').one('hidden.bs.modal', listener_newRubriek_hidden);
-	$('#editRubriekModalForm').one('submit', listener_newRubriek_submit);
-	$('#editRubriekModalForm #rubriek').prop('readonly', false);
-	$("#editRubriekModal").modal("show");
+	rubriekModalAchtergrond = document.querySelector('#rubriekModalAchtergrond');
+	rubriekModal = document.querySelector('#rubriekModal');
+	rubriekLodalForm = document.getElementById('editRubriekModalForm');
+	document.getElementById('modal-titel').innerHTML = 'Nieuwe rubriek';
+	document.getElementById('modal-titel').classList.remove('text-danger');
+	document.getElementById('form_body_error').style.display = 'none';
+	document.querySelector('#rubriek').focus();
+	document.getElementById('rubriek').readOnly = false;
+	window.onkeyup = function (event) {
+		if(event.keyCode == 27) {
+			listener_newRubriek_close(event);
+		}
+	};
+	showRubriekModal(true);
 };
 
-function listener_newRubriek_focus() {
-	$("input[name='rubriek']").focus();
+function listener_newRubriek_close(event) {
+	event.preventDefault;
+	document.getElementById('editRubriekModalForm').reset();
+	showRubriekModal(false);
 };
 
-function listener_newRubriek_hidden() {
-	$('#editRubriekModalForm').unbind();
-	$('#editRubriekModalForm').trigger('reset');
-};
-
-function listener_newRubriek_submit() {
+function listener_newRubriek_submit(event) {
+	event.preventDefault();
 	let formData = new FormData(document.getElementById('editRubriekModalForm'));
 	let data = post_Form('/rubriek/save_newRubriek', formData)
 	.then((data) => {
-		$("#editRubriekModal").modal('toggle');
+		showRubriekModal(false);
 		rubriek_tabel_laden(data);
 	})
 	.catch((error) => {
 		console.log('FOUT: ' + error);
 	});
 	return false;
+};
+
+function showRubriekModal(show) {
+	if(show) {
+		document.getElementById('editRubriekModalForm').addEventListener('submit', listener_newRubriek_submit, false);
+		document.querySelector('.closeBtnX').addEventListener('click', listener_newRubriek_close, false);
+		document.getElementById('sluiten').addEventListener('click', listener_newRubriek_close, false);
+		rubriekModalAchtergrond.addEventListener('click', listener_newRubriek_close, false);
+		rubriekModalAchtergrond.classList.remove('hide');
+		rubriekModal.classList.remove('off');
+		rubriekModalAchtergrond.classList.add('show');
+		rubriekModal.classList.add('on');
+	} else {
+		document.getElementById('editRubriekModalForm').removeEventListener('submit', listener_newRubriek_submit, false);
+		document.querySelector('.closeBtnX').removeEventListener('click', listener_newRubriek_close, false);
+		document.getElementById('sluiten').removeEventListener('click', listener_newRubriek_close, false);
+		rubriekModalAchtergrond.removeEventListener('click', listener_newRubriek_close, false);
+		rubriekModalAchtergrond.classList.remove('show');
+		rubriekModal.classList.remove('on');
+		rubriekModalAchtergrond.classList.add('hide');
+		rubriekModal.classList.add('off');
+	}
 };
 
 /**

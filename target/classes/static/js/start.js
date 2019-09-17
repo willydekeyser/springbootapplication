@@ -53,7 +53,7 @@ function time_out() {
 		timeOutTeller.innerHTML = msToTime(timeOut);
 	};
 	
-    if(timeOut < 30000 && timeOut > 29000 ) {
+    if(timeOut < 40000 && timeOut > 29000 ) {
     	setup_timeOutModal();
     }
     
@@ -67,8 +67,8 @@ let timeOutModal;
 let timeOutModalAchtergrond;
 
 function setup_timeOutModal() {
-	timeOutModalAchtergrond = document.querySelector('.timeOutModalAchtergrond');
-	timeOutModal = document.querySelector('.timeOutModal');
+	timeOutModalAchtergrond = document.querySelector('#timeOutModalAchtergrond');
+	timeOutModal = document.querySelector('#timeOutModal');
 	let timeOutForm = document.getElementById('timeOutModalForm');
 	timeOutForm.addEventListener('submit', listener_timeOut_submit);
 	let timeOutCloseBtn = document.getElementById('timeOutCloseBtn');

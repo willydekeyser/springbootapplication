@@ -8,7 +8,7 @@
  *
 */
 
-"use strict";
+
 
 function reset_grid() {
 	section_height(10, 100, 20);

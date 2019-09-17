@@ -396,10 +396,10 @@ body{
 /* ---------------- START FORM & BUTTON ---------------- */
 
 .btn {
-	padding: 10px 20px;
-	margin: 1px 10px 1px 0px;
+	padding: 5px 10px;
+	margin: 1px 2px 1px 0px;
 	border-radius: 5px;
-	color: #222222;
+	color: rgba(255, 255, 255, 0.95);
 }
 
 .btn:hover, .btn:focus {
@@ -418,11 +418,11 @@ body{
 }
 
 .btn-default {
-	
+	color: rgba(0, 0, 0, 0.95);
 }
 
 .btn-default:hover {
-	
+	color: rgba(0, 0, 0, 0.7);
 }
 
 .btn-success {
@@ -435,8 +435,18 @@ body{
 	border: 0.1rem solid #38b755;
 }
 
+.btn-danger {
+	background-color: #dc3545;
+	border: 0.1rem solid #dc3545;
+}
+
+.btn-danger:hover {
+	background-color: #ec4555;
+	border: 0.1rem solid #ec4555;
+}
+
 .form-control, .form-label {
-	margin: 10px 0px 10px 0px;	
+	margin: 5px 0px 5px 0px;	
 }
 
 /* ---------------- END TABEL ------------------ */

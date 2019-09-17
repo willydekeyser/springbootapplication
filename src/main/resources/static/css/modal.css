@@ -1,6 +1,6 @@
 @charset "ISO-8859-1";
 
-.timeOutModalAchtergrond {
+.modalAchtergrond {
 	position: fixed;
 	z-index: 1;
 	left: 0;
@@ -12,7 +12,7 @@
 	cursor: pointer;
 }
 
-.timeOutModal {
+.modal {
 	position: fixed;
     top: 20%;
     right: 30%;
@@ -26,7 +26,7 @@
     transition: transform 250ms;
 }
 
-.timeOutModalContent {
+.modalContent {
 	display: flex;
 	flex-direction: column;
 }
@@ -47,38 +47,38 @@
     transform: translateY(0);
 }
 
-.timeOutModalHeader h4 .timeOutModalFooter h4 {
+.modalHeader h4 .modalFooter h4 {
 	margin: 0;
 	padding: 0;
 }
 
-.timeOutModalHeader {
+.modalHeader {
 	display: flex;
 	align-items: flex-start;
 	justify-content: space-between;
 	padding: 1rem 1rem;
 }
 
-.timeOutModalBody {
+.modalBody {
 	display: flex;
 	flex-direction: column;
 }
 
-.timeOutModalFooter {
+.modalFooter {
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
 	padding: 1em;
 }
 
-.timeOutModalTitel {
+.modalTitel {
 	margin-bottum: 0;
 	line-height: 1.5;
 	font-size: 30px;
 	color: green;
 }
 
-.timeOutCloseBtnX {
+.closeBtnX {
 	color: #999999;
 	float: right;
 	font-size: 30px;
@@ -86,8 +86,34 @@
 	background-color: #ffffff;
 }
 
-.timeOutCloseBtn:hover, .timeOutCloseBtn:focus, .timeOutCloseBtnX:hover, .timeOutCloseBtnX:focus, .timeOutSubmitBtn:hover, .timeOutSubmitBtn:focus {
+.timeOutCloseBtn:hover, .timeOutCloseBtn:focus, .closeBtnX:hover, .closeBtnX:focus, .timeOutSubmitBtn:hover, .timeOutSubmitBtn:focus {
 	color: #000000;
 	text-decoration: none;
 	cursor: pointer;
 }
+
+label {
+	display:inline-block
+}
+
+.col-1 {
+	width: 10%;
+}
+
+.col-2 {
+	width: 20%;
+}
+
+.col-3 {
+	width: 30%;
+}
+
+.col-4 {
+	width: 40%;
+}
+
+.col-5 {
+	width: 50%;
+}
+
+
