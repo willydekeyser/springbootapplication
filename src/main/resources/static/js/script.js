@@ -8,7 +8,7 @@
  *
 */
 
-
+"use strict";
 
 function reset_grid() {
 	section_height(10, 100, 20);
@@ -167,11 +167,11 @@ async function post_Form(url, form) {
 async function put_Form(url, form) {
 	console.log('Put Form: ' + url + ' - ' + form);
 	let response = await fetch(url, {
-		method: "PUT",
+		method: 'PUT',
 		body: form,
 		headers: {
-	        "Header" : "Willy De Keyser"
-	    },
+	        'Header' : 'Willy De Keyser'
+	    }
 	});
 	if (!response.ok || response.error) {
 		window.open('/', '_self');
@@ -182,12 +182,15 @@ async function put_Form(url, form) {
 
 async function delete_Form(url, form) {
 	console.log('Delete Form: ' + url + ' - ' + form);
+	for (var pair of form.entries()) {
+	    console.log(pair[0]+ ', ' + pair[1]); 
+	}
 	let response = await fetch(url, {
-		method: "DELETE",
+		method: 'DELETE',
 		body: form,
 		headers: {
-	        "Header" : "Willy De Keyser"
-	    },
+	        'Header' : 'Willy De Keyser'
+	    }
 	});
 	if (!response.ok || response.error) {
 		window.open('/', '_self');

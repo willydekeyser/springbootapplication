@@ -1,6 +1,7 @@
 @charset "ISO-8859-1";
 
 .modalAchtergrond {
+	display: none;
 	position: fixed;
 	z-index: 1;
 	left: 0;

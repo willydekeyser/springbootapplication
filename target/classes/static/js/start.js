@@ -53,7 +53,7 @@ function time_out() {
 		timeOutTeller.innerHTML = msToTime(timeOut);
 	};
 	
-    if(timeOut < 40000 && timeOut > 29000 ) {
+    if(timeOut < 30000 && timeOut > 29000 ) {
     	setup_timeOutModal();
     }
     
