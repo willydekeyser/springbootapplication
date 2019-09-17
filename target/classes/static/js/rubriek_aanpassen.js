@@ -45,13 +45,13 @@ function setup_newRubriekModal() {
 			listener_newRubriek_close(event);
 		}
 	};
-	showRubriekModal(true);
+	showNewRubriekModal(true);
 };
 
 function listener_newRubriek_close(event) {
 	event.preventDefault;
 	document.getElementById('editRubriekModalForm').reset();
-	showRubriekModal(false);
+	showNewRubriekModal(false);
 };
 
 function listener_newRubriek_submit(event) {
@@ -59,7 +59,7 @@ function listener_newRubriek_submit(event) {
 	let formData = new FormData(document.getElementById('editRubriekModalForm'));
 	let data = post_Form('/rubriek/save_newRubriek', formData)
 	.then((data) => {
-		showRubriekModal(false);
+		showNewRubriekModal(false);
 		rubriek_tabel_laden(data);
 	})
 	.catch((error) => {
@@ -68,7 +68,7 @@ function listener_newRubriek_submit(event) {
 	return false;
 };
 
-function showRubriekModal(show) {
+function showNewRubriekModal(show) {
 	if(show) {
 		document.getElementById('editRubriekModalForm').addEventListener('submit', listener_newRubriek_submit, false);
 		document.querySelector('.closeBtnX').addEventListener('click', listener_newRubriek_close, false);
@@ -117,48 +117,74 @@ function updateRubriek() {
 };
 
 function setup_updateRubriekModal() {
-	let actief_row = $('tr.active');
-	if (actief_row === undefined || actief_row.length == 0) {
-		$('#editRubriekModal #modal-titel').html('Je hebt geen selectie gemaakt!');
-		$('#editRubriekModal #modal-titel').addClass('text-danger');
-		$('#editRubriek_save').hide();
-		$('#editRubriekModalForm #rubriek').prop('readonly', true);
+	rubriekModalAchtergrond = document.querySelector('#rubriekModalAchtergrond');
+	rubriekModal = document.querySelector('#rubriekModal');
+	rubriekLodalForm = document.getElementById('editRubriekModalForm');
+	let actief_row = document.querySelector('tr.active');
+	if (actief_row === undefined || actief_row === null) {
+		document.getElementById('modal-titel').innerHTML = 'Je hebt geen selectie gemaakt!';
+		document.getElementById('modal-titel').classList.add('text-danger');
+		document.getElementById('editRubriek_save').style.visibility = 'hidden';
+		document.getElementById('rubriek').readOnly = true;
 	} else {
-		$('#editRubriekModal #modal-titel').html('Update rubriek!');
-		$('#editRubriekModal #modal-titel').removeClass('text-danger');
-		$('#editRubriek_save').show();
-		$('#editRubriekModalForm #id').val(Rubriek_gegevens.id);
-		$('#editRubriekModalForm #rubriek').prop('readonly', false);
-		$('#editRubriekModalForm #rubriek').val(Rubriek_gegevens.rubriek);
+		document.getElementById('modal-titel').innerHTML = 'Update rubriek!';
+		document.getElementById('modal-titel').classList.remove('text-danger');
+		document.getElementById('editRubriek_save').style.visibility = 'visible';
+		document.getElementById('id').value = Rubriek_gegevens.id;
+		document.getElementById('rubriek').readOnly = false;
+		document.getElementById('rubriek').value = Rubriek_gegevens.rubriek;
+		document.querySelector('#rubriek').focus();
 	};
-	$('#form_body_error').hide();
-	$('#form_body').show();
-	$('#editRubriekModal').one('shown.bs.modal', listener_updateRubriek_focus);
-	$('#editRubriekModal').one('hidden.bs.modal', listener_updateRubriek_hidden);
-	$('#editRubriekModalForm').one('submit', listener_updateRubriek_submit);
-	$("#editRubriekModal").modal("show");
+	document.getElementById('form_body_error').style.display = 'none';
+	document.getElementById('form_body').style.visibility = 'visible';
+	window.onkeyup = function (event) {
+		if(event.keyCode == 27) {
+			listener_updateRubriek_close(event);
+		}
+	};
+	showUpdateRubriekModal(true);
 };
 
-function listener_updateRubriek_focus() {
-	$("input[name='rubriek']").focus();
+function listener_updateRubriek_close(event) {
+	event.preventDefault;
+	document.getElementById('editRubriekModalForm').reset();
+	showUpdateRubriekModal(false);
 };
 
-function listener_updateRubriek_hidden() {
-	$('#editRubriekModalForm').unbind();
-	$('#editRubriekModalForm').trigger('reset');
-};
-
-function listener_updateRubriek_submit() {
+function listener_updateRubriek_submit(event) {
+	event.preventDefault();
 	let formData = new FormData(document.getElementById('editRubriekModalForm'));
 	let data = post_Form('/rubriek/save_updateRubriek', formData)
 	.then((data) => {
-		$("#editRubriekModal").modal('toggle');
+		showUpdateRubriekModal(false);
 		rubriek_tabel_laden(data);
 	})
 	.catch((error) => {
-		console.log('FOUT: ' + error);
+		console.error('FOUT: ' + error);
 	});
 	return false;
+};
+
+function showUpdateRubriekModal(show) {
+	if(show) {
+		document.getElementById('editRubriekModalForm').addEventListener('submit', listener_updateRubriek_submit, false);
+		document.querySelector('.closeBtnX').addEventListener('click', listener_updateRubriek_close, false);
+		document.getElementById('sluiten').addEventListener('click', listener_updateRubriek_close, false);
+		rubriekModalAchtergrond.addEventListener('click', listener_updateRubriek_close, false);
+		rubriekModalAchtergrond.classList.remove('hide');
+		rubriekModal.classList.remove('off');
+		rubriekModalAchtergrond.classList.add('show');
+		rubriekModal.classList.add('on');
+	} else {
+		document.getElementById('editRubriekModalForm').removeEventListener('submit', listener_updateRubriek_submit, false);
+		document.querySelector('.closeBtnX').removeEventListener('click', listener_updateRubriek_close, false);
+		document.getElementById('sluiten').removeEventListener('click', listener_updateRubriek_close, false);
+		rubriekModalAchtergrond.removeEventListener('click', listener_updateRubriek_close, false);
+		rubriekModalAchtergrond.classList.remove('show');
+		rubriekModal.classList.remove('on');
+		rubriekModalAchtergrond.classList.add('hide');
+		rubriekModal.classList.add('off');
+	}
 };
 
 /**

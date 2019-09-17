@@ -58,7 +58,6 @@ public class RubriekController {
 	
 	@PostMapping(value="/save_newRubriek")
 	public @ResponseBody List<Rubriek> save_newRubriek(@Validated Rubriek rubriek) {
-		System.out.println("Rubriek: " + rubriek);
 		rubriekservice.addRubriek(rubriek);
 		return rubriekservice.getAllRubriek();
 	}

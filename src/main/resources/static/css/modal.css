@@ -116,4 +116,6 @@ label {
 	width: 50%;
 }
 
-
+.text-danger {
+	color: #ff0000;
+}
