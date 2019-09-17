@@ -403,3 +403,9 @@ LOGIN name: Willy De Keyser - [ROLE_ADMIN, ROLE_GOLD, ROLE_USER]
 
 Datum: 17/09/2019 13:50:15
 LOGIN name: Willy De Keyser - [ROLE_ADMIN, ROLE_GOLD, ROLE_USER]
+
+Datum: 17/09/2019 13:52:53
+LOGIN name: Willy De Keyser - [ROLE_ADMIN, ROLE_GOLD, ROLE_USER]
+
+Datum: 17/09/2019 13:54:29
+LOGIN name: Willy De Keyser - [ROLE_ADMIN, ROLE_GOLD, ROLE_USER]

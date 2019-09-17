@@ -154,7 +154,7 @@ function listener_updateRubriek_close(event) {
 function listener_updateRubriek_submit(event) {
 	event.preventDefault();
 	let formData = new FormData(document.getElementById('editRubriekModalForm'));
-	let data = post_Form('/rubriek/save_updateRubriek', formData)
+	let data = put_Form('/rubriek/save_updateRubriek', formData)
 	.then((data) => {
 		showUpdateRubriekModal(false);
 		rubriek_tabel_laden(data);
