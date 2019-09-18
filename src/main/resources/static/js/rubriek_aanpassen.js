@@ -119,7 +119,6 @@ function updateRubriek() {
 };
 
 function setup_updateRubriekModal() {
-	console.log("Setup Update rubriek");
 	rubriekModalAchtergrond = document.querySelector('#rubriekModalAchtergrond');
 	rubriekModal = document.querySelector('#rubriekModal');
 	rubriekModalForm = document.getElementById('editRubriekModalForm');
@@ -261,9 +260,6 @@ function listener_deleteRubriek_close(event) {
 function listener_deleteRubriek_submit(event) {
 	event.preventDefault();
 	let formData = new FormData(document.getElementById('editRubriekModalForm'));
-	for (var pair of formData.entries()) {
-	    console.log(pair[0]+ ', ' + pair[1]); 
-	}
 	let data = delete_Form('/rubriek/save_deleteRubriek', formData)
 	.then((data) => {
 		showDeleteRubriekModal(false);

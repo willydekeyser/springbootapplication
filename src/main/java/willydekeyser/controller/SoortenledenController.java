@@ -9,9 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -66,13 +68,13 @@ public class SoortenledenController {
 		return soortenLedenservice.getAllSoortenLeden();
 	}
 	
-	@PostMapping(value="/save_updateSoortenleden")
+	@PutMapping(value="/save_updateSoortenleden")
 	public @ResponseBody List<SoortenLeden> save_updateSoortenleden(@Validated SoortenLeden soortenleden) {
 		soortenLedenservice.updateSoortenLeden(soortenleden);
 		return soortenLedenservice.getAllSoortenLeden();
 	}
 	
-	@PostMapping(value="/save_deleteSoortenleden")
+	@DeleteMapping(value="/save_deleteSoortenleden")
 	public @ResponseBody List<SoortenLeden> save_deleteSoortenleden(@Validated SoortenLeden soortenleden) {
 		soortenLedenservice.deleteSoortenLeden(soortenleden.getId());;
 		return soortenLedenservice.getAllSoortenLeden();

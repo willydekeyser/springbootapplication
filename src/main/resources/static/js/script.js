@@ -48,14 +48,12 @@ async function Refrech_HTML(url, div) {
 		}
 	});
 	if (!response.ok || !response.status == 200 || response.redirected) {
-		console.log('error: ' + response.status + ' - ' + 'Redirected: ' + response.redirected);
+		console.error('error: ' + response.status + ' - ' + 'Redirected: ' + response.redirected);
 		window.open('/', '_self');
 		throw Error(response.status);
 	}
 	let tekst = await response.text();
 	document.getElementById(div).innerHTML = tekst;
-	console.log('ok: ' + response.status + ' - ' + 'Redirected: ' + response.redirected);
-	console.log(div + ' geladen - ' + url);
 	return 'OK';
 };
 
@@ -66,7 +64,7 @@ async function existRecord(url) {
 		}
 	});
 	if (!response.ok || !response.status == 200 || response.redirected) {
-		console.log('error: ' + response.status + ' - ' + 'Redirected: ' + response.redirected);
+		console.error('error: ' + response.status + ' - ' + 'Redirected: ' + response.redirected);
 		window.open('/', '_self');
 		throw Error(response.status);
 	};
@@ -81,11 +79,10 @@ async function load_HTML(url) {
 		}
 	});
 	if (!response.ok || !response.status == 200 || response.redirected) {
-		console.log('error: ' + response.status + ' - ' + 'Redirected: ' + response.redirected);
+		console.error('error: ' + response.status + ' - ' + 'Redirected: ' + response.redirected);
 		window.open('/', '_self');
 		throw Error(response.status);
 	};
-	console.log('ok: ' + response.status + ' - ' + 'Redirected: ' + response.redirected);
 	return await response.text();
 };
 
@@ -97,14 +94,12 @@ async function Load_JSON(url, div) {
 		}
 	});
 	if (!response.ok || !response.status == 200 || response.redirected) {
-		console.log('error: ' + response.status + ' - ' + 'Redirected: ' + response.redirected);
+		console.error('error: ' + response.status + ' - ' + 'Redirected: ' + response.redirected);
 		window.open('/', '_self');
 		throw Error(response.status);
 	};
 	let data = await response.text();
 	let myJson = await JSON.stringify(data);
-	console.log(div + ' - ' + data);
-	console.log(myJson);
 	document.getElementById(div).innerHTML = data; 
 	return 'OK';
 };
@@ -116,12 +111,11 @@ async function fetch_JSON(url) {
 		}
 	});
 	if (!response.ok || !response.status == 200 || response.redirected) {
-		console.log('error: ' + response.status + ' - ' + 'Redirected: ' + response.redirected);
+		console.error('error: ' + response.status + ' - ' + 'Redirected: ' + response.redirected);
 		window.open('/', '_self');
 		throw Error(response.status);
 	};
 	let data = await response.json();
-	console.log('Fetch JSON data');
 	return data;
 };
 
@@ -139,12 +133,11 @@ async function fetch_TEXT(url) {
 		}
 	});
 	if (!response.ok || !response.status == 200 || response.redirected) {
-		console.log('error: ' + response.status + ' - ' + 'Redirected: ' + response.redirected);
+		console.error('error: ' + response.status + ' - ' + 'Redirected: ' + response.redirected);
 		window.open('/', '_self');
 		throw Error(response.status);
 	};
 	let data = await response.text();
-	console.log('Fetch TEXT data');
 	return data;
 }
 
@@ -182,9 +175,6 @@ async function put_Form(url, form) {
 
 async function delete_Form(url, form) {
 	console.log('Delete Form: ' + url + ' - ' + form);
-	for (var pair of form.entries()) {
-	    console.log(pair[0]+ ', ' + pair[1]); 
-	}
 	let response = await fetch(url, {
 		method: 'DELETE',
 		body: form,
