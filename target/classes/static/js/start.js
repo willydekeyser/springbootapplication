@@ -109,7 +109,7 @@ function listener_timeOut_submit(event) {
 		console.log('Time out: ' + data);
 	})
 	.catch((error) => {
-		console.log('FOUT: ' + error);
+		console.error('FOUT: ' + error);
 	});
 	return false;
 };
@@ -321,7 +321,6 @@ function start_login() {
 	menu_main_width(300);
 	Refrech_HTML('/login_main','main_section_main');
 	return false;
-	
 };
 
 function start_logout() {
@@ -334,10 +333,9 @@ function start_logout() {
 		console.log('Logout: ' + data);
 	})
 	.catch((error) => {
-		console.log('FOUT: ' + error);
+		console.error('FOUT: ' + error);
 	});
 	return false;
-	
 };
 
 function initSessionMonitor() {

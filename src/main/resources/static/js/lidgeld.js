@@ -24,7 +24,7 @@ function lidgeldselect(id) {
 	if(selection) {
 		selection.classList.remove('active');
 	};
-	document.getElementById('lidgeld_tabel_body' + id).classList.add('active');
+	document.getElementById(id).classList.add('active');
 };
 
 function lidgeldbyid(id) {

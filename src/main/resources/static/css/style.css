@@ -407,6 +407,18 @@ body{
 	cursor: pointer;
 }
 
+.btn-white {
+	background-color: #ffffff;
+	border: 0.1rem solid #ffffff;
+	color: #111111;
+}
+
+.btn-white:hover, .btn-white:hover {
+	background-color: #ffffff;
+	border: 0.1rem solid #ffffff;
+	color: #111111;
+}
+
 .btn-primary {
 	background-color: #007bff;
 	border: 0.1rem solid #007bff;

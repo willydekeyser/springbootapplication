@@ -124,7 +124,7 @@ function leden_lidgeld_laden(data) {
 	let html = ``;
 	document.getElementById('lidgeld_tabel_body').innerHTML = '';
 	data.forEach((lidgeld, index) => {
-		html += `<tr class="test" onclick="lidgeldselect(${lidgeld.id})" id="lidgeld_tabel_body${lidgeld.id}">
+		html += `<tr class="test" onclick="lidgeldselect(${lidgeld.id})" id="${lidgeld.id}">
 			<td style="width: 5%" class="right">${lidgeld.id}</td>
 			<td style="width: 40%" class="right">${getFormattedDate(lidgeld.datum)}</td>
 			<td style="width: 55%" class="right">${getFormattedEuro(lidgeld.bedrag)}</td>
