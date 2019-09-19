@@ -9,67 +9,67 @@
 <div th:fragment="editLidModal">
 	<div class="modalAchtergrond hide" id="lidModalAchtergrond">&nbsp;</div>
 	<div class="modal off" id="editLidModal">
-		<Form method="post" th:object="${Leden}" id="editLidModalForm">
+		<Form th:object="${Leden}" id="editLidModalForm">
 			<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
 			<div class="modal-dialog modal-lg">
 				<!-- Modal content-->
 				<div class="modal-content">
-					<div class="modalHeader">
-						<h4 class="modalTitel" id="modal-titel"></h4>
-						<button type="button" class="closeBtnX" data-dismiss="modal">&times;</button>
+					<div class="lidmodalHeader">
+						<h4 class="modalTitel" id="lidmodaltitel"></h4>
+						<button type="button" class="closeBtnX" id="lidcloseBtnX" data-dismiss="modal">&times;</button>
 					</div>
 					<div class="modalBody">
 						<div class="form-group">
 							<label for="id" class="form-label col-1">Id:</label> 
-							<input type="text" class="form-control col-1" th:value=0 id="id" name="id" value="" readonly />
+							<input type="text" class="form-control col-1" th:value=0 id="lidid" name="id" value="" readonly />
 						</div>
 						<div class="form-group">
 							<label for="voornaam" class="form-label col-1">Naam:</label> 
-							<input type="text" class="form-control col-3" id="voornaam" name="voornaam" title="Voornaam invullen!" placeholder="Voornaam" required />
-							<input type="text" class="form-control col-3" id="familienaam" name="familienaam" title="Familienaam invullen!" placeholder="Familienaam" required />
+							<input type="text" class="form-control col-4" id="lidvoornaam" name="voornaam" title="Voornaam invullen!" placeholder="Voornaam" required />
+							<input type="text" class="form-control col-4" id="lidfamilienaam" name="familienaam" title="Familienaam invullen!" placeholder="Familienaam" required />
 						</div>
 						<div class="form-group">
 							<label for="straat" class="form-label col-1">Adres:</label>
-							<input type="text" class="form-control col-4" id="straat" name="straat" placeholder="Straat" />
-							<input type="text" class="form-control col-1" id="nr" name="nr" placeholder="Nr" />
+							<input type="text" class="form-control col-6" id="lidstraat" name="straat" placeholder="Straat" />
+							<input type="text" class="form-control col-2" id="lidnr" name="nr" placeholder="Nr" />
 						</div>
 						<div class="form-group">
 							<label for="postnr" class="form-label col-1">Gemeente:</label>
-							<input type="text" class="form-control col-1" id="postnr" name="postnr" placeholder="Postnummer" />
-							<input type="text" class="form-control col-4" id="gemeente" name="gemeente" placeholder="Gemeente" />
+							<input type="text" class="form-control col-2" id="lidpostnr" name="postnr" placeholder="Postnummer" />
+							<input type="text" class="form-control col-6" id="lidgemeente" name="gemeente" placeholder="Gemeente" />
 						</div>
 						<div class="form-group">
 							<label for="telefoonnummer" class="form-label col-1">Telefoon:</label>
-							<input type="text" class="form-control col-3" id="telefoonnummer" name="telefoonnummer" placeholder="Telefoon nummer" />
-							<input type="text" class="form-control col-3" id="gsmnummer" name="gsmnummer" placeholder="Gsm Nummer" />
+							<input type="text" class="form-control col-4" id="lidtelefoonnummer" name="telefoonnummer" placeholder="Telefoon nummer" />
+							<input type="text" class="form-control col-4" id="lidgsmnummer" name="gsmnummer" placeholder="Gsm Nummer" />
 						</div>
 						<div class="form-group">
 							<label for="emailadres" class="form-label col-1">E-mail:</label>
-							<input type="email" class="form-control col-4" id="emailadres" name="emailadres" placeholder="E-mail" />
+							<input type="email" class="form-control col-8" id="lidemailadres" name="emailadres" placeholder="E-mail" />
 						</div>
 						<div class="form-group">
 							<label for="webadres" class="form-label col-1">Website:</label>
-							<input type="url" class="form-control col-4" id="webadres" name="webadres" placeholder="Website" />
+							<input type="url" class="form-control col-8" id="lidwebadres" name="webadres" placeholder="Website" />
 						</div>
 						<div class="form-group">
 							<label for="datumlidgeld" class="form-label col-1">Inschrijving:</label>
-							<input type="date" class="form-control col-2" id="datumlidgeld" name="datumlidgeld" title="Datum invullen!" placeholder="Datum inschrijving" required />
+							<input type="date" class="form-control col-2" id="liddatumlidgeld" name="datumlidgeld" title="Datum invullen!" placeholder="Datum inschrijving" required />
 							<label for="soortenleden" class="form-label col-1">Soort lid:</label>
-							<select name="soortenleden.id" id="soortlid" class="col-2" title="Maak een selectie!" required>
+							<select name="soortenleden.id" id="lidsoortlid" class="col-2" title="Maak een selectie!" required>
 								<option value="" disabled selected>Select soort lid!</option>
 								<option th:selected="false" th:each="soort : ${ledensoorten}" th:value="${soort.id}" th:text="${soort.soortenleden}"></option>
 							</select>
 						</div>
 						<div class="form-group">
-							<label for="ontvangMail" class="form-label col-1">Ontvang e-mail:</label>
-							<input type="checkbox" class="col-1" id="ontvangmail" th:checked="false" name="ontvangMail" />
-							<label for="mailVlag" class="form-label col-1">E-mail vlag:</label>
-							<input type="checkbox" class="col-1" id="mailvlag" th:checked="false" name="mailVlag" />
+							<label for="ontvangMail" class="form-label col-2">Ontvang e-mail:</label>
+							<input type="checkbox" class="col-1" id="lidontvangmail" th:checked="false" name="ontvangMail" />
+							<label for="mailVlag" class="form-label col-2">E-mail vlag:</label>
+							<input type="checkbox" class="col-1" id="lidmailvlag" th:checked="false" name="mailVlag" />
 						</div>
 					</div>
 					<div class="modalFooter">
 						<button type="submit" class="btn btn-primary">Save lid</button>
-						<button type="button" id="sluiten" class="btn btn-default" data-dismiss="modal">Sluiten</button>
+						<button type="button" id="lidsluiten" class="btn btn-default" data-dismiss="modal">Sluiten</button>
 					</div>
 				</div>
 			</div>
@@ -78,38 +78,37 @@
 </div>
 
 <div th:fragment="deleteLidModal">
-	<div class="verwijderenlidForm">
-		<Form method="post" th:object="${Leden}" id="deleteLidModalForm">
+	<div class="modalAchtergrond hide" id="lidModalAchtergrond">&nbsp;</div>
+	<div class="modal off" id="deleteLidModal">
+		<Form th:object="${Leden}" id="deleteLidModalForm">
 			<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
-			<div class="modal fade" id="deleteLidModal" role="dialog">
 				<div class="modal-dialog">
 					<!-- Modal content-->
 					<div class="modal-content">
-						<div class="modal-header">
-							<h4 class="modal-title text-danger" id="delete-modal-titel"></h4>
-							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<div class="modalHeader">
+							<h4 class="modalTitel text-danger" id="delete-modal-titel"></h4>
+							<button type="button" class="closeBtnX" id="deletecloseBtnX" data-dismiss="modal">&times;</button>
 						</div>
-						<div id="delete_form_body" class="modal-body">
-							<p>Lid verwijderen.</p>
+						<div id="delete_form_body" class="modalBody">
 							<div class="form-group">
-								<input type="text" class="col-sm-2" id="delete_id" name="id" readonly />
-								<input type="text" class="col-sm-6" id="delete_naam" name="voornaam" readonly />
+								<label for="id" class="form-label col-1">Id:</label> 
+								<input type="text" class="col-1" id="delete_id" name="id" readonly />
+							</div>
+							<div class="form-group">
+								<label for="id" class="form-label col-1">Naam:</label> 
+								<input type="text" class="col-6" id="delete_naam" name="voornaam" readonly />
 							</div>
 						</div>
 						<div id="delete_form_body_error" class="modal-body">
 							<p>Je kan <span id="delete_form_body_error_naam">Naam!</span> niet verwijderen.</p>
 							<p>Eerst moeten alle lidgeld records worden verwjdert.</p>
 						</div>
-						<div id="delete_modal_footer" class="modal-footer">
-							<button type="submit" class="btn btn-danger">Delete lid</button>
-							<button id="sluiten" type="button" class="btn btn-default" data-dismiss="modal">Sluiten</button>
-						</div>
-						<div id="delete_modal_footer_error" class="modal-footer">
-							<button id="sluiten" type="button" class="btn btn-default" data-dismiss="modal">Sluiten</button>
+						<div id="delete_modal_footer" class="modalFooter">
+							<button type="submit" id="deleteSubmit" class="btn btn-danger">Delete lid</button>
+							<button id="deletesluiten" type="button" class="btn btn-default" data-dismiss="modal">Sluiten</button>
 						</div>
 					</div>
 				</div>
-			</div>
 		</Form>
 	</div>
 </div>

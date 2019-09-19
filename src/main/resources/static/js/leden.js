@@ -93,7 +93,8 @@ async function leden_lidgeld_refrech() {
 function leden_namenlijst_laden(data) {
 	let html = ``;
 	data.forEach((namenlijst, index) => {
-		html += `<li id="${namenlijst.id}" class="list-group-item namenlijst ${namenlijst.id == selectedLidId ? `active` : ``}">${index + 1} - ${namenlijst.naam}</li>`;
+		//html += `<li id="${namenlijst.id}" class="list-group-item namenlijst ${namenlijst.id == selectedLidId ? `active` : ``}">${index + 1} - ${namenlijst.naam}</li>`;
+		html += `<li id="${namenlijst.id}" class="menu_lijst_item namenlijst ${namenlijst.id == selectedLidId ? `active` : ``}"><span class="menu_lijst_item_tekst">${index + 1} - ${namenlijst.naam}</span></li>`;
 	});
 	document.getElementById('namenlijst_click').innerHTML = html;
 };
