@@ -10,9 +10,14 @@
  * 
  */
 
+let lidModal;
+let lidModalAchtergrond;
+let lidModalForm;
+
+
 function newLid() {
 	console.log("New lid");
-	var editModal = document.getElementById("editLidModal");
+	let editModal = document.getElementById("editLidModal");
 	if(typeof(editModal) == 'undefined' || editModal == null){
 		let data = load_HTML('/leden/editLid')
 		.then((data) => {
@@ -20,7 +25,7 @@ function newLid() {
 			setup_newLidModal();
 		})
 		.catch((error) => {
-			console.log('FOUT: ' + error);
+			console.error('FOUT: ' + error);
 		});
 	} else {
 		setup_newLidModal();
@@ -29,20 +34,17 @@ function newLid() {
 };
 
 function setup_newLidModal() {
+	lidModalAchtergrond = document.querySelector('#lidModalAchtergrond');
+	lidModal = document.querySelector('#editLidModal');
+	lidModalForm = document.getElementById('editLidModalForm');
 	document.getElementById('modal-titel').innerHTML = 'New lid!';
-	$('#editLidModal').one('shown.bs.modal', listener_newLid_focus);
-	$('#editLidModal').one('hidden.bs.modal', listener_newLid_hidden);
-	$('#editLidModalForm').one('submit', listener_newLid_submit);
-	$("#editLidModal").modal("show");
+		
+	showNewLidModal(true);
 };
 
-function listener_newLid_focus() {
-	document.getElementsByName('voornaam')[0].focus();
-};
-
-function listener_newLid_hidden() {
-	$('#editLidModalForm').off();
-	document.getElementById('editLidModalForm').reset();
+function listener_newLid_close(event) {
+	event.preventDefault;
+	showNewLidModal(false);
 };
 
 function listener_newLid_submit() {
@@ -51,15 +53,38 @@ function listener_newLid_submit() {
 	.then((data) => {
 		selectedLidId = data.id;
 		selectedSoortId = data.soortenleden.id;
-		$("#editLidModal").modal('toggle');
-		$('#select_leden').val(selectedSoortId);
-		$('#select_leden').trigger('change');
-		console.log('New Lid: ' + selectedSoortId + ' - ' + selectedLidId + ' ' + data.voornaam + ' ' + data.familienaam);
+		showNewLidModal(false);
+	
+//		$('#select_leden').val(selectedSoortId);
+//		$('#select_leden').trigger('change');
 	})
 	.catch((error) => {
-		console.log('FOUT: ' + error);
+		console.error('FOUT: ' + error);
 	});
 	return false;
+};
+
+function showNewLidModal(show) {
+	if(show) {
+		document.getElementById('editLidModalForm').addEventListener('submit', listener_newLid_submit, false);
+		document.querySelector('.closeBtnX').addEventListener('click', listener_newLid_close, false);
+		document.getElementById('sluiten').addEventListener('click', listener_newLid_close, false);
+		lidModalAchtergrond.addEventListener('click', listener_newLid_close, false);
+		lidModalAchtergrond.classList.add('show');
+		lidModal.classList.add('on');
+		lidModalAchtergrond.classList.remove('hide');
+		lidModal.classList.remove('off');
+	} else {
+		document.getElementById('editLidModalForm').reset();
+		document.getElementById('editLidModalForm').removeEventListener('submit', listener_newLid_submit, false);
+		document.querySelector('.closeBtnX').removeEventListener('click', listener_newLid_close, false);
+		document.getElementById('sluiten').removeEventListener('click', listener_newLid_close, false);
+		lidModalAchtergrond.removeEventListener('click', listener_newLid_close, false);
+		lidModalAchtergrond.classList.add('hide');
+		lidModal.classList.add('off');
+		lidModalAchtergrond.classList.remove('show');
+		lidModal.classList.remove('on');
+	}
 };
 
 /**

@@ -754,3 +754,30 @@ LOGIN name: Willy De Keyser - [ROLE_ADMIN, ROLE_GOLD, ROLE_USER]
 
 Datum: 18/09/2019 17:30:12
 LOGIN name: Willy De Keyser - [ROLE_ADMIN, ROLE_GOLD, ROLE_USER]
+
+Datum: 18/09/2019 18:27:44
+LOGIN name: Willy De Keyser - [ROLE_ADMIN, ROLE_GOLD, ROLE_USER]
+
+Datum: 18/09/2019 18:31:02
+LOGIN name: Willy De Keyser - [ROLE_ADMIN, ROLE_GOLD, ROLE_USER]
+
+Datum: 18/09/2019 18:36:39
+LOGIN name: Willy De Keyser - [ROLE_ADMIN, ROLE_GOLD, ROLE_USER]
+
+Datum: 18/09/2019 18:38:26
+LOGIN name: Willy De Keyser - [ROLE_ADMIN, ROLE_GOLD, ROLE_USER]
+
+Datum: 18/09/2019 18:52:55
+LOGIN name: Willy De Keyser - [ROLE_ADMIN, ROLE_GOLD, ROLE_USER]
+
+Datum: 18/09/2019 18:56:38
+LOGIN name: Willy De Keyser - [ROLE_ADMIN, ROLE_GOLD, ROLE_USER]
+
+Datum: 18/09/2019 18:58:01
+LOGIN name: Willy De Keyser - [ROLE_ADMIN, ROLE_GOLD, ROLE_USER]
+
+Datum: 18/09/2019 18:59:49
+LOGIN name: Willy De Keyser - [ROLE_ADMIN, ROLE_GOLD, ROLE_USER]
+
+Datum: 19/09/2019 11:17:27
+LOGIN name: Willy De Keyser - [ROLE_ADMIN, ROLE_GOLD, ROLE_USER]

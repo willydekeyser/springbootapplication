@@ -15,9 +15,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -105,7 +107,7 @@ public class KasboekController {
 	}
 	
 	@Secured("ROLE_GOLD")
-	@PostMapping("/save_updateKasboek/{selected_jaar}/{selected_rubriek}/{change_jaar}/{jaar_menu}")
+	@PutMapping("/save_updateKasboek/{selected_jaar}/{selected_rubriek}/{change_jaar}/{jaar_menu}")
 	public @ResponseBody List<Kasboek> save_updateKasboek(@Validated Kasboek kasboek, @PathVariable Integer selected_jaar, @PathVariable Integer selected_rubriek, 
 			@PathVariable Boolean change_jaar, @PathVariable Integer jaar_menu) {
 		kasboekservice.updateKasboek(kasboek);
@@ -118,7 +120,7 @@ public class KasboekController {
 	}
 	
 	@Secured("ROLE_GOLD")
-	@PostMapping("/save_deleteKasboek/{selected_jaar}/{selected_rubriek}")
+	@DeleteMapping("/save_deleteKasboek/{selected_jaar}/{selected_rubriek}")
 	public @ResponseBody List<Kasboek> save_deleteKasboek(@Validated Kasboek kasboek, @PathVariable Integer selected_jaar, @PathVariable Integer selected_rubriek) {
 		kasboekservice.deleteKasboek(kasboek.getId());
 		kasboekLijst = kasboekservice.getAllKasboekRubriekJaarRubriek(selected_jaar, selected_rubriek);

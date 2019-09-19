@@ -7,70 +7,69 @@
 <body>
 
 <div th:fragment="editLidModal">
-	<div class="editLidForm">
+	<div class="modalAchtergrond hide" id="lidModalAchtergrond">&nbsp;</div>
+	<div class="modal off" id="editLidModal">
 		<Form method="post" th:object="${Leden}" id="editLidModalForm">
 			<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
-			<div class="modal fade" id="editLidModal" role="dialog">
-				<div class="modal-dialog modal-lg">
-					<!-- Modal content-->
-					<div class="modal-content">
-						<div class="modal-header">
-							<h4 class="modal-title" id="modal-titel"></h4>
-							<button type="button" class="close" data-dismiss="modal">&times;</button>
+			<div class="modal-dialog modal-lg">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modalHeader">
+						<h4 class="modalTitel" id="modal-titel"></h4>
+						<button type="button" class="closeBtnX" data-dismiss="modal">&times;</button>
+					</div>
+					<div class="modalBody">
+						<div class="form-group">
+							<label for="id" class="form-label col-1">Id:</label> 
+							<input type="text" class="form-control col-1" th:value=0 id="id" name="id" value="" readonly />
 						</div>
-						<div class="modal-body">
-							<div class="form-group">
-								<label class="col-2">Id:</label> 
-								<input type="text" class="col-sm-1" th:value=0 id="id" name="id" value="" readonly />
-							</div>
-							<div class="form-group">
-								<label class="col-sm-2">Naam:</label> 
-								<input type="text" class="col-sm-4" id="voornaam" name="voornaam" title="Voornaam invullen!" placeholder="Voornaam" required />
-								<input type="text" class="col-sm-5" id="familienaam" name="familienaam" title="Familienaam invullen!" placeholder="Familienaam" required />
-							</div>
-							<div class="form-group">
-								<label class="col-sm-2">Adres:</label>
-								<input type="text" class="col-sm-7" id="straat" name="straat" placeholder="Straat" />
-								<input type="text" class="col-sm-2" id="nr" name="nr" placeholder="Nr" />
-							</div>
-							<div class="form-group">
-								<label class="col-sm-2">Gemeente:</label>
-								<input type="text" class="col-sm-2" id="postnr" name="postnr" placeholder="Postnummer" />
-								<input type="text" class="col-sm-7" id="gemeente" name="gemeente" placeholder="Gemeente" />
-							</div>
-							<div class="form-group">
-								<label class="col-sm-2">Telefoon:</label>
-								<input type="text" class="col-sm-4" id="telefoonnummer" name="telefoonnummer" placeholder="Telefoon nummer" />
-								<input type="text" class="col-sm-5" id="gsmnummer" name="gsmnummer" placeholder="Gsm Nummer" />
-							</div>
-							<div class="form-group">
-								<label class="col-sm-2">E-mail:</label>
-								<input type="email" class="col-sm-9" id="emailadres" name="emailadres" placeholder="E-mail" />
-							</div>
-							<div class="form-group">
-								<label class="col-sm-2">Website:</label>
-								<input type="url" class="col-sm-9" id="webadres" name="webadres" placeholder="Website" />
-							</div>
-							<div class="form-group">
-								<label class="col-sm-2">Inschrijving:</label>
-								<input type="date" class="col-sm-3" id="datumlidgeld" name="datumlidgeld" title="Datum invullen!" placeholder="Datum inschrijving" required />
-								<label class="col-sm-2">Soort lid:</label>
-								<select name="soortenleden.id" id="soortlid" class="col-sm-4" title="Maak een selectie!" required>
-									<option value="" disabled selected>Select soort lid!</option>
-									<option th:selected="false" th:each="soort : ${ledensoorten}" th:value="${soort.id}" th:text="${soort.soortenleden}"></option>
-								</select>
-							</div>
-							<div class="form-group">
-								<label class="col-sm-3">Ontvang e-mail:</label>
-								<input type="checkbox" class="col-sm-1" id="ontvangmail" th:checked="false" name="ontvangMail" />
-								<label class="col-sm-3">E-mail vlag:</label>
-								<input type="checkbox" class="col-sm-1" id="mailvlag" th:checked="false" name="mailVlag" />
-							</div>
+						<div class="form-group">
+							<label for="voornaam" class="form-label col-1">Naam:</label> 
+							<input type="text" class="form-control col-3" id="voornaam" name="voornaam" title="Voornaam invullen!" placeholder="Voornaam" required />
+							<input type="text" class="form-control col-3" id="familienaam" name="familienaam" title="Familienaam invullen!" placeholder="Familienaam" required />
 						</div>
-						<div class="modal-footer">
-							<button type="submit" class="btn btn-primary">Save lid</button>
-							<button type="button" class="btn btn-default" data-dismiss="modal">Sluiten</button>
+						<div class="form-group">
+							<label for="straat" class="form-label col-1">Adres:</label>
+							<input type="text" class="form-control col-4" id="straat" name="straat" placeholder="Straat" />
+							<input type="text" class="form-control col-1" id="nr" name="nr" placeholder="Nr" />
 						</div>
+						<div class="form-group">
+							<label for="postnr" class="form-label col-1">Gemeente:</label>
+							<input type="text" class="form-control col-1" id="postnr" name="postnr" placeholder="Postnummer" />
+							<input type="text" class="form-control col-4" id="gemeente" name="gemeente" placeholder="Gemeente" />
+						</div>
+						<div class="form-group">
+							<label for="telefoonnummer" class="form-label col-1">Telefoon:</label>
+							<input type="text" class="form-control col-3" id="telefoonnummer" name="telefoonnummer" placeholder="Telefoon nummer" />
+							<input type="text" class="form-control col-3" id="gsmnummer" name="gsmnummer" placeholder="Gsm Nummer" />
+						</div>
+						<div class="form-group">
+							<label for="emailadres" class="form-label col-1">E-mail:</label>
+							<input type="email" class="form-control col-4" id="emailadres" name="emailadres" placeholder="E-mail" />
+						</div>
+						<div class="form-group">
+							<label for="webadres" class="form-label col-1">Website:</label>
+							<input type="url" class="form-control col-4" id="webadres" name="webadres" placeholder="Website" />
+						</div>
+						<div class="form-group">
+							<label for="datumlidgeld" class="form-label col-1">Inschrijving:</label>
+							<input type="date" class="form-control col-2" id="datumlidgeld" name="datumlidgeld" title="Datum invullen!" placeholder="Datum inschrijving" required />
+							<label for="soortenleden" class="form-label col-1">Soort lid:</label>
+							<select name="soortenleden.id" id="soortlid" class="col-2" title="Maak een selectie!" required>
+								<option value="" disabled selected>Select soort lid!</option>
+								<option th:selected="false" th:each="soort : ${ledensoorten}" th:value="${soort.id}" th:text="${soort.soortenleden}"></option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="ontvangMail" class="form-label col-1">Ontvang e-mail:</label>
+							<input type="checkbox" class="col-1" id="ontvangmail" th:checked="false" name="ontvangMail" />
+							<label for="mailVlag" class="form-label col-1">E-mail vlag:</label>
+							<input type="checkbox" class="col-1" id="mailvlag" th:checked="false" name="mailVlag" />
+						</div>
+					</div>
+					<div class="modalFooter">
+						<button type="submit" class="btn btn-primary">Save lid</button>
+						<button type="button" id="sluiten" class="btn btn-default" data-dismiss="modal">Sluiten</button>
 					</div>
 				</div>
 			</div>
