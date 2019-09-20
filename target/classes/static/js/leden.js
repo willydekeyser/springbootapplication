@@ -93,7 +93,6 @@ async function leden_lidgeld_refrech() {
 function leden_namenlijst_laden(data) {
 	let html = ``;
 	data.forEach((namenlijst, index) => {
-		//html += `<li id="${namenlijst.id}" class="list-group-item namenlijst ${namenlijst.id == selectedLidId ? `active` : ``}">${index + 1} - ${namenlijst.naam}</li>`;
 		html += `<li id="${namenlijst.id}" class="menu_lijst_item namenlijst ${namenlijst.id == selectedLidId ? `active` : ``}"><span class="menu_lijst_item_tekst">${index + 1} - ${namenlijst.naam}</span></li>`;
 	});
 	document.getElementById('namenlijst_click').innerHTML = html;
@@ -125,7 +124,7 @@ function leden_lidgeld_laden(data) {
 	let html = ``;
 	document.getElementById('lidgeld_tabel_body').innerHTML = '';
 	data.forEach((lidgeld, index) => {
-		html += `<tr class="test" onclick="lidgeldselect(${lidgeld.id})" id="${lidgeld.id}">
+		html += `<tr class="test" onclick="lidgeldselect(${lidgeld.id})" id="ledenlidgeldtabel${lidgeld.id}">
 			<td style="width: 5%" class="right">${lidgeld.id}</td>
 			<td style="width: 40%" class="right">${getFormattedDate(lidgeld.datum)}</td>
 			<td style="width: 55%" class="right">${getFormattedEuro(lidgeld.bedrag)}</td>

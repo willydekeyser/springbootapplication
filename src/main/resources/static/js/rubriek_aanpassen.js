@@ -27,7 +27,7 @@ function newRubriek() {
 			setup_newRubriekModal();
 		})
 		.catch((error) => {
-			console.log('FOUT: ' + error);
+			console.error('FOUT: ' + error);
 		});
 	} else {
 		setup_newRubriekModal();
@@ -65,9 +65,8 @@ function listener_newRubriek_submit(event) {
 		rubriek_tabel_laden(data);
 	})
 	.catch((error) => {
-		console.log('FOUT: ' + error);
+		console.error('FOUT: ' + error);
 	});
-	return false;
 };
 
 function showNewRubriekModal(show) {
@@ -111,7 +110,7 @@ function updateRubriek() {
 			setup_updateRubriekModal();
 		})
 		.catch((error) => {
-			console.log('FOUT: ' + error);
+			console.error('FOUT: ' + error);
 		});
 	} else {
 		setup_updateRubriekModal();

@@ -469,10 +469,16 @@ p {color: #000000}
 tr.kop {color: #0000FF}
 th.kop:hover {color: #0000FF}
 tr.kop:first-child {background: #FFFF00}
+
 table.test {
 	width: 100%;
-	}
-table.lidgeld {width: 50%}
+	border-spacing: 0px;
+}
+	
+table.lidgeld {
+	width: 50%;
+	border-spacing: 0px;
+}
 
 tr.test:nth-child(even) {background: #DDDDDD}
 tr.test:nth-child(odd) {background: #FFFFFF}
@@ -543,6 +549,28 @@ tr.active {background: #000000; color: #FF0000; font-weight: bold;}
 label {
 	display:inline-block;
 	margin-bottom: 0.5rem;
+}
+
+.table {
+	border-spacing: 0px;
+}
+
+.table td, .table th {
+	padding: 0.75rem;
+	vertcal-align: top;
+	border-top: 1px solid rgba(0, 0, 0, 0.3);	
+}
+
+.tabel_col_1 {
+	width: 10vw;
+}
+
+.tabel_col_2 {
+	width: 20vw;
+}
+
+.tabel_col_3 {
+	width: 30vw;
 }
 
 /* -- Media Querys -- */
