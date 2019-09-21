@@ -57,7 +57,7 @@ function listener_agenda_submit(event) {
 		console.log('AGENDA: ' + data)
 	})
 	.catch((error) => {
-		console.log('FOUT: ' + error);
+		console.error('FOUT: ' + error);
 	});
 	agenda_progress_bar_teller_id = setInterval(agenda_progress_bar,1000);
 	return false;

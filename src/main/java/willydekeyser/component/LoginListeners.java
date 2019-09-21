@@ -20,7 +20,7 @@ public class LoginListeners implements ApplicationListener<InteractiveAuthentica
     public void onApplicationEvent(InteractiveAuthenticationSuccessEvent event)
     {
         UserDetails user = (UserDetails) event.getAuthentication().getPrincipal();
-        System.out.println("LOGIN name: "+user.getUsername());
+        System.out.println("LOGIN name: " + user.getUsername() + " - " + user.getAuthorities().toString());
         try {
 			schrijfDataToFile("LOGIN name: " + user.getUsername() + " - " + user.getAuthorities().toString());
 		} catch (IOException e) {

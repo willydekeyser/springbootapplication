@@ -208,7 +208,7 @@ function deleteSoortenleden() {
 			setup_deleteSoortenledenModal();
 		})
 		.catch((error) => {
-			console.log('FOUT: ' + error);
+			console.error('FOUT: ' + error);
 		});
 	} else {
 		setup_deleteSoortenledenModal();

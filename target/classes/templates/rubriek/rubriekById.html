@@ -26,12 +26,5 @@
 			<td class="test right" th:text="'€' + ${#numbers.formatDecimal(kasboek.inkomsten, 1, 'DEFAULT', 2, 'DEFAULT')}"></td>
 		</tr>
 	</table>
-	<script>	
-	$(document).ready(function() {
-		$(document).contextmenu(function(event) {
-			event.preventDefault();
-		});
-	});
-</script>
 </body>
 </html>

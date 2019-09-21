@@ -573,6 +573,18 @@ label {
 	width: 30vw;
 }
 
+.tabel_col_4 {
+	width: 40vw;
+}
+
+.tabel_col_5 {
+	width: 50vw;
+}
+
+.tabel_col_6 {
+	width: 60vw;
+}
+
 /* -- Media Querys -- */
 
 @media screen and (max-width: 800px) {

@@ -223,7 +223,7 @@ function deleteLid(id) {
 			setup_deleteLidModal();
 		})
 		.catch((error) => {
-			console.error('ERROR: ' + error);
+			console.error('FOUT: ' + error);
 		});
 	} else {
 		setup_deleteLidModal();

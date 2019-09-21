@@ -205,7 +205,7 @@ function deleteRubriek() {
 			setup_deleteRubriekModal();
 		})
 		.catch((error) => {
-			console.log('FOUT: ' + error);
+			console.error('FOUT: ' + error);
 		});
 	} else {
 		setup_deleteRubriekModal();

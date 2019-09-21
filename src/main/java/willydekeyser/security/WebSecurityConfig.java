@@ -16,6 +16,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
+import willydekeyser.filters.ComputerclubLogoutSuccessHandler;
+
 @Configuration
 @Order(1)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
@@ -29,6 +31,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private ComputerclubAuthenticationSuccessHandler successHandler;
 	
+	@Autowired
+	private ComputerclubLogoutSuccessHandler computerLogoutSuccessHandler;
+	
 	@Override
 	protected void configure(HttpSecurity httpSecurity) throws Exception {
 		System.out.println("Config: WebSecurityConfig " + httpSecurity.toString());
@@ -38,8 +43,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.antMatchers("/kasboek/**").hasRole(ROLE_USER)
 			.antMatchers("/lidgeld/**").hasRole(ROLE_USER)
 			.antMatchers("/leden/**").hasRole(ROLE_USER)
-			.antMatchers("/rubriek/**").permitAll()
-			//hasRole(ROLE_USER)
+			.antMatchers("/rubriek/**").hasRole(ROLE_USER)
 			.antMatchers("/soortenleden/**").hasRole(ROLE_USER)
 			.antMatchers("/restcontroller/**").hasRole(ROLE_ADMIN)
 			.antMatchers("/actuator/**").hasRole(ROLE_GOLD)
@@ -49,7 +53,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.and()
 			.logout().permitAll()
 			.and()
-			.logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).deleteCookies("JSESSIONID").logoutSuccessUrl("/")
+			.logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+				.deleteCookies("JSESSIONID")
+				.logoutSuccessUrl("/")
+				.invalidateHttpSession(true)
+				.logoutSuccessHandler(computerLogoutSuccessHandler)
 			.and()
 			.rememberMe().key("willydekeyser").tokenValiditySeconds(3600)
 			.and()
