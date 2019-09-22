@@ -2,6 +2,8 @@ package willydekeyser.controller;
 
 import java.security.Principal;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
@@ -25,4 +27,11 @@ public class AdminController {
 	public String currentUserName(Authentication authentication) {
 		return authentication.getName();
 	}
+	
+	@Secured("ROLE_GOLD")
+	@RequestMapping(value = "/session", method = RequestMethod.GET)
+    @ResponseBody
+    public String retrieveMaxSessionIncativeInterval(HttpSession session) {
+        return "Max Inactive Interval before Session expires: " + session.getMaxInactiveInterval();
+    }
 }

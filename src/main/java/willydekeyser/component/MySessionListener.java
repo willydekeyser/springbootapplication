@@ -1,36 +1,33 @@
 package willydekeyser.component;
 
-import java.sql.Date;
 import java.sql.Time;
+import java.util.Date;
 
-import javax.servlet.http.HttpSession;
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
 
-//@Component
+import org.springframework.stereotype.Component;
+
+@Component
 public class MySessionListener implements HttpSessionListener {
 
 	@Override
 	public void sessionCreated(HttpSessionEvent event) {
-		System.out.println("==== Session is created ==== " + event.getSession().getId() + " - " + 
-				event.getSession().getMaxInactiveInterval() + " - " + 
-				new Date(event.getSession().getCreationTime()) + " - " + 
-				new Time(event.getSession().getCreationTime()));
 		
-		HttpSession session = event.getSession();
-	    System.out.println("session id: " + session.getId());
-	    session.setMaxInactiveInterval(3600);//in seconds
-	    System.out.println("==== Session is created ==== " + event.getSession().getId() + " - " + 
-	    		event.getSession().getMaxInactiveInterval() + " - " + 
-	    		new Date(event.getSession().getCreationTime()) + " - " + 
-	    		new Time(event.getSession().getCreationTime()));
+		System.out.println("\n\n ==== Session is created ==== " + 
+			"\n ID: " + event.getSession().getId() + " - " + 
+			"\n Max timeout: " + event.getSession().getMaxInactiveInterval() + " - " + 
+			"\n Date: " + new Date(event.getSession().getCreationTime()) + " - " + 
+			"\n TIME: " + new Time(event.getSession().getCreationTime()) + " - " + new Date() + "\n\n");
 	}
 
 	@Override
 	public void sessionDestroyed(HttpSessionEvent event) {
-		System.out.println("==== Session is destroyed ==== " + 
-				event.getSession().getId() + " - " + 
-				new Time(event.getSession().getLastAccessedTime()));
+		
+		System.out.println("\n\n ==== Session is destroyed ==== " + 
+			"\n ID: " + event.getSession().getId() + " - " + 
+			"\n Date: " + new Date(event.getSession().getCreationTime()) + " - " + 
+			"\n TIME: " + new Time(event.getSession().getLastAccessedTime()) + " - " + new Date() + "\n\n");
 	}
 
 }

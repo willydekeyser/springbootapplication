@@ -105,7 +105,6 @@ public class StartController {
 	@GetMapping(value = "/login")
 	public ModelAndView login() {
 		ModelAndView modelandview = new ModelAndView();
-		modelandview.addObject(PAGINA_TITEL, COMPUTERCLUB);
 		modelandview.setViewName("start/login");
 		return modelandview;
 	}
@@ -113,7 +112,6 @@ public class StartController {
 	@GetMapping(value = "/login_main")
 	public ModelAndView login_main() {
 		ModelAndView modelandview = new ModelAndView();
-		modelandview.addObject(PAGINA_TITEL, COMPUTERCLUB);
 		modelandview.setViewName("start/login :: login");
 		return modelandview;
 	}
@@ -125,7 +123,7 @@ public class StartController {
 		modelandview.setViewName("/testen");
 		return modelandview;	
 	}
-	
+		
 /**
  * 
  * 

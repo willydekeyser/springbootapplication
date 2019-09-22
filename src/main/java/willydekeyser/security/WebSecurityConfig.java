@@ -64,6 +64,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.exceptionHandling().accessDeniedPage("/error/403")
 			.and()
 			.csrf();
+//		httpSecurity.sessionManagement()
+//			.invalidSessionUrl("/")
+//			.maximumSessions(1)
+//			.expiredUrl("/");
 	}
 	
 	@Autowired

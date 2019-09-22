@@ -1,22 +1,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security5">
 <head th:fragment="header-css">
-	<!-- this is header-css
-	
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"></link>
-    
-     -->
+	<!-- this is header-css -->
     
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"></link>
     <link th:if="${#authorization.expression('hasRole(''ROLE_USER'')')}" rel="stylesheet" type="text/css" th:href="@{/css/modal.css}"></link>
     <link th:if="${#authorization.expression('hasRole(''ROLE_USER'')')}" rel="stylesheet" type="text/css" th:href="@{/css/contextmenu.css}"></link>
     
-    <!-- this is header-js 
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-	<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-	
-	-->
+    <!-- this is header-js -->
 	
 	<script type="text/javascript" th:src="@{/js/start.js}"></script>
 	<script type="text/javascript" th:src="@{/js/script.js}"></script>

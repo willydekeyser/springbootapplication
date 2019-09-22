@@ -347,9 +347,5 @@ function initSessionMonitor() {
     });
 	window.addEventListener('keydown', function (ed, e) {
     	console.log('Key down! ' + ed + ' - ' + e);
-    }); 
-};
-
-window.addEventListener('beforeunload', (event) => {
-	console.log('Window gesloten!!!!');
-});
+    });
+}
