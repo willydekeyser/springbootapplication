@@ -28,7 +28,7 @@ public class ComputerclubLogoutSuccessHandler extends SimpleUrlLogoutSuccessHand
     public void onLogoutSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
   
         final String refererUrl = request.getHeader("Referer");
-        System.out.println("Logout: " + refererUrl + " - " + authentication.getName() + " - " + authentication.getAuthorities().toString());
+        System.out.println("Logout: " + request.getSession().getId() + " - " + refererUrl + " - " + authentication.getName() + " - " + authentication.getAuthorities().toString());
  
         try {
 			fileLogger.schrijfDataToFile("LOGOUT: " + authentication.getName() + " - " + authentication.getAuthorities().toString());

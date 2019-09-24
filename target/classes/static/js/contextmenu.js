@@ -1,14 +1,14 @@
 /**
  * Context Menu
  */
-var menu;
+let menu;
 
 function showMenu(x, y){
 	
-	var hoogte = document.body.clientHeight();
-	var breedte = document.body.clientWidth();
-	var verschily = hoogte - y;
-	var verschilx = breedte - x;
+	const hoogte = document.body.clientHeight();
+	const breedte = document.body.clientWidth();
+	const verschily = hoogte - y;
+	const verschilx = breedte - x;
 	console.log("Document: " + x + " - " + y);
 	if((verschily) < 150) {
 		y = y - (150 - verschily);

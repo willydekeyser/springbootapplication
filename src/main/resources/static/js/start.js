@@ -6,13 +6,45 @@
  */
 "use strict";
 
-var timeOutTimer;
-var timeOut = 0;
+let timeOutTimer;
+let timeOut = 0;
+
+document.addEventListener('DOMContentLoaded', (event) => { 
+	console.log('Index.html geladen! ' + event.type)
+	window.addEventListener('pagehide', (event) => {
+		if (event.persisted) {
+			console.log('Pagehide event - Page was loaded from cache.');
+		}
+		console.log('Pagehide event');
+		try {
+			fetch('/pagehide', {
+				method: "POST",
+				body: ""
+			});
+		} catch (error) {
+			  console.error('Error Pagehide event:', error);
+			}
+	}, false);
+	window.addEventListener('beforeunload', (event) => {
+		if (event.persisted) {
+			console.log('Before Unload event - Page was loaded from cache.');
+		}
+		console.log('Before Unload event');
+		try {
+			fetch('/beforeunload', {
+				method: "POST",
+				body: ""
+			});
+		} catch (error) {
+			  console.error('Error Before Unload event:', error);
+			}
+	}, false);
+	start_main();
+});
 
 function start_main() {
 	console.log("Start main");
 	//initSessionMonitor();
-	document.getElementById('div_script').innerHTML = '';
 	document.oncontextmenu = (event) => {
 		console.log("Context menu is uitgeschakeld");
 		event.preventDefault();
@@ -30,9 +62,9 @@ function start_main() {
 };
 
 function time_out() {
-	var sessionExpiry = Math.abs(getCookie('sessionExpiry'));
-    var serverTime = Math.abs(getCookie('serverTime'));
-    var localTime = (new Date()).getTime();
+	let sessionExpiry = Math.abs(getCookie('sessionExpiry'));
+    let serverTime = Math.abs(getCookie('serverTime'));
+    let localTime = (new Date()).getTime();
     
     //console.log("SessionExpiry: " + msToTime(sessionExpiry));
     //console.log("TimeOffset: " + msToTime(timeOffset));
@@ -48,7 +80,7 @@ function time_out() {
     
     document.getElementsByClassName('footer_section_A')[0].innerHTML = "Time out: " + msToTime(timeOut) + " - " + msToTime(serverTime) + " - " + msToTime(sessionExpiry) + " - " + msToTime(localTime);
     
-    let timeOutTeller = document.getElementById('timeOutTeller');
+    const timeOutTeller = document.getElementById('timeOutTeller');
 	if(timeOutTeller){
 		timeOutTeller.innerHTML = msToTime(timeOut);
 	};
@@ -75,7 +107,7 @@ function setup_timeOutModal() {
 	timeOutCloseBtn.addEventListener('click', listener_timeOut_close);
 	let timeOutCloseX = document.getElementById('timeOutCloseBtnX');
 	timeOutCloseX.addEventListener('click', listener_timeOut_close);
-	timeOutModalAchtergrond.addEventListener('click', clickAchtergrond);
+	timeOutModalAchtergrond.addEventListener('click', listener_timeOut_close);
 	window.onkeyup = function (event) {
 		if(event.keyCode == 27) {
 			listener_timeOut_close();
@@ -84,13 +116,6 @@ function setup_timeOutModal() {
 		}
 	};
 	showTimeOutModal(true);
-};
-
-function clickAchtergrond(event) {
-	showTimeOutModal(false);
-	if(timeOut < 30000){
-		window.open("/logout", "_self");
-	}
 };
 
 function listener_timeOut_close() {
@@ -128,20 +153,19 @@ function showTimeOutModal(show) {
 	}
 };
 
-function getCookie(name)
-{
-    var name = name + "=";
-    var ca = document.cookie.split(';');
-    for(var i=0; i<ca.length; i++)
+function getCookie(naam) {
+    let name = naam + "=";
+    let ca = document.cookie.split(';');
+    for(let i=0; i<ca.length; i++)
     {
-        var c = ca[i].trim();
+        let c = ca[i].trim();
         if (c.indexOf(name)==0) return c.substring(name.length,c.length);
     }
     return "";
 }
 
 function msToTime(duration) {
-    var milliseconds = parseInt((duration%1000))
+    let milliseconds = parseInt((duration%1000))
         , seconds = parseInt((duration/1000)%60)
         , minutes = parseInt((duration/(1000*60))%60)
         , hours = parseInt((duration/(1000*60*60))%24);
@@ -155,16 +179,16 @@ function msToTime(duration) {
 }
 
 function start_menu() {
-	var header_leden;
-	var header_leden_tabel;
-	var header_lidgeld;
-	var header_lidgeld_tabel;
-	var header_kasboek;
-	var header_kasboek_tabel;
-	var header_agenda;
-	var header_soortenleden;
-	var header_rubriek;
-	var header_restcontroller;
+	let header_leden;
+	let header_leden_tabel;
+	let header_lidgeld;
+	let header_lidgeld_tabel;
+	let header_kasboek;
+	let header_kasboek_tabel;
+	let header_agenda;
+	let header_soortenleden;
+	let header_rubriek;
+	let header_restcontroller;
 	
 	timeOutTimer = setInterval('time_out()', 1000);
 	

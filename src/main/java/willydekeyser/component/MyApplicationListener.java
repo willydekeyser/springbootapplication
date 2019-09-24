@@ -4,6 +4,7 @@ import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.EventListener;
+import org.springframework.security.web.session.HttpSessionDestroyedEvent;
 import org.springframework.web.context.support.RequestHandledEvent;
 import org.springframework.web.context.support.ServletRequestHandledEvent;
 
@@ -18,7 +19,7 @@ public class MyApplicationListener implements ApplicationListener<ApplicationEve
 	
 	@EventListener(ApplicationReadyEvent.class)
 	public void name() {
-		System.out.println("--------------------------- ApplicationReadyEvent.class -------------------------------------------------------");
+		System.out.println("--------------------------- ApplicationReadyEvent.class ------------------------------------------");
 	}
 
 	@EventListener(ServletRequestHandledEvent.class)
@@ -26,9 +27,14 @@ public class MyApplicationListener implements ApplicationListener<ApplicationEve
 		System.out.println("--------------------------- ServletRequestHandledEvent.class -------------------------------------------------------");
 	}
 	
+	@EventListener(HttpSessionDestroyedEvent.class)
+	public void httpSessionDestroyedEvent() {
+		System.out.println("--------------------------- HttpSessionDestroyedEvent.class -------------------------------------------------------");
+	}
+	
 	@EventListener
-	  public void handleEvent (RequestHandledEvent event) {
-	      System.out.println("-- RequestHandledEvent --");
-	      System.out.println(event.getUserName() + " - " + event.getShortDescription());
-	  }
+	public void handleEvent (RequestHandledEvent event) {
+		System.out.println("---------------------------- RequestHandledEvent -----------------------------------------------------------------");
+		System.out.println("RequestHandledEvent: " + event.getUserName() + " - " + event.getShortDescription());
+	}
 }

@@ -42,7 +42,7 @@ function menu_main_width(width) {
 
 async function Refrech_HTML(url, div) {
 	console.log('Refrech HTML: ' + url);
-	let response = await fetch(url, {
+	const response = await fetch(url, {
 		headers: {
 			"Header" : "Willy De Keyser"
 		}
@@ -52,13 +52,13 @@ async function Refrech_HTML(url, div) {
 		window.open('/', '_self');
 		throw Error(response.status);
 	}
-	let tekst = await response.text();
+	const tekst = await response.text();
 	document.getElementById(div).innerHTML = tekst;
 	return 'OK';
 };
 
 async function existRecord(url) {
-	let response = await fetch(url, {
+	const response = await fetch(url, {
 		headers: {
 			"Header" : "Willy De Keyser"
 		}
@@ -73,7 +73,7 @@ async function existRecord(url) {
 
 async function load_HTML(url) {
 	console.log('Load HTML: ' + url);
-	let response = await fetch(url, {
+	const response = await fetch(url, {
 		headers: {
 			"Header" : "Willy De Keyser"
 		}
@@ -88,7 +88,7 @@ async function load_HTML(url) {
 
 async function Load_JSON(url, div) {
 	console.log('Load JSON: ' + url);
-	let response = await fetch(url, {
+	const response = await fetch(url, {
 		headers: {
 			"Header" : "Willy De Keyser"
 		}
@@ -98,14 +98,14 @@ async function Load_JSON(url, div) {
 		window.open('/', '_self');
 		throw Error(response.status);
 	};
-	let data = await response.text();
-	let myJson = await JSON.stringify(data);
+	const data = await response.text();
+	const myJson = await JSON.stringify(data);
 	document.getElementById(div).innerHTML = data; 
 	return 'OK';
 };
 
 async function fetch_JSON(url) {
-	let response = await fetch(url, {
+	const response = await fetch(url, {
 		headers: {
 			"Header" : "Willy De Keyser"
 		}
@@ -115,13 +115,13 @@ async function fetch_JSON(url) {
 		window.open('/', '_self');
 		throw Error(response.status);
 	};
-	let data = await response.json();
+	const data = await response.json();
 	return data;
 };
 
 async function fetch_TEXT(url) {
-	var token = document.querySelector('meta[name="_csrf"]').getAttribute("content");
-	var header = document.querySelector('meta[name="_csrf_header"]').getAttribute("content");
+	const token = document.querySelector('meta[name="_csrf"]').getAttribute("content");
+	const header = document.querySelector('meta[name="_csrf_header"]').getAttribute("content");
 	console.log("fetch: " + token + " - " + header);
 	let response = await fetch(url, {
 		method: "POST",
@@ -143,7 +143,7 @@ async function fetch_TEXT(url) {
 
 async function post_Form(url, form) {
 	console.log('Post Form: ' + url + ' - ' + form);
-	let response = await fetch(url, {
+	const response = await fetch(url, {
 		method: "POST",
 		body: form,
 		headers: {
@@ -159,7 +159,7 @@ async function post_Form(url, form) {
 
 async function put_Form(url, form) {
 	console.log('Put Form: ' + url + ' - ' + form);
-	let response = await fetch(url, {
+	const response = await fetch(url, {
 		method: 'PUT',
 		body: form,
 		headers: {
@@ -175,7 +175,7 @@ async function put_Form(url, form) {
 
 async function delete_Form(url, form) {
 	console.log('Delete Form: ' + url + ' - ' + form);
-	let response = await fetch(url, {
+	const response = await fetch(url, {
 		method: 'DELETE',
 		body: form,
 		headers: {
@@ -203,8 +203,8 @@ function delay(time) {
 };
 
 function getFormattedDate(datum) {
-	let date = new Date(datum);
-	let year = date.getFullYear();
+	const date = new Date(datum);
+	const year = date.getFullYear();
 	let month = (1 + date.getMonth()).toString();
 	month = month.length > 1 ? month : '0' + month;
 
@@ -224,8 +224,8 @@ function getFormattedEuro(euro) {
 }
 
 function FormDataToJSON(FormElement){    
-    var formData = new FormData(FormElement);
-    var ConvertedJSON= {};
+    const formData = new FormData(FormElement);
+    let ConvertedJSON= {};
     for (const [key, value]  of formData.entries())
     {
         ConvertedJSON[key] = value;

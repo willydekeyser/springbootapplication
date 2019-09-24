@@ -55,8 +55,8 @@ async function leden_namenlijst(soortId, lidId) {
 	leden_namenlijst_geladen();
 	if (aantal_leden == 0){
 		document.getElementById('geen_leden_gevonden').style.display = "block";
-		let option = document.getElementById('select_leden');
-		let text = option.options[option.selectedIndex].text;
+		const option = document.getElementById('select_leden');
+		const text = option.options[option.selectedIndex].text;
 		document.getElementById('geen_leden_gevonden_span').innerHTML = text;
 		document.getElementById('leden_gevonden').style.display = "none";
 	} else {
@@ -73,7 +73,7 @@ async function leden_gegevens_new() {
 
 async function leden_namenlijst_refrech() {
 	console.log('Leden namenlijst refrech: ' + selectedSoortId);
-	let data = await fetch_JSON('/leden/restcontroller/ledennamenlijstbyid/' + selectedSoortId);
+	const data = await fetch_JSON('/leden/restcontroller/ledennamenlijstbyid/' + selectedSoortId);
 	leden_namenlijst_laden(data);
 };
 
@@ -85,7 +85,7 @@ async function leden_gegevens_refrech() {
 
 async function leden_lidgeld_refrech() {
 	console.log('Lidgeld refrech: ');
-	let data = await fetch_JSON('/lidgeld/restcontroller/lidgeld/' + selectedLidId);
+	const data = await fetch_JSON('/lidgeld/restcontroller/lidgeld/' + selectedLidId);
 	leden_gegevens.lidgelden = data;
 	leden_lidgeld_laden(data);
 };
@@ -138,16 +138,16 @@ function leden_namenlijst_geladen() {
 	if (aantal_leden == 0){
 		return;
 	};
-	let selection = document.querySelector('#namenlijst_click #\\' + selectedLidId)
+	const selection = document.querySelector('#namenlijst_click #\\' + selectedLidId)
 	if(selection){
 		selectedLidId = 0;
 	};
 	if(selectedLidId != 0) {
 		
 		document.querySelector('#namenlijst_click li #\\' + selectedLidId).classList.add("active");
-		let lijst = document.getElementsByClassName('menu_main')[0];
+		const lijst = document.getElementsByClassName('menu_main')[0];
 		console.log('lijst offset ' + lijst.offsetTop + ' - ' + lijst.scrollTopMax + ' - ' + lijst.offsetHeight  )
-		let lijst_item = document.getElementsByClassName('active')[0];
+		const lijst_item = document.getElementsByClassName('active')[0];
 		console.log('lijst item offsetTop ' + lijst_item.offsetTop)
 		lijst.scrollTop = (lijst_item.offsetTop - 100);
 	} else {
@@ -159,7 +159,7 @@ function leden_namenlijst_geladen() {
 function leden_namenlijst_onclick() {
 	let menuLink = document.querySelectorAll("#namenlijst_click li");
 	menuLink.forEach(link => link.addEventListener('click', function() {
-		let selection = document.querySelector('ol li.active')
+		const selection = document.querySelector('ol li.active')
 		if(selection) {
 			selection.classList.remove('active');
 		};
@@ -172,7 +172,7 @@ function leden_namenlijst_onclick() {
 
 function leden_change_soort() {
 	document.getElementById("select_leden").addEventListener('change', function(){
-		let selectionSoort = document.getElementById('select_leden');
+		const selectionSoort = document.getElementById('select_leden');
 		selectedSoortId = selectionSoort.options[selectionSoort.selectedIndex].value;
 		console.log('Change soort leden ' + selectedSoortId);
 		selectedLidId = 0;
@@ -196,7 +196,7 @@ async function leden_tabel_start() {
 	await Refrech_HTML('/leden/leden_menu/1', 'main_section_header'),
 	await Refrech_HTML('/leden/leden_tabel', 'main_section_footer');
 	await Refrech_HTML('/leden/leden_tabel_ledenlijst/1', 'main_section_main');
-	let ledenId = document.querySelector('#ledenTabel').rows[1].cells[1].getAttribute('id');
+	const ledenId = document.querySelector('#ledenTabel').rows[1].cells[1].getAttribute('id');
 	document.getElementById('ledenTabel' + ledenId).classList.add('active');
 	await Refrech_HTML('/leden/leden_tabel_ById/' + ledenId, 'main_section_footer');
 	leden_tabel_change_soort();
@@ -204,7 +204,7 @@ async function leden_tabel_start() {
 
 function leden_tabel_change_soort() {
 	document.getElementById("select_leden").addEventListener('change', function(){
-		let selectionSoort = document.getElementById('select_leden');
+		const selectionSoort = document.getElementById('select_leden');
 		selectedSoortId = selectionSoort.options[selectionSoort.selectedIndex].value;
 		console.log("Select soort leden: " + selectedSoortId);
 		leden_tabel_ledenlijst(selectedSoortId, 0);
@@ -213,7 +213,7 @@ function leden_tabel_change_soort() {
 
 async function leden_tabel_menu(soortid) {
 	console.log("Leden tabel menu laden: " + soortid);
-	let data = await load_HTML("/leden/leden_tabel_menu/" + soortid);
+	const data = await load_HTML("/leden/leden_tabel_menu/" + soortid);
 	document.getElementById('menu').innerHTML = data;
 	document.addEventListener('contextmenu', (function(event){
 		event.preventDefault();
@@ -222,7 +222,7 @@ async function leden_tabel_menu(soortid) {
 
 async function leden_tabel_menu_geladen(id) {
 	console.log("Leden tabel lijst laden: " + id);
-	let data = await load_HTML("/leden/leden_tabel_ledenlijst/" + id);
+	const data = await load_HTML("/leden/leden_tabel_ledenlijst/" + id);
 	document.getElementById('main_section_main').innerHTML = data;
 };
 
@@ -230,9 +230,9 @@ async function leden_tabel_ledenlijst(soortId, lidId) {
 	selectedSoortId = soortId;
 	selectedLidId = lidId;
 	console.log("Leden ledenlijst laden: " + selectedSoortId + " - " + selectedLidId);
-	let data = await load_HTML("/leden/leden_tabel_ledenlijst/" + selectedSoortId);
+	const data = await load_HTML("/leden/leden_tabel_ledenlijst/" + selectedSoortId);
 	document.getElementById('main_section_main').innerHTML = data;
-	let rowCount = document.getElementById('ledenTabel').rows.length;
+	const rowCount = document.getElementById('ledenTabel').rows.length;
 	if(rowCount > 1) {
 		let ledenId = document.querySelector('#ledenTabel').rows[1].cells[1].getAttribute('id');
 		document.getElementById('ledenTabel' + ledenId).classList.add('active');
@@ -245,14 +245,14 @@ async function leden_tabel_ledenlijst(soortId, lidId) {
 
 function leden_tabel_ledenlijst_geladen() {
 	leden_tabel_change_soort();
-	var id = document.getElementById("leden_tabel_ledenlijst").rows[0].cells[0].getAttribute('id');
+	const id = document.getElementById("leden_tabel_ledenlijst").rows[0].cells[0].getAttribute('id');
 	ledenbyid(id);
 	console.log("Leden menu & ledenlijst geladen: " + id);
 };
 
 function ledenbyid(id) {
 	console.log("Leden detail: " + id);
-	let selection = document.querySelector('#ledenTabel tr.active');
+	const selection = document.querySelector('#ledenTabel tr.active');
 	if (selection) {
 		selection.classList.remove('active');
 	}
@@ -262,7 +262,7 @@ function ledenbyid(id) {
 
 function ledenTabelLidgeldbyid(id) {
 	console.log('Leden Tabel lidgeld ' + id);
-	let selection = document.querySelector('#ledenTabelLidgeld tr.active');
+	const selection = document.querySelector('#ledenTabelLidgeld tr.active');
 	if (selection) {
 		selection.classList.remove('active');
 	}

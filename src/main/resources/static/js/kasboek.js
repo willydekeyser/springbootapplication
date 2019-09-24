@@ -129,7 +129,8 @@ async function kasboek_totalen_laden() {
 	console.log('End totalen laden');
 	aantalrijen = document.getElementById('aantalrijen').getAttribute('value');
 	aantalPaginas = Math.ceil(aantalrijen / aantalPerPagina);
-	document.getElementById('pagina_info').innerHTML = 'Pagina ' + pagina + ' - ' + aantalPaginas;
+	const paginaInfo = document.getElementById('pagina_info');
+	if(paginaInfo){paginaInfo.innerHTML = 'Pagina ' + pagina + ' - ' + aantalPaginas;}
 };
 
 async function kasboek_menu_refrech() {

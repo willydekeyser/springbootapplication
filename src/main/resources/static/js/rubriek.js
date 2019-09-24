@@ -1,4 +1,4 @@
-var Rubriek_gegevens = {
+let Rubriek_gegevens = {
 		id : 0,
 		rubriek : ''
 };
@@ -11,7 +11,7 @@ async function rubriek_start() {
 function rubriekSelect(row) {
 	Rubriek_gegevens.id = row.getAttribute('id');
 	Rubriek_gegevens.rubriek = row.getAttribute('rubriek');
-	let selection = document.querySelector('tr.active');
+	const selection = document.querySelector('tr.active');
 	if (selection) {
 		selection.classList.remove('active');
 	}

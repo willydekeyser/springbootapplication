@@ -56,6 +56,18 @@ public class StartController {
 		return "TIMEOUT!";	
 	}
 	
+	@PostMapping("/paghide")
+	public @ResponseBody String pageHide() {
+		System.out.println("++++++++++++++++++++++ Page Hide Event: +++++++++++++++++++++++++++++");
+		return "PAGEHIDE!";	
+	}
+	
+	@PostMapping("/beforeunload")
+	public @ResponseBody String beforeUnLoad() {
+		System.out.println("++++++++++++++++++++++ Before Unload Event: ++++++++++++++++++++++++++");
+		return "BEFOREUNLOAD!";	
+	}
+	
 	@GetMapping(value = "/start_main")
 	public ModelAndView stat_main() {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();

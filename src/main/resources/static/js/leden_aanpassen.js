@@ -17,9 +17,9 @@ let lidModalForm;
 
 function newLid() {
 	console.log("New lid");
-	let editModal = document.getElementById("editLidModal");
+	const editModal = document.getElementById("editLidModal");
 	if(typeof(editModal) == 'undefined' || editModal == null){
-		let data = load_HTML('/leden/editLid')
+		const data = load_HTML('/leden/editLid')
 		.then((data) => {
 			document.getElementById("editLidModalHolder").innerHTML = data;
 			setup_newLidModal();
@@ -37,7 +37,11 @@ function setup_newLidModal() {
 	lidModal = document.querySelector('#editLidModal');
 	lidModalForm = document.getElementById('editLidModalForm');
 	document.getElementById('lidmodaltitel').innerHTML = 'New lid!';
-		
+	window.onkeyup = function (event) {
+		if(event.keyCode == 27) {
+			listener_newLid_close(event);
+		}
+	};
 	showNewLidModal(true);
 };
 
@@ -48,8 +52,8 @@ function listener_newLid_close(event) {
 
 function listener_newLid_submit() {
 	event.preventDefault();
-	let formData = new FormData(document.getElementById('editLidModalForm'));
-	let data = post_Form('/leden/save_newLid', formData)
+	const formData = new FormData(document.getElementById('editLidModalForm'));
+	const data = post_Form('/leden/save_newLid', formData)
 	.then((data) => {
 		selectedLidId = data.id;
 		selectedSoortId = data.soortenleden.id;
@@ -95,7 +99,7 @@ function showNewLidModal(show) {
 
 function updateLid(id) {
 	console.log("Update lid: " + id);	
-	var editModal = document.getElementById("editLidModal");
+	const editModal = document.getElementById("editLidModal");
 	if(typeof(editModal) == 'undefined' || editModal == null){
 		let data = load_HTML('/leden/editLid')
 		.then((data) => {
@@ -127,6 +131,11 @@ function setup_updateLidModal() {
 	document.getElementById('lidvoornaam').addEventListener('input', listener_change_naam);
 	document.getElementById('lidfamilienaam').addEventListener('input', listener_change_naam);
 	document.getElementById('lidsoortlid').addEventListener('change', listener_change_soortlid);
+	window.onkeyup = function (event) {
+		if(event.keyCode == 27) {
+			listener_updateLid_close(event);
+		}
+	};
 	showUpdateLidModal(true);
 };
 
@@ -159,8 +168,8 @@ function listener_change_soortlid() {
 
 function listener_updateLid_submit() {
 	event.preventDefault();
-	let formData = new FormData(document.getElementById('editLidModalForm'));
-	let data = put_Form('/leden/save_updateLid', formData)
+	const formData = new FormData(document.getElementById('editLidModalForm'));
+	const data = put_Form('/leden/save_updateLid', formData)
 	.then((data) => {
 		selectedLidId = data.id;
 		selectedSoortId = data.soortenleden.id;
@@ -215,9 +224,9 @@ function showUpdateLidModal(show) {
 
 function deleteLid(id) {
 	console.log("Delete lid: " + id);
-	var deleteModal = document.getElementById("deleteLidModal");
+	const deleteModal = document.getElementById("deleteLidModal");
 	if(typeof(deleteModal) == 'undefined' || deleteModal == null){
-		let data = load_HTML('/leden/deleteLid')
+		const data = load_HTML('/leden/deleteLid')
 		.then((data) => {
 			document.getElementById("deleteLidModalHolder").innerHTML = data;
 			setup_deleteLidModal();
@@ -252,6 +261,11 @@ function setup_deleteLidModal() {
 		document.getElementById('delete_form_body_error_naam').innerHTML = leden_gegevens.voornaam + ' ' + leden_gegevens.familienaam;
 	}
 	document.getElementById('delete-modal-titel').innerHTML = 'Verwijder lid!';
+	window.onkeyup = function (event) {
+		if(event.keyCode == 27) {
+			listener_deleteLid_close(event);
+		}
+	};
 	showDeleteLidModal(true);
 };
 
@@ -280,8 +294,8 @@ function showDeleteLidModal(show) {
 
 function listener_deleteLid_submit() {
 	event.preventDefault();
-	let formData = new FormData(document.getElementById('deleteLidModalForm'));
-	let data = delete_Form('/leden/save_deleteLid', formData)
+	const formData = new FormData(document.getElementById('deleteLidModalForm'));
+	const data = delete_Form('/leden/save_deleteLid', formData)
 	.then((data) => {
 		showDeleteLidModal(false);
 		selectedLidId = data;
