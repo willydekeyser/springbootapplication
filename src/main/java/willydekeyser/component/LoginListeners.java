@@ -1,6 +1,9 @@
 package willydekeyser.component;
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
@@ -17,12 +20,15 @@ public class LoginListeners implements ApplicationListener<InteractiveAuthentica
 	FileLoggers fileLogger;
 
 	@Override
-    public void onApplicationEvent(InteractiveAuthenticationSuccessEvent event)
-    {
+    public void onApplicationEvent(InteractiveAuthenticationSuccessEvent event) {
+		
+		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         UserDetails user = (UserDetails) event.getAuthentication().getPrincipal();
-        System.out.println("LOGIN name: " + user.getUsername() + " - " + user.getAuthorities().toString());
+        String data = "LOGIN:" + "\n  Usernaam: " + user.getUsername() + 
+        "\n  Roles: " + user.getAuthorities().toString() + 
+        "\n  Datum: " + dateFormat.format(new Date()) + "\n\n";
         try {
-			fileLogger.schrijfDataToFile("LOGIN name: " + user.getUsername() + " - " + user.getAuthorities().toString());
+			fileLogger.schrijfDataToFile(data);
 		} catch (IOException e) {
 			System.err.println("Fout schrijven naar File: " + e.getMessage());
 		}

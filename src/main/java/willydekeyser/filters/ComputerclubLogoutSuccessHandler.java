@@ -1,6 +1,9 @@
 package willydekeyser.filters;
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -28,10 +31,15 @@ public class ComputerclubLogoutSuccessHandler extends SimpleUrlLogoutSuccessHand
     public void onLogoutSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
   
         final String refererUrl = request.getHeader("Referer");
-        System.out.println("Logout: " + request.getSession().getId() + " - " + refererUrl + " - " + authentication.getName() + " - " + authentication.getAuthorities().toString());
- 
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        String data = "Logout:" + 
+        "\n		Session Id: " + request.getSession().getId() + 
+        "\n		URL: " + refererUrl + 
+        "\n		Usernaam: " + authentication.getName() + 
+        "\n		Roles: " + authentication.getAuthorities().toString() + 
+        "\n		Datum: " + dateFormat.format(new Date()) + "\n\n";
         try {
-			fileLogger.schrijfDataToFile("LOGOUT: " + authentication.getName() + " - " + authentication.getAuthorities().toString());
+			fileLogger.schrijfDataToFile(data);
 		} catch (IOException e) {
 			System.err.println("Fout schrijven naar File: " + e.getMessage());
 		}

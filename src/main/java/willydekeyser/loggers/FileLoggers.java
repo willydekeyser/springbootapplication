@@ -9,6 +9,9 @@ import java.util.Date;
 
 import org.springframework.stereotype.Service;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 @Service
 public class FileLoggers {
 
@@ -23,4 +26,16 @@ public class FileLoggers {
 		writer.newLine();
 		writer.close();
 	}
+	
+	public void schrijfDataToJson(Object data) throws IOException {
+		String fileName = "Logindata.json";
+		FileWriter fileWriter = new FileWriter(fileName, true);
+		Gson gson = new GsonBuilder()
+				.setPrettyPrinting()
+				.create();
+		gson.toJson(data, fileWriter);
+		fileWriter.close();
+	}
 }
+
+
