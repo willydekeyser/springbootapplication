@@ -15,38 +15,24 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.core.annotation.Order;
 
-/**
- * Servlet Filter implementation class TestFilter_2
- */
 @WebFilter(urlPatterns = "/*")
 @Order(1)
 public class TestFilter_2 implements Filter {
 
-    /**
-     * Default constructor. 
-     */
     public TestFilter_2() {
     	//System.out.println("Filter 2 - TestFilter_2");
     }
 
-	/**
-	 * @see Filter#destroy()
-	 */
     @Override
 	public void destroy() {
     	//System.out.println("Filter 2 - destroy");
 	}
 
-	/**
-	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
-	 */
     @Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		
 		HttpServletResponse httpResp = (HttpServletResponse) response;
         HttpServletRequest httpReq = (HttpServletRequest) request;
-        
-        //System.out.println("Filter 2 - dofilter IN: " + httpReq.getRequestURI());
         
         long currTime = System.currentTimeMillis();
         long expiryTime = currTime + httpReq.getSession().getMaxInactiveInterval() * 1000;
@@ -61,16 +47,10 @@ public class TestFilter_2 implements Filter {
         cookie.setPath("/");
         httpResp.addCookie(cookie);
         
-        //System.out.println("TIME OUT: " + expiryTime + " - " + currTime);
-        
 		chain.doFilter(request, response);
 		
-		//System.out.println("Filter 2 - dofilter UIT " + httpResp.getContentType());
 	}
 
-	/**
-	 * @see Filter#init(FilterConfig)
-	 */
 	@Override
 	public void init(FilterConfig fConfig) throws ServletException {
 		//System.out.println("Filter 2 - init");

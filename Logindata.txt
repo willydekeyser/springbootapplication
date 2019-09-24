@@ -2245,3 +2245,728 @@ Session expired:
 		Datum: 24/09/2019 21:08:08
 
 
+
+Datum: 24/09/2019 23:09:59
+Session is created:
+    ID: 96530FEFA9E19DC1CE8794897EF25A61
+    Max timeout: 60
+    Date: Tue Sep 24 23:09:59 CEST 2019
+    Date: Tue Sep 24 23:09:59 CEST 2019
+
+
+
+Datum: 24/09/2019 23:09:59
+Total active session are: 1
+
+
+
+Datum: 24/09/2019 23:11:40
+Session is destroyed:
+    ID: 96530FEFA9E19DC1CE8794897EF25A61
+    Date: Tue Sep 24 23:09:59 CEST 2019
+    TIME: 23:10:10
+    DATE: Tue Sep 24 23:11:40 CEST 2019
+
+
+
+Datum: 24/09/2019 23:11:40
+Total active session are: 0
+
+
+
+Datum: 24/09/2019 23:12:44
+Session is created:
+    ID: AE170A1B22A587A4D22DADF4C2AF1235
+    Max timeout: 60
+    Date: Tue Sep 24 23:12:43 CEST 2019
+    Date: Tue Sep 24 23:12:44 CEST 2019
+
+
+
+Datum: 24/09/2019 23:12:44
+Total active session are: 1
+
+
+
+Datum: 24/09/2019 23:12:49
+Principal: Computerclub - AUTHENTICATION_SUCCESS
+		Remote IP address: 0:0:0:0:0:0:0:1
+		Request URL: null
+		Session Id: AE170A1B22A587A4D22DADF4C2AF1235
+		Datum: 24/09/2019 23:12:49
+
+
+
+Datum: 24/09/2019 23:12:49
+LOGIN:
+  Usernaam: Computerclub
+  Roles: [ROLE_ADMIN, ROLE_USER]
+  Datum: 24/09/2019 23:12:49
+
+
+
+Datum: 24/09/2019 23:12:58
+Session is destroyed:
+    ID: BC3EAC572B8DE521033C8C87C56AC896
+    Date: Tue Sep 24 23:12:43 CEST 2019
+    TIME: 23:12:56
+    DATE: Tue Sep 24 23:12:58 CEST 2019
+
+
+
+Datum: 24/09/2019 23:12:58
+Total active session are: 0
+
+
+
+Datum: 24/09/2019 23:12:58
+Session Destroyed Event: 
+  Session Id: BC3EAC572B8DE521033C8C87C56AC896
+  Usernaam: Computerclub
+  Datum: 24/09/2019 23:12:58
+
+
+
+Datum: 24/09/2019 23:12:58
+Session expired:
+		Usernaam: Computerclub
+		Datum: 24/09/2019 23:12:58
+
+
+
+Datum: 24/09/2019 23:12:58
+Session is created:
+    ID: 0A377B2A1E77A0C9486EEF0E0A418097
+    Max timeout: 60
+    Date: Tue Sep 24 23:12:58 CEST 2019
+    Date: Tue Sep 24 23:12:58 CEST 2019
+
+
+
+Datum: 24/09/2019 23:12:58
+Total active session are: 1
+
+
+
+Datum: 24/09/2019 23:12:58
+Logout:
+		Session Id: 0A377B2A1E77A0C9486EEF0E0A418097
+		URL: http://localhost:5000/
+		Usernaam: Computerclub
+		Roles: [ROLE_ADMIN, ROLE_USER]
+		Datum: 24/09/2019 23:12:58
+
+
+
+Datum: 24/09/2019 23:13:04
+Principal: Willy De Keyser - AUTHENTICATION_SUCCESS
+		Remote IP address: 0:0:0:0:0:0:0:1
+		Request URL: null
+		Session Id: 0A377B2A1E77A0C9486EEF0E0A418097
+		Datum: 24/09/2019 23:13:04
+
+
+
+Datum: 24/09/2019 23:13:04
+LOGIN:
+  Usernaam: Willy De Keyser
+  Roles: [ROLE_ADMIN, ROLE_GOLD, ROLE_USER]
+  Datum: 24/09/2019 23:13:04
+
+
+
+Datum: 24/09/2019 23:14:43
+Session is destroyed:
+    ID: 81C9BD9FA934626AC862D06F58DA48E3
+    Date: Tue Sep 24 23:12:58 CEST 2019
+    TIME: 23:13:49
+    DATE: Tue Sep 24 23:14:43 CEST 2019
+
+
+
+Datum: 24/09/2019 23:14:43
+Total active session are: 0
+
+
+
+Datum: 24/09/2019 23:14:43
+Session Destroyed Event: 
+  Session Id: 81C9BD9FA934626AC862D06F58DA48E3
+  Usernaam: Willy De Keyser
+  Datum: 24/09/2019 23:14:43
+
+
+
+Datum: 24/09/2019 23:14:51
+Session is created:
+    ID: ACD6F8FF2D32A667A190725169CFC137
+    Max timeout: 60
+    Date: Tue Sep 24 23:14:51 CEST 2019
+    Date: Tue Sep 24 23:14:51 CEST 2019
+
+
+
+Datum: 24/09/2019 23:14:51
+Total active session are: 1
+
+
+
+Datum: 24/09/2019 23:14:59
+Principal: Willy De Keyser - AUTHENTICATION_SUCCESS
+		Remote IP address: 0:0:0:0:0:0:0:1
+		Request URL: null
+		Session Id: ACD6F8FF2D32A667A190725169CFC137
+		Datum: 24/09/2019 23:14:59
+
+
+
+Datum: 24/09/2019 23:14:59
+LOGIN:
+  Usernaam: Willy De Keyser
+  Roles: [ROLE_ADMIN, ROLE_GOLD, ROLE_USER]
+  Datum: 24/09/2019 23:14:59
+
+
+
+Datum: 24/09/2019 23:16:40
+Session is destroyed:
+    ID: E143F94BFA19E75B9DEFA378C72A25E6
+    Date: Tue Sep 24 23:14:51 CEST 2019
+    TIME: 23:15:37
+    DATE: Tue Sep 24 23:16:40 CEST 2019
+
+
+
+Datum: 24/09/2019 23:16:40
+Total active session are: 0
+
+
+
+Datum: 24/09/2019 23:16:40
+Session Destroyed Event: 
+  Session Id: E143F94BFA19E75B9DEFA378C72A25E6
+  Usernaam: Willy De Keyser
+  Datum: 24/09/2019 23:16:40
+
+
+
+Datum: 24/09/2019 23:16:58
+Session is created:
+    ID: D907F10B8B6F1A5A8D0EBC9F869FA791
+    Max timeout: 60
+    Date: Tue Sep 24 23:16:58 CEST 2019
+    Date: Tue Sep 24 23:16:58 CEST 2019
+
+
+
+Datum: 24/09/2019 23:16:58
+Total active session are: 1
+
+
+
+Datum: 24/09/2019 23:16:58
+Principal: anonymousUser - AUTHORIZATION_FAILURE
+		Remote IP address: 0:0:0:0:0:0:0:1
+		Request URL: null
+		Session Id: null
+		Datum: 24/09/2019 23:16:58
+
+
+
+Datum: 24/09/2019 23:17:04
+Principal: Willy De Keyser - AUTHENTICATION_SUCCESS
+		Remote IP address: 0:0:0:0:0:0:0:1
+		Request URL: null
+		Session Id: D907F10B8B6F1A5A8D0EBC9F869FA791
+		Datum: 24/09/2019 23:17:04
+
+
+
+Datum: 24/09/2019 23:17:04
+LOGIN:
+  Usernaam: Willy De Keyser
+  Roles: [ROLE_ADMIN, ROLE_GOLD, ROLE_USER]
+  Datum: 24/09/2019 23:17:04
+
+
+
+Datum: 24/09/2019 23:19:58
+Session is destroyed:
+    ID: B45720982D7D0E2E05A0D4421B86FA2F
+    Date: Tue Sep 24 23:16:58 CEST 2019
+    TIME: 23:19:00
+    DATE: Tue Sep 24 23:19:58 CEST 2019
+
+
+
+Datum: 24/09/2019 23:19:58
+Total active session are: 0
+
+
+
+Datum: 24/09/2019 23:19:58
+Session Destroyed Event: 
+  Session Id: B45720982D7D0E2E05A0D4421B86FA2F
+  Usernaam: Willy De Keyser
+  Datum: 24/09/2019 23:19:58
+
+
+
+Datum: 24/09/2019 23:19:58
+Session expired:
+		Usernaam: Willy De Keyser
+		Datum: 24/09/2019 23:19:58
+
+
+
+Datum: 24/09/2019 23:19:58
+Session is created:
+    ID: 80199ABC49FE0857C187EC85636F0EE4
+    Max timeout: 60
+    Date: Tue Sep 24 23:19:58 CEST 2019
+    Date: Tue Sep 24 23:19:58 CEST 2019
+
+
+
+Datum: 24/09/2019 23:19:58
+Total active session are: 1
+
+
+
+Datum: 24/09/2019 23:19:58
+Logout:
+		Session Id: 80199ABC49FE0857C187EC85636F0EE4
+		URL: http://localhost:5000/
+		Usernaam: Willy De Keyser
+		Roles: [ROLE_ADMIN, ROLE_GOLD, ROLE_USER]
+		Datum: 24/09/2019 23:19:58
+
+
+
+Datum: 24/09/2019 23:20:11
+Session is destroyed:
+    ID: 80199ABC49FE0857C187EC85636F0EE4
+    Date: Tue Sep 24 23:19:58 CEST 2019
+    TIME: 23:19:59
+    DATE: Tue Sep 24 23:20:11 CEST 2019
+
+
+
+Datum: 24/09/2019 23:20:11
+Total active session are: 0
+
+
+
+Datum: 24/09/2019 23:34:48
+Session is created:
+    ID: F1C288B89FC737012D5FBDD4E3C9D167
+    Max timeout: 60
+    Date: Tue Sep 24 23:34:48 CEST 2019
+    Date: Tue Sep 24 23:34:48 CEST 2019
+
+
+
+Datum: 24/09/2019 23:34:48
+Total active session are: 1
+
+
+
+Datum: 24/09/2019 23:34:55
+Principal: Computerclub - AUTHENTICATION_SUCCESS
+		Remote IP address: 0:0:0:0:0:0:0:1
+		Request URL: null
+		Session Id: F1C288B89FC737012D5FBDD4E3C9D167
+		Datum: 24/09/2019 23:34:55
+
+
+
+Datum: 24/09/2019 23:34:55
+LOGIN:
+  Usernaam: Computerclub
+  Roles: [ROLE_ADMIN, ROLE_USER]
+  Datum: 24/09/2019 23:34:55
+
+
+
+Datum: 24/09/2019 23:34:57
+Session is destroyed:
+    ID: 26C0262F30A240D626DCCA666C9AEA34
+    Date: Tue Sep 24 23:34:48 CEST 2019
+    TIME: 23:34:55
+    DATE: Tue Sep 24 23:34:57 CEST 2019
+
+
+
+Datum: 24/09/2019 23:34:57
+Total active session are: 0
+
+
+
+Datum: 24/09/2019 23:34:57
+Session Destroyed Event: 
+  Session Id: 26C0262F30A240D626DCCA666C9AEA34
+  Usernaam: Computerclub
+  Datum: 24/09/2019 23:34:57
+
+
+
+Datum: 24/09/2019 23:34:57
+Session expired:
+		Usernaam: Computerclub
+		Datum: 24/09/2019 23:34:57
+
+
+
+Datum: 24/09/2019 23:34:57
+Session is created:
+    ID: 80631908E442A5122E63E4CF436EB508
+    Max timeout: 60
+    Date: Tue Sep 24 23:34:57 CEST 2019
+    Date: Tue Sep 24 23:34:57 CEST 2019
+
+
+
+Datum: 24/09/2019 23:34:57
+Total active session are: 1
+
+
+
+Datum: 24/09/2019 23:34:57
+Logout:
+		Session Id: 80631908E442A5122E63E4CF436EB508
+		URL: http://localhost:5000/
+		Usernaam: Computerclub
+		Roles: [ROLE_ADMIN, ROLE_USER]
+		Datum: 24/09/2019 23:34:57
+
+
+
+Datum: 24/09/2019 23:35:29
+Principal: Computerclub - AUTHENTICATION_FAILURE
+		Remote IP address: 0:0:0:0:0:0:0:1
+		Request URL: null
+		Session Id: 80631908E442A5122E63E4CF436EB508
+		Datum: 24/09/2019 23:35:29
+
+
+
+Datum: 24/09/2019 23:35:37
+Principal: Willy De Keyser - AUTHENTICATION_SUCCESS
+		Remote IP address: 0:0:0:0:0:0:0:1
+		Request URL: null
+		Session Id: 80631908E442A5122E63E4CF436EB508
+		Datum: 24/09/2019 23:35:37
+
+
+
+Datum: 24/09/2019 23:35:37
+LOGIN:
+  Usernaam: Willy De Keyser
+  Roles: [ROLE_ADMIN, ROLE_GOLD, ROLE_USER]
+  Datum: 24/09/2019 23:35:37
+
+
+
+Datum: 24/09/2019 23:35:40
+Session is destroyed:
+    ID: D011221B643A5AC6C0E424110D70AF10
+    Date: Tue Sep 24 23:34:57 CEST 2019
+    TIME: 23:35:38
+    DATE: Tue Sep 24 23:35:40 CEST 2019
+
+
+
+Datum: 24/09/2019 23:35:40
+Total active session are: 0
+
+
+
+Datum: 24/09/2019 23:35:40
+Session Destroyed Event: 
+  Session Id: D011221B643A5AC6C0E424110D70AF10
+  Usernaam: Willy De Keyser
+  Datum: 24/09/2019 23:35:40
+
+
+
+Datum: 24/09/2019 23:35:40
+Session expired:
+		Usernaam: Willy De Keyser
+		Datum: 24/09/2019 23:35:40
+
+
+
+Datum: 24/09/2019 23:35:40
+Session is created:
+    ID: D7CE0F55418CB0FE60656F94A8D7A6EF
+    Max timeout: 60
+    Date: Tue Sep 24 23:35:40 CEST 2019
+    Date: Tue Sep 24 23:35:40 CEST 2019
+
+
+
+Datum: 24/09/2019 23:35:40
+Total active session are: 1
+
+
+
+Datum: 24/09/2019 23:35:40
+Logout:
+		Session Id: D7CE0F55418CB0FE60656F94A8D7A6EF
+		URL: http://localhost:5000/
+		Usernaam: Willy De Keyser
+		Roles: [ROLE_ADMIN, ROLE_GOLD, ROLE_USER]
+		Datum: 24/09/2019 23:35:40
+
+
+
+Datum: 24/09/2019 23:35:46
+Principal: Computerclub - AUTHENTICATION_FAILURE
+		Remote IP address: 0:0:0:0:0:0:0:1
+		Request URL: null
+		Session Id: D7CE0F55418CB0FE60656F94A8D7A6EF
+		Datum: 24/09/2019 23:35:46
+
+
+
+Datum: 24/09/2019 23:35:57
+Principal: Computerclub - AUTHENTICATION_SUCCESS
+		Remote IP address: 0:0:0:0:0:0:0:1
+		Request URL: null
+		Session Id: D7CE0F55418CB0FE60656F94A8D7A6EF
+		Datum: 24/09/2019 23:35:57
+
+
+
+Datum: 24/09/2019 23:35:57
+LOGIN:
+  Usernaam: Computerclub
+  Roles: [ROLE_ADMIN, ROLE_USER]
+  Datum: 24/09/2019 23:35:57
+
+
+
+Datum: 24/09/2019 23:36:07
+Session is destroyed:
+    ID: 6A5345D2DE728907FB0CBD3B8B525209
+    Date: Tue Sep 24 23:35:40 CEST 2019
+    TIME: 23:35:57
+    DATE: Tue Sep 24 23:36:07 CEST 2019
+
+
+
+Datum: 24/09/2019 23:36:07
+Total active session are: 0
+
+
+
+Datum: 24/09/2019 23:36:07
+Session Destroyed Event: 
+  Session Id: 6A5345D2DE728907FB0CBD3B8B525209
+  Usernaam: Computerclub
+  Datum: 24/09/2019 23:36:07
+
+
+
+Datum: 24/09/2019 23:36:07
+Session expired:
+		Usernaam: Computerclub
+		Datum: 24/09/2019 23:36:07
+
+
+
+Datum: 24/09/2019 23:36:07
+Session is created:
+    ID: 42F3688AFF7FD51D2921AF33EAFDE070
+    Max timeout: 60
+    Date: Tue Sep 24 23:36:07 CEST 2019
+    Date: Tue Sep 24 23:36:07 CEST 2019
+
+
+
+Datum: 24/09/2019 23:36:07
+Total active session are: 1
+
+
+
+Datum: 24/09/2019 23:36:07
+Logout:
+		Session Id: 42F3688AFF7FD51D2921AF33EAFDE070
+		URL: http://localhost:5000/
+		Usernaam: Computerclub
+		Roles: [ROLE_ADMIN, ROLE_USER]
+		Datum: 24/09/2019 23:36:07
+
+
+
+Datum: 24/09/2019 23:36:15
+Principal: Willy De Keyser - AUTHENTICATION_FAILURE
+		Remote IP address: 0:0:0:0:0:0:0:1
+		Request URL: null
+		Session Id: 42F3688AFF7FD51D2921AF33EAFDE070
+		Datum: 24/09/2019 23:36:15
+
+
+
+Datum: 24/09/2019 23:36:21
+Principal: Computerclub - AUTHENTICATION_SUCCESS
+		Remote IP address: 0:0:0:0:0:0:0:1
+		Request URL: null
+		Session Id: 42F3688AFF7FD51D2921AF33EAFDE070
+		Datum: 24/09/2019 23:36:21
+
+
+
+Datum: 24/09/2019 23:36:21
+LOGIN:
+  Usernaam: Computerclub
+  Roles: [ROLE_ADMIN, ROLE_USER]
+  Datum: 24/09/2019 23:36:21
+
+
+
+Datum: 24/09/2019 23:36:22
+Session is destroyed:
+    ID: 1860B836C079107B743251F2A34FE01B
+    Date: Tue Sep 24 23:36:07 CEST 2019
+    TIME: 23:36:21
+    DATE: Tue Sep 24 23:36:22 CEST 2019
+
+
+
+Datum: 24/09/2019 23:36:22
+Total active session are: 0
+
+
+
+Datum: 24/09/2019 23:36:22
+Session Destroyed Event: 
+  Session Id: 1860B836C079107B743251F2A34FE01B
+  Usernaam: Computerclub
+  Datum: 24/09/2019 23:36:22
+
+
+
+Datum: 24/09/2019 23:36:22
+Session expired:
+		Usernaam: Computerclub
+		Datum: 24/09/2019 23:36:22
+
+
+
+Datum: 24/09/2019 23:36:22
+Session is created:
+    ID: 182350F0B7BC607478255BA50EFF8EDF
+    Max timeout: 60
+    Date: Tue Sep 24 23:36:22 CEST 2019
+    Date: Tue Sep 24 23:36:22 CEST 2019
+
+
+
+Datum: 24/09/2019 23:36:22
+Total active session are: 1
+
+
+
+Datum: 24/09/2019 23:36:22
+Logout:
+		Session Id: 182350F0B7BC607478255BA50EFF8EDF
+		URL: http://localhost:5000/
+		Usernaam: Computerclub
+		Roles: [ROLE_ADMIN, ROLE_USER]
+		Datum: 24/09/2019 23:36:22
+
+
+
+Datum: 24/09/2019 23:36:30
+Principal: Willy De Keyser - AUTHENTICATION_FAILURE
+		Remote IP address: 0:0:0:0:0:0:0:1
+		Request URL: null
+		Session Id: 182350F0B7BC607478255BA50EFF8EDF
+		Datum: 24/09/2019 23:36:30
+
+
+
+Datum: 24/09/2019 23:36:41
+Principal: Willy De Keyser - AUTHENTICATION_SUCCESS
+		Remote IP address: 0:0:0:0:0:0:0:1
+		Request URL: null
+		Session Id: 182350F0B7BC607478255BA50EFF8EDF
+		Datum: 24/09/2019 23:36:41
+
+
+
+Datum: 24/09/2019 23:36:41
+LOGIN:
+  Usernaam: Willy De Keyser
+  Roles: [ROLE_ADMIN, ROLE_GOLD, ROLE_USER]
+  Datum: 24/09/2019 23:36:41
+
+
+
+Datum: 24/09/2019 23:37:40
+Session is destroyed:
+    ID: D74D09B6696B68386A65DE6387799349
+    Date: Tue Sep 24 23:36:22 CEST 2019
+    TIME: 23:36:41
+    DATE: Tue Sep 24 23:37:40 CEST 2019
+
+
+
+Datum: 24/09/2019 23:37:40
+Total active session are: 0
+
+
+
+Datum: 24/09/2019 23:37:40
+Session Destroyed Event: 
+  Session Id: D74D09B6696B68386A65DE6387799349
+  Usernaam: Willy De Keyser
+  Datum: 24/09/2019 23:37:40
+
+
+
+Datum: 24/09/2019 23:37:40
+Session expired:
+		Usernaam: Willy De Keyser
+		Datum: 24/09/2019 23:37:40
+
+
+
+Datum: 24/09/2019 23:37:40
+Session is created:
+    ID: F9E12193C6B25A953B7AFC3C14AE4194
+    Max timeout: 60
+    Date: Tue Sep 24 23:37:40 CEST 2019
+    Date: Tue Sep 24 23:37:40 CEST 2019
+
+
+
+Datum: 24/09/2019 23:37:40
+Total active session are: 1
+
+
+
+Datum: 24/09/2019 23:37:40
+Logout:
+		Session Id: F9E12193C6B25A953B7AFC3C14AE4194
+		URL: http://localhost:5000/
+		Usernaam: Willy De Keyser
+		Roles: [ROLE_ADMIN, ROLE_GOLD, ROLE_USER]
+		Datum: 24/09/2019 23:37:40
+
+
+
+Datum: 24/09/2019 23:39:17
+Session is destroyed:
+    ID: F9E12193C6B25A953B7AFC3C14AE4194
+    Date: Tue Sep 24 23:37:40 CEST 2019
+    TIME: 23:37:40
+    DATE: Tue Sep 24 23:39:17 CEST 2019
+
+
+
+Datum: 24/09/2019 23:39:17
+Total active session are: 0
+
+

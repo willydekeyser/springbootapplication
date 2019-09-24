@@ -64,10 +64,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.exceptionHandling().accessDeniedPage("/error/403")
 			.and()
 			.csrf();
-//		httpSecurity.sessionManagement()
-//			.invalidSessionUrl("/")
-//			.maximumSessions(1)
-//			.expiredUrl("/");
 	}
 	
 	@Autowired
@@ -76,7 +72,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		auth.jdbcAuthentication()
 			.dataSource(dataSource)
 			.passwordEncoder(paswoordencoder)
-			.usersByUsernameQuery("select username,password, enabled from users where username=?")
+			.usersByUsernameQuery("select username,password, enabled, email from users where username=?")
 			.authoritiesByUsernameQuery("select username, role from user_roles where username=?");
 	}
 		
