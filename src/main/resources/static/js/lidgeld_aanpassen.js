@@ -16,7 +16,7 @@ let lidgeldledenModalForm;
 
 function newLidgeld(id){
 	console.log("New lidgeld: " + id);
-	let modal = document.querySelector('#editLidgeldModal');
+	const modal = document.querySelector('#editLidgeldModal');
 	if(modal == null){
 		let data = load_HTML('/leden/editLidgeld')
 		.then((data) => {
@@ -60,8 +60,8 @@ function listener_newLidgeld_close(event) {
 
 function listener_newLidgeld_submit() {
 	event.preventDefault();
-	let formData = new FormData(document.getElementById('editLidgeldModalForm'));
-	let data = post_Form('/lidgeld/save_newLidgeld', formData)
+	const formData = new FormData(document.getElementById('editLidgeldModalForm'));
+	const data = post_Form('/lidgeld/save_newLidgeld', formData)
 	.then((data) => {
 		showNewLidgeldModal(false);
 		leden_lidgeld_laden(data)
@@ -105,7 +105,7 @@ function showNewLidgeldModal(show) {
 
 function updateLidgeld(id){
 	console.log("Update lidgeld: " + id + " - " + lidgeldId);
-	let modal = document.querySelector('#editLidgeldModal');
+	const modal = document.querySelector('#editLidgeldModal');
 	if(modal == null){
 		let data = load_HTML('/leden/editLidgeld')
 		.then((data) => {
@@ -124,7 +124,7 @@ function setup_updateLidgeldModal() {
 	lidgeldModalAchtergrond = document.querySelector('#lidgeldModalAchtergrond');
 	lidgeldModal = document.querySelector('#editLidgeldModal');
 	lidgeldModalForm = document.getElementById('editLidgeldModalForm');
-	let actief_row = document.querySelector('tr.active');
+	const actief_row = document.querySelector('tr.active');
 	if (actief_row === undefined || actief_row === null) {
 		document.getElementById('modal-titel').innerHTML = 'Je hebt geen selectie gemaakt!';
 		document.getElementById('modal-titel').classList.add('text-danger');
@@ -136,10 +136,10 @@ function setup_updateLidgeldModal() {
 		document.getElementById('editLidgeld_save').disabled = false;
 		document.getElementById('editLidgeld_save').style.visibility = 'visible';
 		document.getElementById('editLidgeld_save').innerHTML = 'Update lidgeld';
-		let index = actief_row.rowIndex;
-		let id = actief_row.id;
-		let datum = leden_gegevens.lidgelden[index - 1].datum;
-		let bedrag = leden_gegevens.lidgelden[index - 1].bedrag;
+		const index = actief_row.rowIndex;
+		const id = actief_row.getAttribute('lidgeldid');
+		const datum = leden_gegevens.lidgelden[index - 1].datum;
+		const bedrag = leden_gegevens.lidgelden[index - 1].bedrag;
 		document.getElementById('editLidgeld_id').value = id;
 		document.getElementById('editLidgeld_datum').value = datum;
 		document.getElementById('editLidgeld_bedrag').value = bedrag;
@@ -164,8 +164,8 @@ function listener_updateLidgeld_close(event) {
 
 function listener_updateLidgeld_submit() {
 	event.preventDefault();
-	let formData = new FormData(document.getElementById('editLidgeldModalForm'));
-	let data = put_Form('/lidgeld/save_updateLidgeld', formData)
+	const formData = new FormData(document.getElementById('editLidgeldModalForm'));
+	const data = put_Form('/lidgeld/save_updateLidgeld', formData)
 	.then((data) => {
 		showUpdateLidgeldModal(false);
 		leden_lidgeld_laden(data);
@@ -209,9 +209,9 @@ function showUpdateLidgeldModal(show) {
 
 function deleteLidgeld(id){
 	console.log("Delete lidgeld: " + id + " - " + lidgeldId);
-	let modal = document.querySelector('#editLidgeldModal');
+	const modal = document.querySelector('#editLidgeldModal');
 	if(modal == null){
-		let data = load_HTML('/leden/editLidgeld')
+		const data = load_HTML('/leden/editLidgeld')
 		.then((data) => {
 			document.getElementById("editLidgeldModalHolder").innerHTML = data;
 			setup_deleteLidgeldModal();
@@ -228,7 +228,7 @@ function setup_deleteLidgeldModal() {
 	lidgeldModalAchtergrond = document.querySelector('#lidgeldModalAchtergrond');
 	lidgeldModal = document.querySelector('#editLidgeldModal');
 	lidgeldModalForm = document.getElementById('editLidgeldModalForm');
-	let actief_row = document.querySelector('tr.active');
+	const actief_row = document.querySelector('tr.active');
 	if (actief_row === undefined || actief_row === null) {
 		document.getElementById('modal-titel').innerHTML = 'Je hebt geen selectie gemaakt!';
 		document.getElementById('editLidgeld_save').disabled = true;
@@ -238,10 +238,10 @@ function setup_deleteLidgeldModal() {
 		document.getElementById('editLidgeld_save').disabled = false;
 		document.getElementById('editLidgeld_save').style.visibility = 'visible';
 		document.getElementById('editLidgeld_save').innerHTML = 'Delete lidgeld';
-		let index = actief_row.rowIndex;
-		let id = actief_row.id;
-		let datum = leden_gegevens.lidgelden[index - 1].datum;
-		let bedrag = leden_gegevens.lidgelden[index - 1].bedrag;
+		const index = actief_row.rowIndex;
+		const id = actief_row.getAttribute('lidgeldid');
+		const datum = leden_gegevens.lidgelden[index - 1].datum;
+		const bedrag = leden_gegevens.lidgelden[index - 1].bedrag;
 		document.getElementById('editLidgeld_id').value = id;
 		document.getElementById('editLidgeld_datum').value = datum;
 		document.getElementById('editLidgeld_bedrag').value = bedrag;
@@ -249,9 +249,9 @@ function setup_deleteLidgeldModal() {
 	document.getElementById('modal-titel').classList.add('text-danger');
 	document.getElementById('editLidgeld_naam').value = leden_gegevens.voornaam + ' ' + leden_gegevens.familienaam;
 	document.getElementById('editLidgeld_naam_id').value = leden_gegevens.id;
-	document.getElementById('editLidgeld_datum').readOnly = true;
+	document.getElementById('editLidgeld_datum').readOnly = false;
 	document.getElementById('editLidgeld_bedrag').readOnly = true;
-	document.getElementById('editLidgeld_datum').focus();
+	document.getElementById('editLidgeld_id').focus();
 	window.onkeyup = function (event) {
 		if(event.keyCode == 27) {
 			listener_deleteLidgeld_close(event);
@@ -267,8 +267,8 @@ function listener_deleteLidgeld_close(event) {
 
 function listener_deleteLidgeld_submit() {
 	event.preventDefault();
-	let formData = new FormData(document.getElementById('editLidgeldModalForm'));
-	let data = delete_Form('/lidgeld/save_deleteLidgeld', formData)
+	const formData = new FormData(document.getElementById('editLidgeldModalForm'));
+	const data = delete_Form('/lidgeld/save_deleteLidgeld', formData)
 	.then((data) => {
 		showDeleteLidgeldModal(false);
 		leden_lidgeld_laden(data);

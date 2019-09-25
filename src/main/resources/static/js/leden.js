@@ -110,8 +110,8 @@ function leden_gegevens_laden(data) {
 	document.getElementById('website').innerHTML ='<a href="' + data.webadres + '" target="_blank">' + data.webadres + '</a>';
 	document.getElementById('inschrijving').innerHTML = getFormattedDate(data.datumlidgeld);
 	document.getElementById('soort').innerHTML = data.soortenleden.soortenleden;
-	document.getElementById('ontvangmail').setAttribute('checked', data.ontvangMail);
-	document.getElementById('mailvlag').setAttribute('checked', data.mailVlag);
+	document.getElementById('ontvangmail').checked = data.ontvangMail;
+	document.getElementById('mailvlag').checked = data.mailVlag;
 	document.getElementById('leden_newlid').setAttribute('onclick', 'newLid();');
 	document.getElementById('leden_updatelid').setAttribute('onclick', 'updateLid(' + data.id + ');');
 	document.getElementById('leden_deletelid').setAttribute('onclick', 'deleteLid(' + data.id + ');');
@@ -124,7 +124,7 @@ function leden_lidgeld_laden(data) {
 	let html = ``;
 	document.getElementById('lidgeld_tabel_body').innerHTML = '';
 	data.forEach((lidgeld, index) => {
-		html += `<tr class="test" onclick="lidgeldselect(${lidgeld.id})" id="ledenlidgeldtabel${lidgeld.id}">
+		html += `<tr class="test" onclick="lidgeldselect(${lidgeld.id})" id="ledenlidgeldtabel${lidgeld.id}" lidgeldid="${lidgeld.id}">
 			<td style="width: 5%" class="right">${lidgeld.id}</td>
 			<td style="width: 40%" class="right">${getFormattedDate(lidgeld.datum)}</td>
 			<td style="width: 55%" class="right">${getFormattedEuro(lidgeld.bedrag)}</td>

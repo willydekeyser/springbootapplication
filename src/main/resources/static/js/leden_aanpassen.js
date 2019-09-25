@@ -154,8 +154,8 @@ function updateLid_Formvullen(){
 	document.getElementById('lidgsmnummer').value = leden_gegevens.gsmnummer;
 	document.getElementById('liddatumlidgeld').value = leden_gegevens.datumlidgeld;
 	document.getElementById('lidsoortlid').value = leden_gegevens.soortenleden.id;
-	document.getElementById('lidontvangmail').checked = leden_gegevens.ontvangMail;
-	document.getElementById('lidmailvlag').checked = leden_gegevens.mailVlag;
+	document.getElementById('ontvangMail').checked = leden_gegevens.ontvangMail;
+	document.getElementById('mailVlag').checked = leden_gegevens.mailVlag;
 };
 
 function listener_change_naam() {

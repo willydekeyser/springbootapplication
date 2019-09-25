@@ -38,11 +38,11 @@ async function kasboek_start() {
 
 async function kasboek_tabel_start() {
 	console.log('------------------------------------------------------------');
-	console.log('Menu kasboek tabem onclick');
+	console.log('Menu kasboek tabel onclick');
 	reset_grid();
 	menu_height(3, 100);
 	menu_main_width(300);
-	//Refrech_HTML('/kasboek/kasboekHeader', 'main_section_header')
+	Refrech_HTML('/kasboek/kasboekHeader', 'main_section_header')
 	kasboek_totalen_laden();
 };
 
@@ -97,7 +97,6 @@ function kasboek_menu_listener() {
 		aantalPerPagina = Math.floor(document.getElementById('main_section_main').offsetHeight / 20) - 1;
 		startAantal = 0;
 		pagina = 1;
-		
 		kasboek_totalen_laden();
 		return false;
 	}));
@@ -112,7 +111,6 @@ function kasboek_main_laden() {
 	selectedJaar = 0;
 	selectedRubriek = 0;
 	Refrech_HTML('/kasboek/kasboekHeader', 'main_section_header')
-	console.log('End main laden');
 	kasboek_totalen_laden();
 };
 

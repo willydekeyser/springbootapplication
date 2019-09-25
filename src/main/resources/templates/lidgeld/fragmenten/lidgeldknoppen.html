@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+	<meta charset="UTF-8"/>
+	<title></title>
+</head>
+<body>
+<div  th:fragment="max_lidgeld_knoppen">
+	<div id="leden_main">
+		<div class="btn-group btn-group-sm lidgeld_button" th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">
+			<button id="maxlidgeld_newlidgeld" type="button" class="btn btn-success" th:data-id="0">Nieuw</button>
+			<button id="maxlidgeld_emaillidgeld" type="button" class="btn btn-success" th:data-id="0">E-mail</button>
+			<button id="maxlidgeld_brieflidgeld" type="button" class="btn btn-success" th:data-id="0">Brief</button>
+			<button id="maxlidgeld_rapportlidgeld" type="button" class="btn btn-success" th:data-id="0">Rapport</button>
+	  	</div>
+	</div>
+</div>
+</body>
+</html>

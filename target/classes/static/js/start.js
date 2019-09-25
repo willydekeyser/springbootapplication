@@ -51,7 +51,7 @@ function start_main() {
 	};
 	section_height(5, 100, 20);
 	menu_main_width(300);
-	let promises = [Refrech_HTML('/start_menu_logo', 'header_logo'), 
+	const promises = [Refrech_HTML('/start_menu_logo', 'header_logo'), 
 						Refrech_HTML('/start_menu_menu', 'header_menu'), 
 						Refrech_HTML('/start_main', 'main_section_main')];
 	Promise.all(promises)
@@ -101,11 +101,11 @@ let timeOutModalAchtergrond;
 function setup_timeOutModal() {
 	timeOutModalAchtergrond = document.querySelector('#timeOutModalAchtergrond');
 	timeOutModal = document.querySelector('#timeOutModal');
-	let timeOutForm = document.getElementById('timeOutModalForm');
+	const timeOutForm = document.getElementById('timeOutModalForm');
 	timeOutForm.addEventListener('submit', listener_timeOut_submit);
 	let timeOutCloseBtn = document.getElementById('timeOutCloseBtn');
 	timeOutCloseBtn.addEventListener('click', listener_timeOut_close);
-	let timeOutCloseX = document.getElementById('timeOutCloseBtnX');
+	const timeOutCloseX = document.getElementById('timeOutCloseBtnX');
 	timeOutCloseX.addEventListener('click', listener_timeOut_close);
 	timeOutModalAchtergrond.addEventListener('click', listener_timeOut_close);
 	window.onkeyup = function (event) {
@@ -129,7 +129,7 @@ function listener_timeOut_submit(event) {
 	event.preventDefault();
 	timeOut = 30000;
 	showTimeOutModal(false);
-	let data = fetch_TEXT('/timeout')
+	const data = fetch_TEXT('/timeout')
 	.then((data) => {
 		console.log('Time out: ' + data);
 	})

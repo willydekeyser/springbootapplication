@@ -61,6 +61,11 @@ public class LidgeldController {
 		return "lidgeld/lidgeld :: max_lidgeld_tabel_start";
 	}
     
+    @GetMapping("/maxlidgeldknoppen")
+	public String MAXlidgeldKnoppen() {
+		return "lidgeld/fragmenten/lidgeldknoppen :: max_lidgeld_knoppen";
+	}
+    
 /**
  * 
  * 
