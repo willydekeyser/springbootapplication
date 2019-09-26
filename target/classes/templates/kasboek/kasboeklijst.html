@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="nl" xmlns:th="http://www.thymeleaf.org/">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
 	<meta charset="UTF-8"/>
 	<title></title>
@@ -20,6 +20,7 @@
 </div>
 <div th:fragment="kasboektabel">
 <div class="scrolldiv">
+<span id="aantalrijen" th:value="${AantalRijen}"></span>
 <table class="test">
 	<thead>
 	<tr class="kop">
