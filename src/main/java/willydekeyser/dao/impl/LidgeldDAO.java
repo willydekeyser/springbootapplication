@@ -24,7 +24,7 @@ import willydekeyser.model.Lidgeld;
 public class LidgeldDAO implements ILidgeldDAO {
 
 	private final String sql_AllLidgeld = "SELECT * FROM lidgeld ORDER BY lidgeld_id";
-	private final String sql_AllLidgeldLeden = "SELECT * FROM lidgeld, ledenlijst WHERE ledenlijstid = ledenlijst_id ORDER BY lidgeld_id";
+	private final String sql_AllLidgeldLeden = "SELECT * FROM lidgeld, ledenlijst WHERE ledenlijstid = ledenlijst_id ORDER BY datum";
 	private final String sql_AllLidgeldByLid = "SELECT * FROM lidgeld WHERE ledenlijstid = ? ORDER BY lidgeld_id";
 	private final String sql_MAXLidgeldLeden = "SELECT lidgeld.*, ledenlijst.* FROM lidgeld, ledenlijst "
 			+ "WHERE (ledenlijst_id = ledenlijstid) AND  (soortenledenid = 1 OR soortenledenid = 2 OR soortenledenid = 3) "

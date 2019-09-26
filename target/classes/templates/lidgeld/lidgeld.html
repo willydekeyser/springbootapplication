@@ -3,29 +3,27 @@
 <head th:replace="fragments/header :: header-css"></head>
 <body>
 <div th:fragment="max_lidgeld_tabel_start">
-<div class="container-fluid">
-<div class="row">
-<div class="col-8">
-    <p th:text="'Lidgeld lijst: ' + ${aantal}" />
-
-	<table class="test">
-		<tr class="kop">
-			<th class="kop">Id</th>
-			<th class="kop right">Datum</th>
-			<th class="kop right">Bedrag</th>
-			<th class="kop">Lid</th>
-		</tr>
-		<tr class="test" th:id="maxlidgeld + ${lidgeld.id}" th:each="lidgeld : ${lidgeld}">
-			<td style="width: 10%" class="test" th:onclick="'lidgeldbyid(' + ${lidgeld.Id} +')'" th:text="${lidgeld.id}"></td>
-			<td style="width: 15%" class="test right" th:onclick="'lidgeldbyid(' + ${lidgeld.Id} +')'" th:style="${lidgeld.datum} < ${datum} ? 'color: red;' : 'color: black;'" th:text="${#temporals.format(lidgeld.datum, 'dd-MM-yyyy')}"></td>
-			<td style="width: 15%" class="test right" th:onclick="'lidgeldbyid(' + ${lidgeld.Id} +')'" th:text="'€' + ${#numbers.formatDecimal(lidgeld.bedrag, 1, 'DEFAULT', 2, 'DEFAULT')}"></td>
-			<td style="width: 60%" class="test" th:onclick="'lidgeldbyid(' + ${lidgeld.Id} +')'" th:text="${lidgeld.leden.voornaam + ' ' + lidgeld.leden.familienaam}"></td>
-		</tr>
-	</table>
+	<div class="container-fluid">
+		<div class="col-8">
+		    <p th:text="'Lidgeld lijst: ' + ${aantal}" />
+		
+			<table class="test">
+				<thead>
+					<tr class="kop">
+						<th class="kop"> </th>
+						<th class="kop">Nr</th>
+						<th class="kop right">Datum</th>
+						<th class="kop right">Bedrag</th>
+						<th class="kop">Lid</th>
+						<th class="kop"> </th>
+					</tr>
+				</thead>
+				<tbody id="maxlidgeld_tabel_body">
+				</tbody>	
+			</table>
+		</div>
+	</div>
+	<div id="editLidgeldModalHolder"></div>
 </div>
-</div>
-</div>
-</div>
-
 </body>
 </html>

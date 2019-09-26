@@ -2,7 +2,6 @@ package willydekeyser.controller;
 
 import static willydekeyser.controller.NamenLijst.JAARTAL;
 import static willydekeyser.controller.NamenLijst.KASBOEK;
-import static willydekeyser.controller.NamenLijst.PAGINA_TITEL;
 import static willydekeyser.controller.NamenLijst.RUBRIEK;
 
 import java.math.BigDecimal;
@@ -65,7 +64,6 @@ public class KasboekController {
     @GetMapping("/kasboekById")
     public String kasboekById(@RequestParam(name="id", required=true, defaultValue="1") Integer id, @RequestParam(name="cell", required=true, defaultValue="0") Integer cell, Model model) {
     	Kasboek kasboekById = kasboekservice.getKasboekById(id);
-    	model.addAttribute(PAGINA_TITEL, "Computerclub Format C");
     	model.addAttribute(KASBOEK, kasboekById);
         return "kasboek/kasboekbyId";
     }

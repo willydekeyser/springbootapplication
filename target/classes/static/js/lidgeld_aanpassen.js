@@ -9,10 +9,12 @@
  * 
  */
 
+"use strict";
+
 let lidgeldModal;
 let lidgeldledenModalAchtergrond;
 let lidgeldledenModalForm;
-
+let lidgeldModalForm;
 
 function newLidgeld(id){
 	console.log("New lidgeld: " + id);
@@ -136,18 +138,25 @@ function setup_updateLidgeldModal() {
 		document.getElementById('editLidgeld_save').disabled = false;
 		document.getElementById('editLidgeld_save').style.visibility = 'visible';
 		document.getElementById('editLidgeld_save').innerHTML = 'Update lidgeld';
-		const index = actief_row.rowIndex;
-		const id = actief_row.getAttribute('lidgeldid');
-		const datum = leden_gegevens.lidgelden[index - 1].datum;
-		const bedrag = leden_gegevens.lidgelden[index - 1].bedrag;
+		const index = actief_row.rowIndex - 1;
+		const id = leden_gegevens.lidgelden[index].id;
+		const datum = leden_gegevens.lidgelden[index].datum;
+		const bedrag = leden_gegevens.lidgelden[index].bedrag;
 		document.getElementById('editLidgeld_id').value = id;
 		document.getElementById('editLidgeld_datum').value = datum;
 		document.getElementById('editLidgeld_bedrag').value = bedrag;
 		document.getElementById('editLidgeld_datum').readOnly = false;
 		document.getElementById('editLidgeld_bedrag').readOnly = false
 	};
-	document.getElementById('editLidgeld_naam').value = leden_gegevens.voornaam + ' ' + leden_gegevens.familienaam;
-	document.getElementById('editLidgeld_naam_id').value = leden_gegevens.id;
+	if(leden_gegevens.voornaam === undefined || leden_gegevens.familienaam === undefined || leden_gegevens.id === undefined) {
+		document.getElementById('editLidgeld_naam').value = '';
+		document.getElementById('editLidgeld_naam_id').value = '';
+	} else {
+		document.getElementById('editLidgeld_naam').value = leden_gegevens.voornaam + ' ' + leden_gegevens.familienaam;
+		document.getElementById('editLidgeld_naam_id').value = leden_gegevens.id;
+	}
+
+	
 	document.getElementById('editLidgeld_datum').focus();
 	window.onkeyup = function (event) {
 		if(event.keyCode == 27) {
@@ -238,10 +247,10 @@ function setup_deleteLidgeldModal() {
 		document.getElementById('editLidgeld_save').disabled = false;
 		document.getElementById('editLidgeld_save').style.visibility = 'visible';
 		document.getElementById('editLidgeld_save').innerHTML = 'Delete lidgeld';
-		const index = actief_row.rowIndex;
-		const id = actief_row.getAttribute('lidgeldid');
-		const datum = leden_gegevens.lidgelden[index - 1].datum;
-		const bedrag = leden_gegevens.lidgelden[index - 1].bedrag;
+		const index = actief_row.rowIndex - 1;
+		const id = leden_gegevens.lidgelden[index].id;
+		const datum = leden_gegevens.lidgelden[index].datum;
+		const bedrag = leden_gegevens.lidgelden[index].bedrag;
 		document.getElementById('editLidgeld_id').value = id;
 		document.getElementById('editLidgeld_datum').value = datum;
 		document.getElementById('editLidgeld_bedrag').value = bedrag;
@@ -295,6 +304,112 @@ function showDeleteLidgeldModal(show) {
 		document.querySelector('.closeBtnX').removeEventListener('click', listener_deleteLidgeld_close, false);
 		document.getElementById('sluiten').removeEventListener('click', listener_deleteLidgeld_close, false);
 		lidgeldModalAchtergrond.removeEventListener('click', listener_deleteLidgeld_close, false);
+		lidgeldModalAchtergrond.classList.add('hide');
+		lidgeldModal.classList.add('off');
+		lidgeldModalAchtergrond.classList.remove('show');
+		lidgeldModal.classList.remove('on');
+	}
+};
+
+/**
+ * 
+ * 
+ * Max lidgeld lijst
+ * 
+ * 
+ */
+
+function maxLidgeld(id){
+	console.log("New MAX lidgeld: " + id);
+	const modal = document.querySelector('#editLidgeldModal');
+	if(modal == null){
+		let data = load_HTML('/leden/editLidgeld')
+		.then((data) => {
+			document.getElementById("editLidgeldModalHolder").innerHTML = data;
+			setup_maxLidgeldModal();
+		})
+		.catch((error) => {
+			console.error('FOUT: ' + error);
+		});
+	} else {
+		setup_maxLidgeldModal();
+	};
+};
+
+function setup_maxLidgeldModal() {
+	let naam;
+	let ledenid;
+	lidgeldModalAchtergrond = document.querySelector('#lidgeldModalAchtergrond');
+	lidgeldModal = document.querySelector('#editLidgeldModal');
+	lidgeldModalForm = document.getElementById('editLidgeldModalForm');
+	const actief_row = document.querySelector('tr.active');
+	if (actief_row === undefined || actief_row === null) {
+		document.getElementById('modal-titel').innerHTML = 'Je hebt geen selectie gemaakt!';
+		document.getElementById('modal-titel').classList.add('text-danger');
+		document.getElementById('editLidgeld_save').disabled = true;
+		document.getElementById('editLidgeld_save').style.visibility = 'hidden';
+		document.getElementById('editLidgeld_naam').value = '';
+		document.getElementById('editLidgeld_naam_id').value = '';
+	} else {
+		document.getElementById('modal-titel').innerHTML = 'Nieuw lidgeld!';
+		document.getElementById('modal-titel').classList.remove('text-danger');
+		document.getElementById('editLidgeld_save').disabled = false;
+		document.getElementById('editLidgeld_save').style.visibility = 'visible';
+		document.getElementById('editLidgeld_save').innerHTML = 'Nieuw lidgeld';
+		const index = actief_row.rowIndex - 1;
+		const id = lidgeldData[index].id;
+		naam = lidgeldData[index].leden.voornaam + ' ' + lidgeldData[index].leden.familienaam;
+		ledenid = lidgeldData[index].leden.id;
+		document.getElementById('editLidgeld_id').value = ledenid;
+		document.getElementById('editLidgeld_naam').value = naam;
+		document.getElementById('editLidgeld_naam_id').value = ledenid;
+		document.getElementById('editLidgeld_datum').readOnly = false;
+		document.getElementById('editLidgeld_bedrag').readOnly = false
+	};
+	document.getElementById('editLidgeld_datum').focus();
+	window.onkeyup = function (event) {
+		if(event.keyCode == 27) {
+			listener_maxLidgeld_close(event);
+		}
+	};
+	showmaxLidgeldModal(true);
+};
+
+function listener_maxLidgeld_close(event) {
+	event.preventDefault;
+	showmaxLidgeldModal(false);
+};
+
+function listener_maxLidgeld_submit() {
+	event.preventDefault();
+	const formData = new FormData(document.getElementById('editLidgeldModalForm'));
+	const data = post_Form('/lidgeld/save_newLidgeld', formData)
+	.then((data) => {
+		showmaxLidgeldModal(false);
+		max_lidgeld_Tabel_laden();
+		//max_lidgeld_start();
+	})
+	.catch((error) => {
+		console.error('FOUT: ' + error);
+	});
+};
+
+function showmaxLidgeldModal(show) {
+	if(show) {
+		document.getElementById('editLidgeldModalForm').addEventListener('submit', listener_maxLidgeld_submit, false);
+		document.querySelector('.closeBtnX').addEventListener('click', listener_maxLidgeld_close, false);
+		document.getElementById('sluiten').addEventListener('click', listener_maxLidgeld_close, false);
+		lidgeldModalAchtergrond.addEventListener('click', listener_maxLidgeld_close, false);
+		lidgeldModalAchtergrond.classList.add('show');
+		lidgeldModal.classList.add('on');
+		lidgeldModalAchtergrond.classList.remove('hide');
+		lidgeldModal.classList.remove('off');
+	} else {
+		document.getElementById('editLidgeldModalForm').reset();
+		document.getElementById('editLidgeldModalForm').removeEventListener('submit', listener_maxLidgeld_submit, false);
+		document.querySelector('.closeBtnX').removeEventListener('click', listener_maxLidgeld_close, false);
+		document.getElementById('sluiten').removeEventListener('click', listener_maxLidgeld_close, false);
+		lidgeldModalAchtergrond.removeEventListener('click', listener_maxLidgeld_close, false);
 		lidgeldModalAchtergrond.classList.add('hide');
 		lidgeldModal.classList.add('off');
 		lidgeldModalAchtergrond.classList.remove('show');

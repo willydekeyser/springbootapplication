@@ -1,10 +1,3 @@
-let selectedLidId = 0;
-let selectedSoortId = 0;
-let aantal_leden = 0;
-let change_soort = false;
-let change_naam = false;
-let leden_gegevens = "";
-
 /**
  * 
  * 
@@ -12,6 +5,39 @@ let leden_gegevens = "";
  * 
  * 
  */
+
+"use strict";
+
+let selectedLidId = 0;
+let selectedSoortId = 0;
+let aantal_leden = 0;
+let change_soort = false;
+let change_naam = false;
+let leden_gegevens = {
+	id : 0,
+	voornaam : '',
+	familienaam: '',
+	Straat : '', 
+	nr : '',
+	postnr : '',
+	gemeente : '',
+	telefoonnummer : '',
+	gsmnummer : '',
+	ontvangMail : false,
+	mailVlag : false,
+	soortenleden : {
+		id : 0,
+		soortenleden : ''
+	},
+	lidgelden : [
+		{
+			id : 0,
+			ledenId : 0,
+			datum : '',
+			bedrag : ''
+		},
+	]
+};
 
 async function leden_start() {
 	
@@ -36,8 +62,6 @@ async function leden_start() {
 		await Refrech_HTML('/leden/leden_main/' + selectedLidId, 'main_section_main');
 		leden_gegevens_refrech();
 	};	
-	console.log("END Leden onclick - Soort ID = " + selectedSoortId + " - ID = " + selectedLidId);
-	console.log('------------------------------------------------------------');
 };
 
 function leden_menu_geladen(soortId, lidid) {

@@ -54,10 +54,6 @@ public class LidgeldController {
     
     @GetMapping("/maxlidgeld")
 	public String MAXlidgeld(@RequestParam(name = "lidgeld", required = false) String name, Model model) {
-		lidgeld = lidgeldservice.getMAXLidgeldLeden();
-		model.addAttribute("lidgeld", lidgeld);
-		model.addAttribute("aantal", lidgeld.size());
-		model.addAttribute("datum", LocalDate.now().minusYears(1));
 		return "lidgeld/lidgeld :: max_lidgeld_tabel_start";
 	}
     
@@ -87,6 +83,16 @@ public class LidgeldController {
 	@GetMapping("/restcontroller/lidgeld/leden")
 	public @ResponseBody List<Lidgeld> lidgeldLeden() {	
 		return lidgeldservice.getAllLidgeldLeden();
+	}
+	
+	@GetMapping("/restcontroller/maxlidgeld")
+	public @ResponseBody List<Lidgeld> MAXlidgelddata() {
+		return lidgeldservice.getMAXLidgeldLeden();
+	}
+	
+	@GetMapping("/restcontroller/all_lidgeld")
+	public @ResponseBody List<Lidgeld> lidgelddata() {
+		return lidgeld = lidgeldservice.getAllLidgeldLeden();
 	}
 	
 	@PostMapping("/save_newLidgeld")

@@ -8,6 +8,7 @@ html{
     box-sizing: border-box;
     margin:		0px; 
 	padding:	0px;
+/* 	outline: 1px solid red; */
 }
 	
 body{
@@ -591,6 +592,16 @@ label {
 
 @media screen and (max-width: 800px) {
 	html {
+		font-size: 6px;
+	}
+	
+	h1 {
+		font-size: 10px;
+	}
+}
+
+@media screen and (min-width: 800px) and (max-width: 1200px) {
+    html {
 		font-size: 8px;
 	}
 	
@@ -599,22 +610,12 @@ label {
 	}
 }
 
-@media screen and (min-width: 800px) and (max-width: 1200px) {
+@media screen and (min-width: 1200px) and (max-width: 1600px) {
     html {
 		font-size: 10px;
 	}
 	
 	h1 {
-		font-size: 16px;
-	}
-}
-
-@media screen and (min-width: 1200px) and (max-width: 1600px) {
-    html {
-		font-size: 11px;
-	}
-	
-	h1 {
-		font-size: 16px;
+		font-size: 14px;
 	}
 }
