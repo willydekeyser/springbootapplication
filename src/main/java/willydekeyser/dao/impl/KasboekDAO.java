@@ -2,9 +2,11 @@ package willydekeyser.dao.impl;
 
 import java.math.BigDecimal;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Calendar;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +14,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -81,9 +85,9 @@ public class KasboekDAO implements IKasboekDAO {
 			+ "ORDER BY jaartal, rubriek_id";
 	private final String sql_getKasboekJaartal = "SELECT DISTINCT jaartal FROM kasboek";
 	
-	private final String sql_addKasboek = "INSERT INTO kasboek (jaartal, rubriekid, omschrijving, datum, uitgaven, inkomsten) "
-			+ "VALUES (?, ?, ?, ?, ?, ?)";
-	private final String sql_updateKasboek = "UPDATE kasboek SET jaartal = ?, rubriekid = ?, omschrijving = ?, datum = ?, uitgaven = ?, inkomsten = ? "
+	private final String sql_addKasboek = "INSERT INTO kasboek (jaartal, rubriekid, omschrijving, datum, uitgaven, inkomsten, createdby, createddate) "
+			+ "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+	private final String sql_updateKasboek = "UPDATE kasboek SET jaartal = ?, rubriekid = ?, omschrijving = ?, datum = ?, uitgaven = ?, inkomsten = ?, lastmodifiedby = ?, lastmodifieddate = ? "
 			+ "WHERE kasboek_id = ?";
 	private final String sql_deleteKasboek = "DELETE FROM kasboek WHERE kasboek_id = ?";
 	private final String sql_kasboekExists = "SELECT EXISTS(SELECT * FROM kasboek WHERE kasboek_id = ?)";
@@ -170,6 +174,9 @@ public class KasboekDAO implements IKasboekDAO {
 
 	@Override
 	public Kasboek addKasboek(Kasboek kasboek) {
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		Calendar currenttime = Calendar.getInstance();   
+		Date date = new Date((currenttime.getTime()).getTime());
 		KeyHolder key = new GeneratedKeyHolder();
 		jdbcTemplate.update(new PreparedStatementCreator() {
 
@@ -182,6 +189,8 @@ public class KasboekDAO implements IKasboekDAO {
 			    ps.setDate(4, java.sql.Date.valueOf(kasboek.getDatum()));	
 			    ps.setBigDecimal(5, kasboek.getUitgaven());
 			    ps.setBigDecimal(6, kasboek.getInkomsten());
+			    ps.setString(7, authentication.getName());
+			    ps.setDate(8, date);
 			    return ps;
 			}	
 		}, key);
@@ -197,8 +206,11 @@ public class KasboekDAO implements IKasboekDAO {
 
 	@Override
 	public Kasboek updateKasboek(Kasboek kasboek) {
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		Calendar currenttime = Calendar.getInstance();   
+		Date date = new Date((currenttime.getTime()).getTime());
 		int key = jdbcTemplate.update(sql_updateKasboek, kasboek.getJaartal(), kasboek.getRubriek().getId(), kasboek.getOmschrijving(),
-				kasboek.getDatum(),  kasboek.getUitgaven(), kasboek.getInkomsten(), kasboek.getId());
+				kasboek.getDatum(),  kasboek.getUitgaven(), kasboek.getInkomsten(), authentication.getName(), date, kasboek.getId());
 		if (key == 1) return kasboek;
 		return null;
 	}

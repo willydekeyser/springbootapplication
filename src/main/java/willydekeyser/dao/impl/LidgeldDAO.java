@@ -1,9 +1,11 @@
 package willydekeyser.dao.impl;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Calendar;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -32,8 +36,8 @@ public class LidgeldDAO implements ILidgeldDAO {
 			+ "ORDER BY datum ASC, lidgeld_id ASC";
 	private final String sql_getLidgeldById = "SELECT lidgeld.*, ledenlijst.*  FROM lidgeld, ledenlijst WHERE lidgeld_id = ? AND ledenlijstid = ledenlijst_id";
 	
-	private final String sql_newLidgeld = "INSERT INTO lidgeld (ledenlijstid, datum, bedrag) values (?, ?, ?)";
-	private final String sql_updateLidgeld = "UPDATE lidgeld SET ledenlijstid = ?, datum = ?, bedrag = ? WHERE lidgeld_id = ?";
+	private final String sql_newLidgeld = "INSERT INTO lidgeld (ledenlijstid, datum, bedrag, createdby, createddate) values (?, ?, ?, ?, ?)";
+	private final String sql_updateLidgeld = "UPDATE lidgeld SET ledenlijstid = ?, datum = ?, bedrag = ?, lastmodifiedby = ?, lastmodifieddate = ? WHERE lidgeld_id = ?";
 	private final String sql_deleteLidgeld = "DELETE FROM lidgeld WHERE lidgeld_id = ?";
 	private final String sql_lidgeldExists = "SELECT EXIST(SELECT * FROM lidgeld WHERE lidgeld_id = ?)";
 	
@@ -67,6 +71,9 @@ public class LidgeldDAO implements ILidgeldDAO {
 
 	@Override
 	public Lidgeld addLidgeld(Lidgeld lidgeld) {
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		Calendar currenttime = Calendar.getInstance();   
+		Date date = new Date((currenttime.getTime()).getTime());
 		KeyHolder key = new GeneratedKeyHolder();
 		jdbcTemplate.update(new PreparedStatementCreator() {
 			
@@ -76,6 +83,8 @@ public class LidgeldDAO implements ILidgeldDAO {
 				ps.setInt(1, lidgeld.getLeden().getId());
 				ps.setDate(2, java.sql.Date.valueOf(lidgeld.getDatum()));
 				ps.setBigDecimal(3, lidgeld.getBedrag());
+				ps.setString(4, authentication.getName());
+			    ps.setDate(5, date);
 				return ps;
 			}
 		}, key);
@@ -91,7 +100,10 @@ public class LidgeldDAO implements ILidgeldDAO {
 
 	@Override
 	public Lidgeld updateLidgeld(Lidgeld lidgeld) {
-		int key = jdbcTemplate.update(sql_updateLidgeld,lidgeld.getLeden().getId(), lidgeld.getDatum(), lidgeld.getBedrag(), lidgeld.getId());
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		Calendar currenttime = Calendar.getInstance();   
+		Date date = new Date((currenttime.getTime()).getTime());
+		int key = jdbcTemplate.update(sql_updateLidgeld,lidgeld.getLeden().getId(), lidgeld.getDatum(), lidgeld.getBedrag(), authentication.getName(), date, lidgeld.getId());
 		if (key == 1) return lidgeld;
 		return null;
 	}

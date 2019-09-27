@@ -1,9 +1,11 @@
 package willydekeyser.dao.impl;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Calendar;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -83,10 +87,10 @@ public class LedenDAO implements ILedenDAO {
 	
 	private final String sql_addLeden = "INSERT INTO ledenlijst (voornaam, familienaam, straat, nr, postnr, "
 			+ "gemeente, telefoonnummer, gsmnummer, emailadres, webadres, datumlidgeld, soortenledenid, "
-			+ "ontvangmail, mailvlag) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			+ "ontvangmail, mailvlag, createdby, createddate) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 	private final String sql_updateLeden = "UPDATE ledenlijst SET voornaam = ?, familienaam = ?, straat = ?, nr = ?, postnr = ?, "
 			+ "gemeente = ?, telefoonnummer = ?, gsmnummer = ?, emailadres = ?, webadres = ?, datumlidgeld = ?, soortenledenid = ?, "
-			+ "ontvangmail = ?, mailvlag = ? WHERE ledenlijst_id = ?";
+			+ "ontvangmail = ?, mailvlag = ?, lastmodifiedby = ?, lastmodifieddate = ? WHERE ledenlijst_id = ?";
 	private final String sql_deleteLeden = "DELETE FROM ledenlijst WHERE ledenlijst_id = ?";
 	private final String sql_ledenExists = "SELECT EXSIST(SELECT * FROM ledenlijst WHERE ledenlijst_id = ?)";
 	
@@ -121,6 +125,9 @@ public class LedenDAO implements ILedenDAO {
 
 	@Override
 	public Leden addLeden(Leden leden) {
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		Calendar currenttime = Calendar.getInstance();   
+		Date date = new Date((currenttime.getTime()).getTime());
 		KeyHolder key = new GeneratedKeyHolder();
 		jdbcTemplate.update(new PreparedStatementCreator() {
 			@Override
@@ -140,6 +147,8 @@ public class LedenDAO implements ILedenDAO {
 				ps.setInt(12, leden.getSoortenleden().getId());
 				ps.setBoolean(13, leden.isOntvangMail());
 				ps.setBoolean(14, leden.isMailVlag());
+				ps.setString(15, authentication.getName());
+			    ps.setDate(16, date);
 				return ps;
 			}
 		}, key);
@@ -155,10 +164,13 @@ public class LedenDAO implements ILedenDAO {
 
 	@Override
 	public Leden updateLeden(Leden leden) {
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		Calendar currenttime = Calendar.getInstance();   
+		Date date = new Date((currenttime.getTime()).getTime());
 		jdbcTemplate.update(sql_updateLeden, leden.getVoornaam(), leden.getFamilienaam(), leden.getStraat(), leden.getNr(), 
 				leden.getPostnr(), leden.getGemeente(),leden.getTelefoonnummer(), leden.getGsmnummer(), leden.getEmailadres(), 
 				leden.getWebadres(), leden.getDatumlidgeld(), leden.getSoortenleden().getId(), leden.isOntvangMail(), 
-				leden.isMailVlag(), leden.getId());
+				leden.isMailVlag(), authentication.getName(), date, leden.getId());
 		return leden;
 	}
 

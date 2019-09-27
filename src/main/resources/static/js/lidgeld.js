@@ -18,13 +18,21 @@ async function max_lidgeld_start() {
 	await Refrech_HTML('/lidgeld/maxlidgeld', 'main_section_main');
 	max_lidgeld_Tabel_laden();
 	const newMaxLidgeld = document.getElementById('maxlidgeld_newlidgeld');
-	newMaxLidgeld.addEventListener('click', listener_new_max_lidgeld, false);
+	if(newMaxLidgeld) {
+		newMaxLidgeld.addEventListener('click', listener_new_max_lidgeld, false);
+	}
 	const emailMaxLidgeld = document.getElementById('maxlidgeld_emaillidgeld');
-	emailMaxLidgeld.addEventListener('click', listener_email_max_lidgeld, false);
+	if(emailMaxLidgeld) {
+		emailMaxLidgeld.addEventListener('click', listener_email_max_lidgeld, false);
+	}
 	const briefMaxLidgeld = document.getElementById('maxlidgeld_brieflidgeld');
-	briefMaxLidgeld.addEventListener('click', listener_brief_max_lidgeld, false);
+	if(briefMaxLidgeld) {
+		briefMaxLidgeld.addEventListener('click', listener_brief_max_lidgeld, false);
+	}
 	const rapportwMaxLidgeld = document.getElementById('maxlidgeld_rapportlidgeld');
-	rapportwMaxLidgeld.addEventListener('click', listener_rapport_max_lidgeld, false);
+	if(rapportwMaxLidgeld) {
+		rapportwMaxLidgeld.addEventListener('click', listener_rapport_max_lidgeld, false);
+	}
 };
 
 async function max_lidgeld_Tabel_laden() {

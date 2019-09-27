@@ -7,10 +7,10 @@
 		<li class="menu_lijst_item kasboeklijst_click" th:id="kasboek" th:jaar="0" th:rubriek="0">
 			<span class="menu_lijst_item_tekst" th:text="Kasboek"></span>
 		</li>
-		<li class="menu_lijst_item kasboeklijst_click" th:id="${jaartal.Id}" th:each="jaartal : ${jaartal}" th:jaar="${jaartal.jaartal}" th:rubriek="0">
+		<li class="menu_lijst_item kasboeklijst_click" th:id="${jaartal.jaartal}" th:each="jaartal : ${jaartal}" th:jaar="${jaartal.jaartal}" th:rubriek="0">
 			<span class="menu_lijst_item_tekst" th:text="${jaartal.jaartal}"></span>
-			<ol class="sub_menu_lijst" th:id="'jaartal' +${jaartal.Id}" style="display: none;">
-				<li class="sub_menu_lijst_item sub_kasboeklijst_click" th:id="${rubriek.Id}" th:each="rubriek : ${jaartal.Rubriek}" th:text="${rubriek.rubriek}" th:jaar="${jaartal.jaartal}" th:rubriek="${rubriek.id}"></li>
+			<ol class="sub_menu_lijst" th:id="'jaartal' +${jaartal.jaartal}" style="display: none;">
+				<li class="sub_menu_lijst_item sub_kasboeklijst_click" th:id="'jaartal' + ${jaartal.jaartal} + ${rubriek.Id}" th:each="rubriek : ${jaartal.Rubriek}" th:text="${rubriek.rubriek}" th:jaar="${jaartal.jaartal}" th:rubriek="${rubriek.id}"></li>
 			</ol>
 		</li>
 	</ol>

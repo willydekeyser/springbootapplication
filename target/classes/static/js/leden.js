@@ -136,12 +136,30 @@ function leden_gegevens_laden(data) {
 	document.getElementById('soort').innerHTML = data.soortenleden.soortenleden;
 	document.getElementById('ontvangmail').checked = data.ontvangMail;
 	document.getElementById('mailvlag').checked = data.mailVlag;
-	document.getElementById('leden_newlid').setAttribute('onclick', 'newLid();');
-	document.getElementById('leden_updatelid').setAttribute('onclick', 'updateLid(' + data.id + ');');
-	document.getElementById('leden_deletelid').setAttribute('onclick', 'deleteLid(' + data.id + ');');
-	document.getElementById('lidgeld_newlidgeld').setAttribute('onclick', 'newLidgeld(' + data.id + ');');
-	document.getElementById('lidgeld_updatelidgeld').setAttribute('onclick', 'updateLidgeld(' + data.id + ');');
-	document.getElementById('lidgeld_deletelidgeld').setAttribute('onclick', 'deleteLidgeld(' + data.id + ');');
+	const leden_newlid = document.getElementById('leden_newlid');
+	if(leden_newlid) {
+		leden_newlid.setAttribute('onclick', 'newLid();');
+	}
+	const leden_updatelid = document.getElementById('leden_updatelid');
+	if(leden_updatelid) {
+		leden_updatelid.setAttribute('onclick', 'updateLid(' + data.id + ');');
+	}
+	const leden_deletelid = document.getElementById('leden_deletelid');
+	if(leden_deletelid) {
+		leden_deletelid.setAttribute('onclick', 'deleteLid(' + data.id + ');');
+	}
+	const lidgeld_newlidgeld = document.getElementById('lidgeld_newlidgeld');
+	if(lidgeld_newlidgeld) {
+		lidgeld_newlidgeld.setAttribute('onclick', 'newLidgeld(' + data.id + ');');
+	}
+	const lidgeld_updatelidgeld = document.getElementById('lidgeld_updatelidgeld');
+	if(lidgeld_updatelidgeld) {
+		lidgeld_updatelidgeld.setAttribute('onclick', 'updateLidgeld(' + data.id + ');');
+	}
+	const lidgeld_deletelidgeld = document.getElementById('lidgeld_deletelidgeld');
+	if(lidgeld_deletelidgeld) {
+		lidgeld_deletelidgeld.setAttribute('onclick', 'deleteLidgeld(' + data.id + ');');
+	}
 };
 
 function leden_lidgeld_laden(data) {

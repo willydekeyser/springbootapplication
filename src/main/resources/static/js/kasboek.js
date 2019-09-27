@@ -26,7 +26,6 @@ let startAantal = 0;
 let aantalrijen = 0;
 let aantalPaginas = 0;
 
-
 async function kasboek_start() {
 	console.log('------------------------------------------------------------');
 	console.log('Menu kasboek onclick');
@@ -38,13 +37,21 @@ async function kasboek_start() {
 	kasboek_menu_listener();
 };
 
+async function kasboek_menu_refrech_select(menu_select_jaar, menu_select_rubriek) {
+	console.log('kasboek_menu_refrech_select ' + menu_select_jaar + ' - ' + menu_select_rubriek)
+	await Refrech_HTML('/kasboek/', 'menu_main');
+	kasboek_menu_listener();
+	document.getElementById(menu_select_jaar).dispatchEvent(new Event('click'));
+	document.querySelector('#jaartal' + menu_select_jaar + menu_select_rubriek).dispatchEvent(new Event('click'));
+}
+
 async function kasboek_tabel_start() {
 	console.log('------------------------------------------------------------');
 	console.log('Menu kasboek tabel onclick');
 	reset_grid();
 	menu_height(3, 100);
 	menu_main_width(300);
-	Refrech_HTML('/kasboek/kasboekHeader', 'main_section_header')
+	await Refrech_HTML('/kasboek/kasboekHeader', 'main_section_header')
 	kasboek_totalen_laden();
 };
 
@@ -119,14 +126,15 @@ async function kasboek_totalen_laden() {
 	await Refrech_HTML('/kasboek/kasboekJaarRubriek/' + selectedJaar + '/' + selectedRubriek + '/' + aantalPerPagina + '/' + startAantal, 'main_section_main');
 	Kasboek_gegevens = "";
 	const data = await fetch_JSON('/kasboek/restcontroller/kasboekTotalen/' + selectedJaar + '/' + selectedRubriek);
-	if(data.Jaar == 0) {data.Jaar = '';}
+	if(data.Jaar == 0) {data.Jaar = 'Alle jaren';}
+	if(data.Rubriek == '') {data.Rubriek = 'Alle rubrieken';}
 	let html = ``;
 	console.log('Totalen: ' + data.Jaar);
 	document.getElementById('main_section_footer').innerHTML = `<div class="KasboekTotalen col-3"><p>Jaar: <b>${data.Jaar}</b></p>
 	<p>Rubriek: <b>${data.Rubriek}</b></p> 
-	<p>Inkomsten: <b>${getFormattedEuro(data.Totalen[0].Inkomsten)}</b> Uitgaven: <bW${getFormattedEuro(data.Totalen[0].Uitgaven)}</b> Totaal: <b>${getFormattedEuro(data.Totalen[0].Totaal)}</b></p></div>
+	<p>Inkomsten: <b>${getFormattedEuro(data.Totalen[0].Inkomsten)}</b> Uitgaven: <b>${getFormattedEuro(data.Totalen[0].Uitgaven)}</b> Totaal: <b><span style=${data.Totalen[0].Totaal < 0 ? "color:red" : "color:black"}>${getFormattedEuro(data.Totalen[0].Totaal)}</span></b></p></div>
 	<div class="KasboekTotalen col-3"><p>Totaal:</p>
-	<p>Inkomsten: <b>${getFormattedEuro(data.Totalen[1].Inkomsten)}</b> Uitgaven: <b>${getFormattedEuro(data.Totalen[1].Uitgaven)}</b> Totaal: <b>${getFormattedEuro(data.Totalen[1].Totaal)}</b></p></div>`;
+	<p>Inkomsten: <b>${getFormattedEuro(data.Totalen[1].Inkomsten)}</b> Uitgaven: <b>${getFormattedEuro(data.Totalen[1].Uitgaven)}</b> Totaal: <b><span style=${data.Totalen[1].Totaal < 0 ? "color:red" : "color:black"}>${getFormattedEuro(data.Totalen[1].Totaal)}</span></b></p></div>`;
 	console.log('End totalen laden');
 	aantalrijen = document.getElementById('aantalrijen').getAttribute('value');
 	aantalPaginas = Math.ceil(aantalrijen / aantalPerPagina);
@@ -143,17 +151,17 @@ async function kasboek_menu_refrech() {
 		</li>`;
 	data.forEach((jaren, index) => {
 		if (jaren.jaartal == jaar) {
-			html += `<li class="menu_lijst_item kasboeklijst_click active" id="${index + 1}" jaar="${jaren.jaartal}" rubriek="0">
+			html += `<li class="menu_lijst_item kasboeklijst_click active" id="${jaren.jaartal}" jaar="${jaren.jaartal}" rubriek="0">
 				<span class="menu_lijst_item_tekst">${jaren.jaartal}</span>
-			<ol class="sub_menu_lijst menuopen" id="jaartal${index + 1}" style="display: block;">`;
+			<ol class="sub_menu_lijst menuopen" id="jaartal${jaren.jaartal}" style="display: block;">`;
 		} else {
-			html += `<li class="menu_lijst_item kasboeklijst_click" id="${index + 1}" jaar="${jaren.jaartal}" rubriek="0">
+			html += `<li class="menu_lijst_item kasboeklijst_click" id="${jaren.jaartal}" jaar="${jaren.jaartal}" rubriek="0">
 				<span class="menu_lijst_item_tekst">${jaren.jaartal}</span>
-			<ol class="sub_menu_lijst" id="jaartal${index + 1}" style="display: none;">`;
+			<ol class="sub_menu_lijst" id="jaartal${jaren.jaartal}" style="display: none;">`;
 		}
 		const rubrieken = jaren.rubriek;
 		rubrieken.forEach((rubriek, index) => {
-			html += `<li class="sub_menu_lijst_item sub_kasboeklijst_click" id="${rubriek.id}" jaar="${jaren.jaartal}" rubriek="${rubriek.id}">${rubriek.rubriek}</li>`;
+			html += `<li class="sub_menu_lijst_item sub_kasboeklijst_click" id="jaartal${jaren.jaartal}${rubriek.id}" jaar="${jaren.jaartal}" rubriek="${rubriek.id}">${rubriek.rubriek}</li>`;
 		})
 		html += `</ol></li>`;
 	});
