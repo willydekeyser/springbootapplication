@@ -18,7 +18,7 @@ let kasboekModalForm;
 
 function newKasboek() {
 	console.log("New kasboek");
-	let modal = document.querySelector('#kasboekModal');
+	const modal = document.querySelector('#kasboekModal');
 	if(modal == null){
 		let data = load_HTML('/kasboek/editKasboek')
 		.then((data) => {
@@ -70,8 +70,8 @@ function listener_newKasboek_close(event) {
 
 function listener_newKasboek_submit() {
 	event.preventDefault();
-	let formData = new FormData(document.getElementById('editKasboekModalForm'));
-	let data = post_Form('/kasboek/save_newKasboek/' + '2019' + '/' + '1', formData)
+	const formData = new FormData(document.getElementById('editKasboekModalForm'));
+	const data = post_Form('/kasboek/save_newKasboek/' + '2019' + '/' + '1', formData)
 	.then((data) => {
 		showNewKasboekModal(false);
 		kasboek_tabel_refrech(data)
@@ -122,7 +122,7 @@ function showNewKasboekModal(show) {
 
 function updateKasboek() {
 	console.log("Edit kasboek");
-	let modal = document.querySelector('#kasboekModal');
+	const modal = document.querySelector('#kasboekModal');
 	if(modal == null){
 		let data = load_HTML('/kasboek/editKasboek')
 		.then((data) => {
@@ -190,8 +190,8 @@ function listener_updateKasboek_close(event) {
 
 function listener_updateKasboek_submit() {
 	event.preventDefault();
-	let formData = new FormData(document.getElementById('editKasboekModalForm'));
-	let data = put_Form('/kasboek/save_updateKasboek/' + selectedJaar + '/' + selectedRubriek + '/' + change_jaar + '/' + jaar, formData)
+	const formData = new FormData(document.getElementById('editKasboekModalForm'));
+	const data = put_Form('/kasboek/save_updateKasboek/' + selectedJaar + '/' + selectedRubriek + '/' + change_jaar + '/' + jaar, formData)
 	.then((data) => {
 		showUpdateKasboekModal(false);
 		kasboek_tabel_refrech(data)
@@ -236,7 +236,7 @@ function showUpdateKasboekModal(show) {
 
 function deleteKasboek() {
 	console.log("Delete kasboek");
-	let modal = document.querySelector('#kasboekModal');
+	const modal = document.querySelector('#kasboekModal');
 	if(modal == null){
 		let data = load_HTML('/kasboek/editKasboek')
 		.then((data) => {
@@ -255,7 +255,7 @@ function setup_deleteKasboekModal() {
 	kasboekModalAchtergrond = document.querySelector('#kasboekModalAchtergrond');
 	kasboekModal = document.querySelector('#kasboekModal');
 	kasboekModalForm = document.getElementById('editKasboekModalForm');
-	let actief_row = document.querySelector('tr.active');
+	const actief_row = document.querySelector('tr.active');
 	if (actief_row === undefined || actief_row === null) {
 		document.getElementById('modal-titel').innerHTML = 'Je hebt geen selectie gemaakt!';
 		document.getElementById('editKasboek_save').style.visibility = 'hidden';
@@ -291,8 +291,8 @@ function listener_deleteKasboek_close(event) {
 
 function listener_deleteKasboek_submit() {
 	event.preventDefault();
-	let formData = new FormData(document.getElementById('editKasboekModalForm'));
-	let data = delete_Form('/kasboek/save_deleteKasboek/' + selectedJaar + '/' + selectedRubriek, formData)
+	const formData = new FormData(document.getElementById('editKasboekModalForm'));
+	const data = delete_Form('/kasboek/save_deleteKasboek/' + selectedJaar + '/' + selectedRubriek, formData)
 	.then((data) => {
 		showDeleteKasboekModal(false);
 		kasboek_tabel_refrech(data)

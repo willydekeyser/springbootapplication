@@ -8,7 +8,7 @@ html{
     box-sizing: border-box;
     margin:		0px; 
 	padding:	0px;
-/* 	outline: 1px solid red; */
+/* 	outline: 0.2px solid rgba(255, 0, 0, 0.2); */
 }
 	
 body{
@@ -292,6 +292,11 @@ body{
 	border-color: green;
 }
 
+.KasboekTotalen {
+	border: 1px solid rgba(0, 0, 0, 0.5);
+	margin: 5px;
+	padding: 1px 5px;
+}
 /* ---------------- END LOGIN ---------------- */
 
 .leden_tabel {
@@ -411,13 +416,13 @@ body{
 }
 
 .btn-white {
-	background-color: #ffffff;
+	background-color: rgba(0, 0, 0, 0.05);
 	border: 0.1rem solid #ffffff;
 	color: #111111;
 }
 
 .btn-white:hover, .btn-white:hover {
-	background-color: #ffffff;
+	background-color: rgba(0, 0, 0, 0.05);
 	border: 0.1rem solid #ffffff;
 	color: #111111;
 }

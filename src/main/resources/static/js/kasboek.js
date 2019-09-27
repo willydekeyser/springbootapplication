@@ -1,3 +1,5 @@
+"use strict";
+
 let kasboekId = 0;
 let selectedId = 0;
 let selectedJaar = 0;
@@ -48,7 +50,7 @@ async function kasboek_tabel_start() {
 
 async function kasboekSelect(id) {
 	kasboekId = id.getAttribute('id');
-	let selection = document.querySelector('tr.active')
+	const selection = document.querySelector('tr.active')
 	if(selection) {
 		selection.classList.remove('active');
 	};
@@ -57,19 +59,19 @@ async function kasboekSelect(id) {
 };
 
 function kasboek_menu_listener() {
-	let menuLink = document.querySelectorAll('.kasboeklijst_click');
+	const menuLink = document.querySelectorAll('.kasboeklijst_click');
 	menuLink.forEach(link => link.addEventListener('click', function() { 
-		let menuOpenSelection = document.querySelector('.menuopen')
+		const menuOpenSelection = document.querySelector('.menuopen')
 		if(menuOpenSelection) {
 			menuOpenSelection.style.display = 'none';
 			menuOpenSelection.classList.remove('menuopen');
 		};
-		let selection = document.querySelector('ol li.active')
+		const selection = document.querySelector('ol li.active')
 		if(selection) {
 			selection.classList.remove('active');
 		};
 		this.classList.add('active');
-		let select = document.getElementById("jaartal" + this.id);
+		const select = document.getElementById("jaartal" + this.id);
 		if (select) {
 			select.style.display = "block";
 			select.classList.add('menuopen');
@@ -81,10 +83,9 @@ function kasboek_menu_listener() {
 		pagina = 1;
 		Refrech_HTML('/kasboek/kasboekJaarRubriek/' + selectedJaar + '/' + selectedRubriek + '/' + aantalPerPagina + '/' + startAantal, 'main_section_main');
 		kasboek_totalen_laden();
-		return false;
 	}));
 	
-	let subMenuLink = document.querySelectorAll('.sub_kasboeklijst_click');
+	const subMenuLink = document.querySelectorAll('.sub_kasboeklijst_click');
 	subMenuLink.forEach(link => link.addEventListener('click', function(event) {
 		event.stopImmediatePropagation()
 		let selection = document.querySelector('ol li.active')
@@ -98,7 +99,6 @@ function kasboek_menu_listener() {
 		startAantal = 0;
 		pagina = 1;
 		kasboek_totalen_laden();
-		return false;
 	}));
 };
 
@@ -117,13 +117,16 @@ function kasboek_main_laden() {
 async function kasboek_totalen_laden() {
 	console.log('Start totalen laden');
 	await Refrech_HTML('/kasboek/kasboekJaarRubriek/' + selectedJaar + '/' + selectedRubriek + '/' + aantalPerPagina + '/' + startAantal, 'main_section_main');
-	kasboek_gegevens = "";
-	let data = await fetch_JSON('/kasboek/restcontroller/kasboekTotalen/' + selectedJaar + '/' + selectedRubriek);
+	Kasboek_gegevens = "";
+	const data = await fetch_JSON('/kasboek/restcontroller/kasboekTotalen/' + selectedJaar + '/' + selectedRubriek);
+	if(data.Jaar == 0) {data.Jaar = '';}
 	let html = ``;
 	console.log('Totalen: ' + data.Jaar);
-	document.getElementById('main_section_footer').innerHTML = `<p>Jaar: ${data.Jaar} Rubriek: ${data.Rubriek}</p> 
-	Inkomsten: ${getFormattedEuro(data.Totalen[0].Inkomsten)} Uitgaven: ${getFormattedEuro(data.Totalen[0].Uitgaven)} Totaal: ${getFormattedEuro(data.Totalen[0].Totaal)}</br>
-	Inkomsten: ${getFormattedEuro(data.Totalen[1].Inkomsten)} Uitgaven: ${getFormattedEuro(data.Totalen[1].Uitgaven)} Totaal: ${getFormattedEuro(data.Totalen[1].Totaal)}`;
+	document.getElementById('main_section_footer').innerHTML = `<div class="KasboekTotalen col-3"><p>Jaar: <b>${data.Jaar}</b></p>
+	<p>Rubriek: <b>${data.Rubriek}</b></p> 
+	<p>Inkomsten: <b>${getFormattedEuro(data.Totalen[0].Inkomsten)}</b> Uitgaven: <bW${getFormattedEuro(data.Totalen[0].Uitgaven)}</b> Totaal: <b>${getFormattedEuro(data.Totalen[0].Totaal)}</b></p></div>
+	<div class="KasboekTotalen col-3"><p>Totaal:</p>
+	<p>Inkomsten: <b>${getFormattedEuro(data.Totalen[1].Inkomsten)}</b> Uitgaven: <b>${getFormattedEuro(data.Totalen[1].Uitgaven)}</b> Totaal: <b>${getFormattedEuro(data.Totalen[1].Totaal)}</b></p></div>`;
 	console.log('End totalen laden');
 	aantalrijen = document.getElementById('aantalrijen').getAttribute('value');
 	aantalPaginas = Math.ceil(aantalrijen / aantalPerPagina);
@@ -133,7 +136,7 @@ async function kasboek_totalen_laden() {
 
 async function kasboek_menu_refrech() {
 	let html = ``;
-	let data = await fetch_JSON('/kasboek/restcontroller/kasboekmenu');
+	const data = await fetch_JSON('/kasboek/restcontroller/kasboekmenu');
 	html += `<div><ol class="menu_lijst" id="namenlijst_click">
 		<li class="menu_lijst_item kasboeklijst_click active" id="kasboek" jaar="0" rubriek="0">
 			<span class="menu_lijst_item_tekst">Kasboek</span>
@@ -148,22 +151,20 @@ async function kasboek_menu_refrech() {
 				<span class="menu_lijst_item_tekst">${jaren.jaartal}</span>
 			<ol class="sub_menu_lijst" id="jaartal${index + 1}" style="display: none;">`;
 		}
-		let rubrieken = jaren.rubriek;
+		const rubrieken = jaren.rubriek;
 		rubrieken.forEach((rubriek, index) => {
 			html += `<li class="sub_menu_lijst_item sub_kasboeklijst_click" id="${rubriek.id}" jaar="${jaren.jaartal}" rubriek="${rubriek.id}">${rubriek.rubriek}</li>`;
 		})
 		html += `</ol></li>`;
 	});
 	html += `</ol</div>`;
-	document.ElementById('menu_main').innerHTML = html;
+	document.getElementById('menu_main').innerHTML = html;
 	kasboek_menu_listener();
 };
 
 function kasboek_tabel_refrech(data) {
 	let html = ``;
 	document.getElementById('kasboek_tabel_body').innerHTML = '';
-	kasboek_data = data;
-	
 	data.forEach((kasboek, index) => {
 		html += `<tr id="${kasboek.id}" class="test" onclick="kasboekSelect(this)">
 			<td class="test" style="width: 15px"> </td>
