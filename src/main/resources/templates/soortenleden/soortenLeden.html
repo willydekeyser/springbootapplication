@@ -5,8 +5,7 @@
 <div th:replace="fragments/header :: header"></div>
 <div th:fragment="soortenleden_tabel_start">
 <div class="container-fluid">
-    <p>Soorten leden lijst: <span id="aantal_soortenleden" th:text="${aantal}"></span></p>
-	<div class="btn-group btn-group-sm">
+	<div class="btn-group btn-group-sm" th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">
 		<button type="button" class="btn btn-success" th:onclick="newSoortenleden();" >&nbsp;&nbsp;&nbsp;&nbsp;Nieuw&nbsp;&nbsp;&nbsp;&nbsp;</button>
 		<button type="button" class="btn btn-success" th:onclick="updateSoortenleden();" >&nbsp;Aanpassen&nbsp;</button>
 		<button type="button" class="btn btn-danger" th:onclick="deleteSoortenleden();" >Verwijderen</button>

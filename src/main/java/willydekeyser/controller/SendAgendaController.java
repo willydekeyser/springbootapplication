@@ -30,7 +30,6 @@ public class SendAgendaController {
 	
 	@GetMapping("/agenda")
 	public ModelAndView agenda(Model model) {
-		System.out.println("Agenda - Agenda");
 		ModelAndView modelandview = new ModelAndView();
 		selectSoorten = soort.SoortLedenLijst(1);
 		modelandview.addObject("soorten", selectSoorten);

@@ -29,21 +29,21 @@ public class ComputerclubLogoutSuccessHandler extends SimpleUrlLogoutSuccessHand
 
 	@Override
     public void onLogoutSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
-		//System.out.println("onLogoutSuccess: " + authentication.toString());
-        final String refererUrl = request.getHeader("Referer");
-        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-        String data = "Logout:" + 
-        "\n		Session Id: " + request.getSession().getId() + 
-        "\n		URL: " + refererUrl + 
-        "\n		Usernaam: " + authentication.getName() + 
-        "\n		Roles: " + authentication.getAuthorities().toString() + 
-        "\n		Datum: " + dateFormat.format(new Date()) + "\n\n";
-        try {
-			fileLogger.schrijfDataToFile(data);
-		} catch (IOException e) {
-			System.err.println("Fout schrijven naar File: " + e.getMessage());
+		if(authentication != null && authentication.getDetails() != null) {
+			final String refererUrl = request.getHeader("Referer");
+	        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+	        String data = "Logout:" + 
+	        "\n		Session Id: " + request.getSession().getId() + 
+	        "\n		URL: " + refererUrl + 
+	        "\n		Usernaam: " + authentication.getName() + 
+	        "\n		Roles: " + authentication.getAuthorities().toString() + 
+	        "\n		Datum: " + dateFormat.format(new Date()) + "\n\n";
+	        try {
+				fileLogger.schrijfDataToFile(data);
+			} catch (IOException e) {
+				System.err.println("Fout schrijven naar File: " + e.getMessage());
+			}
 		}
-        
         super.onLogoutSuccess(request, response, authentication);
     }
 }

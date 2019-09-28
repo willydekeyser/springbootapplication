@@ -20,7 +20,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -51,21 +50,22 @@ public class StartController {
 		return "ERROR!";	
 	}
 	
-	@PostMapping("/timeout")
-	public @ResponseBody String timeOut() {
-		return "TIMEOUT!";	
+	@GetMapping("/timeout")
+	public @ResponseBody void timeOut() {
+		System.out.println("++++++++++++++++++++++ TIME OUT: +++++++++++++++++++++++++++++");
+		//return "TIMEOUT!";	
 	}
 	
-	@PostMapping("/paghide")
-	public @ResponseBody String pageHide() {
+	@GetMapping("/pagehide")
+	public @ResponseBody void pageHide() {
 		System.out.println("++++++++++++++++++++++ Page Hide Event: +++++++++++++++++++++++++++++");
-		return "PAGEHIDE!";	
+		//return "PAGEHIDE!";	
 	}
 	
-	@PostMapping("/beforeunload")
-	public @ResponseBody String beforeUnLoad() {
+	@GetMapping("/beforeunload")
+	public @ResponseBody void beforeUnLoad() {
 		System.out.println("++++++++++++++++++++++ Before Unload Event: ++++++++++++++++++++++++++");
-		return "BEFOREUNLOAD!";	
+		//return "BEFOREUNLOAD!";	
 	}
 	
 	@GetMapping(value = "/start_main")

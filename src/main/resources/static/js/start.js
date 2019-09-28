@@ -15,30 +15,21 @@ document.addEventListener('DOMContentLoaded', (event) => {
 		if (event.persisted) {
 			console.log('Pagehide event - Page was loaded from cache.');
 		}
-		console.log('Pagehide event');
-		try {
-			fetch('/pagehide', {
-				method: "POST",
-				body: ""
-			});
-		} catch (error) {
-			  console.error('Error Pagehide event:', error);
-			}
+		console.log('Pagehide event ' + event);
+		fetch_pagehide();
 	}, false);
-	window.addEventListener('beforeunload', (event) => {
-		if (event.persisted) {
-			console.log('Before Unload event - Page was loaded from cache.');
-		}
-		console.log('Before Unload event');
-		try {
-			fetch('/beforeunload', {
-				method: "POST",
-				body: ""
-			});
-		} catch (error) {
-			  console.error('Error Before Unload event:', error);
-			}
-	}, false);
+//	window.addEventListener('beforeunload', (event) => {
+//		event.preventDefault();
+//		if (event.persisted) {
+//			console.log('Before Unload event - Page was loaded from cache.');
+//		}
+//		console.log('Before Unload event ' + event);
+//		fetch_beforeunload();
+//		event.returnValue = 'Before Unload event';
+//		var dialogText = 'Dialog text here';
+//		event.returnValue = dialogText;
+//		return null;
+//	}, false);
 	start_main();
 });
 
@@ -129,13 +120,14 @@ function listener_timeOut_submit(event) {
 	event.preventDefault();
 	timeOut = 30000;
 	showTimeOutModal(false);
-	const data = fetch_TEXT('/timeout')
-	.then((data) => {
-		console.log('Time out: ' + data);
-	})
-	.catch((error) => {
-		console.error('FOUT: ' + error);
-	});
+	fetch_timeout();
+//	const data = fetch_TEXT('/timeout')
+//	.then((data) => {
+//		console.log('Time out: ' + data);
+//	})
+//	.catch((error) => {
+//		console.error('FOUT: ' + error);
+//	});
 	return false;
 };
 

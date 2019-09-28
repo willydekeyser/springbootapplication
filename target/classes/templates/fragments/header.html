@@ -63,10 +63,10 @@
 	<li class="navigation_item" th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">
 		<a id="header_kasboek_tabel" class="navigation_link" href="/">Kasboek tabel</a>
 	</li>
-	<li class="navigation_item" th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">
+	<li class="navigation_item" th:if="${#authorization.expression('hasRole(''ROLE_USER'')')}">
 		<a id="header_soortenleden" class="navigation_link" href="/">Soorten leden</a>
 	</li>
-	<li class="navigation_item" th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">
+	<li class="navigation_item" th:if="${#authorization.expression('hasRole(''ROLE_USER'')')}">
 		<a id="header_rubriek" class="navigation_link" href="/">Rubriek</a>
 	</li>
 	<li class="navigation_item" th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">

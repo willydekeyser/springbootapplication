@@ -189,6 +189,18 @@ async function delete_Form(url, form) {
 	return await response.json();
 };
 
+async function fetch_pagehide() {
+	await fetch('/pagehide');
+};
+
+async function fetch_beforeunload() {
+	await fetch('/beforeunload');
+};
+
+async function fetch_timeout() {
+	await fetch('/timeout');
+};
+
 /*
  * Help functions.
  *
