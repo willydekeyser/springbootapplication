@@ -31,26 +31,23 @@ public class SendMailController {
 	@Autowired
     private LedenService ledenService;
 	
-	private String to = "willy.de.keyser@skynet.be";
+	private String to = "";
 	private String subject = "";
 	private List<Leden> ledenlijst = new ArrayList<Leden>();
 	
-	
 	@PostMapping("/post")
-	public @ResponseBody String index(@Validated Agenda agenda) {
-		System.out.println("AGENDA: " + agenda.toString());
+	public @ResponseBody String verstuurAgenda(@Validated Agenda agenda) {
 		ledenlijst = ledenService.getAllLedenNamenlijst(agenda.getSoortenLeden());
 		subject = "Agenda voor " + agenda.getDatum_vergadering() + ".";
 		try {
 			senderService.setMailTeller(0);
-			senderService.sendHTMLMail(new Mail(to, subject, agenda.getFreak(), agenda.getFreaktobe(), 
+			senderService.sendAgendaHTMLMail(new Mail(to, subject, agenda.getFreak(), agenda.getFreaktobe(), 
 					agenda.getFreaklesgever(), agenda.getFreaktobelesgever(), 
 					agenda.getInfo(), agenda.getDatum_vergadering(), agenda.getDatum_verzenden()), ledenlijst, 5);
 		} catch (MessagingException | InterruptedException e) {
 			System.out.println("Fout: " + e.getMessage());
 			return "{\"return\" : \"FOUT\"}";
 		}
-		System.out.println("Send E-mail: ");
 		return "{\"return\" : \"OK\"}";
 	}
 	

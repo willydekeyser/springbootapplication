@@ -1,4 +1,5 @@
 let agenda_progress_bar_teller_id;
+let datum_vergadering;
 
 async function agenda_start() {
 	reset_grid();
@@ -13,7 +14,7 @@ function maaktext() {
 
 function mail_form() {
 	let emailtext = "";
-	let datum_vergadering = eerste_woensdag();
+	datum_vergadering = eerste_woensdag();
 	let datum_verzenden = verzenddatum();
 	document.getElementById("datum_vergadering").value = datum_vergadering;
 	document.getElementById("datum_verzenden").value = datum_verzenden;
@@ -44,14 +45,7 @@ function listener_agenda_submit(event) {
 	document.getElementById('agenda_hulp_venster').style.display = 'block';
 	document.getElementById('agenda_progress_bar').style.display = 'block';
 	let formData = new FormData(document.getElementById('agendaVersturenForm'));
-		
-		
-		
-		
-		
-		//this;
-	console.log('AGENDA: ' + formData);
-	
+	console.log('AGENDA: ' + formData);	
 	let data = post_Form('mail/post', formData)
 	.then((data) => {
 		console.log('AGENDA: ' + data)
@@ -64,6 +58,10 @@ function listener_agenda_submit(event) {
 };
 
 async function agenda_progress_bar() {
+	const agenda_progress_bar = document.getElementById('agenda_progress_bar');
+	if(agenda_progress_bar) {
+		agenda_progress_bar.style.display = 'block';
+	}
 	let teller = 0;
 	let max_teller = 0;
 	let nog_teller = 0;
@@ -71,16 +69,37 @@ async function agenda_progress_bar() {
 	teller = response.return_progress;
 	max_teller = response.return_max;
 	nog_teller = max_teller - teller;
-	console.log('RESPONSE: ' + teller);
+	//console.log('RESPONSE: ' + teller + " - " + nog_teller + " - " + max_teller);
 	if (teller < 0) {
 		clearTimeout(agenda_progress_bar_teller_id);
-		document.getElementById('agenda_progress_bar_text').innerHTML = "Alle e-mail berichten verzonden.";
-		document.getElementById('agenda_progress_bar_progressbar').value = 100;
+		const agenda_progress_bar_text = document.getElementById('agenda_progress_bar_text');
+		if(agenda_progress_bar_text) {
+			agenda_progress_bar_text.innerHTML = "Alle e-mail berichten verzonden.";
+		}
+		const agenda_progress_bar_progressbar = document.getElementById('agenda_progress_bar_progressbar');
+		if(agenda_progress_bar_progressbar) {
+			agenda_progress_bar_progressbar.value = 100;
+		}
+		const footer_section_B = document.getElementById('footer_section_B');
+		if(footer_section_B) {
+			footer_section_B.innerHTML = "Computerclub FORMAT C:";
+		}
 	} else {
-		document.getElementById('agenda_progress_bar_progressbar').value = (teller / max_teller) * 100;
-		document.getElementById('agenda_progress_bar_text').innerHTML = teller == 1 ? teller 
+		const agenda_progress_bar_progressbar = document.getElementById('agenda_progress_bar_progressbar');
+		if(agenda_progress_bar_progressbar) {
+			agenda_progress_bar_progressbar.value = (teller / max_teller) * 100;
+		}
+		const teller_tekst = teller == 1 ? teller 
 				+ " e-mail bericht verzonden. - " + nog_teller + " nog te verzenden." : teller + " e-mail berichten verzonden. - " 
 				+ nog_teller + " nog te verzenden."  ;
+		const agenda_progress_bar_text = document.getElementById('agenda_progress_bar_text');
+		if(agenda_progress_bar_text) {
+			agenda_progress_bar_text.innerHTML = teller_tekst;
+		}
+		const footer_section_B = document.getElementById('footer_section_B');
+		if(footer_section_B) {
+			footer_section_B.innerHTML = "Computerclub FORMAT C: Planning voor " + datum_vergadering + " verzenden: " + teller_tekst;
+		}
 	}
 	
 };

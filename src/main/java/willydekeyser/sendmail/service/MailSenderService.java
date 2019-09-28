@@ -1,5 +1,6 @@
 package willydekeyser.sendmail.service;
 
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
@@ -20,6 +21,7 @@ import org.thymeleaf.context.Context;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 
 import willydekeyser.customproperties.CustomProperties;
+import willydekeyser.loggers.FileLoggers;
 import willydekeyser.model.Leden;
 import willydekeyser.sendmail.model.Mail;
 
@@ -35,7 +37,10 @@ public class MailSenderService {
 		
 	@Autowired
 	private CustomProperties customProperties;
-		
+	
+	@Autowired
+	FileLoggers fileLogger;
+	
 	private Integer mailTeller = 1;
 	private Integer maxMailTeller = 0;
 	
@@ -67,23 +72,30 @@ public class MailSenderService {
         message.setReplyTo("contact@cformatc.be");
         message.setSubject(mail.getSubject());
         message.setText(tekst);
-        mailSender.send(message);
+        //mailSender.send(message);
     }
 
     // Use it to send HTML emails
 	@Async
-    public void sendHTMLMail(Mail mail, List<Leden> ledenlijst, Integer pauze) throws MessagingException, InterruptedException {
+    public void sendAgendaHTMLMail(Mail mail, List<Leden> ledenlijst, Integer pauze) throws MessagingException, InterruptedException {
 
         MimeMessage message = mailSender.createMimeMessage();
         MimeMessageHelper messageHelper = new MimeMessageHelper(message, MimeMessageHelper.MULTIPART_MODE_MIXED_RELATED, StandardCharsets.UTF_8.name());
         messageHelper.addAttachment("logo.gif", new ClassPathResource("static/image/logo.gif"));
-
         maxMailTeller = ledenlijst.size();
-        
         Context context = new Context();
         Integer index = 0;
+        String data = "Planning: " + mail.getDatum_vergadering() + ".\n\n";
+        try {
+			fileLogger.schrijfAgendaToFile(data);
+		} catch (IOException e) {
+			System.err.println("Fout schrijven naar File: " + e.getMessage());
+		}
         for(Leden leden : ledenlijst ) {
-        	
+        	if (leden.getEmailadres() == "" || leden.getEmailadres().isEmpty() || leden.getEmailadres().isBlank()) {
+        		continue;
+        	}
+        	mail.setTo(leden.getEmailadres());
             System.out.println("Zend email... " + leden.getVoornaam() + " " + leden.getFamilienaam() + " " + leden.getEmailadres() + " - " + mail.getTo());
         	context.setVariable("naam", leden.getVoornaam());
         	context.setVariable("titel", "Planning: " + mail.getDatum_vergadering());
@@ -103,18 +115,33 @@ public class MailSenderService {
 		        messageHelper.setReplyTo(new InternetAddress("contact@cformatc.be", "Computerclub Format C"));
 			} catch (UnsupportedEncodingException e) {
 				System.err.println("Zend E-mail error: " + e.getMessage());
+				try {
+					fileLogger.schrijfAgendaToFile("Zend E-mail error: " + e.getMessage() + " - " + leden.getVoornaam() + " " + leden.getFamilienaam() + " " + leden.getEmailadres());
+				} catch (IOException ex) {
+					System.err.println("Fout schrijven naar File: " + ex.getMessage());
+				}
 			}
 	        messageHelper.setSubject(mail.getSubject());
 	        messageHelper.setText(html, true);
-	        mailSender.send(message);
 	        
-	        System.out.println("Sleeping now... " + customProperties.getPauzeAgenda() + " - " + Thread.currentThread().getName());
+	       	//mailSender.send(message);
+	    
+	        if(index == 1) {
+	        	data = html + "\n\n";
+		        try {
+					fileLogger.schrijfAgendaToFile(data);
+				} catch (IOException e) {
+					System.err.println("Fout schrijven naar File: " + e.getMessage());
+				}
+	        }
+	        data = "Agenda " + index + " - " + leden.getVoornaam() + " " + leden.getFamilienaam() + " " + leden.getEmailadres();
+	        try {
+				fileLogger.schrijfAgendaToFile(data);
+			} catch (IOException e) {
+				System.err.println("Fout schrijven naar File: " + e.getMessage());
+			}
     		Thread.sleep(customProperties.getPauzeAgenda() * 1000);
-
-    		System.out.println("E-mail verzonden: " + index);
-    		
         }
         setMailTeller(-1);
-        
     }
 }
