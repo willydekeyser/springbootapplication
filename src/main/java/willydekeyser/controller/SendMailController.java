@@ -1,6 +1,8 @@
 package willydekeyser.controller;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import javax.mail.MessagingException;
@@ -17,6 +19,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import willydekeyser.model.Agenda;
 import willydekeyser.model.Leden;
+import willydekeyser.model.Lidgeld;
 import willydekeyser.sendmail.model.Mail;
 import willydekeyser.sendmail.service.MailSenderService;
 import willydekeyser.service.impl.LedenService;
@@ -35,7 +38,7 @@ public class SendMailController {
 	private String subject = "";
 	private List<Leden> ledenlijst = new ArrayList<Leden>();
 	
-	@PostMapping("/post")
+	@PostMapping("/agendaVersturen")
 	public @ResponseBody String verstuurAgenda(@Validated Agenda agenda) {
 		ledenlijst = ledenService.getAllLedenNamenlijst(agenda.getSoortenLeden());
 		subject = "Agenda voor " + agenda.getDatum_vergadering() + ".";
@@ -43,7 +46,27 @@ public class SendMailController {
 			senderService.setMailTeller(0);
 			senderService.sendAgendaHTMLMail(new Mail(to, subject, agenda.getFreak(), agenda.getFreaktobe(), 
 					agenda.getFreaklesgever(), agenda.getFreaktobelesgever(), 
-					agenda.getInfo(), agenda.getDatum_vergadering(), agenda.getDatum_verzenden()), ledenlijst, 5);
+					agenda.getInfo(), agenda.getDatum_vergadering(), agenda.getDatum_verzenden(), null), ledenlijst);
+		} catch (MessagingException | InterruptedException e) {
+			System.out.println("Fout: " + e.getMessage());
+			return "{\"return\" : \"FOUT\"}";
+		}
+		return "{\"return\" : \"OK\"}";
+	}
+	
+	@PostMapping("/lidgeldMail")
+	public @ResponseBody String verstuurLidgeldMailAgenda(@Validated Lidgeld lidgeld) {
+		Leden lid = ledenService.getLedenById(lidgeld.getLeden().getId());
+		int year = Calendar.getInstance().get(Calendar.YEAR);
+		int nextYear = year + 1;
+		Calendar calendar = Calendar.getInstance();
+		SimpleDateFormat formatter = new SimpleDateFormat("EEEE dd-MMMM-yyyy HH:mm:ss");
+		String datumVerzenden = formatter.format(calendar.getTime());
+		subject = "Lidgeld " + year + " - " + nextYear;
+		try {
+			senderService.setMailTeller(0);
+			senderService.sendLidgeldHTMLMail(new Mail(to, subject, null, null, null, null, 
+					null, null, datumVerzenden, null), lid);
 		} catch (MessagingException | InterruptedException e) {
 			System.out.println("Fout: " + e.getMessage());
 			return "{\"return\" : \"FOUT\"}";

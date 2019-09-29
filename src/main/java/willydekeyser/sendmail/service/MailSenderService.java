@@ -3,7 +3,9 @@ package willydekeyser.sendmail.service;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
+import java.text.NumberFormat;
 import java.util.List;
+import java.util.Locale;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.InternetAddress;
@@ -77,7 +79,7 @@ public class MailSenderService {
 
     // Use it to send HTML emails
 	@Async
-    public void sendAgendaHTMLMail(Mail mail, List<Leden> ledenlijst, Integer pauze) throws MessagingException, InterruptedException {
+    public void sendAgendaHTMLMail(Mail mail, List<Leden> ledenlijst) throws MessagingException, InterruptedException {
 
         MimeMessage message = mailSender.createMimeMessage();
         MimeMessageHelper messageHelper = new MimeMessageHelper(message, MimeMessageHelper.MULTIPART_MODE_MIXED_RELATED, StandardCharsets.UTF_8.name());
@@ -142,6 +144,64 @@ public class MailSenderService {
 			}
     		Thread.sleep(customProperties.getPauzeAgenda() * 1000);
         }
+        setMailTeller(-1);
+    }
+	
+	@Async
+    public void sendLidgeldHTMLMail(Mail mail, Leden lid) throws MessagingException, InterruptedException {
+
+        MimeMessage message = mailSender.createMimeMessage();
+        MimeMessageHelper messageHelper = new MimeMessageHelper(message, MimeMessageHelper.MULTIPART_MODE_MIXED_RELATED, StandardCharsets.UTF_8.name());
+        messageHelper.addAttachment("logo.gif", new ClassPathResource("static/image/logo.gif"));
+        final NumberFormat numberFormat = NumberFormat.getCurrencyInstance(new Locale("nl", "NL"));
+        Context context = new Context();
+        
+    	//mail.setTo(lid.getEmailadres());
+    	mail.setTo("willy.de.keyser@skynet.be");
+    	
+        System.out.println("Zend email... " + lid.getVoornaam() + " " + lid.getFamilienaam() + " " + lid.getEmailadres() + " - " + mail.getTo());
+    	context.setVariable("voornaam", lid.getVoornaam());
+    	context.setVariable("familienaam", lid.getFamilienaam());
+    	context.setVariable("straat", lid.getStraat());
+    	context.setVariable("nr", lid.getNr());
+    	context.setVariable("postnummer", lid.getPostnr());
+    	context.setVariable("gemeente", lid.getGemeente());
+    	context.setVariable("telefoonnummer", lid.getTelefoonnummer());
+    	context.setVariable("gsmnummer", lid.getGsmnummer());
+    	context.setVariable("emailadres", lid.getEmailadres());
+    	context.setVariable("webadres", lid.getWebadres());
+    	context.setVariable("datum_verzenden", mail.getDatum_verzenden());
+    	context.setVariable("lidgeldbedrag", numberFormat.format(customProperties.getLidgeldBedrag()));
+    	context.setVariable("lidgeldperiode", mail.getSubject());
+        String html = templateEngine.process("mail/lidgeld", context);
+        try {
+        	messageHelper.setTo(new InternetAddress(mail.getTo(), lid.getVoornaam() + " " + lid.getFamilienaam()));
+			messageHelper.setFrom(new InternetAddress("cfc.schatbewaarder@cformatc.be", "Computerclub Format C"));
+			//messageHelper.setCc(new InternetAddress("cfc.schatbewaarder@cformatc.be", "Willy De Keyser"));
+	        //messageHelper.setBcc(new InternetAddress("wdkeyser@gmail.com", "Willy De Keyser"));
+	        messageHelper.setReplyTo(new InternetAddress("contact@cformatc.be", "Computerclub Format C"));
+		} catch (UnsupportedEncodingException e) {
+			System.err.println("Zend E-mail error: " + e.getMessage());
+			try {
+				fileLogger.schrijfLidgeldToFile("Zend E-mail error: " + e.getMessage() + " - " + lid.getVoornaam() + " " + lid.getFamilienaam() + " " + lid.getEmailadres());
+			} catch (IOException ex) {
+				System.err.println("Fout schrijven naar File: " + ex.getMessage());
+			}
+		}
+        messageHelper.setSubject(mail.getSubject());
+        messageHelper.setText(html, true);
+        
+       	mailSender.send(message);
+       	
+       	String data = "Lidgeld " + lid.getVoornaam() + " " + lid.getFamilienaam() + " " + lid.getEmailadres() + "\n\n";
+    	data += html + "\n\n";
+        try {
+			fileLogger.schrijfLidgeldToFile(data);
+		} catch (IOException e) {
+			System.err.println("Fout schrijven naar File: " + e.getMessage());
+		}
+		Thread.sleep(customProperties.getPauzeAgenda() * 1000);
+        
         setMailTeller(-1);
     }
 }

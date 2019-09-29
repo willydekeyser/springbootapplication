@@ -50,6 +50,19 @@ public class FileLoggers {
 		writer.newLine();
 		writer.close();
 	}
+	
+	public void schrijfLidgeldToFile(String data) throws IOException {
+		int year = Calendar.getInstance().get(Calendar.YEAR);
+		String fileName = "Lidgelddata" + year + ".log";
+		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true));
+		writer.newLine();
+		writer.append("Datum: " + dateFormat.format(new Date()));
+		writer.newLine();
+		writer.append(data);
+		writer.newLine();
+		writer.close();
+	}
 }
 
 

@@ -1,5 +1,6 @@
 package willydekeyser.customproperties;
 
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
@@ -15,9 +16,10 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 @Scope(value = "singleton")
 public class CustomProperties {
 
-	private static int pauzeAgenda;
+	private static Integer pauzeAgenda;
+	private static BigDecimal lidgeldBedrag;
 	private static String test;
-	private static int een;
+	private static Integer een;
 	private static Boolean isTrue;
 	private static long[] nummers;
 	private static List<Adressen> adressen;
@@ -32,12 +34,20 @@ public class CustomProperties {
 		System.out.println("CustomProperties in PostConstruct: ");
 	}
 	
-	public int getPauzeAgenda() {
+	public Integer getPauzeAgenda() {
 		return pauzeAgenda;
 	}
 	
-	public void setPauzeAgenda(int pauzeAgenda) {
+	public void setPauzeAgenda(Integer pauzeAgenda) {
 		CustomProperties.pauzeAgenda = pauzeAgenda;
+	}
+	
+	public BigDecimal getLidgeldBedrag() {
+		return lidgeldBedrag;
+	}
+	
+	public void setLidgeldBedrag(BigDecimal lidgeldBedrag) {
+		CustomProperties.lidgeldBedrag = lidgeldBedrag;
 	}
 	
 	public String getTest() {
@@ -48,11 +58,11 @@ public class CustomProperties {
 		CustomProperties.test = test;
 	}
 	
-	public int getEen() {
+	public Integer getEen() {
 		return een;
 	}
 	
-	public void setEen(int een) {
+	public void setEen(Integer een) {
 		CustomProperties.een = een;
 	}
 	

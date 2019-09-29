@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head></head>
+<body>
+	<table style="border: 0px;">
+		<tr>
+			<td><img src="cid:logo.gif" height="138" width="316" alt="Logo Computerclub Format C"></td>
+			<td align="center">&nbsp;&nbsp;<h2 style="color:green;">Computerclub FORMAT C</h2></td>
+		</tr>
+		<tr>
+			<td><a href="http://www.cformatc.be">http://www.cformatc.be</a></td>
+			<td>&nbsp;</td>
+		</tr>
+	</table>
+	<p th:text="'Beste ' + ${voornaam} + ','"></p>
+	<p>Deze maand loopt uw lidmaatschap van Computerclub Format C ten einde.<br/>
+	Daarom vragen wij u om uw jaarlijks lidmaatschap te vernieuwen door <span th:text="${lidgeldbedrag}"></span> te storten op de rekening van<br/>
+	'Computerclub Format C'<br/>
+	IBAN: BE44 0354 5723 9045<br/>
+	BIC: GEBABEBB<br/>
+	Met de vermelding '<span th:text="${lidgeldperiode}"></span>'.<br/>
+	U kunt uw lidgeld ook vereffenen met de schatbewaarder op één van de volgende vergaderingen.<br/>
+	Wij hopen u dit jaar terug te mogen begroeten op onze wekelijkse clubvergaderingen, opendeurdag en clubsouper.</p>
+	<p>Met vriendelijke groeten,</p>
+	<p>Schatbewaarder<br>
+	Willy De Keyser<br>
+	<a href='mailto:schatbewaarder@cformatc.be?subject=Computerclub FORMAT C Lidgeld'>schatbewaarder@cformatc.be</a></p>
+	<p>Gegevens:</p>
+	<p><span th:text="${voornaam} + ' ' + ${familienaam}"></span><br/>
+	<span th:text="${straat} + ' ' + ${nr}"></span><br/>
+	<span th:text="${postnummer} + ' ' + ${gemeente}"></span><br/>
+	<span th:text="${telefoonnummer}"></span><br/>
+	<span th:text="${gsmnummer}"></span><br/>
+	<span th:text="${emailadres}"></span><br/>
+	<span th:text="${webadres}"></span></p>
+	<p>&nbsp;</p>
+	<p style="text-align : right; font-size: 10px;">Computerclub Format C<br/>
+		Kring Kristus Koning<br/>
+		Rerum Novarumplein<br/>
+		Gent</p>
+	<p>&nbsp;</p>
+	<p style="font-size: 10px;"><span th:text="${datum_verzenden}"></span></p>	
+</body>
+</html>

@@ -107,7 +107,7 @@ function listener_new_max_lidgeld() {
 };
 
 function listener_email_max_lidgeld() {
-	console.log('E-mail versturen');
+	maxLidgeldEmail(lidgeldId);
 };
 
 function listener_brief_max_lidgeld() {

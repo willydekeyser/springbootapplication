@@ -416,3 +416,113 @@ function showmaxLidgeldModal(show) {
 		lidgeldModal.classList.remove('on');
 	}
 };
+
+/**
+ * 
+ * 
+ * Max lidgeld E-mail versturen
+ * 
+ * 
+ */
+
+function maxLidgeldEmail(id){
+	console.log("New MAX lidgeld E-mail versturen: " + id);
+	const modal = document.querySelector('#editLidgeldModal');
+	if(modal == null){
+		let data = load_HTML('/leden/editLidgeld')
+		.then((data) => {
+			document.getElementById("editLidgeldModalHolder").innerHTML = data;
+			setup_maxLidgeldEmailModal();
+		})
+		.catch((error) => {
+			console.error('FOUT: ' + error);
+		});
+	} else {
+		setup_maxLidgeldEmailModal();
+	};
+};
+
+function setup_maxLidgeldEmailModal() {
+	let naam;
+	let ledenid;
+	let datum;
+	let bedrag;
+	lidgeldModalAchtergrond = document.querySelector('#lidgeldModalAchtergrond');
+	lidgeldModal = document.querySelector('#editLidgeldModal');
+	lidgeldModalForm = document.getElementById('editLidgeldModalForm');
+	document.getElementById('editLidgeld_datum').readOnly = true;
+	document.getElementById('editLidgeld_bedrag').readOnly = true;
+	const actief_row = document.querySelector('tr.active');
+	if (actief_row === undefined || actief_row === null) {
+		document.getElementById('modal-titel').innerHTML = 'Je hebt geen selectie gemaakt!';
+		document.getElementById('modal-titel').classList.add('text-danger');
+		document.getElementById('editLidgeld_save').disabled = true;
+		document.getElementById('editLidgeld_save').style.visibility = 'hidden';
+		document.getElementById('editLidgeld_naam').value = '';
+		document.getElementById('editLidgeld_naam_id').value = '';
+	} else {
+		document.getElementById('modal-titel').innerHTML = 'E-mail versturen';
+		document.getElementById('modal-titel').classList.remove('text-danger');
+		document.getElementById('editLidgeld_save').disabled = false;
+		document.getElementById('editLidgeld_save').style.visibility = 'visible';
+		document.getElementById('editLidgeld_save').innerHTML = 'E-mail versturen';
+		const index = actief_row.rowIndex - 1;
+		const id = lidgeldData[index].id;
+		naam = lidgeldData[index].leden.voornaam + ' ' + lidgeldData[index].leden.familienaam;
+		ledenid = lidgeldData[index].leden.id;
+		datum = lidgeldData[index].datum;
+		bedrag = lidgeldData[index].bedrag;
+		document.getElementById('editLidgeld_id').value = ledenid;
+		document.getElementById('editLidgeld_naam').value = naam;
+		document.getElementById('editLidgeld_naam_id').value = ledenid;
+		document.getElementById('editLidgeld_datum').value = datum;
+		document.getElementById('editLidgeld_bedrag').value = bedrag;
+	};
+	document.getElementById('editLidgeld_datum').focus();
+	window.onkeyup = function (event) {
+		if(event.keyCode == 27) {
+			listener_maxLidgeld_close(event);
+		}
+	};
+	showmaxLidgeldEmailModal(true);
+};
+
+function listener_maxLidgeldEmail_close(event) {
+	event.preventDefault;
+	showmaxLidgeldEmailModal(false);
+};
+
+function listener_maxLidgeldEmail_submit() {
+	event.preventDefault();
+	const formData = new FormData(document.getElementById('editLidgeldModalForm'));
+	const data = post_Form('/mail/lidgeldMail', formData)
+	.then((data) => {
+		showmaxLidgeldEmailModal(false);
+	})
+	.catch((error) => {
+		console.error('FOUT: ' + error);
+	});
+};
+
+function showmaxLidgeldEmailModal(show) {
+	if(show) {
+		document.getElementById('editLidgeldModalForm').addEventListener('submit', listener_maxLidgeldEmail_submit, false);
+		document.querySelector('.closeBtnX').addEventListener('click', listener_maxLidgeldEmail_close, false);
+		document.getElementById('sluiten').addEventListener('click', listener_maxLidgeldEmail_close, false);
+		lidgeldModalAchtergrond.addEventListener('click', listener_maxLidgeldEmail_close, false);
+		lidgeldModalAchtergrond.classList.add('show');
+		lidgeldModal.classList.add('on');
+		lidgeldModalAchtergrond.classList.remove('hide');
+		lidgeldModal.classList.remove('off');
+	} else {
+		document.getElementById('editLidgeldModalForm').reset();
+		document.getElementById('editLidgeldModalForm').removeEventListener('submit', listener_maxLidgeldEmail_submit, false);
+		document.querySelector('.closeBtnX').removeEventListener('click', listener_maxLidgeldEmail_close, false);
+		document.getElementById('sluiten').removeEventListener('click', listener_maxLidgeldEmail_close, false);
+		lidgeldModalAchtergrond.removeEventListener('click', listener_maxLidgeldEmail_close, false);
+		lidgeldModalAchtergrond.classList.add('hide');
+		lidgeldModal.classList.add('off');
+		lidgeldModalAchtergrond.classList.remove('show');
+		lidgeldModal.classList.remove('on');
+	}
+};

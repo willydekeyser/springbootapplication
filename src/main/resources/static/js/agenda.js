@@ -46,7 +46,7 @@ function listener_agenda_submit(event) {
 	document.getElementById('agenda_progress_bar').style.display = 'block';
 	let formData = new FormData(document.getElementById('agendaVersturenForm'));
 	console.log('AGENDA: ' + formData);	
-	let data = post_Form('mail/post', formData)
+	let data = post_Form('mail/agendaVersturen', formData)
 	.then((data) => {
 		console.log('AGENDA: ' + data)
 	})
