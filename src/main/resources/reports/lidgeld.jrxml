@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.9.0.final using JasperReports Library version 6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="lidgeld" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ce84e7a3-ab2f-4c3f-9c1d-f2e9e8dad303">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Heroku"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="Lidnummer" class="java.lang.Integer"/>
+	<parameter name="Bedrag" class="java.lang.String"/>
+	<parameter name="Periode" class="java.lang.String"/>
+	<parameter name="Datum" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT * FROM ledenlijst WHERE ledenlijst_id =  $P{Lidnummer}]]>
+	</queryString>
+	<field name="ledenlijst_id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="ledenlijst_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ledenlijst"/>
+	</field>
+	<field name="soortenledenid" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="soortenledenid"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ledenlijst"/>
+	</field>
+	<field name="voornaam" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="voornaam"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ledenlijst"/>
+	</field>
+	<field name="familienaam" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="familienaam"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ledenlijst"/>
+	</field>
+	<field name="straat" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="straat"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ledenlijst"/>
+	</field>
+	<field name="nr" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nr"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ledenlijst"/>
+	</field>
+	<field name="postnr" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="postnr"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ledenlijst"/>
+	</field>
+	<field name="gemeente" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="gemeente"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ledenlijst"/>
+	</field>
+	<field name="telefoonnummer" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="telefoonnummer"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ledenlijst"/>
+	</field>
+	<field name="gsmnummer" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="gsmnummer"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ledenlijst"/>
+	</field>
+	<field name="emailadres" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="emailadres"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ledenlijst"/>
+	</field>
+	<field name="webadres" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="webadres"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ledenlijst"/>
+	</field>
+	<field name="datumlidgeld" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="datumlidgeld"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ledenlijst"/>
+	</field>
+	<field name="ontvangmail" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.label" value="ontvangmail"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ledenlijst"/>
+	</field>
+	<field name="mailvlag" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.label" value="mailvlag"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ledenlijst"/>
+	</field>
+	<field name="createdby" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="createdby"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ledenlijst"/>
+	</field>
+	<field name="createddate" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="createddate"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ledenlijst"/>
+	</field>
+	<field name="lastmodifiedby" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="lastmodifiedby"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ledenlijst"/>
+	</field>
+	<field name="lastmodifieddate" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="lastmodifieddate"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ledenlijst"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="725" splitType="Stretch">
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-1" x="111" y="597" width="235" height="14" uuid="e946da13-e2ae-4763-8fef-5879e99780ab"/>
+				<textFieldExpression><![CDATA[$F{voornaam} + " " + $F{familienaam}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-2" x="111" y="611" width="235" height="14" uuid="7ee55e60-63e4-4a8b-bea2-cebd0637fb2f"/>
+				<textFieldExpression><![CDATA[$F{straat} + " " + $F{nr}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-3" x="111" y="625" width="235" height="14" uuid="937ecef0-9f9f-4195-99e4-33f8ec1cabc4"/>
+				<textFieldExpression><![CDATA[$F{postnr} + " " + $F{gemeente}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-4" x="111" y="583" width="235" height="14" uuid="784e0b7a-f1d0-4daa-bb43-6d9352bb8b48"/>
+				<textFieldExpression><![CDATA["" + $F{ledenlijst_id}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-5" x="0" y="356" width="527" height="216" uuid="b97c3d29-175e-4cda-853f-9b9f4081b1eb"/>
+				<textFieldExpression><![CDATA["Deze maand loopt uw lidmaatschap van Computerclub Format C ten einde.\n" +
+"Daarom vragen wij u om uw jaarlijks lidmaatschap te vernieuwen door €" +
+$P{Bedrag} + ",00 te storten op de rekening van 'Computerclub Format C' \nIBAN: BE44 0354 5723 9045 \nBIC: GEBABEBB \nmet de vermelding 'Lidgeld " +
+$P{Periode} + "'. " + "U kunt uw lidgeld ook vereffenen met de schatbewaarder op één van de volgende vergaderingen. " +
+"Wil je ook eens je gegevens nakijken onderaan deze brief en eventuele ontbrekende of foute gegevens melden aan het bestuur. \n" +
+"Wij hopen u dit jaar terug te mogen begroeten op onze clubvergaderingen, opendeurdag en ons jaarlijks clubsouper. \n" +
+"\n \n Met vriendelijke groeten,\n \n Schatbewaarder \n Willy De Keyser \n willy.de.keyser@skynet.be"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-6" x="0" y="277" width="145" height="21" uuid="1efcf6b4-f51c-4a59-b167-a8231412dd74"/>
+				<textFieldExpression><![CDATA["Beste " + $F{voornaam} + ","]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-7" x="322" y="244" width="196" height="19" uuid="814c07da-f29b-463b-af5a-bbd4c1905838"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Gent, " + $P{Datum}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-8" x="111" y="677" width="235" height="14" uuid="205b54f6-9e35-491d-b3c1-2ed726cce847">
+					<printWhenExpression><![CDATA[new Boolean(!$F{gsmnummer}.equals("null"))]]></printWhenExpression>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{gsmnummer}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-9" x="111" y="664" width="235" height="14" uuid="c1d934d7-e57b-443f-86e0-c50ab018cf2a">
+					<printWhenExpression><![CDATA[new Boolean(!$F{telefoonnummer}.equals("null"))]]></printWhenExpression>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{telefoonnummer}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-10" x="111" y="691" width="235" height="14" uuid="b619fb0f-539b-4239-9a09-fd0e00825bc8">
+					<printWhenExpression><![CDATA[new Boolean(!$F{emailadres}.equals("null"))]]></printWhenExpression>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{emailadres}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-11" x="111" y="705" width="235" height="14" uuid="e0b8dd95-f4fc-4f11-95b6-8613c79e6a54">
+					<printWhenExpression><![CDATA[new Boolean(!$F{webadres}.equals("null"))]]></printWhenExpression>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{webadres}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-12" x="43" y="177" width="235" height="14" uuid="1ef0512f-09ed-404a-814a-7b82612dba9d"/>
+				<textFieldExpression><![CDATA[$F{voornaam} + " " + $F{familienaam}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-13" x="43" y="191" width="235" height="14" uuid="6c87e29a-e178-41a4-8301-10bff53f72ed"/>
+				<textFieldExpression><![CDATA[$F{straat} + " " + $F{nr}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-14" x="43" y="205" width="235" height="14" uuid="7facff9f-812f-41c8-9832-d78d09762962"/>
+				<textFieldExpression><![CDATA[$F{postnr} + " " + $F{gemeente}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-1" x="0" y="583" width="65" height="14" uuid="da2fa606-cfcf-4e46-b6f6-105d1b2474df"/>
+				<text><![CDATA[Nr.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-2" x="0" y="597" width="65" height="14" uuid="02157234-ce75-4109-912a-25a9888cafa0"/>
+				<text><![CDATA[Naam:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-3" x="0" y="611" width="65" height="14" uuid="a9c1f37a-563a-4389-a18e-769674cb8c8d"/>
+				<text><![CDATA[Adres:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" x="0" y="664" width="101" height="14" uuid="90f66299-206b-4ff5-9b5f-c4638e8e3ee3"/>
+				<text><![CDATA[Tel nummer:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-5" x="0" y="677" width="101" height="14" uuid="3f00e177-128b-4642-9957-653eec142aad"/>
+				<text><![CDATA[GSM:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-6" x="0" y="691" width="101" height="14" uuid="055480d7-2ff7-4791-a991-24fbf75b27b0"/>
+				<text><![CDATA[E-mailadres:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-7" x="0" y="705" width="101" height="14" uuid="54b909c5-e7c7-4c0f-8196-615363957a18"/>
+				<text><![CDATA[Website:]]></text>
+			</staticText>
+			<image scaleImage="Clip">
+				<reportElement x="0" y="0" width="322" height="137" uuid="8327613a-8ebb-4332-9fb5-bce7ebf35ca8"/>
+				<imageExpression><![CDATA["D:\\Computerclub Format C\\formatc.gif"]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
