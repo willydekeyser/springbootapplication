@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.10.0.final using JasperReports Library version 6.10.0-unknown  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ledenlijstlidgeld" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8730f577-9da8-44ef-85d1-fae379f9367b">
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="102" splitType="Stretch">
+			<image>
+				<reportElement x="20" y="0" width="50" height="50" uuid="316644c4-de74-4c17-8f0d-d8f83956049c"/>
+				<imageExpression><![CDATA[""]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="270" y="23" width="100" height="30" uuid="e99c14d2-3a4a-4407-99a0-99fce219f6cc"/>
+				<text><![CDATA[Static Text]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="59" y="64" width="100" height="30" uuid="97ae1e1c-ac07-401e-98f2-d8d61e2506c6"/>
+				<text><![CDATA[Static Text]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="222" y="72" width="100" height="30" uuid="6a70be48-e71f-461c-a45d-95fa20d9e155"/>
+				<text><![CDATA[Static Text]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="59" y="17" width="100" height="30" uuid="6aff4762-71cf-4f95-9a22-15b0ba102b34"/>
+				<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="264" y="24" width="100" height="30" uuid="24031e87-c87d-43d8-b76a-2a8e075ed765"/>
+				<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="466" y="9" width="100" height="30" uuid="2588712a-111c-4935-bdcc-b13e9f4843de"/>
+				<text><![CDATA[Static Text]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

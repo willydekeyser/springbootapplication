@@ -23,6 +23,7 @@ import willydekeyser.customproperties.CustomProperties;
 import willydekeyser.model.Leden;
 import willydekeyser.rapporten.JasperRapportenService;
 import willydekeyser.service.impl.LedenService;
+import willydekeyser.service.impl.RubriekService;
 import willydekeyser.service.impl.SoortenLedenService;
 
 @Controller
@@ -37,6 +38,9 @@ public class RapportenController {
 	
 	@Autowired
 	private SoortenLedenService soortenledenService;
+	
+	@Autowired
+	private RubriekService rubriekservice;
 	
 	@Autowired
 	private JasperRapportenService jasperRapportenService;
@@ -72,6 +76,16 @@ public class RapportenController {
 		Map<String, Object> parameters = new HashMap<>();
 		parameters.put("IMAGE_DIR", "static/image/");
 		String file = "/reports/soortenleden.jrxml";
+		jasperRapportenService.JasperRapporten(response, parameters, dataSource, file);
+	}
+	
+	@GetMapping("/rubrieken")
+	public void RubriekenRapport(HttpServletResponse response) {
+		response.setContentType("text/html");
+		JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(rubriekservice.getAllRubriek());
+		Map<String, Object> parameters = new HashMap<>();
+		parameters.put("IMAGE_DIR", "static/image/");
+		String file = "/reports/rubrieken.jrxml";
 		jasperRapportenService.JasperRapporten(response, parameters, dataSource, file);
 	}
 }
