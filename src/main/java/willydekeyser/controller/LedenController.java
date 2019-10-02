@@ -120,7 +120,7 @@ public class LedenController {
 		soortenleden = soortenledenservice.getAllSoortenLeden();
 		Integer firstId = 0;
 		if (!leden.isEmpty()) {
-			firstId = leden.get(0).getId();
+			firstId = leden.get(0).getLedenlijst_id();
 			System.out.println("Leden is niet leeg: " + leden.toString());
 		} else {
 			System.out.println("Leden is leeg: " + leden.toString());
@@ -205,7 +205,7 @@ public class LedenController {
 		leden = ledenservice.getAllLedenNamenlijst(soort);
 		String items = "";
 		for(Leden lid : leden) {
-			String item = "{\"id\":" + lid.getId() + ",\"naam\":\"" + lid.getVoornaam() + " " + lid.getFamilienaam() + "\"}";
+			String item = "{\"id\":" + lid.getLedenlijst_id() + ",\"naam\":\"" + lid.getVoornaam() + " " + lid.getFamilienaam() + "\"}";
 			items = items + item + ",";
 		};
 		String response = "[" + items.substring(0, items.length() - 1) + "]";
@@ -229,7 +229,7 @@ public class LedenController {
 		List<Leden> lijst = ledenservice.getAllLeden();
 		String link = "<h1>Ledenlijst</h1>";
 		for (Leden leden : lijst) {
-			link = link + "<a href='/leden/restcontroller/ledenbyid/" + leden.getId() + "'>" + leden.getVoornaam() + " " + leden.getFamilienaam() + "</a><br/>";
+			link = link + "<a href='/leden/restcontroller/ledenbyid/" + leden.getLedenlijst_id() + "'>" + leden.getVoornaam() + " " + leden.getFamilienaam() + "</a><br/>";
 		}
 		return link;
 	}
@@ -251,9 +251,9 @@ public class LedenController {
 	}
 	
 	@PutMapping(path="/save_updateLid")
-	public @ResponseBody Leden save_updateLid(@Validated  Leden lid, Boolean soort, Boolean naam) {
+	public @ResponseBody Leden save_updateLid(@Validated  Leden lid) {
 		ledenservice.updateLeden(lid);
-		this.lid = ledenservice.getLedenById(lid.getId());
+		this.lid = ledenservice.getLedenById(lid.getLedenlijst_id());
 		return this.lid;
 	}
 	

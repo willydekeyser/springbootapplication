@@ -80,7 +80,7 @@ public class LidgeldDAO implements ILidgeldDAO {
 			@Override
 			public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
 				final PreparedStatement ps = connection.prepareStatement(sql_newLidgeld, Statement.RETURN_GENERATED_KEYS);
-				ps.setInt(1, lidgeld.getLeden().getId());
+				ps.setInt(1, lidgeld.getLeden().getLedenlijst_id());
 				ps.setDate(2, java.sql.Date.valueOf(lidgeld.getDatum()));
 				ps.setBigDecimal(3, lidgeld.getBedrag());
 				ps.setString(4, authentication.getName());
@@ -103,7 +103,7 @@ public class LidgeldDAO implements ILidgeldDAO {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		Calendar currenttime = Calendar.getInstance();   
 		Date date = new Date((currenttime.getTime()).getTime());
-		int key = jdbcTemplate.update(sql_updateLidgeld,lidgeld.getLeden().getId(), lidgeld.getDatum(), lidgeld.getBedrag(), authentication.getName(), date, lidgeld.getId());
+		int key = jdbcTemplate.update(sql_updateLidgeld,lidgeld.getLeden().getLedenlijst_id(), lidgeld.getDatum(), lidgeld.getBedrag(), authentication.getName(), date, lidgeld.getId());
 		if (key == 1) return lidgeld;
 		return null;
 	}

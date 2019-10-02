@@ -43,7 +43,7 @@ function setup_newLidgeldModal() {
 	document.getElementById('editLidgeld_save').innerHTML = 'Save lidgeld';
 	document.getElementById('editLidgeld_id').value = '';
 	document.getElementById('editLidgeld_naam').value = leden_gegevens.voornaam + ' ' + leden_gegevens.familienaam;
-	document.getElementById('editLidgeld_naam_id').value = leden_gegevens.id;
+	document.getElementById('editLidgeld_naam_id').value = leden_gegevens.ledenlijst_id;
 	document.getElementById('editLidgeld_datum').readOnly = false;
 	document.getElementById('editLidgeld_bedrag').readOnly = false;
 	document.getElementById('editLidgeld_datum').focus();
@@ -148,12 +148,12 @@ function setup_updateLidgeldModal() {
 		document.getElementById('editLidgeld_datum').readOnly = false;
 		document.getElementById('editLidgeld_bedrag').readOnly = false
 	};
-	if(leden_gegevens.voornaam === undefined || leden_gegevens.familienaam === undefined || leden_gegevens.id === undefined) {
+	if(leden_gegevens.voornaam === undefined || leden_gegevens.familienaam === undefined || leden_gegevens.ledenlijst_id === undefined) {
 		document.getElementById('editLidgeld_naam').value = '';
 		document.getElementById('editLidgeld_naam_id').value = '';
 	} else {
 		document.getElementById('editLidgeld_naam').value = leden_gegevens.voornaam + ' ' + leden_gegevens.familienaam;
-		document.getElementById('editLidgeld_naam_id').value = leden_gegevens.id;
+		document.getElementById('editLidgeld_naam_id').value = leden_gegevens.ledenlijst_id;
 	}
 
 	
@@ -257,7 +257,7 @@ function setup_deleteLidgeldModal() {
 	};
 	document.getElementById('modal-titel').classList.add('text-danger');
 	document.getElementById('editLidgeld_naam').value = leden_gegevens.voornaam + ' ' + leden_gegevens.familienaam;
-	document.getElementById('editLidgeld_naam_id').value = leden_gegevens.id;
+	document.getElementById('editLidgeld_naam_id').value = leden_gegevens.ledenlijst_id;
 	document.getElementById('editLidgeld_datum').readOnly = false;
 	document.getElementById('editLidgeld_bedrag').readOnly = true;
 	document.getElementById('editLidgeld_id').focus();
@@ -359,7 +359,7 @@ function setup_maxLidgeldModal() {
 		const index = actief_row.rowIndex - 1;
 		const id = lidgeldData[index].id;
 		naam = lidgeldData[index].leden.voornaam + ' ' + lidgeldData[index].leden.familienaam;
-		ledenid = lidgeldData[index].leden.id;
+		ledenid = lidgeldData[index].leden.ledenlijst_id;
 		document.getElementById('editLidgeld_id').value = ledenid;
 		document.getElementById('editLidgeld_naam').value = naam;
 		document.getElementById('editLidgeld_naam_id').value = ledenid;
@@ -469,7 +469,7 @@ function setup_maxLidgeldEmailModal() {
 		const index = actief_row.rowIndex - 1;
 		const id = lidgeldData[index].id;
 		naam = lidgeldData[index].leden.voornaam + ' ' + lidgeldData[index].leden.familienaam;
-		ledenid = lidgeldData[index].leden.id;
+		ledenid = lidgeldData[index].leden.ledenlijst_id;
 		datum = lidgeldData[index].datum;
 		bedrag = lidgeldData[index].bedrag;
 		document.getElementById('editLidgeld_id').value = ledenid;

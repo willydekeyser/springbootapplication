@@ -98,19 +98,19 @@ public class LidgeldController {
 	@PostMapping("/save_newLidgeld")
 	public @ResponseBody List<Lidgeld> save_newLidgeld(@Validated  Lidgeld lidgeld) {
 		lidgeldservice.addLidgeld(lidgeld);
-		return lidgeldservice.getAllLidgeldByLid(lidgeld.getLeden().getId());
+		return lidgeldservice.getAllLidgeldByLid(lidgeld.getLeden().getLedenlijst_id());
 	}
 	
 	@PutMapping("/save_updateLidgeld")
 	public @ResponseBody List<Lidgeld> save_updateLidgeld(@Validated  Lidgeld lidgeld) {
 		lidgeldservice.updateLidgeld(lidgeld);
-		return lidgeldservice.getAllLidgeldByLid(lidgeld.getLeden().getId());
+		return lidgeldservice.getAllLidgeldByLid(lidgeld.getLeden().getLedenlijst_id());
 	}
 	
 	@DeleteMapping("/save_deleteLidgeld")
 	public @ResponseBody List<Lidgeld> save_deleteLidgeld(@Validated  Lidgeld lidgeld) {
 		lidgeldservice.deleteLidgeld(lidgeld.getId());
-		return lidgeldservice.getAllLidgeldByLid(lidgeld.getLeden().getId());
+		return lidgeldservice.getAllLidgeldByLid(lidgeld.getLeden().getLedenlijst_id());
 	}
 	
 }

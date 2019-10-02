@@ -26,7 +26,7 @@ public class LedenLidgeldExtractor implements ResultSetExtractor<List<Leden>>{
 			if(leden == null) {
 				leden = new Leden();
 				lidgeldlijst = new ArrayList<>();
-				leden.setId(ledenId);
+				leden.setLedenlijst_id(ledenId);
 				leden.setVoornaam(rs.getString("voornaam"));
 				leden.setFamilienaam(rs.getString("familienaam"));
 				leden.setStraat(rs.getString("straat"));
@@ -38,9 +38,9 @@ public class LedenLidgeldExtractor implements ResultSetExtractor<List<Leden>>{
 				leden.setEmailadres(rs.getString("emailadres"));
 				leden.setWebadres(rs.getString("webadres"));
 				leden.setDatumlidgeld(rs.getDate("datumlidgeld").toLocalDate());
-				leden.setSoortenledenId(rs.getInt("soortenledenid"));
-				leden.setOntvangMail(rs.getBoolean("ontvangmail"));
-				leden.setMailVlag(rs.getBoolean("mailvlag"));
+				leden.setSoortenledenid(rs.getInt("soortenledenid"));
+				leden.setOntvangmail(rs.getBoolean("ontvangmail"));
+				leden.setMailvlag(rs.getBoolean("mailvlag"));
 				map.put(ledenId, leden);	
 			}
 			int lidgeldId = rs.getInt("lidgeld_id");

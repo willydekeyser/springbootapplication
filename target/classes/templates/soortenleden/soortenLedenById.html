@@ -17,7 +17,7 @@
 			<th class="kop">Inschrijving</th>
 		</tr>
 		<tr class="test" th:each="leden : ${soortenLeden.ledenlijsten}">
-			<td class="test" th:text="${leden.id}"></td>
+			<td class="test" th:text="${leden.ledenlijst_id}"></td>
 			<td class="test" th:text="${leden.voornaam} + ' ' + ${leden.familienaam}"></td>
 			<td class="test" th:text="${leden.straat} + ' ' + ${leden.nr} + ' - ' + ${leden.postnr} + ' ' + ${leden.gemeente}"></td>
 			<td class="test right" th:text="${#temporals.format(leden.datumlidgeld, 'dd-MM-yyyy')}"></td>

@@ -5,7 +5,7 @@
 <div th:replace="fragments/header :: header"></div>
 <div th:fragment="leden_tabel_byid" class="leden_tabel">
 	<div class="leden_tabel_gegevens">
-	<h2 th:text="'Lid: ' + ${leden.id}">Lid:</h2>
+	<h2 th:text="'Lid: ' + ${leden.ledenlijst_id}">Lid:</h2>
     <p th:text="'Naam: ' + ${leden.voornaam + ' ' + leden.familienaam}"></p>
     <p th:text="'Adres: ' + ${leden.straat + ' ' + leden.nr}"></p>
     <p th:text="'Gemeente: ' + ${leden.postnr + ' ' + leden.gemeente}"></p>
@@ -15,8 +15,8 @@
     <p th:text="'Website: ' + ${leden.webadres}"></p>
     <p th:text="'Datum inschrijving: ' + ${#temporals.format(leden.datumlidgeld, 'dd-MM-yyyy')}"></p>
     <p th:text="'Soort lid: ' + ${leden.soortenleden.soortenleden}"></p>
-    <p>Ontvang mail: <input type="checkbox" onclick="return false;" th:checked="${leden.ontvangMail}"/></p>
-    <p>Mail vlag: <input type="checkbox" onclick="return false;" th:checked="${leden.mailVlag}"/></p>
+    <p>Ontvang mail: <input type="checkbox" onclick="return false;" th:checked="${leden.ontvangmail}"/></p>
+    <p>Mail vlag: <input type="checkbox" onclick="return false;" th:checked="${leden.mailvlag}"/></p>
   	</div>
   	<div class="leden_tabel_lidgeld">
   	<h2>Lidgeld:</h2>

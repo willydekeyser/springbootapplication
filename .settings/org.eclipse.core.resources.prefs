@@ -3,5 +3,7 @@ encoding//src/main/java=UTF-8
 encoding//src/main/resources=UTF-8
 encoding//src/main/resources/reports/ledenlijst.jrxml=UTF-8
 encoding//src/main/resources/reports/lidgeld.jrxml=UTF-8
+encoding//src/main/resources/reports/soortenleden.jrxml=UTF-8
+encoding//src/main/resources/reports/testRapport.jrxml=UTF-8
 encoding//src/test/java=UTF-8
 encoding/<project>=UTF-8

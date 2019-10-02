@@ -145,8 +145,8 @@ public class LedenDAO implements ILedenDAO {
 				ps.setString(10, leden.getWebadres());
 				ps.setDate(11, java.sql.Date.valueOf(leden.getDatumlidgeld()));
 				ps.setInt(12, leden.getSoortenleden().getId());
-				ps.setBoolean(13, leden.isOntvangMail());
-				ps.setBoolean(14, leden.isMailVlag());
+				ps.setBoolean(13, leden.isOntvangmail());
+				ps.setBoolean(14, leden.isMailvlag());
 				ps.setString(15, authentication.getName());
 			    ps.setDate(16, date);
 				return ps;
@@ -154,9 +154,9 @@ public class LedenDAO implements ILedenDAO {
 		}, key);
 		
 		if (key.getKeys().size() > 1) {
-			leden.setId(((Number) key.getKeys().get("ledenlijst_id")).intValue());
+			leden.setLedenlijst_id(((Number) key.getKeys().get("ledenlijst_id")).intValue());
 	    } else {
-	    	leden.setId(key.getKey().intValue());
+	    	leden.setLedenlijst_id(key.getKey().intValue());
 	    }
 		
 		return leden;
@@ -169,8 +169,8 @@ public class LedenDAO implements ILedenDAO {
 		Date date = new Date((currenttime.getTime()).getTime());
 		jdbcTemplate.update(sql_updateLeden, leden.getVoornaam(), leden.getFamilienaam(), leden.getStraat(), leden.getNr(), 
 				leden.getPostnr(), leden.getGemeente(),leden.getTelefoonnummer(), leden.getGsmnummer(), leden.getEmailadres(), 
-				leden.getWebadres(), leden.getDatumlidgeld(), leden.getSoortenleden().getId(), leden.isOntvangMail(), 
-				leden.isMailVlag(), authentication.getName(), date, leden.getId());
+				leden.getWebadres(), leden.getDatumlidgeld(), leden.getSoortenleden().getId(), leden.isOntvangmail(), 
+				leden.isMailvlag(), authentication.getName(), date, leden.getLedenlijst_id());
 		return leden;
 	}
 

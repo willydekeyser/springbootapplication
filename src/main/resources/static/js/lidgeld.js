@@ -112,6 +112,13 @@ function listener_email_max_lidgeld() {
 
 function listener_brief_max_lidgeld() {
 	console.log('Brief afprinten');
+	const actief_row = document.querySelector('tr.active');
+	if (actief_row === undefined || actief_row === null) {
+		maxLidgeldEmail(lidgeldId);
+	}
+	const index = actief_row.rowIndex - 1;
+	const ledenid = lidgeldData[index].leden.ledenlijst_id;	
+	window.open("rapporten/lidgeldBrief/" + ledenid);
 };
 
 function listener_rapport_max_lidgeld() {

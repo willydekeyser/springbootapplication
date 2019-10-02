@@ -56,9 +56,9 @@ public class SendMailController {
 	
 	@PostMapping("/lidgeldMail")
 	public @ResponseBody String verstuurLidgeldMailAgenda(@Validated Lidgeld lidgeld) {
-		Leden lid = ledenService.getLedenById(lidgeld.getLeden().getId());
-		int year = Calendar.getInstance().get(Calendar.YEAR);
-		int nextYear = year + 1;
+		Leden lid = ledenService.getLedenById(lidgeld.getLeden().getLedenlijst_id());
+		Integer year = Calendar.getInstance().get(Calendar.YEAR);
+		Integer nextYear = year + 1;
 		Calendar calendar = Calendar.getInstance();
 		SimpleDateFormat formatter = new SimpleDateFormat("EEEE dd-MMMM-yyyy HH:mm:ss");
 		String datumVerzenden = formatter.format(calendar.getTime());

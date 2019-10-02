@@ -14,7 +14,7 @@ let aantal_leden = 0;
 let change_soort = false;
 let change_naam = false;
 let leden_gegevens = {
-	id : 0,
+	ledenlijst_id : 0,
 	voornaam : '',
 	familienaam: '',
 	Straat : '', 
@@ -23,8 +23,8 @@ let leden_gegevens = {
 	gemeente : '',
 	telefoonnummer : '',
 	gsmnummer : '',
-	ontvangMail : false,
-	mailVlag : false,
+	ontvangmail : false,
+	mailvlag : false,
 	soortenleden : {
 		id : 0,
 		soortenleden : ''
@@ -123,8 +123,8 @@ function leden_namenlijst_laden(data) {
 };
 
 function leden_gegevens_laden(data) {
-	document.getElementById('main_id').innerhtml = 'Lid: ' + data.id;
-	document.getElementById('id').innerHTML = data.id;
+	document.getElementById('main_id').innerHTML = 'Lid: ' + data.ledenlijst_id;
+	document.getElementById('id').innerHTML = data.ledenlijst_id;
 	document.getElementById('naam').innerHTML = data.voornaam + ' ' + data.familienaam;
 	document.getElementById('adres').innerHTML = data.straat + ' ' + data.nr;
 	document.getElementById('gemeente').innerHTML = data.postnr + ' ' + data.gemeente;
@@ -134,31 +134,31 @@ function leden_gegevens_laden(data) {
 	document.getElementById('website').innerHTML ='<a href="' + data.webadres + '" target="_blank">' + data.webadres + '</a>';
 	document.getElementById('inschrijving').innerHTML = getFormattedDate(data.datumlidgeld);
 	document.getElementById('soort').innerHTML = data.soortenleden.soortenleden;
-	document.getElementById('ontvangmail').checked = data.ontvangMail;
-	document.getElementById('mailvlag').checked = data.mailVlag;
+	document.getElementById('ontvangmail').checked = data.ontvangmail;
+	document.getElementById('mailvlag').checked = data.mailvlag;
 	const leden_newlid = document.getElementById('leden_newlid');
 	if(leden_newlid) {
 		leden_newlid.setAttribute('onclick', 'newLid();');
 	}
 	const leden_updatelid = document.getElementById('leden_updatelid');
 	if(leden_updatelid) {
-		leden_updatelid.setAttribute('onclick', 'updateLid(' + data.id + ');');
+		leden_updatelid.setAttribute('onclick', 'updateLid(' + data.ledenlijst_id + ');');
 	}
 	const leden_deletelid = document.getElementById('leden_deletelid');
 	if(leden_deletelid) {
-		leden_deletelid.setAttribute('onclick', 'deleteLid(' + data.id + ');');
+		leden_deletelid.setAttribute('onclick', 'deleteLid(' + data.ledenlijst_id + ');');
 	}
 	const lidgeld_newlidgeld = document.getElementById('lidgeld_newlidgeld');
 	if(lidgeld_newlidgeld) {
-		lidgeld_newlidgeld.setAttribute('onclick', 'newLidgeld(' + data.id + ');');
+		lidgeld_newlidgeld.setAttribute('onclick', 'newLidgeld(' + data.ledenlijst_id + ');');
 	}
 	const lidgeld_updatelidgeld = document.getElementById('lidgeld_updatelidgeld');
 	if(lidgeld_updatelidgeld) {
-		lidgeld_updatelidgeld.setAttribute('onclick', 'updateLidgeld(' + data.id + ');');
+		lidgeld_updatelidgeld.setAttribute('onclick', 'updateLidgeld(' + data.ledenlijst_id + ');');
 	}
 	const lidgeld_deletelidgeld = document.getElementById('lidgeld_deletelidgeld');
 	if(lidgeld_deletelidgeld) {
-		lidgeld_deletelidgeld.setAttribute('onclick', 'deleteLidgeld(' + data.id + ');');
+		lidgeld_deletelidgeld.setAttribute('onclick', 'deleteLidgeld(' + data.ledenlijst_id + ');');
 	}
 };
 

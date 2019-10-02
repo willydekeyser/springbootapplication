@@ -30,7 +30,7 @@ public class SoortenLedenByIdLedenExtractor implements ResultSetExtractor<Soorte
 			int ledenId = rs.getInt("ledenlijst_id");
 			if (ledenId > 0) {
 				Leden leden = new Leden();
-				leden.setId(ledenId);
+				leden.setLedenlijst_id(ledenId);
 				leden.setVoornaam(rs.getString("voornaam"));
 				leden.setFamilienaam(rs.getString("familienaam"));
 				leden.setStraat(rs.getString("straat"));
@@ -42,12 +42,12 @@ public class SoortenLedenByIdLedenExtractor implements ResultSetExtractor<Soorte
 				leden.setEmailadres(rs.getString("emailadres"));
 				leden.setWebadres(rs.getString("webadres"));
 				leden.setDatumlidgeld(rs.getDate("datumlidgeld").toLocalDate());
-				leden.setSoortenledenId(rs.getInt("soortenleden_id"));
+				leden.setSoortenledenid(rs.getInt("soortenleden_id"));
 				leden.setSoortenleden(new SoortenLeden(rs.getInt("soortenleden_id"), rs.getString("soortenleden")));
-				leden.setOntvangMail(rs.getBoolean("ontvangmail"));
-				leden.setMailVlag(rs.getBoolean("mailvlag"));
+				leden.setOntvangmail(rs.getBoolean("ontvangmail"));
+				leden.setMailvlag(rs.getBoolean("mailvlag"));
 				ledenlijst.add(leden);
-				soortenLeden.setLedenlijsten(ledenlijst);
+				soortenLeden.setLeden(ledenlijst);
 			}
 		}
 		return soortenLeden;

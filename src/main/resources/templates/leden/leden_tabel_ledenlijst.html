@@ -14,13 +14,13 @@
 			<th class="kop">Soort</th>
 			<th class="kop"> </th>
 		</tr>
-		<tr th:id="'ledenTabel' + ${leden.id}" class="test" th:each="leden : ${leden}">
+		<tr th:id="'ledenTabel' + ${leden.ledenlijst_id}" class="test" th:each="leden : ${leden}">
 			<td style="width: 15px" class="test"> </td>
-			<td style="width: 50px" id="leden_tabel_ledenlijst" th:id="${leden.id}" class="test" th:onclick="'ledenbyid(' + ${leden.Id} +')'" th:text="${leden.id}"></td>
-			<td class="test" th:onclick="'ledenbyid(' + ${leden.Id} +')'" th:text="${leden.voornaam} + ' ' + ${leden.familienaam}"></td>
-			<td class="test" th:onclick="'ledenbyid(' + ${leden.Id} +')'" th:text="${leden.straat} + ' ' + ${leden.nr} + ' - ' + ${leden.postnr} + ' ' + ${leden.gemeente}"></td>
-			<td style="width: 100px" class="test right" th:onclick="'ledenbyid(' + ${leden.Id} +')'" th:text="${#temporals.format(leden.datumlidgeld, 'dd-MM-yyyy')}"></td>
-			<td style="width: 100px" class="test" th:onclick="'ledenbyid(' + ${leden.Id} +')'" th:text="${leden.soortenleden.soortenleden}"></td>
+			<td style="width: 50px" id="leden_tabel_ledenlijst" th:id="${leden.ledenlijst_id}" class="test" th:onclick="'ledenbyid(' + ${leden.ledenlijst_id} +')'" th:text="${leden.ledenlijst_id}"></td>
+			<td class="test" th:onclick="'ledenbyid(' + ${leden.ledenlijst_id} +')'" th:text="${leden.voornaam} + ' ' + ${leden.familienaam}"></td>
+			<td class="test" th:onclick="'ledenbyid(' + ${leden.ledenlijst_id} +')'" th:text="${leden.straat} + ' ' + ${leden.nr} + ' - ' + ${leden.postnr} + ' ' + ${leden.gemeente}"></td>
+			<td style="width: 100px" class="test right" th:onclick="'ledenbyid(' + ${leden.ledenlijst_id} +')'" th:text="${#temporals.format(leden.datumlidgeld, 'dd-MM-yyyy')}"></td>
+			<td style="width: 100px" class="test" th:onclick="'ledenbyid(' + ${leden.ledenlijst_id} +')'" th:text="${leden.soortenleden.soortenleden}"></td>
 			<td style="width: 25px" class="test"> </td>
 		</tr>
 	</table>

@@ -3,6 +3,9 @@ package willydekeyser.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import lombok.Data;
+
+@Data
 public class SoortenLeden {
 
 	private Integer id;
@@ -23,29 +26,6 @@ public class SoortenLeden {
 		this.id = id;
 		this.soortenleden = soortenleden;
 		this.leden = leden;
-	}
-
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
-	public String getSoortenleden() {
-		return soortenleden;
-	}
-	public void setSoortenleden(String soortenleden) {
-		this.soortenleden = soortenleden;
-	}
-	public List<Leden> getLedenlijsten() {
-		return leden;
-	}
-	public void setLedenlijsten(List<Leden> ledenlijsten) {
-		this.leden = ledenlijsten;
-	}
-	@Override
-	public String toString() {
-		return "SoortenLeden [id=" + id + ", soortenleden=" + soortenleden + ", ledenlijsten=" + leden + "]";
 	}
     
 }
