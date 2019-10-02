@@ -23,6 +23,7 @@ import willydekeyser.customproperties.CustomProperties;
 import willydekeyser.model.Leden;
 import willydekeyser.rapporten.JasperRapportenService;
 import willydekeyser.service.impl.LedenService;
+import willydekeyser.service.impl.LidgeldService;
 import willydekeyser.service.impl.RubriekService;
 import willydekeyser.service.impl.SoortenLedenService;
 
@@ -37,10 +38,13 @@ public class RapportenController {
 	private LedenService ledenService;
 	
 	@Autowired
+	private LidgeldService lidgeldService;
+	
+	@Autowired
 	private SoortenLedenService soortenledenService;
 	
 	@Autowired
-	private RubriekService rubriekservice;
+	private RubriekService rubriekService;
 	
 	@Autowired
 	private JasperRapportenService jasperRapportenService;
@@ -82,10 +86,20 @@ public class RapportenController {
 	@GetMapping("/rubrieken")
 	public void RubriekenRapport(HttpServletResponse response) {
 		response.setContentType("text/html");
-		JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(rubriekservice.getAllRubriek());
+		JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(rubriekService.getAllRubriek());
 		Map<String, Object> parameters = new HashMap<>();
 		parameters.put("IMAGE_DIR", "static/image/");
 		String file = "/reports/rubrieken.jrxml";
+		jasperRapportenService.JasperRapporten(response, parameters, dataSource, file);
+	}
+	
+	@GetMapping("/ledenlidgeld")
+	public void LedenLidgeld(HttpServletResponse response) {
+		response.setContentType("text/html");
+		JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(lidgeldService.getMAXLidgeldLeden());
+		Map<String, Object> parameters = new HashMap<>();
+		parameters.put("IMAGE_DIR", "static/image/");
+		String file = "/reports/ledenlijstlidgeld.jrxml";
 		jasperRapportenService.JasperRapporten(response, parameters, dataSource, file);
 	}
 }

@@ -9,9 +9,13 @@ import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Leden {
 
 	private Integer ledenlijst_id;
@@ -36,11 +40,7 @@ public class Leden {
     private SoortenLeden soortenleden;
     private Integer soortenledenid;
     private List<Lidgeld> lidgelden = new ArrayList<>();
-    
-    public Leden() {
-		
-	}
-    
+ 
     public Leden(Integer id, String voornaam, String familienaam, String straat, String nr, String postnr,
 			String gemeente, String telefoonnummer, String gsmnummer, String emailadres, String webadres,
 			LocalDate datumlidgeld, Integer soortenledenid, boolean ontvangmail, boolean mailvlag) {

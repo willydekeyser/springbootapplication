@@ -3,16 +3,20 @@ package willydekeyser.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class SoortLeden {
 	
 	private Integer id;
     private String soortenleden;
     private Boolean actief;
-    
     private List<SoortLeden> soort = new ArrayList<>();
 	
-    public SoortLeden() {
-	}
 
 	public SoortLeden(Integer id, String soortenleden, Boolean actief) {
 		this.id = id;
@@ -91,41 +95,4 @@ public class SoortLeden {
 		return soort;
 	}
 	
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public String getSoortenleden() {
-		return soortenleden;
-	}
-
-	public void setSoortenleden(String soortenleden) {
-		this.soortenleden = soortenleden;
-	}
-
-	public Boolean getActief() {
-		return actief;
-	}
-
-	public void setActief(Boolean actief) {
-		this.actief = actief;
-	}
-
-	public List<SoortLeden> getSoort() {
-		return soort;
-	}
-
-	public void setSoort(List<SoortLeden> soort) {
-		this.soort = soort;
-	}
-
-	@Override
-	public String toString() {
-		return "SoortLeden [id=" + id + ", soortenleden=" + soortenleden + ", actief=" + actief + "]";
-	}
-    
 }

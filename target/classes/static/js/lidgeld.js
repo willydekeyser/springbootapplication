@@ -123,6 +123,7 @@ function listener_brief_max_lidgeld() {
 
 function listener_rapport_max_lidgeld() {
 	console.log('Rapport opmaken');
+	window.open("rapporten/ledenlidgeld/");
 };
 
 
