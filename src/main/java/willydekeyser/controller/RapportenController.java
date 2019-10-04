@@ -121,4 +121,20 @@ public class RapportenController {
 		String file = "/reports/leden.jrxml";
 		jasperRapportenService.JasperRapporten(response, parameters, dataSource, file);
 	}
+	
+	@GetMapping("/controleblad")
+	public void Controleblad(HttpServletResponse response) {
+		response.setContentType("text/html");
+		JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(ledenService.getAllLedenNamenlijst(1));
+		Map<String, Object> parameters = new HashMap<>();
+		parameters.put("IMAGE_DIR", "static/image/");
+		parameters.put("Titel", "oktober 2019");
+		parameters.put("Week1", "02/10");
+		parameters.put("Week2", "09/10");
+		parameters.put("Week3", "16/10");
+		parameters.put("Week4", "23/10");
+		parameters.put("Week5", "30/10");
+		String file = "/reports/controleblad.jrxml";
+		jasperRapportenService.JasperRapporten(response, parameters, dataSource, file);
+	}
 }

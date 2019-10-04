@@ -36,13 +36,6 @@
 			</image>
 			<staticText>
 				<reportElement x="236" y="36" width="296" height="53" uuid="4c128372-d8f9-47e1-aa44-313cf3e37f85"/>
-				<box leftPadding="5" rightPadding="5">
-					<pen lineWidth="0.5"/>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
 				<textElement verticalAlignment="Middle">
 					<font size="15"/>
 				</textElement>
