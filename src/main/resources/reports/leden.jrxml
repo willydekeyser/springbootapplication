@@ -72,12 +72,7 @@
 				<text><![CDATA[E-mailadres:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="236" y="36" width="296" height="53" uuid="a61b4710-b625-4d3e-ac12-ae8c17ca992a">
-					<property name="com.jaspersoft.studio.unit.x" value="px"/>
-					<property name="com.jaspersoft.studio.unit.y" value="px"/>
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
+				<reportElement x="236" y="36" width="296" height="53" uuid="a61b4710-b625-4d3e-ac12-ae8c17ca992a"/>
 				<box leftPadding="5" rightPadding="5"/>
 				<textElement verticalAlignment="Middle">
 					<font size="15"/>
