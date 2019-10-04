@@ -49,6 +49,8 @@ public class RapportenController {
 	@Autowired
 	private JasperRapportenService jasperRapportenService;
 	
+	private List<String> soortleden = new ArrayList<String>();
+		
 	@GetMapping("/lidgeldBrief/{lidId}")
 	public void LidgeldBrief(@PathVariable Integer lidId, HttpServletResponse response) {
 		response.setContentType("text/html");
@@ -100,6 +102,23 @@ public class RapportenController {
 		Map<String, Object> parameters = new HashMap<>();
 		parameters.put("IMAGE_DIR", "static/image/");
 		String file = "/reports/ledenlijstlidgeld.jrxml";
+		jasperRapportenService.JasperRapporten(response, parameters, dataSource, file);
+	}
+	
+	@GetMapping("/leden/{soort}")
+	public void Leden(@PathVariable Integer soort, HttpServletResponse response) {
+		response.setContentType("text/html");
+		JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(ledenService.getAllLedenNamenlijst(soort));
+		Map<String, Object> parameters = new HashMap<>();
+		soortleden.add("");
+		soortleden.add("Leden");
+		soortleden.add("Werkende leden");
+		soortleden.add("Bestuurs leden");
+		soortleden.add("Oud Leden");
+		soortleden.add("Iedereen");
+		parameters.put("IMAGE_DIR", "static/image/");
+		parameters.put("Titel", "Ledenlijst: " + soortleden.get(soort));
+		String file = "/reports/leden.jrxml";
 		jasperRapportenService.JasperRapporten(response, parameters, dataSource, file);
 	}
 }

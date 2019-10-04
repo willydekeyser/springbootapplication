@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.10.0.final using JasperReports Library version 6.10.0-unknown  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="leden" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c58ab176-0a16-4168-a411-7d4a8870ac3c">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Heroku"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="Titel" class="java.lang.String"/>
+	<parameter name="IMAGE_DIR" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT * FROM ledenlijst]]>
+	</queryString>
+	<field name="ledenlijst_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="ledenlijst_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ledenlijst"/>
+	</field>
+	<field name="soortenledenid" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="soortenledenid"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ledenlijst"/>
+	</field>
+	<field name="voornaam" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="voornaam"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ledenlijst"/>
+	</field>
+	<field name="familienaam" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="familienaam"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ledenlijst"/>
+	</field>
+	<field name="emailadres" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="emailadres"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ledenlijst"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="135" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<image>
+				<reportElement x="17" y="29" width="138" height="60" uuid="12409155-567e-4d52-8b90-b6d6fb49dfe9"/>
+				<imageExpression><![CDATA[$P{IMAGE_DIR} + "logo.gif"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="115" width="100" height="20" uuid="b39fd526-40f6-49fc-8624-5656af978a9a"/>
+				<box leftPadding="5" rightPadding="5">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Nr:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="115" width="200" height="20" uuid="328019d0-289c-4631-b8df-fb117e8e5dd6"/>
+				<box leftPadding="5" rightPadding="5">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Naam:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="115" width="200" height="20" uuid="23daedd5-12a2-47f0-aba4-07761ac7f13c"/>
+				<box leftPadding="5" rightPadding="5">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[E-mailadres:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="236" y="36" width="296" height="53" uuid="a61b4710-b625-4d3e-ac12-ae8c17ca992a">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5" rightPadding="5"/>
+				<textElement verticalAlignment="Middle">
+					<font size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Titel}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="3a579f67-e869-455e-8ef7-507c87dab685"/>
+				<box leftPadding="5" rightPadding="5">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="200" height="20" uuid="9bdbd813-4058-4a76-9a55-aedc42d6896c"/>
+				<box leftPadding="5" rightPadding="5">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{voornaam} + " " + $F{familienaam}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="0" width="200" height="20" uuid="998fe422-495c-4112-a6fd-cbd03743e628"/>
+				<box leftPadding="5" rightPadding="5">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{emailadres}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="44" splitType="Stretch">
+			<staticText>
+				<reportElement x="351" y="22" width="200" height="20" uuid="9590dd91-7aec-4e35-8cd5-3b6d2c749d1e"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<text><![CDATA[Computerclub Format C]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

@@ -29,7 +29,7 @@ public class LedenSoortenLedenRowMapper implements RowMapper<Leden>{
 		leden.setSoortenledenid(rs.getInt("soortenledenid"));
 		leden.setSoortenleden(new SoortenLeden(rs.getInt("soortenleden_id"), rs.getString("soortenleden")));
 		leden.setOntvangmail(rs.getBoolean("ontvangmail"));
-		leden.setMailvlag(rs.getBoolean("mailmlag"));
+		leden.setMailvlag(rs.getBoolean("mailvlag"));
 		return leden;
 	}
 
