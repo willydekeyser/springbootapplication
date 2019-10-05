@@ -3,6 +3,7 @@ package willydekeyser.controller;
 import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -122,18 +123,41 @@ public class RapportenController {
 		jasperRapportenService.JasperRapporten(response, parameters, dataSource, file);
 	}
 	
-	@GetMapping("/controleblad")
-	public void Controleblad(HttpServletResponse response) {
+	@GetMapping("/controleblad/{maand}/{jaar}")
+	public void Controleblad(@PathVariable Integer maand, @PathVariable Integer jaar, HttpServletResponse response) {
+		if (maand < 1) maand = 1;
+		if (maand > 12) maand = 12;
 		response.setContentType("text/html");
+		LocalDate datum = LocalDate.of(jaar, maand, 1);
+		//LocalDate datum = LocalDate.now();
+		List<String> vergaderingen = jasperRapportenService.Woensdagen(datum);
 		JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(ledenService.getAllLedenNamenlijst(1));
 		Map<String, Object> parameters = new HashMap<>();
 		parameters.put("IMAGE_DIR", "static/image/");
-		parameters.put("Titel", "oktober 2019");
-		parameters.put("Week1", "02/10");
-		parameters.put("Week2", "09/10");
-		parameters.put("Week3", "16/10");
-		parameters.put("Week4", "23/10");
-		parameters.put("Week5", "30/10");
+		parameters.put("Titel", vergaderingen.get(0));
+		parameters.put("Week1", vergaderingen.get(1));
+		parameters.put("Week2", vergaderingen.get(2));
+		parameters.put("Week3", vergaderingen.get(3));
+		parameters.put("Week4", vergaderingen.get(4));
+		parameters.put("Week5", vergaderingen.get(5));
+		String file = "/reports/controleblad.jrxml";
+		jasperRapportenService.JasperRapporten(response, parameters, dataSource, file);
+	}
+	
+	@GetMapping("/controleblad")
+	public void ControlebladDefault(HttpServletResponse response) {
+		response.setContentType("text/html");
+		LocalDate datum = LocalDate.now();
+		List<String> vergaderingen = jasperRapportenService.Woensdagen(datum);
+		JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(ledenService.getAllLedenNamenlijst(1));
+		Map<String, Object> parameters = new HashMap<>();
+		parameters.put("IMAGE_DIR", "static/image/");
+		parameters.put("Titel", vergaderingen.get(0));
+		parameters.put("Week1", vergaderingen.get(1));
+		parameters.put("Week2", vergaderingen.get(2));
+		parameters.put("Week3", vergaderingen.get(3));
+		parameters.put("Week4", vergaderingen.get(4));
+		parameters.put("Week5", vergaderingen.get(5));
 		String file = "/reports/controleblad.jrxml";
 		jasperRapportenService.JasperRapporten(response, parameters, dataSource, file);
 	}

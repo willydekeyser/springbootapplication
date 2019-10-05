@@ -18,11 +18,11 @@ function mail_form() {
 	let datum_verzenden = verzenddatum();
 	document.getElementById("datum_vergadering").value = datum_vergadering;
 	document.getElementById("datum_verzenden").value = datum_verzenden;
-	let textfreak = document.getElementById("freak").value;
-	let textfreaklesgever = document.getElementById("freaklesgever").value;
-	let textfreaktobe = document.getElementById("freaktobe").value;
-	let textfreaktobelesgever = document.getElementById("freaktobelesgever").value;
-	let textinfo = document.getElementById("info").value;
+	const textfreak = document.getElementById("freak").value;
+	const textfreaklesgever = document.getElementById("freaklesgever").value;
+	const textfreaktobe = document.getElementById("freaktobe").value;
+	const textfreaktobelesgever = document.getElementById("freaktobelesgever").value;
+	const textinfo = document.getElementById("info").value;
     emailtext = "Beste lid,<br><br><br><h3>Planning voor " + datum_vergadering + "</h3>";
     if (textfreak === "") {
     	emailtext += "<b>Freaks & Freaks to Be: </b><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + textfreaktobe + " - " + textfreaktobelesgever + "<br/><br/><br/>";
@@ -44,7 +44,7 @@ function listener_agenda_submit(event) {
 	document.getElementById('agenda_voorbeeld_button').style.display = 'none';
 	document.getElementById('agenda_hulp_venster').style.display = 'block';
 	document.getElementById('agenda_progress_bar').style.display = 'block';
-	let formData = new FormData(document.getElementById('agendaVersturenForm'));
+	const formData = new FormData(document.getElementById('agendaVersturenForm'));
 	console.log('AGENDA: ' + formData);	
 	let data = post_Form('mail/agendaVersturen', formData)
 	.then((data) => {
@@ -65,7 +65,7 @@ async function agenda_progress_bar() {
 	let teller = 0;
 	let max_teller = 0;
 	let nog_teller = 0;
-	let response = await fetch_JSON('mail/test');
+	const response = await fetch_JSON('mail/test');
 	teller = response.return_progress;
 	max_teller = response.return_max;
 	nog_teller = max_teller - teller;
@@ -105,24 +105,24 @@ async function agenda_progress_bar() {
 };
 
 function agenda_voorbeeld_onclick() {
-	let div = document.getElementById('agenda_voorbeeld_venster');
-	let knop = document.getElementById('agenda_voorbeeld_button');
-	let agenda_hulp_venster = document.getElementById('agenda_hulp_venster');
+	const div = document.getElementById('agenda_voorbeeld_venster');
+	const knop = document.getElementById('agenda_voorbeeld_button');
+	const agenda_hulp_venster = document.getElementById('agenda_hulp_venster');
 	div.style.display = div.style.display == "none" ? "block" : "none";
 	agenda_hulp_venster.style.display = div.style.display == "none" ? "block" : "none";
 	knop.innerHTML = div.style.display == "none" ? "Open voorbeeld" : "Sluit voorbeeld";
 };
 
 function verzenddatum() {
-	let date = new Date();
+	const date = new Date();
 	return dagvandeweek(date.getDay()) + ", " + ((date.getDate() < 10) ? "0" + date.getDate() : date.getDate()) + "/" + maandvanhetjaar(date.getMonth()) +
 	"/" + date.getFullYear() + " - " + ((date.getHours() < 10) ? "0" + date.getHours() : date.getHours()) + ":" +
 	((date.getMinutes() < 10) ? "0" + date.getMinutes() : date.getMinutes()) + ":" + ((date.getSeconds() < 10) ? "0" + date.getSeconds() : date.getSeconds());
 };
 
 function eerste_woensdag() {
-	let date = new Date();
-	let dag = date.getDay();
+	const date = new Date();
+	const dag = date.getDay();
 	if (dag < 4) {
 		dag = 3 - dag;
 	} else {

@@ -4,6 +4,15 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
+import java.time.format.TextStyle;
+import java.time.temporal.TemporalAdjusters;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletResponse;
@@ -27,10 +36,14 @@ public class JasperRapportenService {
 
 	public void JasperRapporten(HttpServletResponse response, Map<String, Object> parameters, JRBeanCollectionDataSource dataSource, String jasperReportsFile) {
 		try {
+			//URL jasperResURL = this.getClass().getResource("/reports/controleblad.jasper");
+			//JasperReport jasperReport = (JasperReport) JRLoader.loadObject(jasperResURL);
+			
+			
 			InputStream inputStream = this.getClass().getResourceAsStream(jasperReportsFile);
 			JasperDesign jasperDesign = JRXmlLoader.load(inputStream);
 			JasperReport jasperReport = JasperCompileManager.compileReport(jasperDesign);
-			JasperCompileManager.compileReportToFile(jasperDesign, "ledenlijst.jasper");
+			//JasperCompileManager.compileReportToFile(jasperDesign, "ledenlijst.jasper");
 			//JRDataSource emptyDataSource = new JREmptyDataSource();
 			JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, dataSource);
 			
@@ -52,5 +65,23 @@ public class JasperRapportenService {
 		} catch (JRException | IOException e) {
 			System.err.println("FOUT: " + e.getMessage());
 		}
+	}
+	
+	public List<String> Woensdagen(LocalDate datum) {
+		List<String> parameters = new ArrayList<String>();
+		String maand = datum.getMonth().getDisplayName(TextStyle.FULL, new Locale("nl", "BE"));
+		Integer jaar = datum.getYear();
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM");
+		LocalDate eersteWoensdag = datum.with(TemporalAdjusters.firstInMonth(DayOfWeek.WEDNESDAY));
+		parameters.add(maand + " " + jaar);
+		parameters.add(eersteWoensdag.format(formatter));
+		for (int i = 1; i < 5; i++) {
+			if (eersteWoensdag.plus(Period.ofWeeks(i)).getMonthValue() == datum.getMonthValue()) {
+				parameters.add(eersteWoensdag.plus(Period.ofWeeks(i)).format(formatter));
+			} else {
+				parameters.add("");
+			}
+		}
+		return parameters;
 	}
 }

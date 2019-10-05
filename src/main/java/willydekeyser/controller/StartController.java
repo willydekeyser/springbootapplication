@@ -166,7 +166,18 @@ public class StartController {
 				+ "<a href='/mail/index' target='_blank'>Send E-mail</a><br/>"
 				+ "<a href='/restcontroller/customproperties' target='_blank'>Custom properties</a> - "
 				+ "<a href='/restcontroller/custompropertiesread' target='_blank'>Custom properties read</a> - "
-				+ "<a href='/restcontroller/custompropertieswrite' target='_blank'>Custom properties write</a></center>";
+				+ "<a href='/restcontroller/custompropertieswrite' target='_blank'>Custom properties write</a><br/>"
+				+ "<a href='/rapporten/lidgeldBrief/4' target='_blank'>Lidgeldbrief lid 4</a><br/>"
+				+ "<a href='/rapporten/rubrieken' target='_blank'>Rubrieken</a><br/>"
+				+ "<a href='/rapporten/soortenleden' target='_blank'>Soorten leden</a><br/>"
+				+ "<a href='/rapporten/ledenlidgeld' target='_blank'>Leden lidgeld lijst</a><br/>"
+				+ "<a href='/rapporten/leden/1' target='_blank'>Ledenlijst: Leden</a><br/>"
+				+ "<a href='/rapporten/leden/2' target='_blank'>Ledenlijst: Werkendeleden</a><br/>"
+				+ "<a href='/rapporten/leden/3' target='_blank'>Ledenlijst: Bestuursleden</a><br/>"
+				+ "<a href='/rapporten/leden/4' target='_blank'>Ledenlijst: Oud Leden</a><br/>"
+				+ "<a href='/rapporten/leden/5' target='_blank'>Ledenlijst: Iedereen</a><br/>"
+				+ "<a href='/rapporten/controleblad' target='_blank'>Controleblad</a><br/>"
+				+ "</center>";
 		return index;
 		
 	}	
