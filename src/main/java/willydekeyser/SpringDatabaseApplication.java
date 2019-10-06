@@ -8,6 +8,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.event.EventListener;
 import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 
@@ -22,6 +23,7 @@ import willydekeyser.customproperties.CustomPropertiesService;
 @ServletComponentScan
 @SpringBootApplication
 @EnableAsync
+@EnableScheduling
 //@EnableSwagger2
 public class SpringDatabaseApplication {
 	
