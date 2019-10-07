@@ -31,6 +31,11 @@ public class RubriekService implements IRubriekService {
 	}
 	
 	@Override
+	public List<Rubriek> saveRubriek(List<Rubriek> rubrieklijst) {
+		return rubriekDAO.saveRubriek(rubrieklijst);
+	}
+
+	@Override
 	public Rubriek addRubriek(Rubriek rubriek) {
 		return rubriekDAO.addRubriek(rubriek);
 	}
@@ -54,5 +59,5 @@ public class RubriekService implements IRubriekService {
 	public Boolean kasboekExistsByRubriekId(int id) {
 		return rubriekDAO.kasboekExistsByRubriekId(id);
 	}
-
+	
 }

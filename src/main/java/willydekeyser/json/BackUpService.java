@@ -13,44 +13,39 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
-import willydekeyser.model.Leden;
 import willydekeyser.service.impl.LedenService;
 
 @Service
-public class BackUpService {
+public class BackUpService<T> {
 	
 	@Autowired
 	LedenService ledenService;
 	
-	public BackUpService() {
-		System.out.println("BackUpService: ");
-	}
-
-	public List<Leden> readLedenBackUp() {	
+	public List<T> readBackUp(String jsonBestand) {	
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
         objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
         objectMapper.registerModule(new JavaTimeModule());
 		try {
-			File file = new ClassPathResource("ledenlijst.json").getFile();
-			return objectMapper.readValue(file, new TypeReference<List<Leden>>() {
+			File file = new ClassPathResource(jsonBestand).getFile();
+			return objectMapper.readValue(file, new TypeReference<List<T>>() {
 			});
 		} catch (IOException e) {
-			System.out.println("Unable to read Ledenlijst: " + e.getMessage());
+			System.out.println("Lezen van " + jsonBestand + " is mislukt: " + e.getMessage());
 			return null;
 		}
 	}
 	
-	public void writeLedenBackUp(List<Leden> ledenlijst) {
+	public void writeBackUp(List<T> lijst, String jsonBestand) {
 		ObjectMapper objectMapper = new ObjectMapper();
 		objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
 		objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
         objectMapper.registerModule(new JavaTimeModule());
 		try {	
-			File file = new ClassPathResource("ledenlijst.json").getFile();
-			objectMapper.writeValue(file, ledenlijst);
+			File file = new ClassPathResource(jsonBestand).getFile();
+			objectMapper.writeValue(file, lijst);
 		} catch (IOException e) {
-			System.out.println("Unable to backup Ledenlijst: " + e.getMessage());
+			System.out.println("BackUp maken naar " + jsonBestand + " mislukt: " + e.getMessage());
 		}
 	}
 	

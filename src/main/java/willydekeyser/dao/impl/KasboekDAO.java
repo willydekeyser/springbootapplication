@@ -173,6 +173,11 @@ public class KasboekDAO implements IKasboekDAO {
 	}
 
 	@Override
+	public List<Kasboek> saveKasboek(List<Kasboek> kasboeklijst) {
+		return null;
+	}
+	
+	@Override
 	public Kasboek addKasboek(Kasboek kasboek) {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		Calendar currenttime = Calendar.getInstance();   

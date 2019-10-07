@@ -41,6 +41,11 @@ public class LidgeldService implements ILidgeldService {
 	}
 	
 	@Override
+	public List<Lidgeld> saveLidgeld(List<Lidgeld> lidgeldlijst) {
+		return lidgeldDAO.saveLidgeld(lidgeldlijst);
+	}
+
+	@Override
 	public Lidgeld addLidgeld(Lidgeld lidgeld) {
 		return lidgeldDAO.addLidgeld(lidgeld);
 	}

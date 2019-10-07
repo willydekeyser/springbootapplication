@@ -41,6 +41,11 @@ public class LedenService implements ILedenService {
 	}
 	
 	@Override
+	public List<Leden> saveLeden(List<Leden> ledenlijst) {
+		return ledenDAO.saveLeden(ledenlijst);
+	}
+	
+	@Override
 	public Leden addLeden(Leden leden) {
 		return ledenDAO.addLeden(leden);
 	}

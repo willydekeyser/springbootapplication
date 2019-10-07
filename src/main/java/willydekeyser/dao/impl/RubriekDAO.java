@@ -58,6 +58,11 @@ public class RubriekDAO implements IRubriekDAO {
 	}
 
 	@Override
+	public List<Rubriek> saveRubriek(List<Rubriek> rubrieklijst) {
+		return null;
+	}
+	
+	@Override
 	public Rubriek addRubriek(Rubriek rubriek) {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		Calendar currenttime = Calendar.getInstance();   

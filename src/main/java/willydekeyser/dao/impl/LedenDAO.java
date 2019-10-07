@@ -124,6 +124,11 @@ public class LedenDAO implements ILedenDAO {
 	}
 
 	@Override
+	public List<Leden> saveLeden(List<Leden> ledenlijst) {
+		return null;
+	}
+	
+	@Override
 	public Leden addLeden(Leden leden) {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		Calendar currenttime = Calendar.getInstance();   

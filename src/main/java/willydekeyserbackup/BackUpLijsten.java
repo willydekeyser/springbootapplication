@@ -1,12 +1,9 @@
-package willydekeyser.controller;
+package willydekeyserbackup;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.stereotype.Service;
 
 import willydekeyser.json.BackUpService;
 import willydekeyser.model.Kasboek;
@@ -20,9 +17,8 @@ import willydekeyser.service.impl.LidgeldService;
 import willydekeyser.service.impl.RubriekService;
 import willydekeyser.service.impl.SoortenLedenService;
 
-@Controller
-@RequestMapping("rapporten")
-public class BackUpController {
+@Service
+public class BackUpLijsten {
 
 	@Autowired
 	LedenService ledenService;
@@ -53,10 +49,8 @@ public class BackUpController {
 	
 	@Autowired
 	BackUpService<Kasboek> backUpServiceKasboek;
-	
-	@GetMapping("/backup")
-	@ResponseBody
-	public String BackupWrite() {
+
+	public void maakbackUp() {
 		List<Leden> ledenlijst = ledenService.getAllLeden();
 		backUpServiceLeden.writeBackUp(ledenlijst, "ledenlijst.json");
 		List<SoortenLeden> soortenledenlijst = soortenledenService.getAllSoortenLeden();
@@ -67,53 +61,31 @@ public class BackUpController {
 		backUpServiceLidgeld.writeBackUp(lidgeldlijst, "lidgeldlijst.json");
 		List<Kasboek> kasboeklijst = kasboekService.getAllKasboek();
 		backUpServiceKasboek.writeBackUp(kasboeklijst, "kasboeklijst.json");
-		return "BackUp alle lijsten";
+		System.out.println("Backup van alle lijsten!");
 	}
-	
-	@GetMapping("/backupleden")
-	@ResponseBody
-	public String LedenBackupWrite() {
+	public void maakLedenBackUp() {
 		List<Leden> lijst = ledenService.getAllLeden();
 		backUpServiceLeden.writeBackUp(lijst, "ledenlijst.json");
-		return "BackUp leden";
 	}
 	
-	@GetMapping("/backupsoortenleden")
-	@ResponseBody
-	public String SoortenledenBackupWrite() {
-		List<SoortenLeden> lijst = soortenledenService.getAllSoortenLeden();
-		backUpServiceSoortenleden.writeBackUp(lijst, "soortenledenlijst.json");
-		return "BackUp soortenleden";
-	}
-	
-	@GetMapping("/backuprubriek")
-	@ResponseBody
-	public String RubriekBackupWrite() {
-		List<Rubriek> lijst = rubriekService.getAllRubriek();
-		backUpServiceRubriek.writeBackUp(lijst, "rubrieklijst.json");
-		return "BackUp rubriek";
-	}
-	
-	@GetMapping("/backuplidgeld")
-	@ResponseBody
-	public String LidgeldBackupWrite() {
+	public void maakLidgeldBackUp() {
 		List<Lidgeld> lijst = lidgeldService.getAllLidgeld();
 		backUpServiceLidgeld.writeBackUp(lijst, "lidgeldlijst.json");
-		return "BackUp lidgeld";
 	}
 	
-	@GetMapping("/backupkasboek")
-	@ResponseBody
-	public String KasboekBackupWrite() {
+	public void maakKasboekBackUp() {
 		List<Kasboek> lijst = kasboekService.getAllKasboek();
 		backUpServiceKasboek.writeBackUp(lijst, "kasboeklijst.json");
-		return "BackUp rubriek";
 	}
 	
-	@GetMapping("/backupledenread")
-	@ResponseBody
-	public List<Leden> LedenBackupRead() {
-		List<Leden> ledenlijst = backUpServiceLeden.readBackUp("ledenlijst.json");
-		return ledenlijst;
+	public void maakRubriekBackUp() {
+		List<Rubriek> lijst = rubriekService.getAllRubriek();
+		backUpServiceRubriek.writeBackUp(lijst, "rubrieklijst.json");
 	}
+	
+	public void maakSoortenledenBackUp() {
+		List<SoortenLeden> lijst = soortenledenService.getAllSoortenLeden();
+		backUpServiceSoortenleden.writeBackUp(lijst, "soortenledenlijst.json");
+	}
+
 }

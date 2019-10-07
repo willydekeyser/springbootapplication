@@ -11,6 +11,7 @@ public interface ILedenDAO {
 	List<Leden> getAllLedenSoortenleden(Integer soort);
 	List<Leden> getAllLedenLidgeld();
 	Leden getLedenById(int id);
+	List<Leden> saveLeden(List<Leden> ledenlijst);
     Leden addLeden(Leden leden);
     Leden updateLeden(Leden leden);
     Integer deleteLeden(int id);

@@ -9,6 +9,7 @@ import java.util.Calendar;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
@@ -33,7 +34,7 @@ public class SoortenLedenDAO implements ISoortenLedenDAO {
 			+ "FROM soortenleden LEFT JOIN ledenlijst ON soortenleden_id = ledenlijst.soortenledenid WHERE soortenleden_id = ?";
 	private final String sql_getAllSoortenLedenLeden = "SELECT soortenleden.*, ledenlijst.* "
 			+ "FROM soortenleden LEFT JOIN ledenlijst ON soortenleden_id = soortenledenid ORDER BY soortenleden_id";
-	private final String sql_addSoortenleden = "INSERT INTO soortenleden (soortenleden, createdby, createddate) VALUES (?, ?, ?)";
+	private final String sql_addSoortenleden = "INSERT INTO soortenleden (soortenleden, createdby, createddate, lastmodifiedby, lastmodifieddate) VALUES (?, ?, ?, ?, ?)";
 	private final String sql_updateSoortenleden = "UPDATE soortenleden SET Soortenleden = ?, lastmodifiedby = ?, lastmodifieddate = ? WHERE soortenleden_id = ?";
 	private final String sql_deleteSoortenleden = "DELETE FROM soortenleden WHERE soortenleden_id = ?";
 	private final String sql_soortenledenExists = "SELECT count(*) FROM soortenleden WHERE soortenleden_id = ?";
@@ -58,6 +59,31 @@ public class SoortenLedenDAO implements ISoortenLedenDAO {
 	}
 
 	@Override
+	public List<SoortenLeden> saveSoortenleden(List<SoortenLeden> soortenledenlijst) {
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		Calendar currenttime = Calendar.getInstance();   
+		Date date = new Date((currenttime.getTime()).getTime());
+		jdbcTemplate.batchUpdate(sql_addSoortenleden, new BatchPreparedStatementSetter() {
+			
+			@Override
+			public void setValues(PreparedStatement ps, int index) throws SQLException {
+				SoortenLeden soortenLeden = soortenledenlijst.get(index);
+				ps.setString(1, soortenLeden.getSoortenleden());
+			    ps.setString(2, authentication.getName());
+			    ps.setDate(3, date);
+			    ps.setString(4, authentication.getName());
+			    ps.setDate(5, date);
+			}
+			
+			@Override
+			public int getBatchSize() {
+				return soortenledenlijst.size();
+			}
+		});
+		return jdbcTemplate.query(sql_getAllSoortenleden, new SoortenLedenRowMapper());
+	}
+	
+	@Override
 	public SoortenLeden addSoortenLeden(SoortenLeden soortenLeden) {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		Calendar currenttime = Calendar.getInstance();   
@@ -70,6 +96,8 @@ public class SoortenLedenDAO implements ISoortenLedenDAO {
 			    ps.setString(1, soortenLeden.getSoortenleden());
 			    ps.setString(2, authentication.getName());
 			    ps.setDate(3, date);
+			    ps.setString(4, authentication.getName());
+			    ps.setDate(5, date);
 			    return ps;
 			}
 		}, key);

@@ -70,6 +70,11 @@ public class LidgeldDAO implements ILidgeldDAO {
 	}
 
 	@Override
+	public List<Lidgeld> saveLidgeld(List<Lidgeld> lidgeldlijst) {
+		return null;
+	}
+	
+	@Override
 	public Lidgeld addLidgeld(Lidgeld lidgeld) {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		Calendar currenttime = Calendar.getInstance();   

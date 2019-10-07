@@ -9,6 +9,7 @@ public interface IRubriekService {
 	List<Rubriek> getAllRubriek();
 	List<Rubriek> getAllRubriekKasboek();
 	Rubriek getRubriekById(int id);
+	List<Rubriek> saveRubriek(List<Rubriek> rubrieklijst);
     Rubriek addRubriek(Rubriek rubriek);
     Rubriek updateRubriek(Rubriek rubriek);
     void deleteRubriek(int id);

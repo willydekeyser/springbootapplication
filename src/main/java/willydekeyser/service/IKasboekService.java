@@ -18,6 +18,7 @@ public interface IKasboekService {
 	BigDecimal[] getSom(Integer jaar, Integer rubriekId);
 	List<Integer> getJaartal();
 	Kasboek getKasboekById(int id);
+	List<Kasboek> saveKasboek(List<Kasboek> kasboeklijst);
 	Kasboek addKasboek(Kasboek kasboek);
 	Kasboek updateKasboek(Kasboek kasboek);
     void deleteKasboek(int id);

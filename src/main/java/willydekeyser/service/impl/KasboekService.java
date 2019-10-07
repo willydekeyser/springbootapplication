@@ -68,6 +68,11 @@ public class KasboekService implements IKasboekService {
 	}
 	
 	@Override
+	public List<Kasboek> saveKasboek(List<Kasboek> kasboeklijst) {
+		return kasboekDAO.saveKasboek(kasboeklijst);
+	}
+	
+	@Override
 	public Kasboek addKasboek(Kasboek kasboek) {
 		return kasboekDAO.addKasboek(kasboek);
 	}
@@ -91,5 +96,5 @@ public class KasboekService implements IKasboekService {
 	public Integer countKasboek(Integer jaartal, Integer rubriekId) {
 		return kasboekDAO.countKasboek(jaartal, rubriekId);
 	}
-	
+
 }

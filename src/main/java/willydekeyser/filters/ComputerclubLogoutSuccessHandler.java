@@ -30,7 +30,6 @@ public class ComputerclubLogoutSuccessHandler extends SimpleUrlLogoutSuccessHand
 	@Override
     public void onLogoutSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
 		if(authentication != null && authentication.getDetails() != null) {
-			System.out.println("ComputerclubLogoutSuccessHandler: " + authentication.getName());
 			final String refererUrl = request.getHeader("Referer");
 	        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 	        String data = "Logout:" + 

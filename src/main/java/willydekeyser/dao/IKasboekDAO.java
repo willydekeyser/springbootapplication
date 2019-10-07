@@ -18,6 +18,7 @@ public interface IKasboekDAO {
 	List<Integer> getJaartal();
 	List<KasboekJaartal> getKasboekJaarRubriek();
 	Kasboek getKasboekById(int id);
+	List<Kasboek> saveKasboek(List<Kasboek> kasboeklijst);
 	Kasboek addKasboek(Kasboek kasboek);
 	Kasboek updateKasboek(Kasboek kasboek);
     void deleteKasboek(int id);

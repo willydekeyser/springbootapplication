@@ -9,6 +9,7 @@ public interface ISoortenLedenService {
 	List<SoortenLeden> getAllSoortenLeden();
 	List<SoortenLeden> getAllSoortenLedenLeden();
 	SoortenLeden getSoortenLedenById(int id);
+	List<SoortenLeden> saveSoortenleden(List<SoortenLeden> soortenledenlijst);
     SoortenLeden addSoortenLeden(SoortenLeden soortenLeden);
     SoortenLeden updateSoortenLeden(SoortenLeden soortenLeden);
     void deleteSoortenLeden(int id);

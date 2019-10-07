@@ -33,6 +33,11 @@ public class SoortenLedenService implements ISoortenLedenService {
 	}
 	
 	@Override
+	public List<SoortenLeden> saveSoortenleden(List<SoortenLeden> soortenledenlijst) {
+		return soortenLedenDAO.saveSoortenleden(soortenledenlijst);
+	}
+
+	@Override
 	public SoortenLeden addSoortenLeden(SoortenLeden soort) {
 		return soortenLedenDAO.addSoortenLeden(soort);
 		
