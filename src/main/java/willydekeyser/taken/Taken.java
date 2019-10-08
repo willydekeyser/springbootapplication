@@ -21,7 +21,7 @@ public class Taken {
 		System.out.println("Taken constructor: ");
 	}
 
-	@Scheduled(cron = "0 * * * * *")
+	@Scheduled(cron = "0 0 * * * *")
 	public void test() {
 		System.out.println("Taak uitgevoerd! " + dateFormat.format(new Date()));
 		//backupLijsten.maakbackUp();
