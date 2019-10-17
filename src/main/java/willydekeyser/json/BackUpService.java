@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -27,7 +26,7 @@ public class BackUpService<T> {
         objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
         objectMapper.registerModule(new JavaTimeModule());
 		try {
-			File file = new ClassPathResource(jsonBestand).getFile();
+			File file = new File(jsonBestand);
 			return objectMapper.readValue(file, new TypeReference<List<T>>() {
 			});
 		} catch (IOException e) {
@@ -42,7 +41,7 @@ public class BackUpService<T> {
 		objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
         objectMapper.registerModule(new JavaTimeModule());
 		try {	
-			File file = new ClassPathResource(jsonBestand).getFile();
+			File file = new File(jsonBestand);
 			objectMapper.writeValue(file, lijst);
 		} catch (IOException e) {
 			System.out.println("BackUp maken naar " + jsonBestand + " mislukt: " + e.getMessage());

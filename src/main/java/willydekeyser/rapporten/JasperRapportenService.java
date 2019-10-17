@@ -3,7 +3,6 @@ package willydekeyser.rapporten;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.OutputStream;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
@@ -37,16 +36,9 @@ public class JasperRapportenService {
 
 	public void JasperRapporten(HttpServletResponse response, Map<String, Object> parameters, JRBeanCollectionDataSource dataSource, String jasperReportsFile) {
 		try {
-			//URL jasperResURL = this.getClass().getResource("/reports/controleblad.jasper");
-			//JasperReport jasperReport = (JasperReport) JRLoader.loadObject(jasperResURL);
-			
-			
-			//InputStream inputStream = this.getClass().getResourceAsStream(jasperReportsFile);
 			File file = new File(jasperReportsFile);
 			JasperDesign jasperDesign = JRXmlLoader.load(file);
 			JasperReport jasperReport = JasperCompileManager.compileReport(jasperDesign);
-			//JasperCompileManager.compileReportToFile(jasperDesign, "ledenlijst.jasper");
-			//JRDataSource emptyDataSource = new JREmptyDataSource();
 			JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, dataSource);
 			
 			JRPdfExporter pdfExporter = new JRPdfExporter();

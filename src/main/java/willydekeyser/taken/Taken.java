@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
-import willydekeyserbackup.BackUpLijsten;
+import willydekeyser.backup.BackUpLijsten;
 
 @Service
 public class Taken {

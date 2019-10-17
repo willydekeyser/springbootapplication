@@ -13,7 +13,7 @@ public class CustomPropertiesService {
 	public CustomProperties readCustomProperties() {	
         ObjectMapper objectMapper = new ObjectMapper();
 		try {
-			File file = new File("customProperties.json");
+			File file = new File("properties/customProperties.json");
 			return objectMapper.readValue(file, CustomProperties.class);
 		} catch (IOException e) {
 			System.out.println("Unable to read properties: " + e.getMessage());
@@ -24,7 +24,7 @@ public class CustomPropertiesService {
 	public void writeCustomProperties(CustomProperties customPropertie) {
 		ObjectMapper objectMapper = new ObjectMapper();
 		try {	
-			File file = new File("customProperties.json");
+			File file = new File("properties/customProperties.json");
 			objectMapper.writeValue(file, customPropertie);
 		} catch (IOException e) {
 			System.out.println("Unable to write properties: " + e.getMessage());

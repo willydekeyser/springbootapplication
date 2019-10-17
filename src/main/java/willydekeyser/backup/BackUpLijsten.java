@@ -1,4 +1,4 @@
-package willydekeyserbackup;
+package willydekeyser.backup;
 
 import java.util.List;
 
@@ -52,40 +52,40 @@ public class BackUpLijsten {
 
 	public void maakbackUp() {
 		List<Leden> ledenlijst = ledenService.getAllLeden();
-		backUpServiceLeden.writeBackUp(ledenlijst, "ledenlijst.json");
+		backUpServiceLeden.writeBackUp(ledenlijst, "backup/ledenlijst.json");
 		List<SoortenLeden> soortenledenlijst = soortenledenService.getAllSoortenLeden();
-		backUpServiceSoortenleden.writeBackUp(soortenledenlijst, "soortenledenlijst.json");
+		backUpServiceSoortenleden.writeBackUp(soortenledenlijst, "backup/soortenledenlijst.json");
 		List<Rubriek> rubrieklijst = rubriekService.getAllRubriek();
-		backUpServiceRubriek.writeBackUp(rubrieklijst, "rubrieklijst.json");
+		backUpServiceRubriek.writeBackUp(rubrieklijst, "backup/rubrieklijst.json");
 		List<Lidgeld> lidgeldlijst = lidgeldService.getAllLidgeld();
-		backUpServiceLidgeld.writeBackUp(lidgeldlijst, "lidgeldlijst.json");
+		backUpServiceLidgeld.writeBackUp(lidgeldlijst, "backup/lidgeldlijst.json");
 		List<Kasboek> kasboeklijst = kasboekService.getAllKasboek();
-		backUpServiceKasboek.writeBackUp(kasboeklijst, "kasboeklijst.json");
+		backUpServiceKasboek.writeBackUp(kasboeklijst, "backup/kasboeklijst.json");
 		System.out.println("Backup van alle lijsten!");
 	}
 	public void maakLedenBackUp() {
 		List<Leden> lijst = ledenService.getAllLeden();
-		backUpServiceLeden.writeBackUp(lijst, "ledenlijst.json");
+		backUpServiceLeden.writeBackUp(lijst, "backup/ledenlijst.json");
 	}
 	
 	public void maakLidgeldBackUp() {
 		List<Lidgeld> lijst = lidgeldService.getAllLidgeld();
-		backUpServiceLidgeld.writeBackUp(lijst, "lidgeldlijst.json");
+		backUpServiceLidgeld.writeBackUp(lijst, "backup/lidgeldlijst.json");
 	}
 	
 	public void maakKasboekBackUp() {
 		List<Kasboek> lijst = kasboekService.getAllKasboek();
-		backUpServiceKasboek.writeBackUp(lijst, "kasboeklijst.json");
+		backUpServiceKasboek.writeBackUp(lijst, "backup/kasboeklijst.json");
 	}
 	
 	public void maakRubriekBackUp() {
 		List<Rubriek> lijst = rubriekService.getAllRubriek();
-		backUpServiceRubriek.writeBackUp(lijst, "rubrieklijst.json");
+		backUpServiceRubriek.writeBackUp(lijst, "backup/rubrieklijst.json");
 	}
 	
 	public void maakSoortenledenBackUp() {
 		List<SoortenLeden> lijst = soortenledenService.getAllSoortenLeden();
-		backUpServiceSoortenleden.writeBackUp(lijst, "soortenledenlijst.json");
+		backUpServiceSoortenleden.writeBackUp(lijst, "backup/soortenledenlijst.json");
 	}
 
 }

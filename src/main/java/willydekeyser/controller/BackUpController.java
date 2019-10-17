@@ -57,16 +57,17 @@ public class BackUpController {
 	@GetMapping("/backup")
 	@ResponseBody
 	public String BackupWrite() {
+		System.out.println("Backup all: ");
 		List<Leden> ledenlijst = ledenService.getAllLeden();
-		backUpServiceLeden.writeBackUp(ledenlijst, "ledenlijst.json");
+		backUpServiceLeden.writeBackUp(ledenlijst, "backup/ledenlijst.json");
 		List<SoortenLeden> soortenledenlijst = soortenledenService.getAllSoortenLeden();
-		backUpServiceSoortenleden.writeBackUp(soortenledenlijst, "soortenledenlijst.json");
+		backUpServiceSoortenleden.writeBackUp(soortenledenlijst, "backup/soortenledenlijst.json");
 		List<Rubriek> rubrieklijst = rubriekService.getAllRubriek();
-		backUpServiceRubriek.writeBackUp(rubrieklijst, "rubrieklijst.json");
+		backUpServiceRubriek.writeBackUp(rubrieklijst, "backup/rubrieklijst.json");
 		List<Lidgeld> lidgeldlijst = lidgeldService.getAllLidgeld();
-		backUpServiceLidgeld.writeBackUp(lidgeldlijst, "lidgeldlijst.json");
+		backUpServiceLidgeld.writeBackUp(lidgeldlijst, "backup/lidgeldlijst.json");
 		List<Kasboek> kasboeklijst = kasboekService.getAllKasboek();
-		backUpServiceKasboek.writeBackUp(kasboeklijst, "kasboeklijst.json");
+		backUpServiceKasboek.writeBackUp(kasboeklijst, "backup/kasboeklijst.json");
 		return "BackUp alle lijsten";
 	}
 	
@@ -74,7 +75,7 @@ public class BackUpController {
 	@ResponseBody
 	public String LedenBackupWrite() {
 		List<Leden> lijst = ledenService.getAllLeden();
-		backUpServiceLeden.writeBackUp(lijst, "ledenlijst.json");
+		backUpServiceLeden.writeBackUp(lijst, "backup/ledenlijst.json");
 		return "BackUp leden";
 	}
 	
@@ -82,7 +83,7 @@ public class BackUpController {
 	@ResponseBody
 	public String SoortenledenBackupWrite() {
 		List<SoortenLeden> lijst = soortenledenService.getAllSoortenLeden();
-		backUpServiceSoortenleden.writeBackUp(lijst, "soortenledenlijst.json");
+		backUpServiceSoortenleden.writeBackUp(lijst, "backup/soortenledenlijst.json");
 		return "BackUp soortenleden";
 	}
 	
@@ -90,7 +91,7 @@ public class BackUpController {
 	@ResponseBody
 	public String RubriekBackupWrite() {
 		List<Rubriek> lijst = rubriekService.getAllRubriek();
-		backUpServiceRubriek.writeBackUp(lijst, "rubrieklijst.json");
+		backUpServiceRubriek.writeBackUp(lijst, "backup/rubrieklijst.json");
 		return "BackUp rubriek";
 	}
 	
@@ -98,7 +99,7 @@ public class BackUpController {
 	@ResponseBody
 	public String LidgeldBackupWrite() {
 		List<Lidgeld> lijst = lidgeldService.getAllLidgeld();
-		backUpServiceLidgeld.writeBackUp(lijst, "lidgeldlijst.json");
+		backUpServiceLidgeld.writeBackUp(lijst, "backup/lidgeldlijst.json");
 		return "BackUp lidgeld";
 	}
 	
@@ -106,14 +107,14 @@ public class BackUpController {
 	@ResponseBody
 	public String KasboekBackupWrite() {
 		List<Kasboek> lijst = kasboekService.getAllKasboek();
-		backUpServiceKasboek.writeBackUp(lijst, "kasboeklijst.json");
+		backUpServiceKasboek.writeBackUp(lijst, "backup/kasboeklijst.json");
 		return "BackUp rubriek";
 	}
 	
 	@GetMapping("/backupledenread")
 	@ResponseBody
 	public List<Leden> LedenBackupRead() {
-		List<Leden> ledenlijst = backUpServiceLeden.readBackUp("ledenlijst.json");
+		List<Leden> ledenlijst = backUpServiceLeden.readBackUp("backup/ledenlijst.json");
 		return ledenlijst;
 	}
 }

@@ -1,5 +1,6 @@
 package willydekeyser.sendmail.service;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
@@ -13,7 +14,6 @@ import javax.mail.internet.MimeMessage;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
@@ -83,7 +83,7 @@ public class MailSenderService {
 
         MimeMessage message = mailSender.createMimeMessage();
         MimeMessageHelper messageHelper = new MimeMessageHelper(message, MimeMessageHelper.MULTIPART_MODE_MIXED_RELATED, StandardCharsets.UTF_8.name());
-        messageHelper.addAttachment("logo.gif", new ClassPathResource("static/image/logo.gif"));
+        messageHelper.addAttachment("logo.gif", new File("image/logo.gif"));
         maxMailTeller = ledenlijst.size();
         Context context = new Context();
         Integer index = 0;
@@ -152,7 +152,7 @@ public class MailSenderService {
 
         MimeMessage message = mailSender.createMimeMessage();
         MimeMessageHelper messageHelper = new MimeMessageHelper(message, MimeMessageHelper.MULTIPART_MODE_MIXED_RELATED, StandardCharsets.UTF_8.name());
-        messageHelper.addAttachment("logo.gif", new ClassPathResource("static/image/logo.gif"));
+        messageHelper.addAttachment("logo.gif", new File("image/logo.gif"));
         final NumberFormat numberFormat = NumberFormat.getCurrencyInstance(new Locale("nl", "NL"));
         Context context = new Context();
         
