@@ -1,6 +1,7 @@
 package willydekeyser.rapporten;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -40,8 +41,9 @@ public class JasperRapportenService {
 			//JasperReport jasperReport = (JasperReport) JRLoader.loadObject(jasperResURL);
 			
 			
-			InputStream inputStream = this.getClass().getResourceAsStream(jasperReportsFile);
-			JasperDesign jasperDesign = JRXmlLoader.load(inputStream);
+			//InputStream inputStream = this.getClass().getResourceAsStream(jasperReportsFile);
+			File file = new File(jasperReportsFile);
+			JasperDesign jasperDesign = JRXmlLoader.load(file);
 			JasperReport jasperReport = JasperCompileManager.compileReport(jasperDesign);
 			//JasperCompileManager.compileReportToFile(jasperDesign, "ledenlijst.jasper");
 			//JRDataSource emptyDataSource = new JREmptyDataSource();
