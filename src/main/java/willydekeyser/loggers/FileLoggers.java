@@ -17,7 +17,7 @@ import com.google.gson.GsonBuilder;
 public class FileLoggers {
 
 	public void schrijfDataToFile(String data) throws IOException {
-		String fileName = "Logindata.log";
+		String fileName = "logfiles/Logindata.log";
 		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true));
 		writer.newLine();
@@ -29,7 +29,7 @@ public class FileLoggers {
 	}
 	
 	public void schrijfDataToJson(Object data) throws IOException {
-		String fileName = "Logindata.json";
+		String fileName = "logfiles/Logindata.json";
 		FileWriter fileWriter = new FileWriter(fileName, true);
 		Gson gson = new GsonBuilder()
 				.setPrettyPrinting()
@@ -40,7 +40,7 @@ public class FileLoggers {
 	
 	public void schrijfAgendaToFile(String data) throws IOException {
 		int year = Calendar.getInstance().get(Calendar.YEAR);
-		String fileName = "Agendadata" + year + ".log";
+		String fileName = "logfiles/Agendadata" + year + ".log";
 		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true));
 		writer.newLine();
@@ -53,7 +53,7 @@ public class FileLoggers {
 	
 	public void schrijfLidgeldToFile(String data) throws IOException {
 		int year = Calendar.getInstance().get(Calendar.YEAR);
-		String fileName = "Lidgelddata" + year + ".log";
+		String fileName = "logfiles/Lidgelddata" + year + ".log";
 		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true));
 		writer.newLine();
