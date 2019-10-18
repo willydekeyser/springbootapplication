@@ -6,6 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.PropertySources;
 import org.springframework.context.event.EventListener;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
@@ -25,6 +27,9 @@ import willydekeyser.customproperties.CustomPropertiesService;
 @EnableAsync
 @EnableScheduling
 //@EnableSwagger2
+@PropertySources({
+	@PropertySource("file:properties/application.properties")
+})
 public class SpringDatabaseApplication {
 	
 	public static void main(String[] args) {
