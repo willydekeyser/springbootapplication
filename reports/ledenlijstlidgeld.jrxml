@@ -36,7 +36,7 @@
 				</reportElement>
 				<box leftPadding="5" rightPadding="5"/>
 				<textElement verticalAlignment="Middle">
-					<font size="15"/>
+					<font fontName="DejaVu Sans" size="15"/>
 				</textElement>
 				<text><![CDATA[Ledenlijst]]></text>
 			</staticText>
@@ -49,7 +49,9 @@
 				<box leftPadding="5" rightPadding="5">
 					<pen lineWidth="0.5"/>
 				</box>
-				<textElement verticalAlignment="Middle"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<text><![CDATA[Nr:]]></text>
 			</staticText>
 			<staticText>
@@ -61,7 +63,9 @@
 				<box leftPadding="5" rightPadding="5">
 					<pen lineWidth="0.5"/>
 				</box>
-				<textElement verticalAlignment="Middle"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<text><![CDATA[Id:]]></text>
 			</staticText>
 			<staticText>
@@ -74,7 +78,9 @@
 				<box leftPadding="5" rightPadding="6">
 					<pen lineWidth="0.5"/>
 				</box>
-				<textElement verticalAlignment="Middle"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<text><![CDATA[Naam:]]></text>
 			</staticText>
 			<staticText>
@@ -85,7 +91,9 @@
 				<box leftPadding="5" rightPadding="5">
 					<pen lineWidth="0.5"/>
 				</box>
-				<textElement verticalAlignment="Middle"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<text><![CDATA[Datum:]]></text>
 			</staticText>
 		</band>
@@ -106,7 +114,9 @@
 				<box leftPadding="5" rightPadding="5">
 					<pen lineWidth="0.5"/>
 				</box>
-				<textElement verticalAlignment="Middle"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
 			</textField>
 			<textField>
@@ -116,7 +126,9 @@
 				<box leftPadding="5" rightPadding="5">
 					<pen lineWidth="0.5"/>
 				</box>
-				<textElement verticalAlignment="Middle"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{leden.ledenlijst_id}.toString()]]></textFieldExpression>
 			</textField>
 			<textField>
@@ -129,7 +141,9 @@
 				<box leftPadding="5" rightPadding="5">
 					<pen lineWidth="0.5"/>
 				</box>
-				<textElement verticalAlignment="Middle"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{leden.voornaam} + " " + $F{leden.familienaam}]]></textFieldExpression>
 			</textField>
 			<textField pattern="dd/MM/yyyy">
@@ -137,7 +151,9 @@
 				<box leftPadding="5" rightPadding="5">
 					<pen lineWidth="0.5"/>
 				</box>
-				<textElement verticalAlignment="Middle"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<textFieldExpression><![CDATA[java.util.Date.from($F{datum}.atStartOfDay(java.time.ZoneId.systemDefault()).toInstant())]]></textFieldExpression>
 			</textField>
 		</band>
@@ -152,7 +168,9 @@
 		<band height="42" splitType="Stretch">
 			<staticText>
 				<reportElement x="351" y="22" width="200" height="20" isRemoveLineWhenBlank="true" uuid="2588712a-111c-4935-bdcc-b13e9f4843de"/>
-				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<text><![CDATA[Computerclub Format C]]></text>
 			</staticText>
 		</band>

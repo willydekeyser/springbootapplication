@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.9.0.final using JasperReports Library version 6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
+<!-- Created with Jaspersoft Studio version 6.10.0.final using JasperReports Library version 6.10.0-unknown  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Soortenleden" pageWidth="595" pageHeight="842" whenNoDataType="NoPages" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7ddf14f0-2b76-46fb-8726-2db269762138">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Heroku"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
@@ -28,7 +28,7 @@
 			<textField>
 				<reportElement x="236" y="36" width="296" height="53" uuid="4212e2b4-bdae-4816-825a-1828a3b7a83e"/>
 				<textElement verticalAlignment="Middle">
-					<font size="15"/>
+					<font fontName="DejaVu Sans" size="15"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Soorten leden"]]></textFieldExpression>
 			</textField>
@@ -37,7 +37,9 @@
 				<box topPadding="0" leftPadding="5" bottomPadding="0" rightPadding="5">
 					<pen lineWidth="0.5"/>
 				</box>
-				<textElement verticalAlignment="Middle"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<text><![CDATA[Id:]]></text>
 			</staticText>
 			<staticText>
@@ -45,7 +47,9 @@
 				<box leftPadding="5" rightPadding="5">
 					<pen lineWidth="0.5"/>
 				</box>
-				<textElement verticalAlignment="Middle"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<text><![CDATA[Soort leden:]]></text>
 			</staticText>
 		</band>
@@ -64,7 +68,9 @@
 				<box leftPadding="5" rightPadding="5">
 					<pen lineWidth="0.5"/>
 				</box>
-				<textElement verticalAlignment="Middle"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
 			</textField>
 			<textField>
@@ -72,7 +78,9 @@
 				<box leftPadding="5" rightPadding="5">
 					<pen lineWidth="0.5"/>
 				</box>
-				<textElement verticalAlignment="Middle"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{soortenleden}]]></textFieldExpression>
 			</textField>
 		</band>
@@ -87,7 +95,9 @@
 		<band height="42" splitType="Stretch">
 			<staticText>
 				<reportElement x="351" y="22" width="200" height="20" uuid="79ec56ab-c424-456d-8a3b-9ebe11e3525a"/>
-				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<text><![CDATA[Computerclub Format C]]></text>
 			</staticText>
 		</band>

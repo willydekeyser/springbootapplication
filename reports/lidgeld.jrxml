@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.9.0.final using JasperReports Library version 6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
+<!-- Created with Jaspersoft Studio version 6.10.0.final using JasperReports Library version 6.10.0-unknown  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="lidgeld" pageWidth="595" pageHeight="842" whenNoDataType="NoPages" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="898935a6-7e08-48f1-b4f7-c9a2d614171e">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Heroku"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
@@ -89,6 +89,9 @@
 		<band height="725" splitType="Stretch">
 			<textField>
 				<reportElement x="0" y="356" width="550" height="194" uuid="90889af7-ae98-4906-aee8-c26b4272c96f"/>
+				<textElement>
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<textFieldExpression><![CDATA["Deze maand loopt uw lidmaatschap van Computerclub Format C ten einde.\n" +
 "Daarom vragen wij u om uw jaarlijks lidmaatschap te vernieuwen door " +
 $P{Bedrag} + " te storten op de rekening van 'Computerclub Format C' \nIBAN: BE44 0354 5723 9045 \nBIC: GEBABEBB \nmet de vermelding " +
@@ -103,102 +106,142 @@ $P{Periode} + "'. " + "U kunt uw lidgeld ook vereffenen met de schatbewaarder op
 			</image>
 			<textField>
 				<reportElement x="10" y="277" width="145" height="21" uuid="f1838005-8dfb-498a-8894-1a27763ae763"/>
-				<textElement verticalAlignment="Middle"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<textFieldExpression><![CDATA["Beste " + $F{voornaam}+","]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="350" y="244" width="200" height="19" uuid="0897a09e-513e-40ec-a563-fad6b8497f87"/>
-				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<textFieldExpression><![CDATA["Gent, " + $P{Datum}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="0" y="583" width="65" height="14" uuid="71574118-45c9-4453-a5b3-1cc21f5bdbc9"/>
-				<textElement verticalAlignment="Middle"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<text><![CDATA[Nr:]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="0" y="597" width="65" height="14" uuid="a4879f42-948f-4983-b637-4d0b2da28b85"/>
-				<textElement verticalAlignment="Middle"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<text><![CDATA[Naam:]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="0" y="611" width="65" height="14" uuid="063ccb6b-4d7d-4f3f-913a-8029b4538a76"/>
-				<textElement verticalAlignment="Middle"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<text><![CDATA[Adres:]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="0" y="655" width="101" height="14" uuid="48f5fc2a-f7a1-4a0c-b744-95f85711b009"/>
-				<textElement verticalAlignment="Middle"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<text><![CDATA[Telefoon nummer:]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="0" y="669" width="101" height="14" uuid="f34e30aa-0ec8-48be-af7c-b4350129ad45"/>
-				<textElement verticalAlignment="Middle"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<text><![CDATA[GSM nummer:]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="0" y="684" width="101" height="14" uuid="01fd9089-108c-45ca-b212-fd710ffd22e3"/>
-				<textElement verticalAlignment="Middle"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<text><![CDATA[E-mail adres:]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="0" y="698" width="101" height="14" uuid="d0cf6993-1c25-4c69-b688-cd714b8e7bcd"/>
-				<textElement verticalAlignment="Middle"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<text><![CDATA[Website:]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="111" y="583" width="235" height="14" uuid="01def002-670a-4218-8a80-1e47793f60f0"/>
-				<textElement verticalAlignment="Middle"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{ledenlijst_id}.toString()]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="111" y="597" width="235" height="14" uuid="b2c543f2-b938-47d7-b69a-4831870815d9"/>
-				<textElement verticalAlignment="Middle"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{voornaam} + " " + $F{familienaam}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="111" y="611" width="235" height="14" uuid="a2094709-49e7-4742-9997-b43b9d221e47"/>
-				<textElement verticalAlignment="Middle"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{straat} + " " + $F{nr}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="111" y="625" width="235" height="14" uuid="10d60ae3-13d1-49a8-a497-b77ec73aec2d"/>
-				<textElement verticalAlignment="Middle"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{postnr} + " " + $F{gemeente}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="111" y="655" width="235" height="14" uuid="4df31f07-4b79-4df1-b4c2-49d153126528"/>
-				<textElement verticalAlignment="Middle"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{telefoonnummer}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="111" y="669" width="235" height="14" uuid="fbb40515-d111-40d9-991c-e82104e8a9a1"/>
-				<textElement verticalAlignment="Middle"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{gsmnummer}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="111" y="684" width="235" height="14" uuid="7f677cc5-f562-437a-ac71-f80e455ccd61"/>
-				<textElement verticalAlignment="Middle"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{emailadres}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="111" y="698" width="235" height="14" uuid="f742fae5-865e-4bdd-8d34-c182480aab64"/>
-				<textElement verticalAlignment="Middle"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{webadres}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="45" y="200" width="200" height="14" uuid="7edc0bd6-c0fe-4ffe-a589-2c2599ee4de6"/>
-				<textElement verticalAlignment="Middle"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{voornaam} + " " + $F{familienaam}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="45" y="215" width="200" height="14" uuid="2fd98965-2334-4c96-9f8a-1b232a99c89a"/>
-				<textElement verticalAlignment="Middle"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{straat} + " " + $F{nr}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="45" y="230" width="200" height="14" uuid="e8c7537c-9d91-45cc-8f99-4f5de5e85264"/>
-				<textElement verticalAlignment="Middle"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{postnr} + " " + $F{gemeente}]]></textFieldExpression>
 			</textField>
 		</band>

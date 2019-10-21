@@ -37,7 +37,7 @@
 			<staticText>
 				<reportElement x="236" y="36" width="296" height="53" uuid="4c128372-d8f9-47e1-aa44-313cf3e37f85"/>
 				<textElement verticalAlignment="Middle">
-					<font size="15"/>
+					<font fontName="DejaVu Sans" size="15"/>
 				</textElement>
 				<text><![CDATA[Rubrieken]]></text>
 			</staticText>
@@ -46,7 +46,9 @@
 				<box leftPadding="5" rightPadding="5">
 					<pen lineWidth="0.5"/>
 				</box>
-				<textElement verticalAlignment="Middle"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<text><![CDATA[Id:]]></text>
 			</staticText>
 			<staticText>
@@ -54,7 +56,9 @@
 				<box leftPadding="5" rightPadding="5">
 					<pen lineWidth="0.5"/>
 				</box>
-				<textElement verticalAlignment="Middle"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<text><![CDATA[Rubrieken:]]></text>
 			</staticText>
 		</band>
@@ -73,7 +77,9 @@
 				<box leftPadding="5" rightPadding="5">
 					<pen lineWidth="0.5"/>
 				</box>
-				<textElement verticalAlignment="Middle"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
 			</textField>
 			<textField>
@@ -81,7 +87,9 @@
 				<box leftPadding="6" rightPadding="5">
 					<pen lineWidth="0.5"/>
 				</box>
-				<textElement verticalAlignment="Middle"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{rubriek}]]></textFieldExpression>
 			</textField>
 		</band>
@@ -103,7 +111,9 @@
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<text><![CDATA[Computerclub Format C]]></text>
 			</staticText>
 		</band>

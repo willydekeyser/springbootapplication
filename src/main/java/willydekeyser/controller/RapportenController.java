@@ -82,7 +82,7 @@ public class RapportenController {
 		JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(soortenledenService.getAllSoortenLeden());
 		Map<String, Object> parameters = new HashMap<>();
 		parameters.put("IMAGE_DIR", "static/image/");
-		String file = "reports/blank.jrxml";
+		String file = "reports/soortenleden.jrxml";
 		jasperRapportenService.JasperRapporten(response, parameters, dataSource, file);
 	}
 	

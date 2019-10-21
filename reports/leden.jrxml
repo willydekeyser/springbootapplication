@@ -52,7 +52,9 @@
 				<box leftPadding="5" rightPadding="5">
 					<pen lineWidth="0.5"/>
 				</box>
-				<textElement verticalAlignment="Middle"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<text><![CDATA[Nr:]]></text>
 			</staticText>
 			<staticText>
@@ -60,7 +62,9 @@
 				<box leftPadding="5" rightPadding="5">
 					<pen lineWidth="0.5"/>
 				</box>
-				<textElement verticalAlignment="Middle"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<text><![CDATA[Naam:]]></text>
 			</staticText>
 			<staticText>
@@ -68,14 +72,16 @@
 				<box leftPadding="5" rightPadding="5">
 					<pen lineWidth="0.5"/>
 				</box>
-				<textElement verticalAlignment="Middle"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<text><![CDATA[E-mailadres:]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="236" y="36" width="296" height="53" uuid="a61b4710-b625-4d3e-ac12-ae8c17ca992a"/>
 				<box leftPadding="5" rightPadding="5"/>
 				<textElement verticalAlignment="Middle">
-					<font size="15"/>
+					<font fontName="DejaVu Sans" size="15"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{Titel}]]></textFieldExpression>
 			</textField>
@@ -95,7 +101,9 @@
 				<box leftPadding="5" rightPadding="5">
 					<pen lineWidth="0.5"/>
 				</box>
-				<textElement verticalAlignment="Middle"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
 			</textField>
 			<textField>
@@ -103,7 +111,9 @@
 				<box leftPadding="5" rightPadding="5">
 					<pen lineWidth="0.5"/>
 				</box>
-				<textElement verticalAlignment="Middle"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{voornaam} + " " + $F{familienaam}]]></textFieldExpression>
 			</textField>
 			<textField>
@@ -111,7 +121,9 @@
 				<box leftPadding="5" rightPadding="5">
 					<pen lineWidth="0.5"/>
 				</box>
-				<textElement verticalAlignment="Middle"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{emailadres}]]></textFieldExpression>
 			</textField>
 		</band>
@@ -126,7 +138,9 @@
 		<band height="44" splitType="Stretch">
 			<staticText>
 				<reportElement x="351" y="22" width="200" height="20" uuid="9590dd91-7aec-4e35-8cd5-3b6d2c749d1e"/>
-				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<text><![CDATA[Computerclub Format C]]></text>
 			</staticText>
 		</band>
