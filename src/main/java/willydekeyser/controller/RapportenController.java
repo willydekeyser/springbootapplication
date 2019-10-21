@@ -72,7 +72,7 @@ public class RapportenController {
 		parameters.put("Periode", periode);
 		parameters.put("Datum", datumBrief);
 		parameters.put("IMAGE_DIR", "static/image/");
-		String file = "reports/lidgeld.jrxml";
+		String file = "/reports/lidgeld.jrxml";
 		jasperRapportenService.JasperRapporten(response, parameters, dataSource, file);
 	}
 	
@@ -82,7 +82,7 @@ public class RapportenController {
 		JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(soortenledenService.getAllSoortenLeden());
 		Map<String, Object> parameters = new HashMap<>();
 		parameters.put("IMAGE_DIR", "static/image/");
-		String file = "reports/soortenleden.jrxml";
+		String file = "/reports/blank.jrxml";
 		jasperRapportenService.JasperRapporten(response, parameters, dataSource, file);
 	}
 	
@@ -92,7 +92,7 @@ public class RapportenController {
 		JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(rubriekService.getAllRubriek());
 		Map<String, Object> parameters = new HashMap<>();
 		parameters.put("IMAGE_DIR", "static/image/");
-		String file = "reports/rubrieken.jrxml";
+		String file = "/reports/rubrieken.jrxml";
 		jasperRapportenService.JasperRapporten(response, parameters, dataSource, file);
 	}
 	
@@ -102,7 +102,7 @@ public class RapportenController {
 		JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(lidgeldService.getMAXLidgeldLeden());
 		Map<String, Object> parameters = new HashMap<>();
 		parameters.put("IMAGE_DIR", "static/image/");
-		String file = "reports/ledenlijstlidgeld.jrxml";
+		String file = "/reports/ledenlijstlidgeld.jrxml";
 		jasperRapportenService.JasperRapporten(response, parameters, dataSource, file);
 	}
 	
@@ -119,7 +119,7 @@ public class RapportenController {
 		soortleden.add("Iedereen");
 		parameters.put("IMAGE_DIR", "static/image/");
 		parameters.put("Titel", "Ledenlijst: " + soortleden.get(soort));
-		String file = "reports/leden.jrxml";
+		String file = "/reports/leden.jrxml";
 		jasperRapportenService.JasperRapporten(response, parameters, dataSource, file);
 	}
 	
@@ -140,7 +140,7 @@ public class RapportenController {
 		parameters.put("Week3", vergaderingen.get(3));
 		parameters.put("Week4", vergaderingen.get(4));
 		parameters.put("Week5", vergaderingen.get(5));
-		String file = "reports/controleblad.jrxml";
+		String file = "/reports/controleblad.jrxml";
 		jasperRapportenService.JasperRapporten(response, parameters, dataSource, file);
 	}
 	
@@ -158,7 +158,7 @@ public class RapportenController {
 		parameters.put("Week3", vergaderingen.get(3));
 		parameters.put("Week4", vergaderingen.get(4));
 		parameters.put("Week5", vergaderingen.get(5));
-		String file = "reports/controleblad.jrxml";
+		String file = "/reports/controleblad.jrxml";
 		jasperRapportenService.JasperRapporten(response, parameters, dataSource, file);
 	}
 }

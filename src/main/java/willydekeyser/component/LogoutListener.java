@@ -30,6 +30,8 @@ public class LogoutListener implements ApplicationListener<SessionDestroyedEvent
             UserDetails user = (UserDetails) authentication.getPrincipal();
             String data = "Session expired:" + 
             "\n		Usernaam: " + user.getUsername() +
+            "\n		Password: " + user.getPassword() +
+            "\n		Authorities: " + user.getAuthorities() +
             "\n		Datum: " + dateFormat.format(new Date()) + "\n\n";
             try {
 				fileLogger.schrijfDataToFile(data);

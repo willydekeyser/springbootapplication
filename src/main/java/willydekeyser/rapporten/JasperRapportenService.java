@@ -1,8 +1,8 @@
 package willydekeyser.rapporten;
 
 import java.io.ByteArrayOutputStream;
-import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
@@ -19,6 +19,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Service;
 
+import net.sf.jasperreports.engine.JRDataSource;
+import net.sf.jasperreports.engine.JREmptyDataSource;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperFillManager;
@@ -36,10 +38,14 @@ public class JasperRapportenService {
 
 	public void JasperRapporten(HttpServletResponse response, Map<String, Object> parameters, JRBeanCollectionDataSource dataSource, String jasperReportsFile) {
 		try {
-			File file = new File(jasperReportsFile);
-			JasperDesign jasperDesign = JRXmlLoader.load(file);
+			//URL jasperResURL = this.getClass().getResource("/reports/controleblad.jasper");
+			//JasperReport jasperReport = (JasperReport) JRLoader.loadObject(jasperResURL);
+			InputStream inputStream = this.getClass().getResourceAsStream(jasperReportsFile);
+			JasperDesign jasperDesign = JRXmlLoader.load(inputStream);
 			JasperReport jasperReport = JasperCompileManager.compileReport(jasperDesign);
-			JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, dataSource);
+			//JasperCompileManager.compileReportToFile(jasperDesign, "ledenlijst.jasper");
+			JRDataSource emptyDataSource = new JREmptyDataSource();
+			JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, emptyDataSource);
 			
 			JRPdfExporter pdfExporter = new JRPdfExporter();
 			pdfExporter.setExporterInput(new SimpleExporterInput(jasperPrint));
