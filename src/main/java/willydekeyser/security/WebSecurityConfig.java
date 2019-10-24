@@ -4,8 +4,6 @@ import static willydekeyser.controller.NamenLijst.ROLE_ADMIN;
 import static willydekeyser.controller.NamenLijst.ROLE_GOLD;
 import static willydekeyser.controller.NamenLijst.ROLE_USER;
 
-import javax.sql.DataSource;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,20 +11,26 @@ import org.springframework.core.annotation.Order;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.password.NoOpPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import willydekeyser.filters.ComputerclubLogoutSuccessHandler;
 
+@SuppressWarnings("deprecation")
 @Configuration
 @Order(1)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-	@Autowired
-	DataSource dataSource;
+	//@Autowired
+	//DataSource dataSource;
 	
 	@Autowired
-	BCryptPasswordEncoder paswoordencoder;
+	UserDetailsService userDetailsService;
+	
+	//@Autowired
+	//BCryptPasswordEncoder paswoordencoder;
 	
 	@Autowired
 	private ComputerclubAuthenticationSuccessHandler successHandler;
@@ -67,19 +71,29 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.csrf();
 	}
 	
-	@Autowired
-	public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception {
-				
-		auth.jdbcAuthentication()
-			.dataSource(dataSource)
-			.passwordEncoder(paswoordencoder)
-			.usersByUsernameQuery("select username,password, enabled, email from users where username=?")
-			.authoritiesByUsernameQuery("select username, role from user_roles where username=?");
+	@Override
+	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+		auth.userDetailsService(userDetailsService);
 	}
+	
+	//@Autowired
+	//public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception {
+	//			
+	//	auth.jdbcAuthentication()
+	//		.dataSource(dataSource)
+	//		.passwordEncoder(paswoordencoder)
+	//		.usersByUsernameQuery("select username,password, enabled, email from users where username=?")
+	//		.authoritiesByUsernameQuery("select username, role from user_roles where username=?");
+	//}
 		
+	//@Bean
+	//public BCryptPasswordEncoder passwordEncoder() {
+	//	return new BCryptPasswordEncoder();
+	//}
+	
 	@Bean
-	public BCryptPasswordEncoder passwordEncoder() {
-		return new BCryptPasswordEncoder();
+	public PasswordEncoder getPasswordEncoder() {
+		return NoOpPasswordEncoder.getInstance();
 	}
 	
 }

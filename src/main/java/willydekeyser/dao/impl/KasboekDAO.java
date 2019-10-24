@@ -10,6 +10,7 @@ import java.util.Calendar;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
@@ -94,6 +95,7 @@ public class KasboekDAO implements IKasboekDAO {
 	//private final String sql_countKasboek = "SELECT COUNT(*) FROM kasboek";
 	
 	@Autowired
+	@Qualifier("jdbcMaster")
     private JdbcTemplate jdbcTemplate;
 	
 	@Override

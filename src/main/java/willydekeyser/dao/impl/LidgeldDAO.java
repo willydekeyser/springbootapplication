@@ -9,6 +9,7 @@ import java.util.Calendar;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
@@ -42,6 +43,7 @@ public class LidgeldDAO implements ILidgeldDAO {
 	private final String sql_lidgeldExists = "SELECT EXIST(SELECT * FROM lidgeld WHERE lidgeld_id = ?)";
 	
 	@Autowired
+	@Qualifier("jdbcMaster")
     private JdbcTemplate jdbcTemplate;
 
 	@Override

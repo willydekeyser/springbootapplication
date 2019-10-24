@@ -9,6 +9,7 @@ import java.util.Calendar;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
@@ -40,21 +41,22 @@ public class RubriekDAO implements IRubriekDAO {
 	private final String sql_kasboekExistsByRuriekId = "SELECT EXISTS(SELECT * FROM kasboek WHERE rubriekid = ?)";
 	
 	@Autowired
-    private JdbcTemplate jdbcTemplate;
+	@Qualifier("jdbcMaster")
+    private JdbcTemplate masterJdbcTemplate;
 
 	@Override
 	public List<Rubriek> getAllRubriek() {
-		return jdbcTemplate.query(sql_getAllRubriek, new RubriekRowMapper());
+		return masterJdbcTemplate.query(sql_getAllRubriek, new RubriekRowMapper());
 	}
 	
 	@Override
 	public List<Rubriek> getAllRubriekKasboek() {
-		return jdbcTemplate.query(sql_getAllRubriekKasboek, new RubriekKasboekExtractor());
+		return masterJdbcTemplate.query(sql_getAllRubriekKasboek, new RubriekKasboekExtractor());
 	}
 
 	@Override
 	public Rubriek getRubriekById(int id) {
-		return jdbcTemplate.query(sql_getRubriekById, new RubriekByIdKasboekExtractor(), id);
+		return masterJdbcTemplate.query(sql_getRubriekById, new RubriekByIdKasboekExtractor(), id);
 	}
 
 	@Override
@@ -68,7 +70,7 @@ public class RubriekDAO implements IRubriekDAO {
 		Calendar currenttime = Calendar.getInstance();   
 		Date date = new Date((currenttime.getTime()).getTime());
 		KeyHolder key = new GeneratedKeyHolder();
-		jdbcTemplate.update(new PreparedStatementCreator() {
+		masterJdbcTemplate.update(new PreparedStatementCreator() {
 
 			@Override
 			public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
@@ -93,24 +95,24 @@ public class RubriekDAO implements IRubriekDAO {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		Calendar currenttime = Calendar.getInstance();   
 		Date date = new Date((currenttime.getTime()).getTime());
-		int key = jdbcTemplate.update(sql_updateRubriek, rubriek.getRubriek(), authentication.getName(), date, rubriek.getId());
+		int key = masterJdbcTemplate.update(sql_updateRubriek, rubriek.getRubriek(), authentication.getName(), date, rubriek.getId());
 		if (key == 1) return rubriek;
 		return null;
 	}
 
 	@Override
 	public void deleteRubriek(int id) {
-		jdbcTemplate.update(sql_deleteRubriek, id);
+		masterJdbcTemplate.update(sql_deleteRubriek, id);
 	}
 
 	@Override
 	public Boolean rubriekExists(int id) {
-		return jdbcTemplate.queryForObject(sql_rubriekExists, Boolean.class, id);
+		return masterJdbcTemplate.queryForObject(sql_rubriekExists, Boolean.class, id);
 	}
 	
 	@Override
 	public Boolean kasboekExistsByRubriekId(int id) {
-		return jdbcTemplate.queryForObject(sql_kasboekExistsByRuriekId, Boolean.class, id);
+		return masterJdbcTemplate.queryForObject(sql_kasboekExistsByRuriekId, Boolean.class, id);
 	}
 	
 }

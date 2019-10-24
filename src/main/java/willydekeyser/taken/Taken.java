@@ -57,7 +57,6 @@ public class Taken {
 		} catch (Exception e) {
 			System.err.println("Fout: " + e.getMessage());
 		}	
-				
-				
+					
 	}
 }

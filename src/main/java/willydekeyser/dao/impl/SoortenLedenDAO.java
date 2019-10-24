@@ -9,6 +9,7 @@ import java.util.Calendar;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
@@ -41,6 +42,7 @@ public class SoortenLedenDAO implements ISoortenLedenDAO {
 	private final String sql_ledenExistsBySoortenledenId = "SELECT EXISTS(SELECT * FROM ledenlijst WHERE soortenledenid = ?)";
 	
 	@Autowired
+	@Qualifier("jdbcMaster")
     private JdbcTemplate jdbcTemplate;
 	
 	@Override
