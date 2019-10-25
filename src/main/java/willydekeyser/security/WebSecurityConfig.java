@@ -12,25 +12,21 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import willydekeyser.filters.ComputerclubLogoutSuccessHandler;
 
-@SuppressWarnings("deprecation")
 @Configuration
 @Order(1)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-	//@Autowired
-	//DataSource dataSource;
-	
 	@Autowired
 	UserDetailsService userDetailsService;
 	
-	//@Autowired
-	//BCryptPasswordEncoder paswoordencoder;
+	@Autowired
+	BCryptPasswordEncoder paswoordencoder;
 	
 	@Autowired
 	private ComputerclubAuthenticationSuccessHandler successHandler;
@@ -42,6 +38,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity httpSecurity) throws Exception {
 		System.out.println("Config: WebSecurityConfig " + httpSecurity.toString());
 		//httpSecurity.csrf().disable();
+		//httpSecurity.requiresChannel().requiresSecure();
 		httpSecurity.authorizeRequests()
 			.antMatchers("/").permitAll()
 			.antMatchers("/kasboek/**").hasRole(ROLE_USER)
@@ -49,7 +46,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.antMatchers("/leden/**").hasRole(ROLE_USER)
 			.antMatchers("/rubriek/**").hasRole(ROLE_USER)
 			.antMatchers("/soortenleden/**").hasRole(ROLE_USER)
-			.antMatchers("/restcontroller/**").hasRole(ROLE_ADMIN)
+			.antMatchers("/restcontroller/**").hasAnyRole(ROLE_GOLD, ROLE_ADMIN)
 			.antMatchers("/actuator/**").hasRole(ROLE_GOLD)
 			.antMatchers("/agenda/**").hasAnyRole(ROLE_GOLD, ROLE_ADMIN)
 			.antMatchers("/rapporten/**").hasAnyRole(ROLE_GOLD, ROLE_ADMIN)
@@ -68,32 +65,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.and()
 			.exceptionHandling().accessDeniedPage("/error/403")
 			.and()
-			.csrf();
+			.csrf()
+			.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
 	}
 	
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(userDetailsService);
 	}
-	
-	//@Autowired
-	//public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception {
-	//			
-	//	auth.jdbcAuthentication()
-	//		.dataSource(dataSource)
-	//		.passwordEncoder(paswoordencoder)
-	//		.usersByUsernameQuery("select username,password, enabled, email from users where username=?")
-	//		.authoritiesByUsernameQuery("select username, role from user_roles where username=?");
-	//}
-		
-	//@Bean
-	//public BCryptPasswordEncoder passwordEncoder() {
-	//	return new BCryptPasswordEncoder();
-	//}
-	
+			
 	@Bean
-	public PasswordEncoder getPasswordEncoder() {
-		return NoOpPasswordEncoder.getInstance();
+	public BCryptPasswordEncoder passwordEncoder() {
+		return new BCryptPasswordEncoder();
 	}
-	
+		
 }

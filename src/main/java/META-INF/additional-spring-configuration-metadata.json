@@ -78,5 +78,10 @@
     "name": "spring.datasource1.tomcat.min-idle",
     "type": "java.lang.String",
     "description": "A description for 'spring.datasource1.tomcat.min-idle'"
+  },
+  {
+    "name": "spring.datasource1.driver-class-name",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource1.driver-class-name'"
   }
 ]}
