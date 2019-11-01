@@ -22,8 +22,7 @@ public class ApplicationConfig implements WebMvcConfigurer {
 	public BackUpLijsten backupLijsten() {
 		return new BackUpLijsten();
 	}
-	
-	
+		
 //	@Autowired
 //	private CustomInterceptor customInterceptor;
 //	

@@ -13,7 +13,6 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import willydekeyser.filters.ComputerclubLogoutSuccessHandler;
@@ -22,6 +21,9 @@ import willydekeyser.filters.ComputerclubLogoutSuccessHandler;
 @Order(1)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
+	@Autowired
+	CustomAuthenticationProvider customAuthentiocationProvider;
+	
 	@Autowired
 	UserDetailsService userDetailsService;
 	
@@ -37,8 +39,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity httpSecurity) throws Exception {
 		System.out.println("Config: WebSecurityConfig " + httpSecurity.toString());
-		//httpSecurity.csrf().disable();
-		//httpSecurity.requiresChannel().requiresSecure();
 		httpSecurity.authorizeRequests()
 			.antMatchers("/").permitAll()
 			.antMatchers("/kasboek/**").hasRole(ROLE_USER)
@@ -65,18 +65,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.and()
 			.exceptionHandling().accessDeniedPage("/error/403")
 			.and()
-			.csrf()
-			.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
+			.csrf();
 	}
 	
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth.userDetailsService(userDetailsService);
+		auth.authenticationProvider(customAuthentiocationProvider);
+		//auth.userDetailsService(userDetailsService);
 	}
 			
 	@Bean
 	public BCryptPasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
-		
+			
 }

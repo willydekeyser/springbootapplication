@@ -13,7 +13,11 @@ public class User {
 
 	private String username;
 	private String password;
+	private String gegevenspaswoord;
 	private String email;
+	private Boolean accountnonexpired;
+	private Boolean accountnonlocked;
+	private Boolean credentialsnonexpired;
 	private Boolean enabled;
 	private List<Role> roles;
 }

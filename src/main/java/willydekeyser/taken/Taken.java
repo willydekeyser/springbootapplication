@@ -33,13 +33,12 @@ public class Taken {
 		// https://dzone.com/articles/how-to-parse-json-data-from-a-rest-api-using-simpl
 		String inline = "";
 		try {
-			URL url = new URL("https://www.e-lotto.be/cache/dgResultsWithAddonsForDrawDate/NL/Lotto6-2019.10.5.json");
+			URL url = new URL("https://www.e-lotto.be/cache/dgResultsWithAddonsForDrawDate/NL/Lotto6-2019.10.26.json");
 			HttpURLConnection conn = (HttpURLConnection)url.openConnection();
 			conn.setRequestMethod("GET");
 			conn.connect();
 			int responsecode = conn.getResponseCode();
 			System.out.println("Response code is: " +responsecode);
-			
 			if(responsecode != 200)
 				throw new RuntimeException("HttpResponseCode: " +responsecode);
 			else

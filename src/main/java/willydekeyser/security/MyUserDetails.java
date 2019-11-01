@@ -16,14 +16,22 @@ public class MyUserDetails implements UserDetails {
 	private static final long serialVersionUID = 1L;
 	private String username;
 	private String password;
+	private String gegevenspaswoord;
 	private String email;
+	private Boolean accountnonexpired;
+	private Boolean accountnonlocked;
+	private Boolean credentialsnonexpired;
 	private Boolean enabled;
 	private List<Role> roles;
 	
 	public MyUserDetails(User user) {
 		this.username = user.getUsername();
 		this.password = user.getPassword();
+		this.gegevenspaswoord = user.getGegevenspaswoord();
 		this.email = user.getEmail();
+		this.accountnonexpired = user.getAccountnonexpired();
+		this.accountnonlocked = user.getAccountnonlocked();
+		this.credentialsnonexpired = user.getCredentialsnonexpired();
 		this.enabled = user.getEnabled();
 		this.roles = user.getRoles();
 	}
@@ -45,6 +53,10 @@ public class MyUserDetails implements UserDetails {
 		return password;
 	}
 
+	public String getGegevensPaswoord() {
+		return gegevenspaswoord;
+	}
+	
 	@Override
 	public String getUsername() {
 		return username;
@@ -56,17 +68,17 @@ public class MyUserDetails implements UserDetails {
 	
 	@Override
 	public boolean isAccountNonExpired() {
-		return enabled;
+		return accountnonexpired;
 	}
 
 	@Override
 	public boolean isAccountNonLocked() {
-		return enabled;
+		return accountnonlocked;
 	}
 
 	@Override
 	public boolean isCredentialsNonExpired() {
-		return enabled;
+		return credentialsnonexpired;
 	}
 
 	@Override

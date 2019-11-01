@@ -16,8 +16,12 @@ public class UserExtractor implements ResultSetExtractor<User>{
 		while (rs.next()) {
 			user.setUsername(rs.getString("username"));
 			user.setPassword(rs.getString("password"));
+			user.setGegevenspaswoord(rs.getString("gegevenspaswoord"));
 			user.setEmail(rs.getString("email"));
 			user.setEnabled(rs.getBoolean("enabled"));
+			user.setAccountnonexpired(rs.getBoolean("accountnonexpired"));
+			user.setAccountnonlocked(rs.getBoolean("accountnonlocked"));
+			user.setCredentialsnonexpired(rs.getBoolean("credentialsnonexpired"));
 		}
 		return user;
 	}
