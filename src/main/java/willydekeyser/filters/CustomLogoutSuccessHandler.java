@@ -18,12 +18,12 @@ import org.springframework.stereotype.Component;
 import willydekeyser.loggers.FileLoggers;
 
 @Component
-public class ComputerclubLogoutSuccessHandler extends SimpleUrlLogoutSuccessHandler implements LogoutSuccessHandler {
+public class CustomLogoutSuccessHandler extends SimpleUrlLogoutSuccessHandler implements LogoutSuccessHandler {
 	
 	@Autowired
 	FileLoggers fileLogger;
 	
-    public ComputerclubLogoutSuccessHandler() {
+    public CustomLogoutSuccessHandler() {
 		super();
 	}
 

@@ -12,7 +12,7 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.bcrypt.BCrypt;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import willydekeyser.model.Role;
@@ -25,6 +25,11 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 	@Autowired
 	private IUserService userservice;
 	
+	private MyUserDetails myuserDetails = new MyUserDetails();
+	private BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+	//private SCryptPasswordEncoder encoder = new SCryptPasswordEncoder();
+	//private Pbkdf2PasswordEncoder encoder = new Pbkdf2PasswordEncoder();
+	
 	@Override
 	public Authentication authenticate(Authentication authentication) throws AuthenticationException {
 		String username = authentication.getName();
@@ -32,13 +37,14 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 		User user = userservice.findByUserName(username);
 		if (user == null) {
 			throw new UsernameNotFoundException("User name " + username + " not found");
-		} 
+		}
+		user.setPasswordtext(password);
 		List<GrantedAuthority> authorities = new ArrayList<>();
 		for(Role role: user.getRoles()) {
 			authorities.add(new SimpleGrantedAuthority(role.getRole()));
 		}
-		MyUserDetails myuserDetails = new MyUserDetails(user);
-		if (username.equals(user.getUsername()) && BCrypt.checkpw(password, user.getPassword()) && user.getEnabled() && 
+		myuserDetails = new MyUserDetails(user);
+		if (username.equals(user.getUsername()) && encoder.matches(password, user.getPassword()) && user.getEnabled() && 
 				user.getAccountnonexpired() && user.getAccountnonlocked() && user.getCredentialsnonexpired()) {
 			return new UsernamePasswordAuthenticationToken(myuserDetails, password, authorities);
 		} else {
@@ -49,6 +55,10 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 	@Override
 	public boolean supports(Class<?> authentication) {
 		return authentication.equals(UsernamePasswordAuthenticationToken.class);
+	}
+	
+	public MyUserDetails getMyUserDetailes() {
+		return myuserDetails;
 	}
 
 }

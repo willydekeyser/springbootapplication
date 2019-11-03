@@ -5,17 +5,14 @@ import static willydekeyser.controller.NamenLijst.ROLE_GOLD;
 import static willydekeyser.controller.NamenLijst.ROLE_USER;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-import willydekeyser.filters.ComputerclubLogoutSuccessHandler;
+import willydekeyser.filters.CustomLogoutSuccessHandler;
 
 @Configuration
 @Order(1)
@@ -23,18 +20,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	CustomAuthenticationProvider customAuthentiocationProvider;
+
+	@Autowired
+	private CustomAuthenticationSuccessHandler customSuccessHandler;
 	
 	@Autowired
-	UserDetailsService userDetailsService;
-	
-	@Autowired
-	BCryptPasswordEncoder paswoordencoder;
-	
-	@Autowired
-	private ComputerclubAuthenticationSuccessHandler successHandler;
-	
-	@Autowired
-	private ComputerclubLogoutSuccessHandler computerLogoutSuccessHandler;
+	private CustomLogoutSuccessHandler customLogoutSuccessHandler;
 	
 	@Override
 	protected void configure(HttpSecurity httpSecurity) throws Exception {
@@ -51,7 +42,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.antMatchers("/agenda/**").hasAnyRole(ROLE_GOLD, ROLE_ADMIN)
 			.antMatchers("/rapporten/**").hasAnyRole(ROLE_GOLD, ROLE_ADMIN)
 			.and()
-			.formLogin().loginPage("/login").successHandler(successHandler).permitAll()
+			.formLogin().loginPage("/login").successHandler(customSuccessHandler).permitAll()
 			.and()
 			.logout().permitAll()
 			.and()
@@ -59,11 +50,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.deleteCookies("JSESSIONID")
 				.logoutSuccessUrl("/")
 				.invalidateHttpSession(true)
-				.logoutSuccessHandler(computerLogoutSuccessHandler)
+				.logoutSuccessHandler(customLogoutSuccessHandler)
 			.and()
 			.rememberMe().key("willydekeyser").tokenValiditySeconds(3600)
-			.and()
-			.exceptionHandling().accessDeniedPage("/error/403")
 			.and()
 			.csrf();
 	}
@@ -71,12 +60,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.authenticationProvider(customAuthentiocationProvider);
-		//auth.userDetailsService(userDetailsService);
-	}
-			
-	@Bean
-	public BCryptPasswordEncoder passwordEncoder() {
-		return new BCryptPasswordEncoder();
 	}
 			
 }

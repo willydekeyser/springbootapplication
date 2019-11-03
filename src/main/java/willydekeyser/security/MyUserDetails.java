@@ -8,14 +8,17 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import lombok.ToString;
 import willydekeyser.model.Role;
 import willydekeyser.model.User;
 
+@ToString
 public class MyUserDetails implements UserDetails {
 
 	private static final long serialVersionUID = 1L;
 	private String username;
 	private String password;
+	private String passwordtext;
 	private String gegevenspaswoord;
 	private String email;
 	private Boolean accountnonexpired;
@@ -27,6 +30,7 @@ public class MyUserDetails implements UserDetails {
 	public MyUserDetails(User user) {
 		this.username = user.getUsername();
 		this.password = user.getPassword();
+		this.passwordtext = user.getPasswordtext();
 		this.gegevenspaswoord = user.getGegevenspaswoord();
 		this.email = user.getEmail();
 		this.accountnonexpired = user.getAccountnonexpired();
@@ -53,6 +57,10 @@ public class MyUserDetails implements UserDetails {
 		return password;
 	}
 
+	public String getPaswoordText() {
+		return passwordtext;
+	}
+	
 	public String getGegevensPaswoord() {
 		return gegevenspaswoord;
 	}
