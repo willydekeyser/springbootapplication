@@ -484,6 +484,12 @@ table.lidgeld {
 	border-spacing: 0px;
 }
 
+table.sticky_thead th {
+	position: sticky;
+	top: 0;
+	background: #FFFF00;
+}
+
 tr.test:nth-child(even) {background: #DDDDDD}
 tr.test:nth-child(odd) {background: #FFFFFF}
 tr.test:hover {cursor: pointer; background: #888888; color: #FFFFFF}

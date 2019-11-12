@@ -13,7 +13,6 @@ public class User {
 
 	private String username;
 	private String password;
-	private String passwordtext;
 	private String gegevenspaswoord;
 	private String email;
 	private Boolean accountnonexpired;

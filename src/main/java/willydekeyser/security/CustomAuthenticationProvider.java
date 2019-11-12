@@ -38,7 +38,6 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 		if (user == null) {
 			throw new UsernameNotFoundException("User name " + username + " not found");
 		}
-		user.setPasswordtext(password);
 		List<GrantedAuthority> authorities = new ArrayList<>();
 		for(Role role: user.getRoles()) {
 			authorities.add(new SimpleGrantedAuthority(role.getRole()));
@@ -57,8 +56,4 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 		return authentication.equals(UsernamePasswordAuthenticationToken.class);
 	}
 	
-	public MyUserDetails getMyUserDetailes() {
-		return myuserDetails;
-	}
-
 }

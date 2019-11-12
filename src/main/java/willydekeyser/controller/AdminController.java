@@ -4,30 +4,26 @@ import java.security.Principal;
 
 import javax.servlet.http.HttpSession;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import willydekeyser.security.CustomAuthenticationProvider;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 @Controller
 public class AdminController {
-
-	@Autowired
-	CustomAuthenticationProvider customAuthenticationProvider;
 	
 	@Secured({"ROLE_GOLD", "ROLE_ADMIN", "ROLE_USER"})
 	@RequestMapping(value = "/username", method = RequestMethod.GET)
 	@ResponseBody
 	public String currentUserName(Principal principal) {
-		System.out.println("USER: " + customAuthenticationProvider.getMyUserDetailes().toString());
 		return principal.getName();
 	}
 	
+	@ResponseStatus(code = HttpStatus.OK, reason = "Some parameters are invalid")
 	@Secured("ROLE_GOLD")
 	@RequestMapping(value = "/authentication_username", method = RequestMethod.GET)
 	@ResponseBody
