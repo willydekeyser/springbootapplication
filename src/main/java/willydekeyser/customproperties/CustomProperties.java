@@ -11,7 +11,9 @@ import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @Component
 @Scope(value = "singleton")
 public class CustomProperties {
@@ -26,12 +28,12 @@ public class CustomProperties {
 	private static Date datum;
 	
 	public CustomProperties() {
-		System.out.println("CustomProperties in Constructor: ");
+		log.info("CustomProperties in Constructor: ");
 	}
 	
 	@PostConstruct
 	public void init() {
-		System.out.println("CustomProperties in PostConstruct: ");
+		log.info("CustomProperties in PostConstruct: ");
 	}
 	
 	public Integer getPauzeAgenda() {

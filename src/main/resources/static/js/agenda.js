@@ -122,7 +122,7 @@ function verzenddatum() {
 
 function eerste_woensdag() {
 	const date = new Date();
-	const dag = date.getDay();
+	let dag = date.getDay();
 	if (dag < 4) {
 		dag = 3 - dag;
 	} else {
