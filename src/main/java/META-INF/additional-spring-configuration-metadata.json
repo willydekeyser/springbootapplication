@@ -1,8 +1,18 @@
 {"properties": [
   {
-    "name": "spring.datasource1.driver-class-name",
+    "name": "spring.datasource1.platform",
     "type": "java.lang.String",
-    "description": "A description for 'spring.datasource1.driver-class-name'"
+    "description": "A description for 'spring.datasource1.platform'"
+  },
+  {
+    "name": "spring.datasource1.url",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource1.url'"
+  },
+  {
+    "name": "spring.datasource1.password",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource1.password'"
   },
   {
     "name": "spring.datasource1.jdbcUrl",
@@ -10,9 +20,14 @@
     "description": "A description for 'spring.datasource1.jdbcUrl'"
   },
   {
-    "name": "spring.datasource1.password",
+    "name": "spring.datasource1.jdbcUrl",
     "type": "java.lang.String",
-    "description": "A description for 'spring.datasource1.password'"
+    "description": "A description for 'spring.datasource1.jdbcUrl'"
+  },
+  {
+    "name": "spring.datasource1.username",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource1.username'"
   },
   {
     "name": "spring.datasource2.username",
@@ -23,11 +38,6 @@
     "name": "spring.datasource2.url",
     "type": "java.lang.String",
     "description": "A description for 'spring.datasource2.url'"
-  },
-  {
-    "name": "spring.datasource2.platform",
-    "type": "java.lang.String",
-    "description": "A description for 'spring.datasource2.platform'"
   },
   {
     "name": "spring.datasource2.password",
@@ -45,44 +55,14 @@
     "description": "A description for 'spring.datasource2.driver-class-name'"
   },
   {
-    "name": "spring.datasource1.username",
-    "type": "java.lang.String",
-    "description": "A description for 'spring.datasource1.username'"
-  },
-  {
-    "name": "spring.datasource1.platform",
-    "type": "java.lang.String",
-    "description": "A description for 'spring.datasource1.platform'"
-  },
-  {
-    "name": "spring.datasource1.url",
-    "type": "java.lang.String",
-    "description": "A description for 'spring.datasource1.url'"
-  },
-  {
-    "name": "spring.datasource1.tomcat.max-active",
-    "type": "java.lang.String",
-    "description": "A description for 'spring.datasource1.tomcat.max-active'"
-  },
-  {
-    "name": "spring.datasource1.tomcat.max-idle",
-    "type": "java.lang.String",
-    "description": "A description for 'spring.datasource1.tomcat.max-idle'"
-  },
-  {
-    "name": "spring.datasource1.tomcat.max-wait",
-    "type": "java.lang.String",
-    "description": "A description for 'spring.datasource1.tomcat.max-wait'"
-  },
-  {
-    "name": "spring.datasource1.tomcat.min-idle",
-    "type": "java.lang.String",
-    "description": "A description for 'spring.datasource1.tomcat.min-idle'"
-  },
-  {
     "name": "spring.datasource1.driver-class-name",
     "type": "java.lang.String",
     "description": "A description for 'spring.datasource1.driver-class-name'"
+  },
+  {
+    "name": "spring.datasource2.platform",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource2.platform'"
   },
   {
     "name": "spring.datasource2.jdbcUrl",

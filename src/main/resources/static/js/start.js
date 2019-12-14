@@ -69,11 +69,11 @@ function time_out() {
     	timeOut = sessionExpiry - localTime;
     }  
     
-    document.getElementsByClassName('footer_section_A')[0].innerHTML = "Time out: " + msToTime(timeOut) + " - " + msToTime(serverTime) + " - " + msToTime(sessionExpiry) + " - " + msToTime(localTime);
+    document.getElementsByClassName('footer_section_A')[0].innerHTML = "Time out: " + msToTime(timeOut, false) + " - " + msToTime(serverTime, false) + " - " + msToTime(sessionExpiry, false) + " - " + msToTime(localTime, true);
     
     const timeOutTeller = document.getElementById('timeOutTeller');
 	if(timeOutTeller){
-		timeOutTeller.innerHTML = msToTime(timeOut);
+		timeOutTeller.innerHTML = msToTime(timeOut, false);
 	};
 	
     if(timeOut < 30000 && timeOut > 29000 ) {
@@ -121,13 +121,13 @@ function listener_timeOut_submit(event) {
 	timeOut = 30000;
 	showTimeOutModal(false);
 	fetch_timeout();
-//	const data = fetch_TEXT('/timeout')
-//	.then((data) => {
-//		console.log('Time out: ' + data);
-//	})
-//	.catch((error) => {
-//		console.error('FOUT: ' + error);
-//	});
+	const data = fetch_TEXT('/timeout')
+	.then((data) => {
+		console.log('Time out: ' + data);
+	})
+	.catch((error) => {
+		console.error('FOUT: ' + error);
+	});
 	return false;
 };
 
@@ -156,7 +156,7 @@ function getCookie(naam) {
     return "";
 }
 
-function msToTime(duration) {
+function msToTime(duration, uren) {
     let milliseconds = parseInt((duration%1000))
         , seconds = parseInt((duration/1000)%60)
         , minutes = parseInt((duration/(1000*60))%60)
@@ -166,8 +166,12 @@ function msToTime(duration) {
     minutes = (minutes < 10) ? "0" + minutes : minutes;
     seconds = (seconds < 10) ? "0" + seconds : seconds;
 
-    return minutes + ":" + seconds;
-    //return hours + ":" + minutes + ":" + seconds;
+    if(uren) {
+    	return hours + ":" + minutes + ":" + seconds;
+    } else {
+    	return minutes + ":" + seconds;
+    }
+  
 }
 
 function start_menu() {

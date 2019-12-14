@@ -18,6 +18,7 @@ import willydekeyser.customproperties.CustomPropertiesService;
 
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(
+		prePostEnabled = true,
 		securedEnabled = true,
 		jsr250Enabled = true
 		)
@@ -26,7 +27,6 @@ import willydekeyser.customproperties.CustomPropertiesService;
 @SpringBootApplication
 @EnableAsync
 @EnableScheduling
-//@EnableSwagger2
 @PropertySources({
 	@PropertySource("file:properties/application.properties")
 })
