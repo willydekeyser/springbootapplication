@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.Calendar;
 import java.util.List;
 
@@ -37,8 +36,8 @@ public class RubriekDAO implements IRubriekDAO {
 	private final String sql_addRubriek = "INSERT INTO rubriek (rubriek, createdby, createddate) VALUES (?, ?, ?)";
 	private final String sql_updateRubriek = "UPDATE rubriek SET rubriek = ?, lastmodifiedby = ?, lastmodifieddate = ?  WHERE rubriek_id = ?";
 	private final String sql_deleteRubriek = "DELETE FROM rubriek WHERE rubriek_id = ?";
-	private final String sql_rubriekExists = "SELECT EXIST(SELECT * FROM rubriek WHERE rubriek_id = ?)";
-	private final String sql_kasboekExistsByRuriekId = "SELECT EXISTS(SELECT * FROM kasboek WHERE rubriekid = ?)";
+	private final String sql_rubriekExists = "SELECT COUNT (*) FROM rubriek WHERE EXISTS(SELECT * FROM rubriek WHERE rubriek_id = ?) AND ROWNUM = 1";
+	private final String sql_kasboekExistsByRuriekId = "SELECT COUNT(*) FROM kasboek WHERE EXISTS(SELECT * FROM kasboek WHERE rubriekid = ?) AND ROWNUM = 1";
 	
 	@Autowired
 	@Qualifier("jdbcMaster")
@@ -74,7 +73,7 @@ public class RubriekDAO implements IRubriekDAO {
 
 			@Override
 			public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
-				final PreparedStatement ps = connection.prepareStatement(sql_addRubriek, Statement.RETURN_GENERATED_KEYS);
+				final PreparedStatement ps = connection.prepareStatement(sql_addRubriek, new String [] {"rubriek_id"});
 			    ps.setString(1, rubriek.getRubriek());
 			    ps.setString(2, authentication.getName());
 			    ps.setDate(3, date);
