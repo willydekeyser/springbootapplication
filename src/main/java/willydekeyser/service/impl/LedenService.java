@@ -36,7 +36,7 @@ public class LedenService implements ILedenService {
 	}
 	
 	@Override
-	public Leden getLedenById(int id) {
+	public Leden getLedenById(Integer id) {
 		return ledenDAO.getLedenById(id);
 	}
 	

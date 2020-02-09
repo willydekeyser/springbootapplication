@@ -47,7 +47,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 				user.getAccountnonexpired() && user.getAccountnonlocked() && user.getCredentialsnonexpired()) {
 			return new UsernamePasswordAuthenticationToken(myuserDetails, password, authorities);
 		} else {
-			throw new BadCredentialsException("User name " + username + " niet toegelaten op dewe site");
+			throw new BadCredentialsException("User name " + username + " niet toegelaten op deze site");
 		}
 	}
 

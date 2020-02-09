@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.Calendar;
 import java.util.List;
 
@@ -29,18 +28,18 @@ import willydekeyser.model.Lidgeld;
 public class LidgeldDAO implements ILidgeldDAO {
 
 	private final String sql_AllLidgeld = "SELECT * FROM lidgeld ORDER BY lidgeld_id";
-	private final String sql_AllLidgeldLeden = "SELECT * FROM lidgeld, ledenlijst WHERE ledenlijstid = ledenlijst_id ORDER BY datum";
-	private final String sql_AllLidgeldByLid = "SELECT * FROM lidgeld WHERE ledenlijstid = ? ORDER BY lidgeld_id";
-	private final String sql_MAXLidgeldLeden = "SELECT lidgeld.*, ledenlijst.* FROM lidgeld, ledenlijst "
-			+ "WHERE (ledenlijst_id = ledenlijstid) AND  (soortenledenid = 1 OR soortenledenid = 2 OR soortenledenid = 3) "
-			+ "AND (datum = (SELECT MAX(datum) FROM lidgeld AS lidgeld_sub WHERE ledenlijst_id = lidgeld_sub.ledenlijstid)) "
+	private final String sql_AllLidgeldLeden = "SELECT * FROM lidgeld, leden WHERE ledenid = leden_id ORDER BY datum";
+	private final String sql_AllLidgeldByLid = "SELECT * FROM lidgeld WHERE ledenid = ? ORDER BY lidgeld_id";
+	private final String sql_MAXLidgeldLeden = "SELECT lidgeld.*, leden.* FROM lidgeld, leden "
+			+ "WHERE (leden_id = ledenid) AND  (soortenledenid = 1 OR soortenledenid = 2 OR soortenledenid = 3) "
+			+ "AND (datum = (SELECT MAX(datum) FROM lidgeld lidgeld_sub WHERE leden_id = lidgeld_sub.ledenid)) "
 			+ "ORDER BY datum ASC, lidgeld_id ASC";
-	private final String sql_getLidgeldById = "SELECT lidgeld.*, ledenlijst.*  FROM lidgeld, ledenlijst WHERE lidgeld_id = ? AND ledenlijstid = ledenlijst_id";
+	private final String sql_getLidgeldById = "SELECT lidgeld.*, leden.*  FROM lidgeld, leden WHERE lidgeld_id = ? AND ledenid = leden_id";
 	
-	private final String sql_newLidgeld = "INSERT INTO lidgeld (ledenlijstid, datum, bedrag, createdby, createddate) values (?, ?, ?, ?, ?)";
-	private final String sql_updateLidgeld = "UPDATE lidgeld SET ledenlijstid = ?, datum = ?, bedrag = ?, lastmodifiedby = ?, lastmodifieddate = ? WHERE lidgeld_id = ?";
+	private final String sql_newLidgeld = "INSERT INTO lidgeld (ledenid, datum, bedrag, createdby, createddate) values (?, ?, ?, ?, ?)";
+	private final String sql_updateLidgeld = "UPDATE lidgeld SET ledenid = ?, datum = ?, bedrag = ?, lastmodifiedby = ?, lastmodifieddate = ? WHERE lidgeld_id = ?";
 	private final String sql_deleteLidgeld = "DELETE FROM lidgeld WHERE lidgeld_id = ?";
-	private final String sql_lidgeldExists = "SELECT EXIST(SELECT * FROM lidgeld WHERE lidgeld_id = ?)";
+	private final String sql_lidgeldExists = "SELECT COUNT(*) FROM lidgeld WHERE EXISTS(SELECT * FROM lidgeld WHERE lidgeld_id = ?) AND ROWNUM = 1";
 	
 	@Autowired
 	@Qualifier("jdbcMaster")
@@ -79,19 +78,19 @@ public class LidgeldDAO implements ILidgeldDAO {
 	@Override
 	public Lidgeld addLidgeld(Lidgeld lidgeld) {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-		Calendar currenttime = Calendar.getInstance();   
-		Date date = new Date((currenttime.getTime()).getTime());
+		//Calendar currenttime = Calendar.getInstance();   
+		java.util.Date date = new java.util.Date();
 		KeyHolder key = new GeneratedKeyHolder();
 		jdbcTemplate.update(new PreparedStatementCreator() {
 			
 			@Override
 			public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
-				final PreparedStatement ps = connection.prepareStatement(sql_newLidgeld, Statement.RETURN_GENERATED_KEYS);
-				ps.setInt(1, lidgeld.getLeden().getLedenlijst_id());
+				final PreparedStatement ps = connection.prepareStatement(sql_newLidgeld, new String [] {"lidgeld_id"});
+				ps.setInt(1, lidgeld.getLeden().getLeden_id());
 				ps.setDate(2, java.sql.Date.valueOf(lidgeld.getDatum()));
 				ps.setBigDecimal(3, lidgeld.getBedrag());
 				ps.setString(4, authentication.getName());
-			    ps.setDate(5, date);
+			    ps.setDate(5, new java.sql.Date(date.getTime()));
 				return ps;
 			}
 		}, key);
@@ -110,7 +109,7 @@ public class LidgeldDAO implements ILidgeldDAO {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		Calendar currenttime = Calendar.getInstance();   
 		Date date = new Date((currenttime.getTime()).getTime());
-		int key = jdbcTemplate.update(sql_updateLidgeld,lidgeld.getLeden().getLedenlijst_id(), lidgeld.getDatum(), lidgeld.getBedrag(), authentication.getName(), date, lidgeld.getId());
+		int key = jdbcTemplate.update(sql_updateLidgeld,lidgeld.getLeden().getLeden_id(), lidgeld.getDatum(), lidgeld.getBedrag(), authentication.getName(), date, lidgeld.getId());
 		if (key == 1) return lidgeld;
 		return null;
 	}

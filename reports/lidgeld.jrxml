@@ -11,67 +11,67 @@
 	<parameter name="Datum" class="java.lang.String"/>
 	<parameter name="IMAGE_DIR" class="java.lang.String"/>
 	<queryString>
-		<![CDATA[SELECT * FROM ledenlijst WHERE ledenlijst_id = 4]]>
+		<![CDATA[SELECT * FROM leden WHERE leden_id = 4]]>
 	</queryString>
-	<field name="ledenlijst_id" class="java.lang.Integer">
-		<property name="com.jaspersoft.studio.field.label" value="ledenlijst_id"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="ledenlijst"/>
+	<field name="leden_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="leden_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="leden"/>
 	</field>
 	<field name="soortenledenid" class="java.lang.Long">
 		<property name="com.jaspersoft.studio.field.label" value="soortenledenid"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="ledenlijst"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="leden"/>
 	</field>
 	<field name="voornaam" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="voornaam"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="ledenlijst"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="leden"/>
 	</field>
 	<field name="familienaam" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="familienaam"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="ledenlijst"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="leden"/>
 	</field>
 	<field name="straat" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="straat"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="ledenlijst"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="leden"/>
 	</field>
 	<field name="nr" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="nr"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="ledenlijst"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="leden"/>
 	</field>
 	<field name="postnr" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="postnr"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="ledenlijst"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="leden"/>
 	</field>
 	<field name="gemeente" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="gemeente"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="ledenlijst"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="leden"/>
 	</field>
 	<field name="telefoonnummer" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="telefoonnummer"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="ledenlijst"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="leden"/>
 	</field>
 	<field name="gsmnummer" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="gsmnummer"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="ledenlijst"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="leden"/>
 	</field>
 	<field name="emailadres" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="emailadres"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="ledenlijst"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="leden"/>
 	</field>
 	<field name="webadres" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="webadres"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="ledenlijst"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="leden"/>
 	</field>
 	<field name="datumlidgeld" class="java.sql.Date">
 		<property name="com.jaspersoft.studio.field.label" value="datumlidgeld"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="ledenlijst"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="leden"/>
 	</field>
 	<field name="ontvangmail" class="java.lang.Boolean">
 		<property name="com.jaspersoft.studio.field.label" value="ontvangmail"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="ledenlijst"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="leden"/>
 	</field>
 	<field name="mailvlag" class="java.lang.Boolean">
 		<property name="com.jaspersoft.studio.field.label" value="mailvlag"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="ledenlijst"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="leden"/>
 	</field>
 	<background>
 		<band splitType="Stretch"/>
@@ -172,7 +172,7 @@ $P{Periode} + "'. " + "U kunt uw lidgeld ook vereffenen met de schatbewaarder op
 				<textElement verticalAlignment="Middle">
 					<font fontName="DejaVu Sans"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{ledenlijst_id}.toString()]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{leden_id}.toString()]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="111" y="597" width="235" height="14" uuid="b2c543f2-b938-47d7-b69a-4831870815d9"/>

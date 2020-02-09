@@ -5,7 +5,6 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.Calendar;
 import java.util.List;
 
@@ -47,8 +46,9 @@ public class KasboekDAO implements IKasboekDAO {
 			+ "FROM kasboek, rubriek "
 			+ "WHERE rubriekid = rubriek_id "
 			+ "ORDER BY kasboek_id "
-			+ "LIMIT ? "
-			+ "OFFSET ?";
+			//+ "LIMIT ? "
+			+ "OFFSET ? ROWS "
+			+ "FETCH NEXT ? ROWS ONLY";
 	private final String sql_getAllKasboekRubriekJaar = "SELECT kasboek.*, rubriek.* "
 			+ "FROM kasboek, rubriek "
 			+ "WHERE rubriekid = rubriek_id AND jaartal = ? "
@@ -57,8 +57,9 @@ public class KasboekDAO implements IKasboekDAO {
 			+ "FROM kasboek, rubriek "
 			+ "WHERE rubriekid = rubriek_id AND jaartal = ? "
 			+ "ORDER BY kasboek_id "
-			+ "LIMIT ? "
-			+ "OFFSET ?";
+			//+ "LIMIT ? "
+			+ "OFFSET ? ROWS "
+			+ "FETCH NEXT ? ROWS ONLY";
 	private final String sql_getAllKasboekRubriekJaarRubriek = "SELECT kasboek.*, rubriek.* "
 			+ "FROM kasboek, rubriek "
 			+ "WHERE rubriekid = rubriek_id AND jaartal = ? AND rubriek_id = ? "
@@ -67,17 +68,18 @@ public class KasboekDAO implements IKasboekDAO {
 			+ "FROM kasboek, rubriek "
 			+ "WHERE rubriekid = rubriek_id AND jaartal = ? AND rubriek_id = ? "
 			+ "ORDER BY kasboek_id "
-			+ "LIMIT ? "
-			+ "OFFSET ?";
+			//+ "LIMIT ? "
+			+ "OFFSET ? ROWS "
+			+ "FETCH NEXT ? ROWS ONLY";
 	private final String sql_getSom = "SELECT SUM(uitgaven) AS uitgaven, SUM(inkomsten) AS inkomsten FROM kasboek";
 	private final String sql_getSomJaartal = "SELECT SUM(uitgaven) AS uitgaven, SUM(inkomsten) AS inkomsten FROM kasboek WHERE Jaartal = ?";
 	private final String sql_getSomRubriek = "SELECT SUM(uitgaven) AS uitgaven, SUM(inkomsten) AS inkomsten FROM kasboek WHERE Rubriek = ?";
 	private final String sql_getSomJaartalRubriek = "SELECT SUM(uitgaven) AS uitgaven, SUM(inkomsten) AS inkomsten "
 			+ "FROM kasboek WHERE jaartal = ? AND rubriekid = ?";
 	
-	private final String sql_countKasboek = "SELECT COUNT(kasboek_id) FROM kasboek";
-	private final String sql_countKasboekJaar = "SELECT COUNT(kasboek_id) FROM kasboek WHERE jaartal = ?";
-	private final String sql_countKasboekJaarRubriek = "SELECT COUNT(kasboek_id) FROM kasboek WHERE jaartal = ? AND rubriekid = ?";
+	private final String sql_countKasboek = "SELECT COUNT(kasboek_id) AS count FROM kasboek";
+	private final String sql_countKasboekJaar = "SELECT COUNT(kasboek_id) AS count FROM kasboek WHERE jaartal = ?";
+	private final String sql_countKasboekJaarRubriek = "SELECT COUNT(kasboek_id) AS count FROM kasboek WHERE jaartal = ? AND rubriekid = ?";
 	
 	
 	private final String sql_getKasboekJaarRubriek = "SELECT DISTINCT jaartal, rubriek_id, rubriek "
@@ -91,8 +93,8 @@ public class KasboekDAO implements IKasboekDAO {
 	private final String sql_updateKasboek = "UPDATE kasboek SET jaartal = ?, rubriekid = ?, omschrijving = ?, datum = ?, uitgaven = ?, inkomsten = ?, lastmodifiedby = ?, lastmodifieddate = ? "
 			+ "WHERE kasboek_id = ?";
 	private final String sql_deleteKasboek = "DELETE FROM kasboek WHERE kasboek_id = ?";
-	private final String sql_kasboekExists = "SELECT EXISTS(SELECT * FROM kasboek WHERE kasboek_id = ?)";
-	//private final String sql_countKasboek = "SELECT COUNT(*) FROM kasboek";
+	private final String sql_kasboekExists = "SELECT COUNT(*) FROM kasboek WHERE EXISTS(SELECT * FROM kasboek WHERE kasboek_id = ?) AND ROWNUM = 1";
+	//private final String sql_countKasboek = "SELECT COUNT(*) AS count FROM kasboek";
 	
 	@Autowired
 	@Qualifier("jdbcMaster")
@@ -123,23 +125,23 @@ public class KasboekDAO implements IKasboekDAO {
 	
 	@Override
 	public List<Kasboek> getAllKasboekbyPage(Integer limit, Integer offset) {
-		return jdbcTemplate.query(sql_getAllKasboekbyPage, new KasboekRowMapper(),limit, offset);
+		return jdbcTemplate.query(sql_getAllKasboekbyPage, new KasboekRowMapper(), offset,limit);
 	}
 	
 	@Override
 	public List<Kasboek> getAllKasboekRubriekbyPage(Integer limit, Integer offset) {
-		return jdbcTemplate.query(sql_getAllKasboekRubriekbyPage, new KasboekRubriekRowMapper(), limit, offset);
+		return jdbcTemplate.query(sql_getAllKasboekRubriekbyPage, new KasboekRubriekRowMapper(), offset, limit);
 	}
 	
 	@Override
 	public List<Kasboek> getAllKasboekRubriekJaarRubriekbyPage(Integer jaartal, Integer rubriekId, Integer limit, Integer offset) {
 		if(jaartal == 0) {
-			return jdbcTemplate.query(sql_getAllKasboekRubriekbyPage, new KasboekRubriekRowMapper(), limit, offset);
+			return jdbcTemplate.query(sql_getAllKasboekRubriekbyPage, new KasboekRubriekRowMapper(), offset, limit);
 		} else {
 			if(rubriekId == 0) {
-				return jdbcTemplate.query(sql_getAllKasboekRubriekJaarbyPage, new KasboekRubriekRowMapper(), jaartal, limit, offset);
+				return jdbcTemplate.query(sql_getAllKasboekRubriekJaarbyPage, new KasboekRubriekRowMapper(), jaartal, offset, limit);
 			} else {
-				return jdbcTemplate.query(sql_getAllKasboekRubriekJaarRubriekbyPage, new KasboekRubriekRowMapper(), jaartal, rubriekId, limit, offset);
+				return jdbcTemplate.query(sql_getAllKasboekRubriekJaarRubriekbyPage, new KasboekRubriekRowMapper(), jaartal, rubriekId, offset, limit);
 			}
 		}
 		
@@ -189,7 +191,7 @@ public class KasboekDAO implements IKasboekDAO {
 
 			@Override
 			public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
-				final PreparedStatement ps = connection.prepareStatement(sql_addKasboek, Statement.RETURN_GENERATED_KEYS);
+				final PreparedStatement ps = connection.prepareStatement(sql_addKasboek, new String [] {"kasboek_id"});
 			    ps.setInt(1, kasboek.getJaartal());
 			    ps.setInt(2, kasboek.getRubriek().getId());
 			    ps.setString(3, kasboek.getOmschrijving());

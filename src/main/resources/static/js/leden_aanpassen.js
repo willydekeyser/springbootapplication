@@ -55,7 +55,7 @@ function listener_newLid_submit() {
 	const formData = new FormData(document.getElementById('editLidModalForm'));
 	const data = post_Form('/leden/save_newLid', formData)
 	.then((data) => {
-		selectedLidId = data.ledenlijst_id;
+		selectedLidId = data.leden_id;
 		selectedSoortId = data.soortenleden.id;
 		showNewLidModal(false);
 		document.getElementById('select_leden').value = selectedSoortId;
@@ -141,7 +141,7 @@ function setup_updateLidModal() {
 
 function updateLid_Formvullen(){
 	console.log('ID: ' + leden_gegevens.voornaam + ' ' + leden_gegevens.familienaam);
-	document.getElementById('lidid').value = leden_gegevens.ledenlijst_id;
+	document.getElementById('lidid').value = leden_gegevens.leden_id;
 	document.getElementById('lidvoornaam').value = leden_gegevens.voornaam;
 	document.getElementById('lidfamilienaam').value = leden_gegevens.familienaam;
 	document.getElementById('lidstraat').value = leden_gegevens.straat;
@@ -171,7 +171,7 @@ function listener_updateLid_submit() {
 	const formData = new FormData(document.getElementById('editLidModalForm'));
 	const data = put_Form('/leden/save_updateLid', formData)
 	.then((data) => {
-		selectedLidId = data.ledenlijst_id;
+		selectedLidId = data.leden_id;
 		selectedSoortId = data.soortenleden.id;
 		showNewLidModal(false);
 		if(change_soort) {
@@ -252,7 +252,7 @@ function setup_deleteLidModal() {
 		document.getElementById('deleteSubmit').style.visibility = 'visible';
 		document.getElementById('delete_form_body').style.visibility = 'visible';
 		document.getElementById('delete_form_body_error').style.visibility = 'hidden';
-		document.getElementById('delete_id').value = leden_gegevens.ledenlijst_id;
+		document.getElementById('delete_id').value = leden_gegevens.leden_id;
 		document.getElementById('delete_naam').value = leden_gegevens.voornaam + ' ' + leden_gegevens.familienaam;
 	} else {
 		document.getElementById('deleteSubmit').style.visibility = 'hidden';

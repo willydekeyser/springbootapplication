@@ -21,12 +21,12 @@ public class LedenLidgeldExtractor implements ResultSetExtractor<List<Leden>>{
 		Map<Integer, Leden> map = new LinkedHashMap<Integer, Leden>();
 		List<Lidgeld> lidgeldlijst = new ArrayList<>();
 		while (rs.next()) {
-			int ledenId = rs.getInt("ledenlijst_id");
+			int ledenId = rs.getInt("leden_id");
 			Leden leden = map.get(ledenId);
 			if(leden == null) {
 				leden = new Leden();
 				lidgeldlijst = new ArrayList<>();
-				leden.setLedenlijst_id(ledenId);
+				leden.setLeden_id(ledenId);
 				leden.setVoornaam(rs.getString("voornaam"));
 				leden.setFamilienaam(rs.getString("familienaam"));
 				leden.setStraat(rs.getString("straat"));
@@ -47,7 +47,7 @@ public class LedenLidgeldExtractor implements ResultSetExtractor<List<Leden>>{
 			if (lidgeldId > 0) {
 				Lidgeld lidgeld = new Lidgeld();
 				lidgeld.setId(lidgeldId);
-				lidgeld.setLedenId(rs.getInt("ledenlijstid"));
+				lidgeld.setLedenId(rs.getInt("ledenid"));
 				lidgeld.setDatum(rs.getDate("datum").toLocalDate());
 				lidgeld.setBedrag(rs.getBigDecimal("bedrag"));
 				lidgeldlijst.add(lidgeld);

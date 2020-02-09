@@ -18,7 +18,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Leden {
 
-	private Integer ledenlijst_id;
+	private Integer leden_id;
 	@Size(min=2, max=40, message="Voornaam invullen!")
     private String voornaam;
 	@Size(min=2, max=40, message="Familienaam invullen!")
@@ -44,7 +44,7 @@ public class Leden {
     public Leden(Integer id, String voornaam, String familienaam, String straat, String nr, String postnr,
 			String gemeente, String telefoonnummer, String gsmnummer, String emailadres, String webadres,
 			LocalDate datumlidgeld, Integer soortenledenid, boolean ontvangmail, boolean mailvlag) {
-		this.ledenlijst_id = id;
+		this.leden_id = id;
 		this.voornaam = voornaam;
 		this.familienaam = familienaam;
 		this.straat = straat;
@@ -65,7 +65,7 @@ public class Leden {
 			String gemeente, String telefoonnummer, String gsmnummer, String emailadres, String webadres,
 			LocalDate datumlidgeld, boolean ontvangmail, boolean mailvlag, SoortenLeden soortenleden,
 			List<Lidgeld> lidgelden) {
-		this.ledenlijst_id = id;
+		this.leden_id = id;
 		this.voornaam = voornaam;
 		this.familienaam = familienaam;
 		this.straat = straat;

@@ -120,7 +120,7 @@ public class LedenController {
 		soortenleden = soortenledenservice.getAllSoortenLeden();
 		Integer firstId = 0;
 		if (!leden.isEmpty()) {
-			firstId = leden.get(0).getLedenlijst_id();
+			firstId = leden.get(0).getLeden_id();
 			System.out.println("Leden is niet leeg: " + leden.toString());
 		} else {
 			System.out.println("Leden is leeg: " + leden.toString());
@@ -134,12 +134,12 @@ public class LedenController {
 		return "leden/leden_tabel_menu :: leden_tabel_menu";	
 	}
 	
-    @GetMapping("/leden_tabel_ledenlijst/{id}")
-    public String leden_tabel_ledenlijst(@PathVariable Integer id, Model model) {
+    @GetMapping("/leden_tabel_leden/{id}")
+    public String leden_tabel_leden(@PathVariable Integer id, Model model) {
     	leden = ledenservice.getAllLedenSoortenleden(id);
     	model.addAttribute("leden", leden);
     	model.addAttribute("aantal", leden.size());
-    	return "leden/leden_tabel_ledenlijst :: leden_tabel_ledenlijst";
+    	return "leden/leden_tabel_leden :: leden_tabel_leden";
     }
     
     @GetMapping("/leden_tabel_ById/{id}")
@@ -205,7 +205,7 @@ public class LedenController {
 		leden = ledenservice.getAllLedenNamenlijst(soort);
 		String items = "";
 		for(Leden lid : leden) {
-			String item = "{\"id\":" + lid.getLedenlijst_id() + ",\"naam\":\"" + lid.getVoornaam() + " " + lid.getFamilienaam() + "\"}";
+			String item = "{\"id\":" + lid.getLeden_id() + ",\"naam\":\"" + lid.getVoornaam() + " " + lid.getFamilienaam() + "\"}";
 			items = items + item + ",";
 		};
 		String response = "[" + items.substring(0, items.length() - 1) + "]";
@@ -229,7 +229,7 @@ public class LedenController {
 		List<Leden> lijst = ledenservice.getAllLeden();
 		String link = "<h1>Ledenlijst</h1>";
 		for (Leden leden : lijst) {
-			link = link + "<a href='/leden/restcontroller/ledenbyid/" + leden.getLedenlijst_id() + "'>" + leden.getVoornaam() + " " + leden.getFamilienaam() + "</a><br/>";
+			link = link + "<a href='/leden/restcontroller/ledenbyid/" + leden.getLeden_id() + "'>" + leden.getVoornaam() + " " + leden.getFamilienaam() + "</a><br/>";
 		}
 		return link;
 	}
@@ -253,7 +253,7 @@ public class LedenController {
 	@PutMapping(path="/save_updateLid")
 	public @ResponseBody Leden save_updateLid(@Validated  Leden lid) {
 		ledenservice.updateLeden(lid);
-		this.lid = ledenservice.getLedenById(lid.getLedenlijst_id());
+		this.lid = ledenservice.getLedenById(lid.getLeden_id());
 		return this.lid;
 	}
 	

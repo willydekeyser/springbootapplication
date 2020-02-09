@@ -18,7 +18,7 @@ import willydekeyser.model.User;
 @Repository
 public class UserDAO implements IUserDAO {
 
-	private final String sql_findRolesByUserName = "SELECT username, role FROM user_roles WHERE username=?"; 
+	private final String sql_findRolesByUserName = "SELECT username, role FROM role WHERE username=?"; 
 	private final String sql_findUserByUserName = "SELECT username, password, gegevenspaswoord, enabled, email, accountnonexpired, accountnonlocked, credentialsnonexpired FROM users WHERE username=?";
 	
 	@Autowired

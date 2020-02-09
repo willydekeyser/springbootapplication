@@ -4,7 +4,7 @@
 <body>
 <div th:fragment="leden_namenlijst">
 	<ol class="menu_lijst" id="namenlijst_click">
-		<li class="menu_lijst_item" th:id="${leden.ledenlijst_id}" th:each="leden : ${leden}">
+		<li class="menu_lijst_item" th:id="${leden.leden_id}" th:each="leden : ${leden}">
 			<span class="menu_lijst_item_tekst" th:text="${ledenStat.count} + ' - ' + ${leden.voornaam} + ' ' + ${leden.familienaam}"></span>
 		</li>
 	</ol>

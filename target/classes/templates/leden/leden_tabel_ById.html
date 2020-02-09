@@ -5,7 +5,7 @@
 <div th:replace="fragments/header :: header"></div>
 <div th:fragment="leden_tabel_byid" class="leden_tabel">
 	<div class="leden_tabel_gegevens">
-	<h2 th:text="'Lid: ' + ${leden.ledenlijst_id}">Lid:</h2>
+	<h2 th:text="'Lid: ' + ${leden.leden_id}">Lid:</h2>
     <p th:text="'Naam: ' + ${leden.voornaam + ' ' + leden.familienaam}"></p>
     <p th:text="'Adres: ' + ${leden.straat + ' ' + leden.nr}"></p>
     <p th:text="'Gemeente: ' + ${leden.postnr + ' ' + leden.gemeente}"></p>

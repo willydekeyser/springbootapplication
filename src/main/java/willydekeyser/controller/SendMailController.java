@@ -56,7 +56,7 @@ public class SendMailController {
 	
 	@PostMapping("/lidgeldMail")
 	public @ResponseBody String verstuurLidgeldMailAgenda(@Validated Lidgeld lidgeld) {
-		Leden lid = ledenService.getLedenById(lidgeld.getLeden().getLedenlijst_id());
+		Leden lid = ledenService.getLedenById(lidgeld.getLeden().getLeden_id());
 		Integer year = Calendar.getInstance().get(Calendar.YEAR);
 		Integer nextYear = year + 1;
 		Calendar calendar = Calendar.getInstance();

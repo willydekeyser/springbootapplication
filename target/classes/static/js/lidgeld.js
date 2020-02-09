@@ -117,7 +117,7 @@ function listener_brief_max_lidgeld() {
 		maxLidgeldEmail(lidgeldId);
 	}
 	const index = actief_row.rowIndex - 1;
-	const ledenid = lidgeldData[index].leden.ledenlijst_id;	
+	const ledenid = lidgeldData[index].leden.leden_id;	
 	window.open("rapporten/lidgeldBrief/" + ledenid);
 };
 

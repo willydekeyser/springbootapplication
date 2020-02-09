@@ -24,7 +24,7 @@ public class LedenByIdLidgeldExtractor implements ResultSetExtractor<Leden>{
 			if(first) {
 				leden = new Leden();
 				lidgeldlijst = new ArrayList<>();
-				leden.setLedenlijst_id(rs.getInt("ledenlijst_id"));
+				leden.setLeden_id(rs.getInt("leden_id"));
 				leden.setVoornaam(rs.getString("voornaam"));
 				leden.setFamilienaam(rs.getString("familienaam"));
 				leden.setStraat(rs.getString("straat"));
@@ -46,7 +46,7 @@ public class LedenByIdLidgeldExtractor implements ResultSetExtractor<Leden>{
 			if (lidgeldId > 0) {
 				Lidgeld lidgeld = new Lidgeld();
 				lidgeld.setId(lidgeldId);
-				lidgeld.setLedenId(rs.getInt("ledenlijstid"));
+				lidgeld.setLedenId(rs.getInt("ledenid"));
 				lidgeld.setDatum(rs.getDate("datum").toLocalDate());
 				lidgeld.setBedrag(rs.getBigDecimal("bedrag"));
 				lidgeldlijst.add(lidgeld);

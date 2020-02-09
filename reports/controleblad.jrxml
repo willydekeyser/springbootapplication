@@ -20,11 +20,11 @@
 	<parameter name="Week4" class="java.lang.String"/>
 	<parameter name="Week5" class="java.lang.String"/>
 	<queryString>
-		<![CDATA[SELECT * FROM ledenlijst]]>
+		<![CDATA[SELECT * FROM leden]]>
 	</queryString>
-	<field name="ledenlijst_id" class="java.lang.Integer">
-		<property name="com.jaspersoft.studio.field.label" value="ledenlijst_id"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="ledenlijst"/>
+	<field name="leden_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="leden_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="leden"/>
 	</field>
 	<field name="voornaam" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="voornaam"/>

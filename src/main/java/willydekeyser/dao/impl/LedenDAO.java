@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.Calendar;
 import java.util.List;
 
@@ -31,69 +30,69 @@ import willydekeyser.model.Leden;
 @Repository
 public class LedenDAO implements ILedenDAO {
 
-	private final String sql_getAllLeden = "SELECT * FROM ledenlijst ORDER BY ledenlijst_id" ;
-	private final String sql_getAllIedereenlijst = "SELECT ledenlijst_id, voornaam, familienaam, emailadres "
-			+ "FROM ledenlijst "
+	private final String sql_getAllLeden = "SELECT * FROM leden ORDER BY leden_id" ;
+	private final String sql_getAllIedereenlijst = "SELECT leden_id, voornaam, familienaam, emailadres "
+			+ "FROM leden "
 			+ "WHERE soortenledenid = 1 OR soortenledenid = 2 OR soortenledenid = 3 OR soortenledenid = 4 "
 			+ "ORDER BY familienaam, voornaam" ;
-	private final String sql_getAllLedenlijst = "SELECT ledenlijst_id, voornaam, familienaam, emailadres "
-			+ "FROM ledenlijst "
+	private final String sql_getAllLedenlijst = "SELECT leden_id, voornaam, familienaam, emailadres "
+			+ "FROM leden "
 			+ "WHERE soortenledenid = 1 OR soortenledenid = 2 OR soortenledenid = 3 "
 			+ "ORDER BY familienaam, voornaam" ;
-	private final String sql_getAllBestuursledenlijst = "SELECT ledenlijst_id, voornaam, familienaam, emailadres "
-			+ "FROM ledenlijst "
+	private final String sql_getAllBestuursledenlijst = "SELECT leden_id, voornaam, familienaam, emailadres "
+			+ "FROM leden "
 			+ "WHERE soortenledenid = 3 "
 			+ "ORDER BY familienaam, voornaam" ;
-	private final String sql_getAllWerkendeledenlijst = "SELECT ledenlijst_id, voornaam, familienaam, emailadres "
-			+ "FROM ledenlijst "
+	private final String sql_getAllWerkendeledenlijst = "SELECT leden_id, voornaam, familienaam, emailadres "
+			+ "FROM leden "
 			+ "WHERE soortenledenid = 2 "
 			+ "ORDER BY familienaam, voornaam" ;
-	private final String sql_getAllGeenledenlijst = "SELECT ledenlijst_id, voornaam, familienaam, emailadres "
-			+ "FROM ledenlijst "
+	private final String sql_getAllGeenledenlijst = "SELECT leden_id, voornaam, familienaam, emailadres "
+			+ "FROM leden "
 			+ "WHERE soortenledenid = 4 "
 			+ "ORDER BY familienaam, voornaam" ;
-	private final String sql_getAllLedenSoortenleden = "SELECT ledenlijst.*, soortenleden.* "
-			+ "FROM ledenlijst, soortenleden "
+	private final String sql_getAllLedenSoortenleden = "SELECT leden.*, soortenleden.* "
+			+ "FROM leden, soortenleden "
 			+ "WHERE soortenledenid = soortenleden_id "
 			+ "AND (soortenledenid = 1 OR soortenledenid = 2 OR soortenledenid = 3) "
 			+ "ORDER BY familienaam, voornaam" ;
-	private final String sql_getAllWerkendeLedenSoortenleden = "SELECT ledenlijst.*, soortenleden.* "
-			+ "FROM ledenlijst, soortenleden "
+	private final String sql_getAllWerkendeLedenSoortenleden = "SELECT leden.*, soortenleden.* "
+			+ "FROM leden, soortenleden "
 			+ "WHERE soortenledenid = soortenleden_id "
 			+ "AND (soortenledenid = 2) "
 			+ "ORDER BY familienaam, voornaam" ;
-	private final String sql_getAllBestuursLedenSoortenleden = "SELECT ledenlijst.*, soortenleden.* "
-			+ "FROM ledenlijst, soortenleden "
+	private final String sql_getAllBestuursLedenSoortenleden = "SELECT leden.*, soortenleden.* "
+			+ "FROM leden, soortenleden "
 			+ "WHERE soortenledenid = soortenleden_id "
 			+ "AND (soortenledenid = 3) "
 			+ "ORDER BY familienaam, voornaam" ;
-	private final String sql_getAllGeenLedenSoortenleden = "SELECT ledenlijst.*, soortenleden.* "
-			+ "FROM ledenlijst, soortenleden "
+	private final String sql_getAllGeenLedenSoortenleden = "SELECT leden.*, soortenleden.* "
+			+ "FROM leden, soortenleden "
 			+ "WHERE soortenledenid = soortenleden_id "
 			+ "AND (soortenledenid = 4) "
 			+ "ORDER BY familienaam, voornaam" ;
-	private final String sql_getAllIedereenSoortenleden = "SELECT ledenlijst.*, soortenleden.* "
-			+ "FROM ledenlijst, soortenleden "
+	private final String sql_getAllIedereenSoortenleden = "SELECT leden.*, soortenleden.* "
+			+ "FROM leden, soortenleden "
 			+ "WHERE soortenledenid = soortenleden_id "
 			+ "AND (soortenledenid = 1 OR soortenledenid = 2 OR soortenledenid = 3 OR soortenledenid = 4) "
-			+ "ORDER BY ledenlijst.Familienaam" ;
-	private final String sql_getAllLedenLidgeld = "SELECT ledenlijst.*, lidgeld.* "
-			+ "FROM ledenlijst "
-			+ "LEFT JOIN lidgeld ON ledenlijst_id = ledenlijstid";
-	private final String sql_getLedenById = "SELECT ledenlijst.*, lidgeld.*, soortenleden.* FROM ledenlijst "
-			+ "LEFT JOIN lidgeld ON ledenlijst_id = ledenlijstid "
+			+ "ORDER BY Familienaam" ;
+	private final String sql_getAllLedenLidgeld = "SELECT leden.*, lidgeld.* "
+			+ "FROM leden "
+			+ "LEFT JOIN lidgeld ON leden_id = ledenid";
+	private final String sql_getLedenById = "SELECT leden.*, lidgeld.*, soortenleden.* FROM leden "
+			+ "LEFT JOIN lidgeld ON leden_id = ledenid "
 			+ "LEFT JOIN soortenleden ON soortenledenid = soortenleden_id "
-			+ "WHERE ledenlijst_id = ? "
-			+ "ORDER BY ledenlijst_id, lidgeld_id";
+			+ "WHERE leden_id = ? "
+			+ "ORDER BY leden_id, lidgeld_id";
 	
-	private final String sql_addLeden = "INSERT INTO ledenlijst (voornaam, familienaam, straat, nr, postnr, "
+	private final String sql_addLeden = "INSERT INTO leden (voornaam, familienaam, straat, nr, postnr, "
 			+ "gemeente, telefoonnummer, gsmnummer, emailadres, webadres, datumlidgeld, soortenledenid, "
 			+ "ontvangmail, mailvlag, createdby, createddate) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-	private final String sql_updateLeden = "UPDATE ledenlijst SET voornaam = ?, familienaam = ?, straat = ?, nr = ?, postnr = ?, "
+	private final String sql_updateLeden = "UPDATE leden SET voornaam = ?, familienaam = ?, straat = ?, nr = ?, postnr = ?, "
 			+ "gemeente = ?, telefoonnummer = ?, gsmnummer = ?, emailadres = ?, webadres = ?, datumlidgeld = ?, soortenledenid = ?, "
-			+ "ontvangmail = ?, mailvlag = ?, lastmodifiedby = ?, lastmodifieddate = ? WHERE ledenlijst_id = ?";
-	private final String sql_deleteLeden = "DELETE FROM ledenlijst WHERE ledenlijst_id = ?";
-	private final String sql_ledenExists = "SELECT EXSIST(SELECT * FROM ledenlijst WHERE ledenlijst_id = ?)";
+			+ "ontvangmail = ?, mailvlag = ?, lastmodifiedby = ?, lastmodifieddate = ? WHERE leden_id = ?";
+	private final String sql_deleteLeden = "DELETE FROM leden WHERE leden_id = ?";
+	private final String sql_ledenExists = "SELECT COUNT(*) FROM leden WHERE EXISTS(SELECT * FROM leden WHERE leden_id = ?) AND ROWNUM = 1";
 	
 	@Autowired
 	@Qualifier("jdbcMaster")
@@ -140,7 +139,7 @@ public class LedenDAO implements ILedenDAO {
 		jdbcTemplate.update(new PreparedStatementCreator() {
 			@Override
 			public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
-				final PreparedStatement ps = connection.prepareStatement(sql_addLeden, Statement.RETURN_GENERATED_KEYS);
+				final PreparedStatement ps = connection.prepareStatement(sql_addLeden, new String [] {"leden_id"});
 				ps.setString(1, leden.getVoornaam());
 				ps.setString(2, leden.getFamilienaam());
 				ps.setString(3, leden.getStraat());
@@ -162,9 +161,9 @@ public class LedenDAO implements ILedenDAO {
 		}, key);
 		
 		if (key.getKeys().size() > 1) {
-			leden.setLedenlijst_id(((Number) key.getKeys().get("ledenlijst_id")).intValue());
+			leden.setLeden_id(((Number) key.getKeys().get("leden_id")).intValue());
 	    } else {
-	    	leden.setLedenlijst_id(key.getKey().intValue());
+	    	leden.setLeden_id(key.getKey().intValue());
 	    }
 		
 		return leden;
@@ -178,7 +177,7 @@ public class LedenDAO implements ILedenDAO {
 		jdbcTemplate.update(sql_updateLeden, leden.getVoornaam(), leden.getFamilienaam(), leden.getStraat(), leden.getNr(), 
 				leden.getPostnr(), leden.getGemeente(),leden.getTelefoonnummer(), leden.getGsmnummer(), leden.getEmailadres(), 
 				leden.getWebadres(), leden.getDatumlidgeld(), leden.getSoortenleden().getId(), leden.isOntvangmail(), 
-				leden.isMailvlag(), authentication.getName(), date, leden.getLedenlijst_id());
+				leden.isMailvlag(), authentication.getName(), date, leden.getLeden_id());
 		return leden;
 	}
 

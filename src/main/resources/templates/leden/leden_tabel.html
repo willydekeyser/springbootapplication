@@ -24,11 +24,11 @@
 			<th class="kop">Soort</th>
 		</tr>
 		<tr class="test" th:each="leden : ${leden}">
-			<td class="test" th:onclick="'ledenbyid(' + ${leden.ledenkijst_id} +')'" th:text="${leden.ledenlijst_id}"></td>
-			<td class="test" th:onclick="'ledenbyid(' + ${leden.ledenlijst_id} +')'" th:text="${leden.voornaam} + ' ' + ${leden.familienaam}"></td>
-			<td class="test" th:onclick="'ledenbyid(' + ${leden.ledenlijst_id} +')'" th:text="${leden.straat} + ' ' + ${leden.nr} + ' - ' + ${leden.postnr} + ' ' + ${leden.gemeente}"></td>
-			<td class="test right" th:onclick="'ledenbyid(' + ${leden.ledenlijst_id} +')'" th:text="${#temporals.format(leden.datumlidgeld, 'dd-MM-yyyy')}"></td>
-			<td class="test" th:onclick="'ledenbyid(' + ${leden.ledenlijst_id} +')'" th:text="${leden.soortenleden.soortenleden}"></td>
+			<td class="test" th:onclick="'ledenbyid(' + ${leden.leden_id} +')'" th:text="${leden.leden_id}"></td>
+			<td class="test" th:onclick="'ledenbyid(' + ${leden.leden_id} +')'" th:text="${leden.voornaam} + ' ' + ${leden.familienaam}"></td>
+			<td class="test" th:onclick="'ledenbyid(' + ${leden.leden_id} +')'" th:text="${leden.straat} + ' ' + ${leden.nr} + ' - ' + ${leden.postnr} + ' ' + ${leden.gemeente}"></td>
+			<td class="test right" th:onclick="'ledenbyid(' + ${leden.leden_id} +')'" th:text="${#temporals.format(leden.datumlidgeld, 'dd-MM-yyyy')}"></td>
+			<td class="test" th:onclick="'ledenbyid(' + ${leden.leden_id} +')'" th:text="${leden.soortenleden.soortenleden}"></td>
 		</tr>
 	</table>
 </div>

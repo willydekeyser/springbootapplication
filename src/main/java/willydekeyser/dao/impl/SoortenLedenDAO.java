@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.Calendar;
 import java.util.List;
 
@@ -31,15 +30,15 @@ import willydekeyser.model.SoortenLeden;
 public class SoortenLedenDAO implements ISoortenLedenDAO {
 
 	private final String sql_getAllSoortenleden = "SELECT soortenleden.* FROM soortenleden ORDER BY soortenleden_id";
-	private final String sql_getSoortenledenById = "SELECT soortenleden.*, ledenlijst.* "
-			+ "FROM soortenleden LEFT JOIN ledenlijst ON soortenleden_id = ledenlijst.soortenledenid WHERE soortenleden_id = ?";
-	private final String sql_getAllSoortenLedenLeden = "SELECT soortenleden.*, ledenlijst.* "
-			+ "FROM soortenleden LEFT JOIN ledenlijst ON soortenleden_id = soortenledenid ORDER BY soortenleden_id";
-	private final String sql_addSoortenleden = "INSERT INTO soortenleden (soortenleden, createdby, createddate, lastmodifiedby, lastmodifieddate) VALUES (?, ?, ?, ?, ?)";
+	private final String sql_getSoortenledenById = "SELECT soortenleden.*, leden.* "
+			+ "FROM soortenleden LEFT JOIN leden ON soortenleden_id = leden.soortenid WHERE soortenleden_id = ?";
+	private final String sql_getAllSoortenLedenLeden = "SELECT soortenleden.*, leden.* "
+			+ "FROM soortenleden LEFT JOIN leden ON soortenleden_id = soortenledenid ORDER BY soortenleden_id";
+	private final String sql_addSoortenleden = "INSERT INTO soortenleden (soortenleden, createdby, createddate) VALUES (?, ?, ?)";
 	private final String sql_updateSoortenleden = "UPDATE soortenleden SET Soortenleden = ?, lastmodifiedby = ?, lastmodifieddate = ? WHERE soortenleden_id = ?";
 	private final String sql_deleteSoortenleden = "DELETE FROM soortenleden WHERE soortenleden_id = ?";
 	private final String sql_soortenledenExists = "SELECT count(*) FROM soortenleden WHERE soortenleden_id = ?";
-	private final String sql_ledenExistsBySoortenledenId = "SELECT EXISTS(SELECT * FROM ledenlijst WHERE soortenledenid = ?)";
+	private final String sql_ledenExistsBySoortenledenId = "SELECT COUNT (*) FROM soortenleden WHERE EXISTS(SELECT * FROM leden WHERE soortenledenid = ?) AND ROWNUM = 1";
 	
 	@Autowired
 	@Qualifier("jdbcMaster")
@@ -94,12 +93,10 @@ public class SoortenLedenDAO implements ISoortenLedenDAO {
 		jdbcTemplate.update(new PreparedStatementCreator() {
 			@Override
 			public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
-				final PreparedStatement ps = connection.prepareStatement(sql_addSoortenleden, Statement.RETURN_GENERATED_KEYS);
+				final PreparedStatement ps = connection.prepareStatement(sql_addSoortenleden, new String [] {"soortenleden_id"});
 			    ps.setString(1, soortenLeden.getSoortenleden());
 			    ps.setString(2, authentication.getName());
 			    ps.setDate(3, date);
-			    ps.setString(4, authentication.getName());
-			    ps.setDate(5, date);
 			    return ps;
 			}
 		}, key);

@@ -30,10 +30,10 @@ public class SoortenLedenLedenExtractor implements ResultSetExtractor<List<Soort
 				soortenLeden.setSoortenleden(rs.getString("soortenleden"));
 				map.put(soortenLedenId, soortenLeden);	
 			}
-			int ledenId = rs.getInt("ledenlijst_id");
+			int ledenId = rs.getInt("leden_id");
 			if (ledenId > 0) {
 				Leden leden = new Leden();
-				leden.setLedenlijst_id(ledenId);
+				leden.setLeden_id(ledenId);
 				leden.setVoornaam(rs.getString("voornaam"));
 				leden.setFamilienaam(rs.getString("familienaam"));
 				leden.setStraat(rs.getString("straat"));

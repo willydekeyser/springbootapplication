@@ -13,7 +13,7 @@ public class LedenRowMapper implements RowMapper<Leden>{
 	public Leden mapRow(ResultSet rs, int rownum) throws SQLException {
 		
 		Leden leden = new Leden();
-		leden.setLedenlijst_id(rs.getInt("ledenlijst_id"));
+		leden.setLeden_id(rs.getInt("leden_id"));
 		leden.setVoornaam(rs.getString("voornaam"));
 		leden.setFamilienaam(rs.getString("familienaam"));
 		leden.setStraat(rs.getString("straat"));

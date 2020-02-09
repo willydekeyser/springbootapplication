@@ -14,7 +14,7 @@ public class LidgeldRowMapper implements RowMapper<Lidgeld>{
 		
 		Lidgeld lidgeld = new Lidgeld();
 		lidgeld.setId(rs.getInt("lidgeld_id"));
-		lidgeld.setLedenId(rs.getInt("ledenlijstid"));
+		lidgeld.setLedenId(rs.getInt("ledenid"));
 		lidgeld.setDatum(rs.getDate("datum").toLocalDate());
 		lidgeld.setBedrag(rs.getBigDecimal("bedrag"));
 		return lidgeld;
