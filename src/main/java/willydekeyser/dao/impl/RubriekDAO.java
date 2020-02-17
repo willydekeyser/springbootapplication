@@ -1,10 +1,9 @@
 package willydekeyser.dao.impl;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.Calendar;
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +38,8 @@ public class RubriekDAO implements IRubriekDAO {
 	private final String sql_rubriekExists = "SELECT COUNT (*) FROM rubriek WHERE EXISTS(SELECT * FROM rubriek WHERE rubriek_id = ?) AND ROWNUM = 1";
 	private final String sql_kasboekExistsByRuriekId = "SELECT COUNT(*) FROM kasboek WHERE EXISTS(SELECT * FROM kasboek WHERE rubriekid = ?) AND ROWNUM = 1";
 	
+	private LocalDate date = null;
+	
 	@Autowired
 	@Qualifier("jdbcMaster")
     private JdbcTemplate jdbcTemplate;
@@ -66,8 +67,7 @@ public class RubriekDAO implements IRubriekDAO {
 	@Override
 	public Rubriek addRubriek(Rubriek rubriek) {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-		Calendar currenttime = Calendar.getInstance();   
-		Date date = new Date((currenttime.getTime()).getTime());
+		date = LocalDate.now();
 		KeyHolder key = new GeneratedKeyHolder();
 		jdbcTemplate.update(new PreparedStatementCreator() {
 
@@ -76,7 +76,7 @@ public class RubriekDAO implements IRubriekDAO {
 				final PreparedStatement ps = connection.prepareStatement(sql_addRubriek, new String [] {"rubriek_id"});
 			    ps.setString(1, rubriek.getRubriek());
 			    ps.setString(2, authentication.getName());
-			    ps.setDate(3, date);
+			    ps.setDate(3, java.sql.Date.valueOf(date));
 			    return ps;
 			}
 		}, key);
@@ -92,9 +92,8 @@ public class RubriekDAO implements IRubriekDAO {
 	@Override
 	public Rubriek updateRubriek(Rubriek rubriek) {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-		Calendar currenttime = Calendar.getInstance();   
-		Date date = new Date((currenttime.getTime()).getTime());
-		int key = jdbcTemplate.update(sql_updateRubriek, rubriek.getRubriek(), authentication.getName(), date, rubriek.getId());
+		date = LocalDate.now();
+		int key = jdbcTemplate.update(sql_updateRubriek, rubriek.getRubriek(), authentication.getName(), java.sql.Date.valueOf(date), rubriek.getId());
 		if (key == 1) return rubriek;
 		return null;
 	}

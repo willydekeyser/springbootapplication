@@ -114,7 +114,30 @@ public class BackUpController {
 	@GetMapping("/backupledenread")
 	@ResponseBody
 	public List<Leden> LedenBackupRead() {
-		List<Leden> ledenlijst = backUpServiceLeden.readBackUp("backup/ledenlijst.json");
-		return ledenlijst;
+		return backUpServiceLeden.readBackUp("backup/ledenlijst.json");
+	}
+	
+	@GetMapping("/backuplidgeldread")
+	@ResponseBody
+	public List<Lidgeld> LidgeldBackupRead() {
+		return backUpServiceLidgeld.readBackUp("backup/ledenlijst.json");
+	}
+	
+	@GetMapping("/backupkasboekread")
+	@ResponseBody
+	public List<Kasboek> KasboekBackupRead() {
+		return backUpServiceKasboek.readBackUp("backup/ledenlijst.json");
+	}
+	
+	@GetMapping("/backuprubriekread")
+	@ResponseBody
+	public List<Rubriek> RubriekBackupRead() {
+		return backUpServiceRubriek.readBackUp("backup/ledenlijst.json");
+	}
+	
+	@GetMapping("/backupsoortenledenread")
+	@ResponseBody
+	public List<SoortenLeden> SoortenledenBackupRead() {
+		return backUpServiceSoortenleden.readBackUp("backup/ledenlijst.json");
 	}
 }

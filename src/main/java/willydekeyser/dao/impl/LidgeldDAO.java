@@ -1,10 +1,9 @@
 package willydekeyser.dao.impl;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.Calendar;
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +39,8 @@ public class LidgeldDAO implements ILidgeldDAO {
 	private final String sql_updateLidgeld = "UPDATE lidgeld SET ledenid = ?, datum = ?, bedrag = ?, lastmodifiedby = ?, lastmodifieddate = ? WHERE lidgeld_id = ?";
 	private final String sql_deleteLidgeld = "DELETE FROM lidgeld WHERE lidgeld_id = ?";
 	private final String sql_lidgeldExists = "SELECT COUNT(*) FROM lidgeld WHERE EXISTS(SELECT * FROM lidgeld WHERE lidgeld_id = ?) AND ROWNUM = 1";
+	
+	private LocalDate date = null;
 	
 	@Autowired
 	@Qualifier("jdbcMaster")
@@ -78,8 +79,7 @@ public class LidgeldDAO implements ILidgeldDAO {
 	@Override
 	public Lidgeld addLidgeld(Lidgeld lidgeld) {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-		//Calendar currenttime = Calendar.getInstance();   
-		java.util.Date date = new java.util.Date();
+		date = LocalDate.now();
 		KeyHolder key = new GeneratedKeyHolder();
 		jdbcTemplate.update(new PreparedStatementCreator() {
 			
@@ -90,7 +90,7 @@ public class LidgeldDAO implements ILidgeldDAO {
 				ps.setDate(2, java.sql.Date.valueOf(lidgeld.getDatum()));
 				ps.setBigDecimal(3, lidgeld.getBedrag());
 				ps.setString(4, authentication.getName());
-			    ps.setDate(5, new java.sql.Date(date.getTime()));
+			    ps.setDate(5, java.sql.Date.valueOf(date));
 				return ps;
 			}
 		}, key);
@@ -107,9 +107,8 @@ public class LidgeldDAO implements ILidgeldDAO {
 	@Override
 	public Lidgeld updateLidgeld(Lidgeld lidgeld) {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-		Calendar currenttime = Calendar.getInstance();   
-		Date date = new Date((currenttime.getTime()).getTime());
-		int key = jdbcTemplate.update(sql_updateLidgeld,lidgeld.getLeden().getLeden_id(), lidgeld.getDatum(), lidgeld.getBedrag(), authentication.getName(), date, lidgeld.getId());
+		date = LocalDate.now();
+		int key = jdbcTemplate.update(sql_updateLidgeld,lidgeld.getLeden().getLeden_id(), lidgeld.getDatum(), lidgeld.getBedrag(), authentication.getName(), java.sql.Date.valueOf(date), lidgeld.getId());
 		if (key == 1) return lidgeld;
 		return null;
 	}

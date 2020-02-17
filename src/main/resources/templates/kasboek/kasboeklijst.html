@@ -7,15 +7,15 @@
 <body>
 <div th:fragment="kasboekheader">
 <h2>Kasboek</h2>
-<div class="btn-group btn-group-sm" th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">
-	<button type="button" class="btn btn-success" th:onclick="newKasboek();" >&nbsp;&nbsp;&nbsp;&nbsp;Nieuw&nbsp;&nbsp;&nbsp;&nbsp;</button>
-	<button type="button" class="btn btn-success" th:onclick="updateKasboek();" >&nbsp;Aanpassen&nbsp;</button>
-	<button type="button" class="btn btn-danger" th:onclick="deleteKasboek();" >Verwijderen</button>
-	<button id="eersteKasboek" type="button" class="btn btn-primary" th:onclick="eersteKasboek();" >Eerste</button>
-	<button id="vorigeKasboek" type="button" class="btn btn-primary" th:onclick="vorigeKasboek();" >Vorige</button>
-	<button id="pagina_info" type="button" class="btn btn-white col-1" th:text="' '"></button>
-	<button id="volgendeKasboek" type="button" class="btn btn-primary" th:onclick="volgendeKasboek();" >Volgende</button>
-	<button id="laatsteKasboek" type="button" class="btn btn-primary" th:onclick="laatsteKasboek();" >Laatste</button>
+<div class="btn-group btn-group-sm">
+	<button type="button" class="btn btn-success" th:onclick="newKasboek();" th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">&nbsp;&nbsp;&nbsp;&nbsp;Nieuw&nbsp;&nbsp;&nbsp;&nbsp;</button>
+	<button type="button" class="btn btn-success" th:onclick="updateKasboek();" th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">&nbsp;Aanpassen&nbsp;</button>
+	<button type="button" class="btn btn-danger" th:onclick="deleteKasboek();" th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">Verwijderen</button>
+	<button id="eersteKasboek" type="button" class="btn btn-primary" th:onclick="eersteKasboek();" th:if="${#authorization.expression('hasRole(''ROLE_USER'')')}">Eerste</button>
+	<button id="vorigeKasboek" type="button" class="btn btn-primary" th:onclick="vorigeKasboek();" th:if="${#authorization.expression('hasRole(''ROLE_USER'')')}">Vorige</button>
+	<button id="pagina_info" type="button" class="btn btn-white col-1" th:text="' '" th:if="${#authorization.expression('hasRole(''ROLE_USER'')')}"></button>
+	<button id="volgendeKasboek" type="button" class="btn btn-primary" th:onclick="volgendeKasboek();" th:if="${#authorization.expression('hasRole(''ROLE_USER'')')}">Volgende</button>
+	<button id="laatsteKasboek" type="button" class="btn btn-primary" th:onclick="laatsteKasboek();" th:if="${#authorization.expression('hasRole(''ROLE_USER'')')}">Laatste</button>
 </div>
 </div>
 <div th:fragment="kasboektabel">

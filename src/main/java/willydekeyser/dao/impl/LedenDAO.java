@@ -1,10 +1,9 @@
 package willydekeyser.dao.impl;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.Calendar;
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -94,6 +93,8 @@ public class LedenDAO implements ILedenDAO {
 	private final String sql_deleteLeden = "DELETE FROM leden WHERE leden_id = ?";
 	private final String sql_ledenExists = "SELECT COUNT(*) FROM leden WHERE EXISTS(SELECT * FROM leden WHERE leden_id = ?) AND ROWNUM = 1";
 	
+	private LocalDate date = null;
+	
 	@Autowired
 	@Qualifier("jdbcMaster")
     private JdbcTemplate jdbcTemplate;
@@ -133,8 +134,7 @@ public class LedenDAO implements ILedenDAO {
 	@Override
 	public Leden addLeden(Leden leden) {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-		Calendar currenttime = Calendar.getInstance();   
-		Date date = new Date((currenttime.getTime()).getTime());
+		date = LocalDate.now();
 		KeyHolder key = new GeneratedKeyHolder();
 		jdbcTemplate.update(new PreparedStatementCreator() {
 			@Override
@@ -155,7 +155,7 @@ public class LedenDAO implements ILedenDAO {
 				ps.setBoolean(13, leden.isOntvangmail());
 				ps.setBoolean(14, leden.isMailvlag());
 				ps.setString(15, authentication.getName());
-			    ps.setDate(16, date);
+			    ps.setDate(16, java.sql.Date.valueOf(date));
 				return ps;
 			}
 		}, key);
@@ -172,12 +172,11 @@ public class LedenDAO implements ILedenDAO {
 	@Override
 	public Leden updateLeden(Leden leden) {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-		Calendar currenttime = Calendar.getInstance();   
-		Date date = new Date((currenttime.getTime()).getTime());
+		date = LocalDate.now();
 		jdbcTemplate.update(sql_updateLeden, leden.getVoornaam(), leden.getFamilienaam(), leden.getStraat(), leden.getNr(), 
 				leden.getPostnr(), leden.getGemeente(),leden.getTelefoonnummer(), leden.getGsmnummer(), leden.getEmailadres(), 
 				leden.getWebadres(), leden.getDatumlidgeld(), leden.getSoortenleden().getId(), leden.isOntvangmail(), 
-				leden.isMailvlag(), authentication.getName(), date, leden.getLeden_id());
+				leden.isMailvlag(), authentication.getName(), java.sql.Date.valueOf(date), leden.getLeden_id());
 		return leden;
 	}
 

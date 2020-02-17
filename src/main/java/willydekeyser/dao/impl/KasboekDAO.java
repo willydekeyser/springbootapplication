@@ -2,10 +2,9 @@ package willydekeyser.dao.impl;
 
 import java.math.BigDecimal;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.Calendar;
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -96,6 +95,8 @@ public class KasboekDAO implements IKasboekDAO {
 	private final String sql_kasboekExists = "SELECT COUNT(*) FROM kasboek WHERE EXISTS(SELECT * FROM kasboek WHERE kasboek_id = ?) AND ROWNUM = 1";
 	//private final String sql_countKasboek = "SELECT COUNT(*) AS count FROM kasboek";
 	
+	private LocalDate date = null;
+	
 	@Autowired
 	@Qualifier("jdbcMaster")
     private JdbcTemplate jdbcTemplate;
@@ -184,8 +185,7 @@ public class KasboekDAO implements IKasboekDAO {
 	@Override
 	public Kasboek addKasboek(Kasboek kasboek) {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-		Calendar currenttime = Calendar.getInstance();   
-		Date date = new Date((currenttime.getTime()).getTime());
+		date = LocalDate.now();
 		KeyHolder key = new GeneratedKeyHolder();
 		jdbcTemplate.update(new PreparedStatementCreator() {
 
@@ -199,7 +199,7 @@ public class KasboekDAO implements IKasboekDAO {
 			    ps.setBigDecimal(5, kasboek.getUitgaven());
 			    ps.setBigDecimal(6, kasboek.getInkomsten());
 			    ps.setString(7, authentication.getName());
-			    ps.setDate(8, date);
+			    ps.setDate(8, java.sql.Date.valueOf(date));
 			    return ps;
 			}	
 		}, key);
@@ -216,10 +216,9 @@ public class KasboekDAO implements IKasboekDAO {
 	@Override
 	public Kasboek updateKasboek(Kasboek kasboek) {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-		Calendar currenttime = Calendar.getInstance();   
-		Date date = new Date((currenttime.getTime()).getTime());
+		date = LocalDate.now();
 		int key = jdbcTemplate.update(sql_updateKasboek, kasboek.getJaartal(), kasboek.getRubriek().getId(), kasboek.getOmschrijving(),
-				kasboek.getDatum(),  kasboek.getUitgaven(), kasboek.getInkomsten(), authentication.getName(), date, kasboek.getId());
+				kasboek.getDatum(),  kasboek.getUitgaven(), kasboek.getInkomsten(), authentication.getName(), java.sql.Date.valueOf(date), kasboek.getId());
 		if (key == 1) return kasboek;
 		return null;
 	}

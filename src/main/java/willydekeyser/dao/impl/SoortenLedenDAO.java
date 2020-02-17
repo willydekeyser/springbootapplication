@@ -1,10 +1,9 @@
 package willydekeyser.dao.impl;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.Calendar;
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +39,8 @@ public class SoortenLedenDAO implements ISoortenLedenDAO {
 	private final String sql_soortenledenExists = "SELECT count(*) FROM soortenleden WHERE soortenleden_id = ?";
 	private final String sql_ledenExistsBySoortenledenId = "SELECT COUNT (*) FROM soortenleden WHERE EXISTS(SELECT * FROM leden WHERE soortenledenid = ?) AND ROWNUM = 1";
 	
+	private LocalDate date = null;
+	
 	@Autowired
 	@Qualifier("jdbcMaster")
     private JdbcTemplate jdbcTemplate;
@@ -62,8 +63,7 @@ public class SoortenLedenDAO implements ISoortenLedenDAO {
 	@Override
 	public List<SoortenLeden> saveSoortenleden(List<SoortenLeden> soortenledenlijst) {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-		Calendar currenttime = Calendar.getInstance();   
-		Date date = new Date((currenttime.getTime()).getTime());
+		date = LocalDate.now();
 		jdbcTemplate.batchUpdate(sql_addSoortenleden, new BatchPreparedStatementSetter() {
 			
 			@Override
@@ -71,9 +71,7 @@ public class SoortenLedenDAO implements ISoortenLedenDAO {
 				SoortenLeden soortenLeden = soortenledenlijst.get(index);
 				ps.setString(1, soortenLeden.getSoortenleden());
 			    ps.setString(2, authentication.getName());
-			    ps.setDate(3, date);
-			    ps.setString(4, authentication.getName());
-			    ps.setDate(5, date);
+			    ps.setDate(3, java.sql.Date.valueOf(date));
 			}
 			
 			@Override
@@ -87,8 +85,7 @@ public class SoortenLedenDAO implements ISoortenLedenDAO {
 	@Override
 	public SoortenLeden addSoortenLeden(SoortenLeden soortenLeden) {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-		Calendar currenttime = Calendar.getInstance();   
-		Date date = new Date((currenttime.getTime()).getTime());
+		date = LocalDate.now();
 		KeyHolder key = new GeneratedKeyHolder();
 		jdbcTemplate.update(new PreparedStatementCreator() {
 			@Override
@@ -96,7 +93,7 @@ public class SoortenLedenDAO implements ISoortenLedenDAO {
 				final PreparedStatement ps = connection.prepareStatement(sql_addSoortenleden, new String [] {"soortenleden_id"});
 			    ps.setString(1, soortenLeden.getSoortenleden());
 			    ps.setString(2, authentication.getName());
-			    ps.setDate(3, date);
+			    ps.setDate(3, java.sql.Date.valueOf(date));
 			    return ps;
 			}
 		}, key);
@@ -111,9 +108,8 @@ public class SoortenLedenDAO implements ISoortenLedenDAO {
 	@Override
 	public SoortenLeden updateSoortenLeden(SoortenLeden soortenLeden) {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-		Calendar currenttime = Calendar.getInstance();   
-		Date date = new Date((currenttime.getTime()).getTime());
-		int key = jdbcTemplate.update(sql_updateSoortenleden, soortenLeden.getSoortenleden(), authentication.getName(), date, soortenLeden.getId());
+		date = LocalDate.now();
+		int key = jdbcTemplate.update(sql_updateSoortenleden, soortenLeden.getSoortenleden(), authentication.getName(), java.sql.Date.valueOf(date), soortenLeden.getId());
 		if (key == 1) return soortenLeden;
 		return null;
 	}
