@@ -94,7 +94,7 @@ public class MailSenderService {
 			System.err.println("Fout schrijven naar File: " + e.getMessage());
 		}
         for(Leden leden : ledenlijst ) {
-        	if (leden.getEmailadres() == "" || leden.getEmailadres().isEmpty() || leden.getEmailadres().isBlank()) {
+        	if (leden.getEmailadres() == null || leden.getEmailadres() == "" || leden.getEmailadres().isEmpty() || leden.getEmailadres().isBlank()) {
         		continue;
         	}
         	mail.setTo(leden.getEmailadres());
@@ -200,8 +200,6 @@ public class MailSenderService {
 		} catch (IOException e) {
 			System.err.println("Fout schrijven naar File: " + e.getMessage());
 		}
-		Thread.sleep(customProperties.getPauzeAgenda() * 1000);
-        
-        setMailTeller(-1);
+		
     }
 }

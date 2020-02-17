@@ -17,7 +17,8 @@ import com.google.gson.GsonBuilder;
 public class FileLoggers {
 
 	public void schrijfDataToFile(String data) throws IOException {
-		String fileName = "logfiles/Logindata.log";
+		int year = Calendar.getInstance().get(Calendar.YEAR);
+		String fileName = "logfiles/Logindata" + year + ".log";
 		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true));
 		writer.newLine();
@@ -29,7 +30,8 @@ public class FileLoggers {
 	}
 	
 	public void schrijfDataToJson(Object data) throws IOException {
-		String fileName = "logfiles/Logindata.json";
+		int year = Calendar.getInstance().get(Calendar.YEAR);
+		String fileName = "logfiles/Logindata" + year + ".json";
 		FileWriter fileWriter = new FileWriter(fileName, true);
 		Gson gson = new GsonBuilder()
 				.setPrettyPrinting()

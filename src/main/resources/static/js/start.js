@@ -69,7 +69,7 @@ function time_out() {
     	timeOut = sessionExpiry - localTime;
     }  
     
-    document.getElementsByClassName('footer_section_A')[0].innerHTML = "Time out: " + msToTime(timeOut, false) + " - " + msToTime(serverTime, false) + " - " + msToTime(sessionExpiry, false) + " - " + msToTime(localTime, true);
+    document.getElementsByClassName('footer_section_B')[0].innerHTML = "Time out: " + msToTime(timeOut, false) + " - " + msToTime(serverTime, false) + " - " + msToTime(sessionExpiry, false) + " - " + msToTime(localTime, true);
     
     const timeOutTeller = document.getElementById('timeOutTeller');
 	if(timeOutTeller){

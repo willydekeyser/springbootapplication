@@ -447,6 +447,7 @@ function setup_maxLidgeldEmailModal() {
 	let ledenid;
 	let datum;
 	let bedrag;
+	let email;
 	lidgeldModalAchtergrond = document.querySelector('#lidgeldModalAchtergrond');
 	lidgeldModal = document.querySelector('#editLidgeldModal');
 	lidgeldModalForm = document.getElementById('editLidgeldModalForm');
@@ -461,17 +462,25 @@ function setup_maxLidgeldEmailModal() {
 		document.getElementById('editLidgeld_naam').value = '';
 		document.getElementById('editLidgeld_naam_id').value = '';
 	} else {
-		document.getElementById('modal-titel').innerHTML = 'E-mail versturen';
-		document.getElementById('modal-titel').classList.remove('text-danger');
-		document.getElementById('editLidgeld_save').disabled = false;
-		document.getElementById('editLidgeld_save').style.visibility = 'visible';
-		document.getElementById('editLidgeld_save').innerHTML = 'E-mail versturen';
 		const index = actief_row.rowIndex - 1;
 		const id = lidgeldData[index].id;
 		naam = lidgeldData[index].leden.voornaam + ' ' + lidgeldData[index].leden.familienaam;
 		ledenid = lidgeldData[index].leden.leden_id;
 		datum = lidgeldData[index].datum;
 		bedrag = lidgeldData[index].bedrag;
+		email = lidgeldData[index].leden.emailadres;
+		if(email === null || email === "") {
+			document.getElementById('modal-titel').innerHTML = naam + '<br>heeft geen e-mail adres!';
+			document.getElementById('modal-titel').classList.add('text-danger');
+			document.getElementById('editLidgeld_save').disabled = true;
+			document.getElementById('editLidgeld_save').style.visibility = 'hidden';
+		} else {
+			document.getElementById('modal-titel').innerHTML = 'E-mail versturen';
+			document.getElementById('modal-titel').classList.remove('text-danger');
+			document.getElementById('editLidgeld_save').disabled = false;
+			document.getElementById('editLidgeld_save').style.visibility = 'visible';
+			document.getElementById('editLidgeld_save').innerHTML = 'E-mail versturen';
+		}
 		document.getElementById('editLidgeld_id').value = ledenid;
 		document.getElementById('editLidgeld_naam').value = naam;
 		document.getElementById('editLidgeld_naam_id').value = ledenid;
