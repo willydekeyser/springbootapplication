@@ -66,7 +66,7 @@ async function leden_start() {
 
 function leden_menu_geladen(soortId, lidid) {
 	selectedSoortId = soortId;
-	selectedLidId = lidId;
+	selectedLidId = lidid;
 	console.log("Selected soort & lid: " + selectedSoortId + " - " + selectedLidId);
 	leden_namenlijst(selectedSoortId, selectedLidId);
 };
@@ -103,8 +103,8 @@ async function leden_namenlijst_refrech() {
 
 async function leden_gegevens_refrech() {
 	leden_gegevens = await fetch_JSON('/leden/restcontroller/ledenbyid/' + selectedLidId);
-	await leden_gegevens_laden(leden_gegevens);
-	await leden_lidgeld_laden(leden_gegevens.lidgelden);
+	leden_gegevens_laden(leden_gegevens);
+	leden_lidgeld_laden(leden_gegevens.lidgelden);
 };
 
 async function leden_lidgeld_refrech() {
@@ -130,8 +130,16 @@ function leden_gegevens_laden(data) {
 	document.getElementById('gemeente').innerHTML = data.postnr + ' ' + data.gemeente;
 	document.getElementById('telefoon').innerHTML = data.telefoonnummer;
 	document.getElementById('gsm').innerHTML = data.gsmnummer;
-	document.getElementById('email').innerHTML = '<a href="mailto:' + data.emailadres + '">' + data.emailadres + '</a>';
-	document.getElementById('website').innerHTML ='<a href="' + data.webadres + '" target="_blank">' + data.webadres + '</a>';
+	if(data.emailadres === null) {
+		document.getElementById('email').innerHTML = '';
+	} else {
+		document.getElementById('email').innerHTML = '<a href="mailto:' + data.emailadres + '">' + data.emailadres + '</a>';
+	}
+	if(data.webadres === null) {
+		document.getElementById('website').innerHTML ='';
+	} else {
+		document.getElementById('website').innerHTML ='<a href="' + data.webadres + '" target="_blank">' + data.webadres + '</a>';
+	}
 	document.getElementById('inschrijving').innerHTML = getFormattedDate(data.datumlidgeld);
 	document.getElementById('soort').innerHTML = data.soortenleden.soortenleden;
 	document.getElementById('ontvangmail').checked = data.ontvangmail;
@@ -165,7 +173,7 @@ function leden_gegevens_laden(data) {
 function leden_lidgeld_laden(data) {
 	let html = ``;
 	document.getElementById('lidgeld_tabel_body').innerHTML = '';
-	data.forEach((lidgeld, index) => {
+	data.forEach((lidgeld) => {
 		html += `<tr class="test" onclick="lidgeldselect(${lidgeld.id})" id="ledenlidgeldtabel${lidgeld.id}" lidgeldid="${lidgeld.id}">
 			<td style="width: 5%" class="right">${lidgeld.id}</td>
 			<td style="width: 40%" class="right">${getFormattedDate(lidgeld.datum)}</td>

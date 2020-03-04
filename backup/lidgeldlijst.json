@@ -27,7 +27,7 @@
   "leden" : null,
   "ledenId" : 4,
   "datum" : "2002-04-11",
-  "bedrag" : 30
+  "bedrag" : 12.39
 }, {
   "id" : 6,
   "leden" : null,
@@ -39,7 +39,7 @@
   "leden" : null,
   "ledenId" : 4,
   "datum" : "2005-01-18",
-  "bedrag" : 20.5
+  "bedrag" : 20
 }, {
   "id" : 8,
   "leden" : null,
@@ -1232,7 +1232,7 @@
   "id" : 206,
   "leden" : null,
   "ledenId" : 99,
-  "datum" : "2007-10-26",
+  "datum" : "2007-10-27",
   "bedrag" : 30
 }, {
   "id" : 207,
@@ -2029,55 +2029,997 @@
 }, {
   "id" : 339,
   "leden" : null,
-  "ledenId" : 4,
-  "datum" : "2018-06-04",
-  "bedrag" : 30.5
+  "ledenId" : 107,
+  "datum" : "2012-03-22",
+  "bedrag" : 30
 }, {
   "id" : 340,
   "leden" : null,
-  "ledenId" : 66,
-  "datum" : "2018-06-10",
+  "ledenId" : 6,
+  "datum" : "2012-03-27",
+  "bedrag" : 30
+}, {
+  "id" : 341,
+  "leden" : null,
+  "ledenId" : 23,
+  "datum" : "2012-03-27",
+  "bedrag" : 30
+}, {
+  "id" : 342,
+  "leden" : null,
+  "ledenId" : 88,
+  "datum" : "2012-04-26",
+  "bedrag" : 30
+}, {
+  "id" : 343,
+  "leden" : null,
+  "ledenId" : 34,
+  "datum" : "2012-04-26",
+  "bedrag" : 30
+}, {
+  "id" : 344,
+  "leden" : null,
+  "ledenId" : 35,
+  "datum" : "2012-05-10",
+  "bedrag" : 30
+}, {
+  "id" : 345,
+  "leden" : null,
+  "ledenId" : 17,
+  "datum" : "2012-05-19",
   "bedrag" : 30
 }, {
   "id" : 346,
   "leden" : null,
-  "ledenId" : 4,
-  "datum" : "2018-06-09",
+  "ledenId" : 18,
+  "datum" : "2012-05-19",
   "bedrag" : 30
 }, {
   "id" : 347,
   "leden" : null,
-  "ledenId" : 4,
-  "datum" : "2018-06-12",
+  "ledenId" : 86,
+  "datum" : "2012-06-07",
   "bedrag" : 30
 }, {
   "id" : 348,
   "leden" : null,
-  "ledenId" : 128,
-  "datum" : "2018-06-13",
+  "ledenId" : 70,
+  "datum" : "2012-06-21",
+  "bedrag" : 30
+}, {
+  "id" : 349,
+  "leden" : null,
+  "ledenId" : 11,
+  "datum" : "2012-06-26",
   "bedrag" : 30
 }, {
   "id" : 350,
   "leden" : null,
-  "ledenId" : 126,
-  "datum" : "2018-06-11",
-  "bedrag" : 30.5
+  "ledenId" : 95,
+  "datum" : "2012-07-12",
+  "bedrag" : 30
 }, {
   "id" : 351,
   "leden" : null,
-  "ledenId" : 126,
-  "datum" : "2018-06-20",
-  "bedrag" : 10.25
+  "ledenId" : 101,
+  "datum" : "2012-08-22",
+  "bedrag" : 30
 }, {
   "id" : 352,
   "leden" : null,
-  "ledenId" : 130,
-  "datum" : "2018-06-20",
+  "ledenId" : 94,
+  "datum" : "2012-09-10",
   "bedrag" : 30
 }, {
   "id" : 353,
   "leden" : null,
-  "ledenId" : 130,
-  "datum" : "2018-06-30",
+  "ledenId" : 65,
+  "datum" : "2012-09-15",
+  "bedrag" : 30
+}, {
+  "id" : 354,
+  "leden" : null,
+  "ledenId" : 83,
+  "datum" : "2012-09-15",
+  "bedrag" : 30
+}, {
+  "id" : 355,
+  "leden" : null,
+  "ledenId" : 104,
+  "datum" : "2012-10-31",
+  "bedrag" : 30
+}, {
+  "id" : 356,
+  "leden" : null,
+  "ledenId" : 111,
+  "datum" : "2012-10-03",
+  "bedrag" : 30
+}, {
+  "id" : 357,
+  "leden" : null,
+  "ledenId" : 19,
+  "datum" : "2012-11-08",
+  "bedrag" : 30
+}, {
+  "id" : 358,
+  "leden" : null,
+  "ledenId" : 66,
+  "datum" : "2012-11-24",
+  "bedrag" : 30
+}, {
+  "id" : 359,
+  "leden" : null,
+  "ledenId" : 16,
+  "datum" : "2012-11-24",
+  "bedrag" : 30
+}, {
+  "id" : 360,
+  "leden" : null,
+  "ledenId" : 48,
+  "datum" : "2012-11-24",
+  "bedrag" : 30
+}, {
+  "id" : 361,
+  "leden" : null,
+  "ledenId" : 114,
+  "datum" : "2013-01-30",
+  "bedrag" : 30
+}, {
+  "id" : 362,
+  "leden" : null,
+  "ledenId" : 115,
+  "datum" : "2013-01-09",
+  "bedrag" : 30
+}, {
+  "id" : 363,
+  "leden" : null,
+  "ledenId" : 22,
+  "datum" : "2013-01-31",
+  "bedrag" : 30
+}, {
+  "id" : 364,
+  "leden" : null,
+  "ledenId" : 6,
+  "datum" : "2013-04-24",
+  "bedrag" : 30
+}, {
+  "id" : 365,
+  "leden" : null,
+  "ledenId" : 88,
+  "datum" : "2013-04-25",
+  "bedrag" : 30
+}, {
+  "id" : 366,
+  "leden" : null,
+  "ledenId" : 63,
+  "datum" : "2013-05-07",
+  "bedrag" : 30
+}, {
+  "id" : 367,
+  "leden" : null,
+  "ledenId" : 34,
+  "datum" : "2013-05-08",
+  "bedrag" : 30
+}, {
+  "id" : 368,
+  "leden" : null,
+  "ledenId" : 35,
+  "datum" : "2013-05-22",
+  "bedrag" : 30
+}, {
+  "id" : 369,
+  "leden" : null,
+  "ledenId" : 18,
+  "datum" : "2013-06-19",
+  "bedrag" : 30
+}, {
+  "id" : 370,
+  "leden" : null,
+  "ledenId" : 11,
+  "datum" : "2013-06-22",
+  "bedrag" : 30
+}, {
+  "id" : 371,
+  "leden" : null,
+  "ledenId" : 17,
+  "datum" : "2013-08-31",
+  "bedrag" : 30
+}, {
+  "id" : 372,
+  "leden" : null,
+  "ledenId" : 86,
+  "datum" : "2013-08-31",
+  "bedrag" : 30
+}, {
+  "id" : 373,
+  "leden" : null,
+  "ledenId" : 95,
+  "datum" : "2013-08-31",
+  "bedrag" : 30
+}, {
+  "id" : 374,
+  "leden" : null,
+  "ledenId" : 70,
+  "datum" : "2013-08-31",
+  "bedrag" : 30
+}, {
+  "id" : 375,
+  "leden" : null,
+  "ledenId" : 83,
+  "datum" : "2013-09-12",
+  "bedrag" : 30
+}, {
+  "id" : 376,
+  "leden" : null,
+  "ledenId" : 65,
+  "datum" : "2013-09-19",
+  "bedrag" : 30
+}, {
+  "id" : 377,
+  "leden" : null,
+  "ledenId" : 111,
+  "datum" : "2013-10-02",
+  "bedrag" : 30
+}, {
+  "id" : 378,
+  "leden" : null,
+  "ledenId" : 104,
+  "datum" : "2013-10-02",
+  "bedrag" : 30
+}, {
+  "id" : 379,
+  "leden" : null,
+  "ledenId" : 19,
+  "datum" : "2013-11-20",
+  "bedrag" : 30
+}, {
+  "id" : 380,
+  "leden" : null,
+  "ledenId" : 48,
+  "datum" : "2013-12-12",
+  "bedrag" : 30
+}, {
+  "id" : 381,
+  "leden" : null,
+  "ledenId" : 66,
+  "datum" : "2013-12-30",
+  "bedrag" : 30
+}, {
+  "id" : 382,
+  "leden" : null,
+  "ledenId" : 22,
+  "datum" : "2014-01-29",
+  "bedrag" : 30
+}, {
+  "id" : 383,
+  "leden" : null,
+  "ledenId" : 16,
+  "datum" : "2014-01-29",
+  "bedrag" : 30
+}, {
+  "id" : 384,
+  "leden" : null,
+  "ledenId" : 115,
+  "datum" : "2014-02-07",
+  "bedrag" : 30
+}, {
+  "id" : 385,
+  "leden" : null,
+  "ledenId" : 88,
+  "datum" : "2014-04-24",
+  "bedrag" : 30
+}, {
+  "id" : 386,
+  "leden" : null,
+  "ledenId" : 6,
+  "datum" : "2014-04-26",
+  "bedrag" : 30
+}, {
+  "id" : 387,
+  "leden" : null,
+  "ledenId" : 34,
+  "datum" : "2014-05-08",
+  "bedrag" : 30
+}, {
+  "id" : 388,
+  "leden" : null,
+  "ledenId" : 35,
+  "datum" : "2014-05-08",
+  "bedrag" : 30
+}, {
+  "id" : 389,
+  "leden" : null,
+  "ledenId" : 11,
+  "datum" : "2014-05-18",
+  "bedrag" : 30
+}, {
+  "id" : 390,
+  "leden" : null,
+  "ledenId" : 18,
+  "datum" : "2014-05-18",
+  "bedrag" : 30
+}, {
+  "id" : 391,
+  "leden" : null,
+  "ledenId" : 17,
+  "datum" : "2014-05-28",
+  "bedrag" : 30
+}, {
+  "id" : 392,
+  "leden" : null,
+  "ledenId" : 112,
+  "datum" : "2014-07-03",
+  "bedrag" : 30
+}, {
+  "id" : 393,
+  "leden" : null,
+  "ledenId" : 95,
+  "datum" : "2014-08-31",
+  "bedrag" : 30
+}, {
+  "id" : 394,
+  "leden" : null,
+  "ledenId" : 63,
+  "datum" : "2014-10-02",
+  "bedrag" : 30
+}, {
+  "id" : 395,
+  "leden" : null,
+  "ledenId" : 65,
+  "datum" : "2014-10-21",
+  "bedrag" : 30
+}, {
+  "id" : 396,
+  "leden" : null,
+  "ledenId" : 86,
+  "datum" : "2014-10-30",
+  "bedrag" : 30
+}, {
+  "id" : 397,
+  "leden" : null,
+  "ledenId" : 117,
+  "datum" : "2014-10-30",
+  "bedrag" : 30
+}, {
+  "id" : 398,
+  "leden" : null,
+  "ledenId" : 111,
+  "datum" : "2014-11-04",
+  "bedrag" : 30
+}, {
+  "id" : 399,
+  "leden" : null,
+  "ledenId" : 104,
+  "datum" : "2014-11-03",
+  "bedrag" : 30
+}, {
+  "id" : 400,
+  "leden" : null,
+  "ledenId" : 23,
+  "datum" : "2014-11-13",
+  "bedrag" : 30
+}, {
+  "id" : 401,
+  "leden" : null,
+  "ledenId" : 118,
+  "datum" : "2014-11-13",
+  "bedrag" : 30
+}, {
+  "id" : 402,
+  "leden" : null,
+  "ledenId" : 116,
+  "datum" : "2014-11-13",
+  "bedrag" : 30
+}, {
+  "id" : 403,
+  "leden" : null,
+  "ledenId" : 19,
+  "datum" : "2014-12-03",
+  "bedrag" : 30
+}, {
+  "id" : 404,
+  "leden" : null,
+  "ledenId" : 70,
+  "datum" : "2014-12-14",
+  "bedrag" : 30
+}, {
+  "id" : 405,
+  "leden" : null,
+  "ledenId" : 48,
+  "datum" : "2014-12-17",
+  "bedrag" : 30
+}, {
+  "id" : 406,
+  "leden" : null,
+  "ledenId" : 83,
+  "datum" : "2014-12-19",
+  "bedrag" : 30
+}, {
+  "id" : 407,
+  "leden" : null,
+  "ledenId" : 16,
+  "datum" : "2015-01-08",
+  "bedrag" : 30
+}, {
+  "id" : 408,
+  "leden" : null,
+  "ledenId" : 66,
+  "datum" : "2015-01-08",
+  "bedrag" : 30
+}, {
+  "id" : 409,
+  "leden" : null,
+  "ledenId" : 22,
+  "datum" : "2015-02-05",
+  "bedrag" : 30
+}, {
+  "id" : 410,
+  "leden" : null,
+  "ledenId" : 115,
+  "datum" : "2015-02-18",
+  "bedrag" : 30
+}, {
+  "id" : 411,
+  "leden" : null,
+  "ledenId" : 88,
+  "datum" : "2015-05-16",
+  "bedrag" : 30
+}, {
+  "id" : 412,
+  "leden" : null,
+  "ledenId" : 34,
+  "datum" : "2015-05-16",
+  "bedrag" : 30
+}, {
+  "id" : 413,
+  "leden" : null,
+  "ledenId" : 18,
+  "datum" : "2015-05-16",
+  "bedrag" : 30
+}, {
+  "id" : 414,
+  "leden" : null,
+  "ledenId" : 11,
+  "datum" : "2015-05-18",
+  "bedrag" : 30
+}, {
+  "id" : 415,
+  "leden" : null,
+  "ledenId" : 52,
+  "datum" : "2015-05-21",
+  "bedrag" : 30
+}, {
+  "id" : 416,
+  "leden" : null,
+  "ledenId" : 35,
+  "datum" : "2015-05-21",
+  "bedrag" : 30
+}, {
+  "id" : 417,
+  "leden" : null,
+  "ledenId" : 6,
+  "datum" : "2015-05-27",
+  "bedrag" : 30
+}, {
+  "id" : 418,
+  "leden" : null,
+  "ledenId" : 17,
+  "datum" : "2015-05-27",
+  "bedrag" : 30
+}, {
+  "id" : 419,
+  "leden" : null,
+  "ledenId" : 112,
+  "datum" : "2015-08-31",
+  "bedrag" : 30
+}, {
+  "id" : 420,
+  "leden" : null,
+  "ledenId" : 95,
+  "datum" : "2015-09-01",
+  "bedrag" : 30
+}, {
+  "id" : 421,
+  "leden" : null,
+  "ledenId" : 116,
+  "datum" : "2015-11-16",
+  "bedrag" : 30
+}, {
+  "id" : 422,
+  "leden" : null,
+  "ledenId" : 104,
+  "datum" : "2015-11-16",
+  "bedrag" : 30
+}, {
+  "id" : 423,
+  "leden" : null,
+  "ledenId" : 117,
+  "datum" : "2015-11-16",
+  "bedrag" : 30
+}, {
+  "id" : 424,
+  "leden" : null,
+  "ledenId" : 65,
+  "datum" : "2015-11-25",
+  "bedrag" : 30
+}, {
+  "id" : 425,
+  "leden" : null,
+  "ledenId" : 86,
+  "datum" : "2015-11-25",
+  "bedrag" : 30
+}, {
+  "id" : 426,
+  "leden" : null,
+  "ledenId" : 111,
+  "datum" : "2015-12-03",
+  "bedrag" : 30
+}, {
+  "id" : 427,
+  "leden" : null,
+  "ledenId" : 48,
+  "datum" : "2015-12-28",
+  "bedrag" : 30
+}, {
+  "id" : 428,
+  "leden" : null,
+  "ledenId" : 70,
+  "datum" : "2016-01-06",
+  "bedrag" : 30
+}, {
+  "id" : 429,
+  "leden" : null,
+  "ledenId" : 19,
+  "datum" : "2016-01-06",
+  "bedrag" : 30
+}, {
+  "id" : 430,
+  "leden" : null,
+  "ledenId" : 115,
+  "datum" : "2016-02-03",
+  "bedrag" : 30
+}, {
+  "id" : 431,
+  "leden" : null,
+  "ledenId" : 16,
+  "datum" : "2016-02-27",
+  "bedrag" : 30
+}, {
+  "id" : 432,
+  "leden" : null,
+  "ledenId" : 66,
+  "datum" : "2016-02-27",
+  "bedrag" : 30
+}, {
+  "id" : 433,
+  "leden" : null,
+  "ledenId" : 63,
+  "datum" : "2016-01-02",
+  "bedrag" : 30
+}, {
+  "id" : 434,
+  "leden" : null,
+  "ledenId" : 22,
+  "datum" : "2016-03-12",
+  "bedrag" : 30
+}, {
+  "id" : 435,
+  "leden" : null,
+  "ledenId" : 119,
+  "datum" : "2016-04-20",
+  "bedrag" : 30
+}, {
+  "id" : 436,
+  "leden" : null,
+  "ledenId" : 83,
+  "datum" : "2016-05-05",
+  "bedrag" : 30
+}, {
+  "id" : 437,
+  "leden" : null,
+  "ledenId" : 34,
+  "datum" : "2016-05-05",
+  "bedrag" : 30
+}, {
+  "id" : 438,
+  "leden" : null,
+  "ledenId" : 18,
+  "datum" : "2016-05-05",
+  "bedrag" : 30
+}, {
+  "id" : 439,
+  "leden" : null,
+  "ledenId" : 35,
+  "datum" : "2016-05-23",
+  "bedrag" : 30
+}, {
+  "id" : 440,
+  "leden" : null,
+  "ledenId" : 17,
+  "datum" : "2016-05-23",
+  "bedrag" : 30
+}, {
+  "id" : 441,
+  "leden" : null,
+  "ledenId" : 11,
+  "datum" : "2016-06-06",
+  "bedrag" : 30
+}, {
+  "id" : 442,
+  "leden" : null,
+  "ledenId" : 88,
+  "datum" : "2016-06-08",
+  "bedrag" : 30
+}, {
+  "id" : 443,
+  "leden" : null,
+  "ledenId" : 95,
+  "datum" : "2016-09-21",
+  "bedrag" : 30
+}, {
+  "id" : 444,
+  "leden" : null,
+  "ledenId" : 104,
+  "datum" : "2016-12-07",
+  "bedrag" : 30
+}, {
+  "id" : 445,
+  "leden" : null,
+  "ledenId" : 116,
+  "datum" : "2016-11-23",
+  "bedrag" : 30
+}, {
+  "id" : 446,
+  "leden" : null,
+  "ledenId" : 70,
+  "datum" : "2017-01-09",
+  "bedrag" : 30
+}, {
+  "id" : 447,
+  "leden" : null,
+  "ledenId" : 65,
+  "datum" : "2017-01-09",
+  "bedrag" : 30
+}, {
+  "id" : 448,
+  "leden" : null,
+  "ledenId" : 48,
+  "datum" : "2017-01-09",
+  "bedrag" : 30
+}, {
+  "id" : 449,
+  "leden" : null,
+  "ledenId" : 19,
+  "datum" : "2017-01-30",
+  "bedrag" : 30
+}, {
+  "id" : 450,
+  "leden" : null,
+  "ledenId" : 63,
+  "datum" : "2017-01-24",
+  "bedrag" : 30
+}, {
+  "id" : 451,
+  "leden" : null,
+  "ledenId" : 111,
+  "datum" : "2017-02-06",
+  "bedrag" : 30
+}, {
+  "id" : 452,
+  "leden" : null,
+  "ledenId" : 66,
+  "datum" : "2017-02-16",
+  "bedrag" : 30
+}, {
+  "id" : 453,
+  "leden" : null,
+  "ledenId" : 115,
+  "datum" : "2017-02-15",
+  "bedrag" : 30
+}, {
+  "id" : 454,
+  "leden" : null,
+  "ledenId" : 16,
+  "datum" : "2017-02-22",
+  "bedrag" : 30
+}, {
+  "id" : 455,
+  "leden" : null,
+  "ledenId" : 112,
+  "datum" : "2017-05-04",
+  "bedrag" : 30
+}, {
+  "id" : 456,
+  "leden" : null,
+  "ledenId" : 34,
+  "datum" : "2017-06-09",
+  "bedrag" : 30
+}, {
+  "id" : 457,
+  "leden" : null,
+  "ledenId" : 11,
+  "datum" : "2017-06-15",
+  "bedrag" : 30
+}, {
+  "id" : 458,
+  "leden" : null,
+  "ledenId" : 18,
+  "datum" : "2017-06-15",
+  "bedrag" : 30
+}, {
+  "id" : 459,
+  "leden" : null,
+  "ledenId" : 88,
+  "datum" : "2017-05-17",
+  "bedrag" : 30
+}, {
+  "id" : 460,
+  "leden" : null,
+  "ledenId" : 35,
+  "datum" : "2017-07-05",
+  "bedrag" : 30
+}, {
+  "id" : 461,
+  "leden" : null,
+  "ledenId" : 86,
+  "datum" : "2017-07-05",
+  "bedrag" : 30
+}, {
+  "id" : 462,
+  "leden" : null,
+  "ledenId" : 83,
+  "datum" : "2017-07-05",
+  "bedrag" : 30
+}, {
+  "id" : 463,
+  "leden" : null,
+  "ledenId" : 95,
+  "datum" : "2017-07-13",
+  "bedrag" : 30
+}, {
+  "id" : 464,
+  "leden" : null,
+  "ledenId" : 120,
+  "datum" : "2017-08-30",
+  "bedrag" : 30
+}, {
+  "id" : 465,
+  "leden" : null,
+  "ledenId" : 4,
+  "datum" : "2017-10-04",
+  "bedrag" : 30
+}, {
+  "id" : 466,
+  "leden" : null,
+  "ledenId" : 104,
+  "datum" : "2017-12-05",
+  "bedrag" : 30
+}, {
+  "id" : 467,
+  "leden" : null,
+  "ledenId" : 116,
+  "datum" : "2017-12-07",
+  "bedrag" : 30
+}, {
+  "id" : 469,
+  "leden" : null,
+  "ledenId" : 65,
+  "datum" : "2017-12-15",
+  "bedrag" : 30
+}, {
+  "id" : 470,
+  "leden" : null,
+  "ledenId" : 70,
+  "datum" : "2017-12-15",
+  "bedrag" : 30
+}, {
+  "id" : 471,
+  "leden" : null,
+  "ledenId" : 19,
+  "datum" : "2018-01-31",
+  "bedrag" : 30
+}, {
+  "id" : 472,
+  "leden" : null,
+  "ledenId" : 48,
+  "datum" : "2018-02-08",
+  "bedrag" : 30
+}, {
+  "id" : 473,
+  "leden" : null,
+  "ledenId" : 115,
+  "datum" : "2018-02-21",
+  "bedrag" : 30
+}, {
+  "id" : 474,
+  "leden" : null,
+  "ledenId" : 66,
+  "datum" : "2018-02-21",
+  "bedrag" : 30
+}, {
+  "id" : 475,
+  "leden" : null,
+  "ledenId" : 16,
+  "datum" : "2018-02-21",
+  "bedrag" : 30
+}, {
+  "id" : 476,
+  "leden" : null,
+  "ledenId" : 63,
+  "datum" : "2018-01-24",
+  "bedrag" : 30
+}, {
+  "id" : 477,
+  "leden" : null,
+  "ledenId" : 111,
+  "datum" : "2018-03-28",
+  "bedrag" : 30
+}, {
+  "id" : 478,
+  "leden" : null,
+  "ledenId" : 34,
+  "datum" : "2018-05-30",
+  "bedrag" : 30
+}, {
+  "id" : 479,
+  "leden" : null,
+  "ledenId" : 35,
+  "datum" : "2018-05-30",
+  "bedrag" : 30
+}, {
+  "id" : 480,
+  "leden" : null,
+  "ledenId" : 18,
+  "datum" : "2018-07-04",
+  "bedrag" : 30
+}, {
+  "id" : 481,
+  "leden" : null,
+  "ledenId" : 88,
+  "datum" : "2018-05-17",
+  "bedrag" : 30
+}, {
+  "id" : 482,
+  "leden" : null,
+  "ledenId" : 11,
+  "datum" : "2018-06-15",
+  "bedrag" : 30
+}, {
+  "id" : 483,
+  "leden" : null,
+  "ledenId" : 4,
+  "datum" : "2018-10-10",
+  "bedrag" : 30
+}, {
+  "id" : 484,
+  "leden" : null,
+  "ledenId" : 95,
+  "datum" : "2018-07-17",
+  "bedrag" : 30
+}, {
+  "id" : 485,
+  "leden" : null,
+  "ledenId" : 70,
+  "datum" : "2018-12-15",
+  "bedrag" : 30
+}, {
+  "id" : 486,
+  "leden" : null,
+  "ledenId" : 65,
+  "datum" : "2018-12-20",
+  "bedrag" : 30
+}, {
+  "id" : 487,
+  "leden" : null,
+  "ledenId" : 83,
+  "datum" : "2018-12-31",
+  "bedrag" : 30
+}, {
+  "id" : 488,
+  "leden" : null,
+  "ledenId" : 104,
+  "datum" : "2019-01-05",
+  "bedrag" : 30
+}, {
+  "id" : 489,
+  "leden" : null,
+  "ledenId" : 116,
+  "datum" : "2018-12-10",
+  "bedrag" : 30
+}, {
+  "id" : 490,
+  "leden" : null,
+  "ledenId" : 63,
+  "datum" : "2018-12-10",
+  "bedrag" : 30
+}, {
+  "id" : 491,
+  "leden" : null,
+  "ledenId" : 115,
+  "datum" : "2019-02-28",
+  "bedrag" : 30
+}, {
+  "id" : 492,
+  "leden" : null,
+  "ledenId" : 113,
+  "datum" : "2019-02-28",
+  "bedrag" : 30
+}, {
+  "id" : 493,
+  "leden" : null,
+  "ledenId" : 48,
+  "datum" : "2019-02-26",
+  "bedrag" : 30
+}, {
+  "id" : 494,
+  "leden" : null,
+  "ledenId" : 66,
+  "datum" : "2019-03-11",
+  "bedrag" : 30
+}, {
+  "id" : 495,
+  "leden" : null,
+  "ledenId" : 19,
+  "datum" : "2019-02-01",
+  "bedrag" : 30
+}, {
+  "id" : 496,
+  "leden" : null,
+  "ledenId" : 111,
+  "datum" : "2019-04-11",
+  "bedrag" : 30
+}, {
+  "id" : 497,
+  "leden" : null,
+  "ledenId" : 18,
+  "datum" : "2019-05-15",
+  "bedrag" : 30
+}, {
+  "id" : 498,
+  "leden" : null,
+  "ledenId" : 88,
+  "datum" : "2019-05-21",
+  "bedrag" : 30
+}, {
+  "id" : 499,
+  "leden" : null,
+  "ledenId" : 35,
+  "datum" : "2019-05-29",
+  "bedrag" : 30
+}, {
+  "id" : 500,
+  "leden" : null,
+  "ledenId" : 34,
+  "datum" : "2019-05-29",
+  "bedrag" : 30
+}, {
+  "id" : 501,
+  "leden" : null,
+  "ledenId" : 95,
+  "datum" : "2019-07-22",
+  "bedrag" : 30
+}, {
+  "id" : 502,
+  "leden" : null,
+  "ledenId" : 11,
+  "datum" : "2019-09-04",
+  "bedrag" : 30
+}, {
+  "id" : 503,
+  "leden" : null,
+  "ledenId" : 4,
+  "datum" : "2019-10-11",
+  "bedrag" : 30
+}, {
+  "id" : 504,
+  "leden" : null,
+  "ledenId" : 65,
+  "datum" : "2019-12-24",
+  "bedrag" : 30
+}, {
+  "id" : 505,
+  "leden" : null,
+  "ledenId" : 70,
+  "datum" : "2019-12-16",
   "bedrag" : 30
 } ]

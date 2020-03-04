@@ -42,4 +42,8 @@
   "id" : 11,
   "rubriek" : "ADSL",
   "kasboeken" : [ ]
+}, {
+  "id" : 12,
+  "rubriek" : "Spaghetti avond",
+  "kasboeken" : [ ]
 } ]

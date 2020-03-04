@@ -113,7 +113,7 @@ public class MailSenderService {
 	        	messageHelper.setTo(new InternetAddress(mail.getTo(), leden.getVoornaam() + " " + leden.getFamilienaam()));
 				messageHelper.setFrom(new InternetAddress("cfc.schatbewaarder@cformatc.be", "Computerclub Format C"));
 				//messageHelper.setCc(new InternetAddress("cfc.schatbewaarder@cformatc.be", "Willy De Keyser"));
-		        //messageHelper.setBcc(new InternetAddress("wdkeyser@gmail.com", "Willy De Keyser"));
+		        messageHelper.setBcc(new InternetAddress("wdkeyser@gmail.com", "Willy De Keyser"));
 		        messageHelper.setReplyTo(new InternetAddress("contact@cformatc.be", "Computerclub Format C"));
 			} catch (UnsupportedEncodingException e) {
 				System.err.println("Zend E-mail error: " + e.getMessage());
@@ -126,7 +126,7 @@ public class MailSenderService {
 	        messageHelper.setSubject(mail.getSubject());
 	        messageHelper.setText(html, true);
 	        
-	       	//mailSender.send(message);
+	       	mailSender.send(message);
 	    
 	        if(index == 1) {
 	        	data = html + "\n\n";
@@ -156,8 +156,8 @@ public class MailSenderService {
         final NumberFormat numberFormat = NumberFormat.getCurrencyInstance(new Locale("nl", "NL"));
         Context context = new Context();
         
-    	//mail.setTo(lid.getEmailadres());
-    	mail.setTo("willy.de.keyser@skynet.be");
+    	mail.setTo(lid.getEmailadres());
+    	//mail.setTo("willy.de.keyser@skynet.be");
     	
         System.out.println("Zend email... " + lid.getVoornaam() + " " + lid.getFamilienaam() + " " + lid.getEmailadres() + " - " + mail.getTo());
     	context.setVariable("voornaam", lid.getVoornaam());
@@ -178,7 +178,7 @@ public class MailSenderService {
         	messageHelper.setTo(new InternetAddress(mail.getTo(), lid.getVoornaam() + " " + lid.getFamilienaam()));
 			messageHelper.setFrom(new InternetAddress("cfc.schatbewaarder@cformatc.be", "Computerclub Format C"));
 			//messageHelper.setCc(new InternetAddress("cfc.schatbewaarder@cformatc.be", "Willy De Keyser"));
-	        //messageHelper.setBcc(new InternetAddress("wdkeyser@gmail.com", "Willy De Keyser"));
+	        messageHelper.setBcc(new InternetAddress("wdkeyser@gmail.com", "Willy De Keyser"));
 	        messageHelper.setReplyTo(new InternetAddress("contact@cformatc.be", "Computerclub Format C"));
 		} catch (UnsupportedEncodingException e) {
 			System.err.println("Zend E-mail error: " + e.getMessage());

@@ -11613,17 +11613,7280 @@
   "rubriek" : null,
   "rubriekId" : 1,
   "jaartal" : 2012,
-  "omschrijving" : "25/1 17 X 1€",
+  "omschrijving" : "25/01 17 X1€",
   "datum" : "2012-01-28",
   "uitgaven" : 0,
   "inkomsten" : 17
 }, {
+  "id" : 1299,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2012,
+  "omschrijving" : "01/02 15X1€",
+  "datum" : "2012-02-25",
+  "uitgaven" : 0,
+  "inkomsten" : 15
+}, {
+  "id" : 1300,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2012,
+  "omschrijving" : "15/02 20X1€",
+  "datum" : "2012-02-25",
+  "uitgaven" : 0,
+  "inkomsten" : 20
+}, {
   "id" : 1301,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2012,
+  "omschrijving" : "Sponsor",
+  "datum" : "2012-02-25",
+  "uitgaven" : 0,
+  "inkomsten" : 0.08
+}, {
+  "id" : 1302,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2012,
+  "omschrijving" : "ADSL Dommel februari",
+  "datum" : "2012-02-25",
+  "uitgaven" : 13.99,
+  "inkomsten" : 0
+}, {
+  "id" : 1303,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2012,
+  "omschrijving" : "Afrekening VZW Januari - februari",
+  "datum" : "2012-02-29",
+  "uitgaven" : 90,
+  "inkomsten" : 0
+}, {
+  "id" : 1304,
+  "rubriek" : null,
+  "rubriekId" : 8,
+  "jaartal" : 2012,
+  "omschrijving" : "Iiyama 27\" monitor",
+  "datum" : "2012-03-06",
+  "uitgaven" : 280.95,
+  "inkomsten" : 0
+}, {
+  "id" : 1305,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2012,
+  "omschrijving" : "11/1 18/1 8/2 22/2 29/2",
+  "datum" : "2012-03-09",
+  "uitgaven" : 0,
+  "inkomsten" : 80
+}, {
+  "id" : 1306,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2012,
+  "omschrijving" : "ADSL Dommel maart",
+  "datum" : "2012-03-22",
+  "uitgaven" : 13.99,
+  "inkomsten" : 0
+}, {
+  "id" : 1307,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2012,
+  "omschrijving" : "Lidgeld Tony De Vuyst",
+  "datum" : "2012-03-22",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1308,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2012,
+  "omschrijving" : "07/03 14X1€",
+  "datum" : "2012-03-22",
+  "uitgaven" : 0,
+  "inkomsten" : 14
+}, {
+  "id" : 1309,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2012,
+  "omschrijving" : "21/03 16X1€",
+  "datum" : "2012-03-22",
+  "uitgaven" : 0,
+  "inkomsten" : 16
+}, {
+  "id" : 1310,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2012,
+  "omschrijving" : "ADSL Dommel april",
+  "datum" : "2012-03-25",
+  "uitgaven" : 13.99,
+  "inkomsten" : 0
+}, {
+  "id" : 1311,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2012,
+  "omschrijving" : "Lidgeld Adolphe De Meyer",
+  "datum" : "2012-03-31",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1312,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2012,
+  "omschrijving" : "Lidgeld Franz Van Autreve",
+  "datum" : "2012-03-27",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1313,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2012,
+  "omschrijving" : "28/03 15X1€",
+  "datum" : "2012-04-21",
+  "uitgaven" : 0,
+  "inkomsten" : 15
+}, {
+  "id" : 1314,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2012,
+  "omschrijving" : "04/04 17X1€",
+  "datum" : "2012-04-21",
+  "uitgaven" : 0,
+  "inkomsten" : 17
+}, {
+  "id" : 1315,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2012,
+  "omschrijving" : "11/04 14X1€",
+  "datum" : "2012-04-21",
+  "uitgaven" : 0,
+  "inkomsten" : 14
+}, {
+  "id" : 1316,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2012,
+  "omschrijving" : "Lidgeld Luc De Smet",
+  "datum" : "2012-04-26",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1317,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2012,
+  "omschrijving" : "Lidgeld Jean-Pierre De Buysscher",
+  "datum" : "2012-04-26",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1318,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2012,
+  "omschrijving" : "25/04 17X1€",
+  "datum" : "2012-04-26",
+  "uitgaven" : 0,
+  "inkomsten" : 17
+}, {
+  "id" : 1319,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2012,
+  "omschrijving" : "Afrekening VZW maart - april",
+  "datum" : "2012-05-05",
+  "uitgaven" : 80,
+  "inkomsten" : 0
+}, {
+  "id" : 1320,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2012,
+  "omschrijving" : "30 Inschrijvingen clubsouper 2012",
+  "datum" : "2012-05-05",
+  "uitgaven" : 0,
+  "inkomsten" : 468
+}, {
+  "id" : 1321,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2012,
+  "omschrijving" : "Lidgeld Johan Bracke",
+  "datum" : "2012-05-10",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1322,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2012,
+  "omschrijving" : "Discovery Line maart - april",
+  "datum" : "2012-05-10",
+  "uitgaven" : 21.31,
+  "inkomsten" : 0
+}, {
+  "id" : 1323,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2012,
+  "omschrijving" : "Beker en naamkaartje",
+  "datum" : "2012-05-14",
+  "uitgaven" : 12,
+  "inkomsten" : 0
+}, {
+  "id" : 1324,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2012,
+  "omschrijving" : "Krantje 2/5",
+  "datum" : "2012-05-14",
+  "uitgaven" : 1.9,
+  "inkomsten" : 0
+}, {
+  "id" : 1325,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2012,
+  "omschrijving" : "02/05 14X1€",
+  "datum" : "2012-05-14",
+  "uitgaven" : 0,
+  "inkomsten" : 14
+}, {
+  "id" : 1326,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2012,
+  "omschrijving" : "09/05 17X1€",
+  "datum" : "2012-05-14",
+  "uitgaven" : 0,
+  "inkomsten" : 17
+}, {
+  "id" : 1327,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2012,
+  "omschrijving" : "Prijzen clubsouper",
+  "datum" : "2012-05-17",
+  "uitgaven" : 104.32,
+  "inkomsten" : 0
+}, {
+  "id" : 1328,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2012,
+  "omschrijving" : "Inkomsten drankverkoop",
+  "datum" : "2012-05-19",
+  "uitgaven" : 0,
+  "inkomsten" : 108
+}, {
+  "id" : 1329,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2012,
+  "omschrijving" : "Inkomsten Kippen schieten",
+  "datum" : "2012-05-19",
+  "uitgaven" : 0,
+  "inkomsten" : 51
+}, {
+  "id" : 1330,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2012,
+  "omschrijving" : "Aankoop Kaas- en vleesschotels",
+  "datum" : "2012-05-19",
+  "uitgaven" : 310,
+  "inkomsten" : 0
+}, {
+  "id" : 1331,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2012,
+  "omschrijving" : "Aankoop taartjes",
+  "datum" : "2012-05-19",
+  "uitgaven" : 39.8,
+  "inkomsten" : 0
+}, {
+  "id" : 1332,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2012,
+  "omschrijving" : "Aankoop drank",
+  "datum" : "2012-05-19",
+  "uitgaven" : 57.46,
+  "inkomsten" : 0
+}, {
+  "id" : 1333,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2012,
+  "omschrijving" : "Lidgeld Dirk Van Nieuwerburg",
+  "datum" : "2012-05-19",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1334,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2012,
+  "omschrijving" : "Lidgeld Willy De Keyser",
+  "datum" : "2012-05-19",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1335,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2012,
+  "omschrijving" : "Aankoop bieren",
+  "datum" : "2012-05-21",
+  "uitgaven" : 19,
+  "inkomsten" : 0
+}, {
+  "id" : 1336,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2012,
+  "omschrijving" : "ADSL Dommel mei",
+  "datum" : "2012-05-25",
+  "uitgaven" : 13.99,
+  "inkomsten" : 0
+}, {
+  "id" : 1337,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2012,
+  "omschrijving" : "ADSL Dommel juni",
+  "datum" : "2012-05-25",
+  "uitgaven" : 13.99,
+  "inkomsten" : 0
+}, {
+  "id" : 1338,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2012,
+  "omschrijving" : "Discovery Line mei - juni",
+  "datum" : "2012-05-25",
+  "uitgaven" : 21.31,
+  "inkomsten" : 0
+}, {
+  "id" : 1339,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2012,
+  "omschrijving" : "16/05 16X1€",
+  "datum" : "2012-05-25",
+  "uitgaven" : 0,
+  "inkomsten" : 16
+}, {
+  "id" : 1340,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2012,
+  "omschrijving" : "23/05 15X1€",
+  "datum" : "2012-05-25",
+  "uitgaven" : 0,
+  "inkomsten" : 15
+}, {
+  "id" : 1341,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2012,
+  "omschrijving" : "Gebroken glazen en vuilzak",
+  "datum" : "2012-05-25",
+  "uitgaven" : 4,
+  "inkomsten" : 0
+}, {
+  "id" : 1342,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2012,
+  "omschrijving" : "Lidgeld Lieve Comeyne",
+  "datum" : "2012-06-07",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1343,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2012,
+  "omschrijving" : "Lidgeld Christian De Groote",
+  "datum" : "2012-06-21",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1344,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2012,
+  "omschrijving" : "ADSL Dommel 7/juli/2012 tot 7/juli/2013",
+  "datum" : "2012-06-23",
+  "uitgaven" : 108.91,
+  "inkomsten" : 0
+}, {
+  "id" : 1345,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2012,
+  "omschrijving" : "06/06 14X1€",
+  "datum" : "2012-06-23",
+  "uitgaven" : 0,
+  "inkomsten" : 14
+}, {
+  "id" : 1346,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2012,
+  "omschrijving" : "20/06 17X1€",
+  "datum" : "2012-06-23",
+  "uitgaven" : 0,
+  "inkomsten" : 17
+}, {
+  "id" : 1347,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2012,
+  "omschrijving" : "Prutsbeker",
+  "datum" : "2012-06-23",
+  "uitgaven" : 30,
+  "inkomsten" : 0
+}, {
+  "id" : 1348,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2012,
+  "omschrijving" : "Lidgeld Kristof Heirwegh",
+  "datum" : "2012-06-26",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1349,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2012,
+  "omschrijving" : "Lidgeld Philip Demeter",
+  "datum" : "2012-07-12",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1350,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2012,
+  "omschrijving" : "Afrekening VZW mei - juni",
+  "datum" : "2012-07-17",
+  "uitgaven" : 106,
+  "inkomsten" : 0
+}, {
+  "id" : 1351,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2012,
+  "omschrijving" : "Bloemstuk voor Edwige",
+  "datum" : "2012-07-17",
+  "uitgaven" : 19,
+  "inkomsten" : 0
+}, {
+  "id" : 1352,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2012,
+  "omschrijving" : "27/6 11X1€",
+  "datum" : "2012-06-30",
+  "uitgaven" : 0,
+  "inkomsten" : 11
+}, {
+  "id" : 1353,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2012,
+  "omschrijving" : "04/07 12X1€",
+  "datum" : "2012-08-30",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 1354,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2012,
+  "omschrijving" : "11/07 15X1€",
+  "datum" : "2012-08-30",
+  "uitgaven" : 0,
+  "inkomsten" : 15
+}, {
+  "id" : 1355,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2012,
+  "omschrijving" : "29/8 19X1€",
+  "datum" : "2012-08-30",
+  "uitgaven" : 0,
+  "inkomsten" : 19
+}, {
+  "id" : 1356,
+  "rubriek" : null,
+  "rubriekId" : 3,
+  "jaartal" : 2012,
+  "omschrijving" : "Drukwerk flyers opendeurdag",
+  "datum" : "2012-08-30",
+  "uitgaven" : 31.25,
+  "inkomsten" : 0
+}, {
+  "id" : 1357,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2012,
+  "omschrijving" : "Discovery Line juli - augustus",
+  "datum" : "2012-09-01",
+  "uitgaven" : 21.31,
+  "inkomsten" : 0
+}, {
+  "id" : 1358,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2012,
+  "omschrijving" : "Lidgeld Bart De Beuckelaere",
+  "datum" : "2012-09-10",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1359,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2012,
+  "omschrijving" : "Lidgeld Etienne Dhont",
+  "datum" : "2012-09-15",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1360,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2012,
+  "omschrijving" : "Lidgeld Koen Van Petegem",
+  "datum" : "2012-09-15",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1361,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2012,
+  "omschrijving" : "12/09 19X1€",
+  "datum" : "2012-09-22",
+  "uitgaven" : 0,
+  "inkomsten" : 19
+}, {
+  "id" : 1362,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2012,
+  "omschrijving" : "19/09 17X1€",
+  "datum" : "2012-09-22",
+  "uitgaven" : 0,
+  "inkomsten" : 17
+}, {
+  "id" : 1363,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2012,
+  "omschrijving" : "Sponsoring 29/8 + 19/9",
+  "datum" : "2012-09-22",
+  "uitgaven" : 0,
+  "inkomsten" : 0.18
+}, {
+  "id" : 1364,
+  "rubriek" : null,
+  "rubriekId" : 8,
+  "jaartal" : 2012,
+  "omschrijving" : "Aankoop nieuwe PC (Dirk)",
+  "datum" : "2012-09-26",
+  "uitgaven" : 543.79,
+  "inkomsten" : 0
+}, {
+  "id" : 1365,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2012,
+  "omschrijving" : "Lidgeld Denise Callebaut",
+  "datum" : "2012-11-02",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1366,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2012,
+  "omschrijving" : "Lidgeld Luc Van Der Heyden",
+  "datum" : "2012-11-02",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1367,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2012,
+  "omschrijving" : "Lidgeld Dirk Vandendriessche",
+  "datum" : "2012-11-08",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1368,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2012,
+  "omschrijving" : "Lidgeld Leon Van Nevel",
+  "datum" : "2012-11-24",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1369,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2012,
+  "omschrijving" : "Lidgeld Willy De Sloover",
+  "datum" : "2012-11-24",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1370,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2012,
+  "omschrijving" : "Lidgeld Christiane De Schepper",
+  "datum" : "2012-11-24",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1371,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2012,
+  "omschrijving" : "26/09 13X1€",
+  "datum" : "2012-12-01",
+  "uitgaven" : 0,
+  "inkomsten" : 13
+}, {
+  "id" : 1372,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2012,
+  "omschrijving" : "24/10 13X1€",
+  "datum" : "2012-12-01",
+  "uitgaven" : 0,
+  "inkomsten" : 13
+}, {
+  "id" : 1373,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2012,
+  "omschrijving" : "31/10 16X1€",
+  "datum" : "2012-12-01",
+  "uitgaven" : 0,
+  "inkomsten" : 16
+}, {
+  "id" : 1374,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2012,
+  "omschrijving" : "07/11 17X1€",
+  "datum" : "2012-12-01",
+  "uitgaven" : 0,
+  "inkomsten" : 17
+}, {
+  "id" : 1375,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2012,
+  "omschrijving" : "14/11 12X1€",
+  "datum" : "2012-12-01",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 1376,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2012,
+  "omschrijving" : "21/11 14X1€",
+  "datum" : "2012-12-01",
+  "uitgaven" : 0,
+  "inkomsten" : 14
+}, {
+  "id" : 1377,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2012,
+  "omschrijving" : "28/11 13X1€",
+  "datum" : "2012-12-01",
+  "uitgaven" : 0,
+  "inkomsten" : 13
+}, {
+  "id" : 1378,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2012,
+  "omschrijving" : "Afrekening VZW juli - augustus",
+  "datum" : "2012-12-01",
+  "uitgaven" : 40,
+  "inkomsten" : 0
+}, {
+  "id" : 1379,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2012,
+  "omschrijving" : "Afrekening VZW september - oktober",
+  "datum" : "2012-12-01",
+  "uitgaven" : 120,
+  "inkomsten" : 0
+}, {
+  "id" : 1380,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2012,
+  "omschrijving" : "Discovery Line september - oktober",
+  "datum" : "2012-12-01",
+  "uitgaven" : 21.31,
+  "inkomsten" : 0
+}, {
+  "id" : 1381,
+  "rubriek" : null,
+  "rubriekId" : 3,
+  "jaartal" : 2012,
+  "omschrijving" : "Drank opendeurdag",
+  "datum" : "2012-12-01",
+  "uitgaven" : 21.5,
+  "inkomsten" : 0
+}, {
+  "id" : 1382,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2013,
+  "omschrijving" : "Interest spaarrekening",
+  "datum" : "2013-01-22",
+  "uitgaven" : 0,
+  "inkomsten" : 15.91
+}, {
+  "id" : 1383,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2012,
+  "omschrijving" : "Discovery Line november - december",
+  "datum" : "2013-01-22",
+  "uitgaven" : 21.31,
+  "inkomsten" : 0
+}, {
+  "id" : 1384,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2012,
+  "omschrijving" : "Afrekening VZW november - december",
+  "datum" : "2013-01-22",
+  "uitgaven" : 70,
+  "inkomsten" : 0
+}, {
+  "id" : 1385,
+  "rubriek" : null,
+  "rubriekId" : 7,
+  "jaartal" : 2013,
+  "omschrijving" : "Aankoop 2 USB sticks",
+  "datum" : "2013-01-22",
+  "uitgaven" : 29.9,
+  "inkomsten" : 0
+}, {
+  "id" : 1386,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2012,
+  "omschrijving" : "12/12 13X1€",
+  "datum" : "2013-01-22",
+  "uitgaven" : 0,
+  "inkomsten" : 13
+}, {
+  "id" : 1387,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2012,
+  "omschrijving" : "19/12 16X1€",
+  "datum" : "2013-01-22",
+  "uitgaven" : 0,
+  "inkomsten" : 16
+}, {
+  "id" : 1388,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2013,
+  "omschrijving" : "Lidgeld Hilda Bauters",
+  "datum" : "2013-01-31",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1389,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2013,
+  "omschrijving" : "Lidgeld Johan De Buysscher",
+  "datum" : "2013-01-31",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1390,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2013,
+  "omschrijving" : "23/01 17X1€",
+  "datum" : "2013-01-31",
+  "uitgaven" : 0,
+  "inkomsten" : 17
+}, {
+  "id" : 1391,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2013,
+  "omschrijving" : "30/01 18X1€",
+  "datum" : "2013-01-31",
+  "uitgaven" : 0,
+  "inkomsten" : 18
+}, {
+  "id" : 1392,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2013,
+  "omschrijving" : "Lidgeld Etienne Bertin",
+  "datum" : "2013-01-31",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1393,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2013,
+  "omschrijving" : "06/02 14X1€",
+  "datum" : "2013-02-21",
+  "uitgaven" : 0,
+  "inkomsten" : 14
+}, {
+  "id" : 1394,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2013,
+  "omschrijving" : "13/02 17X1€",
+  "datum" : "2013-02-21",
+  "uitgaven" : 0,
+  "inkomsten" : 17
+}, {
+  "id" : 1395,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2013,
+  "omschrijving" : "20/02 17X1€",
+  "datum" : "2013-02-21",
+  "uitgaven" : 0,
+  "inkomsten" : 17
+}, {
+  "id" : 1396,
+  "rubriek" : null,
+  "rubriekId" : 7,
+  "jaartal" : 2013,
+  "omschrijving" : "Club-DVD's",
+  "datum" : "2013-02-24",
+  "uitgaven" : 30,
+  "inkomsten" : 0
+}, {
+  "id" : 1397,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2012,
+  "omschrijving" : "14/3 18/4 30/5 13/6 13/8 5/9 10/10 17/10",
+  "datum" : "2013-03-02",
+  "uitgaven" : 0,
+  "inkomsten" : 143
+}, {
+  "id" : 1398,
+  "rubriek" : null,
+  "rubriekId" : 7,
+  "jaartal" : 2013,
+  "omschrijving" : "Hapjes en drank",
+  "datum" : "2013-03-02",
+  "uitgaven" : 52.15,
+  "inkomsten" : 0
+}, {
+  "id" : 1399,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2013,
+  "omschrijving" : "16/01 11X1€",
+  "datum" : "2013-03-02",
+  "uitgaven" : 0,
+  "inkomsten" : 11
+}, {
+  "id" : 1400,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2013,
+  "omschrijving" : "27/02 17X1€",
+  "datum" : "2013-03-02",
+  "uitgaven" : 0,
+  "inkomsten" : 17
+}, {
+  "id" : 1401,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2013,
+  "omschrijving" : "Discovery Line januari",
+  "datum" : "2013-03-02",
+  "uitgaven" : 10.65,
+  "inkomsten" : 0
+}, {
+  "id" : 1402,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2013,
+  "omschrijving" : "Discovery Line februari",
+  "datum" : "2013-03-02",
+  "uitgaven" : 10.95,
+  "inkomsten" : 0
+}, {
+  "id" : 1403,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2013,
+  "omschrijving" : "Afrekening VZW januari - februari",
+  "datum" : "2013-03-02",
+  "uitgaven" : 70,
+  "inkomsten" : 0
+}, {
+  "id" : 1404,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2013,
+  "omschrijving" : "Ontvangsten PinBall",
+  "datum" : "2013-04-06",
+  "uitgaven" : 0,
+  "inkomsten" : 32
+}, {
+  "id" : 1405,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2013,
+  "omschrijving" : "Ontvangsten drankverkoop",
+  "datum" : "2013-04-06",
+  "uitgaven" : 0,
+  "inkomsten" : 91.5
+}, {
+  "id" : 1406,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2013,
+  "omschrijving" : "Inschrijvingen Clubsouper 29",
+  "datum" : "2013-04-06",
+  "uitgaven" : 0,
+  "inkomsten" : 435
+}, {
+  "id" : 1407,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2013,
+  "omschrijving" : "Traiteur Carlo",
+  "datum" : "2013-04-06",
+  "uitgaven" : 265.2,
+  "inkomsten" : 0
+}, {
+  "id" : 1408,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2013,
+  "omschrijving" : "Aankoop bieren",
+  "datum" : "2013-04-06",
+  "uitgaven" : 20,
+  "inkomsten" : 0
+}, {
+  "id" : 1409,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2013,
+  "omschrijving" : "Aankoop dranken",
+  "datum" : "2013-04-06",
+  "uitgaven" : 64.08,
+  "inkomsten" : 0
+}, {
+  "id" : 1410,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2013,
+  "omschrijving" : "aankoop diversen",
+  "datum" : "2013-04-06",
+  "uitgaven" : 10.02,
+  "inkomsten" : 0
+}, {
+  "id" : 1411,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2013,
+  "omschrijving" : "Aankoop taartjes en brood",
+  "datum" : "2013-04-06",
+  "uitgaven" : 83.97,
+  "inkomsten" : 0
+}, {
+  "id" : 1412,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2013,
+  "omschrijving" : "Aankoop prijzen Pinball",
+  "datum" : "2013-04-06",
+  "uitgaven" : 140.05,
+  "inkomsten" : 0
+}, {
+  "id" : 1413,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2013,
+  "omschrijving" : "Onderdelen prutsbeker",
+  "datum" : "2013-04-07",
+  "uitgaven" : 23,
+  "inkomsten" : 0
+}, {
+  "id" : 1414,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2013,
+  "omschrijving" : "06/03 17X1€",
+  "datum" : "2013-04-11",
+  "uitgaven" : 0,
+  "inkomsten" : 17
+}, {
+  "id" : 1415,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2013,
+  "omschrijving" : "13/03 12X1€",
+  "datum" : "2013-04-11",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 1416,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2013,
+  "omschrijving" : "20/03 13X1€",
+  "datum" : "2013-04-11",
+  "uitgaven" : 0,
+  "inkomsten" : 13
+}, {
+  "id" : 1417,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2013,
+  "omschrijving" : "27/03 12X1€",
+  "datum" : "2013-04-11",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 1418,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2013,
+  "omschrijving" : "03/04 18X1€",
+  "datum" : "2013-04-11",
+  "uitgaven" : 0,
+  "inkomsten" : 18
+}, {
+  "id" : 1419,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2013,
+  "omschrijving" : "10/04 17X1€",
+  "datum" : "2013-04-11",
+  "uitgaven" : 0,
+  "inkomsten" : 17
+}, {
+  "id" : 1420,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2013,
+  "omschrijving" : "Lidgeld Adolphe De Meyer",
+  "datum" : "2013-04-24",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1421,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2013,
+  "omschrijving" : "Lidgeld Luc De Smet",
+  "datum" : "2013-04-27",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1422,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2013,
+  "omschrijving" : "17/04 12X1€",
+  "datum" : "2013-04-27",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 1423,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2013,
+  "omschrijving" : "24/04 14X1€",
+  "datum" : "2013-04-27",
+  "uitgaven" : 0,
+  "inkomsten" : 14
+}, {
+  "id" : 1424,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2013,
+  "omschrijving" : "Discovery Line maart - april",
+  "datum" : "2013-04-27",
+  "uitgaven" : 21.9,
+  "inkomsten" : 0
+}, {
+  "id" : 1425,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2013,
+  "omschrijving" : "Afrekening VZW maart - april",
+  "datum" : "2013-05-06",
+  "uitgaven" : 96,
+  "inkomsten" : 0
+}, {
+  "id" : 1426,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2013,
+  "omschrijving" : "Lidgeld Fokke Dooijewaard",
+  "datum" : "2013-05-07",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1427,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2013,
+  "omschrijving" : "Lidgeld Jean-Pierre De Buysscher",
+  "datum" : "2013-05-13",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1428,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2013,
+  "omschrijving" : "Lidgeld Johan Bracke",
+  "datum" : "2013-05-22",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1429,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2013,
+  "omschrijving" : "Aankoop kabel",
+  "datum" : "2013-05-23",
+  "uitgaven" : 4,
+  "inkomsten" : 0
+}, {
+  "id" : 1430,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2013,
+  "omschrijving" : "08/05 14X1€",
+  "datum" : "2013-06-13",
+  "uitgaven" : 0,
+  "inkomsten" : 14
+}, {
+  "id" : 1431,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2013,
+  "omschrijving" : "15/05 12X1€",
+  "datum" : "2013-06-13",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 1432,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2013,
+  "omschrijving" : "22/05 14X1€",
+  "datum" : "2013-06-13",
+  "uitgaven" : 0,
+  "inkomsten" : 14
+}, {
+  "id" : 1433,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2013,
+  "omschrijving" : "29/05 11X1€",
+  "datum" : "2013-06-13",
+  "uitgaven" : 0,
+  "inkomsten" : 11
+}, {
+  "id" : 1434,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2013,
+  "omschrijving" : "05/06 12X1€",
+  "datum" : "2013-06-13",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 1435,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2013,
+  "omschrijving" : "12/06 12X1€",
+  "datum" : "2013-06-13",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 1436,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2013,
+  "omschrijving" : "Discovery Line mei - juni",
+  "datum" : "2013-06-16",
+  "uitgaven" : 21.9,
+  "inkomsten" : 0
+}, {
+  "id" : 1437,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2013,
+  "omschrijving" : "Lidgeld Willy De Keyser",
+  "datum" : "2013-06-16",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1438,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2013,
+  "omschrijving" : "ADSL Dommel 7/juli/2013 tot 7/juli/2014",
+  "datum" : "2013-06-22",
+  "uitgaven" : 108.91,
+  "inkomsten" : 0
+}, {
+  "id" : 1439,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2013,
+  "omschrijving" : "Lidgeld Kristof Heirwegh",
+  "datum" : "2013-06-22",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1440,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2013,
+  "omschrijving" : "Afrekening VZW mei - juni",
+  "datum" : "2013-07-03",
+  "uitgaven" : 80,
+  "inkomsten" : 0
+}, {
+  "id" : 1441,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2013,
+  "omschrijving" : "Lidgeld Dirk Van Nieuwerburg",
+  "datum" : "2013-08-31",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1442,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2013,
+  "omschrijving" : "Lidgeld Lieve Comeyne",
+  "datum" : "2013-08-31",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1443,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2013,
+  "omschrijving" : "Lidgeld Philip Demeter",
+  "datum" : "2013-08-31",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1444,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2013,
+  "omschrijving" : "Lidgeld Christian De Groote",
+  "datum" : "2013-08-31",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1445,
+  "rubriek" : null,
+  "rubriekId" : 3,
+  "jaartal" : 2013,
+  "omschrijving" : "Affiche 2013",
+  "datum" : "2013-09-03",
+  "uitgaven" : 223.85,
+  "inkomsten" : 0
+}, {
+  "id" : 1446,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2013,
+  "omschrijving" : "Afrekening VZW juli - augustus",
+  "datum" : "2013-09-03",
+  "uitgaven" : 40,
+  "inkomsten" : 0
+}, {
+  "id" : 1447,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2013,
+  "omschrijving" : "19/06 13X1€",
+  "datum" : "2013-09-03",
+  "uitgaven" : 0,
+  "inkomsten" : 13
+}, {
+  "id" : 1448,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2013,
+  "omschrijving" : "26/06 13X1€",
+  "datum" : "2013-09-03",
+  "uitgaven" : 0,
+  "inkomsten" : 13
+}, {
+  "id" : 1449,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2013,
+  "omschrijving" : "03/07 13X1€",
+  "datum" : "2013-09-03",
+  "uitgaven" : 0,
+  "inkomsten" : 13
+}, {
+  "id" : 1450,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2013,
+  "omschrijving" : "10/07 14X1€",
+  "datum" : "2013-09-03",
+  "uitgaven" : 0,
+  "inkomsten" : 14
+}, {
+  "id" : 1451,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2013,
+  "omschrijving" : "21/08 16X1€",
+  "datum" : "2013-09-03",
+  "uitgaven" : 0,
+  "inkomsten" : 16
+}, {
+  "id" : 1452,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2013,
+  "omschrijving" : "28/08 12X1€",
+  "datum" : "2013-09-03",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 1453,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2013,
+  "omschrijving" : "Lidgeld Koen Van Petegem",
+  "datum" : "2013-09-12",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1454,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2013,
+  "omschrijving" : "Lidgeld Etienne Dhont",
+  "datum" : "2013-09-24",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1455,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2013,
+  "omschrijving" : "Lidgeld Denise Callebaut",
+  "datum" : "2013-10-02",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1456,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2013,
+  "omschrijving" : "Lidgeld Luc Van Der Heyden",
+  "datum" : "2013-10-02",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1457,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2013,
+  "omschrijving" : "Interesten bankrekening",
+  "datum" : "2013-10-02",
+  "uitgaven" : 0,
+  "inkomsten" : 1.44
+}, {
+  "id" : 1458,
+  "rubriek" : null,
+  "rubriekId" : 7,
+  "jaartal" : 2014,
+  "omschrijving" : "Aankoop muizen",
+  "datum" : "2013-10-03",
+  "uitgaven" : 67.77,
+  "inkomsten" : 0
+}, {
+  "id" : 1459,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2013,
+  "omschrijving" : "04/09 15X1€",
+  "datum" : "2013-10-03",
+  "uitgaven" : 0,
+  "inkomsten" : 15
+}, {
+  "id" : 1460,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2013,
+  "omschrijving" : "11/09 17X1€",
+  "datum" : "2013-10-03",
+  "uitgaven" : 0,
+  "inkomsten" : 17
+}, {
+  "id" : 1461,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2013,
+  "omschrijving" : "18/09 16X1€",
+  "datum" : "2013-10-03",
+  "uitgaven" : 0,
+  "inkomsten" : 16
+}, {
+  "id" : 1462,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2013,
+  "omschrijving" : "25/09 10X1€",
+  "datum" : "2013-10-03",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 1463,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2013,
+  "omschrijving" : "02/10 16X1€",
+  "datum" : "2013-10-03",
+  "uitgaven" : 0,
+  "inkomsten" : 16
+}, {
+  "id" : 1464,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2013,
+  "omschrijving" : "18/09 €0,16",
+  "datum" : "2013-10-03",
+  "uitgaven" : 0,
+  "inkomsten" : 0.16
+}, {
+  "id" : 1465,
+  "rubriek" : null,
+  "rubriekId" : 3,
+  "jaartal" : 2013,
+  "omschrijving" : "Drank opendeurdag",
+  "datum" : "2013-10-06",
+  "uitgaven" : 16.6,
+  "inkomsten" : 0
+}, {
+  "id" : 1466,
+  "rubriek" : null,
+  "rubriekId" : 3,
+  "jaartal" : 2013,
+  "omschrijving" : "Eten opendeurdag",
+  "datum" : "2013-10-06",
+  "uitgaven" : 30,
+  "inkomsten" : 0
+}, {
+  "id" : 1467,
+  "rubriek" : null,
+  "rubriekId" : 8,
+  "jaartal" : 2013,
+  "omschrijving" : "Aankoop ADSL modem - router",
+  "datum" : "2013-10-06",
+  "uitgaven" : 49.95,
+  "inkomsten" : 0
+}, {
+  "id" : 1468,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2013,
+  "omschrijving" : "16/10 12X1€",
+  "datum" : "2013-10-26",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 1469,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2013,
+  "omschrijving" : "23/10 11X1€",
+  "datum" : "2013-10-26",
+  "uitgaven" : 0,
+  "inkomsten" : 11
+}, {
+  "id" : 1470,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2013,
+  "omschrijving" : "Discovery Line juli - augustus",
+  "datum" : "2013-10-26",
+  "uitgaven" : 21.9,
+  "inkomsten" : 0
+}, {
+  "id" : 1471,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2013,
+  "omschrijving" : "Discovery Line september - oktober",
+  "datum" : "2013-10-26",
+  "uitgaven" : 21.9,
+  "inkomsten" : 0
+}, {
+  "id" : 1472,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2013,
+  "omschrijving" : "Afrekening VZW september - oktober",
+  "datum" : "2013-11-04",
+  "uitgaven" : 122,
+  "inkomsten" : 0
+}, {
+  "id" : 1473,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2013,
+  "omschrijving" : "09/10 15X1€",
+  "datum" : "2013-11-04",
+  "uitgaven" : 0,
+  "inkomsten" : 15
+}, {
+  "id" : 1474,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2013,
+  "omschrijving" : "30/10 18X1€",
+  "datum" : "2013-11-04",
+  "uitgaven" : 0,
+  "inkomsten" : 18
+}, {
+  "id" : 1475,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2013,
+  "omschrijving" : "Lidgeld Dirk Vandendriessche",
+  "datum" : "2013-11-21",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1476,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2013,
+  "omschrijving" : "06/11 12X1€",
+  "datum" : "2013-11-23",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 1477,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2013,
+  "omschrijving" : "13/11 13X1€",
+  "datum" : "2013-11-23",
+  "uitgaven" : 0,
+  "inkomsten" : 13
+}, {
+  "id" : 1478,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2013,
+  "omschrijving" : "20/11 16X1€",
+  "datum" : "2013-11-23",
+  "uitgaven" : 0,
+  "inkomsten" : 16
+}, {
+  "id" : 1479,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2013,
+  "omschrijving" : "13/11",
+  "datum" : "2013-11-24",
+  "uitgaven" : 0,
+  "inkomsten" : 0.02
+}, {
+  "id" : 1480,
+  "rubriek" : null,
+  "rubriekId" : 7,
+  "jaartal" : 2014,
+  "omschrijving" : "Aankoop 25 X USB stick",
+  "datum" : "2013-11-24",
+  "uitgaven" : 165,
+  "inkomsten" : 0
+}, {
+  "id" : 1481,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2013,
+  "omschrijving" : "Lidgeld Willy De Sloover",
+  "datum" : "2013-12-12",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1482,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2013,
+  "omschrijving" : "27/11 13X1€",
+  "datum" : "2013-12-28",
+  "uitgaven" : 0,
+  "inkomsten" : 13
+}, {
+  "id" : 1483,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2013,
+  "omschrijving" : "04/12 14X1€",
+  "datum" : "2013-12-28",
+  "uitgaven" : 0,
+  "inkomsten" : 14
+}, {
+  "id" : 1484,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2013,
+  "omschrijving" : "11/12 13X1€",
+  "datum" : "2013-12-28",
+  "uitgaven" : 0,
+  "inkomsten" : 13
+}, {
+  "id" : 1485,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2013,
+  "omschrijving" : "18/12 13X1€",
+  "datum" : "2013-12-28",
+  "uitgaven" : 0,
+  "inkomsten" : 13
+}, {
+  "id" : 1486,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2013,
+  "omschrijving" : "Afrekening VZW november - december",
+  "datum" : "2013-12-28",
+  "uitgaven" : 70,
+  "inkomsten" : 0
+}, {
+  "id" : 1487,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2013,
+  "omschrijving" : "Lidgeld Christiane De Schepper",
+  "datum" : "2013-12-30",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1488,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2014,
+  "omschrijving" : "Interesten spaarrekening",
+  "datum" : "2014-01-02",
+  "uitgaven" : 0,
+  "inkomsten" : 9.49
+}, {
+  "id" : 1489,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2014,
+  "omschrijving" : "Lidgeld Etienne Bertin",
+  "datum" : "2014-01-29",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1490,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2013,
+  "omschrijving" : "Lidgeld Leon Van Nevel",
+  "datum" : "2014-02-02",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1491,
+  "rubriek" : null,
+  "rubriekId" : 7,
+  "jaartal" : 2014,
+  "omschrijving" : "Onkosten drank",
+  "datum" : "2014-02-02",
+  "uitgaven" : 32.7,
+  "inkomsten" : 0
+}, {
+  "id" : 1492,
+  "rubriek" : null,
+  "rubriekId" : 7,
+  "jaartal" : 2014,
+  "omschrijving" : "Onkosten hapjes",
+  "datum" : "2014-02-02",
+  "uitgaven" : 25.46,
+  "inkomsten" : 0
+}, {
+  "id" : 1493,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2013,
+  "omschrijving" : "Discovery Line november - december",
+  "datum" : "2014-02-13",
+  "uitgaven" : 21.9,
+  "inkomsten" : 0
+}, {
+  "id" : 1494,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2014,
+  "omschrijving" : "Discovery Line januari - februari",
+  "datum" : "2014-02-13",
+  "uitgaven" : 22.9,
+  "inkomsten" : 0
+}, {
+  "id" : 1495,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2014,
+  "omschrijving" : "Lidgeld Hilda Bauters",
+  "datum" : "2014-02-13",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1496,
+  "rubriek" : null,
+  "rubriekId" : 8,
+  "jaartal" : 2014,
+  "omschrijving" : "Aankoop Codima door Fokke",
+  "datum" : "2014-02-15",
+  "uitgaven" : 32.74,
+  "inkomsten" : 0
+}, {
+  "id" : 1497,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2014,
+  "omschrijving" : "Afrekening VZW januari - februari",
+  "datum" : "2014-03-07",
+  "uitgaven" : 80,
+  "inkomsten" : 0
+}, {
+  "id" : 1498,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2014,
+  "omschrijving" : "15/01 17X1€",
+  "datum" : "2014-03-07",
+  "uitgaven" : 0,
+  "inkomsten" : 17
+}, {
+  "id" : 1499,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2014,
+  "omschrijving" : "22/01 14X1€",
+  "datum" : "2014-03-07",
+  "uitgaven" : 0,
+  "inkomsten" : 14
+}, {
+  "id" : 1500,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2014,
+  "omschrijving" : "29/01 12X1€",
+  "datum" : "2014-03-07",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 1501,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2014,
+  "omschrijving" : "05/02 13X1€",
+  "datum" : "2014-03-07",
+  "uitgaven" : 0,
+  "inkomsten" : 13
+}, {
+  "id" : 1502,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2014,
+  "omschrijving" : "12/02 12X1€",
+  "datum" : "2014-03-07",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 1503,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2014,
+  "omschrijving" : "19/02 17X1€",
+  "datum" : "2014-03-07",
+  "uitgaven" : 0,
+  "inkomsten" : 17
+}, {
+  "id" : 1504,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2014,
+  "omschrijving" : "Aankoop prijzen clubsouper",
+  "datum" : "2014-04-03",
+  "uitgaven" : 100.86,
+  "inkomsten" : 0
+}, {
+  "id" : 1505,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2014,
+  "omschrijving" : "26/02 16X1€",
+  "datum" : "2014-04-03",
+  "uitgaven" : 0,
+  "inkomsten" : 16
+}, {
+  "id" : 1506,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2014,
+  "omschrijving" : "05/03 11X1€",
+  "datum" : "2014-04-03",
+  "uitgaven" : 0,
+  "inkomsten" : 11
+}, {
+  "id" : 1507,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2014,
+  "omschrijving" : "12/03 15X1€",
+  "datum" : "2014-04-03",
+  "uitgaven" : 0,
+  "inkomsten" : 15
+}, {
+  "id" : 1508,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2014,
+  "omschrijving" : "19/03 10X1€",
+  "datum" : "2014-04-03",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 1509,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2014,
+  "omschrijving" : "26/03 13X1€",
+  "datum" : "2014-04-03",
+  "uitgaven" : 0,
+  "inkomsten" : 13
+}, {
+  "id" : 1510,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2014,
+  "omschrijving" : "02/04 13X1€",
+  "datum" : "2014-04-03",
+  "uitgaven" : 0,
+  "inkomsten" : 13
+}, {
+  "id" : 1511,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2014,
+  "omschrijving" : "22 Inschrijvingen clubsouper 2014",
+  "datum" : "2014-04-03",
+  "uitgaven" : 0,
+  "inkomsten" : 418
+}, {
+  "id" : 1512,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2014,
+  "omschrijving" : "Getrouwheidspremie spaarrekening",
+  "datum" : "2014-04-04",
+  "uitgaven" : 0,
+  "inkomsten" : 1.98
+}, {
+  "id" : 1513,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2014,
+  "omschrijving" : "Aankoop flessen wijn",
+  "datum" : "2014-04-22",
+  "uitgaven" : 29.07,
+  "inkomsten" : 0
+}, {
+  "id" : 1514,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2014,
+  "omschrijving" : "Afrekening clubsouper 2014",
+  "datum" : "2014-04-22",
+  "uitgaven" : 438.76,
+  "inkomsten" : 0
+}, {
+  "id" : 1515,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2014,
+  "omschrijving" : "09/04 14X1€",
+  "datum" : "2014-04-22",
+  "uitgaven" : 0,
+  "inkomsten" : 14
+}, {
+  "id" : 1516,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2014,
+  "omschrijving" : "16/04 17X1€",
+  "datum" : "2014-04-22",
+  "uitgaven" : 0,
+  "inkomsten" : 17
+}, {
+  "id" : 1517,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2014,
+  "omschrijving" : "Discovery Line maart - april",
+  "datum" : "2014-04-22",
+  "uitgaven" : 23.9,
+  "inkomsten" : 0
+}, {
+  "id" : 1518,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2014,
+  "omschrijving" : "Lidgeld Luc De Smet",
+  "datum" : "2014-04-24",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1519,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2014,
+  "omschrijving" : "Lidgeld Adolphe De Meyer",
+  "datum" : "2014-04-26",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1520,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2014,
+  "omschrijving" : "Verkoop drank en Pinball",
+  "datum" : "2014-04-26",
+  "uitgaven" : 0,
+  "inkomsten" : 114.4
+}, {
+  "id" : 1521,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2014,
+  "omschrijving" : "23/04 15X1€",
+  "datum" : "2014-04-26",
+  "uitgaven" : 0,
+  "inkomsten" : 15
+}, {
+  "id" : 1522,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2014,
+  "omschrijving" : "Lidgeld Jean-Pierre De Buysscher",
+  "datum" : "2014-05-08",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1523,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2014,
+  "omschrijving" : "Lidgeld Johan Bracke",
+  "datum" : "2014-05-08",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1524,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2014,
+  "omschrijving" : "Afrekening VZW maart - april",
+  "datum" : "2014-05-08",
+  "uitgaven" : 106,
+  "inkomsten" : 0
+}, {
+  "id" : 1525,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2014,
+  "omschrijving" : "30/04 14X1€",
+  "datum" : "2014-05-08",
+  "uitgaven" : 0,
+  "inkomsten" : 14
+}, {
+  "id" : 1526,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2014,
+  "omschrijving" : "07/05 12X1€",
+  "datum" : "2014-05-08",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 1527,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2014,
+  "omschrijving" : "Lidgeld Willy De Keyser",
+  "datum" : "2014-05-18",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1528,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2014,
+  "omschrijving" : "Lidgeld Kristof Heirwegh",
+  "datum" : "2014-05-18",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1529,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2014,
+  "omschrijving" : "14/05 14X1€",
+  "datum" : "2014-05-18",
+  "uitgaven" : 0,
+  "inkomsten" : 14
+}, {
+  "id" : 1530,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2014,
+  "omschrijving" : "Discovery Line mei - juni",
+  "datum" : "2014-05-24",
+  "uitgaven" : 23.9,
+  "inkomsten" : 0
+}, {
+  "id" : 1531,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2014,
+  "omschrijving" : "21/05 12X1€",
+  "datum" : "2014-05-24",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 1532,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2014,
+  "omschrijving" : "Lidgeld Dirk Van Nieuwerburg",
+  "datum" : "2014-05-28",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1533,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2014,
+  "omschrijving" : "28/05 10X1€",
+  "datum" : "2014-06-21",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 1534,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2014,
+  "omschrijving" : "ADSL Dommel juli 7/7tot 7/8",
+  "datum" : "2014-06-30",
+  "uitgaven" : 17.98,
+  "inkomsten" : 0
+}, {
+  "id" : 1535,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2014,
+  "omschrijving" : "Lidgeld Roland Coppitters",
+  "datum" : "2014-07-03",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1536,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2014,
+  "omschrijving" : "04/06 12X1€",
+  "datum" : "2014-07-03",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 1537,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2014,
+  "omschrijving" : "11/06 13X1€",
+  "datum" : "2014-07-03",
+  "uitgaven" : 0,
+  "inkomsten" : 13
+}, {
+  "id" : 1538,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2014,
+  "omschrijving" : "18/06 13X1€",
+  "datum" : "2014-07-03",
+  "uitgaven" : 0,
+  "inkomsten" : 13
+}, {
+  "id" : 1539,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2014,
+  "omschrijving" : "Afrekening VZW mei - juni",
+  "datum" : "2014-07-08",
+  "uitgaven" : 80,
+  "inkomsten" : 0
+}, {
+  "id" : 1540,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2014,
+  "omschrijving" : "25/06 12X1€",
+  "datum" : "2014-07-10",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 1541,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2014,
+  "omschrijving" : "02/07 17X1€",
+  "datum" : "2014-07-10",
+  "uitgaven" : 0,
+  "inkomsten" : 17
+}, {
+  "id" : 1542,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2014,
+  "omschrijving" : "09/07 17X1€",
+  "datum" : "2014-07-10",
+  "uitgaven" : 0,
+  "inkomsten" : 17
+}, {
+  "id" : 1543,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2014,
+  "omschrijving" : "02/07 €0,11",
+  "datum" : "2014-07-10",
+  "uitgaven" : 0,
+  "inkomsten" : 0.11
+}, {
+  "id" : 1544,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2014,
+  "omschrijving" : "Lidgeld Philip Demeter",
+  "datum" : "2014-08-21",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1545,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2014,
+  "omschrijving" : "ADSL Dommel augustus",
+  "datum" : "2014-08-26",
+  "uitgaven" : 17.98,
+  "inkomsten" : 0
+}, {
+  "id" : 1546,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2014,
+  "omschrijving" : "ADSL Dommel september",
+  "datum" : "2014-08-26",
+  "uitgaven" : 17.98,
+  "inkomsten" : 0
+}, {
+  "id" : 1547,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2014,
+  "omschrijving" : "16/07 13X1€",
+  "datum" : "2014-08-26",
+  "uitgaven" : 0,
+  "inkomsten" : 13
+}, {
+  "id" : 1548,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2014,
+  "omschrijving" : "20/08 16X1€",
+  "datum" : "2014-08-26",
+  "uitgaven" : 0,
+  "inkomsten" : 16
+}, {
+  "id" : 1549,
+  "rubriek" : null,
+  "rubriekId" : 3,
+  "jaartal" : 2014,
+  "omschrijving" : "Drukwerk opendeurdag",
+  "datum" : "2014-09-10",
+  "uitgaven" : 165.75,
+  "inkomsten" : 0
+}, {
+  "id" : 1550,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2014,
+  "omschrijving" : "27/08 16X1€",
+  "datum" : "2014-09-10",
+  "uitgaven" : 0,
+  "inkomsten" : 16
+}, {
+  "id" : 1551,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2014,
+  "omschrijving" : "03/09 12X1€",
+  "datum" : "2014-09-10",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 1552,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2014,
+  "omschrijving" : "Lidgeld Fokke Dooijewaard",
+  "datum" : "2014-10-02",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1553,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2014,
+  "omschrijving" : "10/09 13X1€",
+  "datum" : "2014-10-11",
+  "uitgaven" : 0,
+  "inkomsten" : 13
+}, {
+  "id" : 1554,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2014,
+  "omschrijving" : "17/09 13X1€",
+  "datum" : "2014-10-11",
+  "uitgaven" : 0,
+  "inkomsten" : 13
+}, {
+  "id" : 1555,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2014,
+  "omschrijving" : "24/09 10X1€",
+  "datum" : "2014-10-11",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 1556,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2014,
+  "omschrijving" : "01/10 15X1€",
+  "datum" : "2014-10-11",
+  "uitgaven" : 0,
+  "inkomsten" : 15
+}, {
+  "id" : 1557,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2014,
+  "omschrijving" : "08/10 14X1€",
+  "datum" : "2014-10-11",
+  "uitgaven" : 0,
+  "inkomsten" : 14
+}, {
+  "id" : 1558,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2014,
+  "omschrijving" : "Lidgeld Etienne Dhont",
+  "datum" : "2014-10-21",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1559,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2014,
+  "omschrijving" : "Lidgeld Lieve Comeyne",
+  "datum" : "2014-10-30",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1560,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2014,
+  "omschrijving" : "Lidgeld Ghislaine Herbots",
+  "datum" : "2014-10-30",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1561,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2014,
+  "omschrijving" : "15/10 11X1€",
+  "datum" : "2014-10-30",
+  "uitgaven" : 0,
+  "inkomsten" : 11
+}, {
+  "id" : 1562,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2014,
+  "omschrijving" : "22/10 10X1€",
+  "datum" : "2014-10-30",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 1563,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2014,
+  "omschrijving" : "29/10 9X1€",
+  "datum" : "2014-10-30",
+  "uitgaven" : 0,
+  "inkomsten" : 9
+}, {
+  "id" : 1564,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2014,
+  "omschrijving" : "Lidgeld Denise Callebaut",
+  "datum" : "2014-11-06",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1565,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2014,
+  "omschrijving" : "Lidgeld Luc Van Der Heyden",
+  "datum" : "2014-11-06",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1566,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2014,
+  "omschrijving" : "Afrekening VZW september - oktober",
+  "datum" : "2014-11-11",
+  "uitgaven" : 90,
+  "inkomsten" : 0
+}, {
+  "id" : 1567,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2014,
+  "omschrijving" : "Afrekening VZW juli - augustus",
+  "datum" : "2014-11-11",
+  "uitgaven" : 50,
+  "inkomsten" : 0
+}, {
+  "id" : 1568,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2014,
+  "omschrijving" : "Lidgeld Leonard Van den Bosch",
+  "datum" : "2014-11-13",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1569,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2014,
+  "omschrijving" : "Lidgeld Rudi De Strijcker",
+  "datum" : "2014-11-13",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1570,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2014,
+  "omschrijving" : "Lidgeld Franz Van Autreve",
+  "datum" : "2014-11-13",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1571,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2014,
+  "omschrijving" : "05/11 14X1€",
+  "datum" : "2014-11-13",
+  "uitgaven" : 0,
+  "inkomsten" : 14
+}, {
+  "id" : 1572,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2014,
+  "omschrijving" : "12/11 17X1€",
+  "datum" : "2014-11-13",
+  "uitgaven" : 0,
+  "inkomsten" : 17
+}, {
+  "id" : 1573,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2014,
+  "omschrijving" : "19/11 13X1€",
+  "datum" : "2014-11-29",
+  "uitgaven" : 0,
+  "inkomsten" : 13
+}, {
+  "id" : 1574,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2014,
+  "omschrijving" : "26/11 20X1€",
+  "datum" : "2014-11-29",
+  "uitgaven" : 0,
+  "inkomsten" : 20
+}, {
+  "id" : 1575,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2014,
+  "omschrijving" : "26/11 €0,23",
+  "datum" : "2014-11-29",
+  "uitgaven" : 0,
+  "inkomsten" : 0.23
+}, {
+  "id" : 1576,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2014,
+  "omschrijving" : "03/12 9X1€",
+  "datum" : "2014-12-12",
+  "uitgaven" : 0,
+  "inkomsten" : 9
+}, {
+  "id" : 1577,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2014,
+  "omschrijving" : "10/12 17X1€",
+  "datum" : "2014-12-12",
+  "uitgaven" : 0,
+  "inkomsten" : 17
+}, {
+  "id" : 1578,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2014,
+  "omschrijving" : "10/12 €0,66",
+  "datum" : "2014-12-12",
+  "uitgaven" : 0,
+  "inkomsten" : 0.66
+}, {
+  "id" : 1579,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2014,
+  "omschrijving" : "Lidgeld Dirk Vandendriessche",
+  "datum" : "2014-12-12",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1580,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2014,
+  "omschrijving" : "Lidgeld Christian De Groote",
+  "datum" : "2014-12-14",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1581,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2014,
+  "omschrijving" : "Lidgeld Willy De Sloover",
+  "datum" : "2014-12-17",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1582,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2014,
+  "omschrijving" : "Lidgeld Koen Van Petegem",
+  "datum" : "2014-12-19",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1583,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2014,
+  "omschrijving" : "17/12 17X1€",
+  "datum" : "2014-12-22",
+  "uitgaven" : 0,
+  "inkomsten" : 17
+}, {
+  "id" : 1584,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2014,
+  "omschrijving" : "Discovery Line juli - augustus",
+  "datum" : "2014-12-22",
+  "uitgaven" : 23.9,
+  "inkomsten" : 0
+}, {
+  "id" : 1585,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2014,
+  "omschrijving" : "Discovery Line september - oktober",
+  "datum" : "2014-12-22",
+  "uitgaven" : 23.9,
+  "inkomsten" : 0
+}, {
+  "id" : 1586,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2014,
+  "omschrijving" : "Discovery Line november - december",
+  "datum" : "2014-12-22",
+  "uitgaven" : 23.9,
+  "inkomsten" : 0
+}, {
+  "id" : 1587,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2015,
+  "omschrijving" : "ADSL Dommel januari",
+  "datum" : "2014-12-22",
+  "uitgaven" : 17.98,
+  "inkomsten" : 0
+}, {
+  "id" : 1588,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2015,
+  "omschrijving" : "ADSL Dommel februari",
+  "datum" : "2014-12-22",
+  "uitgaven" : 17.98,
+  "inkomsten" : 0
+}, {
+  "id" : 1589,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2014,
+  "omschrijving" : "ADSL Dommel oktober",
+  "datum" : "2014-12-22",
+  "uitgaven" : 17.98,
+  "inkomsten" : 0
+}, {
+  "id" : 1590,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2014,
+  "omschrijving" : "ADSL Dommel november",
+  "datum" : "2014-12-22",
+  "uitgaven" : 17.98,
+  "inkomsten" : 0
+}, {
+  "id" : 1591,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2014,
+  "omschrijving" : "ADSL Dommel december",
+  "datum" : "2014-12-22",
+  "uitgaven" : 17.98,
+  "inkomsten" : 0
+}, {
+  "id" : 1592,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2014,
+  "omschrijving" : "Afrekening VZW november - december",
+  "datum" : "2015-01-05",
+  "uitgaven" : 70,
+  "inkomsten" : 0
+}, {
+  "id" : 1593,
+  "rubriek" : null,
+  "rubriekId" : 7,
+  "jaartal" : 2015,
+  "omschrijving" : "Aankoop drank en geschenken",
+  "datum" : "2015-01-05",
+  "uitgaven" : 75.59,
+  "inkomsten" : 0
+}, {
+  "id" : 1594,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2014,
+  "omschrijving" : "Lidgeld Leon Van Nevel",
+  "datum" : "2015-01-08",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1595,
+  "rubriek" : null,
+  "rubriekId" : 7,
+  "jaartal" : 2015,
+  "omschrijving" : "Aankoop hapjes",
+  "datum" : "2015-01-08",
+  "uitgaven" : 64.95,
+  "inkomsten" : 0
+}, {
+  "id" : 1596,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2014,
+  "omschrijving" : "Lidgeld Christiane De Schepper",
+  "datum" : "2015-01-08",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1597,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2015,
+  "omschrijving" : "Interesten spaarrekening",
+  "datum" : "2015-01-17",
+  "uitgaven" : 0,
+  "inkomsten" : 5.74
+}, {
+  "id" : 1598,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2015,
+  "omschrijving" : "ADSL Dommel maart",
+  "datum" : "2015-01-29",
+  "uitgaven" : 17.98,
+  "inkomsten" : 0
+}, {
+  "id" : 1599,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2015,
+  "omschrijving" : "Discovery Line januari - februari",
+  "datum" : "2015-01-29",
+  "uitgaven" : 23.9,
+  "inkomsten" : 0
+}, {
+  "id" : 1600,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2015,
+  "omschrijving" : "Lidgeld Etienne Bertin",
+  "datum" : "2015-02-07",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1601,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2015,
+  "omschrijving" : "14/01 15X1€",
+  "datum" : "2015-02-12",
+  "uitgaven" : 0,
+  "inkomsten" : 15
+}, {
+  "id" : 1602,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2015,
+  "omschrijving" : "21/01 13X1€",
+  "datum" : "2015-02-12",
+  "uitgaven" : 0,
+  "inkomsten" : 13
+}, {
+  "id" : 1603,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2015,
+  "omschrijving" : "28/01 15X1€",
+  "datum" : "2015-02-12",
+  "uitgaven" : 0,
+  "inkomsten" : 15
+}, {
+  "id" : 1604,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2015,
+  "omschrijving" : "04/02 12X1€",
+  "datum" : "2015-02-12",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 1605,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2015,
+  "omschrijving" : "11/02 15X1€",
+  "datum" : "2015-02-12",
+  "uitgaven" : 0,
+  "inkomsten" : 15
+}, {
+  "id" : 1606,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2015,
+  "omschrijving" : "Lidgeld Hilda Bauters",
+  "datum" : "2015-02-25",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1607,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2015,
+  "omschrijving" : "18/02 10X1€",
+  "datum" : "2015-02-25",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 1608,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2015,
+  "omschrijving" : "€0,20",
+  "datum" : "2015-02-25",
+  "uitgaven" : 0,
+  "inkomsten" : 0.2
+}, {
+  "id" : 1609,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2015,
+  "omschrijving" : "Afrekening VZW januari - februari",
+  "datum" : "2015-03-07",
+  "uitgaven" : 80,
+  "inkomsten" : 0
+}, {
+  "id" : 1610,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2015,
+  "omschrijving" : "25/02 14X1€",
+  "datum" : "2015-03-07",
+  "uitgaven" : 0,
+  "inkomsten" : 14
+}, {
+  "id" : 1611,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2015,
+  "omschrijving" : "€0,19",
+  "datum" : "2015-03-07",
+  "uitgaven" : 0,
+  "inkomsten" : 0.19
+}, {
+  "id" : 1612,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2015,
+  "omschrijving" : "ADSL Dommel april",
+  "datum" : "2015-03-25",
+  "uitgaven" : 17.98,
+  "inkomsten" : 0
+}, {
+  "id" : 1613,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2015,
+  "omschrijving" : "ADSL Dommel mei",
+  "datum" : "2015-03-25",
+  "uitgaven" : 17.98,
+  "inkomsten" : 0
+}, {
+  "id" : 1614,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2015,
+  "omschrijving" : "Discovery Line maart - april",
+  "datum" : "2015-03-25",
+  "uitgaven" : 23.9,
+  "inkomsten" : 0
+}, {
+  "id" : 1615,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2015,
+  "omschrijving" : "Interesten spaarrekening",
+  "datum" : "2015-05-02",
+  "uitgaven" : 0,
+  "inkomsten" : 0.73
+}, {
+  "id" : 1616,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2015,
+  "omschrijving" : "08/04 14x1€",
+  "datum" : "2015-05-08",
+  "uitgaven" : 0,
+  "inkomsten" : 14
+}, {
+  "id" : 1617,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2015,
+  "omschrijving" : "15/04 11x1€",
+  "datum" : "2015-05-08",
+  "uitgaven" : 0,
+  "inkomsten" : 11
+}, {
+  "id" : 1618,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2015,
+  "omschrijving" : "29/04 10x1€",
+  "datum" : "2015-05-08",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 1619,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2015,
+  "omschrijving" : "06/05 14x1€",
+  "datum" : "2015-05-08",
+  "uitgaven" : 0,
+  "inkomsten" : 14
+}, {
+  "id" : 1620,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2015,
+  "omschrijving" : "01/04 14x1€",
+  "datum" : "2015-05-08",
+  "uitgaven" : 0,
+  "inkomsten" : 14
+}, {
+  "id" : 1621,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2015,
+  "omschrijving" : "22/04 14x1€",
+  "datum" : "2015-05-08",
+  "uitgaven" : 0,
+  "inkomsten" : 14
+}, {
+  "id" : 1622,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2015,
+  "omschrijving" : "€0,17",
+  "datum" : "2015-05-08",
+  "uitgaven" : 0,
+  "inkomsten" : 0.17
+}, {
+  "id" : 1623,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2015,
+  "omschrijving" : "Afrekening VZW maart - april",
+  "datum" : "2015-05-16",
+  "uitgaven" : 90,
+  "inkomsten" : 0
+}, {
+  "id" : 1624,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2015,
+  "omschrijving" : "13/05 10X1€",
+  "datum" : "2015-05-16",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 1625,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2015,
+  "omschrijving" : "Lidgeld Jean-Pierre De Buysscher",
+  "datum" : "2015-05-16",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1626,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2015,
+  "omschrijving" : "Lidgeld Luc De Smet",
+  "datum" : "2015-05-16",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1627,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2015,
+  "omschrijving" : "Lidgeld Willy De Keyser",
+  "datum" : "2015-05-16",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1628,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2015,
+  "omschrijving" : "Lidgeld Kristof Heirwegh",
+  "datum" : "2015-05-20",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1629,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2015,
+  "omschrijving" : "Lidgeld Philip Vanhoutteghem",
+  "datum" : "2015-05-21",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1630,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2015,
+  "omschrijving" : "Lidgeld Johan Bracke",
+  "datum" : "2015-05-21",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1631,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2015,
+  "omschrijving" : "20/05 10X1€",
+  "datum" : "2015-05-21",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 1632,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2015,
+  "omschrijving" : "Lidgeld Adolphe De Meyer",
+  "datum" : "2015-05-27",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1633,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2015,
+  "omschrijving" : "Lidgeld Dirk Van Nieuwerburg",
+  "datum" : "2015-05-27",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1634,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2015,
+  "omschrijving" : "27/05 11X1€",
+  "datum" : "2015-06-03",
+  "uitgaven" : 0,
+  "inkomsten" : 11
+}, {
+  "id" : 1635,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2015,
+  "omschrijving" : "04/03 14X1E",
+  "datum" : "2015-06-03",
+  "uitgaven" : 0,
+  "inkomsten" : 14
+}, {
+  "id" : 1636,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2015,
+  "omschrijving" : "11/03 15X1€",
+  "datum" : "2015-06-03",
+  "uitgaven" : 0,
+  "inkomsten" : 15
+}, {
+  "id" : 1637,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2015,
+  "omschrijving" : "18/03 17X1€",
+  "datum" : "2015-06-03",
+  "uitgaven" : 0,
+  "inkomsten" : 17
+}, {
+  "id" : 1638,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2015,
+  "omschrijving" : "25/03 12X1€",
+  "datum" : "2015-06-03",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 1639,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2015,
+  "omschrijving" : "03/06 12X1€",
+  "datum" : "2015-06-11",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 1640,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2015,
+  "omschrijving" : "10/06 12X1€",
+  "datum" : "2015-06-11",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 1641,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2015,
+  "omschrijving" : "€0,30",
+  "datum" : "2015-06-11",
+  "uitgaven" : 0,
+  "inkomsten" : 0.3
+}, {
+  "id" : 1642,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2015,
+  "omschrijving" : "Inschrijvingen clubsouper",
+  "datum" : "2015-06-11",
+  "uitgaven" : 0,
+  "inkomsten" : 486
+}, {
+  "id" : 1643,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2015,
+  "omschrijving" : "Opbrengst drank",
+  "datum" : "2015-06-13",
+  "uitgaven" : 0,
+  "inkomsten" : 123.3
+}, {
+  "id" : 1644,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2015,
+  "omschrijving" : "Pinball",
+  "datum" : "2015-06-13",
+  "uitgaven" : 0,
+  "inkomsten" : 45
+}, {
+  "id" : 1645,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2015,
+  "omschrijving" : "Traiteur",
+  "datum" : "2015-06-15",
+  "uitgaven" : 347.5,
+  "inkomsten" : 0
+}, {
+  "id" : 1646,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2015,
+  "omschrijving" : "Frisdranken aangekocht door Kristof",
+  "datum" : "2015-06-15",
+  "uitgaven" : 29.74,
+  "inkomsten" : 0
+}, {
+  "id" : 1647,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2015,
+  "omschrijving" : "Stokbrood en vuilzak",
+  "datum" : "2015-06-15",
+  "uitgaven" : 5.63,
+  "inkomsten" : 0
+}, {
+  "id" : 1648,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2015,
+  "omschrijving" : "Gebak en wijn",
+  "datum" : "2015-06-15",
+  "uitgaven" : 72.18,
+  "inkomsten" : 0
+}, {
+  "id" : 1649,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2015,
+  "omschrijving" : "Prijzen Pinball",
+  "datum" : "2015-06-15",
+  "uitgaven" : 93.06,
+  "inkomsten" : 0
+}, {
+  "id" : 1650,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2015,
+  "omschrijving" : "Vuilzak",
+  "datum" : "2015-06-15",
+  "uitgaven" : 0.88,
+  "inkomsten" : 0
+}, {
+  "id" : 1651,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2015,
+  "omschrijving" : "Aankoop bieren Fokke",
+  "datum" : "2015-06-15",
+  "uitgaven" : 9.95,
+  "inkomsten" : 0
+}, {
+  "id" : 1652,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2015,
+  "omschrijving" : "Afrekening VZW mei - juni",
+  "datum" : "2015-07-19",
+  "uitgaven" : 80,
+  "inkomsten" : 0
+}, {
+  "id" : 1653,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2015,
+  "omschrijving" : "01/07 13X1€",
+  "datum" : "2015-08-05",
+  "uitgaven" : 0,
+  "inkomsten" : 13
+}, {
+  "id" : 1654,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2015,
+  "omschrijving" : "08/07 9X1€",
+  "datum" : "2015-08-05",
+  "uitgaven" : 0,
+  "inkomsten" : 9
+}, {
+  "id" : 1655,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2015,
+  "omschrijving" : "15/07 15X1€",
+  "datum" : "2015-08-05",
+  "uitgaven" : 0,
+  "inkomsten" : 15
+}, {
+  "id" : 1656,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2015,
+  "omschrijving" : "Afrekening VZW juli - augustus",
+  "datum" : "2015-08-18",
+  "uitgaven" : 50,
+  "inkomsten" : 0
+}, {
+  "id" : 1657,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2015,
+  "omschrijving" : "17/06 11X1€",
+  "datum" : "2015-08-18",
+  "uitgaven" : 0,
+  "inkomsten" : 11
+}, {
+  "id" : 1658,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2015,
+  "omschrijving" : "24/06 13X1€",
+  "datum" : "2015-08-18",
+  "uitgaven" : 0,
+  "inkomsten" : 13
+}, {
+  "id" : 1659,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2015,
+  "omschrijving" : "ADSL Dommel juni",
+  "datum" : "2015-08-18",
+  "uitgaven" : 17.98,
+  "inkomsten" : 0
+}, {
+  "id" : 1660,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2015,
+  "omschrijving" : "ADSL Dommel juli",
+  "datum" : "2015-08-18",
+  "uitgaven" : 17.98,
+  "inkomsten" : 0
+}, {
+  "id" : 1661,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2015,
+  "omschrijving" : "Discovery Line mei - juni",
+  "datum" : "2015-08-18",
+  "uitgaven" : 23.9,
+  "inkomsten" : 0
+}, {
+  "id" : 1662,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2015,
+  "omschrijving" : "Lidgeld Philip Demeter",
+  "datum" : "2015-09-15",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1663,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2015,
+  "omschrijving" : "Lidgeld Roland Coppitters",
+  "datum" : "2015-09-15",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1664,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2015,
+  "omschrijving" : "19/08 10x1€",
+  "datum" : "2015-09-15",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 1665,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2015,
+  "omschrijving" : "26/08 12x1€",
+  "datum" : "2015-09-15",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 1666,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2015,
+  "omschrijving" : "02/09 15x1€",
+  "datum" : "2015-09-15",
+  "uitgaven" : 0,
+  "inkomsten" : 15
+}, {
+  "id" : 1667,
+  "rubriek" : null,
+  "rubriekId" : 3,
+  "jaartal" : 2015,
+  "omschrijving" : "Affiches opendeurdag 2015",
+  "datum" : "2015-09-21",
+  "uitgaven" : 152.5,
+  "inkomsten" : 0
+}, {
+  "id" : 1668,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2015,
+  "omschrijving" : "09/09 13X1€",
+  "datum" : "2015-09-21",
+  "uitgaven" : 0,
+  "inkomsten" : 13
+}, {
+  "id" : 1669,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2015,
+  "omschrijving" : "16/09 12X1€",
+  "datum" : "2015-09-21",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 1670,
+  "rubriek" : null,
+  "rubriekId" : 3,
+  "jaartal" : 2015,
+  "omschrijving" : "Drank opendeurdag",
+  "datum" : "2015-10-10",
+  "uitgaven" : 17.6,
+  "inkomsten" : 0
+}, {
+  "id" : 1671,
+  "rubriek" : null,
+  "rubriekId" : 3,
+  "jaartal" : 2015,
+  "omschrijving" : "Blikjes drank opendeurdag",
+  "datum" : "2015-10-10",
+  "uitgaven" : 6,
+  "inkomsten" : 0
+}, {
+  "id" : 1672,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2015,
+  "omschrijving" : "Lidgeld Rudi De Strijcker",
+  "datum" : "2015-11-18",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1673,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2015,
+  "omschrijving" : "Lidgeld Ghislaine Herbots",
+  "datum" : "2015-11-18",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1674,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2015,
+  "omschrijving" : "Lidgeld Denise Callebaut",
+  "datum" : "2015-11-18",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1675,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2015,
+  "omschrijving" : "Afrekening VZW september - oktober",
+  "datum" : "2015-11-18",
+  "uitgaven" : 112,
+  "inkomsten" : 0
+}, {
+  "id" : 1676,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2015,
+  "omschrijving" : "23/09 15X1€",
+  "datum" : "2015-11-18",
+  "uitgaven" : 0,
+  "inkomsten" : 15
+}, {
+  "id" : 1677,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2015,
+  "omschrijving" : "30/09 10X1€",
+  "datum" : "2015-11-18",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 1678,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2015,
+  "omschrijving" : "07/10 12X1€",
+  "datum" : "2015-11-18",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 1679,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2015,
+  "omschrijving" : "14/10 12X1€",
+  "datum" : "2015-11-18",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 1680,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2015,
+  "omschrijving" : "21/10 9X1€",
+  "datum" : "2015-11-18",
+  "uitgaven" : 0,
+  "inkomsten" : 9
+}, {
+  "id" : 1681,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2015,
+  "omschrijving" : "28/10 14X1€",
+  "datum" : "2015-11-18",
+  "uitgaven" : 0,
+  "inkomsten" : 14
+}, {
+  "id" : 1682,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2015,
+  "omschrijving" : "€0,09",
+  "datum" : "2015-11-18",
+  "uitgaven" : 0,
+  "inkomsten" : 0.09
+}, {
+  "id" : 1683,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2015,
+  "omschrijving" : "Lidgeld Etienne Dhont",
+  "datum" : "2015-11-25",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1684,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2015,
+  "omschrijving" : "04/11 12X1€",
+  "datum" : "2015-11-25",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 1685,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2015,
+  "omschrijving" : "18/11 14X1€",
+  "datum" : "2015-11-25",
+  "uitgaven" : 0,
+  "inkomsten" : 14
+}, {
+  "id" : 1686,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2015,
+  "omschrijving" : "€0,05",
+  "datum" : "2015-11-25",
+  "uitgaven" : 0,
+  "inkomsten" : 0.05
+}, {
+  "id" : 1687,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2015,
+  "omschrijving" : "Lidgeld Lieve Comeyne",
+  "datum" : "2015-12-02",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1688,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2015,
+  "omschrijving" : "25/11 16X1€",
+  "datum" : "2015-12-02",
+  "uitgaven" : 0,
+  "inkomsten" : 16
+}, {
+  "id" : 1689,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2015,
+  "omschrijving" : "Discovery Line juli - augustus",
+  "datum" : "2015-12-02",
+  "uitgaven" : 23.9,
+  "inkomsten" : 0
+}, {
+  "id" : 1690,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2015,
+  "omschrijving" : "Discovery Line september - oktober",
+  "datum" : "2015-12-02",
+  "uitgaven" : 23.9,
+  "inkomsten" : 0
+}, {
+  "id" : 1691,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2015,
+  "omschrijving" : "ADSL Dommel augustus",
+  "datum" : "2015-12-02",
+  "uitgaven" : 17.98,
+  "inkomsten" : 0
+}, {
+  "id" : 1692,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2015,
+  "omschrijving" : "ADSL Dommel september",
+  "datum" : "2015-12-02",
+  "uitgaven" : 17.98,
+  "inkomsten" : 0
+}, {
+  "id" : 1693,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2015,
+  "omschrijving" : "ADSL Dommel oktober",
+  "datum" : "2015-12-02",
+  "uitgaven" : 17.98,
+  "inkomsten" : 0
+}, {
+  "id" : 1694,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2015,
+  "omschrijving" : "ADSL Dommel november",
+  "datum" : "2015-12-02",
+  "uitgaven" : 17.98,
+  "inkomsten" : 0
+}, {
+  "id" : 1695,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2015,
+  "omschrijving" : "ADSL Dommel december",
+  "datum" : "2015-12-02",
+  "uitgaven" : 17.98,
+  "inkomsten" : 0
+}, {
+  "id" : 1696,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2015,
+  "omschrijving" : "Lidgeld Luc Van Der Heyden",
+  "datum" : "2015-12-03",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1697,
+  "rubriek" : null,
+  "rubriekId" : 12,
+  "jaartal" : 2015,
+  "omschrijving" : "Inschrijvingen 19 X €7,00",
+  "datum" : "2015-12-17",
+  "uitgaven" : 0,
+  "inkomsten" : 133
+}, {
+  "id" : 1698,
+  "rubriek" : null,
+  "rubriekId" : 12,
+  "jaartal" : 2015,
+  "omschrijving" : "Drank",
+  "datum" : "2015-12-17",
+  "uitgaven" : 0,
+  "inkomsten" : 2
+}, {
+  "id" : 1699,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2015,
+  "omschrijving" : "02/12 13x1€",
+  "datum" : "2015-12-17",
+  "uitgaven" : 0,
+  "inkomsten" : 13
+}, {
+  "id" : 1700,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2015,
+  "omschrijving" : "09/12 13x1€",
+  "datum" : "2015-12-17",
+  "uitgaven" : 0,
+  "inkomsten" : 13
+}, {
+  "id" : 1701,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2015,
+  "omschrijving" : "16/12 15x1€",
+  "datum" : "2015-12-17",
+  "uitgaven" : 0,
+  "inkomsten" : 15
+}, {
+  "id" : 1702,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2015,
+  "omschrijving" : "Discovery Line november - december",
+  "datum" : "2015-12-17",
+  "uitgaven" : 23.9,
+  "inkomsten" : 0
+}, {
+  "id" : 1703,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2015,
+  "omschrijving" : "Lidgeld Willy De Sloover",
+  "datum" : "2015-12-30",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1704,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2016,
+  "omschrijving" : "Lidgeld Dirk Vandendriessche",
+  "datum" : "2016-01-06",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1705,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2016,
+  "omschrijving" : "Lidgeld Christian De Groote",
+  "datum" : "2016-01-06",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1706,
+  "rubriek" : null,
+  "rubriekId" : 7,
+  "jaartal" : 2016,
+  "omschrijving" : "Aankoop drank door Dirk",
+  "datum" : "2016-01-06",
+  "uitgaven" : 33.23,
+  "inkomsten" : 0
+}, {
+  "id" : 1707,
+  "rubriek" : null,
+  "rubriekId" : 7,
+  "jaartal" : 2016,
+  "omschrijving" : "Hapjes Nieuwjaarsreceptie",
+  "datum" : "2016-01-07",
+  "uitgaven" : 20,
+  "inkomsten" : 0
+}, {
+  "id" : 1708,
+  "rubriek" : null,
+  "rubriekId" : 7,
+  "jaartal" : 2016,
+  "omschrijving" : "Aankoop tafelpapier",
+  "datum" : "2016-01-07",
+  "uitgaven" : 18.91,
+  "inkomsten" : 0
+}, {
+  "id" : 1709,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2015,
+  "omschrijving" : "Afrekening VZW november - december",
+  "datum" : "2016-01-11",
+  "uitgaven" : 70,
+  "inkomsten" : 0
+}, {
+  "id" : 1710,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2016,
+  "omschrijving" : "Lidgeld Hilda Bauters",
+  "datum" : "2016-02-10",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1711,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2016,
+  "omschrijving" : "13/01 14X1€",
+  "datum" : "2016-02-10",
+  "uitgaven" : 0,
+  "inkomsten" : 14
+}, {
+  "id" : 1712,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2016,
+  "omschrijving" : "20/01 13X1€",
+  "datum" : "2016-02-10",
+  "uitgaven" : 0,
+  "inkomsten" : 13
+}, {
+  "id" : 1713,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2016,
+  "omschrijving" : "27/01 11X€",
+  "datum" : "2016-02-10",
+  "uitgaven" : 0,
+  "inkomsten" : 11
+}, {
+  "id" : 1714,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2016,
+  "omschrijving" : "03/02 15X1€",
+  "datum" : "2016-02-10",
+  "uitgaven" : 0,
+  "inkomsten" : 15
+}, {
+  "id" : 1715,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2016,
+  "omschrijving" : "Lidgeld Leon Van Nevel",
+  "datum" : "2016-02-27",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1716,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2016,
+  "omschrijving" : "Lidgeld Fokke Dooijewaard",
+  "datum" : "2016-02-27",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1717,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2016,
+  "omschrijving" : "Lidgeld Christiane De Schepper",
+  "datum" : "2016-02-27",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1718,
+  "rubriek" : null,
+  "rubriekId" : 7,
+  "jaartal" : 2016,
+  "omschrijving" : "Cadeaus voor medewerkers",
+  "datum" : "2016-02-27",
+  "uitgaven" : 30,
+  "inkomsten" : 0
+}, {
+  "id" : 1719,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2016,
+  "omschrijving" : "10/02 10X1€",
+  "datum" : "2016-02-27",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 1720,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2016,
+  "omschrijving" : "17/02 8X1€",
+  "datum" : "2016-02-27",
+  "uitgaven" : 0,
+  "inkomsten" : 8
+}, {
+  "id" : 1721,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2016,
+  "omschrijving" : "24/02 12X1€",
+  "datum" : "2016-02-27",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 1722,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2016,
+  "omschrijving" : "Sponsoring",
+  "datum" : "2016-02-27",
+  "uitgaven" : 0,
+  "inkomsten" : 0.13
+}, {
+  "id" : 1723,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2016,
+  "omschrijving" : "Afrekening VZW januari - februari",
+  "datum" : "2016-03-10",
+  "uitgaven" : 80,
+  "inkomsten" : 0
+}, {
+  "id" : 1724,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2016,
+  "omschrijving" : "Lidgeld Etienne Bertin",
+  "datum" : "2016-03-12",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1725,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2016,
+  "omschrijving" : "02/03 9x1€",
+  "datum" : "2016-04-06",
+  "uitgaven" : 0,
+  "inkomsten" : 9
+}, {
+  "id" : 1726,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2016,
+  "omschrijving" : "09/03 17X1€",
+  "datum" : "2016-04-06",
+  "uitgaven" : 0,
+  "inkomsten" : 17
+}, {
+  "id" : 1727,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2016,
+  "omschrijving" : "16/03 12x1€",
+  "datum" : "2016-04-06",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 1728,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2016,
+  "omschrijving" : "23/03 11x1€",
+  "datum" : "2016-04-06",
+  "uitgaven" : 0,
+  "inkomsten" : 11
+}, {
+  "id" : 1729,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2016,
+  "omschrijving" : "30/03 9X1€",
+  "datum" : "2016-04-06",
+  "uitgaven" : 0,
+  "inkomsten" : 9
+}, {
+  "id" : 1730,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2016,
+  "omschrijving" : "Inschrijvingen clubsouper 23 X €18,00",
+  "datum" : "2016-04-06",
+  "uitgaven" : 0,
+  "inkomsten" : 414
+}, {
+  "id" : 1731,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2016,
+  "omschrijving" : "Prijzen clubsouper ",
+  "datum" : "2016-04-06",
+  "uitgaven" : 109.67,
+  "inkomsten" : 0
+}, {
+  "id" : 1732,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2016,
+  "omschrijving" : "Opbrengst drankverkoop",
+  "datum" : "2016-04-09",
+  "uitgaven" : 0,
+  "inkomsten" : 113
+}, {
+  "id" : 1733,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2016,
+  "omschrijving" : "Opbrengst kippenschieten",
+  "datum" : "2016-04-09",
+  "uitgaven" : 0,
+  "inkomsten" : 46.01
+}, {
+  "id" : 1734,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2016,
+  "omschrijving" : "Aankoop eten Denise",
+  "datum" : "2016-04-09",
+  "uitgaven" : 87,
+  "inkomsten" : 0
+}, {
+  "id" : 1735,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2016,
+  "omschrijving" : "Aankoop drank Fokke",
+  "datum" : "2016-04-09",
+  "uitgaven" : 6,
+  "inkomsten" : 0
+}, {
+  "id" : 1736,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2016,
+  "omschrijving" : "06/04 9x1€",
+  "datum" : "2016-04-09",
+  "uitgaven" : 0,
+  "inkomsten" : 9
+}, {
+  "id" : 1737,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2016,
+  "omschrijving" : "Aankoop drank Kristof",
+  "datum" : "2016-04-09",
+  "uitgaven" : 21.07,
+  "inkomsten" : 0
+}, {
+  "id" : 1738,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2016,
+  "omschrijving" : "Lidgeld Hilde Serras",
+  "datum" : "2016-05-04",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1739,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2016,
+  "omschrijving" : "Lidgeld Jean-Pierre De Buysscher",
+  "datum" : "2016-05-05",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1740,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2016,
+  "omschrijving" : "Lidgeld Koen Van Petegem",
+  "datum" : "2016-05-05",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1741,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2016,
+  "omschrijving" : "Lidgeld Willy De Keyser",
+  "datum" : "2016-05-05",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1742,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2016,
+  "omschrijving" : "13/04 11x1€",
+  "datum" : "2016-05-05",
+  "uitgaven" : 0,
+  "inkomsten" : 11
+}, {
+  "id" : 1743,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2016,
+  "omschrijving" : "20/04 10x1€",
+  "datum" : "2016-05-05",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 1744,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2016,
+  "omschrijving" : "27/04 12x1€",
+  "datum" : "2016-05-05",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 1745,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2016,
+  "omschrijving" : "04/05 10x1€",
+  "datum" : "2016-05-05",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 1746,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2016,
+  "omschrijving" : "Afrekening VZW maart - april",
+  "datum" : "2016-05-05",
+  "uitgaven" : 100,
+  "inkomsten" : 0
+}, {
+  "id" : 1747,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2016,
+  "omschrijving" : "Discovery Line januari - februari",
+  "datum" : "2016-05-05",
+  "uitgaven" : 23.9,
+  "inkomsten" : 0
+}, {
+  "id" : 1748,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2016,
+  "omschrijving" : "Discovery Line maart - april",
+  "datum" : "2016-05-05",
+  "uitgaven" : 23.9,
+  "inkomsten" : 0
+}, {
+  "id" : 1749,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2016,
+  "omschrijving" : "ADSL Dommel januari",
+  "datum" : "2016-05-05",
+  "uitgaven" : 17.98,
+  "inkomsten" : 0
+}, {
+  "id" : 1750,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2016,
+  "omschrijving" : "ADSL Dommel februari",
+  "datum" : "2016-05-05",
+  "uitgaven" : 17.98,
+  "inkomsten" : 0
+}, {
+  "id" : 1751,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2016,
+  "omschrijving" : "ADSL Dommel maart",
+  "datum" : "2016-05-05",
+  "uitgaven" : 17.98,
+  "inkomsten" : 0
+}, {
+  "id" : 1752,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2016,
+  "omschrijving" : "ADSL Dommel april",
+  "datum" : "2016-05-05",
+  "uitgaven" : 17.98,
+  "inkomsten" : 0
+}, {
+  "id" : 1753,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2016,
+  "omschrijving" : "Lidgeld Johan Bracke",
+  "datum" : "2016-05-23",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1754,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2016,
+  "omschrijving" : "Lidgeld Dirk Van Nieuwerburg",
+  "datum" : "2016-05-23",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1755,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2016,
+  "omschrijving" : "18/05 13X1€",
+  "datum" : "2016-05-23",
+  "uitgaven" : 0,
+  "inkomsten" : 13
+}, {
+  "id" : 1756,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2016,
+  "omschrijving" : "Aankopen door Christiane",
+  "datum" : "2016-05-23",
+  "uitgaven" : 13,
+  "inkomsten" : 0
+}, {
+  "id" : 1757,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2016,
+  "omschrijving" : "Lidgeld Kristof Heirwegh",
+  "datum" : "2016-06-06",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1758,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2016,
+  "omschrijving" : "11/05",
+  "datum" : "2016-06-06",
+  "uitgaven" : 0,
+  "inkomsten" : 0
+}, {
+  "id" : 1759,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2016,
+  "omschrijving" : "25/05 9X1€",
+  "datum" : "2016-06-06",
+  "uitgaven" : 0,
+  "inkomsten" : 9
+}, {
+  "id" : 1760,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2016,
+  "omschrijving" : "01/06 12X1€",
+  "datum" : "2016-06-06",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 1761,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2016,
+  "omschrijving" : "Lidgeld Luc De Smet",
+  "datum" : "2016-07-11",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1762,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2016,
+  "omschrijving" : "Afrekening VZW mei - juni",
+  "datum" : "2016-07-27",
+  "uitgaven" : 58.5,
+  "inkomsten" : 0
+}, {
+  "id" : 1763,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2016,
+  "omschrijving" : "Bank interesten",
+  "datum" : "2016-07-27",
+  "uitgaven" : 0,
+  "inkomsten" : 0.21
+}, {
+  "id" : 1764,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2016,
+  "omschrijving" : "08/06 10 X 1€",
+  "datum" : "2016-08-01",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 1765,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2016,
+  "omschrijving" : "15/06 13X1€",
+  "datum" : "2016-08-01",
+  "uitgaven" : 0,
+  "inkomsten" : 13
+}, {
+  "id" : 1766,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2016,
+  "omschrijving" : "22/06 10 X 1€",
+  "datum" : "2016-08-01",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 1767,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2016,
+  "omschrijving" : "29/06 10 X 1€",
+  "datum" : "2016-08-01",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 1768,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2016,
+  "omschrijving" : "06/07 14X1€",
+  "datum" : "2016-08-01",
+  "uitgaven" : 0,
+  "inkomsten" : 14
+}, {
+  "id" : 1769,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2016,
+  "omschrijving" : "13/07 15 X1€",
+  "datum" : "2016-08-01",
+  "uitgaven" : 0,
+  "inkomsten" : 15
+}, {
+  "id" : 1770,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2016,
+  "omschrijving" : "Sponsoring 29/06",
+  "datum" : "2016-08-01",
+  "uitgaven" : 0,
+  "inkomsten" : 0.12
+}, {
+  "id" : 1771,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2016,
+  "omschrijving" : "Sponsoring 13/07",
+  "datum" : "2016-08-01",
+  "uitgaven" : 0,
+  "inkomsten" : 35
+}, {
+  "id" : 1772,
+  "rubriek" : null,
+  "rubriekId" : 3,
+  "jaartal" : 2016,
+  "omschrijving" : "Drukwerk opendeurdag ",
+  "datum" : "2016-09-28",
+  "uitgaven" : 76.35,
+  "inkomsten" : 0
+}, {
+  "id" : 1773,
+  "rubriek" : null,
+  "rubriekId" : 3,
+  "jaartal" : 2016,
+  "omschrijving" : "Drank opendeurdag",
+  "datum" : "2016-10-01",
+  "uitgaven" : 20.2,
+  "inkomsten" : 0
+}, {
+  "id" : 1774,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2016,
+  "omschrijving" : "Lidgeld Philip Demeter",
+  "datum" : "2016-09-21",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1775,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2016,
+  "omschrijving" : "ADSL Dommel mei",
+  "datum" : "2016-10-01",
+  "uitgaven" : 17.98,
+  "inkomsten" : 0
+}, {
+  "id" : 1776,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2016,
+  "omschrijving" : "ADSL Dommel juni",
+  "datum" : "2016-10-01",
+  "uitgaven" : 17.98,
+  "inkomsten" : 0
+}, {
+  "id" : 1777,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2016,
+  "omschrijving" : "ADSL Dommel juli",
+  "datum" : "2016-10-01",
+  "uitgaven" : 17.98,
+  "inkomsten" : 0
+}, {
+  "id" : 1778,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2016,
+  "omschrijving" : "ADSL Dommel augustus",
+  "datum" : "2016-10-01",
+  "uitgaven" : 17.98,
+  "inkomsten" : 0
+}, {
+  "id" : 1779,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2016,
+  "omschrijving" : "ADSL Dommel september",
+  "datum" : "2016-10-01",
+  "uitgaven" : 17.98,
+  "inkomsten" : 0
+}, {
+  "id" : 1780,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2016,
+  "omschrijving" : "Discovery Line mei - juni",
+  "datum" : "2016-10-01",
+  "uitgaven" : 23.9,
+  "inkomsten" : 0
+}, {
+  "id" : 1781,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2016,
+  "omschrijving" : "Discovery Line juli - augustus",
+  "datum" : "2016-10-01",
+  "uitgaven" : 23.9,
+  "inkomsten" : 0
+}, {
+  "id" : 1783,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2016,
+  "omschrijving" : "17/08 10X1€",
+  "datum" : "2016-10-01",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 1784,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2016,
+  "omschrijving" : "24/08 10X1€",
+  "datum" : "2016-10-01",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 1785,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2016,
+  "omschrijving" : "31/08 9X1€",
+  "datum" : "2016-10-01",
+  "uitgaven" : 0,
+  "inkomsten" : 9
+}, {
+  "id" : 1786,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2016,
+  "omschrijving" : "07/09 10X1€",
+  "datum" : "2016-10-01",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 1787,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2016,
+  "omschrijving" : "14/09 9X1€",
+  "datum" : "2016-10-01",
+  "uitgaven" : 0,
+  "inkomsten" : 9
+}, {
+  "id" : 1788,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2016,
+  "omschrijving" : "21/09 13X1€",
+  "datum" : "2016-10-01",
+  "uitgaven" : 0,
+  "inkomsten" : 13
+}, {
+  "id" : 1789,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2016,
+  "omschrijving" : "28/09 11X1€",
+  "datum" : "2016-10-01",
+  "uitgaven" : 0,
+  "inkomsten" : 11
+}, {
+  "id" : 1790,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2016,
+  "omschrijving" : "Interesten bank",
+  "datum" : "2016-10-02",
+  "uitgaven" : 0,
+  "inkomsten" : 0.03
+}, {
+  "id" : 1791,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2016,
+  "omschrijving" : "Afrekening VZW juli - augustus",
+  "datum" : "2016-10-02",
+  "uitgaven" : 32.5,
+  "inkomsten" : 0
+}, {
+  "id" : 1792,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2016,
+  "omschrijving" : "05/10 10X1€",
+  "datum" : "2016-11-16",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 1793,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2016,
+  "omschrijving" : "12/10 9X1€",
+  "datum" : "2016-11-16",
+  "uitgaven" : 0,
+  "inkomsten" : 9
+}, {
+  "id" : 1794,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2016,
+  "omschrijving" : "19/10 11X1€",
+  "datum" : "2016-11-16",
+  "uitgaven" : 0,
+  "inkomsten" : 11
+}, {
+  "id" : 1795,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2016,
+  "omschrijving" : "26/10 11X1€",
+  "datum" : "2016-11-16",
+  "uitgaven" : 0,
+  "inkomsten" : 11
+}, {
+  "id" : 1796,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2016,
+  "omschrijving" : "02/11 9X1€",
+  "datum" : "2016-11-16",
+  "uitgaven" : 0,
+  "inkomsten" : 9
+}, {
+  "id" : 1797,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2016,
+  "omschrijving" : "Afrekening VZW september - oktober",
+  "datum" : "2016-11-16",
+  "uitgaven" : 72.8,
+  "inkomsten" : 0
+}, {
+  "id" : 1798,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2016,
+  "omschrijving" : "09/11 12X1€",
+  "datum" : "2016-11-21",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 1799,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2016,
+  "omschrijving" : "16/11 9X1€",
+  "datum" : "2016-11-21",
+  "uitgaven" : 0,
+  "inkomsten" : 9
+}, {
+  "id" : 1800,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2016,
+  "omschrijving" : "Discovery Line september - oktober",
+  "datum" : "2016-11-21",
+  "uitgaven" : 23.9,
+  "inkomsten" : 0
+}, {
+  "id" : 1801,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2016,
+  "omschrijving" : "ADSL Dommel oktober",
+  "datum" : "2016-11-21",
+  "uitgaven" : 17.98,
+  "inkomsten" : 0
+}, {
+  "id" : 1802,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2016,
+  "omschrijving" : "23/11 15X1€",
+  "datum" : "2016-12-14",
+  "uitgaven" : 0,
+  "inkomsten" : 15
+}, {
+  "id" : 1803,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2016,
+  "omschrijving" : "30/11 9X1€",
+  "datum" : "2016-12-14",
+  "uitgaven" : 0,
+  "inkomsten" : 9
+}, {
+  "id" : 1804,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2016,
+  "omschrijving" : "07/12 12x1€",
+  "datum" : "2016-12-14",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 1805,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2016,
+  "omschrijving" : "Lidgeld Rudi De Strijcker",
+  "datum" : "2016-11-23",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1806,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2016,
+  "omschrijving" : "Lidgeld Willy De Sloover",
+  "datum" : "2017-01-09",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1807,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2016,
+  "omschrijving" : "Lidgeld Etienne Dhont",
+  "datum" : "2017-01-09",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1808,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2016,
+  "omschrijving" : "Lidgeld Christian De Groote",
+  "datum" : "2017-01-09",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1809,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2016,
+  "omschrijving" : "14/12 11X1€",
+  "datum" : "2017-01-12",
+  "uitgaven" : 0,
+  "inkomsten" : 11
+}, {
+  "id" : 1810,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2016,
+  "omschrijving" : "21/12 13X1€",
+  "datum" : "2017-01-12",
+  "uitgaven" : 0,
+  "inkomsten" : 13
+}, {
+  "id" : 1811,
+  "rubriek" : null,
+  "rubriekId" : 12,
+  "jaartal" : 2016,
+  "omschrijving" : "Drank 21/12 (Kristof)",
+  "datum" : "2017-01-12",
+  "uitgaven" : 21.9,
+  "inkomsten" : 0
+}, {
+  "id" : 1812,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2017,
+  "omschrijving" : "11/01 9x1€",
+  "datum" : "2017-01-12",
+  "uitgaven" : 0,
+  "inkomsten" : 9
+}, {
+  "id" : 1813,
+  "rubriek" : null,
+  "rubriekId" : 12,
+  "jaartal" : 2016,
+  "omschrijving" : "Inschrijvingen 15",
+  "datum" : "2017-01-12",
+  "uitgaven" : 0,
+  "inkomsten" : 98
+}, {
+  "id" : 1814,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2016,
+  "omschrijving" : "Discovery Line november - december",
+  "datum" : "2017-01-12",
+  "uitgaven" : 23.9,
+  "inkomsten" : 0
+}, {
+  "id" : 1815,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2016,
+  "omschrijving" : "ADSL Dommel november",
+  "datum" : "2017-01-12",
+  "uitgaven" : 17.98,
+  "inkomsten" : 0
+}, {
+  "id" : 1816,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2016,
+  "omschrijving" : "ADSL Dommel december",
+  "datum" : "2017-01-12",
+  "uitgaven" : 17.98,
+  "inkomsten" : 0
+}, {
+  "id" : 1817,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2016,
+  "omschrijving" : "Afrekening VZW november - december",
+  "datum" : "2017-01-12",
+  "uitgaven" : 45.5,
+  "inkomsten" : 0
+}, {
+  "id" : 1818,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2017,
+  "omschrijving" : "Lidgeld Dirk Vandendriessche",
+  "datum" : "2017-01-30",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1819,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2017,
+  "omschrijving" : "Lidgeld Fokke Dooijewaard",
+  "datum" : "2017-02-09",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1820,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2017,
+  "omschrijving" : "Lidgeld Luc Van Der Heyden",
+  "datum" : "2017-02-12",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1821,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2017,
+  "omschrijving" : "Lidgeld Christiane De Schepper",
+  "datum" : "2017-02-16",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1822,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2017,
+  "omschrijving" : "Lidgeld Hilda Bauters",
+  "datum" : "2017-03-01",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1823,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2017,
+  "omschrijving" : "Lidgeld Leon Van Nevel",
+  "datum" : "2017-03-01",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1824,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2017,
+  "omschrijving" : "Aankoop prijzen clubsouper 2017",
+  "datum" : "2017-03-26",
+  "uitgaven" : 105.9,
+  "inkomsten" : 0
+}, {
+  "id" : 1825,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2017,
+  "omschrijving" : "Lidgeld Roland Coppitters",
+  "datum" : "2017-05-14",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1826,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2017,
+  "omschrijving" : "Lidgeld Kristof Heirwegh",
+  "datum" : "2017-06-15",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1827,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2017,
+  "omschrijving" : "Lidgeld Willy De Keyser",
+  "datum" : "2017-06-15",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1828,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2017,
+  "omschrijving" : "Lidgeld Jean-Pierre De Buysscher",
+  "datum" : "2017-06-15",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1829,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2017,
+  "omschrijving" : "Lidgeld Luc De Smet",
+  "datum" : "2017-06-15",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1830,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2017,
+  "omschrijving" : "Drukwerk rommelmarkt",
+  "datum" : "2017-06-15",
+  "uitgaven" : 32.63,
+  "inkomsten" : 0
+}, {
+  "id" : 1831,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2017,
+  "omschrijving" : "Afrekening VZW januari - februari",
+  "datum" : "2017-06-16",
+  "uitgaven" : 52,
+  "inkomsten" : 0
+}, {
+  "id" : 1832,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2017,
+  "omschrijving" : "Afrekening VZW maart - april",
+  "datum" : "2017-06-16",
+  "uitgaven" : 58.5,
+  "inkomsten" : 0
+}, {
+  "id" : 1833,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2017,
+  "omschrijving" : "18/01 11x1€",
+  "datum" : "2017-06-28",
+  "uitgaven" : 0,
+  "inkomsten" : 11
+}, {
+  "id" : 1834,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2017,
+  "omschrijving" : "25/01 9x1€",
+  "datum" : "2017-06-28",
+  "uitgaven" : 0,
+  "inkomsten" : 9
+}, {
+  "id" : 1835,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2017,
+  "omschrijving" : "01/02 7x1€",
+  "datum" : "2017-06-28",
+  "uitgaven" : 0,
+  "inkomsten" : 7
+}, {
+  "id" : 1836,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2017,
+  "omschrijving" : "08/02 12x1€",
+  "datum" : "2017-06-28",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 1837,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2017,
+  "omschrijving" : "15/02 9x1€",
+  "datum" : "2017-06-28",
+  "uitgaven" : 0,
+  "inkomsten" : 9
+}, {
+  "id" : 1838,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2017,
+  "omschrijving" : "22/02 10x1€",
+  "datum" : "2017-06-28",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 1839,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2017,
+  "omschrijving" : "01/03 11x1€",
+  "datum" : "2017-06-28",
+  "uitgaven" : 0,
+  "inkomsten" : 11
+}, {
+  "id" : 1840,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2017,
+  "omschrijving" : "08/03 12x1€",
+  "datum" : "2017-06-28",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 1841,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2017,
+  "omschrijving" : "15/03 9x1€",
+  "datum" : "2017-06-28",
+  "uitgaven" : 0,
+  "inkomsten" : 9
+}, {
+  "id" : 1842,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2017,
+  "omschrijving" : "22/03 9x1€",
+  "datum" : "2017-06-28",
+  "uitgaven" : 0,
+  "inkomsten" : 9
+}, {
+  "id" : 1843,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2017,
+  "omschrijving" : "29/03 10x1€",
+  "datum" : "2017-06-28",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 1844,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2017,
+  "omschrijving" : "05/04 14X1€",
+  "datum" : "2017-06-28",
+  "uitgaven" : 0,
+  "inkomsten" : 14
+}, {
+  "id" : 1845,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2017,
+  "omschrijving" : "12/04 7x1€",
+  "datum" : "2017-06-28",
+  "uitgaven" : 0,
+  "inkomsten" : 7
+}, {
+  "id" : 1846,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2017,
+  "omschrijving" : "19/04 12x1€",
+  "datum" : "2017-06-28",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 1847,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2017,
+  "omschrijving" : "25/04 9x1€",
+  "datum" : "2017-06-28",
+  "uitgaven" : 0,
+  "inkomsten" : 9
+}, {
+  "id" : 1848,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2017,
+  "omschrijving" : "Sponsoring €0,17",
+  "datum" : "2017-06-28",
+  "uitgaven" : 0,
+  "inkomsten" : 0.17
+}, {
+  "id" : 1849,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2017,
+  "omschrijving" : "03/05 12x1€ ",
+  "datum" : "2017-06-28",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 1850,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2017,
+  "omschrijving" : "10/05 10x1€",
+  "datum" : "2017-06-28",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 1851,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2017,
+  "omschrijving" : "17/05 11x1€",
+  "datum" : "2017-06-28",
+  "uitgaven" : 0,
+  "inkomsten" : 11
+}, {
+  "id" : 1852,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2017,
+  "omschrijving" : "24/05 7x1€",
+  "datum" : "2017-06-28",
+  "uitgaven" : 0,
+  "inkomsten" : 7
+}, {
+  "id" : 1853,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2017,
+  "omschrijving" : "31/05 11x1€",
+  "datum" : "2017-06-28",
+  "uitgaven" : 0,
+  "inkomsten" : 11
+}, {
+  "id" : 1854,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2017,
+  "omschrijving" : "07/06 11x1€",
+  "datum" : "2017-06-28",
+  "uitgaven" : 0,
+  "inkomsten" : 11
+}, {
+  "id" : 1855,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2017,
+  "omschrijving" : "14/06 10x1€",
+  "datum" : "2017-06-28",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 1856,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2017,
+  "omschrijving" : "Drank 29/03 ",
+  "datum" : "2017-06-28",
+  "uitgaven" : 18.1,
+  "inkomsten" : 0
+}, {
+  "id" : 1857,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2017,
+  "omschrijving" : "Lidgeld Koen Van Petegem",
+  "datum" : "2017-07-05",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1858,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2017,
+  "omschrijving" : "Lidgeld Lieve Comeyne",
+  "datum" : "2017-07-05",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1859,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2017,
+  "omschrijving" : "Interesten",
+  "datum" : "2017-07-05",
+  "uitgaven" : 0,
+  "inkomsten" : 0.31
+}, {
+  "id" : 1860,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2017,
+  "omschrijving" : "Lidgeld Johan Bracke",
+  "datum" : "2017-07-05",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1861,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2017,
+  "omschrijving" : "Aankoop drank Kristof",
+  "datum" : "2017-07-12",
+  "uitgaven" : 18.14,
+  "inkomsten" : 0
+}, {
+  "id" : 1862,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2017,
+  "omschrijving" : "Aankoop eten Denise",
+  "datum" : "2017-07-12",
+  "uitgaven" : 64.2,
+  "inkomsten" : 0
+}, {
+  "id" : 1863,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2017,
+  "omschrijving" : "Inschrijvingen",
+  "datum" : "2017-07-12",
+  "uitgaven" : 0,
+  "inkomsten" : 270
+}, {
+  "id" : 1864,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2017,
+  "omschrijving" : "Bowling",
+  "datum" : "2017-07-12",
+  "uitgaven" : 0,
+  "inkomsten" : 55
+}, {
+  "id" : 1865,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2017,
+  "omschrijving" : "Verkoop drank",
+  "datum" : "2017-07-12",
+  "uitgaven" : 0,
+  "inkomsten" : 36
+}, {
+  "id" : 1866,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2017,
+  "omschrijving" : "ADSL Dommel januari",
+  "datum" : "2017-07-12",
+  "uitgaven" : 17.98,
+  "inkomsten" : 0
+}, {
+  "id" : 1867,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2017,
+  "omschrijving" : "ADSL Dommel februari",
+  "datum" : "2017-07-12",
+  "uitgaven" : 17.98,
+  "inkomsten" : 0
+}, {
+  "id" : 1868,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2017,
+  "omschrijving" : "ADSL Dommel maart",
+  "datum" : "2017-07-12",
+  "uitgaven" : 17.98,
+  "inkomsten" : 0
+}, {
+  "id" : 1869,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2017,
+  "omschrijving" : "ADSL Dommel april",
+  "datum" : "2017-07-12",
+  "uitgaven" : 17.98,
+  "inkomsten" : 0
+}, {
+  "id" : 1870,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2017,
+  "omschrijving" : "ADSL Dommel mei",
+  "datum" : "2017-07-12",
+  "uitgaven" : 17.98,
+  "inkomsten" : 0
+}, {
+  "id" : 1871,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2017,
+  "omschrijving" : "ADSL Dommel juni",
+  "datum" : "2017-07-12",
+  "uitgaven" : 17.98,
+  "inkomsten" : 0
+}, {
+  "id" : 1872,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2017,
+  "omschrijving" : "ADSL Dommel juli",
+  "datum" : "2017-07-12",
+  "uitgaven" : 17.98,
+  "inkomsten" : 0
+}, {
+  "id" : 1873,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2017,
+  "omschrijving" : "Discovery Line januari - februari",
+  "datum" : "2017-07-12",
+  "uitgaven" : 23.9,
+  "inkomsten" : 0
+}, {
+  "id" : 1874,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2017,
+  "omschrijving" : "Discovery Line maart - april",
+  "datum" : "2017-07-12",
+  "uitgaven" : 23.9,
+  "inkomsten" : 0
+}, {
+  "id" : 1875,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2017,
+  "omschrijving" : "Discovery Line mei - juni",
+  "datum" : "2017-07-12",
+  "uitgaven" : 23.9,
+  "inkomsten" : 0
+}, {
+  "id" : 1876,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2017,
+  "omschrijving" : "Lidgeld Philip Demeter",
+  "datum" : "2017-07-13",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1877,
+  "rubriek" : null,
+  "rubriekId" : 3,
+  "jaartal" : 2017,
+  "omschrijving" : "Affices opendeurdag",
+  "datum" : "2017-09-14",
+  "uitgaven" : 48.25,
+  "inkomsten" : 0
+}, {
+  "id" : 1878,
+  "rubriek" : null,
+  "rubriekId" : 3,
+  "jaartal" : 2017,
+  "omschrijving" : "Affices opendeurdag",
+  "datum" : "2017-09-14",
+  "uitgaven" : 9.99,
+  "inkomsten" : 0
+}, {
+  "id" : 1879,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2017,
+  "omschrijving" : "21/06 8X1€",
+  "datum" : "2017-09-16",
+  "uitgaven" : 0,
+  "inkomsten" : 8
+}, {
+  "id" : 1880,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2017,
+  "omschrijving" : "28/06 7X1€",
+  "datum" : "2017-09-16",
+  "uitgaven" : 0,
+  "inkomsten" : 7
+}, {
+  "id" : 1881,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2017,
+  "omschrijving" : "05/07 10X1€",
+  "datum" : "2017-09-16",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 1882,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2017,
+  "omschrijving" : "12/07 12X1€",
+  "datum" : "2017-09-16",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 1883,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2017,
+  "omschrijving" : "16/08 11x1€",
+  "datum" : "2017-09-16",
+  "uitgaven" : 0,
+  "inkomsten" : 11
+}, {
+  "id" : 1884,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2017,
+  "omschrijving" : "23/08 9X1€",
+  "datum" : "2017-09-16",
+  "uitgaven" : 0,
+  "inkomsten" : 9
+}, {
+  "id" : 1885,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2017,
+  "omschrijving" : "30/08 14X1€",
+  "datum" : "2017-09-16",
+  "uitgaven" : 0,
+  "inkomsten" : 14
+}, {
+  "id" : 1886,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2017,
+  "omschrijving" : "06/09 10X1€",
+  "datum" : "2017-09-16",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 1887,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2017,
+  "omschrijving" : "13/09 9X1€",
+  "datum" : "2017-09-16",
+  "uitgaven" : 0,
+  "inkomsten" : 9
+}, {
+  "id" : 1888,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2017,
+  "omschrijving" : "Afrekening VZW mei - juni",
+  "datum" : "2017-09-16",
+  "uitgaven" : 58.5,
+  "inkomsten" : 0
+}, {
+  "id" : 1889,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2017,
+  "omschrijving" : "Afrekening VZW juli - augustus",
+  "datum" : "2017-09-16",
+  "uitgaven" : 32.5,
+  "inkomsten" : 0
+}, {
+  "id" : 1890,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2017,
+  "omschrijving" : "Lidgeld Herman Van Huffel",
+  "datum" : "2017-09-16",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1891,
+  "rubriek" : null,
+  "rubriekId" : 3,
+  "jaartal" : 2017,
+  "omschrijving" : "Drank opendeurdag",
+  "datum" : "2017-10-01",
+  "uitgaven" : 17.4,
+  "inkomsten" : 0
+}, {
+  "id" : 1892,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2017,
+  "omschrijving" : "27/09 12x1€",
+  "datum" : "2017-10-05",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 1893,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2017,
+  "omschrijving" : "04/10 12x1€",
+  "datum" : "2017-10-05",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 1894,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2017,
+  "omschrijving" : "Lidgeld Geert Bosman",
+  "datum" : "2017-10-05",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1895,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2017,
+  "omschrijving" : "Lidgeld Denise Callebaut",
+  "datum" : "2017-12-05",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1896,
+  "rubriek" : null,
+  "rubriekId" : 7,
+  "jaartal" : 2018,
+  "omschrijving" : "USB Sticks voor de leden (Denise)",
+  "datum" : "2017-12-05",
+  "uitgaven" : 90,
+  "inkomsten" : 0
+}, {
+  "id" : 1897,
+  "rubriek" : null,
+  "rubriekId" : 7,
+  "jaartal" : 2018,
+  "omschrijving" : "USB Stick voor de leden (Kristof)",
+  "datum" : "2017-12-07",
+  "uitgaven" : 110,
+  "inkomsten" : 0
+}, {
+  "id" : 1898,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2017,
+  "omschrijving" : "Lidgeld Rudi De Strijcker",
+  "datum" : "2017-12-07",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1899,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2017,
+  "omschrijving" : "11/10 13x1€",
+  "datum" : "2017-12-07",
+  "uitgaven" : 0,
+  "inkomsten" : 13
+}, {
+  "id" : 1900,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2017,
+  "omschrijving" : "18/10 12x1€",
+  "datum" : "2017-12-07",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 1901,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2017,
+  "omschrijving" : "25/10 12x1€",
+  "datum" : "2017-12-07",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 1902,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2017,
+  "omschrijving" : "8/11 8x1€",
+  "datum" : "2017-12-07",
+  "uitgaven" : 0,
+  "inkomsten" : 8
+}, {
+  "id" : 1903,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2017,
+  "omschrijving" : "15/11 9x1€",
+  "datum" : "2017-12-07",
+  "uitgaven" : 0,
+  "inkomsten" : 9
+}, {
+  "id" : 1904,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2017,
+  "omschrijving" : "22/11 11x1€",
+  "datum" : "2017-12-07",
+  "uitgaven" : 0,
+  "inkomsten" : 11
+}, {
+  "id" : 1905,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2017,
+  "omschrijving" : "29/11 8x1€",
+  "datum" : "2017-12-07",
+  "uitgaven" : 0,
+  "inkomsten" : 8
+}, {
+  "id" : 1906,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2017,
+  "omschrijving" : "6/12 14x1€",
+  "datum" : "2017-12-07",
+  "uitgaven" : 0,
+  "inkomsten" : 14
+}, {
+  "id" : 1907,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2017,
+  "omschrijving" : "Sponsoring",
+  "datum" : "2017-12-07",
+  "uitgaven" : 0,
+  "inkomsten" : 0.13
+}, {
+  "id" : 1908,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2017,
+  "omschrijving" : "Afrekening VZW september - oktober",
+  "datum" : "2017-12-07",
+  "uitgaven" : 45.5,
+  "inkomsten" : 0
+}, {
+  "id" : 1909,
   "rubriek" : null,
   "rubriekId" : 11,
   "jaartal" : 2018,
-  "omschrijving" : "ADSL test",
-  "datum" : "2018-06-22",
-  "uitgaven" : 50.7,
+  "omschrijving" : "ADSL Dommel januari",
+  "datum" : "2018-01-07",
+  "uitgaven" : 17.98,
   "inkomsten" : 0
+}, {
+  "id" : 1910,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2017,
+  "omschrijving" : "ADSL Dommel augustus",
+  "datum" : "2017-12-07",
+  "uitgaven" : 17.98,
+  "inkomsten" : 0
+}, {
+  "id" : 1911,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2017,
+  "omschrijving" : "ADSL Dommel september",
+  "datum" : "2017-12-07",
+  "uitgaven" : 17.98,
+  "inkomsten" : 0
+}, {
+  "id" : 1912,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2017,
+  "omschrijving" : "ADSL Dommel oktober",
+  "datum" : "2017-12-07",
+  "uitgaven" : 17.98,
+  "inkomsten" : 0
+}, {
+  "id" : 1913,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2017,
+  "omschrijving" : "ADSL Dommel november",
+  "datum" : "2017-12-07",
+  "uitgaven" : 17.98,
+  "inkomsten" : 0
+}, {
+  "id" : 1914,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2017,
+  "omschrijving" : "ADSL Dommel december",
+  "datum" : "2017-12-07",
+  "uitgaven" : 17.98,
+  "inkomsten" : 0
+}, {
+  "id" : 1915,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2017,
+  "omschrijving" : "Discovery Line juli - augustus",
+  "datum" : "2017-12-07",
+  "uitgaven" : 23.9,
+  "inkomsten" : 0
+}, {
+  "id" : 1916,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2017,
+  "omschrijving" : "Discovery Line september - oktober",
+  "datum" : "2017-12-07",
+  "uitgaven" : 23.9,
+  "inkomsten" : 0
+}, {
+  "id" : 1917,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2017,
+  "omschrijving" : "Discovery Line november - december",
+  "datum" : "2017-12-07",
+  "uitgaven" : 23.9,
+  "inkomsten" : 0
+}, {
+  "id" : 1918,
+  "rubriek" : null,
+  "rubriekId" : 12,
+  "jaartal" : 2017,
+  "omschrijving" : "16 inschrijvingen 15X€7,00",
+  "datum" : "2017-12-07",
+  "uitgaven" : 0,
+  "inkomsten" : 105
+}, {
+  "id" : 1919,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2017,
+  "omschrijving" : "Lidgeld Christian De Groote",
+  "datum" : "2017-12-15",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1920,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2017,
+  "omschrijving" : "Lidgeld Etienne Dhont",
+  "datum" : "2017-12-15",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1921,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2017,
+  "omschrijving" : "Interesten",
+  "datum" : "2017-12-15",
+  "uitgaven" : 0,
+  "inkomsten" : 0.09
+}, {
+  "id" : 1922,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2017,
+  "omschrijving" : "13/12 11x1€",
+  "datum" : "2017-12-15",
+  "uitgaven" : 0,
+  "inkomsten" : 11
+}, {
+  "id" : 1923,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2017,
+  "omschrijving" : "20/12 9X1€",
+  "datum" : "2018-01-09",
+  "uitgaven" : 0,
+  "inkomsten" : 9
+}, {
+  "id" : 1924,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2017,
+  "omschrijving" : "Sponsoring",
+  "datum" : "2018-01-09",
+  "uitgaven" : 0,
+  "inkomsten" : 0.06
+}, {
+  "id" : 1925,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2017,
+  "omschrijving" : "Afrekening VZW november - december",
+  "datum" : "2018-01-09",
+  "uitgaven" : 45.5,
+  "inkomsten" : 0
+}, {
+  "id" : 1926,
+  "rubriek" : null,
+  "rubriekId" : 12,
+  "jaartal" : 2017,
+  "omschrijving" : "Aankoop spaghetti Denise",
+  "datum" : "2018-01-09",
+  "uitgaven" : 30,
+  "inkomsten" : 0
+}, {
+  "id" : 1927,
+  "rubriek" : null,
+  "rubriekId" : 7,
+  "jaartal" : 2018,
+  "omschrijving" : "Onkosten hapjes Denise",
+  "datum" : "2018-01-11",
+  "uitgaven" : 55,
+  "inkomsten" : 0
+}, {
+  "id" : 1928,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2018,
+  "omschrijving" : "Lidgeld Dirk Vandendriessche",
+  "datum" : "2018-02-05",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1929,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2018,
+  "omschrijving" : "Lidgeld Willy De Sloover",
+  "datum" : "2018-02-21",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1930,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2018,
+  "omschrijving" : "Lidgeld Hilda Bauters",
+  "datum" : "2018-02-22",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1931,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2018,
+  "omschrijving" : "Lidgeld Leon Van Nevel",
+  "datum" : "2018-02-22",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1932,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2018,
+  "omschrijving" : "Lidgeld Christiane De Schepper",
+  "datum" : "2018-02-22",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1933,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2018,
+  "omschrijving" : "Afrekening VZW januari - februari",
+  "datum" : "2018-03-22",
+  "uitgaven" : 52,
+  "inkomsten" : 0
+}, {
+  "id" : 1934,
+  "rubriek" : null,
+  "rubriekId" : 7,
+  "jaartal" : 2018,
+  "omschrijving" : "Geschenken en drank Fokke",
+  "datum" : "2018-03-22",
+  "uitgaven" : 19.99,
+  "inkomsten" : 0
+}, {
+  "id" : 1935,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2018,
+  "omschrijving" : "Afrekening VZW maart - april",
+  "datum" : "2018-12-20",
+  "uitgaven" : 52,
+  "inkomsten" : 0
+}, {
+  "id" : 1936,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2018,
+  "omschrijving" : "Lidgeld Luc Van Der Heyden",
+  "datum" : "2018-04-11",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1937,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2018,
+  "omschrijving" : "AFREKENING INTERESTEN",
+  "datum" : "2018-04-11",
+  "uitgaven" : 0,
+  "inkomsten" : 1
+}, {
+  "id" : 1938,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2018,
+  "omschrijving" : "17/01 12X1€",
+  "datum" : "2018-04-23",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 1939,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2018,
+  "omschrijving" : "24/01 14X1€",
+  "datum" : "2018-04-23",
+  "uitgaven" : 0,
+  "inkomsten" : 14
+}, {
+  "id" : 1940,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2018,
+  "omschrijving" : "31/01 9X1€",
+  "datum" : "2018-04-23",
+  "uitgaven" : 0,
+  "inkomsten" : 9
+}, {
+  "id" : 1941,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2018,
+  "omschrijving" : "07/02 10X1€",
+  "datum" : "2018-04-23",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 1942,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2018,
+  "omschrijving" : "14/02 8X1€",
+  "datum" : "2018-04-23",
+  "uitgaven" : 0,
+  "inkomsten" : 8
+}, {
+  "id" : 1943,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2018,
+  "omschrijving" : "21/02 13X1€",
+  "datum" : "2018-04-23",
+  "uitgaven" : 0,
+  "inkomsten" : 13
+}, {
+  "id" : 1944,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2018,
+  "omschrijving" : "07/03 12X1€",
+  "datum" : "2018-04-23",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 1945,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2018,
+  "omschrijving" : "14/03 10X1€",
+  "datum" : "2018-04-23",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 1946,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2018,
+  "omschrijving" : "21/03 13X1€",
+  "datum" : "2018-04-23",
+  "uitgaven" : 0,
+  "inkomsten" : 13
+}, {
+  "id" : 1947,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2018,
+  "omschrijving" : "28/03 10X1€",
+  "datum" : "2018-04-23",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 1948,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2018,
+  "omschrijving" : "Discovery Line januari - februari",
+  "datum" : "2018-04-24",
+  "uitgaven" : 23.9,
+  "inkomsten" : 0
+}, {
+  "id" : 1949,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2018,
+  "omschrijving" : "Discovery Line maart - april",
+  "datum" : "2018-04-24",
+  "uitgaven" : 5.4,
+  "inkomsten" : 0
+}, {
+  "id" : 1950,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2018,
+  "omschrijving" : "Proximus installatie",
+  "datum" : "2018-04-24",
+  "uitgaven" : 59,
+  "inkomsten" : 0
+}, {
+  "id" : 1951,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2018,
+  "omschrijving" : "ADSL maart",
+  "datum" : "2018-04-24",
+  "uitgaven" : 28.48,
+  "inkomsten" : 0
+}, {
+  "id" : 1952,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2018,
+  "omschrijving" : "ADSL April",
+  "datum" : "2018-04-24",
+  "uitgaven" : 27.5,
+  "inkomsten" : 0
+}, {
+  "id" : 1953,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2018,
+  "omschrijving" : "ADSL Dommel februari",
+  "datum" : "2018-04-24",
+  "uitgaven" : 17.98,
+  "inkomsten" : 0
+}, {
+  "id" : 1955,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2018,
+  "omschrijving" : "Afrekening VZW mei - juni",
+  "datum" : "2018-07-04",
+  "uitgaven" : 58.5,
+  "inkomsten" : 0
+}, {
+  "id" : 1956,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2018,
+  "omschrijving" : "Afrekening VZW juli - augustus",
+  "datum" : "2018-08-30",
+  "uitgaven" : 26,
+  "inkomsten" : 0
+}, {
+  "id" : 1957,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2018,
+  "omschrijving" : "02/05 9x1€",
+  "datum" : "2018-07-04",
+  "uitgaven" : 0,
+  "inkomsten" : 9
+}, {
+  "id" : 1958,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2018,
+  "omschrijving" : "09/05 10x1€",
+  "datum" : "2018-07-04",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 1959,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2018,
+  "omschrijving" : "16/05 6x1€",
+  "datum" : "2018-07-04",
+  "uitgaven" : 0,
+  "inkomsten" : 6
+}, {
+  "id" : 1960,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2018,
+  "omschrijving" : "23/05 8x1€",
+  "datum" : "2018-07-04",
+  "uitgaven" : 0,
+  "inkomsten" : 8
+}, {
+  "id" : 1961,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2018,
+  "omschrijving" : "30/05 12x1€",
+  "datum" : "2018-07-04",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 1962,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2018,
+  "omschrijving" : "06/06 12x1€",
+  "datum" : "2018-07-04",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 1963,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2018,
+  "omschrijving" : "13/06 8x1€",
+  "datum" : "2018-07-04",
+  "uitgaven" : 0,
+  "inkomsten" : 8
+}, {
+  "id" : 1964,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2018,
+  "omschrijving" : "20/06 8x1€",
+  "datum" : "2018-07-04",
+  "uitgaven" : 0,
+  "inkomsten" : 8
+}, {
+  "id" : 1965,
+  "rubriek" : null,
+  "rubriekId" : 3,
+  "jaartal" : 2018,
+  "omschrijving" : "Drank opendeurdag ",
+  "datum" : "2018-07-04",
+  "uitgaven" : 17.9,
+  "inkomsten" : 0
+}, {
+  "id" : 1966,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2018,
+  "omschrijving" : "Eten Denise",
+  "datum" : "2018-07-04",
+  "uitgaven" : 86,
+  "inkomsten" : 0
+}, {
+  "id" : 1967,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2018,
+  "omschrijving" : "Inschrijvingen 16",
+  "datum" : "2018-07-04",
+  "uitgaven" : 0,
+  "inkomsten" : 288
+}, {
+  "id" : 1968,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2018,
+  "omschrijving" : "Drank Kristof",
+  "datum" : "2018-07-04",
+  "uitgaven" : 56.96,
+  "inkomsten" : 0
+}, {
+  "id" : 1969,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2018,
+  "omschrijving" : "Verkoop drank",
+  "datum" : "2018-07-04",
+  "uitgaven" : 0,
+  "inkomsten" : 103.5
+}, {
+  "id" : 1972,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2018,
+  "omschrijving" : "Lidgeld Jean-Pierre De Buysscher",
+  "datum" : "2018-05-30",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1973,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2018,
+  "omschrijving" : "Lidgeld Johan Bracke",
+  "datum" : "2018-05-30",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1974,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2018,
+  "omschrijving" : "Lidgeld Kristof Heirwegh",
+  "datum" : "2018-08-28",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1975,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2018,
+  "omschrijving" : "Lidgeld Luc De Smet",
+  "datum" : "2018-08-28",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1976,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2018,
+  "omschrijving" : "Lidgeld Philip Demeter",
+  "datum" : "2018-07-17",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1977,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2018,
+  "omschrijving" : "Lidgeld Geert Bosman",
+  "datum" : "2018-11-08",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1978,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2018,
+  "omschrijving" : "Lidgeld Willy De Keyser",
+  "datum" : "2018-11-08",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 1979,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2018,
+  "omschrijving" : "27/06 9x1€",
+  "datum" : "2018-11-08",
+  "uitgaven" : 0,
+  "inkomsten" : 9
+}, {
+  "id" : 1980,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2018,
+  "omschrijving" : "04/07 12x1€",
+  "datum" : "2018-11-08",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 1981,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2018,
+  "omschrijving" : "11/07 9x1€",
+  "datum" : "2018-11-08",
+  "uitgaven" : 0,
+  "inkomsten" : 9
+}, {
+  "id" : 1982,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2018,
+  "omschrijving" : "22/08 9x1€",
+  "datum" : "2018-11-08",
+  "uitgaven" : 0,
+  "inkomsten" : 9
+}, {
+  "id" : 1983,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2018,
+  "omschrijving" : "29/08 13x1€",
+  "datum" : "2018-11-08",
+  "uitgaven" : 0,
+  "inkomsten" : 13
+}, {
+  "id" : 1984,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2018,
+  "omschrijving" : "05/09 9x1€",
+  "datum" : "2018-11-08",
+  "uitgaven" : 0,
+  "inkomsten" : 9
+}, {
+  "id" : 1985,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2018,
+  "omschrijving" : "12/09 8x1€",
+  "datum" : "2018-11-08",
+  "uitgaven" : 0,
+  "inkomsten" : 8
+}, {
+  "id" : 1986,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2018,
+  "omschrijving" : "19/09 13x1€",
+  "datum" : "2018-11-08",
+  "uitgaven" : 0,
+  "inkomsten" : 13
+}, {
+  "id" : 1987,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2018,
+  "omschrijving" : "26/09 8x1€",
+  "datum" : "2018-11-08",
+  "uitgaven" : 0,
+  "inkomsten" : 8
+}, {
+  "id" : 1988,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2018,
+  "omschrijving" : "03/10 10x1€",
+  "datum" : "2018-11-08",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 1989,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2018,
+  "omschrijving" : "10/10 10x1€",
+  "datum" : "2018-11-08",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 1990,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2018,
+  "omschrijving" : "17/10 11x1€",
+  "datum" : "2018-11-08",
+  "uitgaven" : 0,
+  "inkomsten" : 11
+}, {
+  "id" : 1991,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2018,
+  "omschrijving" : "24/10 8x1€",
+  "datum" : "2018-11-08",
+  "uitgaven" : 0,
+  "inkomsten" : 8
+}, {
+  "id" : 1992,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2018,
+  "omschrijving" : "31/10 9x1€",
+  "datum" : "2018-11-08",
+  "uitgaven" : 0,
+  "inkomsten" : 9
+}, {
+  "id" : 1993,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2018,
+  "omschrijving" : "07/11 14x1€",
+  "datum" : "2018-11-08",
+  "uitgaven" : 0,
+  "inkomsten" : 14
+}, {
+  "id" : 1994,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2018,
+  "omschrijving" : "28/02 11x1€",
+  "datum" : "2018-02-28",
+  "uitgaven" : 0,
+  "inkomsten" : 11
+}, {
+  "id" : 1995,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2018,
+  "omschrijving" : "04/04 13x1€",
+  "datum" : "2018-11-08",
+  "uitgaven" : 0,
+  "inkomsten" : 13
+}, {
+  "id" : 1996,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2018,
+  "omschrijving" : "11/04 10x1€",
+  "datum" : "2018-11-08",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 1997,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2018,
+  "omschrijving" : "18/04 10x1€",
+  "datum" : "2018-11-08",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 1998,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2018,
+  "omschrijving" : "25/04 10x1€",
+  "datum" : "2018-11-08",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 1999,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2018,
+  "omschrijving" : "Wafelbak (Denise)",
+  "datum" : "2018-10-03",
+  "uitgaven" : 10,
+  "inkomsten" : 0
+}, {
+  "id" : 2000,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2018,
+  "omschrijving" : "Wafelbak sponsor Philip",
+  "datum" : "2018-11-08",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 2001,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2018,
+  "omschrijving" : "Sponsoring €0,01",
+  "datum" : "2018-01-24",
+  "uitgaven" : 0,
+  "inkomsten" : 0.01
+}, {
+  "id" : 2002,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2018,
+  "omschrijving" : "Sponsoring €0,03",
+  "datum" : "2018-09-26",
+  "uitgaven" : 0,
+  "inkomsten" : 0.03
+}, {
+  "id" : 2003,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2018,
+  "omschrijving" : "Sponsoring €0,29",
+  "datum" : "2018-10-17",
+  "uitgaven" : 0,
+  "inkomsten" : 0.29
+}, {
+  "id" : 2004,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2018,
+  "omschrijving" : "ADSL Mei",
+  "datum" : "2018-11-08",
+  "uitgaven" : 27.5,
+  "inkomsten" : 0
+}, {
+  "id" : 2005,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2018,
+  "omschrijving" : "ADSL Juni",
+  "datum" : "2018-07-03",
+  "uitgaven" : 27.5,
+  "inkomsten" : 0
+}, {
+  "id" : 2006,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2018,
+  "omschrijving" : "ADSL Juli",
+  "datum" : "2018-08-07",
+  "uitgaven" : 27.5,
+  "inkomsten" : 0
+}, {
+  "id" : 2007,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2018,
+  "omschrijving" : "ADSL Augustus",
+  "datum" : "2018-09-04",
+  "uitgaven" : 27.5,
+  "inkomsten" : 0
+}, {
+  "id" : 2008,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2018,
+  "omschrijving" : "ADSL September",
+  "datum" : "2018-10-02",
+  "uitgaven" : 27.5,
+  "inkomsten" : 0
+}, {
+  "id" : 2009,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2018,
+  "omschrijving" : "ADSL Oktober",
+  "datum" : "2018-11-08",
+  "uitgaven" : 27.5,
+  "inkomsten" : 0
+}, {
+  "id" : 2010,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2018,
+  "omschrijving" : "ADSL November",
+  "datum" : "2018-12-04",
+  "uitgaven" : 27.5,
+  "inkomsten" : 0
+}, {
+  "id" : 2011,
+  "rubriek" : null,
+  "rubriekId" : 3,
+  "jaartal" : 2018,
+  "omschrijving" : "Affices opendeurdag",
+  "datum" : "2018-11-08",
+  "uitgaven" : 34,
+  "inkomsten" : 0
+}, {
+  "id" : 2012,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2018,
+  "omschrijving" : "Lidgeld Christian De Groote",
+  "datum" : "2018-12-12",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 2013,
+  "rubriek" : null,
+  "rubriekId" : 12,
+  "jaartal" : 2018,
+  "omschrijving" : "Inschrijvingen 17 X €9,00",
+  "datum" : "2018-12-20",
+  "uitgaven" : 0,
+  "inkomsten" : 153
+}, {
+  "id" : 2014,
+  "rubriek" : null,
+  "rubriekId" : 12,
+  "jaartal" : 2018,
+  "omschrijving" : "Drank spaghetti avond",
+  "datum" : "2018-12-20",
+  "uitgaven" : 24.2,
+  "inkomsten" : 0
+}, {
+  "id" : 2015,
+  "rubriek" : null,
+  "rubriekId" : 12,
+  "jaartal" : 2018,
+  "omschrijving" : "Onkosten Denise",
+  "datum" : "2018-12-20",
+  "uitgaven" : 32,
+  "inkomsten" : 0
+}, {
+  "id" : 2016,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2018,
+  "omschrijving" : "14/11 13x1€",
+  "datum" : "2018-12-20",
+  "uitgaven" : 0,
+  "inkomsten" : 13
+}, {
+  "id" : 2017,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2018,
+  "omschrijving" : "21/11 12x1€",
+  "datum" : "2018-12-20",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 2018,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2018,
+  "omschrijving" : "28/11 11x1€",
+  "datum" : "2018-12-20",
+  "uitgaven" : 0,
+  "inkomsten" : 11
+}, {
+  "id" : 2019,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2018,
+  "omschrijving" : "05/12 11x1€",
+  "datum" : "2018-12-20",
+  "uitgaven" : 0,
+  "inkomsten" : 11
+}, {
+  "id" : 2020,
+  "rubriek" : null,
+  "rubriekId" : 7,
+  "jaartal" : 2019,
+  "omschrijving" : "Geschenken (Philip)",
+  "datum" : "2018-12-20",
+  "uitgaven" : 24.96,
+  "inkomsten" : 0
+}, {
+  "id" : 2021,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2018,
+  "omschrijving" : "Sponsoring €0,11",
+  "datum" : "2018-12-20",
+  "uitgaven" : 0,
+  "inkomsten" : 0.11
+}, {
+  "id" : 2022,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2018,
+  "omschrijving" : "Lidgeld Etienne Dhont",
+  "datum" : "2018-12-20",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 2023,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2018,
+  "omschrijving" : "Interesten bankrekening",
+  "datum" : "2018-12-20",
+  "uitgaven" : 0,
+  "inkomsten" : 0.2
+}, {
+  "id" : 2024,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2018,
+  "omschrijving" : "ADSL December",
+  "datum" : "2018-12-20",
+  "uitgaven" : 27.5,
+  "inkomsten" : 0
+}, {
+  "id" : 2025,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2018,
+  "omschrijving" : "Afrekening VZW september - december",
+  "datum" : "2018-12-20",
+  "uitgaven" : 97.5,
+  "inkomsten" : 0
+}, {
+  "id" : 2026,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2018,
+  "omschrijving" : "Lidgeld Koen Van Petegem",
+  "datum" : "2018-12-31",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 2027,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2018,
+  "omschrijving" : "Lidgeld Denise Callebaut",
+  "datum" : "2019-01-07",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 2028,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2018,
+  "omschrijving" : "Lidgeld Fokke Dooijewaard",
+  "datum" : "2018-12-10",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 2029,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2018,
+  "omschrijving" : "Lidgeld Rudi De Strijcker",
+  "datum" : "2018-12-10",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 2030,
+  "rubriek" : null,
+  "rubriekId" : 7,
+  "jaartal" : 2019,
+  "omschrijving" : "Drank (Fokke)",
+  "datum" : "2019-01-10",
+  "uitgaven" : 10,
+  "inkomsten" : 0
+}, {
+  "id" : 2031,
+  "rubriek" : null,
+  "rubriekId" : 7,
+  "jaartal" : 2019,
+  "omschrijving" : "Hapjes (Denise)",
+  "datum" : "2019-01-10",
+  "uitgaven" : 35,
+  "inkomsten" : 0
+}, {
+  "id" : 2032,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2019,
+  "omschrijving" : "Lidgeld Hilda Bauters",
+  "datum" : "2019-02-28",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 2033,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2019,
+  "omschrijving" : "Lidgeld Felix Modde",
+  "datum" : "2019-02-28",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 2034,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2019,
+  "omschrijving" : "Lidgeld Willy De Sloover",
+  "datum" : "2019-03-01",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 2035,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2019,
+  "omschrijving" : "Lidgeld Christiane De Schepper",
+  "datum" : "2019-03-11",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 2036,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2019,
+  "omschrijving" : "Lidgeld Dirk Vandendriessche",
+  "datum" : "2019-03-26",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 2037,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2019,
+  "omschrijving" : "Lidgeld Luc Van Der Heyden",
+  "datum" : "2019-04-20",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 2038,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2019,
+  "omschrijving" : "Versio website",
+  "datum" : "2019-04-22",
+  "uitgaven" : 44.76,
+  "inkomsten" : 0
+}, {
+  "id" : 2039,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2019,
+  "omschrijving" : "Lidgeld Willy De Keyser",
+  "datum" : "2019-05-15",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 2040,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2019,
+  "omschrijving" : "Lidgeld Luc De Smet",
+  "datum" : "2019-05-29",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 2041,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2019,
+  "omschrijving" : "16/01 11",
+  "datum" : "2019-05-29",
+  "uitgaven" : 0,
+  "inkomsten" : 11
+}, {
+  "id" : 2042,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2019,
+  "omschrijving" : "06/02 10",
+  "datum" : "2019-05-29",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 2043,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2019,
+  "omschrijving" : "13/02 13",
+  "datum" : "2019-05-29",
+  "uitgaven" : 0,
+  "inkomsten" : 13
+}, {
+  "id" : 2044,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2019,
+  "omschrijving" : "20/02 9",
+  "datum" : "2019-05-29",
+  "uitgaven" : 0,
+  "inkomsten" : 9
+}, {
+  "id" : 2045,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2019,
+  "omschrijving" : "27/02 9",
+  "datum" : "2019-05-29",
+  "uitgaven" : 0,
+  "inkomsten" : 9
+}, {
+  "id" : 2046,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2019,
+  "omschrijving" : "06/03 9",
+  "datum" : "2019-05-29",
+  "uitgaven" : 0,
+  "inkomsten" : 9
+}, {
+  "id" : 2047,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2019,
+  "omschrijving" : "13/03 12",
+  "datum" : "2019-05-29",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 2048,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2019,
+  "omschrijving" : "20/03 13",
+  "datum" : "2019-05-29",
+  "uitgaven" : 0,
+  "inkomsten" : 13
+}, {
+  "id" : 2049,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2019,
+  "omschrijving" : "27/03 10",
+  "datum" : "2019-05-29",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 2050,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2019,
+  "omschrijving" : "03/04 10",
+  "datum" : "2019-05-29",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 2051,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2019,
+  "omschrijving" : "10/04 13",
+  "datum" : "2019-05-29",
+  "uitgaven" : 0,
+  "inkomsten" : 13
+}, {
+  "id" : 2052,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2019,
+  "omschrijving" : "17/04 8",
+  "datum" : "2019-05-29",
+  "uitgaven" : 0,
+  "inkomsten" : 8
+}, {
+  "id" : 2053,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2019,
+  "omschrijving" : "24/04 11",
+  "datum" : "2019-05-29",
+  "uitgaven" : 0,
+  "inkomsten" : 11
+}, {
+  "id" : 2054,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2019,
+  "omschrijving" : "08/05 11",
+  "datum" : "2019-05-29",
+  "uitgaven" : 0,
+  "inkomsten" : 11
+}, {
+  "id" : 2055,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2019,
+  "omschrijving" : "15/05 11",
+  "datum" : "2019-05-29",
+  "uitgaven" : 0,
+  "inkomsten" : 11
+}, {
+  "id" : 2056,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2019,
+  "omschrijving" : "22/05 10",
+  "datum" : "2019-05-29",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 2057,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2019,
+  "omschrijving" : "Onkosten Kristof ",
+  "datum" : "2019-05-29",
+  "uitgaven" : 28,
+  "inkomsten" : 0
+}, {
+  "id" : 2058,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2019,
+  "omschrijving" : "Inschrijvingen",
+  "datum" : "2019-05-29",
+  "uitgaven" : 0,
+  "inkomsten" : 216
+}, {
+  "id" : 2059,
+  "rubriek" : null,
+  "rubriekId" : 4,
+  "jaartal" : 2019,
+  "omschrijving" : "Onkosten Denise",
+  "datum" : "2019-05-29",
+  "uitgaven" : 48,
+  "inkomsten" : 0
+}, {
+  "id" : 2060,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2019,
+  "omschrijving" : "Afrekening VZW januari - mei 48 uren",
+  "datum" : "2019-06-05",
+  "uitgaven" : 171,
+  "inkomsten" : 0
+}, {
+  "id" : 2061,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2019,
+  "omschrijving" : "Lidgeld Jean-Pierre De Buysscher",
+  "datum" : "2019-06-05",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 2062,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2019,
+  "omschrijving" : "Lidgeld Johan Bracke",
+  "datum" : "2019-06-05",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 2063,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2019,
+  "omschrijving" : "29/05 10",
+  "datum" : "2019-06-05",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 2064,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2019,
+  "omschrijving" : "ADSL januari",
+  "datum" : "2019-06-05",
+  "uitgaven" : 27.5,
+  "inkomsten" : 0
+}, {
+  "id" : 2065,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2019,
+  "omschrijving" : "ADSL februari",
+  "datum" : "2019-06-05",
+  "uitgaven" : 27.5,
+  "inkomsten" : 0
+}, {
+  "id" : 2066,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2019,
+  "omschrijving" : "ADSL maart",
+  "datum" : "2019-06-05",
+  "uitgaven" : 27.5,
+  "inkomsten" : 0
+}, {
+  "id" : 2067,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2019,
+  "omschrijving" : "ADSL april",
+  "datum" : "2019-06-05",
+  "uitgaven" : 27.5,
+  "inkomsten" : 0
+}, {
+  "id" : 2068,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2019,
+  "omschrijving" : "ADSL mei",
+  "datum" : "2019-06-05",
+  "uitgaven" : 27.5,
+  "inkomsten" : 0
+}, {
+  "id" : 2069,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2019,
+  "omschrijving" : "Lidgeld Philip Demeter",
+  "datum" : "2019-07-23",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 2070,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2019,
+  "omschrijving" : "Interesten",
+  "datum" : "2019-07-23",
+  "uitgaven" : 0,
+  "inkomsten" : 0.48
+}, {
+  "id" : 2071,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2019,
+  "omschrijving" : "Lidgeld Kristof Heirwegh",
+  "datum" : "2019-09-09",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 2072,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2019,
+  "omschrijving" : "Afrekening VZW juni - september 27,5 uren",
+  "datum" : "2019-09-24",
+  "uitgaven" : 110,
+  "inkomsten" : 0
+}, {
+  "id" : 2073,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2019,
+  "omschrijving" : "Afrekeing ijs 10/07/2019",
+  "datum" : "2019-09-24",
+  "uitgaven" : 6,
+  "inkomsten" : 0
+}, {
+  "id" : 2074,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2019,
+  "omschrijving" : "Sponsoring",
+  "datum" : "2019-09-24",
+  "uitgaven" : 0,
+  "inkomsten" : 0.05
+}, {
+  "id" : 2075,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2019,
+  "omschrijving" : "Sponsoring",
+  "datum" : "2019-09-24",
+  "uitgaven" : 0,
+  "inkomsten" : 0.17
+}, {
+  "id" : 2076,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2019,
+  "omschrijving" : "05/06 7",
+  "datum" : "2019-09-24",
+  "uitgaven" : 0,
+  "inkomsten" : 7
+}, {
+  "id" : 2077,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2019,
+  "omschrijving" : "12/06 10",
+  "datum" : "2019-09-24",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 2078,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2019,
+  "omschrijving" : "19/06 9",
+  "datum" : "2019-09-24",
+  "uitgaven" : 0,
+  "inkomsten" : 9
+}, {
+  "id" : 2079,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2019,
+  "omschrijving" : "26/06 5",
+  "datum" : "2019-09-24",
+  "uitgaven" : 0,
+  "inkomsten" : 5
+}, {
+  "id" : 2080,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2019,
+  "omschrijving" : "03/07 9",
+  "datum" : "2019-09-24",
+  "uitgaven" : 0,
+  "inkomsten" : 9
+}, {
+  "id" : 2081,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2019,
+  "omschrijving" : "10/07 8",
+  "datum" : "2019-09-24",
+  "uitgaven" : 0,
+  "inkomsten" : 8
+}, {
+  "id" : 2082,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2019,
+  "omschrijving" : "28/08 10",
+  "datum" : "2019-09-24",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 2083,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2019,
+  "omschrijving" : "04/09 11",
+  "datum" : "2019-09-24",
+  "uitgaven" : 0,
+  "inkomsten" : 11
+}, {
+  "id" : 2084,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2019,
+  "omschrijving" : "11/09 10",
+  "datum" : "2019-09-24",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 2085,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2019,
+  "omschrijving" : "18/09 12",
+  "datum" : "2019-09-24",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 2086,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2019,
+  "omschrijving" : "ADSL juni",
+  "datum" : "2019-09-24",
+  "uitgaven" : 27.5,
+  "inkomsten" : 0
+}, {
+  "id" : 2087,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2019,
+  "omschrijving" : "ADSL juli",
+  "datum" : "2019-09-24",
+  "uitgaven" : 25.5,
+  "inkomsten" : 0
+}, {
+  "id" : 2088,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2019,
+  "omschrijving" : "ADSL augustus",
+  "datum" : "2019-09-24",
+  "uitgaven" : 27.5,
+  "inkomsten" : 0
+}, {
+  "id" : 2089,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2019,
+  "omschrijving" : "ADSL september",
+  "datum" : "2019-09-24",
+  "uitgaven" : 27.5,
+  "inkomsten" : 0
+}, {
+  "id" : 2090,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2019,
+  "omschrijving" : "25/09 9",
+  "datum" : "2019-10-03",
+  "uitgaven" : 0,
+  "inkomsten" : 9
+}, {
+  "id" : 2091,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2019,
+  "omschrijving" : "02-10 11",
+  "datum" : "2019-10-03",
+  "uitgaven" : 0,
+  "inkomsten" : 11
+}, {
+  "id" : 2092,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2019,
+  "omschrijving" : "Lidgeld Geert Bosman",
+  "datum" : "2019-11-11",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 2093,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2019,
+  "omschrijving" : "Interesten",
+  "datum" : "2019-12-02",
+  "uitgaven" : 0,
+  "inkomsten" : 0.25
+}, {
+  "id" : 2094,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2019,
+  "omschrijving" : "09/10 8",
+  "datum" : "2019-12-12",
+  "uitgaven" : 0,
+  "inkomsten" : 8
+}, {
+  "id" : 2095,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2019,
+  "omschrijving" : "16/10 9",
+  "datum" : "2019-12-12",
+  "uitgaven" : 0,
+  "inkomsten" : 9
+}, {
+  "id" : 2096,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2019,
+  "omschrijving" : "23/10 9",
+  "datum" : "2019-12-12",
+  "uitgaven" : 0,
+  "inkomsten" : 9
+}, {
+  "id" : 2097,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2019,
+  "omschrijving" : "30/10 9",
+  "datum" : "2019-12-12",
+  "uitgaven" : 0,
+  "inkomsten" : 9
+}, {
+  "id" : 2098,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2019,
+  "omschrijving" : "06/11 14",
+  "datum" : "2019-12-12",
+  "uitgaven" : 0,
+  "inkomsten" : 14
+}, {
+  "id" : 2099,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2019,
+  "omschrijving" : "13/11 10",
+  "datum" : "2019-12-12",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 2100,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2019,
+  "omschrijving" : "20/11 11",
+  "datum" : "2019-12-12",
+  "uitgaven" : 0,
+  "inkomsten" : 11
+}, {
+  "id" : 2101,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2019,
+  "omschrijving" : "27/11 7",
+  "datum" : "2019-12-12",
+  "uitgaven" : 0,
+  "inkomsten" : 7
+}, {
+  "id" : 2102,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2019,
+  "omschrijving" : "04/12 12",
+  "datum" : "2019-12-12",
+  "uitgaven" : 0,
+  "inkomsten" : 12
+}, {
+  "id" : 2103,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2019,
+  "omschrijving" : "11/12 10",
+  "datum" : "2019-12-12",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 2104,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2019,
+  "omschrijving" : "Afrekening VZW oktober - december 33,5 uren",
+  "datum" : "2019-12-12",
+  "uitgaven" : 134,
+  "inkomsten" : 0
+}, {
+  "id" : 2105,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2019,
+  "omschrijving" : "ADSL oktober",
+  "datum" : "2019-12-12",
+  "uitgaven" : 27.5,
+  "inkomsten" : 0
+}, {
+  "id" : 2106,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2019,
+  "omschrijving" : "ADSL november",
+  "datum" : "2019-12-12",
+  "uitgaven" : 27.5,
+  "inkomsten" : 0
+}, {
+  "id" : 2107,
+  "rubriek" : null,
+  "rubriekId" : 11,
+  "jaartal" : 2019,
+  "omschrijving" : "ADSL december",
+  "datum" : "2019-12-12",
+  "uitgaven" : 27.5,
+  "inkomsten" : 0
+}, {
+  "id" : 2108,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2019,
+  "omschrijving" : "Lidgeld Etienne Dhont",
+  "datum" : "2019-12-24",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 2109,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2019,
+  "omschrijving" : "Lidgeld Christian De Groote",
+  "datum" : "2019-12-16",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 2110,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2020,
+  "omschrijving" : "Interesten",
+  "datum" : "2020-01-01",
+  "uitgaven" : 0,
+  "inkomsten" : 1.41
 } ]

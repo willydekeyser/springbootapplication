@@ -30,7 +30,7 @@ function mail_form() {
     	emailtext += "<b>Freaks to Be: </b><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + textfreaktobe + " - " + textfreaktobelesgever + "<br/><br/><br/><b>Freaks: </b><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + 
         textfreak + " - " + textfreaklesgever + "<br/><br/><br/>";
     }
-    emailtext += "<b>Info: </b><br>" + textinfo + "<br><br><br><p align='right'>Computerclub Format C<br>Kring Kristus Koning<br>Rerum Novarumplein<br>Gent</p><p>&nbsp;</p>" +
+    emailtext += "<b>Info: </b><br>" + textinfo + "<br><br><br><p align='right'>Computerclub Format C<br>Parochiecentrum Ros Beyaerd<br>Sint-Pietersaalstraat 74<br>9000 Gent</p><p>&nbsp;</p>" +
     "<p>Afmelden voor deze agenda? Klik dan op de volgende link&nbsp;&nbsp;" +
     "<a href='mailto:cfc.schatbewaarder@cformatc.be?subject=Computerclub FORMAT C afmelden agenda'>Afmelden</a>" +
     "<br>" + datum_verzenden + "</font></p>";

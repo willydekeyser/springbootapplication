@@ -121,7 +121,7 @@ function listener_timeOut_submit(event) {
 	timeOut = 30000;
 	showTimeOutModal(false);
 	fetch_timeout();
-	const data = fetch_TEXT('/timeout')
+	fetch_TEXT('/timeout')
 	.then((data) => {
 		console.log('Time out: ' + data);
 	})
@@ -157,8 +157,7 @@ function getCookie(naam) {
 }
 
 function msToTime(duration, uren) {
-    let milliseconds = parseInt((duration%1000))
-        , seconds = parseInt((duration/1000)%60)
+    let seconds = parseInt((duration/1000)%60)
         , minutes = parseInt((duration/(1000*60))%60)
         , hours = parseInt((duration/(1000*60*60))%24);
 
@@ -348,7 +347,7 @@ function start_logout() {
 	reset_grid();
 	menu_height(10, 100);
 	menu_main_width(300);
-	let data = fetch_TEXT('/logout')
+	fetch_TEXT('/logout')
 	.then((data) => {
 		console.log('Logout: ' + data);
 	})

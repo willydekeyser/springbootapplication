@@ -1,5 +1,8 @@
 package willydekeyser.controller;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,56 +61,68 @@ public class BackUpController {
 	@ResponseBody
 	public String BackupWrite() {
 		System.out.println("Backup all: ");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");	
+		Calendar calendar = new GregorianCalendar();
 		List<Leden> ledenlijst = ledenService.getAllLeden();
-		backUpServiceLeden.writeBackUp(ledenlijst, "backup/ledenlijst.json");
+		backUpServiceLeden.writeBackUp(ledenlijst, "backup/ledenlijst" + sdf.format(calendar.getTime()) + ".json");
 		List<SoortenLeden> soortenledenlijst = soortenledenService.getAllSoortenLeden();
-		backUpServiceSoortenleden.writeBackUp(soortenledenlijst, "backup/soortenledenlijst.json");
+		backUpServiceSoortenleden.writeBackUp(soortenledenlijst, "backup/soortenledenlijst" + sdf.format(calendar.getTime()) + ".json");
 		List<Rubriek> rubrieklijst = rubriekService.getAllRubriek();
-		backUpServiceRubriek.writeBackUp(rubrieklijst, "backup/rubrieklijst.json");
+		backUpServiceRubriek.writeBackUp(rubrieklijst, "backup/rubrieklijst" + sdf.format(calendar.getTime()) + ".json");
 		List<Lidgeld> lidgeldlijst = lidgeldService.getAllLidgeld();
-		backUpServiceLidgeld.writeBackUp(lidgeldlijst, "backup/lidgeldlijst.json");
+		backUpServiceLidgeld.writeBackUp(lidgeldlijst, "backup/lidgeldlijst" + sdf.format(calendar.getTime()) + ".json");
 		List<Kasboek> kasboeklijst = kasboekService.getAllKasboek();
-		backUpServiceKasboek.writeBackUp(kasboeklijst, "backup/kasboeklijst.json");
+		backUpServiceKasboek.writeBackUp(kasboeklijst, "backup/kasboeklijst" + sdf.format(calendar.getTime()) + ".json");
 		return "BackUp alle lijsten";
 	}
 	
 	@GetMapping("/backupleden")
 	@ResponseBody
 	public String LedenBackupWrite() {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");	
+		Calendar calendar = new GregorianCalendar();
 		List<Leden> lijst = ledenService.getAllLeden();
-		backUpServiceLeden.writeBackUp(lijst, "backup/ledenlijst.json");
+		backUpServiceLeden.writeBackUp(lijst, "backup/ledenlijst" + sdf.format(calendar.getTime()) + ".json");
 		return "BackUp leden";
 	}
 	
 	@GetMapping("/backupsoortenleden")
 	@ResponseBody
 	public String SoortenledenBackupWrite() {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");	
+		Calendar calendar = new GregorianCalendar();
 		List<SoortenLeden> lijst = soortenledenService.getAllSoortenLeden();
-		backUpServiceSoortenleden.writeBackUp(lijst, "backup/soortenledenlijst.json");
+		backUpServiceSoortenleden.writeBackUp(lijst, "backup/soortenledenlijst" + sdf.format(calendar.getTime()) + ".json");
 		return "BackUp soortenleden";
 	}
 	
 	@GetMapping("/backuprubriek")
 	@ResponseBody
 	public String RubriekBackupWrite() {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");	
+		Calendar calendar = new GregorianCalendar();
 		List<Rubriek> lijst = rubriekService.getAllRubriek();
-		backUpServiceRubriek.writeBackUp(lijst, "backup/rubrieklijst.json");
+		backUpServiceRubriek.writeBackUp(lijst, "backup/rubrieklijst" + sdf.format(calendar.getTime()) + ".json");
 		return "BackUp rubriek";
 	}
 	
 	@GetMapping("/backuplidgeld")
 	@ResponseBody
 	public String LidgeldBackupWrite() {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");	
+		Calendar calendar = new GregorianCalendar();
 		List<Lidgeld> lijst = lidgeldService.getAllLidgeld();
-		backUpServiceLidgeld.writeBackUp(lijst, "backup/lidgeldlijst.json");
+		backUpServiceLidgeld.writeBackUp(lijst, "backup/lidgeldlijst" + sdf.format(calendar.getTime()) + ".json");
 		return "BackUp lidgeld";
 	}
 	
 	@GetMapping("/backupkasboek")
 	@ResponseBody
 	public String KasboekBackupWrite() {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");	
+		Calendar calendar = new GregorianCalendar();
 		List<Kasboek> lijst = kasboekService.getAllKasboek();
-		backUpServiceKasboek.writeBackUp(lijst, "backup/kasboeklijst.json");
+		backUpServiceKasboek.writeBackUp(lijst, "backup/kasboeklijst" + sdf.format(calendar.getTime()) + ".json");
 		return "BackUp rubriek";
 	}
 	
