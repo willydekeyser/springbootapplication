@@ -30,8 +30,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity httpSecurity) throws Exception {
 		System.out.println("Config: WebSecurityConfig " + httpSecurity.toString());
-		httpSecurity.authorizeRequests()
+		httpSecurity.cors().and()
+			.authorizeRequests()
 			.antMatchers("/").permitAll()
+			.antMatchers("/testen/**").hasRole(ROLE_USER)
 			.antMatchers("/kasboek/**").hasRole(ROLE_USER)
 			.antMatchers("/lidgeld/**").hasRole(ROLE_USER)
 			.antMatchers("/leden/**").hasRole(ROLE_USER)
@@ -41,6 +43,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.antMatchers("/actuator/**").hasRole(ROLE_GOLD)
 			.antMatchers("/agenda/**").hasAnyRole(ROLE_GOLD, ROLE_ADMIN)
 			.antMatchers("/rapporten/**").hasAnyRole(ROLE_GOLD, ROLE_ADMIN)
+			.and()
+			.httpBasic()
 			.and()
 			.formLogin().loginPage("/login").successHandler(customSuccessHandler).permitAll()
 			.and()
