@@ -13,6 +13,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	@Override
 	protected void configure(HttpSecurity httpSecurity) throws Exception {
 		System.out.println("Config: SecurityConfig " + httpSecurity.toString());
+		
 	}
 
 }

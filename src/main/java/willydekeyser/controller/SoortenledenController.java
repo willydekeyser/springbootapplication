@@ -9,11 +9,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -64,18 +66,21 @@ public class SoortenledenController {
 	
 	@PostMapping(value="/save_newSoortenleden")
 	public @ResponseBody List<SoortenLeden> save_newSoortenleden(@Validated SoortenLeden soortenleden) {
+		System.out.println("Soortenleden: " + soortenleden);
 		soortenLedenservice.addSoortenLeden(soortenleden);
 		return soortenLedenservice.getAllSoortenLeden();
 	}
 	
 	@PutMapping(value="/save_updateSoortenleden")
 	public @ResponseBody List<SoortenLeden> save_updateSoortenleden(@Validated SoortenLeden soortenleden) {
+		System.out.println("Soortenleden: " + soortenleden);
 		soortenLedenservice.updateSoortenLeden(soortenleden);
 		return soortenLedenservice.getAllSoortenLeden();
 	}
 	
 	@DeleteMapping(value="/save_deleteSoortenleden")
 	public @ResponseBody List<SoortenLeden> save_deleteSoortenleden(@Validated SoortenLeden soortenleden) {
+		System.out.println("Soortenleden: " + soortenleden);
 		soortenLedenservice.deleteSoortenLeden(soortenleden.getId());;
 		return soortenLedenservice.getAllSoortenLeden();
 	}
@@ -87,7 +92,7 @@ public class SoortenledenController {
  *
  * 
  */
-	
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping("/restcontroller/soortenleden")
 	public @ResponseBody List<SoortenLeden> soortenleden() {	
 		return soortenLedenservice.getAllSoortenLeden();
@@ -98,4 +103,23 @@ public class SoortenledenController {
 		return soortenLedenservice.getAllSoortenLedenLeden();
 	}
 	
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
+	@PostMapping(value="/restcontroller/save_newSoortenleden")
+	public @ResponseBody List<SoortenLeden> restcontroller_Save_newSoortenleden(@RequestBody SoortenLeden soortenleden) {
+		soortenLedenservice.addSoortenLeden(soortenleden);
+		return soortenLedenservice.getAllSoortenLeden();
+	}
+	
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
+	@PutMapping(value="/restcontroller/save_updateSoortenleden")
+	public @ResponseBody List<SoortenLeden> restcontroller_Save_updateSoortenleden(@RequestBody SoortenLeden soortenleden) {
+		soortenLedenservice.updateSoortenLeden(soortenleden);
+		return soortenLedenservice.getAllSoortenLeden();
+	}
+	
+	@DeleteMapping(value="/restcontroller/save_deleteSoortenleden")
+	public @ResponseBody List<SoortenLeden> restcontroller_Save_deleteSoortenleden(@RequestBody SoortenLeden soortenleden) {
+		soortenLedenservice.deleteSoortenLeden(soortenleden.getId());;
+		return soortenLedenservice.getAllSoortenLeden();
+	}
 }

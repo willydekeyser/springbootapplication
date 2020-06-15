@@ -7,9 +7,11 @@ import static willydekeyser.controller.NamenLijst.ROLE_USER;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import willydekeyser.filters.CustomLogoutSuccessHandler;
@@ -30,10 +32,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity httpSecurity) throws Exception {
 		System.out.println("Config: WebSecurityConfig " + httpSecurity.toString());
-		httpSecurity.cors().and()
+		httpSecurity
+			.cors().and()                         
+			.csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()).and()
 			.authorizeRequests()
+			.antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
 			.antMatchers("/").permitAll()
 			.antMatchers("/testen/**").hasRole(ROLE_USER)
+			.antMatchers("/users/**").hasRole(ROLE_USER)
 			.antMatchers("/kasboek/**").hasRole(ROLE_USER)
 			.antMatchers("/lidgeld/**").hasRole(ROLE_USER)
 			.antMatchers("/leden/**").hasRole(ROLE_USER)
@@ -52,18 +58,19 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.and()
 			.logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
 				.deleteCookies("JSESSIONID")
+				.deleteCookies("XSRF-TOKEN")
 				.logoutSuccessUrl("/")
 				.invalidateHttpSession(true)
 				.logoutSuccessHandler(customLogoutSuccessHandler)
 			.and()
-			.rememberMe().key("willydekeyser").tokenValiditySeconds(3600)
-			.and()
-			.csrf();
+			.rememberMe().key("willydekeyser").tokenValiditySeconds(3600);
+			
 	}
 	
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.authenticationProvider(customAuthentiocationProvider);
 	}
-			
+		
 }
+

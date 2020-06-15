@@ -6,8 +6,9 @@ import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.session.SessionDestroyedEvent;
+import org.springframework.stereotype.Service;
 
-//@Service
+@Service
 public class MyTimeoutFilter implements ApplicationListener<ApplicationEvent>{
 
 	public MyTimeoutFilter() {
@@ -25,7 +26,7 @@ public class MyTimeoutFilter implements ApplicationListener<ApplicationEvent>{
             }
         }
 
-        System.out.println("This is a test. ");
+        //System.out.println("This is a test. ");
 		
 	}
 

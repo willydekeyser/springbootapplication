@@ -26,6 +26,12 @@ public class LedenService implements ILedenService {
 	}
 	
 	@Override
+	public List<Leden> getLedenNamenlijstSoort(String soort) {
+		return ledenDAO.getLedenNamenlijstSoort(soort);
+	}
+
+	
+	@Override
 	public List<Leden> getAllLedenSoortenleden(Integer soort) {
 		return ledenDAO.getAllLedenSoortenleden(soort);
 	}

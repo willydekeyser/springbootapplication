@@ -34,6 +34,13 @@ public class LedenDAO implements ILedenDAO {
 			+ "FROM leden "
 			+ "WHERE soortenledenid = 1 OR soortenledenid = 2 OR soortenledenid = 3 OR soortenledenid = 4 "
 			+ "ORDER BY familienaam, voornaam" ;
+	private final String sql_getLedennamenlijstSoort = "SELECT leden_id, voornaam, familienaam, emailadres "
+			+ "FROM leden, soortenleden "
+			+ "WHERE leden.soortenledenid =  soortenleden.soortenleden_id AND soortenleden.soortenleden LIKE ? "
+			+ "ORDER BY leden.familienaam, leden.voornaam" ;
+	private final String sql_getLedennamenlijstSoortIedereen = "SELECT leden_id, voornaam, familienaam, emailadres "
+			+ "FROM leden "
+			+ "ORDER BY leden.familienaam, leden.voornaam" ;
 	private final String sql_getAllLedenlijst = "SELECT leden_id, voornaam, familienaam, emailadres "
 			+ "FROM leden "
 			+ "WHERE soortenledenid = 1 OR soortenledenid = 2 OR soortenledenid = 3 "
@@ -109,6 +116,14 @@ public class LedenDAO implements ILedenDAO {
 	@Override
 	public List<Leden> getAllLedenNamenlijst(Integer soort) {
 		return jdbcTemplate.query(getLedenNamenlijstSQL(soort), new LedenNamenRowMapper());
+	}
+	
+	@Override
+	public List<Leden> getLedenNamenlijstSoort(String soort) {
+		if (soort.equals("Iedereen")) {
+			return jdbcTemplate.query(sql_getLedennamenlijstSoortIedereen, new LedenNamenRowMapper());
+		}
+		return jdbcTemplate.query(sql_getLedennamenlijstSoort, new LedenNamenRowMapper(), "%" + soort);
 	}
 	
 	@Override
@@ -243,6 +258,5 @@ public class LedenDAO implements ILedenDAO {
 		}
 		return sql;
 	}
-	
-	
+
 }

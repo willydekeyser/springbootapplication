@@ -213,6 +213,12 @@ public class LedenController {
 	}
 	
 	@Secured({ "ROLE_GOLD", "ROLE_ADMIN", "ROLE_USER" })
+	@GetMapping(path="/restcontroller/ledennamenlijst/{soort}")
+	public @ResponseBody List<Leden> restConrollerledenNamenlijstBySoort(@PathVariable String soort) {
+		return ledenservice.getLedenNamenlijstSoort(soort);
+	}
+	
+	@Secured({ "ROLE_GOLD", "ROLE_ADMIN", "ROLE_USER" })
 	@GetMapping(path="/restcontroller/ledenbyid/{id}")
 	public @ResponseBody Leden restConrollerledenById(@PathVariable Integer id) {
 		lid = ledenservice.getLedenById(id);

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -97,6 +98,24 @@ public class RubriekController {
 	@GetMapping("/restcontroller/rubriek/kasboek/response")
 	public @ResponseBody ResponseEntity<List<Rubriek>> rubriekKasboekresponse() {	
 		return new ResponseEntity<List<Rubriek>>(rubriekservice.getAllRubriekKasboek(), HttpStatus.OK);
+	}
+	
+	@PostMapping(value="/restcontroller/save_newRubriek")
+	public @ResponseBody List<Rubriek> restcontroller_save_newRubriek(@RequestBody Rubriek rubriek) {
+		rubriekservice.addRubriek(rubriek);
+		return rubriekservice.getAllRubriek();
+	}
+	
+	@PutMapping(value="/restcontroller/save_updateRubriek")
+	public @ResponseBody List<Rubriek> restcontroller_save_updateRubriek(@RequestBody Rubriek rubriek) {
+		rubriekservice.updateRubriek(rubriek);
+		return rubriekservice.getAllRubriek();
+	}
+	
+	@DeleteMapping(value="/restcontroller/save_deleteRubriek")
+	public @ResponseBody List<Rubriek> restcontroller_save_deleteRubriek(@RequestBody Rubriek rubriek) {
+		rubriekservice.deleteRubriek(rubriek.getId());
+		return rubriekservice.getAllRubriek();
 	}
 	
 }

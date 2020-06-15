@@ -11,17 +11,11 @@ import org.springframework.context.annotation.PropertySources;
 import org.springframework.context.event.EventListener;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
-import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 
 import willydekeyser.customproperties.CustomPropertiesService;
 
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(
-		prePostEnabled = true,
-		securedEnabled = true,
-		jsr250Enabled = true
-		)
 @ComponentScan
 @ServletComponentScan
 @SpringBootApplication
@@ -43,5 +37,7 @@ public class SpringDatabaseApplication {
 	public void loadCustomProperties() {
 		customPropertiesService.readCustomProperties();
 	}
-		
+	
 }
+
+

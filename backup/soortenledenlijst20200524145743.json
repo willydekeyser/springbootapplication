@@ -1,0 +1,21 @@
+[ {
+  "id" : 1,
+  "soortenleden" : "Leden",
+  "leden" : [ ]
+}, {
+  "id" : 2,
+  "soortenleden" : "Werkende Leden",
+  "leden" : [ ]
+}, {
+  "id" : 3,
+  "soortenleden" : "Bestuurs Leden",
+  "leden" : [ ]
+}, {
+  "id" : 4,
+  "soortenleden" : "Oud leden",
+  "leden" : [ ]
+}, {
+  "id" : 5,
+  "soortenleden" : "Iedereen",
+  "leden" : [ ]
+} ]

@@ -8,6 +8,7 @@ public interface ILedenService {
 
 	List<Leden> getAllLeden();
 	List<Leden> getAllLedenNamenlijst(Integer soort);
+	List<Leden> getLedenNamenlijstSoort(String soort);
 	List<Leden> getAllLedenSoortenleden(Integer soort);
 	List<Leden> getAllLedenLidgeld();
 	Leden getLedenById(Integer id);
@@ -16,5 +17,5 @@ public interface ILedenService {
     Leden updateLeden(Leden leden);
     Integer deleteLeden(int id);
     boolean ledenExists(int id);
-    
+	
 }
