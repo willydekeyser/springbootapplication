@@ -48,11 +48,13 @@ public class UsersController {
 			Menu menu3 = new Menu("3", "Kasboek", "/kasboek");
 			Menu menu4 = new Menu("4", "Rubrieken", "/rubrieken");
 			Menu menu5 = new Menu("5", "Soorten leden", "/soortenleden");
+			Menu menu6 = new Menu("5", "Agenda", "/agenda");
 			menus.add(menu1);
 			menus.add(menu2);
 			menus.add(menu3);
 			menus.add(menu4);
 			menus.add(menu5);
+			menus.add(menu6);
 		}
 		
 		if(user.equals("Computerclub")) {

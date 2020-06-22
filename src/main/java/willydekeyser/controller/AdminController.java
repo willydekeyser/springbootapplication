@@ -4,14 +4,12 @@ import java.security.Principal;
 
 import javax.servlet.http.HttpSession;
 
-import org.springframework.http.HttpStatus;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
 
 @Controller
 public class AdminController {
@@ -23,7 +21,7 @@ public class AdminController {
 		return principal.getName();
 	}
 	
-	@ResponseStatus(code = HttpStatus.OK, reason = "Some parameters are invalid")
+	//@ResponseStatus(code = HttpStatus.OK, reason = "Some parameters are invalid")
 	@Secured("ROLE_GOLD")
 	@RequestMapping(value = "/authentication_username", method = RequestMethod.GET)
 	@ResponseBody

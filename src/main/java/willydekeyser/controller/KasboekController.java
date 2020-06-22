@@ -179,4 +179,9 @@ public class KasboekController {
 		return kasboekservice.getKasboekJaarRubriek();
 	}
 	
+	@GetMapping("/restcontroller/kasboek/{jaar}/{rubriek}")
+	public @ResponseBody List<Kasboek> restcontrollerKasboekJaarRubriek(@PathVariable Integer jaar, @PathVariable Integer rubriek) {	
+		return kasboekservice.getAllKasboekRubriekJaarRubriek(jaar, rubriek);
+	}
+	
 }
