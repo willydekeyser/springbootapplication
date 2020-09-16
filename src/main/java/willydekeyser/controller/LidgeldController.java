@@ -56,7 +56,7 @@ public class LidgeldController {
 	public String MAXlidgeld(@RequestParam(name = "lidgeld", required = false) String name, Model model) {
 		return "lidgeld/lidgeld :: max_lidgeld_tabel_start";
 	}
-    
+
     @GetMapping("/maxlidgeldknoppen")
 	public String MAXlidgeldKnoppen() {
 		return "lidgeld/fragmenten/lidgeldknoppen :: max_lidgeld_knoppen";
@@ -74,43 +74,43 @@ public class LidgeldController {
 	public @ResponseBody List<Lidgeld> lidgeld() {	
 		return lidgeldservice.getAllLidgeld();
 	}
-	
+
 	@GetMapping("/restcontroller/lidgeld/{id}")
 	public @ResponseBody List<Lidgeld> lidgeldByLidId(@PathVariable Integer id) {	
 		return lidgeldservice.getAllLidgeldByLid(id);
 	}
-	
+
 	@GetMapping("/restcontroller/lidgeld/leden")
 	public @ResponseBody List<Lidgeld> lidgeldLeden() {	
 		return lidgeldservice.getAllLidgeldLeden();
 	}
-	
+
 	@GetMapping("/restcontroller/maxlidgeld")
 	public @ResponseBody List<Lidgeld> MAXlidgelddata() {
 		return lidgeldservice.getMAXLidgeldLeden();
 	}
-	
+
 	@GetMapping("/restcontroller/all_lidgeld")
 	public @ResponseBody List<Lidgeld> lidgelddata() {
 		return lidgeld = lidgeldservice.getAllLidgeldLeden();
 	}
-	
+
 	@PostMapping("/save_newLidgeld")
 	public @ResponseBody List<Lidgeld> save_newLidgeld(@Validated  Lidgeld lidgeld) {
 		lidgeldservice.addLidgeld(lidgeld);
 		return lidgeldservice.getAllLidgeldByLid(lidgeld.getLeden().getLeden_id());
 	}
-	
+
 	@PutMapping("/save_updateLidgeld")
 	public @ResponseBody List<Lidgeld> save_updateLidgeld(@Validated  Lidgeld lidgeld) {
 		lidgeldservice.updateLidgeld(lidgeld);
 		return lidgeldservice.getAllLidgeldByLid(lidgeld.getLeden().getLeden_id());
 	}
-	
+
 	@DeleteMapping("/save_deleteLidgeld")
 	public @ResponseBody List<Lidgeld> save_deleteLidgeld(@Validated  Lidgeld lidgeld) {
 		lidgeldservice.deleteLidgeld(lidgeld.getId());
 		return lidgeldservice.getAllLidgeldByLid(lidgeld.getLeden().getLeden_id());
 	}
-	
+
 }

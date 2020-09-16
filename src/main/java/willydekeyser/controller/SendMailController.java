@@ -42,15 +42,10 @@ public class SendMailController {
 	public @ResponseBody String verstuurAgenda(@Validated Agenda agenda) {
 		ledenlijst = ledenService.getAllLedenNamenlijst(agenda.getSoortenLeden());
 		subject = "Agenda voor " + agenda.getDatum_vergadering() + ".";
-		try {
-			senderService.setMailTeller(0);
-			senderService.sendAgendaHTMLMail(new Mail(to, subject, agenda.getFreak(), agenda.getFreaktobe(), 
-					agenda.getFreaklesgever(), agenda.getFreaktobelesgever(), 
-					agenda.getInfo(), agenda.getDatum_vergadering(), agenda.getDatum_verzenden(), null), ledenlijst);
-		} catch (MessagingException | InterruptedException e) {
-			System.out.println("Fout: " + e.getMessage());
-			return "{\"return\" : \"FOUT\"}";
-		}
+		senderService.setMailTeller(0);
+		senderService.sendAgendaHTMLMail(new Mail(to, subject, agenda.getFreak(), agenda.getFreaktobe(), 
+				agenda.getFreaklesgever(), agenda.getFreaktobelesgever(), 
+				agenda.getInfo(), agenda.getDatum_vergadering(), agenda.getDatum_verzenden(), null), ledenlijst);
 		return "{\"return\" : \"OK\"}";
 	}
 	

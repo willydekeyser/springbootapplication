@@ -129,7 +129,6 @@ public class RapportenController {
 		if (maand > 12) maand = 12;
 		response.setContentType("text/html");
 		LocalDate datum = LocalDate.of(jaar, maand, 1);
-		//LocalDate datum = LocalDate.now();
 		List<String> vergaderingen = jasperRapportenService.Woensdagen(datum);
 		JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(ledenService.getAllLedenNamenlijst(1));
 		Map<String, Object> parameters = new HashMap<>();

@@ -1,17 +1,21 @@
 [ {
   "id" : 1,
-  "soortenleden" : "Lid",
+  "soortenleden" : "Leden",
   "leden" : [ ]
 }, {
   "id" : 2,
-  "soortenleden" : "Werkend lid",
+  "soortenleden" : "Werkende Leden",
   "leden" : [ ]
 }, {
   "id" : 3,
-  "soortenleden" : "Bestuurs lid",
+  "soortenleden" : "Bestuurs Leden",
   "leden" : [ ]
 }, {
   "id" : 4,
-  "soortenleden" : "Oud lid",
+  "soortenleden" : "Oud leden",
+  "leden" : [ ]
+}, {
+  "id" : 5,
+  "soortenleden" : "Iedereen",
   "leden" : [ ]
 } ]

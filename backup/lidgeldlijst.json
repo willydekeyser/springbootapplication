@@ -3022,4 +3022,88 @@
   "ledenId" : 70,
   "datum" : "2019-12-16",
   "bedrag" : 30
+}, {
+  "id" : 506,
+  "leden" : null,
+  "ledenId" : 19,
+  "datum" : "2020-02-01",
+  "bedrag" : 30
+}, {
+  "id" : 507,
+  "leden" : null,
+  "ledenId" : 104,
+  "datum" : "2020-01-06",
+  "bedrag" : 30
+}, {
+  "id" : 526,
+  "leden" : null,
+  "ledenId" : 116,
+  "datum" : "2020-02-19",
+  "bedrag" : 30
+}, {
+  "id" : 546,
+  "leden" : null,
+  "ledenId" : 83,
+  "datum" : "2019-12-31",
+  "bedrag" : 30
+}, {
+  "id" : 566,
+  "leden" : null,
+  "ledenId" : 115,
+  "datum" : "2020-03-04",
+  "bedrag" : 30
+}, {
+  "id" : 586,
+  "leden" : null,
+  "ledenId" : 48,
+  "datum" : "2020-03-05",
+  "bedrag" : 30
+}, {
+  "id" : 606,
+  "leden" : null,
+  "ledenId" : 18,
+  "datum" : "2020-06-24",
+  "bedrag" : 30
+}, {
+  "id" : 626,
+  "leden" : null,
+  "ledenId" : 35,
+  "datum" : "2020-06-22",
+  "bedrag" : 30
+}, {
+  "id" : 646,
+  "leden" : null,
+  "ledenId" : 11,
+  "datum" : "2020-06-29",
+  "bedrag" : 30
+}, {
+  "id" : 666,
+  "leden" : null,
+  "ledenId" : 88,
+  "datum" : "2020-07-01",
+  "bedrag" : 30
+}, {
+  "id" : 667,
+  "leden" : null,
+  "ledenId" : 66,
+  "datum" : "2020-07-01",
+  "bedrag" : 30
+}, {
+  "id" : 686,
+  "leden" : null,
+  "ledenId" : 34,
+  "datum" : "2020-07-08",
+  "bedrag" : 30
+}, {
+  "id" : 706,
+  "leden" : null,
+  "ledenId" : 111,
+  "datum" : "2020-07-13",
+  "bedrag" : 30
+}, {
+  "id" : 726,
+  "leden" : null,
+  "ledenId" : 95,
+  "datum" : "2020-09-02",
+  "bedrag" : 30
 } ]

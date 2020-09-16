@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
 import java.text.NumberFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
@@ -31,6 +33,8 @@ import willydekeyser.sendmail.model.Mail;
 @Configurable
 public class MailSenderService {
 
+	private static final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+	
 	@Autowired
     private JavaMailSender mailSender;
 	
@@ -63,7 +67,7 @@ public class MailSenderService {
 		return maxMailTeller;
 	}
 	
-    // Use it to send Simple text emails
+    // Use it to send Simple text e-mail
 	@Async
     public void sendSimpleMail(Mail mail, String tekst) {
 
@@ -77,13 +81,18 @@ public class MailSenderService {
         //mailSender.send(message);
     }
 
-    // Use it to send HTML emails
+    // Use it to send HTML e-mail
 	@Async
-    public void sendAgendaHTMLMail(Mail mail, List<Leden> ledenlijst) throws MessagingException, InterruptedException {
+    public void sendAgendaHTMLMail(Mail mail, List<Leden> ledenlijst) {
 
         MimeMessage message = mailSender.createMimeMessage();
-        MimeMessageHelper messageHelper = new MimeMessageHelper(message, MimeMessageHelper.MULTIPART_MODE_MIXED_RELATED, StandardCharsets.UTF_8.name());
-        messageHelper.addAttachment("logo.gif", new File("image/logo.gif"));
+        MimeMessageHelper messageHelper = null;
+		try {
+			messageHelper = new MimeMessageHelper(message, MimeMessageHelper.MULTIPART_MODE_MIXED_RELATED, StandardCharsets.UTF_8.name());
+			messageHelper.addAttachment("logo.gif", new File("image/logo.gif"));
+		} catch (MessagingException e) {
+			System.err.println("Fout logo: " + e.getMessage());	
+		}
         maxMailTeller = ledenlijst.size();
         Context context = new Context();
         Integer index = 0;
@@ -98,7 +107,7 @@ public class MailSenderService {
         		continue;
         	}
         	mail.setTo(leden.getEmailadres());
-            System.out.println("Zend email... " + leden.getVoornaam() + " " + leden.getFamilienaam() + " " + leden.getEmailadres() + " - " + mail.getTo());
+            System.out.println("Zend email... "  + dateFormat.format(new Date()) + " - "+ leden.getVoornaam() + " " + leden.getFamilienaam() + " " + leden.getEmailadres() + " - " + mail.getTo());
         	context.setVariable("naam", leden.getVoornaam());
         	context.setVariable("titel", "Planning: " + mail.getDatum_vergadering());
         	context.setVariable("freaks", mail.getFreak());
@@ -114,8 +123,9 @@ public class MailSenderService {
 				messageHelper.setFrom(new InternetAddress("cfc.schatbewaarder@cformatc.be", "Computerclub Format C"));
 				//messageHelper.setCc(new InternetAddress("cfc.schatbewaarder@cformatc.be", "Willy De Keyser"));
 		        messageHelper.setBcc(new InternetAddress("wdkeyser@gmail.com", "Willy De Keyser"));
+		        // messageHelper.setBcc(new InternetAddress("willy.de.keyser@skynet.be", "Willy De Keyser"));
 		        messageHelper.setReplyTo(new InternetAddress("contact@cformatc.be", "Computerclub Format C"));
-			} catch (UnsupportedEncodingException e) {
+			} catch (UnsupportedEncodingException | MessagingException e) {
 				System.err.println("Zend E-mail error: " + e.getMessage());
 				try {
 					fileLogger.schrijfAgendaToFile("Zend E-mail error: " + e.getMessage() + " - " + leden.getVoornaam() + " " + leden.getFamilienaam() + " " + leden.getEmailadres());
@@ -123,9 +133,13 @@ public class MailSenderService {
 					System.err.println("Fout schrijven naar File: " + ex.getMessage());
 				}
 			}
-	        messageHelper.setSubject(mail.getSubject());
-	        messageHelper.setText(html, true);
-	        
+	        try {
+				messageHelper.setSubject(mail.getSubject());
+				messageHelper.setText(html, true);
+			} catch (MessagingException e) {
+				System.err.println("Fout setup mail: " + e.getMessage());
+			}
+	        	        
 	       	mailSender.send(message);
 	    
 	        if(index == 1) {
@@ -142,7 +156,11 @@ public class MailSenderService {
 			} catch (IOException e) {
 				System.err.println("Fout schrijven naar File: " + e.getMessage());
 			}
-    		Thread.sleep(customProperties.getPauzeAgenda() * 1000);
+    		try {
+				Thread.sleep(customProperties.getPauzeAgenda() * 1000);
+			} catch (InterruptedException e) {
+				System.err.println("Fout sleep: " + e.getMessage());
+			}
         }
         setMailTeller(-1);
     }
@@ -179,6 +197,7 @@ public class MailSenderService {
 			messageHelper.setFrom(new InternetAddress("cfc.schatbewaarder@cformatc.be", "Computerclub Format C"));
 			//messageHelper.setCc(new InternetAddress("cfc.schatbewaarder@cformatc.be", "Willy De Keyser"));
 	        messageHelper.setBcc(new InternetAddress("wdkeyser@gmail.com", "Willy De Keyser"));
+	        // messageHelper.setBcc(new InternetAddress("willy.de.keyser@skynet.be", "Willy De Keyser"));
 	        messageHelper.setReplyTo(new InternetAddress("contact@cformatc.be", "Computerclub Format C"));
 		} catch (UnsupportedEncodingException e) {
 			System.err.println("Zend E-mail error: " + e.getMessage());

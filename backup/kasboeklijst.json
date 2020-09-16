@@ -18889,4 +18889,274 @@
   "datum" : "2020-01-01",
   "uitgaven" : 0,
   "inkomsten" : 1.41
+}, {
+  "id" : 2111,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2019,
+  "omschrijving" : "Lidgeld Denise Callebaut",
+  "datum" : "2020-01-06",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 2112,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2020,
+  "omschrijving" : "Lidgeld Dirk Vandendriessche",
+  "datum" : "2020-02-13",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 2131,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2020,
+  "omschrijving" : "Lidgeld Rudi De Strijcker",
+  "datum" : "2020-02-19",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 2151,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2019,
+  "omschrijving" : "Lidgeld Koen Van Petegem",
+  "datum" : "2020-03-04",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 2152,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2020,
+  "omschrijving" : "15/01 13",
+  "datum" : "2020-03-04",
+  "uitgaven" : 0,
+  "inkomsten" : 13
+}, {
+  "id" : 2153,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2020,
+  "omschrijving" : "22/01 10",
+  "datum" : "2020-03-04",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 2154,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2020,
+  "omschrijving" : "29/01 5",
+  "datum" : "2020-03-04",
+  "uitgaven" : 0,
+  "inkomsten" : 5
+}, {
+  "id" : 2155,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2020,
+  "omschrijving" : "05/02 9",
+  "datum" : "2020-03-04",
+  "uitgaven" : 0,
+  "inkomsten" : 9
+}, {
+  "id" : 2156,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2020,
+  "omschrijving" : "12/02 10",
+  "datum" : "2020-03-04",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 2157,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2020,
+  "omschrijving" : "19/02 11",
+  "datum" : "2020-03-04",
+  "uitgaven" : 0,
+  "inkomsten" : 11
+}, {
+  "id" : 2158,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2020,
+  "omschrijving" : "26/02 10",
+  "datum" : "2020-03-04",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 2171,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2020,
+  "omschrijving" : "Lidgeld Hilda Bauters",
+  "datum" : "2020-03-04",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 2172,
+  "rubriek" : null,
+  "rubriekId" : 7,
+  "jaartal" : 2020,
+  "omschrijving" : "Hapjes nieuwjaarsreceptie",
+  "datum" : "2020-03-04",
+  "uitgaven" : 30,
+  "inkomsten" : 0
+}, {
+  "id" : 2173,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2020,
+  "omschrijving" : "04/03 11",
+  "datum" : "2020-03-05",
+  "uitgaven" : 0,
+  "inkomsten" : 11
+}, {
+  "id" : 2191,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2020,
+  "omschrijving" : "Website VERSIO",
+  "datum" : "2020-04-09",
+  "uitgaven" : 36.3,
+  "inkomsten" : 0
+}, {
+  "id" : 2211,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2020,
+  "omschrijving" : "Website domein naam Versio",
+  "datum" : "2020-04-27",
+  "uitgaven" : 8.46,
+  "inkomsten" : 0
+}, {
+  "id" : 2231,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2020,
+  "omschrijving" : "Lidgeld Willy De Sloover",
+  "datum" : "2020-03-05",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 2232,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2020,
+  "omschrijving" : "Interesten",
+  "datum" : "2020-04-02",
+  "uitgaven" : 0,
+  "inkomsten" : 1.39
+}, {
+  "id" : 2233,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2020,
+  "omschrijving" : "11/03 5",
+  "datum" : "2020-03-11",
+  "uitgaven" : 0,
+  "inkomsten" : 5
+}, {
+  "id" : 2251,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2020,
+  "omschrijving" : "Lidgeld Willy De Keyser",
+  "datum" : "2020-06-24",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 2271,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2020,
+  "omschrijving" : "Lidgeld Johan Bracke",
+  "datum" : "2020-06-22",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 2291,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2020,
+  "omschrijving" : "Lidgeld Kristof Heirwegh",
+  "datum" : "2020-06-29",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 2311,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2020,
+  "omschrijving" : "Lidgeld Luc de Smet",
+  "datum" : "2020-07-01",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 2312,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2020,
+  "omschrijving" : "Lidgeld Christiane De Schepper",
+  "datum" : "2020-07-01",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 2331,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2020,
+  "omschrijving" : "Interesten",
+  "datum" : "2020-07-02",
+  "uitgaven" : 0,
+  "inkomsten" : 0.5
+}, {
+  "id" : 2351,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2020,
+  "omschrijving" : "Lidgeld Jean-Pierre De Buysscher",
+  "datum" : "2020-07-08",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 2352,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2020,
+  "omschrijving" : "24/06 9",
+  "datum" : "2020-07-08",
+  "uitgaven" : 0,
+  "inkomsten" : 9
+}, {
+  "id" : 2371,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2020,
+  "omschrijving" : "Lidgeld Luc Van Der Heyden",
+  "datum" : "2020-07-13",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 2391,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2020,
+  "omschrijving" : "Lidgeld Philip Demeter ",
+  "datum" : "2020-09-02",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 2392,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2020,
+  "omschrijving" : "02/09 8",
+  "datum" : "2020-09-02",
+  "uitgaven" : 0,
+  "inkomsten" : 8
 } ]

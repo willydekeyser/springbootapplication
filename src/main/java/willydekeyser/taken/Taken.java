@@ -24,11 +24,16 @@ public class Taken {
 		System.out.println("Taken constructor: ");
 	}
 
+	@Scheduled(cron = "0 0 * * * *")
+	public void backUp() {
+		System.out.println("\nBackUp uitgevoerd! " + dateFormat.format(new Date()));
+		backupLijsten.maakbackUp();
+	}
+	
 	@Scheduled(cron = "0 0 * * * 3,6")
-	public void test() {
-		System.out.println("Taak uitgevoerd! " + dateFormat.format(new Date()));
-		//backupLijsten.maakbackUp();
-		
+	public void lotto() {
+		System.out.println("\nTaak uitgevoerd! " + dateFormat.format(new Date()));
+				
 		// Voorbeeld van de volgende site
 		// https://dzone.com/articles/how-to-parse-json-data-from-a-rest-api-using-simpl
 		String inline = "";
@@ -43,14 +48,14 @@ public class Taken {
 				throw new RuntimeException("HttpResponseCode: " +responsecode);
 			else
 			{
-				Scanner sc = new Scanner(url.openStream());
-				while(sc.hasNext())
+				Scanner scanner = new Scanner(url.openStream());
+				while(scanner.hasNext())
 				{
-					inline+=sc.nextLine();
+					inline+=scanner.nextLine();
 				}
 				System.out.println("\nJSON Response in String format"); 
 				System.out.println(inline);
-				sc.close();
+				scanner.close();
 			}
 			conn.disconnect();
 		} catch (Exception e) {

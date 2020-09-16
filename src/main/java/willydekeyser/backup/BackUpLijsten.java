@@ -87,5 +87,15 @@ public class BackUpLijsten {
 		List<SoortenLeden> lijst = soortenledenService.getAllSoortenLeden();
 		backUpServiceSoortenleden.writeBackUp(lijst, "backup/soortenledenlijst.json");
 	}
+	
+	public void maakUserBackUp() {
+		List<SoortenLeden> lijst = soortenledenService.getAllSoortenLeden();
+		backUpServiceSoortenleden.writeBackUp(lijst, "backup/soortenledenlijst.json");
+	}
+	
+	public void maakRoleBackUp() {
+		List<SoortenLeden> lijst = soortenledenService.getAllSoortenLeden();
+		backUpServiceSoortenleden.writeBackUp(lijst, "backup/soortenledenlijst.json");
+	}
 
 }

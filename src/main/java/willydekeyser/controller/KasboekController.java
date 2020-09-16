@@ -169,6 +169,11 @@ public class KasboekController {
 		return kasboekservice.getAllKasboek();
 	}
 	
+	@GetMapping("/restcontroller/kasboek/{jaar}/{rubriek}/{limit}/{offset}")
+	public @ResponseBody List<Kasboek> kasboekPagina(@PathVariable Integer jaar, @PathVariable Integer rubriek, @PathVariable Integer limit, @PathVariable Integer offset) {	
+		return kasboekservice.getAllKasboekRubriekJaarRubriekbyPage(jaar, rubriek, limit, offset);
+	}
+	
 	@GetMapping("/restcontroller/kasboek/rubriek")
 	public @ResponseBody List<Kasboek> kasboekRubriek() {	
 		return kasboekservice.getAllKasboekRubriek();

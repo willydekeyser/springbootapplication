@@ -25,10 +25,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	private CustomAuthenticationSuccessHandler customSuccessHandler;
-	
+
 	@Autowired
 	private CustomLogoutSuccessHandler customLogoutSuccessHandler;
-	
+
 	@Override
 	protected void configure(HttpSecurity httpSecurity) throws Exception {
 		System.out.println("Config: WebSecurityConfig " + httpSecurity.toString());
@@ -64,13 +64,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.logoutSuccessHandler(customLogoutSuccessHandler)
 			.and()
 			.rememberMe().key("willydekeyser").tokenValiditySeconds(3600);
-			
 	}
-	
+
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.authenticationProvider(customAuthentiocationProvider);
 	}
-		
-}
 
+}
