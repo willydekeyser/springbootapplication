@@ -1,0 +1,49 @@
+[ {
+  "id" : 1,
+  "rubriek" : "Vergaderingen",
+  "kasboeken" : [ ]
+}, {
+  "id" : 2,
+  "rubriek" : "Algemeen",
+  "kasboeken" : [ ]
+}, {
+  "id" : 3,
+  "rubriek" : "Opendeurdag",
+  "kasboeken" : [ ]
+}, {
+  "id" : 4,
+  "rubriek" : "Clubsouper",
+  "kasboeken" : [ ]
+}, {
+  "id" : 5,
+  "rubriek" : "Gamers",
+  "kasboeken" : [ ]
+}, {
+  "id" : 6,
+  "rubriek" : "Lidgeld",
+  "kasboeken" : [ ]
+}, {
+  "id" : 7,
+  "rubriek" : "Nieuwjaar",
+  "kasboeken" : [ ]
+}, {
+  "id" : 8,
+  "rubriek" : "Aankoop hardware",
+  "kasboeken" : [ ]
+}, {
+  "id" : 9,
+  "rubriek" : "Aankoop software",
+  "kasboeken" : [ ]
+}, {
+  "id" : 10,
+  "rubriek" : "Lan",
+  "kasboeken" : [ ]
+}, {
+  "id" : 11,
+  "rubriek" : "ADSL",
+  "kasboeken" : [ ]
+}, {
+  "id" : 12,
+  "rubriek" : "Spaghetti avond",
+  "kasboeken" : [ ]
+} ]

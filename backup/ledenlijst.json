@@ -1373,7 +1373,7 @@
   "straat" : "Bosstraat",
   "nr" : "17",
   "postnr" : "9820",
-  "gemeente" : "Merlebeke",
+  "gemeente" : "Merelbeke",
   "telefoonnummer" : null,
   "gsmnummer" : "(0473)222207",
   "emailadres" : "christophe_aerts@pandora.be",
@@ -1919,10 +1919,10 @@
   "emailadres" : "felixmod@gmail.com",
   "webadres" : null,
   "datumlidgeld" : "1900-01-01",
-  "ontvangmail" : true,
-  "mailvlag" : true,
+  "ontvangmail" : false,
+  "mailvlag" : false,
   "soortenleden" : null,
-  "soortenledenid" : 1,
+  "soortenledenid" : 4,
   "lidgelden" : [ ]
 }, {
   "leden_id" : 114,

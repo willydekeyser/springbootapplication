@@ -15,7 +15,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
-import willydekeyser.model.Role;
+import willydekeyser.model.Roles;
 import willydekeyser.model.User;
 import willydekeyser.service.IUserService;
 
@@ -39,7 +39,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 			throw new UsernameNotFoundException("User name " + username + " not found");
 		}
 		List<GrantedAuthority> authorities = new ArrayList<>();
-		for(Role role: user.getRoles()) {
+		for(Roles role: user.getRoles()) {
 			authorities.add(new SimpleGrantedAuthority(role.getRole()));
 		}
 		myuserDetails = new MyUserDetails(user);

@@ -19159,4 +19159,94 @@
   "datum" : "2020-09-02",
   "uitgaven" : 0,
   "inkomsten" : 8
+}, {
+  "id" : 2411,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2020,
+  "omschrijving" : "09/09 8",
+  "datum" : "2020-09-09",
+  "uitgaven" : 0,
+  "inkomsten" : 8
+}, {
+  "id" : 2412,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2020,
+  "omschrijving" : "16/09 10",
+  "datum" : "2020-09-16",
+  "uitgaven" : 0,
+  "inkomsten" : 10
+}, {
+  "id" : 2413,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2020,
+  "omschrijving" : "23/09 5",
+  "datum" : "2020-09-23",
+  "uitgaven" : 0,
+  "inkomsten" : 5
+}, {
+  "id" : 2414,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2020,
+  "omschrijving" : "30/09 7",
+  "datum" : "2020-09-30",
+  "uitgaven" : 0,
+  "inkomsten" : 7
+}, {
+  "id" : 2415,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2020,
+  "omschrijving" : "07/10 7",
+  "datum" : "2020-10-07",
+  "uitgaven" : 0,
+  "inkomsten" : 7
+}, {
+  "id" : 2431,
+  "rubriek" : null,
+  "rubriekId" : 1,
+  "jaartal" : 2020,
+  "omschrijving" : "14/10 7",
+  "datum" : "2020-10-18",
+  "uitgaven" : 0,
+  "inkomsten" : 7
+}, {
+  "id" : 2451,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2020,
+  "omschrijving" : "Lidgeld Fokke Dooijewaard",
+  "datum" : "2020-12-01",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 2471,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2020,
+  "omschrijving" : "Lidgeld Christian De Groote",
+  "datum" : "2020-12-27",
+  "uitgaven" : 0,
+  "inkomsten" : 30
+}, {
+  "id" : 2491,
+  "rubriek" : null,
+  "rubriekId" : 2,
+  "jaartal" : 2021,
+  "omschrijving" : "Interesten",
+  "datum" : "2021-01-01",
+  "uitgaven" : 0,
+  "inkomsten" : 1.44
+}, {
+  "id" : 2511,
+  "rubriek" : null,
+  "rubriekId" : 6,
+  "jaartal" : 2020,
+  "omschrijving" : "Lidgeld Denise Callebaut",
+  "datum" : "2021-01-11",
+  "uitgaven" : 0,
+  "inkomsten" : 30
 } ]

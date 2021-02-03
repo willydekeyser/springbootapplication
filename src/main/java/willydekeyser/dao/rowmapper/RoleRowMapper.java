@@ -5,13 +5,13 @@ import java.sql.SQLException;
 
 import org.springframework.jdbc.core.RowMapper;
 
-import willydekeyser.model.Role;
+import willydekeyser.model.Roles;
 
-public class RoleRowMapper implements RowMapper<Role>{
+public class RoleRowMapper implements RowMapper<Roles>{
 
 	@Override
-	public Role mapRow(ResultSet rs, int rowNum) throws SQLException {
-		Role role = new Role();
+	public Roles mapRow(ResultSet rs, int rowNum) throws SQLException {
+		Roles role = new Roles();
 		role.setUsername(rs.getString("username"));
 		role.setRole(rs.getString("role"));
 		return role;

@@ -19,5 +19,5 @@ public class User {
 	private Boolean accountnonlocked;
 	private Boolean credentialsnonexpired;
 	private Boolean enabled;
-	private List<Role> roles;
+	private List<Roles> roles;
 }

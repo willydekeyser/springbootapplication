@@ -33,8 +33,8 @@ public class MySessionListener implements HttpSessionListener {
 			"\n    Date: " + new Date() + "\n\n";
 		try {
 			fileLogger.schrijfDataToFile(data);
-		} catch (IOException e) {
-			System.err.println("Fout: " + e.getMessage());
+		} catch (IOException | NullPointerException e) {
+			System.err.println("Fout: " + e.getLocalizedMessage());
 		}
 		
 		counter.incrementAndGet();  //incrementing the counter
@@ -51,8 +51,8 @@ public class MySessionListener implements HttpSessionListener {
 			"\n    DATE: " + new Date() + "\n\n";
 		try {
 			fileLogger.schrijfDataToFile(data);
-		} catch (IOException e) {
-			System.err.println("Fout: " + e.getMessage());
+		} catch (IOException | NullPointerException e) {
+			System.err.println("Fout: " + e.getLocalizedMessage());
 		}
 		counter.decrementAndGet();
         updateSessionCounter(event);
@@ -63,8 +63,8 @@ public class MySessionListener implements HttpSessionListener {
         String data = "Total active session are: " + counter.get() + "\n\n";
         try {
 			fileLogger.schrijfDataToFile(data);
-		} catch (IOException e) {
-			System.err.println("Fout: " + e.getMessage());
+		} catch (IOException | NullPointerException e) {
+			System.err.println("Fout: " + e.getLocalizedMessage());
 		}
     }
 }

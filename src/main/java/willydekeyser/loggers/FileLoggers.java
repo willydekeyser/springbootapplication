@@ -16,7 +16,7 @@ import com.google.gson.GsonBuilder;
 @Service
 public class FileLoggers {
 
-	public void schrijfDataToFile(String data) throws IOException {
+	public void schrijfDataToFile(String data) throws IOException, NullPointerException {
 		int year = Calendar.getInstance().get(Calendar.YEAR);
 		String fileName = "logfiles/Logindata" + year + ".log";
 		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
@@ -29,7 +29,7 @@ public class FileLoggers {
 		writer.close();
 	}
 	
-	public void schrijfDataToJson(Object data) throws IOException {
+	public void schrijfDataToJson(Object data) throws IOException, NullPointerException {
 		int year = Calendar.getInstance().get(Calendar.YEAR);
 		String fileName = "logfiles/Logindata" + year + ".json";
 		FileWriter fileWriter = new FileWriter(fileName, true);
@@ -40,7 +40,7 @@ public class FileLoggers {
 		fileWriter.close();
 	}
 	
-	public void schrijfAgendaToFile(String data) throws IOException {
+	public void schrijfAgendaToFile(String data) throws IOException, NullPointerException {
 		int year = Calendar.getInstance().get(Calendar.YEAR);
 		String fileName = "logfiles/Agendadata" + year + ".log";
 		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
@@ -53,7 +53,7 @@ public class FileLoggers {
 		writer.close();
 	}
 	
-	public void schrijfLidgeldToFile(String data) throws IOException {
+	public void schrijfLidgeldToFile(String data) throws IOException, NullPointerException {
 		int year = Calendar.getInstance().get(Calendar.YEAR);
 		String fileName = "logfiles/Lidgelddata" + year + ".log";
 		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
